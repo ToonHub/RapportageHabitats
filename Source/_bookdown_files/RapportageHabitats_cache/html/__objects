@@ -1,0 +1,15 @@
+overzichtVoortgang	overzicht	overzicht_Heide6510	.Random.seed
+dataInlezen	heide6510
+missingData	missingData	plotMeasure
+wrongHabcode	heide6510_habsubt	plotMeasure	wrongHabCode
+MeasuredHab	overzicht_Observed_Year	sampleSizeHeide6510
+trefkans	overzicht_Heide6510_long	overzicht_Observed	overzicht_Target	overzicht_trefkans
+dataVerkenning3	
+steekproefHeide	heide_planning_tabel	nbPlotsToDo	overzicht_Heide6510_all	sampleHeide_3y	sampleHeide_3y_Extra	sampleHeide_3y_OK	sampleHeide_6y	sampleHeide_6y_overzicht	sampleHeide_bezoeken6y	sampleSizeHeide6510_join
+steekproefHeideTabel	
+steekproefHeideShape	
+steekproefHeide2	
+steekproef6510	hab6510_planned_ov	maxRank	sample6510_6y
+steekproef6510Tabel	
+steekproef6510Shape	
+Nazien	

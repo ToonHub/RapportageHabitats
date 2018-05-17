@@ -1,0 +1,28 @@
+overzichtVoortgang	overzicht	%>%	kable	T	kable_styling	c
+dataInlezen	heide6510	c
+missingData	dataMissing	overzicht_BosHabitats	%>%	filter	Visited	IDSegments	is.na	HabObserved	HabTarget1	HabTarget2	VegspeciesMeasured	StructureMeasured	select	IDPlots
+wrongHabcode	Bos_habsubt	unique	c	as.character	overzicht_BosHabitats	HabTarget1	HabTarget2	wrongHabCode	overzicht_BosHabitats_bezocht	%>%	filter	Measured	HabObserved	%in%	select	IDPlots	IDSegments	mutate	ifelse
+MeasuredHab	sampleSizeBos	read.csv2	%>%	mutate	floor	nGewenst	select	HabObserved	SBZH	nGewenst_3y	nGewenst_6y	nGewenst_Tot	overzicht_Observed_Year	overzicht_BosHabitats	filter	Measured	IDSegments	is.na	format	as.Date	Date	group_by	Year	summarise	n	ungroup	spread	n_Measured_Total	ifelse	`2015`	`2016`	full_join	c	arrange	TotalMeasured	kable	T	kable_styling
+trefkans	overzicht_BosHabitats_long	overzicht_BosHabitats	%>%	filter	Visited	IDSegments	is.na	gather	HabTarget1	HabTarget2	nHabTarget	HabTarget	overzicht_Target	group_by	SBZH	summarise	n	sum	Measured	HabObserved	overzicht_Observed	overzicht_trefkans	full_join	rename	c	select	n_Measured	mutate	ifelse	n_Measured_Total	n_Measured_Target	n_Visited	Trefkans_Target	round	Trefkans_Total	kable	T	kable_styling
+dataVerkenning3	
+steekproefHeide	sampleSizeHeide6510_join	sampleSizeHeide6510	%>%	select	HabObserved	SBZH	nGewenst_6y	Trefkans_verwacht	mutate	ifelse	nbPlotsToDo	overzicht_Observed	ungroup	n_Measured_Total	full_join	c	overzicht_trefkans	Hab	Trefkans_Total	is.na	nOpnamesToDo_6y	Trefkans	substr	pmax	Trefkans_observed	nBezoekenToDo_6y	ceiling	sampleHeide_3y	getSample	Set	sampleHeide_3y_OK	filter	Orthocontr	as.numeric	as.character	IDPlots	sampleHeide_3y_Extra	sampleHeide_6y	sampleHeide_6y_overzicht	group_by	HabTarget1	summarise	n	overzicht_Heide6510_all	getVisitedPlotsMHK	dbHeideEn6510_2018	sampleHeide_bezoeken6y	bind_rows	left_join	Visited	VisitedQC	heide_planning_tabel	sum	max	nb	rename	n_planned	nToSelect
+steekproefHeideTabel	kable	heide_planning_tabel	%>%	kable_styling	c
+steekproefHeideShape	
+steekproefHeide2	
+steekproef6510	sample6510_6y	getSample	maxRank	%>%	group_by	HabTarget1	SBZH	summarise	max	IDPlots	rename	hab6510_planned_ov	overzicht_Heide6510_all	gather	HabTarget2	filter	is.na	HabTarget	substr	left_join	c	mutate	VisitedQC	maxRankingPlanned	%in%	sum	Planned	select	nbPlotsToDo	Hab	nOpnamesToDo_6y	Trefkans	nBezoekenToDo_6y	n_planned
+steekproef6510Tabel	kable	hab6510_planned_ov	%>%	kable_styling	c
+steekproef6510Shape	
+Nazien	
+missingData, 	plotMeasure	overzicht_Heide6510	%>%	filter	Measured	missingData	VegspeciesMeasured	VeglayerMeasured	StructureMeasured	select	IDPlots	kable	T
+voortgang	overzicht_BosHabitats	getVisitedPlotsBosMHK	dbBosExtra	overzicht_BosHabitats_bezocht	%>%	filter	Visited	overzicht	mutate	ifelse	Year_planning	group_by	Periode	Measured	Status	summarise	n	arrange
+wrongHabcodeTabel	wrongHabCode	%>%	kable	kable_styling	c
+missingDataTabel	missingData	%>%	kable	T	kable_styling	c
+missingDataTable	dataMissing	%>%	kable	T	kable_styling	c
+habCenter	centerShape	readOGR	shapePlotsDir	plotsShape	test	IDPlots_Overlay	over	IDPLOTS	IDSegments_Overlay	ID	centerPlot	%>%	rename	mutate	as.numeric	as.character	IDPlots	overzicht_BosHabitats_check	overzicht_BosHabitats_bezocht	left_join
+differentHab	maxRanking	overzicht_BosHabitats	%>%	group_by	SBZH	HabTarget1	summarise	max	IDPlots	rename	differentHab	left_join	c	filter	Visited	IDSegments	is.na	HabObserved	%in%	Bos_habsubt	HabTarget2	mutate	ifelse	MaxRank	select	Measured	BeslissingOpname
+differentHabTable	differentHab	%>%	kable	T	kable_styling	c
+planning	sampleBos	getSample	sampleBosFile	planning456	overzicht_BosHabitats	%>%	filter	IDSegments	is.na	gather	HabTarget1	HabTarget2	nHabTarget	HabTarget	Status	mutate	ifelse	Year_planning	Orthocontr	group_by	Periode	Orthocontrole	summarise	n	arrange	ungroup	planning456_wide	spread	nPlots
+planningTabel	planning456_wide	%>%	kable	T	kable_styling	c
+getDataHabtypes	connectionStrata	odbcConnectAccess2007	dbVBIStrata	VBI_plots_N2000	sqlFetch	odbcClose
+overlayVBISBZH	SBZH_shape	readOGR
+selectieplots	connectionMeetproces	odbcConnectAccess2007	dbVBIMeetproces	recordsVBI2	sqlFetch	recordsVBI1	plotCordinates	plotDetails	odbcClose	plotDetailsVBI2	%>%	filter	Periode	select	IDPlots	Reeks	VBI_plots_selection	VBI_plots_N2000	Phab	left_join	DendroRecord	VegRecord	is.na	mutate	ifelse	X_measuredVBI2	X_raster	Y_measuredVBI2	Y_raster	VBI_plots_selection_shape	SpatialPointsDataFrame	cbind	X_coord	Y_coord	proj4string	SBZH_shape	SBZH	over	DEELGEBIED	VBI_plots_overzicht	HabCode	Habsubt	as.character	group_by	summarise	n	overzicht_BosVBI	HabObserved	Visited	Measured	Status

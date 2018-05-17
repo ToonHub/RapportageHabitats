@@ -1,0 +1,28 @@
+overzichtVoortgang	
+dataInlezen	heide6510
+missingData	dataMissing
+wrongHabcode	Bos_habsubt	overzicht_BosHabitats	wrongHabCode
+MeasuredHab	overzicht_Observed_Year	sampleSizeBos
+trefkans	overzicht_BosHabitats_long	overzicht_Observed	overzicht_Target	overzicht_trefkans
+dataVerkenning3	
+steekproefHeide	heide_planning_tabel	nbPlotsToDo	overzicht_Heide6510_all	sampleHeide_3y	sampleHeide_3y_Extra	sampleHeide_3y_OK	sampleHeide_6y	sampleHeide_6y_overzicht	sampleHeide_bezoeken6y	sampleSizeHeide6510_join
+steekproefHeideTabel	
+steekproefHeideShape	
+steekproefHeide2	
+steekproef6510	hab6510_planned_ov	maxRank	sample6510_6y
+steekproef6510Tabel	
+steekproef6510Shape	
+Nazien	
+missingData, 	missingData	plotMeasure
+voortgang	overzicht	overzicht_BosHabitats	overzicht_BosHabitats_bezocht	.Random.seed
+wrongHabcodeTabel	
+missingDataTabel	
+missingDataTable	
+habCenter	centerPlot	centerShape	overzicht_BosHabitats_check	plotsShape	test
+differentHab	differentHab	maxRanking
+differentHabTable	
+planning	sampleBos
+planningTabel	
+getDataHabtypes	connectionStrata	VBI_plots_N2000
+overlayVBISBZH	SBZH_shape
+selectieplots	connectionMeetproces	overzicht_BosVBI	plotCordinates	plotDetails	plotDetailsVBI2	recordsVBI1	recordsVBI2	VBI_plots_overzicht	VBI_plots_selection	VBI_plots_selection_shape
