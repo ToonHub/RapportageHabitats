@@ -1047,7 +1047,7 @@ getCoverVeglayersVBI2 <- function (db =  dbVBI2, plotIDs = NULL) {
            CoverShrublayer = Total_shrub_cover,
            CoverTreelayer = Total_tree_cover) %>%
     mutate(CoverTreeAndShrublayer = (1 - (1 - CoverTreelayer/100) * (1 - CoverShrublayer/100)) * 100,
-           CoverHerbAndShrublayer =  CoverHerblayer + CoverMosslayer)
+           CoverHerbAndMosslayer =  CoverHerblayer + CoverMosslayer)
 
 
   if (is.null(plotIDs)){
@@ -2340,7 +2340,7 @@ return(groeiklassen)
 
 #######################################################################################
 
-berekenAVGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot") {
+berekenAVGroeiklassen <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot") {
 
   groeiklassen <- berekenGroeiklassenVBI2(db, plotIDs, niveau)
 
@@ -2355,6 +2355,24 @@ berekenAVGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plo
 
   return(result)
 }
+#######################################################################################
+
+berekenAVVegetatielagen <- function(db = dbVBI2, plotIDs = NULL) {
+
+    veglagen_bedekking <- getCoverVeglayersVBI2(db, plotIDs)
+
+    klasseTalrijk <- selectScale("Beheermonitoringsschaal") %>%
+  filter(KlasseCode == "T")
+
+    veglagenAV <- veglagen_bedekking %>%
+      mutate(AantalTarlijkeVegetatielagen = (CoverShrublayer >= klasseTalrijk$BedekkingGem) + (CoverTreelayer >= klasseTalrijk$BedekkingGem) + (CoverHerbAndMosslayer >=  klasseTalrijk$BedekkingGem)) %>%
+      select(IDPlots, AantalTarlijkeVegetatielagen)
+
+
+    }
+
+
+
 
 
 
