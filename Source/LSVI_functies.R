@@ -2330,12 +2330,35 @@ berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"
     left_join(groeiklasse2, by = "IDPlots") %>%
     mutate(Groeiklasse1 = NA) %>% #groeiklasse1 = open ruimte in bos --> kan niet afgeleid worden uit gegegevens
     gather(-IDPlots,-IDSegments, key = "Groeiklasse", value = "Waarde") %>%
-    arrange(IDPlots, Groeiklasse)
+    arrange(IDPlots, Groeiklasse) %>%
+    ungroup()
 
 return(groeiklassen)
 
 }
 
+
+#######################################################################################
+
+berekenAVGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot") {
+
+  groeiklassen <- berekenGroeiklassenVBI2(db, plotIDs, niveau)
+
+  groeiklassenAV <- groeiklassen %>%
+    group_by(IDPlots, IDSegments) %>%
+    summarise(AantalGroeiklassen = sum(Waarde, na.rm = TRUE),
+              Groeiklasse7 = sum((Groeiklasse == "Groeiklasse7") * Waarde, na.rm = TRUE),
+              Groeiklasse4_5_6 = ifelse(sum(Groeiklasse %in% c("Groeiklasse4", "Groeiklasse5", "Groeiklasse6") * Waarde, na.rm = TRUE) > 0, 1, 0))
+
+  result <- groeiklassenAV %>%
+    gather(AantalGroeiklassen, Groeiklasse7, Groeiklasse4_5_6, key = AnalyseVariabele, value = Waarde)
+
+  return(result)
+}
+
+
+
+#######################################################################################
 
 ### Berekening indicatoren habitatstructuur van boshabitats + berekening grondvlakaandeel sleutelsoorten (vegetatie-indicator)
 
