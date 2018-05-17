@@ -991,6 +991,21 @@ getCoverSpeciesMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs =NULL){
 
 }
 
+
+################################################################################################
+
+selectScale <- function(nameScale = "CoverVeglayers"){
+
+  scaleInfo <- read.csv2(schaalInfo)
+
+  result <- scaleInfo %>%
+    filter(Schaal == nameScale)
+
+  return(result)
+
+}
+
+
 ################################################################################################
 
 ### Haal bedekking van de afzonderlijke vegetatielagen in 16x16m proefvlak uit VBI2 databank
@@ -1018,12 +1033,13 @@ getCoverVeglayersVBI2 <- function (db =  dbVBI2, plotIDs = NULL) {
     rename(IDSegments = ID) %>%
     filter(IDSegments == 1)
 
-  coverScale <- data.frame(CoverID = 0:6, Cover = c(0,2.5, 8.75, 18.75, 37.50, 62.50, 87.50))
+  scaleInfo <- selectScale("CoverVeglayers") %>%
+    select(CoverID = KlasseID, Cover = BedekkingGem)
 
   veglayer_Cover <- veglayer %>%
     select(-Total_cover, -IDSegments) %>%
     gather(-IDPlots, key = "Layer", value = "CoverID") %>%
-    left_join(coverScale, by = "CoverID") %>%
+    left_join(scaleInfo, by = "CoverID") %>%
     select(-CoverID) %>%
     spread(key = "Layer", value = "Cover") %>%
     rename(CoverHerblayer = Total_herb_cover,
