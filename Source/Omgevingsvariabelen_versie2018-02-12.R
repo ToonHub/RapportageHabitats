@@ -57,7 +57,7 @@ dbVBIAnalyse <- "../Data/MeetgegevensVBI2/Versie3/VBI_AnalyseDatabank_v2016-08-3
 #---------------------
 
 dbVBIExterneData<-"../Data/ExterneData/VBIExterneData.accdb"
-schaalInfo  <- "../LSVIData/schalen.csv"
+schaalInfo  <- "../LSVIData/Schalen.csv"
 
 #---------------------
 #../Databank strata
