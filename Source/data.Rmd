@@ -1,0 +1,238 @@
+
+# Overzicht data meetnet habitatkwaliteit
+
+## Heidehabitats en habitat 6510 
+
+De meetnetten voor de landduinhabitats, heidehabitats en habiattype 6510 worden uitgevoerd door ANB. De veldwerkteams voeren de gegevens in via FieldMap. ANB bezorgt een export aan INBO onder de vorm van een Access-bestand.  
+
+
+```{r dataHeide6510, warning=FALSE}
+
+overzicht_Heide6510 <- getVisitedPlotsMHK(db = dbHeideEn6510_2018)
+
+overzicht_Heide6510 <- overzicht_Heide6510 %>%
+  mutate(X_coord = ifelse(!is.na(X_m), X_m, X),
+         Y_coord = ifelse(!is.na(Y_m), Y_m, Y),
+         XY_M = !is.na(X_m)) %>%
+  select(-X, -X_m, -Y, -Y_m)
+
+#overzicht_Heide6510_shape <- SpatialPointsDataFrame(coords = cbind(x = overzicht_Heide6510$X_coord, y = overzicht_Heide6510$Y_coord),
+#                                                    data = overzicht_Heide6510)
+
+#writeOGR(overzicht_Heide6510_shape, "../Output/.", "Voortgang_meetnetHeideEn6510", driver = "ESRI Shapefile", overwrite_layer = TRUE)
+
+```
+
+## Boshabitattypen
+
+### Bosinventarisatie
+
+Een groot deel van de gegevens voor de boshabitats wordt via de de Bosinventarisatie ingezameld. In eerste instantie maken we een overlay tussen de meetpunten van de Bosinventarisatie en de Habitatkaart om te bepalen welke punten in boshabitat vallen. In een tweede stap selecteren we enkel punten die in een polygoon vallen met meer dan 50% van een bepaald boshabitattype. In een volgende fase kunnen we de selectie nog verder verfijnen op basis van meetgegevens van de bosinventarisatie (bestandstype, soortensamenstelling,...).
+
+De gegevens worden ingezameld door ANB en aangeleverd aan INBO onder de vorm van een Access-bestand.
+
+```{r getDataHabtypes, cache = TRUE}
+
+connectionStrata <- odbcConnectAccess2007(dbVBIStrata)
+
+VBI_plots_N2000 <- sqlFetch(connectionStrata,"tblN2000Habitat_versie2017-01-01" )
+
+odbcClose(connectionStrata)
+
+
+```
+
+
+```{r overlayVBISBZH, cache = TRUE}
+SBZH_shape <- readOGR("../../Basisdata/SBZH/.", "SBZH", verbose = FALSE)
+
+
+```
+
+```{r selectieplots, cache = TRUE, }
+
+
+### Aanduiding van VBI-plots die al opgemeten werden in 2de cyclus
+
+connectionMeetproces <- odbcConnectAccess2007(dbVBIMeetproces)
+
+recordsVBI2 <- sqlFetch(connectionMeetproces, "tblRecordsVBI2+")
+recordsVBI1 <- sqlFetch(connectionMeetproces, "tblRecordsVBI1")
+plotCordinates <- sqlFetch(connectionMeetproces,"tblCoordinaten")
+plotDetails <- sqlFetch(connectionMeetproces,"tblPlotDetails")
+
+odbcClose(connectionMeetproces)
+
+plotDetailsVBI2 <- plotDetails %>%
+  filter(Periode == 2) %>%
+  select(IDPlots, Reeks)
+
+VBI_plots_selection <- VBI_plots_N2000 %>%
+  filter(Phab >= 50) %>%
+  left_join(plotDetailsVBI2, by = "IDPlots") %>%
+  left_join(select(recordsVBI2, IDPlots, DendroRecord, VegRecord), by = "IDPlots") %>%
+  filter(!is.na(Reeks)) %>%
+  filter(DendroRecord | VegRecord) %>%
+  left_join(plotCordinates, by = "IDPlots") %>%
+  mutate(X_coord = ifelse(is.na(X_measuredVBI2), X_raster, X_measuredVBI2),
+         Y_coord = ifelse(is.na(Y_measuredVBI2), Y_raster, Y_measuredVBI2))
+  
+VBI_plots_selection_shape <- SpatialPointsDataFrame(coords = cbind(x = VBI_plots_selection$X_coord, y = VBI_plots_selection$Y_coord),
+                                                    data = VBI_plots_selection)
+
+
+proj4string(VBI_plots_selection_shape) <- proj4string(SBZH_shape)
+VBI_plots_selection_shape$SBZH <- over(VBI_plots_selection_shape, SBZH_shape)$DEELGEBIED
+VBI_plots_selection_shape$SBZH <- ifelse(is.na(VBI_plots_selection_shape$SBZH), 0, 1)
+
+VBI_plots_overzicht <- VBI_plots_selection_shape@data %>%
+  mutate(Habsubt = HabCode) %>%
+  mutate(Habsubt = ifelse(Habsubt == "91E0_vnva", "91E0_vn", as.character(Habsubt))) %>%
+  group_by(Habsubt, SBZH) %>%
+  summarise(nPlotsMeasured = n())
+
+overzicht_BosVBI <- VBI_plots_selection_shape@data %>%
+  mutate(Visited = TRUE,
+         HabObserved = HabCode,
+         Measured = TRUE,
+         Status = "Opname uitgevoerd - VBI") %>%
+  select(IDPlots, SBZH, HabObserved, Visited, Measured, Status, X_coord, Y_coord)
+
+```
+
+
+### Bijkmomende meetpunten voor boshabitats
+
+Voor de zeldzamere habitat(sub)typen levert de Bosinventarisatie te weinig meetpunten. Daarom bemonstert ANB bijkomende meetpunten volgens hetzelfde protocol als de Bosinventarisatie. 
+
+De gegevens worden aangelverd in een afzonderlijk Access-bestand.
+
+
+```{r dataBosExtra, warning=FALSE}
+
+overzicht_bosExtra <- getVisitedPlotsBosMHK(db = dbBosExtra)
+
+overzicht_bosExtra_plot <- overzicht_bosExtra %>%
+  mutate(X_coord = ifelse(!is.na(X_m), X_m, X),
+         Y_coord = ifelse(!is.na(Y_m), Y_m, Y),
+         XY_M = !is.na(X_m),
+         Measured = Measured == "ja",
+         Visited = Visited == "ja") %>%
+  select(-X, -X_m, -Y, -Y_m) %>%
+  filter(IDSegments == 1) %>%
+  select(-IDSegments)
+
+```
+
+## Graslanden en moerassen
+
+De overige graslandhabitats en moerashabitats worden opgemeten door INBO en ingevoerd in INBOVEG.
+
+```{r stavazaGraslandMoerad, warning=FALSE}
+
+overzicht_GrasMoeras <- readOGR("../Data/VoortgangGraslandMoeras/.", "Stavaza2018", verbose = FALSE)
+
+overzicht_GrasMoeras_df <- overzicht_GrasMoeras@data %>%
+  mutate(Visited = bezocht > 0,
+         HabObserved = habsubt,
+         Measured = !is.na(opname) & opname == "ja",
+         Replaced = !is.na(verplaatst) & verplaatst == "ja",
+         Status = ifelse(!Visited, "To do",
+                         ifelse(!Measured, "Geen doelhabitat - terreincheck",
+                                "Opname uitgevoerd"))) %>%
+  select(IDPlots = Ranking, SBZH, HabTarget1 = habsubt, HabTarget2 = Doelhab2, HabObserved, Visited, Measured, Replaced, Status, X_coord = POINT_X, Y_coord = POINT_Y)
+  
+overzicht_GrasMoeras_unique <- overzicht_GrasMoeras_df %>%
+     group_by(IDPlots, SBZH, X_coord, Y_coord, HabObserved, Visited, Measured, Status) %>%
+     summarise(HabTarget1 = HabTarget1[1],
+               HabTarget2 = HabTarget2[1]) %>%
+     ungroup() 
+
+
+```
+
+## Synergie PINK - Kustduinen
+
+Het meetnet habitatkwaliteit is nog niet opgestart voor kustduinhabitats. Wel kunnen gegevens ingezameld in kader van PINK gebruikt worden. Een overzicht van beschikbare gegevens moet nog gemaakt worden.
+
+## Synergie MONEOS - 1330_da en 91E0_sf
+
+To do.
+
+## Aquatische habitats
+
+To do.
+
+# Overzicht afgewerkte meetpunten
+
+```{r stavazaAll, warning=FALSE}
+
+overzicht_all <- bind_rows(overzicht_GrasMoeras_unique,
+                           overzicht_Heide6510,
+                           overzicht_bosExtra_plot,
+                           overzicht_BosVBI)
+
+overzicht_meetnet_shape <- SpatialPointsDataFrame(coords = cbind(x = overzicht_all$X_coord, y = overzicht_all$Y_coord),
+                                                    data = overzicht_all)
+
+
+#writeOGR(overzicht_meetnet_shape, "../Output/.", "Voortgang_meetnetHabitatkwaliteit_2018-05-03", driver = "ESRI Shapefile", overwrite_layer = TRUE)
+
+```
+
+
+
+
+```{r overzichtMetingen, warning=FALSE}
+sampleSizeAll <- getSampleSize() %>%
+  mutate(SampleSize = round(nGewenst, 0)) %>%
+  select(Habsubt = habsubt, SBZH, SampleSize) %>%
+  spread(key = SBZH, value = SampleSize)
+
+sampleSizeBos <- read.csv2("../Data/Steekproef/SteekproefGrootteBosHabitats_Versie2015.csv")
+
+overzicht_measured <- overzicht_all %>%
+  filter(Measured) %>%
+  mutate(SBZH = ifelse(SBZH == 1, "Binnen", "Buiten"),
+         Habsubt = ifelse(HabObserved %in% c("6510", "2330"), HabTarget1, HabObserved),
+         Habsubt = ifelse(Habsubt == "9130", "9130_end", Habsubt),
+         Habsubt = ifelse(Habsubt == "91E0 vc", "91E0_vc", Habsubt),
+         Habsubt = ifelse(Habsubt == "91E0_vnva", "9130_vn", Habsubt)) %>%
+  group_by(Habsubt, SBZH) %>%
+  summarise(nPlotsMeasured = n()) %>%
+  spread(key = SBZH, value = nPlotsMeasured) %>%
+  left_join(sampleSizeAll, by = "Habsubt", suffix = c("_M", "_N")) 
+
+overzicht_measured[is.na(overzicht_measured)] <- 0
+
+overzicht_measured_Tabel <- overzicht_measured %>%
+  mutate("Binnen SBZH Voortgang (%)" = ifelse(Binnen_N > 0, round(Binnen_M/ Binnen_N  * 100, 0), NA),
+         "Buiten SBZH Voortgang (%)" = ifelse(Buiten_N > 0, round(Buiten_M/ Buiten_N  * 100, 0), NA)) %>%
+  rename("Binnen SBZH opgemeten" = Binnen_M, 
+         "Buiten SBZH opgemeten" = Buiten_M,
+         "Binnen SBZH steekproefgrootte" = Binnen_N, 
+         "Buiten SBZH steekproefgrootte" = Buiten_N)
+
+
+```
+
+Tabel \@ref(tab:overzichtMetingenTabel) geeft een overzicht van de afgewerkte meetpunten en de  voortgang t.o.v. de totale steekproefgrootte. Voor de boshabitats geven we de som van de meetpunten uit de bosinventarisatie en de bijkomende meetpunten.
+
+
+```{r overzichtMetingenTabel, warning=FALSE}
+
+overzicht_measured_Tabel %>%
+kable(booktabs = T, format = "latex", caption ="Overzicht afgewerkte meetpunten meetnet habitatkwaliteit en voortgang t.o.v. de totale steekproefgrootte") %>%
+   kable_styling(latex_options = c("hold_position", "scale_down")) 
+```
+
+```{r overzichtExport, warning=FALSE}
+#library(googlesheets)
+
+#gs_ls()
+
+#gs_new("Overzicht afgewerkte meetpunten meetnet Habitatkwaliteit", input = overzicht_measured_Tabel)
+
+
+```
+
