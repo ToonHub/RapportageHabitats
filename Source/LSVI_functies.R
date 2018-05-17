@@ -1046,7 +1046,8 @@ getCoverVeglayersVBI2 <- function (db =  dbVBI2, plotIDs = NULL) {
            CoverMosslayer = Total_moss_cover,
            CoverShrublayer = Total_shrub_cover,
            CoverTreelayer = Total_tree_cover) %>%
-    mutate(CoverTreeAndShrublayer = (1 - (1 - CoverTreelayer/100) * (1 - CoverShrublayer/100)) * 100)
+    mutate(CoverTreeAndShrublayer = (1 - (1 - CoverTreelayer/100) * (1 - CoverShrublayer/100)) * 100,
+           CoverHerbAndShrublayer =  CoverHerblayer + CoverMosslayer)
 
 
   if (is.null(plotIDs)){
