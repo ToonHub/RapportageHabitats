@@ -1,0 +1,281 @@
+#Boshabitats
+
+## Overzicht opgemeten meetpunten
+
+Tabel \@ref(tab:overzichtVoortgang) geeft een overzicht van de bezochte en opgemeten meetpunten op basis van volgende kenmerken:
+
+* Visited: plot al dan niet bezocht (afgeleid uit de gegevens in de databank)
+* Measured: plot opgemeten en gegevens ingevoerd
+* Status van de plot
+
+```{r voortgang, results = 'hide', echo=FALSE, message=FALSE, warning = FALSE}
+
+
+overzicht_BosHabitats <- getVisitedPlotsBosMHK(db = dbBosExtra) 
+
+overzicht_BosHabitats_bezocht <- overzicht_BosHabitats %>%
+  filter(Visited == "ja")
+
+overzicht <- overzicht_BosHabitats %>%
+  mutate(Periode = ifelse(Year_planning <= 3, "Jaar 1 tot 3", "Jaar 4 tot 12")) %>%
+  group_by(Periode, Visited, Measured, Status) %>%
+  summarise(nPlots = n()) %>%
+  arrange(Periode, Status)
+
+overzicht2 <- overzicht_BosHabitats %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  mutate(Periode = ifelse(Year_planning <= 3, "Jaar 1 tot 3", "Jaar 4 tot 12")) %>%
+  group_by(Periode, Visited, Measured, Status) %>%
+  summarise(nPlots = n()) %>%
+  arrange(Periode, Status)
+
+
+
+toDo_y123 <- overzicht_BosHabitats %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  filter(Year_planning <= 3) %>%
+  filter(Status == "To do")
+
+write.csv2(toDo_y123, "../Output/Boshabitats_toDo_y123.csv")
+  
+```
+
+```{r overzichtVoortgang, echo=FALSE, message=FALSE, warning = FALSE}
+overzicht %>%
+kable(booktabs = T, format = "latex", caption = "Overzicht opgemeten meetpunten") %>%
+  kable_styling(latex_options = c("hold_position"))
+  
+```
+
+
+
+## Verkenning databank
+
+### Habitatcodes
+
+Sommige habitatsubtypes bevatten underscore anderen niet.
+Voor volgende habitatsubtypes moet underscore worden toegevoegd: 9130_end, 91E0_va, 91E0_vc
+
+```{r wrongHabcode,  echo=FALSE, message=FALSE, warning = FALSE}
+
+Bos_habsubt <- unique(c(as.character(overzicht_BosHabitats$HabTarget1), as.character(overzicht_BosHabitats$HabTarget2), "9120", "9110"))
+
+wrongHabCode <- overzicht_BosHabitats_bezocht %>%
+  filter(Measured == "ja") %>%
+  filter(! HabObserved %in% Bos_habsubt) %>%
+  filter(HabObserved != "geen habitat (akker, houtkant, tuin,...)") %>%
+  select( IDPlots, IDSegments, HabObserved, HabTarget1, HabTarget2) 
+
+overzicht_BosHabitats <- overzicht_BosHabitats %>%
+  mutate(HabObserved = as.character(HabObserved)) %>%
+  mutate(HabObserved = ifelse(HabObserved == "9130 end", "9130_end",
+                              ifelse(HabObserved == "91E0 va", "91E0_va",
+                                     ifelse(HabObserved == "91E0 vc", "91E0_vc", HabObserved))),
+         HabTarget1 = as.character(HabTarget1),
+         HabTarget2 = as.character(HabTarget2))
+
+
+```
+
+### Ontbrekende gegevens
+
+```{r missingData,  echo=FALSE, message=FALSE, warning = FALSE}
+
+dataMissing <- overzicht_BosHabitats %>%
+  filter(Visited == "ja") %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  filter(HabObserved == HabTarget1 | HabObserved == HabTarget2) %>%
+  filter(!VegspeciesMeasured | !StructureMeasured) %>%
+  select(IDPlots, IDSegments, HabTarget1, HabTarget2, HabObserved, VegspeciesMeasured, StructureMeasured)
+
+```
+
+Tabel \@ref(tab:missingDataTable) toont de plots waar er enkel een vegetatieopname is gebeurd, maar geen dendrometrische opname.
+
+```{r missingDataTable,  echo=FALSE, message=FALSE, warning = FALSE}
+
+dataMissing %>%
+  kable(booktabs = T, format = "latex", caption = "Meetpunten met ontbrekende gegevens") %>%
+   kable_styling(latex_options = c("hold_position"))
+
+```
+
+### Match tussen geobserveerd habitat en doelhabitat
+
+Het centrum van de plot ligt altijd in het segment 1. Het geobserveerde habitat in segment 1 moet dus vergeleken worden met het doelhabitat om te bepalen of er al dan niet een opname moet gebeuren. Wanneer het geobserveerd habitat verschilt van de doelhabitat moet de beslissingsregels toegepast worden om te bepalen of er een opname moet gebeuren. Er mag een opname gebeuren als de ranking van het punt lager is dan de maximum ranking in de steekproef van het geobserveerde habitat.
+
+Uit Tabel \@ref(tab:differentHabTable) blijkt dat de beslissingsregel niet altijd werd gevolgd en dat voor vijf meetpunten onterecht een opname werd uitgevoerd. Die meetpunten zijn niet conform de GRTS-steekproef.   
+
+```{r habCenter,  echo=FALSE, message=FALSE, warning = FALSE}
+
+centerShape <- readOGR(shapePlotsDir, "Grid_points_point", verbose = FALSE)
+
+plotsShape <- readOGR(shapePlotsDir, "Standdescription_segments_polyg", verbose = FALSE)
+test <- plotsShape@data
+
+centerShape$IDPlots_Overlay <- over(centerShape, plotsShape)$IDPLOTS
+centerShape$IDSegments_Overlay <- over(centerShape, plotsShape)$ID
+
+centerPlot <- centerShape@data %>%
+  rename(IDPlots = IDPlots_Overlay) %>%
+  mutate(IDPlots = as.numeric(as.character(IDPlots)))
+
+overzicht_BosHabitats_check <- overzicht_BosHabitats_bezocht %>%
+  left_join(centerPlot, by = "IDPlots")
+
+
+```
+
+```{r differentHab,  echo=FALSE, message=FALSE, warning = FALSE}
+
+maxRanking <- overzicht_BosHabitats %>%
+  group_by(SBZH, HabTarget1) %>%
+  summarise(MaxRank = max(IDPlots)) %>%
+  rename(HabObserved = HabTarget1)
+
+differentHab <- overzicht_BosHabitats %>%
+  left_join(maxRanking, by =c("SBZH", "HabObserved")) %>%
+  filter(Visited == "ja") %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  filter(HabObserved %in% Bos_habsubt) %>%
+  filter(HabObserved != HabTarget1 & (is.na(HabTarget2) | HabObserved != HabTarget2)) %>%
+  mutate(BeslissingOpname = ifelse( IDPlots <= MaxRank & !is.na(MaxRank), "ja", "nee")) %>%
+  select(IDPlots, SBZH, HabTarget1, HabTarget2, HabObserved, Measured, MaxRank, BeslissingOpname)
+
+```
+
+
+```{r differentHabTable,  echo=FALSE, message=FALSE, warning = FALSE}
+
+differentHab %>%
+  kable(booktabs = T, format = "latex", caption = "Meetpunten warvoor geobserveerde habitat verschilt met doelhabitat en uitkomst beslissingsregel voor het al dan niet uitvoeren van een bemonstering") %>%
+   kable_styling(latex_options = c("hold_position"))
+
+```
+
+
+
+## Overzicht opgemeten meetpunten
+
+Tabel \@ref(tab:MeasuredHab) geeft een overzicht van de opgemeten punten per geobserveerd habitat(sub)type met onderscheid tussen binnen en buiten SBZH. De tabel geeft ook het gewenst aantal punten na 3 jaar (1/4de van de totale meetcyclus) en na 6 jaar.
+
+```{r MeasuredHab, results = 'asis', echo=FALSE, message=FALSE, warning = FALSE}
+
+sampleSizeBos <- read.csv2("../Data/Steekproef/SteekproefGrootteBosHabitats_Versie2015.csv") %>%
+  mutate(nGewenst_3y = floor(nGewenst / 4),
+         nGewenst_6y = floor(nGewenst / 2),
+         nGewenst_Tot = floor(nGewenst)) %>%
+   select( HabObserved , SBZH, nGewenst_3y, nGewenst_6y, nGewenst_Tot)
+
+overzicht_Observed_Year <-  overzicht_BosHabitats %>%
+  filter(Measured == "ja" ) %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  mutate(Year = format(as.Date(Date), "%Y")) %>%
+  group_by( HabObserved, SBZH, Year) %>%
+  summarise(n_Measured_Total = n()) %>%
+  ungroup() %>%
+  spread(key = Year, value = n_Measured_Total, fill = 0) %>%
+  mutate(SBZH = ifelse(SBZH == 1, "Binnen", "Buiten"),
+         TotalMeasured = `2015` + `2016`) %>%
+  full_join(sampleSizeBos, by =c("HabObserved","SBZH")) %>%
+  arrange(HabObserved, SBZH) %>%
+  filter(!(nGewenst_Tot == 0 & is.na(TotalMeasured))) %>%
+  filter(HabObserved != "91E0_sf") %>%
+  mutate(TotalMeasured = ifelse(is.na(TotalMeasured), 0, TotalMeasured),
+         `2015` = ifelse(is.na(`2015`), 0, `2015`),
+         `2016` = ifelse(is.na(`2016`), 0, `2016`))
+
+overzicht_Observed_Year %>%
+kable(booktabs = T, format = "latex", caption = "Overzicht opgemeten punten en gewenst aantal opnames na 3 en 6 jaar") %>%
+   kable_styling(latex_options = c("hold_position"))
+
+```
+
+## Overzicht trefkans
+
+Tabel \@ref(tab:trefkans) geeft een overzicht van de geobserveerde trefkans per habitat(sub)type. Trefkans_Target geeft de kans aan dat het doelhabitat wordt aangetroffen. Maar in sommige gevallen kan er ook een opname gebeuren als er een ander habitat dan het doelhabitat worden aangetroffen. Trefkans_Totaal geeft de verhouding tussen het totaal aantal opgemeten punten van een habitat(sub)type en het totaal aantal bezochte punten uit de steekproef voor dit habitat(sub)type.
+
+
+
+
+```{r trefkans,  echo=FALSE, message=FALSE, warning = FALSE}
+
+overzicht_BosHabitats_long <- overzicht_BosHabitats %>%
+  filter(Visited == "ja") %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  gather(HabTarget1, HabTarget2, key = nHabTarget, value = HabTarget) %>%
+  filter(!is.na(HabTarget))
+
+overzicht_Target <-  overzicht_BosHabitats_long %>%
+  group_by( HabTarget, SBZH) %>%
+  summarise(n_Visited = n(),
+            n_Measured = sum(Measured == "ja"),
+            n_Measured_Target =  sum(HabTarget == HabObserved & Measured == "ja"))
+
+overzicht_Observed <-  overzicht_BosHabitats %>%
+  filter(Measured == "ja") %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  group_by(HabObserved, SBZH) %>%
+  summarise(n_Measured_Total = n())
+
+overzicht_trefkans <- full_join(rename(overzicht_Target, Hab = HabTarget), 
+                                rename(overzicht_Observed, Hab = HabObserved), 
+                                by = c("Hab", "SBZH")) %>%
+  select(-n_Measured) %>%
+  mutate(n_Measured_Total = ifelse(is.na(n_Measured_Total), 0, n_Measured_Total),
+         Trefkans_Target = n_Measured_Target/ n_Visited,
+         Trefkans_Total = n_Measured_Total/n_Visited)
+
+overzicht_trefkans$Trefkans_Target <- round(overzicht_trefkans$Trefkans_Target,2)
+overzicht_trefkans$Trefkans_Total <- round(overzicht_trefkans$Trefkans_Total,2)
+
+overzicht_trefkans %>%
+kable(booktabs = T, format = "latex", caption ="Overzicht trefkans") %>%
+   kable_styling(latex_options = c("hold_position"))
+
+```
+
+
+```{r dataVerkenning3, results = 'asis', echo=FALSE, message=FALSE, warning = FALSE}
+
+#kable(addmargins(table(as.character(habMatch_measured$HabTarget1),as.character(habMatch_measured$HabObserved),dnn = c("a","b"))))
+
+```
+
+## Planning 2018-2020
+
+In 2018 start jaar 4 van de meetnetcyclus. We blijven de oorspronkelijke planning volgen. D.w.z. dat tegen 2020 alle meetpunten van 'jaar 1' tot 'jaar 6' afgewerkt zouden moeten zijn.  
+
+Tabel \@ref(tab:planningTabel) geeft een overzicht van de nog te bezoeken punten conform de oorspronkelijke planning. Er zijn nog redelijk wat punten uit 'jaar 1 tot 3' die nog bezocht moeten worden. We zitten dus ietsje achter op schema. Tabel \@ref(tab:planningTabel) geeft ook aan voor welke punten er al een orthocontrole is gebeurd. De punten die nog niet zijn gecontroleerd zullen in de loop van 2018 nagekeken worden door INBO.   
+
+
+```{r planning, results = 'asis', echo=FALSE, message=FALSE, warning = FALSE}
+
+#sampleBos <- getSample(fileSample = sampleBosFile)
+
+planning456 <-  overzicht_BosHabitats %>%
+  filter(IDSegments == 1 | is.na(IDSegments)) %>%
+  gather(HabTarget1, HabTarget2, key = nHabTarget, value = HabTarget) %>%
+  filter(!is.na(HabTarget)) %>%
+  filter(Status == "To do") %>%
+  mutate(Periode = ifelse(Year_planning <= 3, "Jaar 1 tot 3", "Jaar 4 tot 6"),
+         Orthocontrole = ifelse(Orthocontr == "0", "nee", "ja")) %>%
+  group_by(Periode, HabTarget, Orthocontrole) %>%
+  summarise(nPlots = n()) %>%
+  arrange(Periode, Orthocontrole) %>%
+  ungroup()
+  
+planning456_wide <- planning456 %>%
+  #select(-Orthocontrole) %>%
+  spread(key = Periode, value = nPlots, fill = 0)%>%
+  arrange(Orthocontrole)
+
+
+```
+
+
+```{r planningTabel, results = 'asis', echo=FALSE, message=FALSE, warning = FALSE}
+planning456_wide %>%
+kable(booktabs = T, format = "latex", caption ="Overzicht planning") %>%
+   kable_styling(latex_options = c("hold_position"))
+```
