@@ -2380,7 +2380,7 @@ berekenAVVegetatielagen <- function(db = dbVBI2, plotIDs = NULL) {
 berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
   treesA3A4MHK <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
-  shootsMHK <- getShootsVBI2(db = db, plotIDs = plotID)
+  shootsMHK <- getShootsVBI2(db = db, plotIDs = plotIDs)
   treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
   logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
 
