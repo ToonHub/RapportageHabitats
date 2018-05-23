@@ -58,6 +58,8 @@ dbVBIAnalyse <- "../Data/MeetgegevensVBI2/Versie3/VBI_AnalyseDatabank_v2016-08-3
 
 dbVBIExterneData<-"../Data/ExterneData/VBIExterneData.accdb"
 schaalInfo  <- "../LSVIData/Schalen.csv"
+indicatorenLSVI_fn <- "../LSVIData/Indicatoren_LSVI.csv"
+soortengroepenLSVI_fn <- "../LSVIData/Soortengroepen_LSVI.csv"
 
 #---------------------
 #../Databank strata
