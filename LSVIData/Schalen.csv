@@ -14,3 +14,12 @@ Beheermonitoringsschaal;4;B;Bedekkend;15;5;25
 Beheermonitoringsschaal;5;KB;Kwartbedekkend;37,5;25;50
 Beheermonitoringsschaal;6;HB;Halfbedekkend;62,5;50;75
 Beheermonitoringsschaal;7;D;Dominant;87,5;75;100
+Braun-Blanquet;1;;r       : < 5 % (1 - 2 );0,25;0;5
+Braun-Blanquet;2;;+      : < 5 % (3 - 20);1;0;5
+Braun-Blanquet;3;;1      : < 5 % (20 - 100);2,25;0;5
+Braun-Blanquet;4;;2m   : < 5 % (> 100);4;0;5
+Braun-Blanquet;5;;2a     : 5 - 12,5 %;8,75;5;12,5
+Braun-Blanquet;6;;2b     : 12,5 - 25 %;18,75;12,5;25
+Braun-Blanquet;7;;3       : 25 - 50  %;37,5;25;50
+Braun-Blanquet;8;;4       : 50 - 75 %;62,5;50;75
+Braun-Blanquet;9;;5       : 75 - 100 %;87,5;75;100
