@@ -781,7 +781,7 @@ getCoverSpeciesVBI2 <- function (db =  dbVBI2, dbExterneData = dbVBIExterneData,
   herblayerOrig <- sqlQuery(connectieVBI2, query_herblayer, stringsAsFactors = FALSE)
   shrublayerOrig <- sqlQuery(connectieVBI2, query_shrublayer, stringsAsFactors = FALSE)
   treelayerOrig <- sqlQuery(connectieVBI2, query_treelayer, stringsAsFactors = FALSE)
-  scaleBBOrig <- sqlQuery(connectieVBI2,query_scaleBB, stringsAsFactors = FALSE)
+  #scaleBBOrig <- sqlQuery(connectieVBI2,query_scaleBB, stringsAsFactors = FALSE)
 
   odbcClose(connectieVBI2)
 
@@ -808,9 +808,9 @@ getCoverSpeciesVBI2 <- function (db =  dbVBI2, dbExterneData = dbVBIExterneData,
            NameSc = Value1.1) %>%
    mutate(Vegetatielaag = "boomlaag")
 
-  scaleBB <- scaleBBOrig %>%
-   rename(BBID = ID,
-         ClassName = Value1)
+  # scaleBB <- scaleBBOrig %>%
+  #  rename(BBID = ID,
+  #        ClassName = Value1)
 
   veglayers <- bind_rows(herblayer,shrublayer,treelayer) %>%
     rename(BBID = Coverage)
@@ -835,9 +835,12 @@ getCoverSpeciesVBI2 <- function (db =  dbVBI2, dbExterneData = dbVBIExterneData,
 
  # odbcClose(connectieExterneData)
 
-  scaleBB$Cover <- c(0.25, 1, 2.25, 4, 8.75, 18.75, 37.5, 62.5, 87.5)
+  # scaleBB$Cover <- c(0.25, 1, 2.25, 4, 8.75, 18.75, 37.5, 62.5, 87.5)
+  #
+  # veglayers$Scale <- "Braun-Blanquet"
 
-  veglayers$Scale <- "Braun-Blanquet"
+  scaleBB <- selectScale("Braun-Blanquet") %>%
+    select(BBID  = KlasseID, Cover = BedekkingGem)
 
   veglayers_Cover <- veglayers %>%
     left_join(scaleBB, by ="BBID") %>%
@@ -3060,18 +3063,15 @@ calculateLSVI_structuurplotHeide <- function(structurePlot, plotHabtypes, versie
 
 calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekkingVeglagen  ,versieLSVI = "beide"){
 
-
-
-
   ### Soortenlijst opvragen voor gewenste versie van LSVI
 
-  connDB <-   odbcConnectAccess2007(dbLSVI)
+  # connDB <-   odbcConnectAccess2007(dbLSVI)
 
-  soortenlijstLSVI <- sqlQuery(connDB, 'select * from tblSoortenlijst_LSVI_HeideEnBoshabitats')
+  soortenlijstLSVI <- read.csv2(soortengroepenLSVI_fn)
   #soortenlijstLSVI <- soortenlijstLSVI[soortenlijstLSVI$LSVI_v3==1,]
-  indicatorenLSVI <- sqlQuery(connDB, 'select * from tblIndicatoren_LSVI_HeideEnBoshabitats')
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
 
-  odbcClose(connDB)
+  # odbcClose(connDB)
 
   # Long formaat
   soortenlijstLSVI <- soortenlijstLSVI %>%
