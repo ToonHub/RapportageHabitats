@@ -2369,11 +2369,55 @@ berekenAVVegetatielagen <- function(db = dbVBI2, plotIDs = NULL) {
       select(IDPlots, AantalTarlijkeVegetatielagen)
 
 
-    }
+}
 
 
+#######################################################################################
 
+berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
+  treesA3A4MHK <- getTreesA3A4MHK(db = dbBosExtra, plotIDs = data_habitat_9160$IDPlots)
+  shootsMHK <- getShootsVBI2(db = dbBosExtra, plotIDs = data_habitat_9160$IDPlots)
+  treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
+  logs <- getLogsVBI2(db = dbBosExtra, plotIDs = data_habitat_9160$IDPlots)
+
+  doodHoutStaand <- treesA3A4_Vol %>%
+  group_by(IDPlots, IDSegments) %>%
+  summarise(StaandDoodHout = sum(Volume_ha * (StatusTree == "dood"), na.rm = TRUE),
+            StaandLevendHout =  sum(Volume_ha * (StatusTree == "levend"), na.rm = TRUE),
+            DikStaandDoodHout = sum((Diameter_cm > 40) * (StatusTree == "dood") * 10000 / AreaA4_m2, na.rm =TRUE))
+
+  doodHoutLiggend <- logs %>%
+    group_by(IDPlots) %>%
+    summarise(LiggendDoodHout = sum(Volume_ha, na.rm = TRUE))
+
+  doodHout <- doodHoutStaand %>%
+    left_join(doodHoutLiggend, by = "IDPlots") %>%
+    mutate(LiggendDoodHout = ifelse(is.na(LiggendDoodHout), 0, LiggendDoodHout)) %>%
+    gather(StaandDoodHout, StaandLevendHout, DikStaandDoodHout, LiggendDoodHout, key = "Kenmerk", value = "Waarde" ) %>%
+    mutate(Eenheid = ifelse(Kenmerk == "DikStaandDoodHout", "Aantal_ha", "Volume_ha"),
+           TypeKenmerk = NA,
+           Type = NA)
+
+  return(doodHout)
+
+}
+
+#######################################################################################
+
+berekenAVDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
+
+  doodHoutAV <- doodHout %>%
+  select(-Eenheid) %>%
+  spread(key = "Kenmerk", value = "Waarde" ) %>%
+  mutate(volumeAandeelDoodHout = (StaandDoodHout + LiggendDoodHout)/(StaandDoodHout + StaandLevendHout + LiggendDoodHout),
+         dikDoodHoutStaand_ha = DikStaandDoodHout) %>%
+  select(IDPlots, IDSegments, volumeAandeelDoodHout, dikDoodHoutStaand_ha) %>%
+  gather(volumeAandeelDoodHout, dikDoodHoutStaand_ha,  key = "AnalyseVariabele", value = "Waarde")
+
+  return(doodHoutAV)
+
+}
 
 
 #######################################################################################
@@ -2382,21 +2426,23 @@ berekenAVVegetatielagen <- function(db = dbVBI2, plotIDs = NULL) {
 
 calculateLSVI_dendroVBI2 <- function(db = dbVBI2, plotHabtypes, niveau = "segment", versieLSVI = "versie3"){
 
-  connDB <-   odbcConnectAccess2007(dbLSVI)
-  soortenlijstLSVI <- sqlQuery(connDB, 'select * from tblSoortenlijst_LSVI_HeideEnBoshabitats')
-  indicatorenLSVI <- sqlQuery(connDB, 'select * from tblIndicatoren_LSVI_HeideEnBoshabitats')
-  odbcClose(connDB)
+  # connDB <-   odbcConnectAccess2007(dbLSVI)
+  # soortenlijstLSVI <- sqlQuery(connDB, 'select * from tblSoortenlijst_LSVI_HeideEnBoshabitats')
+  # indicatorenLSVI <- sqlQuery(connDB, 'select * from tblIndicatoren_LSVI_HeideEnBoshabitats')
+  # odbcClose(connDB)
+
+  indicatorenLSVI <- read.csv2(indicatorenLSVI)
 
   ### Soortenlijst opvragen voor gewenste versie van LSVI
-  if (versieLSVI == "versie3"){
-
-    soortenlijstLSVI <- soortenlijstLSVI[soortenlijstLSVI$Versie3==1,]
-
-  } else if (versieLSVI == "versie2") {
-
-    soortenlijstLSVI <- soortenlijstLSVI[soortenlijstLSVI$Versie2==1,]
-
-  }
+  # if (versieLSVI == "versie3"){
+  #
+  #   soortenlijstLSVI <- soortenlijstLSVI[soortenlijstLSVI$Versie3==1,]
+  #
+  # } else if (versieLSVI == "versie2") {
+  #
+  #   soortenlijstLSVI <- soortenlijstLSVI[soortenlijstLSVI$Versie2==1,]
+  #
+  # }
 
 
   # data voor berekening indicatoren
