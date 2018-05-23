@@ -2376,10 +2376,10 @@ berekenAVVegetatielagen <- function(db = dbVBI2, plotIDs = NULL) {
 
 berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
-  treesA3A4MHK <- getTreesA3A4MHK(db = dbBosExtra, plotIDs = data_habitat_9160$IDPlots)
-  shootsMHK <- getShootsVBI2(db = dbBosExtra, plotIDs = data_habitat_9160$IDPlots)
+  treesA3A4MHK <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
+  shootsMHK <- getShootsVBI2(db = db, plotIDs = plotID)
   treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
-  logs <- getLogsVBI2(db = dbBosExtra, plotIDs = data_habitat_9160$IDPlots)
+  logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
 
   doodHoutStaand <- treesA3A4_Vol %>%
   group_by(IDPlots, IDSegments) %>%
@@ -2407,6 +2407,8 @@ berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
 berekenAVDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
+  doodHout <- berekenDoodHout(db, plotIDs, niveau)
+
   doodHoutAV <- doodHout %>%
   select(-Eenheid) %>%
   spread(key = "Kenmerk", value = "Waarde" ) %>%
@@ -2416,6 +2418,58 @@ berekenAVDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
   gather(volumeAandeelDoodHout, dikDoodHoutStaand_ha,  key = "AnalyseVariabele", value = "Waarde")
 
   return(doodHoutAV)
+
+}
+
+#######################################################################################
+
+berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
+
+  treesA3A4MHK <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
+  shootsMHK <- getShootsVBI2(db = db, plotIDs = plotIDs)
+  treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
+  logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
+
+  levendHoutSoort <- treesA3A4_Vol %>%
+    group_by(IDPlots, IDSegments, NameSc) %>%
+    summarise(Volume_ha = sum(Volume_ha * (StatusTree == "levend"), na.rm = TRUE),
+              Grondvlak_ha = sum(BasalArea_ha  * (StatusTree == "levend"), na.rm =TRUE)) %>%
+    ungroup() %>%
+    gather(Volume_ha, Grondvlak_ha, key = Eenheid, value = Waarde) %>%
+    rename(Kenmerk = NameSc) %>%
+    mutate(TypeKenmerk = "Soort_Lat",
+           Type = NA)
+
+}
+
+#######################################################################################
+
+berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotHabtypes, niveau = "plot"){
+
+  sleutelsoortenBossen <- geefSoortenlijst(Habitatgroep = "Bossen en struwelen", Indicator = "sleutelsoorten van de boom- en struiklaag") %>%
+    select(Versie, HabCode = Habitatsubtype, Soort_lat = WetNaam)
+
+  levendHout <- berekenLevendHoutSoort(db, plotIDs, niveau)
+
+  levendHoutSs <- levendHout %>%
+    filter(Eenheid == "Grondvlak_ha") %>%
+    left_join(plotHabtypes, by = "IDPlots") %>%
+    rename(Soort_lat = Kenmerk) %>%
+    mutate(Soort_lat = ifelse(Soort_lat == "Quercus robur/petraea", "Quercus robur", as.character(Soort_lat)), # inlandse eik
+           Soort_lat = ifelse(Soort_lat == "Betula tremula/alba", # berk
+                              ifelse(HabCode %in% c("9110", "9120", "9130", "9160", "91E0_vo", "91E0_vm"), "Betula pendula Roth", "Betula pubescens Ehrh."),
+                              as.character(Soort_lat))) %>%
+    group_by(IDPlots, IDSegments) %>%
+    mutate(GrondvlakLevendTot = sum(Waarde, na.rm = TRUE)) %>%
+    ungroup() %>%
+    left_join(sleutelsoortenBossen, by = c("HabCode", "Soort_lat")) %>%
+    filter(!is.na(Versie)) %>%
+    group_by(IDPlots, IDSegments, Versie) %>%
+    summarise(Waarde = sum(Waarde, na.rm = TRUE)/ unique(GrondvlakLevendTot),
+              AnalyseVariabele = "sleutelsoorten_boomlaag_grondvlakAandeel") %>%
+    ungroup()
+
+  return(levendHoutSs)
 
 }
 
