@@ -2349,12 +2349,12 @@ berekenAVGroeiklassen <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot") 
 
   groeiklassenAV <- groeiklassen %>%
     group_by(IDPlots, IDSegments) %>%
-    summarise(AantalGroeiklassen = sum(Waarde, na.rm = TRUE),
-              Groeiklasse7 = sum((Groeiklasse == "Groeiklasse7") * Waarde, na.rm = TRUE),
-              Groeiklasse4_5_6 = ifelse(sum(Groeiklasse %in% c("Groeiklasse4", "Groeiklasse5", "Groeiklasse6") * Waarde, na.rm = TRUE) > 0, 1, 0))
+    summarise(groeiklassen = sum(Waarde, na.rm = TRUE),
+              groeiklasse7 = sum((Groeiklasse == "Groeiklasse7") * Waarde, na.rm = TRUE),
+              groeiklasse4_5_6 = ifelse(sum(Groeiklasse %in% c("Groeiklasse4", "Groeiklasse5", "Groeiklasse6") * Waarde, na.rm = TRUE) > 0, 1, 0))
 
   result <- groeiklassenAV %>%
-    gather(AantalGroeiklassen, Groeiklasse7, Groeiklasse4_5_6, key = AnalyseVariabele, value = Waarde)
+    gather(groeiklassen, groeiklasse7, groeiklasse4_5_6, key = AnalyseVariabele, value = Waarde)
 
   return(result)
 }
@@ -2368,8 +2368,12 @@ berekenAVVegetatielagen <- function(db = dbVBI2, plotIDs = NULL) {
   filter(KlasseCode == "T")
 
     veglagenAV <- veglagen_bedekking %>%
-      mutate(AantalTarlijkeVegetatielagen = (CoverShrublayer >= klasseTalrijk$BedekkingGem) + (CoverTreelayer >= klasseTalrijk$BedekkingGem) + (CoverHerbAndMosslayer >=  klasseTalrijk$BedekkingGem)) %>%
-      select(IDPlots, AantalTarlijkeVegetatielagen)
+      mutate(Waarde = (CoverShrublayer >= klasseTalrijk$BedekkingGem) + (CoverTreelayer >= klasseTalrijk$BedekkingGem) + (CoverHerbAndMosslayer >=  klasseTalrijk$BedekkingGem),
+             AnalyseVariabele = "talrijkeVegetatielagen",
+             IDSegments = 1) %>%
+      select(IDPlots, IDSegments, AnalyseVariabele, Waarde)
+
+    return(veglagenAV)
 
 
 }
@@ -2415,7 +2419,7 @@ berekenAVDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
   doodHoutAV <- doodHout %>%
   select(-Eenheid) %>%
   spread(key = "Kenmerk", value = "Waarde" ) %>%
-  mutate(volumeAandeelDoodHout = (StaandDoodHout + LiggendDoodHout)/(StaandDoodHout + StaandLevendHout + LiggendDoodHout),
+  mutate(volumeAandeelDoodHout = (StaandDoodHout + LiggendDoodHout)/(StaandDoodHout + StaandLevendHout + LiggendDoodHout) * 100,
          dikDoodHoutStaand_ha = DikStaandDoodHout) %>%
   select(IDPlots, IDSegments, volumeAandeelDoodHout, dikDoodHoutStaand_ha) %>%
   gather(volumeAandeelDoodHout, dikDoodHoutStaand_ha,  key = "AnalyseVariabele", value = "Waarde")
@@ -2447,10 +2451,25 @@ berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot")
 
 #######################################################################################
 
-berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotHabtypes, niveau = "plot"){
+berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotHabtypes, niveau = "plot", offline = FALSE){
 
-  sleutelsoortenBossen <- geefSoortenlijst(Habitatgroep = "Bossen en struwelen", Indicator = "sleutelsoorten van de boom- en struiklaag") %>%
+  if(!offline){
+
+    sleutelsoortenBossen <- geefSoortenlijst(Habitatgroep = "Bossen en struwelen", Indicator = "sleutelsoorten van de boom- en struiklaag") %>%
     select(Versie, HabCode = Habitatsubtype, Soort_lat = WetNaam)
+
+  } else {
+
+    soortengroepenLSVI <- read.csv2(soortengroepenLSVI_fn)
+
+    sleutelsoortenBossen <- soortengroepenLSVI %>%
+      filter(Omschrijving == "sleutelsoorten_boomlaag") %>%
+      gather( Versie2, Versie3, key = Versie, value = Selectie) %>%
+      filter(Selectie == 1 & !is.na(Selectie)) %>%
+      select(Versie, HabCode, Soort_lat = WetNaam)
+
+  }
+
 
   levendHout <- berekenLevendHoutSoort(db, plotIDs, niveau)
 
@@ -2458,7 +2477,7 @@ berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotH
     filter(Eenheid == "Grondvlak_ha") %>%
     left_join(plotHabtypes, by = "IDPlots") %>%
     rename(Soort_lat = Kenmerk) %>%
-    mutate(Soort_lat = ifelse(Soort_lat == "Quercus robur/petraea", "Quercus robur", as.character(Soort_lat)), # inlandse eik
+    mutate(Soort_lat = ifelse(Soort_lat == "Quercus robur/petraea", "Quercus robur L.", as.character(Soort_lat)), # inlandse eik
            Soort_lat = ifelse(Soort_lat == "Betula tremula/alba", # berk
                               ifelse(HabCode %in% c("9110", "9120", "9130", "9160", "91E0_vo", "91E0_vm"), "Betula pendula Roth", "Betula pubescens Ehrh."),
                               as.character(Soort_lat))) %>%
@@ -2467,8 +2486,8 @@ berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotH
     ungroup() %>%
     left_join(sleutelsoortenBossen, by = c("HabCode", "Soort_lat")) %>%
     filter(!is.na(Versie)) %>%
-    group_by(IDPlots, IDSegments, Versie) %>%
-    summarise(Waarde = sum(Waarde, na.rm = TRUE)/ unique(GrondvlakLevendTot),
+    group_by(IDPlots, IDSegments, Versie, HabCode) %>%
+    summarise(Waarde = sum(Waarde, na.rm = TRUE)/ unique(GrondvlakLevendTot) *100,
               AnalyseVariabele = "sleutelsoorten_boomlaag_grondvlakAandeel") %>%
     ungroup()
 
@@ -2478,6 +2497,49 @@ berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotH
 
 
 #######################################################################################
+
+berekenLSVIboshabitats_VBI2 <- function(db = dbVBI2, plotHabtypes, niveau = "plot", versieLSVI = "versie3"){
+
+  #analysevariabelen die niet versie-afhankelijk zijn
+dendroAV <- bind_rows(berekenAVGroeiklassen(db, plotIDs = plotHabtypes$IDPlots ),
+                      berekenAVVegetatielagen(db, plotIDs = plotHabtypes$IDPlots ),
+                      berekenAVDoodHout(db, plotIDs = plotHabtypes$IDPlots )) %>%
+  left_join(plotHabtypes, by = "IDPlots") %>%
+  inner_join(indicatorenLSVI, by = c( "AnalyseVariabele" , "HabCode"))
+
+#analysevariabele die wel versie-afhankelijk is
+sleutelSoorten <- berekenAVLevendHoutSleutelsoorten(db, plotIDs = plotHabtypes$IDPlots, plotHabtypes, offline = TRUE) %>%
+  rename(VersieLSVI = Versie) %>%
+  mutate(VersieLSVI = tolower(VersieLSVI)) %>%
+  left_join(indicatorenLSVI, by = c( "AnalyseVariabele" , "HabCode", "VersieLSVI"))
+
+
+AVDendro <- bind_rows(dendroAV, sleutelSoorten) %>%
+  mutate(Beoordeling = ifelse(Indicatortype == "positief",
+                              ifelse(Waarde >= Drempelwaarde, 1, 0),
+                              ifelse(Indicatortype == "negatief",
+                                     ifelse(Waarde < Drempelwaarde, 1, 0),
+                                     NA)))
+
+coverSpecies <- getCoverSpeciesVBI2(db, plotIDs = plotHabtypes$IDPlots)
+coverVeglayers <- getCoverVeglayersVBI2(db, plotIDs = plotHabtypes$IDPlots)
+
+#analysevariabele op basis van vegetatieopname --> versieafhankelijk
+AVSpecies <- calculateLSVI_vegetatieopname(plotHabtypes, coverSpecies, coverVeglayers)
+
+AVTot <- bind_rows(AVSpecies, AVDendro) %>%
+  arrange(IDPlots, Criterium, Indicator, AnalyseVariabele) %>%
+  select(IDPlots, IDSegments, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Meting, Combinatie, Waarde, Beoordeling) %>%
+  ungroup()
+
+return(AVTot)
+
+}
+
+
+
+
+
 
 ### Berekening indicatoren habitatstructuur van boshabitats + berekening grondvlakaandeel sleutelsoorten (vegetatie-indicator)
 
