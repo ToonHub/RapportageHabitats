@@ -2288,7 +2288,7 @@ getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015){
 berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
   # groeiklasse 4 tot groeiklasse 6 leiden we af uit A3A4 bomen
-  treesA3A4 <- getTreesA3A4RawData(db = db, plotIDs = plotIDs)
+  treesA3A4 <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
 
   # als we analyse op plotniveau wensen dan zetten we IDSegments overal op 1
   if (niveau == "plot"){
@@ -2297,7 +2297,7 @@ berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"
 
   #voor hakhout bepalen we de groeiklasse op basis van de maixmale diameter van de shoots
   shoots <- getShootsVBI2(db,plotIDs = plotIDs) %>%
-    group_by(IDPlots, ID) %>%
+    group_by(IDPlots,ID) %>%
     summarise(DBH_mm_max = max(DBH_MM)) %>%
     ungroup()
 
@@ -2385,13 +2385,31 @@ berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
   treesA3A4MHK <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
   shootsMHK <- getShootsVBI2(db = db, plotIDs = plotIDs)
+
+  if(niveau == "plot"){
+
+    plotSize_adj <- treesA3A4MHK %>%
+      group_by(IDPlots, IDSegments) %>%
+      summarise(AreaA4_m2_segment = unique(AreaA4_m2),
+                AreaA3_m2_segment = unique(AreaA3_m2)) %>%
+      group_by(IDPlots) %>%
+      summarise(AreaA4_m2 = sum(AreaA4_m2_segment),
+                AreaA3_m2 = sum(AreaA3_m2_segment))
+
+    treesA3A4MHK <- treesA3A4MHK %>%
+      mutate(IDSegments = 1) %>%
+      select(-AreaA4_m2, -AreaA3_m2) %>%
+      left_join(plotSize_adj, by = "IDPlots")
+
+  }
+
   treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
   logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
 
   doodHoutStaand <- treesA3A4_Vol %>%
   group_by(IDPlots, IDSegments) %>%
   summarise(StaandDoodHout = sum(Volume_ha * (StatusTree == "dood"), na.rm = TRUE),
-            StaandLevendHout =  sum(Volume_ha * (StatusTree == "levend"), na.rm = TRUE),
+            StaandLevendHout = sum(Volume_ha * (StatusTree == "levend"), na.rm = TRUE),
             DikStaandDoodHout = sum((Diameter_cm > 40) * (StatusTree == "dood") * 10000 / AreaA4_m2, na.rm =TRUE))
 
   doodHoutLiggend <- logs %>%
@@ -2434,6 +2452,24 @@ berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot")
 
   treesA3A4MHK <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
   shootsMHK <- getShootsVBI2(db = db, plotIDs = plotIDs)
+
+  if(niveau == "plot"){
+
+    plotSize_adj <- treesA3A4MHK %>%
+      group_by(IDPlots, IDSegments) %>%
+      summarise(AreaA4_m2_segment = unique(AreaA4_m2),
+                AreaA3_m2_segment = unique(AreaA3_m2)) %>%
+      group_by(IDPlots) %>%
+      summarise(AreaA4_m2 = sum(AreaA4_m2_segment),
+                AreaA3_m2 = sum(AreaA3_m2_segment))
+
+    treesA3A4MHK <- treesA3A4MHK %>%
+      mutate(IDSegments = 1) %>%
+      select(-AreaA4_m2, -AreaA3_m2) %>%
+      left_join(plotSize_adj, by = "IDPlots")
+
+  }
+
   treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
   logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
 
@@ -2451,7 +2487,7 @@ berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot")
 
 #######################################################################################
 
-berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotHabtypes, niveau = "plot", offline = FALSE){
+berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2,  plotHabtypes, niveau = "plot", offline = FALSE){
 
   if(!offline){
 
@@ -2470,12 +2506,11 @@ berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotH
 
   }
 
-
-  levendHout <- berekenLevendHoutSoort(db, plotIDs, niveau)
+  levendHout <- berekenLevendHoutSoort(db, plotIDs = plotHabtypes$IDPlots, niveau)
 
   levendHoutSs <- levendHout %>%
     filter(Eenheid == "Grondvlak_ha") %>%
-    left_join(plotHabtypes, by = "IDPlots") %>%
+    left_join(plotHabtypes, by = c("IDPlots", "IDSegments")) %>%
     rename(Soort_lat = Kenmerk) %>%
     mutate(Soort_lat = ifelse(Soort_lat == "Quercus robur/petraea", "Quercus robur L.", as.character(Soort_lat)), # inlandse eik
            Soort_lat = ifelse(Soort_lat == "Betula tremula/alba", # berk
@@ -2498,17 +2533,17 @@ berekenAVLevendHoutSleutelsoorten <- function(db = dbVBI2, plotIDs = NULL, plotH
 
 #######################################################################################
 
-berekenLSVIboshabitats_VBI2 <- function(db = dbVBI2, plotHabtypes, niveau = "plot", versieLSVI = "versie3"){
+berekenLSVIboshabitats_VBI2 <- function(db = dbVBI2, plotHabtypes,  versieLSVI = "versie3"){
 
   #analysevariabelen die niet versie-afhankelijk zijn
-dendroAV <- bind_rows(berekenAVGroeiklassen(db, plotIDs = plotHabtypes$IDPlots ),
+dendroAV <- bind_rows(berekenAVGroeiklassen(db, plotIDs = plotHabtypes$IDPlots, niveau = "plot" ),
                       berekenAVVegetatielagen(db, plotIDs = plotHabtypes$IDPlots ),
-                      berekenAVDoodHout(db, plotIDs = plotHabtypes$IDPlots )) %>%
-  left_join(plotHabtypes, by = "IDPlots") %>%
+                      berekenAVDoodHout(db, plotIDs = plotHabtypes$IDPlots, niveau = "plot" )) %>%
+  left_join(plotHabtypes, by = c("IDPlots", "IDSegments")) %>%
   inner_join(indicatorenLSVI, by = c( "AnalyseVariabele" , "HabCode"))
 
 #analysevariabele die wel versie-afhankelijk is
-sleutelSoorten <- berekenAVLevendHoutSleutelsoorten(db, plotIDs = plotHabtypes$IDPlots, plotHabtypes, offline = TRUE) %>%
+sleutelSoorten <- berekenAVLevendHoutSleutelsoorten(db,  plotHabtypes, niveau = "segment",offline = TRUE) %>%
   rename(VersieLSVI = Versie) %>%
   mutate(VersieLSVI = tolower(VersieLSVI)) %>%
   left_join(indicatorenLSVI, by = c( "AnalyseVariabele" , "HabCode", "VersieLSVI"))
