@@ -2181,7 +2181,7 @@ LEFT JOIN tblTarieven_1ing ON tblTariefgroepBoomsoort.TariefID = tblTarieven_1in
 ############################################################################################
 
 
-getStructurePlotHeide <- function(db = dbHeideEn6510_2014_2015){
+getStructurePlotHeide <- function(db = dbHeideEn6510_2014_2015, plotIDs = NULL){
 
   query_StructurePlotHeide <- "SELECT
   SiteDescription_HEIDE.IDPlots,
@@ -2216,20 +2216,23 @@ SiteDescription_HEIDE.Edit_date,
 
   structurePlots$Jaar <- as.numeric(format(as.Date(structurePlots$Edit_date), "%Y"))
 
-  tansleyScale <- data.frame(TansleyCode = c(1,5,11,16,22,23),Scale ="Tansley", Class = c("zeldzaam","occasioneel","frequent","abundant","codominant","dominant" ), Cover = c(0.5, 2.5, 15, 27.5,45,75 ))
+  tansleyScale <- selectScale("Tansley") %>%
+    select(TansleyID = KlasseID, Cover = BedekkingGem)
+
+  # tansleyScale <- data.frame(TansleyCode = c(1,5,11,16,22,23),Scale ="Tansley", Class = c("zeldzaam","occasioneel","frequent","abundant","codominant","dominant" ), Cover = c(0.5, 2.5, 15, 27.5,45,75 ))
 
 # een deel van de structuurvariabelen steeds via Tansley-schaal bepaald
   structurePlots_Tansley_1 <- structurePlots %>%
     select(IDPlots, Jaar, LowShrublayer, starts_with("Calluna")) %>%
-    gather(-IDPlots, -Jaar, key = "StructureVar", value = "TansleyCode") %>%
-    left_join(tansleyScale, by = "TansleyCode")
+    gather(-IDPlots, -Jaar, key = "StructureVar", value = "TansleyID") %>%
+    left_join(tansleyScale, by = "TansleyID")
 
 # een deel van de structuurvariabelen via via Tansley-schaal bepaald voor 2016 en via bedekking na 2016 --> moet nog aangepast worden in de databank
   structurePlots_Tansley_2 <- structurePlots %>%
     select(-Edit_date, -LowShrublayer, -starts_with("Calluna"), -Shrub_and_Treelayer_18m) %>%
     filter(Jaar < 2016) %>%
-    gather(-IDPlots, -Jaar, key = "StructureVar", value = "TansleyCode") %>%
-    left_join(tansleyScale, by = "TansleyCode")
+    gather(-IDPlots, -Jaar, key = "StructureVar", value = "TansleyID") %>%
+    left_join(tansleyScale, by = "TansleyID")
 
   structurePlots_Cover_1 <- structurePlots %>%
     select(-Edit_date, -LowShrublayer, -starts_with("Calluna"), -Shrub_and_Treelayer_18m) %>%
@@ -2251,7 +2254,18 @@ SiteDescription_HEIDE.Edit_date,
   structurePlots_cover_wide <- structurePlots_cover_long %>%
     spread(key = StructureVar, value = Cover)
 
-  return(structurePlots_cover_wide)
+   if (is.null(plotIDs)){
+
+    result <- structurePlots_cover_wide
+
+  } else {
+
+    result <- structurePlots_cover_wide %>%
+      filter(IDPlots %in% plotIDs)
+
+  }
+
+  return(result)
 
 }
 
@@ -2553,7 +2567,7 @@ AVDendro <- bind_rows(dendroAV, sleutelSoorten) %>%
   mutate(Beoordeling = ifelse(Indicatortype == "positief",
                               ifelse(Waarde >= Drempelwaarde, 1, 0),
                               ifelse(Indicatortype == "negatief",
-                                     ifelse(Waarde < Drempelwaarde, 1, 0),
+                                     ifelse(Waarde <= Drempelwaarde, 1, 0),
                                      NA)))
 
 coverSpecies <- getCoverSpeciesVBI2(db, plotIDs = plotHabtypes$IDPlots)
@@ -3062,91 +3076,99 @@ indicatoren$Beoordeling <- ifelse (indicatoren$Indicatortype == "negatief", ifel
 
 ###########################################################################################################
 
+getOuderdomstructuur <- function(db = dbHeideEn6510_2018, plotIDs = NULL){
 
-calculateLSVI_structuurplotHeide <- function(structurePlot, plotHabtypes, versieLSVI = "beide"){
+  ouderdomStadia <- getStructurePlotHeide(db, plotIDs) %>%
+    rename(Pioniersstadium = Calluna_phase_pioneer,
+          Ontwikkelingsstadium = Calluna_phase_devel,
+          Climaxstadium = Calluna_phase_climax,
+          Degradatiesatdium = Calluna_phase_degen) %>%
+  select(IDPlots, Pioniersstadium, Ontwikkelingsstadium, Climaxstadium, Degradatiesatdium) %>%
+  gather(-IDPlots, key = "Kenmerk", value = "Waarde") %>%
+  mutate(Waarde = ifelse(is.na(Waarde), 0, Waarde),
+    Type = "Percentage",
+         TypeKenmerk = "studiegroep",
+         Invoertype = NA,
+         Eenheid = "%")
 
-  structurePlotHeide <- structurePlot
+
+    return(ouderdomStadia)
+
+
+}
+
+#############################
+
+
+
+berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes, versieLSVI = "beide"){
+
+  structurePlotHeide <- getStructurePlotHeide(db, plotHabtypes$IDplots)
 
   ### Indicatoren opvragen voor beide versies van LSVI
-  connDB <-   odbcConnectAccess2007(dbLSVI)
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
 
-  indicatorenLSVI <- sqlQuery(connDB, 'select * from tblIndicatoren_LSVI_HeideEnBoshabitats')
+  klasseTalrijk <- selectScale("Beheermonitoringsschaal") %>%
+  filter(KlasseCode == "T")
 
-  odbcClose(connDB)
+  structurePlotHeideAV <- structurePlotHeide %>%
+    mutate(dwergstruiken = ifelse(is.na(LowShrublayer),0, LowShrublayer), # dwergstruiken
 
-  # dwergstruiken
-  structurePlotHeide$dwergstruiken <-ifelse(is.na(structurePlotHeide$LowShrublayer),0, structurePlotHeide$LowShrublayer)
+           # ouderdomstructuur struikhei
+            BedekkingPionierstadium = ifelse(is.na(Calluna_phase_pioneer),0,Calluna_phase_pioneer),
+            BedekkingOntwikkelingsstadium = ifelse(is.na(Calluna_phase_devel),0,Calluna_phase_devel),
+            BedekkingClimaxstadium = ifelse(is.na(Calluna_phase_climax),0,Calluna_phase_climax),
+            BedekkingDegeneratiestadium = ifelse(is.na(Calluna_phase_degen),0,Calluna_phase_degen),
+            ouderdomstadia = (BedekkingPionierstadium >= klasseTalrijk$BedekkingGem) + (BedekkingOntwikkelingsstadium >= klasseTalrijk$BedekkingGem) + (BedekkingClimaxstadium >= klasseTalrijk$BedekkingGem) + (BedekkingDegeneratiestadium >= klasseTalrijk$BedekkingGem),
+           struikhei = ouderdomstadia > 0,
+           climaxOfDegradatieStadium = (BedekkingClimaxstadium >= klasseTalrijk$BedekkingGem) + (BedekkingDegeneratiestadium >= klasseTalrijk$BedekkingGem),
 
-  # ouderdomstructuur struikhei
-  structurePlotHeide$BedekkingPionierstadium <- ifelse(is.na(structurePlotHeide$Calluna_phase_pioneer),0,structurePlotHeide$Calluna_phase_pioneer)
-  structurePlotHeide$BedekkingOntwikkelingsstadium <- ifelse(is.na(structurePlotHeide$Calluna_phase_devel),0,structurePlotHeide$Calluna_phase_devel)
-  structurePlotHeide$BedekkingClimaxstadium <- ifelse(is.na(structurePlotHeide$Calluna_phase_climax),0,structurePlotHeide$Calluna_phase_climax)
-  structurePlotHeide$BedekkingDegeneratiestadium <- ifelse(is.na(structurePlotHeide$Calluna_phase_degen),0,structurePlotHeide$Calluna_phase_degen)
+           # bedekking naakte bodem
+            naakte_bodem = ifelse(is.na(Pioneer_phase_open_soil),0,Pioneer_phase_open_soil),
 
-  structurePlotHeide$ouderdomstadia <- (structurePlotHeide$BedekkingPionierstadium > 0) + (structurePlotHeide$BedekkingOntwikkelingsstadium > 0) + (structurePlotHeide$BedekkingClimaxstadium > 0) + (structurePlotHeide$BedekkingDegeneratiestadium > 0)
+           # pionierstadia/ bedekking open vegetatie
+           moslaag = ifelse(is.na(Pioneer_Mos), 0, Pioneer_Mos),
+           BedekkingBuntgras = ifelse(is.na(Pioneer_Coryn_Aira), 0, Pioneer_Coryn_Aira),
+           korstmosvegetaties = ifelse(is.na(Pioneer_Lichenen), 0, Pioneer_Lichenen),
+           pionierStadia = (naakte_bodem > 0) + (BedekkingBuntgras > 0) + (moslaag > 0) + (korstmosvegetaties > 0),
+           openVegetatieOfKaalZand = pmin(moslaag + korstmosvegetaties + BedekkingBuntgras + naakte_bodem, 100),
+           openVegetatie = pmin(moslaag + korstmosvegetaties +  BedekkingBuntgras, 100),
 
-  structurePlotHeide$struikhei <- structurePlotHeide$ouderdomstadia > 0
+          # bedekking moslaag (mos + korstmos)
+          BedekkingMosEnKorstmos = moslaag + korstmosvegetaties,
 
-  structurePlotHeide$climaxOfDegradatieStadium <- (structurePlotHeide$BedekkingClimaxstadium > 0) | (structurePlotHeide$BedekkingDegeneratiestadium > 0)
+          # bedekking veenmos
+          veenmoslaag = ifelse(is.na(Sphagnumlayer),0,Sphagnumlayer),
 
-  # bedekking naakte bodem
-  structurePlotHeide$naakte_bodem <- ifelse(is.na(structurePlotHeide$Pioneer_phase_open_soil),0,structurePlotHeide$Pioneer_phase_open_soil)
+          # verbossing
+          verbossing = Shrub_and_Treelayer_18m,
 
-  # pionierstadia/ bedekking open vegetatie
-  structurePlotHeide$moslaag <- ifelse(is.na(structurePlotHeide$Pioneer_Mos),0,structurePlotHeide$Pioneer_Mos)
-  structurePlotHeide$BedekkingBuntgras <- ifelse(is.na(structurePlotHeide$Pioneer_Coryn_Aira),0,structurePlotHeide$Pioneer_Coryn_Aira)
+          # vergrassing
+          vergrassing = ifelse(is.na(Herbs), 0, Herbs),
 
-  structurePlotHeide$korstmosvegetaties <- ifelse(is.na(structurePlotHeide$Pioneer_Lichenen),0,structurePlotHeide$Pioneer_Lichenen)
-  #
-  structurePlotHeide$pionierStadia <- (structurePlotHeide$naakte_bodem > 0) + (structurePlotHeide$BedekkingBuntgras > 0) + (structurePlotHeide$moslaag > 0) + (structurePlotHeide$korstmosvegetaties > 0)
+          # verruiging
+          verruiging = ifelse(is.na(Brushwood), 0, Brushwood),
 
-  structurePlotHeide$openVegetatieOfKaalZand <- pmin(structurePlotHeide$moslaag + structurePlotHeide$korstmosvegetaties + structurePlotHeide$naakte_bodem + structurePlotHeide$BedekkingBuntgras,100)
+          # vergrassing+verruiging
+          vergrassingEnVerruiging = vergrassing + verruiging,
 
-  structurePlotHeide$openVegetatie <- pmin(structurePlotHeide$moslaag + structurePlotHeide$korstmosvegetaties +  structurePlotHeide$BedekkingBuntgras, 100)
+          #invasieve exoten
+          invasieve_exoten = ifelse(is.na(Campylopus_introflexus), 0, Campylopus_introflexus)) %>%
+    gather(-IDPlots, -Jaar, key = "AnalyseVariabele", value = "Waarde") %>%
+    left_join(plotHabtypes, by = "IDPlots") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    mutate(Beoordeling = ifelse(Indicatortype == "positief",
+                              ifelse(Waarde >= Drempelwaarde, 1, 0),
+                              ifelse(Indicatortype == "negatief",
+                                     ifelse(Waarde <= Drempelwaarde, 1, 0),
+                                     NA))) %>%
+    arrange(IDPlots, versieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
+    select(IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Meting, Combinatie, Waarde, Beoordeling) %>%
+  ungroup()
 
-  # bedekking moslaag (mos + korstmos)
-  structurePlotHeide$BedekkingMosEnKorstmos <- structurePlotHeide$moslaag + structurePlotHeide$korstmosvegetaties
-
-  # bedekking veenmos
-  structurePlotHeide$veenmoslaag <- ifelse(is.na(structurePlotHeide$Sphagnumlayer),0,structurePlotHeide$Sphagnumlayer)
-
-  # verbossing
-  structurePlotHeide$verbossing <- structurePlotHeide$Shrub_and_Treelayer_18m
-
-  # vergrassing
-  structurePlotHeide$vergrassing <- ifelse(is.na(structurePlotHeide$Herbs),0,structurePlotHeide$Herbs)
-
-  # verruiging
-  structurePlotHeide$verruiging <- ifelse(is.na(structurePlotHeide$Brushwood),0,structurePlotHeide$Brushwood)
+  return(structurePlotHeideAV)
 
 
-  # vergrassing+verruiging
-  structurePlotHeide$vergrassingEnVerruiging <- structurePlotHeide$vergrassing + structurePlotHeide$verruiging
-
-  #invasieve exoten
-  structurePlotHeide$invasieve_exoten <- ifelse(is.na(structurePlotHeide$Campylopus_introflexus),0,structurePlotHeide$Campylopus_introflexus)
-
-  #result <- structurePlotHeide[,c("IDPlots","BedekkingDwergstruiken","AantalOuderdomstadiaAanwezig", "AantalOuderdomstadiaFrequent","VoorkomenClimaxOfDegeneratieStadium","BedekkingNaakteBodem", "BedekkingMosEnKorstmos","AantalPionierstadiaAanwezig","BedekkingOpenVegetatieZand", "BedekkingOpenVegetatie","BedekkingVeenmos","Vergrassing","Verruiging","VergrassingEnVerruiging","Verbossing","BedekkingInvasieveExoten")]
-
-  # habitattype per plot
-
-  structurePlotHeide <- merge (structurePlotHeide, plotHabtypes, by = "IDPlots")
-
-  structurePlotHeide_long <- melt(structurePlotHeide, id.vars = c("IDPlots","HabCode"),variable.name = "AnalyseVariabele", value.name = "Waarde")
-
-  structurePlotHeide_indicatoren <- merge(structurePlotHeide_long, indicatorenLSVI[indicatorenLSVI$Meting == "structuurplot",],  by = c("HabCode","AnalyseVariabele") )
-
-  indicatoren <- structurePlotHeide_indicatoren[,c("HabCode","IDPlots", "Criterium", "Indicator", "AnalyseVariabele", "Soortengroep", "Vegetatielaag","Eenheid", "Drempelwaarde","Indicatortype","Meting", "Combinatie", "Waarde","VersieLSVI")]
-
-  indicatoren$Beoordeling <- ifelse (indicatoren$Indicatortype == "negatief",
-                                     ifelse(indicatoren$Waarde <= indicatoren$Drempelwaarde, 1,0),
-                                     ifelse (indicatoren$Indicatortype == "positief",
-                                             ifelse(indicatoren$Waarde >= indicatoren$Drempelwaarde,
-                                                    1,
-                                                    0),
-                                             NA))
-
-  return (indicatoren)
 
 }
 
@@ -3506,6 +3528,12 @@ critVoorkomenSoorten <- function(NR, habitat, soorten="<ALL>", fun="Aantal", laa
               })
   rv
 }
+
+##############################################################################
+### Functies voor vertaling naar LSVI-Rekenmodule
+##############################################################################
+
+
 
 
 
