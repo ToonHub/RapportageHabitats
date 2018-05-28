@@ -2271,12 +2271,17 @@ SiteDescription_HEIDE.Edit_date,
 
 ############################################################################################
 
-getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015){
+getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015, plotIDs = NULL){
 
   query_StructurePlot6510 <- "SELECT
   SiteDescription_6510.IDPlots,
   SiteDescription_6510.Shrub_and_Treelayer_18m
   FROM SiteDescription_6510"
+
+  query_Litter <- "SELECT
+  VegPQ.IDPlots,
+  VegPQ.Litter
+  FROM VegPQ"
 
      if(substr(db,nchar(db)-3,nchar(db)) == ".mdb"){
     connectieDB <-   odbcConnectAccess(db)
@@ -2284,13 +2289,29 @@ getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015){
     connectieDB <-   odbcConnectAccess2007(db)
   }
 
-  structurePlots <- sqlQuery(connectieDB, query_StructurePlot6510, stringsAsFactors = TRUE)
+  structurePlots <- sqlQuery(connectieDB, query_StructurePlot6510)
+
+  litterPQ <- sqlQuery(connectieDB, query_Litter)
+
+  structure <- structurePlots %>%
+    left_join(litterPQ, by = "IDPlots")
 
   #tansleyScale <- sqlFetch(connectieDB,"qCoverageTansley")
 
   odbcClose(connectieDB)
 
-  return(structurePlots)
+    if (is.null(plotIDs)){
+
+    result <- structurePlots_cover_wide
+
+  } else {
+
+    result <- structurePlots_cover_wide %>%
+      filter(IDPlots %in% plotIDs)
+
+  }
+
+  return(result)
 }
 
 
@@ -2298,6 +2319,45 @@ getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015){
 ######################################################################################
 ### FUNCTIES VOOR BEREKENING LSVI-INDICATOREN (OP NIVEAU VAN ANALYSEVARIABELE)
 #######################################################################################
+
+berekenDominanteSoort <- function(db = dbHeideEn6510_2018, plotHabtypes, offline = TRUE) {
+
+    if(!offline){
+
+    sleutelsoorten6510 <- geefSoortenlijst(Habitatgroep = "Graslanden", Indicator = "sleutelsoorten") %>%
+    select(Versie, HabCode = Habitatsubtype, Soort_lat = WetNaam)
+
+  } else {
+
+    soortengroepenLSVI <- read.csv2(soortengroepenLSVIRekenmodule_fn)
+
+  sleutelsoorten <- soortengroepenLSVI %>%
+    filter(Habitattype == "6510") %>%
+    filter(Indicator == "sleutelsoorten") %>%
+    select(VersieLSVI = Versie, Indicator, HabCode= Habitatsubtype, NameSc = WetNaam) %>%
+    unique()
+
+  coverSpecies <- getCoverSpeciesMHK(db, plotHabtypes$IDPlots)
+
+  temp <- expand.grid(IDPlots = plotHabtypes$IDPlots, VersieLSVI = unique(sleutelsoorten$VersieLSVI))
+
+  maxCoverSpecies <- coverSpecies %>%
+    left_join(plotHabtypes, by = "IDPlots") %>% #habcode toevoegen
+    group_by(IDPlots,NameSc) %>%
+    left_join(temp, by = "IDPlots") %>%
+    left_join(sleutelsoorten, by = c("NameSc", "HabCode", "VersieLSVI")) %>%
+    mutate(Sleutelsoort = (Indicator == "sleutelsoorten") & (!is.na(Indicator))) %>%
+    group_by(IDPlots, VersieLSVI) %>%
+    summarise(AnalyseVariabele = "dominantie_soort",
+              Waarde = max(Cover * !(Sleutelsoort), na.rm = TRUE)) # maximale bedekking soort exclusief sleutelsoorten
+
+  return(maxCoverSpecies)
+
+}
+
+
+
+
 
 berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
@@ -3162,7 +3222,7 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
                               ifelse(Indicatortype == "negatief",
                                      ifelse(Waarde <= Drempelwaarde, 1, 0),
                                      NA))) %>%
-    arrange(IDPlots, versieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
+    arrange(IDPlots, VersieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
     select(IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Meting, Combinatie, Waarde, Beoordeling) %>%
   ungroup()
 
