@@ -230,27 +230,27 @@ HabCode;Criterium;Indicator;AnalyseVariabele;Voorwaarde;Soortengroep;Vegetatiela
 9160;verstoring;verruiging;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;bedekking;10;negatief;vegetatieplot;EN;versie3
 9190;verstoring;verruiging;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;bedekking;10;negatief;vegetatieplot;EN;versie3
 91E0_vo;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;%;4;positief;structuurplot;;versie3
-6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_aantal;;sleutelsoorten;;aantal;7;positief;vegetatieplot;;versie3
-6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;;sleutelsoorten;;bedekking;30;positief;vegetatieplot;;versie3
+6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_aantal;sleutelsoorten;sleutelsoorten;;aantal;7;positief;vegetatieplot;;versie3
+6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;sleutelsoorten;sleutelsoorten;;bedekking;30;positief;vegetatieplot;;versie3
 6510_hu;habitatstructuur;verticale_structuur;hogeGrassen;;;;bedekking;70;negatief;structuurplot;EN;versie3
 6510_hu;habitatstructuur;verticale_structuur;middelhogeGrassen;;;;bedekking;5;positief;structuurplot;EN;versie3
 6510_hu;habitatstructuur;dominantie_soort;dominantie_soort;;;;bedekking;50;negatief;structuurplot;;versie3
-6510_hu;verstoring;eutrofiëring;eutrofiëring;;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
-6510_hu;verstoring;vergrassing_vervilting;vergrassing_vervilting;;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
-6510_hu;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;eutrofiëring;eutrofiëring;eutrofiëring;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;vergrassing_vervilting;vergrassing_vervilting;vergrassing inclusief vervilting;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;verruiging inclusief ruderalisering;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
 6510_hu;verstoring;verbossing;verbossing;;verbossing;;bedekking;10;negatief;vegetatieplot;;versie3
-6510_hu;verstoring;verbraming;verbraming;;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;verbraming;verbraming;verbraming;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
 6510_hu;verstoring;strooisellaag;strooisellaag;;;;bedekking;10;negatief;structuurplot;;versie3
-6510_hus;vegetatie;sleutelsoorten;sleutelsoorten_aantal;;sleutelsoorten;;aantal;7;positief;vegetatieplot;;versie3
-6510_hus;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;;sleutelsoorten;;bedekking;30;positief;vegetatieplot;;versie3
+6510_hus;vegetatie;sleutelsoorten;sleutelsoorten_aantal;sleutelsoorten;sleutelsoorten;;aantal;7;positief;vegetatieplot;;versie3
+6510_hus;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;sleutelsoorten;sleutelsoorten;;bedekking;30;positief;vegetatieplot;;versie3
 6510_hus;habitatstructuur;verticale_structuur;hogeGrassen;;;;bedekking;70;negatief;structuurplot;EN;versie3
 6510_hus;habitatstructuur;verticale_structuur;middelhogeGrassen;;;;bedekking;5;positief;structuurplot;EN;versie3
 6510_hus;habitatstructuur;dominantie_soort;dominantie_soort;;;;bedekking;50;negatief;structuurplot;;versie3
-6510_hus;verstoring;eutrofiëring;eutrofiëring;;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
-6510_hus;verstoring;vergrassing_vervilting;vergrassing_vervilting;;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
-6510_hus;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hus;verstoring;eutrofiëring;eutrofiëring;eutrofiëring;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hus;verstoring;vergrassing_vervilting;vergrassing_vervilting;vergrassing inclusief vervilting;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
+6510_hus;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;verruiging inclusief ruderalisering;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
 6510_hus;verstoring;verbossing;verbossing;;verbossing;;bedekking;10;negatief;vegetatieplot;;versie3
-6510_hus;verstoring;verbraming;verbraming;;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
+6510_hus;verstoring;verbraming;verbraming;verbraming;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
 6510_hus;verstoring;strooisellaag;strooisellaag;;;;bedekking;10;negatief;structuurplot;;versie3
 6510_hua;vegetatie;sleutelsoorten;sleutelsoorten_weidekervel;;sleutelsoorten_weidekervel;;aantal;1;positief;vegetatieplot;EN;versie3
 6510_hua;vegetatie;sleutelsoorten;sleutelsoorten_andere;;sleutelsoorten_andere;;aantal;3;positief;vegetatieplot;EN;versie3
@@ -258,21 +258,21 @@ HabCode;Criterium;Indicator;AnalyseVariabele;Voorwaarde;Soortengroep;Vegetatiela
 6510_hua;habitatstructuur;verticale_structuur;hogeGrassen;;;;bedekking;70;negatief;structuurplot;EN;versie3
 6510_hua;habitatstructuur;verticale_structuur;middelhogeGrassen;;;;bedekking;5;positief;structuurplot;EN;versie3
 6510_hua;habitatstructuur;dominantie_soort;dominantie_soort;;;;bedekking;50;negatief;structuurplot;;versie3
-6510_hua;verstoring;eutrofiëring;eutrofiëring;;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
-6510_hua;verstoring;vergrassing_vervilting;vergrassing_vervilting;;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
-6510_hua;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hua;verstoring;eutrofiëring;eutrofiëring;eutrofiëring;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hua;verstoring;vergrassing_vervilting;vergrassing_vervilting;vergrassing inclusief vervilting;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
+6510_hua;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;verruiging inclusief ruderalisering;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
 6510_hua;verstoring;verbossing;verbossing;;verbossing;;bedekking;10;negatief;vegetatieplot;;versie3
-6510_hua;verstoring;verbraming;verbraming;;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
+6510_hua;verstoring;verbraming;verbraming;verbraming;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
 6510_hua;verstoring;strooisellaag;strooisellaag;;;;bedekking;10;negatief;structuurplot;;versie3
-6510_hua;verstoring;vernatting;vernatting;;vernatting;;bedekking;30;negatief;vegetatieplot;;versie3
-6510_hua;verstoring;verdroging;verdroging;;verdroging;;bedekking;30;negatief;vegetatieplot;;versie3
-6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_aantal;;sleutelsoorten;;aantal;7;positief;vegetatieplot;;versie3
-6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;;sleutelsoorten;;bedekking;30;positief;vegetatieplot;;versie3
-6510_hu;habitatstructuur;levensvormen;levensvormen;;levensvormen;;bedekking;10;positief;vegetatieplot;;versie3
+6510_hua;verstoring;vernatting;vernatting;vernatting;vernatting;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hua;verstoring;verdroging;verdroging;verdroging;verdroging;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_aantal;sleutelsoorten;sleutelsoorten;;aantal;7;positief;vegetatieplot;;versie3
+6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;sleutelsoorten;sleutelsoorten;;bedekking;30;positief;vegetatieplot;;versie3
+6510_hu;habitatstructuur;levensvormen;levensvormen;levensvormen;levensvormen;;bedekking;10;positief;vegetatieplot;;versie3
 6510_hu;habitatstructuur;dominantie_soort;dominantie_soort;;;;bedekking;50;negatief;structuurplot;;versie3
-6510_hu;verstoring;eutrofiëring;eutrofiëring;;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
-6510_hu;verstoring;vergrassing_vervilting;vergrassing_vervilting;;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
-6510_hu;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;eutrofiëring;eutrofiëring;eutrofiëring;eutrofiëring;;bedekking;30;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;vergrassing_vervilting;vergrassing_vervilting;vergrassing inclusief vervilting;vergrassing_vervilting;;bedekking;50;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;verruiging inclusief ruderalisering;verruiging_ruderalisering;;bedekking;30;negatief;vegetatieplot;;versie3
 6510_hu;verstoring;verbossing;verbossing;;verbossing;;bedekking;10;negatief;vegetatieplot;;versie3
-6510_hu;verstoring;verbraming;verbraming;;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
+6510_hu;verstoring;verbraming;verbraming;verbraming;verbraming;;bedekking;10;negatief;vegetatieplot;;versie3
 6510_hu;verstoring;strooisellaag;strooisellaag;;;;bedekking;10;negatief;structuurplot;;versie3
