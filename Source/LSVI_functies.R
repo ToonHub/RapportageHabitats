@@ -2336,6 +2336,7 @@ berekenDominanteSoort <- function(db = dbHeideEn6510_2018, plotHabtypes, offline
     filter(Indicator == "sleutelsoorten") %>%
     select(VersieLSVI = Versie, Indicator, HabCode= Habitatsubtype, NameSc = WetNaam) %>%
     unique()
+  }
 
   coverSpecies <- getCoverSpeciesMHK(db, plotHabtypes$IDPlots)
 
