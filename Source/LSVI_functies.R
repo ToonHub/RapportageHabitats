@@ -33,7 +33,7 @@ getObservedHabMHK <- function (db = dbHeideEn6510_2014_2015){
            HabObservedCode = HABITAT,
            HabObserved = Value1)
 
-  habObserved$HabObserved <- revalue(habObserved$HabObserved,c('6510 hu'="6510_hu","2330 bu" = "2330_bu", "6510 hua" = "6510_hua", "6510 hus" = "6510_hus", "6510 huk" = "6510_huk"))
+  habObserved$HabObserved <- revalue(habObserved$HabObserved,c('6510 hu'="6510_hu", "2330 bu" = "2330_bu", "6510 hua" = "6510_hua", "6510 hus" = "6510_hus", "6510 huk" = "6510_huk"))
 
   habObserved$Weight <- ifelse (is.na(habObserved$Area_m2),1,habObserved$Area_m2/(pi*18^2))
 
@@ -2302,11 +2302,11 @@ getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015, plotIDs = NULL){
 
     if (is.null(plotIDs)){
 
-    result <- structurePlots_cover_wide
+    result <- structure
 
   } else {
 
-    result <- structurePlots_cover_wide %>%
+    result <- structure %>%
       filter(IDPlots %in% plotIDs)
 
   }
@@ -3241,78 +3241,111 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
 #?# Is er nog een correctie nodig van totale bedekking van een soortengroep in functie van totale bedekking van vegetatielaag.
 #?# Misschien best soortenlijst met bedekkingen als input, dan wordt het generieker #?#
 
-calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekkingVeglagen  ,versieLSVI = "beide"){
+calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekkingVeglagen, versieLSVI = "beide", soortenlijstType = "Rekenmodule"){
 
   ### Soortenlijst opvragen voor gewenste versie van LSVI
 
-  # connDB <-   odbcConnectAccess2007(dbLSVI)
+  if (soortenlijstType == "ToonW"){
 
-  soortenlijstLSVI <- read.csv2(soortengroepenLSVI_fn)
-  #soortenlijstLSVI <- soortenlijstLSVI[soortenlijstLSVI$LSVI_v3==1,]
-  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
+     soortenlijstLSVI <- read.csv2(soortengroepenLSVI_fn)
 
-  # odbcClose(connDB)
-
-  # Long formaat
+    # Long formaat
   soortenlijstLSVI <- soortenlijstLSVI %>%
     gather( Versie2, Versie3, key = VersieLSVI, value = Selectie) %>%
     filter(Selectie == 1 & !is.na(Selectie))
 
   soortenlijstLSVI$VersieLSVI <- tolower(soortenlijstLSVI$VersieLSVI)
 
+  } else if(soortenlijstType == "Rekenmodule"){
+
+    soortenlijstLSVI <- read.csv2(soortengroepenLSVIRekenmodule_fn) %>%
+      mutate(VersieLSVI = ifelse(Versie == "Versie 2.0", "versie2",
+                                 ifelse(Versie == "Versie 3", "versie3", NA))) %>%
+      select(VersieLSVI, HabCode = Habitatsubtype, Indicator, Voorwaarde, NameSc = WetNaam)
+
+  }
+
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
+
   if (versieLSVI != "beide"){
     soortenlijstLSVI <- soortenlijstLSVI %>%
       filter(VersieLSVI == versieLSVI)
   }
 
-  ### Selectie van indicatoren die op basis van vegetatieopname worden berekend
-  indicatorenLSVI_selectie <- indicatorenLSVI[indicatorenLSVI$Meting == "vegetatieplot",]
-
+  ### Selectie van indicatoren die op basis van vegetatieopname kunnen berekend worden
+  indicatorenLSVI_selectie <- indicatorenLSVI %>%
+    filter(Meting == "vegetatieplot")
 
   ### Totale bedekking van soorten voor verschillende (combinaties van) vegetatielagen
-  somBedekkingSoorten <- ddply(bedekkingSoorten,.(IDPlots),summarise,
-                               SomBedekkingKruidlaag = (1 - prod((100 - Cover * (Vegetatielaag == "kruidlaag"))/100, na.rm=TRUE)) * 100,
-                               SomBedekkingStruiklaag = (1 - prod((100 - Cover * (Vegetatielaag == "struiklaag"))/100, na.rm=TRUE)) * 100,
-                               SomBedekkingBoomlaag = (1 - prod((100 - Cover * (Vegetatielaag == "boomlaag"))/100, na.rm=TRUE)) * 100,
-                               SomBedekkingBoomEnStruiklaag = (1 - prod((100 - Cover * (Vegetatielaag %in% c("boomlaag", "struiklaag")))/100, na.rm=TRUE)) * 100,
-                               SomBedekkingTotaal = (1 - prod((100 - Cover) /100, na.rm=TRUE)) * 100)
+  somBedekkingSoorten <- bedekkingSoorten %>%
+    group_by(IDPlots) %>%
+    summarise(SomBedekkingKruidlaag = (1 - prod((100 - Cover * (Vegetatielaag == "kruidlaag"))/100, na.rm=TRUE)) * 100,
+              SomBedekkingStruiklaag = (1 - prod((100 - Cover * (Vegetatielaag == "struiklaag"))/100, na.rm=TRUE)) * 100,
+              SomBedekkingBoomlaag = (1 - prod((100 - Cover * (Vegetatielaag == "boomlaag"))/100, na.rm=TRUE)) * 100,
+              SomBedekkingBoomEnStruiklaag = (1 - prod((100 - Cover * (Vegetatielaag %in% c("boomlaag", "struiklaag")))/100, na.rm=TRUE)) * 100,
+              SomBedekkingTotaal = (1 - prod((100 - Cover) /100, na.rm=TRUE)) * 100)
 
 
   ### Berekeing van totale bedekking van combinaties van vegetatielagen op basis van ingeschatte bedekkingen per laag
-  bedekkingVeglagen$CoverHerbShrubTreeLayer <- (1 - (100- bedekkingVeglagen$CoverHerblayer)/100 * (100- bedekkingVeglagen$CoverShrublayer)/100 * (100- bedekkingVeglagen$CoverTreelayer)/100) *100
+  bedekkingVeglagen <- bedekkingVeglagen %>%
+    mutate(CoverHerbShrubTreeLayer = (1 - (100 - CoverHerblayer) / 100 * (100 - CoverShrublayer) / 100 * (100 - CoverTreelayer) / 100) * 100)
 
   ### Aanmaak van data.frame met berekende waarden voor analysevariabelen per segment/plot
 
-  # Eerst kennen we aan elke plot de juiste indicatoren toe op basis van het habitattype
-  indicatoren <- merge(plotHabtypes,indicatorenLSVI_selectie, by = "HabCode")
+  # Eerst kennen we aan elke plot de juiste indicatoren toe op basis van het habitat(sub)type
+  indicatoren <- plotHabtypes %>%
+    left_join(indicatorenLSVI_selectie, by = "HabCode") %>%
+    mutate(Waarde = NA)
 
   # Vervolgens lopen we de indicatoren een voor een af en berkenen we de waarde op basis van de vegetatie-opnamegegevens
-
-  indicatoren$Waarde <- NA
 
   for (i in 1: nrow(indicatoren)){
 
     # lijst met soorten binnen gespecifieerde soortgroep
-    soortenlijst <- soortenlijstLSVI[(as.character(soortenlijstLSVI$HabCode) == as.character(indicatoren$HabCode[i])) & (as.character(soortenlijstLSVI$Omschrijving) == as.character(indicatoren$Soortengroep[i])) & (as.character(soortenlijstLSVI$VersieLSVI) == as.character(indicatoren$VersieLSVI[i])) ,]$WetNaam
+    if(soortenlijstType == "ToonW"){
+
+      soortenlijst <- soortenlijstLSVI %>%
+        filter(as.character(HabCode) == as.character(indicatoren$HabCode[i])) %>%
+        filter(as.character(Omschrijving) == as.character(indicatoren$Soortengroep[i])) %>%
+        filter(as.character(VersieLSVI) == as.character(indicatoren$VersieLSVI[i]))
+
+    } else if (soortenlijstType == "Rekenmodule"){
+
+      soortenlijst <- soortenlijstLSVI %>%
+        filter(as.character(HabCode) == as.character(indicatoren$HabCode[i])) %>%
+        #filter(as.character(Indicator) == as.character(indicatoren$Indicator[i])) %>%
+        filter(as.character(Voorwaarde) == as.character(indicatoren$Voorwaarde[i])) %>%
+        filter(as.character(VersieLSVI) == as.character(indicatoren$VersieLSVI[i]))
+
+    }
+
+    soortenlijst <- as.character(soortenlijst$NameSc)
+
 
     # selectie van (opgemeten) soorten voor gespecifieerde plot en binnen gespecifieerde vegetatielaag
-    if (is.na(indicatoren$Vegetatielaag[i])| indicatoren$Vegetatielaag[i] == "" ){
+    if (is.na(indicatoren$Vegetatielaag[i])| indicatoren$Vegetatielaag[i] == "" ){ #selecteer soorten uit alle vegetatielagen
 
-      soortenOpname <-  bedekkingSoorten[bedekkingSoorten$IDPlots == indicatoren$IDPlots[i],]
+      soortenOpname <-  bedekkingSoorten %>%
+        filter(IDPlots == indicatoren$IDPlots[i])
 
     } else if (indicatoren$Vegetatielaag[i] == "kruidlaag"){
 
-      soortenOpname <-  bedekkingSoorten[bedekkingSoorten$IDPlots == indicatoren$IDPlots[i] & bedekkingSoorten$Vegetatielaag == "kruidlaag",]
+      soortenOpname <-  bedekkingSoorten %>%
+        filter(IDPlots == indicatoren$IDPlots[i]) %>%
+        filter(Vegetatielaag == "kruidlaag")
 
     } else if (indicatoren$Vegetatielaag[i] == "boomEnStruiklaag"){
 
-      soortenOpname <-  bedekkingSoorten[bedekkingSoorten$IDPlots == indicatoren$IDPlots[i] & bedekkingSoorten$Vegetatielaag %in% c("boomlaag","struiklaag"),]
+      soortenOpname <-  bedekkingSoorten %>%
+        filter(IDPlots == indicatoren$IDPlots[i]) %>%
+        filter(Vegetatielaag %in% c("boomlaag","struiklaag"))
     }
 
     # selectie van soorten binnen soortengroep en berekening gezamelijke bedekking of aantal soorten
-    if (nrow(soortenOpname) > 0 ){
+    if (nrow(soortenOpname) > 0 & length(soortenlijst) > 0){
 
-      selectieSoortenOpname <- soortenOpname[soortenOpname$NameSc %in% soortenlijst,]
+      selectieSoortenOpname <- soortenOpname %>%
+        filter(NameSc %in% soortenlijst)
 
       if (nrow(selectieSoortenOpname) == 0){
 
@@ -3324,18 +3357,24 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
 
           bedekking <- selectieSoortenOpname$Cover
           bedekkingInv <- (100 - bedekking)/100
-          bedekkingSom <- (1 - prod(bedekkingInv, na.rm=T))*100
+          bedekkingSom <- (1 - prod(bedekkingInv, na.rm=T)) * 100
 
           # indien sleutelsoorten kruidlaag boshabitat: relatieve bedekking t.o.v. bedekking kruidlaag
           if (indicatoren$Indicator[i] == "sleutelsoorten_kruidlaag"  ){
 
-            bedekkingKruidlaag <- bedekkingVeglagen[bedekkingVeglagen$IDPlots == indicatoren$IDPlots[i], ]$CoverHerblayer
+            bedekkingVeglagenPlot <- bedekkingVeglagen %>%
+              filter(IDPlots == indicatoren$IDPlots[i])
+
+            bedekkingKruidlaag <- bedekkingVeglagenPlot$CoverHerblayer
 
             # indien de bedekking van de kruidlaag ontbreekt, nemen we de som van de bedekkingen van alle soorten in de kruidlaag
 
             if (is.na(bedekkingKruidlaag)){
 
-              bedekkingKruidlaag <- somBedekkingSoorten[somBedekkingSoorten$IDplots == indicatoren$IDPlots[i],]$SomBedekkingKruidlaag
+              somBedekkingSoortenPlot <- somBedekkingSoorten %>%
+                filter(IDPlots == indicatoren$IDPlots[i])
+
+              bedekkingKruidlaag <- somBedekkingSoortenPlot$SomBedekkingKruidlaag
 
             }
 
@@ -3349,15 +3388,18 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
 
           indicatoren$Waarde[i] <- length(unique(selectieSoortenOpname$NameSc))
 
-        } else if (indicatoren$Eenheid[i] == "aantalFrequent"){
+        } else if (indicatoren$Eenheid[i] == "aantalTalrijk"){
 
-          indicatoren$Waarde[i] <-  sum(selectieSoortenOpname$Cover >= 5)
+          klasseTalrijk <- selectScale("Beheermonitoringsschaal") %>%
+  filter(KlasseCode == "T")
+
+          indicatoren$Waarde[i] <-  sum(selectieSoortenOpname$Cover >= klasseTalrijk$BedekkingGem)
 
         }
 
       }
 
-    } else if (nrow(soortenOpname) == 0 ){
+    } else if (nrow(soortenOpname) == 0 | length(soortenlijst) == 0){
 
       indicatoren$Waarde[i] <- NA
 
@@ -3367,10 +3409,11 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
 
   # beoordeling van analysevariabele op basis van drempelwaarde
 
-  indicatoren$Beoordeling <- ifelse (indicatoren$Indicatortype == "negatief", ifelse(indicatoren$Waarde <= indicatoren$Drempelwaarde, 1,0),
-                             ifelse (indicatoren$Indicatortype == "positief", ifelse(indicatoren$Waarde >= indicatoren$Drempelwaarde, 1,0),NA))
-
-  indicatoren <- indicatoren [,!colnames(indicatoren) %in% "Id"]
+  indicatoren <- indicatoren %>%
+    mutate(Beoordeling = ifelse (Indicatortype == "negatief",
+                                 ifelse(Waarde <= Drempelwaarde, 1,0),
+                                 ifelse (Indicatortype == "positief",
+                                         ifelse(Waarde >= Drempelwaarde, 1,0),NA)))
 
   return(indicatoren)
 
