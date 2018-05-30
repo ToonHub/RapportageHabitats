@@ -3243,6 +3243,14 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
 
 calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekkingVeglagen, versieLSVI = "beide", soortenlijstType = "Rekenmodule"){
 
+  ### Genus toevoegen per soort
+
+  bedekkingSoorten <- bedekkingSoorten %>%
+    mutate(NameSc = as.character(NameSc),
+           Temp = regexpr(" ", NameSc),
+           Genus = ifelse(Temp < 0, NameSc, substring(NameSc, 1, Temp - 1))) %>%
+    select(-Temp)
+
   ### Soortenlijst opvragen voor gewenste versie van LSVI
 
   if (soortenlijstType == "ToonW"){
@@ -3264,6 +3272,10 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
       select(VersieLSVI, HabCode = Habitatsubtype, Indicator, Voorwaarde, NameSc = WetNaam)
 
   }
+
+  soortenlijstLSVI <- soortenlijstLSVI %>%
+    mutate(Soortniveau = ifelse(grepl(pattern = " ", NameSc), "Soort",
+                                ifelse(!is.na(NameSc), "Genus", NA)))
 
   indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
 
@@ -3319,7 +3331,11 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
 
     }
 
-    soortenlijst <- as.character(soortenlijst$NameSc)
+    soortenlijst_soort <- soortenlijst %>%
+      filter(Soortniveau == "Soort")
+
+    soortenlijst_genus <- soortenlijst %>%
+      filter(Soortniveau == "Genus")
 
 
     # selectie van (opgemeten) soorten voor gespecifieerde plot en binnen gespecifieerde vegetatielaag
@@ -3342,10 +3358,17 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
     }
 
     # selectie van soorten binnen soortengroep en berekening gezamelijke bedekking of aantal soorten
-    if (nrow(soortenOpname) > 0 & length(soortenlijst) > 0){
+    if (nrow(soortenOpname) > 0 & nrow(soortenlijst) > 0){
 
-      selectieSoortenOpname <- soortenOpname %>%
-        filter(NameSc %in% soortenlijst)
+      selectieSoortenOpname_soort <- soortenOpname %>%
+        filter(NameSc %in% soortenlijst_soort$NameSc) %>%
+        mutate(Soortniveau = "Soort")
+
+      selectieSoortenOpname_genus <- soortenOpname %>%
+        filter(Genus %in% soortenlijst_genus$NameSc) %>%
+        mutate(Soortniveau = "Genus")
+
+      selectieSoortenOpname <- bind_rows(selectieSoortenOpname_soort, selectieSoortenOpname_genus)
 
       if (nrow(selectieSoortenOpname) == 0){
 
@@ -3386,20 +3409,24 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
 
         } else if (indicatoren$Eenheid[i] == "aantal"){
 
-          indicatoren$Waarde[i] <- length(unique(selectieSoortenOpname$NameSc))
+          indicatoren$Waarde[i] <- n_distinct(selectieSoortenOpname_soort$NameSc) + n_distinct(selectieSoortenOpname_genus$Genus)
 
         } else if (indicatoren$Eenheid[i] == "aantalTalrijk"){
 
           klasseTalrijk <- selectScale("Beheermonitoringsschaal") %>%
   filter(KlasseCode == "T")
 
-          indicatoren$Waarde[i] <-  sum(selectieSoortenOpname$Cover >= klasseTalrijk$BedekkingGem)
+          selectieOpname_genus <- selectieSoortenOpname_genus %>%
+            group_by(Genus) %>%
+            mutate(Cover = (1 - prod((100 - Cover * (Vegetatielaag == "boomlaag"))/100, na.rm=TRUE)) * 100)
+
+          indicatoren$Waarde[i] <-  sum(selectieSoortenOpname_soort$Cover >= klasseTalrijk$BedekkingGem) + sum(selectieOpname_genus$Cover >= klasseTalrijk$BedekkingGem)
 
         }
 
       }
 
-    } else if (nrow(soortenOpname) == 0 | length(soortenlijst) == 0){
+    } else if (nrow(soortenOpname) == 0 | nrow(soortenlijst) == 0){
 
       indicatoren$Waarde[i] <- NA
 
