@@ -3222,9 +3222,10 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
                               ifelse(Waarde >= Drempelwaarde, 1, 0),
                               ifelse(Indicatortype == "negatief",
                                      ifelse(Waarde <= Drempelwaarde, 1, 0),
-                                     NA))) %>%
+                                     NA)),
+           Berekening = "Structuurplot") %>%
     arrange(IDPlots, VersieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
-    select(IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Meting, Combinatie, Waarde, Beoordeling) %>%
+    select(IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Voorwaarde, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Combinatie, Waarde, Berekening, Beoordeling) %>%
   ungroup()
 
   return(structurePlotHeideAV)
@@ -3232,6 +3233,36 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
 
 
 }
+
+berekenLSVI_structuurplot6510 <- function(db = dbHeideEn6510_2018, plotHabtypes, versieLSVI = "beide"){
+
+  structurePlot6510 <- getStructurePlot6510(db, plotHabtypes$IDplots)
+
+  ### Indicatoren opvragen voor beide versies van LSVI
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
+
+  structurePlot6510AV <- structurePlot6510 %>%
+    rename(verbossing = Shrub_and_Treelayer_18m, strooisellaag = Litter) %>%
+    gather(-IDPlots, key = "AnalyseVariabele", value = "Waarde") %>%
+    left_join(plotHabtypes, by = "IDPlots") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    mutate(Beoordeling = ifelse(Indicatortype == "positief",
+                              ifelse(Waarde >= Drempelwaarde, 1, 0),
+                              ifelse(Indicatortype == "negatief",
+                                     ifelse(Waarde <= Drempelwaarde, 1, 0),
+                                     NA)),
+           Berekening = "Structuurplot") %>%
+    arrange(IDPlots, VersieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
+    select(IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Voorwaarde, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Combinatie, Waarde, Berekening, Beoordeling) %>%
+  ungroup()
+
+  return(structurePlot6510AV)
+
+
+
+}
+
+
 
 
 #############################################################################################################
@@ -3241,7 +3272,7 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
 #?# Is er nog een correctie nodig van totale bedekking van een soortengroep in functie van totale bedekking van vegetatielaag.
 #?# Misschien best soortenlijst met bedekkingen als input, dan wordt het generieker #?#
 
-calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekkingVeglagen, versieLSVI = "beide", soortenlijstType = "Rekenmodule"){
+berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekkingVeglagen, versieLSVI = "beide", soortenlijstType = "Rekenmodule"){
 
   ### Genus toevoegen per soort
 
@@ -3269,7 +3300,7 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
     soortenlijstLSVI <- read.csv2(soortengroepenLSVIRekenmodule_fn) %>%
       mutate(VersieLSVI = ifelse(Versie == "Versie 2.0", "versie2",
                                  ifelse(Versie == "Versie 3", "versie3", NA))) %>%
-      select(VersieLSVI, HabCode = Habitatsubtype, Indicator, Voorwaarde, NameSc = WetNaam)
+      select(VersieLSVI, HabCode = Habitatsubtype, Indicator, Voorwaarde, NameSc = WetNaam, NameScKort = WetNaamKort)
 
   }
 
@@ -3361,7 +3392,7 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
     if (nrow(soortenOpname) > 0 & nrow(soortenlijst) > 0){
 
       selectieSoortenOpname_soort <- soortenOpname %>%
-        filter(NameSc %in% soortenlijst_soort$NameSc) %>%
+        filter((NameSc %in% soortenlijst_soort$NameSc) | (NameSc %in% soortenlijst_soort$NameScKort)) %>%
         mutate(Soortniveau = "Soort")
 
       selectieSoortenOpname_genus <- soortenOpname %>%
@@ -3437,10 +3468,15 @@ calculateLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedek
   # beoordeling van analysevariabele op basis van drempelwaarde
 
   indicatoren <- indicatoren %>%
-    mutate(Beoordeling = ifelse (Indicatortype == "negatief",
-                                 ifelse(Waarde <= Drempelwaarde, 1,0),
-                                 ifelse (Indicatortype == "positief",
-                                         ifelse(Waarde >= Drempelwaarde, 1,0),NA)))
+    mutate(Beoordeling = ifelse(Indicatortype == "positief",
+                              ifelse(Waarde >= Drempelwaarde, 1, 0),
+                              ifelse(Indicatortype == "negatief",
+                                     ifelse(Waarde <= Drempelwaarde, 1, 0),
+                                     NA)),
+           Berekening = "Vegetatieplot") %>%
+    arrange(IDPlots, VersieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
+    select(IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Voorwaarde, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Combinatie, Waarde, Berekening, Beoordeling) %>%
+  ungroup()
 
   return(indicatoren)
 
