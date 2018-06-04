@@ -6,10 +6,10 @@ CoverVeglayers;3;;12,5 - 25 %;18,75;12,5;25
 CoverVeglayers;4;;25 - 50 %;37,5;25;50
 CoverVeglayers;5;;50 - 75 %;62,5;50;75
 CoverVeglayers;6;;75 - 100 %;87,5;75;100
-Beheermonitoringsschaal;0;ZS;Zeer schaars;2,5;0;5
-Beheermonitoringsschaal;1;S;Schaars;2,5;0;5
-Beheermonitoringsschaal;2;WT;Weinig talrijk;2,5;0;5
-Beheermonitoringsschaal;3;T;Talrijk;2,5;0;5
+Beheermonitoringsschaal;0;ZS;Zeer schaars;0,5;0;5
+Beheermonitoringsschaal;1;S;Schaars;1;0;5
+Beheermonitoringsschaal;2;WT;Weinig talrijk;1,5;0;5
+Beheermonitoringsschaal;3;T;Talrijk;3;0;5
 Beheermonitoringsschaal;4;B;Bedekkend;15;5;25
 Beheermonitoringsschaal;5;KB;Kwartbedekkend;37,5;25;50
 Beheermonitoringsschaal;6;HB;Halfbedekkend;62,5;50;75
@@ -23,9 +23,9 @@ Braun-Blanquet;6;;2b     : 12,5 - 25 %;18,75;12,5;25
 Braun-Blanquet;7;;3       : 25 - 50  %;37,5;25;50
 Braun-Blanquet;8;;4       : 50 - 75 %;62,5;50;75
 Braun-Blanquet;9;;5       : 75 - 100 %;87,5;75;100
-Tansley;1;;zeldzaam;0,5;;
-Tansley;5;;occasioneel;2,5;;
-Tansley;11;;frequent;15;;
+Tansley;1;;zeldzaam;1;;
+Tansley;5;;occasioneel;1,5;;
+Tansley;11;;frequent;3;;
 Tansley;16;;abundant;27,5;;
-Tansley;22;;codominant;45;;
-Tansley;23;;dominant;75;;
+Tansley;22;;codominant;62,5;;
+Tansley;23;;dominant;87,5;;
