@@ -937,17 +937,35 @@ getCoverSpeciesMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs =NULL){
 
   odbcClose(connectieDB)
 
-  herblayer <- plyr::rename(herblayerOrig[!is.na(herblayerOrig$Species),],c(Species = "IDHerbSpMHK",Value1="NameNl",Value1.1="NameSc", Coverage_date1 = "ClassCode", Value1.2 = "ClassName"))
-  shrublayer <- plyr::rename(shrublayerOrig[!is.na(shrublayerOrig$Species),],c(Species = "IDTreeSpMHK",Value1="NameNl",Value1.1="NameSc", Coverage = "ClassCode", Value1.2 = "ClassName"))
-  treelayer <- plyr::rename(treelayerOrig[!is.na(treelayerOrig$Species),],c(Species = "IDTreeSpMHK",Value1="NameNl",Value1.1="NameSc", Coverage = "ClassCode", Value1.2 = "ClassName"))
-  mosslayer <- plyr::rename(mosslayerOrig[!is.na(mosslayerOrig$Species),],c(Species = "IDMossSpMHK",Value1="NameNl",Value1.1="NameSc", Coverage = "ClassCode", Value1.2 = "ClassName"))
+   herblayer <- herblayerOrig %>%
+     filter(!is.na(Species)) %>%
+     rename(IDHerbSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     mutate(Vegetatielaag = "kruidlaag")
 
-  herblayer$Vegetatielaag <- "kruidlaag"
-  shrublayer$Vegetatielaag <- "struiklaag"
-  treelayer$Vegetatielaag <- "boomlaag"
-  mosslayer$Vegetatielaag <- "moslaag"
-  veglayers <- rbind.fill(herblayer,shrublayer,treelayer,mosslayer)
-  veglayers$Scale <- "Londo"
+   shrublayer <- shrublayerOrig %>%
+     filter(!is.na(Species)) %>%
+     rename(IDTreeSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     mutate(Vegetatielaag = "struiklaag")
+
+   treelayer <- treelayerOrig %>%
+     filter(!is.na(Species)) %>%
+     rename(IDTreeSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     mutate(Vegetatielaag = "boomlaag")
+
+   mosslayer <- mosslayerOrig %>%
+     filter(!is.na(Species)) %>%
+     rename(IDMossSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     mutate(Vegetatielaag = "moslaag")
+
+   scaleInfo <- selectScale("CoverVeglayers") %>%
+    select(CoverID = KlasseID, Cover = BedekkingGem)
+
+  veglayers <- bind_rows(herblayer, shrublayer, treelayer, mosslayer) %>%
+    mutate(Scale = "Londo") %>%
+    left_join(scaleInfo, by = "CoverID") %>%
+    arrange(IDPlots, Vegetatielaag, NameSc ) %>%
+    select(IDPlots, NameNl, NameSc, Vegetatielaag, Scale, Cover)
+
 
 
   # externe data
@@ -963,21 +981,11 @@ getCoverSpeciesMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs =NULL){
 
   # odbcClose(connectieExterneData)
 
-  londoScale <- data.frame(ClassCode=c(8, 10, 11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,33,34,35),Cover=c(7.5,20,30,40,50,60,70,80,90,97.5,10,0.5,2,4,0.5,2,4,0.5,2,4,0.5,2,4,12.5,47.5,52.5))
-
-
-
-  veglayers<-merge(veglayers,londoScale,by = "ClassCode",all.x=TRUE)
-
-  veglayers<-veglayers[order(veglayers$NameNl),]
-  veglayers<-veglayers[order(veglayers$Vegetatielaag),]
-  veglayers<-veglayers[order(veglayers$IDPlots),]
 
   # veglayers$Tree <- (veglayers$NameNl %in% treeList$NameNl) | (veglayers$NameNl %in% treeListExtra$NameNl[treeListExtra$Tree==1])
   #
   # veglayers$Tree <- ifelse(veglayers$NameNl == "_ANDERE SOORT",FALSE, veglayers$Tree)
 
-  veglayers <- veglayers[,c("IDPlots","NameNl","NameSc","Vegetatielaag","Scale","ClassName","Cover")]
 
   if (is.null(plotIDs)){
 
