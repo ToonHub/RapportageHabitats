@@ -14,7 +14,14 @@ dbHeideEn6510_2016_v3 <- "../Data/MeetgegevensHeide6510/FieldMapData_Heide6510_2
 
 voortgangHeideEn6510 <- "../Data/MeetgegevensHeide6510/VoortgangMeetnetHeide6510_Versie2016-12-21.csv"
 
-dbHeideEn6510_2018 <- "../Data/MeetgegevensHeide6510/FieldMapData_NA2000_2017_v4_ACC.accdb"
+dbHeideEn6510_2018 <- "../Data/MeetgegevensHeide6510/FieldMapData_Heide6510_versie2018-06-11.accdb"
+
+#---------------------
+# Gegevens INBOVEG
+#---------------------
+
+dbINBOVeg_2018 <- "../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export2018-06-07/"
+
 
 #---------------------
 # Gegevens boshabitatsExtra
