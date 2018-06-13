@@ -1001,7 +1001,50 @@ getCoverSpeciesMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs =NULL){
 
 
 }
+################################################################################################
 
+getCoverSpeciesIV <- function(db = dbINBOVeg_2018, plotIDs = NULL) {
+
+  # op basis van kopinfo kunnen we vegetatieplot en structuurplot onderscheiden; kopinfo bevat ook IDPlot
+  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000", sep = ""))
+
+  plotTypes <- kopinfo_N2000 %>%
+  mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
+  select(recording_givid, IDPlots = user_reference, TypePlot)
+
+  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000", sep = ""))
+
+  # voor Tansley-schaal passen we de bedekking aan, voor de overige schalen nemen we de bedekking conform INBOVEG
+  scaleTansley <- selectScale("Tansley") %>%
+  select(Cover_code = KlasseCode, CoverTansleyAdjust = BedekkingGem)
+
+CoverSpecies <- opnamen_N2000 %>%
+  left_join(plotTypes, by = "recording_givid") %>%
+  mutate(Vegetatielaag = ifelse(layer_code == "K", "kruidlaag",
+                                ifelse(layer_code == "B", "boomlaag",
+                                       ifelse(layer_code == "S", "struiklaag",
+                                              ifelse(layer_code == "MO", "moslaag", NA)))),
+         Scale = ifelse(coverage_code %in% c("r", "o", "f", "a", "cd", "d" ,"la" , "lf", "ld"), "Tansley",
+                        ifelse(TypePlot == "vegetatieplot", "Londo",
+                               ifelse(TypePlot == "structuurplot", "Beheermonitoringsschaal", NA)))) %>%
+  select(IDPlots, TypePlot, NameSc = original_name, Vegetatielaag, Scale, Cover_code = coverage_code, Cover = pct_value) %>%
+  left_join(scaleTansley, by = "Cover_code") %>%
+  mutate(Cover = ifelse(Scale == "Tansley", CoverTansleyAdjust, Cover)) %>%
+  select(-CoverTansleyAdjust)
+
+  if (is.null(plotIDs)){
+
+    result <- CoverSpecies
+
+  } else {
+
+    result <- CoverSpecies[CoverSpecies$IDPlots %in% CoverSpecies,]
+
+  }
+
+  return(result)
+
+}
 
 ################################################################################################
 
