@@ -1006,13 +1006,13 @@ getCoverSpeciesMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs =NULL){
 getCoverSpeciesIV <- function(db = dbINBOVeg_2018, plotIDs = NULL) {
 
   # op basis van kopinfo kunnen we vegetatieplot en structuurplot onderscheiden; kopinfo bevat ook IDPlot
-  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000", sep = ""))
+  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000", sep = ""), stringsAsFactors = FALSE)
 
   plotTypes <- kopinfo_N2000 %>%
   mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
   select(recording_givid, IDPlots = user_reference, TypePlot)
 
-  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000", sep = ""))
+  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000", sep = ""), stringsAsFactors = FALSE)
 
   # voor Tansley-schaal passen we de bedekking aan, voor de overige schalen nemen we de bedekking conform INBOVEG
   scaleTansley <- selectScale("Tansley") %>%
@@ -1027,7 +1027,7 @@ CoverSpecies <- opnamen_N2000 %>%
          Scale = ifelse(coverage_code %in% c("r", "o", "f", "a", "cd", "d" ,"la" , "lf", "ld"), "Tansley",
                         ifelse(TypePlot == "vegetatieplot", "Londo",
                                ifelse(TypePlot == "structuurplot", "Beheermonitoringsschaal", NA)))) %>%
-  select(IDPlots, TypePlot, NameSc = original_name, Vegetatielaag, Scale, Cover_code = coverage_code, Cover = pct_value) %>%
+  select(IDRecords = recording_givid, IDPlots, TypePlot, NameSc = original_name, Vegetatielaag, Scale, Cover_code = coverage_code, Cover = pct_value) %>%
   left_join(scaleTansley, by = "Cover_code") %>%
   mutate(Cover = ifelse(Scale == "Tansley", CoverTansleyAdjust, Cover)) %>%
   select(-CoverTansleyAdjust)
@@ -1038,7 +1038,8 @@ CoverSpecies <- opnamen_N2000 %>%
 
   } else {
 
-    result <- CoverSpecies[CoverSpecies$IDPlots %in% CoverSpecies,]
+    result <- CoverSpecies %>%
+      filter(IDPlots %in% plotIDs)
 
   }
 
@@ -1048,9 +1049,54 @@ CoverSpecies <- opnamen_N2000 %>%
 
 ################################################################################################
 
+getCoverVeglayersIV <- function(db = dbINBOVeg_2018, plotIDs = NULL) {
+
+  # op basis van kopinfo kunnen we vegetatieplot en structuurplot onderscheiden; kopinfo bevat ook IDPlot
+  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000", sep = ""), stringsAsFactors = FALSE)
+
+  plotTypes <- kopinfo_N2000 %>%
+  mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
+  select(recording_givid, IDPlots = user_reference, TypePlot)
+
+  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000", sep = ""), stringsAsFactors = FALSE)
+
+  coverVeglayers <- opnamen_N2000 %>%
+    left_join(plotTypes, by = "recording_givid") %>%
+    mutate(Vegetatielaag = ifelse(layer_code == "K", "CoverHerblayer",
+                                ifelse(layer_code == "B", "CoverTreelayer",
+                                       ifelse(layer_code == "S", "CoverShrublayer",
+                                              ifelse(layer_code == "MO", "CoverMosslayer", NA)))),
+         Cover = as.numeric(ifelse(cover_code == "0-x-1", "0.1", as.character(cover_code))),
+         Cover = ifelse(is.na(Cover), 0, Cover)) %>%
+    group_by(recording_givid, IDPlots, TypePlot, Vegetatielaag) %>%
+    summarise(Cover = unique(Cover)) %>%
+    ungroup() %>%
+    spread(key = Vegetatielaag, value = Cover) %>%
+    rename(IDRecords = recording_givid)
+
+
+  if (is.null(plotIDs)){
+
+    result <- coverVeglayers
+
+  } else {
+
+    result <- coverVeglayers %>%
+      filter(IDPlots %in% plotIDs)
+
+  }
+
+  return(result)
+
+}
+
+
+
+################################################################################################
+
 selectScale <- function(nameScale = "CoverVeglayers"){
 
-  scaleInfo <- read.csv2(schaalInfo)
+  scaleInfo <- read.csv2(schaalInfo, stringsAsFactors = FALSE)
 
   result <- scaleInfo %>%
     filter(Schaal == nameScale)
@@ -1194,22 +1240,17 @@ getCoverVeglayersMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs = NULL){
     connectieDB <-   odbcConnectAccess2007(db)
   }
 
-  coverPlots <- sqlQuery(connectieDB, query_CoverPlot, stringsAsFactors = TRUE)
+  coverPlotsOrig <- sqlQuery(connectieDB, query_CoverPlot, stringsAsFactors = FALSE)
 
   odbcClose(connectieDB)
 
-  coverPlots$CoverMosslayer <- coverPlots$Sphagnumlayer + coverPlots$OtherMosslayer
+  coverPlots <- coverPlotsOrig %>%
+    mutate(CoverMosslayer = Sphagnumlayer + OtherMosslayer) %>%
+    rename(HabObservedPQ = Value1, CoverHerblayer = Herblayer, CoverShrublayer = Shrublayer, CoverTreelayer = Treelayer, CoverTreeAndShrublayer = Shrub_and_Treelayer) %>%
+    filter(ID == 1) %>%  # een vegetatieopname per plot
+    select(IDPlots, HabObservedPQ, CoverHerblayer, CoverMosslayer, CoverShrublayer, CoverTreelayer, CoverTreeAndShrublayer) %>%
+    mutate(HabObservedPQ = sub(" ", "_", HabObservedPQ))
 
-  coverPlots <- plyr::rename(coverPlots, c(Value1 = "HabObservedPQ",Herblayer = "CoverHerblayer", Shrublayer = "CoverShrublayer", Treelayer = "CoverTreelayer", Shrub_and_Treelayer = "CoverTreeAndShrublayer" ))
-
-  # een vegetatieopname per plot
-
-  coverPlots <- coverPlots %>%
-   filter(ID == 1)
-
-  coverPlots <- coverPlots[,c("IDPlots","HabObservedPQ","CoverHerblayer","CoverMosslayer", "CoverShrublayer", "CoverTreelayer", "CoverTreeAndShrublayer")]
-
-   coverPlots$HabObservedPQ <- revalue(coverPlots$HabObservedPQ,c('6510 hu'="6510_hu","2330 bu" = "2330_bu", "6510 hua" = "6510_hua", "6510 hus" = "6510_hus", "6510 huk" = "6510_huk"))
 
   if (is.null(plotIDs)){
 
@@ -1217,7 +1258,8 @@ getCoverVeglayersMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs = NULL){
 
   } else {
 
-    result <-coverPlots[coverPlots$IDPlots %in% plotIDs,]
+    result <- coverPlots %>%
+      filter(IDPlots %in% plotIDs)
 
   }
 
@@ -3333,6 +3375,19 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
            Genus = ifelse(Temp < 0, NameSc, substring(NameSc, 1, Temp - 1))) %>%
     select(-Temp)
 
+  ### indien slechts 1 opname per plot kan IDPlots dienen als unieke record per opname
+  if(! ("IDRecords" %in% colnames(bedekkingSoorten))){
+    bedekkingSoorten$IDRecords <- bedekkingSoorten$IDPlots
+  }
+
+  if(! ("IDRecords" %in% colnames(bedekkingVeglagen))){
+    bedekkingVeglagen$IDRecords <- bedekkingVeglagen$IDPlots
+  }
+
+  if(! ("IDRecords" %in% colnames(plotHabtypes))){
+    plotHabtypes$IDRecords <- plotHabtypes$IDPlots
+  }
+
   ### Soortenlijst opvragen voor gewenste versie van LSVI
 
   if (soortenlijstType == "ToonW"){
@@ -3372,12 +3427,13 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
 
   ### Totale bedekking van soorten voor verschillende (combinaties van) vegetatielagen
   somBedekkingSoorten <- bedekkingSoorten %>%
-    group_by(IDPlots) %>%
+    group_by(IDRecords) %>%
     summarise(SomBedekkingKruidlaag = (1 - prod((100 - Cover * (Vegetatielaag == "kruidlaag"))/100, na.rm=TRUE)) * 100,
               SomBedekkingStruiklaag = (1 - prod((100 - Cover * (Vegetatielaag == "struiklaag"))/100, na.rm=TRUE)) * 100,
               SomBedekkingBoomlaag = (1 - prod((100 - Cover * (Vegetatielaag == "boomlaag"))/100, na.rm=TRUE)) * 100,
               SomBedekkingBoomEnStruiklaag = (1 - prod((100 - Cover * (Vegetatielaag %in% c("boomlaag", "struiklaag")))/100, na.rm=TRUE)) * 100,
-              SomBedekkingTotaal = (1 - prod((100 - Cover) /100, na.rm=TRUE)) * 100)
+              SomBedekkingTotaal = (1 - prod((100 - Cover) /100, na.rm=TRUE)) * 100) %>%
+    ungroup()
 
 
   ### Berekeing van totale bedekking van combinaties van vegetatielagen op basis van ingeschatte bedekkingen per laag
@@ -3424,18 +3480,18 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
     if (is.na(indicatoren$Vegetatielaag[i])| indicatoren$Vegetatielaag[i] == "" ){ #selecteer soorten uit alle vegetatielagen
 
       soortenOpname <-  bedekkingSoorten %>%
-        filter(IDPlots == indicatoren$IDPlots[i])
+        filter(IDRecords == indicatoren$IDRecords[i])
 
     } else if (indicatoren$Vegetatielaag[i] == "kruidlaag"){
 
       soortenOpname <-  bedekkingSoorten %>%
-        filter(IDPlots == indicatoren$IDPlots[i]) %>%
+        filter(IDRecords == indicatoren$IDRecords[i]) %>%
         filter(Vegetatielaag == "kruidlaag")
 
     } else if (indicatoren$Vegetatielaag[i] == "boomEnStruiklaag"){
 
       soortenOpname <-  bedekkingSoorten %>%
-        filter(IDPlots == indicatoren$IDPlots[i]) %>%
+        filter(IDRecords == indicatoren$IDRecords[i]) %>%
         filter(Vegetatielaag %in% c("boomlaag","struiklaag"))
     }
 
@@ -3468,7 +3524,7 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
           if (indicatoren$Indicator[i] == "sleutelsoorten_kruidlaag"  ){
 
             bedekkingVeglagenPlot <- bedekkingVeglagen %>%
-              filter(IDPlots == indicatoren$IDPlots[i])
+              filter(IDRecords == indicatoren$IDRecords[i])
 
             bedekkingKruidlaag <- bedekkingVeglagenPlot$CoverHerblayer
 
@@ -3477,7 +3533,7 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
             if (is.na(bedekkingKruidlaag)){
 
               somBedekkingSoortenPlot <- somBedekkingSoorten %>%
-                filter(IDPlots == indicatoren$IDPlots[i])
+                filter(IDRecords == indicatoren$IDRecords[i])
 
               bedekkingKruidlaag <- somBedekkingSoortenPlot$SomBedekkingKruidlaag
 
@@ -3525,8 +3581,8 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
                                      ifelse(Waarde <= Drempelwaarde, 1, 0),
                                      NA)),
            Berekening = "Vegetatieplot") %>%
-    arrange(IDPlots, VersieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
-    select(IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Voorwaarde, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Combinatie, Waarde, Berekening, Beoordeling) %>%
+    arrange(IDRecords, IDPlots, VersieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
+    select(IDRecords, TypePlot, IDPlots, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Voorwaarde, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Combinatie, Waarde, Berekening, Beoordeling) %>%
   ungroup()
 
   return(indicatoren)
