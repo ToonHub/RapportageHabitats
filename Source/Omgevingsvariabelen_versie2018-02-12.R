@@ -67,7 +67,7 @@ dbVBIExterneData<-"../Data/ExterneData/VBIExterneData.accdb"
 schaalInfo  <- "../LSVIData/Schalen.csv"
 indicatorenLSVI_fn <- "../LSVIData/Indicatoren_LSVI.csv"
 soortengroepenLSVI_fn <- "../LSVIData/Soortengroepen_LSVI.csv"
-soortengroepenLSVIRekenmodule_fn <-  "../LSVIData/Soortenlijst_LSVIRekenmodule.csv"
+soortengroepenLSVIRekenmodule_fn <-  "../LSVIData/Soortenlijst_LSVIRekenmodule_v3.csv"
 
 #---------------------
 #../Databank strata
