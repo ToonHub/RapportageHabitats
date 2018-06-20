@@ -1058,20 +1058,23 @@ getCoverVeglayersIV <- function(db = dbINBOVeg_2018, plotIDs = NULL) {
   mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
   select(recording_givid, IDPlots = user_reference, TypePlot)
 
-  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000", sep = ""), stringsAsFactors = FALSE)
+  veglagen_N2000 <- read.csv2(paste(db, "veglagen_N2000", sep = ""), stringsAsFactors = FALSE)
 
-  coverVeglayers <- opnamen_N2000 %>%
+  coverVeglayers <- veglagen_N2000 %>%
+    filter(!is.na(layer_code)) %>%
     left_join(plotTypes, by = "recording_givid") %>%
     mutate(Vegetatielaag = ifelse(layer_code == "K", "CoverHerblayer",
                                 ifelse(layer_code == "B", "CoverTreelayer",
                                        ifelse(layer_code == "S", "CoverShrublayer",
-                                              ifelse(layer_code == "MO", "CoverMosslayer", NA)))),
-         Cover = as.numeric(ifelse(cover_code == "0-x-1", "0.1", as.character(cover_code))),
+                                              ifelse(layer_code == "MO", "CoverMosslayer",
+                                                     ifelse(layer_code == "NB", "CoverNaakteGrond",
+                                                            ifelse(layer_code == "STR", "CoverStrooisellaag", NA)))))),
+         Cover = as.numeric(ifelse(cover_code == "0-x-1", "0.5", as.character(cover_code))),
          Cover = ifelse(is.na(Cover), 0, Cover)) %>%
     group_by(recording_givid, IDPlots, TypePlot, Vegetatielaag) %>%
     summarise(Cover = unique(Cover)) %>%
     ungroup() %>%
-    spread(key = Vegetatielaag, value = Cover) %>%
+    spread(key = Vegetatielaag, value = Cover, fill = 0) %>%
     rename(IDRecords = recording_givid)
 
 
@@ -3498,7 +3501,9 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
     # selectie van soorten binnen soortengroep en berekening gezamelijke bedekking of aantal soorten
     if (nrow(soortenOpname) > 0 & nrow(soortenlijst) > 0){
 
-      selectieSoortenOpname_soort <- soortenOpname %>%
+      if(indicatoren$TypeSoortengroep[i] == "inclusief"){ #selecteer alle soorten die tot soortenlijst of genuslijst behoren
+
+        selectieSoortenOpname_soort <- soortenOpname %>%
         filter((NameSc %in% soortenlijst_soort$NameSc) | (NameSc %in% soortenlijst_soort$NameScKort)) %>%
         mutate(Soortniveau = "Soort")
 
@@ -3507,6 +3512,15 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
         mutate(Soortniveau = "Genus")
 
       selectieSoortenOpname <- bind_rows(selectieSoortenOpname_soort, selectieSoortenOpname_genus)
+
+      } else if(indicatoren$TypeSoortengroep[i] == "exclusief"){ #selecteer alle soorten die niet tot soortenlijst of genuslijst behoren
+
+        selectieSoortenOpname <- soortenOpname %>%
+        filter(!(NameSc %in% soortenlijst_soort$NameSc)) %>%
+        filter(!(NameSc %in% soortenlijst_soort$NameScKort)) %>%
+        filter(!(Genus %in% soortenlijst_genus$NameSc)) %>%
+        mutate(Soortniveau = "Soort")
+      }
 
       if (nrow(selectieSoortenOpname) == 0){
 
@@ -3544,6 +3558,10 @@ berekenLSVI_vegetatieopname <- function (plotHabtypes, bedekkingSoorten, bedekki
           }
 
           indicatoren$Waarde[i] <- bedekkingSom
+
+        } else if (indicatoren$Eenheid[i] == "maxBedekking"){
+
+          indicatoren$Waarde[i] <- max(selectieSoortenOpname$Cover)
 
         } else if (indicatoren$Eenheid[i] == "aantal"){
 
