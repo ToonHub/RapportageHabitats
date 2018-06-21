@@ -3354,7 +3354,30 @@ berekenLSVI_structuurplot6510 <- function(db = dbHeideEn6510_2018, plotHabtypes,
 
   return(structurePlot6510AV)
 
+}
 
+berekenLSVI_structuurplotGraslandMoerassen <- function(db = dbINBOVeg_2018, plotHabtypes, versieLSVI = "beide"){
+
+  structure <- getCoverVeglayersIV(db, plotHabtypes$IDPlots)
+
+  ### Indicatoren opvragen voor beide versies van LSVI
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
+
+  structureAV <- structure %>%
+    select(IDRecords, naakte_bodem = CoverNaakteGrond, strooisellaag = CoverStrooisellaag) %>%
+    gather(naakte_bodem, strooisellaag, key = "AnalyseVariabele", value = "Waarde") %>%
+    left_join(plotHabtypes, by = "IDRecords") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    mutate(Beoordeling = ifelse(Indicatortype == "positief", ifelse(Waarde >= Drempelwaarde, 1, 0),
+                              ifelse(Indicatortype == "negatief", ifelse(Waarde <= Drempelwaarde, 1, 0),
+                                      ifelse(Indicatortype == "range", ifelse(Waarde >= 3 & Waarde <= 70, 1, 0),
+                                             NA))),
+           Berekening = "Structuurplot") %>%
+    arrange(IDPlots, TypePlot, VersieLSVI, Criterium, Indicator, AnalyseVariabele) %>%
+    select(IDRecords, IDPlots, TypePlot, HabCode, VersieLSVI, Criterium, Indicator, AnalyseVariabele, Eenheid, Voorwaarde, Soortengroep, Vegetatielaag, Drempelwaarde, Indicatortype, Combinatie, Waarde, Berekening, Beoordeling) %>%
+  ungroup()
+
+  return(structureAV)
 
 }
 
