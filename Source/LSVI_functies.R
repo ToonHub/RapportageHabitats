@@ -2410,6 +2410,19 @@ getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015, plotIDs = NULL){
   return(result)
 }
 
+######################################################################################
+
+getStructurePlotGraslandMoerassen <- function(db = dbINBOVeg_2018){
+
+  structureOrig <- read.csv2(paste(db, "structuur_N2000", sep = ""), stringsAsFactors = FALSE)
+
+  structure <- structureOrig %>%
+    select(IDRecords = recording_givid, structure_var, structure_value) %>%
+    spread(key = structure_var, value = structure_value)
+
+  return(structure)
+}
+
 
 
 ######################################################################################
@@ -3358,14 +3371,21 @@ berekenLSVI_structuurplot6510 <- function(db = dbHeideEn6510_2018, plotHabtypes,
 
 berekenLSVI_structuurplotGraslandMoerassen <- function(db = dbINBOVeg_2018, plotHabtypes, versieLSVI = "beide"){
 
-  structure <- getCoverVeglayersIV(db, plotHabtypes$IDPlots)
+  # bedekking strooisellaag en naakte bodem
+  structureLayers <- getCoverVeglayersIV(db, plotHabtypes$IDPlots)
+
+  # verbossing en structuurschade
+  structurePlot <-getStructurePlotGraslandMoerassen(db)
+
+  structure <- structureLayers %>%
+    left_join(structurePlot, by = "IDRecords")
 
   ### Indicatoren opvragen voor beide versies van LSVI
   indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
 
   structureAV <- structure %>%
-    select(IDRecords, naakte_bodem = CoverNaakteGrond, strooisellaag = CoverStrooisellaag) %>%
-    gather(naakte_bodem, strooisellaag, key = "AnalyseVariabele", value = "Waarde") %>%
+    select(IDRecords, naakte_bodem = CoverNaakteGrond, strooisellaag = CoverStrooisellaag, verbossing = Bos, betreding_brand = Struc) %>%
+    gather(naakte_bodem, strooisellaag, verbossing, betreding_brand, key = "AnalyseVariabele", value = "Waarde") %>%
     left_join(plotHabtypes, by = "IDRecords") %>%
     inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
     mutate(Beoordeling = ifelse(Indicatortype == "positief", ifelse(Waarde >= Drempelwaarde, 1, 0),
