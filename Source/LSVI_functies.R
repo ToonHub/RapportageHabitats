@@ -31,11 +31,9 @@ getObservedHabMHK <- function (db = dbHeideEn6510_2014_2015){
   habObserved <- habObservedOrig %>%
     rename(IDSegments = ID,
            HabObservedCode = HABITAT,
-           HabObserved = Value1)
-
-  habObserved$HabObserved <- revalue(habObserved$HabObserved,c('6510 hu'="6510_hu", "2330 bu" = "2330_bu", "6510 hua" = "6510_hua", "6510 hus" = "6510_hus", "6510 huk" = "6510_huk"))
-
-  habObserved$Weight <- ifelse (is.na(habObserved$Area_m2),1,habObserved$Area_m2/(pi*18^2))
+           HabObserved = Value1) %>%
+    mutate(HabObserved = gsub(" ", "_", HabObserved),
+           Weight = ifelse (is.na(Area_m2),1,Area_m2/(pi*18^2)))
 
   result <- habObserved
 
@@ -76,12 +74,9 @@ getObservedHabBosMHK <- function (db = dbBosExtra){
            HabObservedCode = HAB,
            HabObserved = Value1,
            LanduseCode = Landuse,
-           Landuse = Value1.1)
-
-  habObserved$HabObserved <- revalue(habObserved$HabObserved,c('91E0 vo'="91E0_vo",
-                                                               '91E0 vm'="91E0_vm"))
-
-  habObserved$Weight <- ifelse (is.na(habObserved$Area_m2), 1, habObserved$Area_m2/(pi*18^2))
+           Landuse = Value1.1) %>%
+    mutate(HabObserved = gsub(" ", "_", HabObserved),
+           Weight = ifelse(is.na(Area_m2) == TRUE, 1, Area_m2/(pi*18^2)))
 
   result <- habObserved %>%
     select(IDPlots, IDSegments, Landuse, HabObserved, Weight)
@@ -305,6 +300,98 @@ getVisitedPlotsMHK <- function(db = dbHeideEn6510_2014_2015){
 
 
   return (result)
+}
+
+
+####################################################
+getMeasuredPlotsIV <- function(db = dbINBOVeg_2018){
+
+  overzicht_GrasMoeras_shape <- readOGR("../Data/VoortgangGraslandMoeras/.", "Stavaza2018", verbose = FALSE)
+
+  overzicht_GrasMoeras <- overzicht_GrasMoeras_shape@data %>%
+         mutate(Visited = as.numeric(bezocht) > 0,
+         YearPlanned = year,
+         Measured = !is.na(opname) & opname == "ja",
+         Replaced = !is.na(verplaatst) & verplaatst == "ja") %>%
+  select(IDPlots = Ranking, SBZH, YearPlanned, HabTarget1 = habsubt, HabTarget2 = Doelhab2, Visited, Measured, Replaced,  X_coord = POINT_X, Y_coord = POINT_Y) %>%
+  group_by(IDPlots, SBZH) %>%
+     summarise(HabTarget1 = HabTarget1[1],
+               HabTarget2 = HabTarget2[1],
+               Visited = sum(Visited) >= 1,
+               Measured = sum(Measured) >= 1,
+               Replaced = sum(Replaced) >= 1,
+               YearPlanned = min(YearPlanned),
+               X_coord = X_coord[1],
+               Y_coord = Y_coord[1]) %>%
+     ungroup() %>%
+  mutate(IDPlots = as.character(IDPlots),
+         Status = ifelse(!Visited, "To do",
+                         ifelse(!Measured, "Geen doelhabitat - terreincheck",
+                                "Opname uitgevoerd")))
+
+  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000.csv", sep = ""), stringsAsFactors = FALSE)
+  survey_N2000 <- read.csv2(paste(db, "survey_N2000.csv", sep = ""), stringsAsFactors = FALSE)
+  classif_N2000 <- read.csv2(paste(db, "classif_N2000.csv", sep = ""), stringsAsFactors = FALSE)
+  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000.csv", sep = ""), stringsAsFactors = FALSE)
+  veglagen_N2000 <- read.csv2(paste(db, "veglagen_N2000.csv", sep = ""), stringsAsFactors = FALSE)
+
+  classif_Habt_N2000 <- classif_N2000 %>%
+  filter(classification_type == "AC") %>%
+  select(recording_givid, recording_id, HabCode = classif, SegmentWeight = cover) %>%
+  mutate(SegmentWeight = as.numeric(SegmentWeight))
+
+  #habitattype en plottype toevoegen aan opnamen
+  plotDetails <- kopinfo_N2000 %>%
+    mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
+    select(recording_givid, IDPlots = user_reference, TypePlot, Date = vague_date_begin) %>%
+    full_join(classif_Habt_N2000, by = "recording_givid") %>%
+    mutate(OpnameRecord = recording_givid %in% opnamen_N2000$recording_givid,
+           IDPlots = as.character(IDPlots)) %>%
+    left_join(overzicht_GrasMoeras, by = "IDPlots")
+
+  plotHabtypes_segments <- plotDetails %>%
+  select(recording_givid, IDPlots, TypePlot, HabCode, SBZH, Date, SegmentWeight, HabTarget1, HabTarget2, OpnameRecord, Date) %>%
+  # subtype toevoegen bij 6410 en 6230
+  mutate(HabCode = ifelse(HabCode == "6410" & substring(HabTarget1, 1, 4) == "6410", HabTarget1,
+                          ifelse(HabCode == "6410" & substring(HabTarget2, 1, 4) == "6410" & !is.na(HabTarget2), HabTarget2, as.character(HabCode))),
+         HabCode = ifelse(HabCode == "6230" & substring(HabTarget1, 1, 4) == "6230", HabTarget1,
+                          ifelse(HabCode == "6230" & substring(HabTarget2, 1, 4) == "6230" & !is.na(HabTarget2), HabTarget2, as.character(HabCode)))) %>%
+  mutate(IsHabSubtTarget = HabCode == HabTarget1 | (HabCode == HabTarget2 & !is.na(HabTarget2)),
+         IsHabTarget = (substr(HabCode, 1, 4) == substr(HabTarget1, 1, 4)) | (substr(HabCode, 1, 4) == substr(HabTarget2, 1, 4) & !is.na(HabTarget2))) %>%
+  group_by(recording_givid, IDPlots, TypePlot, HabTarget1, HabTarget2, OpnameRecord) %>%
+  mutate(nSegments = n(),
+         sumWeight = sum(SegmentWeight, na.rm = TRUE),
+         nWeightMissing = sum(is.na(SegmentWeight)),
+         SegmentWeight = ifelse(is.na(SegmentWeight), (100 - sumWeight)/nWeightMissing, SegmentWeight),
+         sumWeightCorr = sum(SegmentWeight),
+        CoverHabTarget = sum(SegmentWeight * IsHabTarget),
+        CoverHabSubtTarget = sum(SegmentWeight * IsHabSubtTarget),
+        CoverNotHabTarget = sum(SegmentWeight * !IsHabTarget),
+        SelectSegment = ifelse(CoverHabSubtTarget > 0, IsHabSubtTarget,
+                               ifelse(CoverHabTarget > 0, IsHabTarget, FALSE))) %>%
+  ungroup() %>%
+  mutate(Meetpunt = !is.na(HabTarget1))
+
+  grasland_moeras <- c("6230_hn", "6230_ha", "1330_hpr", "6230_hmo", "6410_ve", "6230",  "7140_meso", "7140_oli",  "6120",
+"6410_mo")
+
+  plotHabtypes_plot <- plotHabtypes_segments %>%
+    filter(Meetpunt) %>%
+    filter(OpnameRecord) %>%
+    filter(SelectSegment) %>%
+    group_by(recording_givid, IDPlots, TypePlot, HabCode, SBZH, Date, HabTarget1, HabTarget2) %>%
+    summarise(PlotWeight = sum(SegmentWeight)) %>%
+    group_by(recording_givid, IDPlots, TypePlot) %>%
+    mutate(nHab = n()) %>%
+    ungroup() %>%
+    group_by(IDPlots) %>%
+    mutate(Measured = TRUE,
+          StructureMeasured = "structuurplot" %in% TypePlot,
+           VegMeasured = "vegetatieplot" %in% TypePlot) %>%
+  ungroup()
+
+  return(plotHabtypes_plot)
+
 }
 
 
@@ -599,7 +686,13 @@ getMetaDataBosMHK <- function(db= dbBosExtra){
 #
 #   steekproefHeide6510$IDPlots<- as.numeric(as.character(steekproefHeide6510$IDPlots))
 
-  metadataMHK <- unique(metadataMHK)
+  metadataMHK <- metadataMHK %>%
+    unique() %>%
+    group_by(IDPlots, Year) %>%
+    summarise(Date = max(Date),
+              X_m = mean(X_m),
+              Y_m = mean(Y_m)) %>%
+    ungroup()
 
   return(metadataMHK)
 
@@ -664,64 +757,60 @@ getMeasuredPlotsVBI2 <- function(db = dbVBI2){
 
 getCoverSpeciesVBI1 <- function (db =  dbVBI1_veg, plotIDs = NULL){
 
-query_veglayerVBI1 <-"
-SELECT Opnamen.Opnamenummer
-, Opnamen.[Belgisch volgnummer]
-, Opnamen.Vegetatielaag
-, Opnamen.Abund_Transf
-FROM Opnamen
-;
-"
-connectieVBI1 <- odbcConnectAccess2007(db) #dit is een accdb file
+  query_veglayerVBI1 <-"
+  SELECT Opnamen.Opnamenummer
+  , Opnamen.[Belgisch volgnummer]
+  , Opnamen.Vegetatielaag
+  , Opnamen.Abund_Transf
+  FROM Opnamen
+  ;
+  "
+  connectieVBI1 <- odbcConnectAccess(db)
 
-veglayerVBI1Orig <- sqlQuery(connectieVBI1, query_veglayerVBI1, stringsAsFactors = TRUE)
+  veglayerVBI1Orig <- sqlQuery(connectieVBI1, query_veglayerVBI1, stringsAsFactors = TRUE)
 
-odbcClose(connectieVBI1)
+  odbcClose(connectieVBI1)
 
-veglayerVBI1Orig <- plyr::rename(veglayerVBI1Orig,c(Opnamenummer="IDPlots","Belgisch volgnummer"="IDSpVBI1",Abund_Transf="Coverage")) #
+  scaleBB <- selectScale("Braun-Blanquet") %>%
+    select(KlasseID, Cover = BedekkingGem)
 
-veglayerVBI1 <- veglayerVBI1Orig
+  # externe data
+  connectieExterneData <- odbcConnectAccess2007(dbVBIExterneData) #dit is een accdb file
 
-
-
- # externe data
-
-  connectieExterneData <- odbcConnectAccess2007(dbExterneData) #dit is een accdb file
   treeList <- sqlFetch(connectieExterneData,"tblTreeSpeciesCharacteristics",stringsAsFactors = TRUE)
   treeListExtra <- sqlFetch(connectieExterneData,"tblSpeciesTreelayerCharacteristics",stringsAsFactors = TRUE)
-  speciesListComb<-sqlFetch(connectieExterneData, "tblspeciesListComb", stringsAsFactors = TRUE)
+  speciesListComb <- sqlFetch(connectieExterneData, "tblspeciesListComb", stringsAsFactors = TRUE)
+
   odbcClose(connectieExterneData)
 
-  veglayers <- merge(veglayerVBI1,speciesListComb,by="IDSpVBI1",all.x=TRUE)
+  treeListExtra <- treeListExtra %>%
+    filter(Tree == 1)
 
-  scaleBB <- data.frame(BBID = c(1:9), Cover = c(0.25,1,2.25,4,8.75,18.75,37.5,62.5,87.5))
+  treeList <- treeList %>%
+    filter(NameNl != "_ANDERE SOORT")
 
-  veglayers$Scale <- "Braun-Blanquet"
-
-  veglayers<-merge(veglayers,scaleBB,by.x="Coverage",by.y="BBID",all.x=TRUE)
-
-  veglayers <- veglayers[order(veglayers$IDPlots),]
-
-  veglayers$Tree <- (veglayers$NameNl %in% treeList$NameNl) | (veglayers$NameNl %in% treeListExtra$NameNl[treeListExtra$Tree==1])
-
-  #veglayers[veglayers$NameNl == "_ANDERE SOORT",]$Tree <- FALSE
-
-  veglayers <- veglayers[,!names(veglayers) %in% c("Coverage","IDSpVBI2", "IDSpVBI1")]
-
-  veglayers$Vegetatielaag <- ifelse(veglayers$Vegetatielaag == "k", "kruidlaag",
-                            ifelse(veglayers$Vegetatielaag == "s", "struiklaag",
-                                   ifelse(veglayers$Vegetatielaag == "m", "moslaag",
-                                          ifelse(veglayers$Vegetatielaag == "b", "boomlaag",NA))))
-
-
+  veglayerVBI1 <- veglayerVBI1Orig %>%
+    rename(IDPlots = Opnamenummer,
+           IDSpVBI1 = "Belgisch volgnummer",
+           KlasseID = Abund_Transf) %>%
+    left_join(speciesListComb, by = "IDSpVBI1") %>%
+    left_join(scaleBB, by = "KlasseID") %>%
+    mutate(Vegetatielaag = ifelse(Vegetatielaag == "k", "kruidlaag",
+                                  ifelse(Vegetatielaag == "m", "moslaag",
+                                         ifelse(Vegetatielaag == "b", "boomlaag",
+                                                ifelse(Vegetatielaag == "s", "struiklaag", NA))))) %>%
+    mutate(Tree = (NameNl %in% treeList$NameNl) | (NameNl %in% treeListExtra$Species)) %>%
+    select(IDPlots, NameNl, NameSc, Cover, Vegetatielaag, Tree) %>%
+    arrange(IDPlots)
 
   if (is.null(plotIDs)){
 
-    result <- veglayers
+    result <- veglayerVBI1
 
   } else {
 
-    result <- veglayers[veglayers$IDPlots %in% plotIDs,]
+    result <- veglayerVBI1 %>%
+      filter(IDPlots %in% plotIDs)
 
   }
 
@@ -939,25 +1028,25 @@ getCoverSpeciesMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs =NULL){
 
    herblayer <- herblayerOrig %>%
      filter(!is.na(Species)) %>%
-     rename(IDHerbSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     rename(IDHerbSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName = Value1.2) %>%
      mutate(Vegetatielaag = "kruidlaag")
 
    shrublayer <- shrublayerOrig %>%
      filter(!is.na(Species)) %>%
-     rename(IDTreeSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     rename(IDTreeSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage, ClassName = Value1.2) %>%
      mutate(Vegetatielaag = "struiklaag")
 
    treelayer <- treelayerOrig %>%
      filter(!is.na(Species)) %>%
-     rename(IDTreeSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     rename(IDTreeSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage, ClassName = Value1.2) %>%
      mutate(Vegetatielaag = "boomlaag")
 
    mosslayer <- mosslayerOrig %>%
      filter(!is.na(Species)) %>%
-     rename(IDMossSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage_date1, ClassName, Value1.2) %>%
+     rename(IDMossSpMHK = Species, NameNl = Value1, NameSc = Value1.1, CoverID = Coverage, ClassName = Value1.2) %>%
      mutate(Vegetatielaag = "moslaag")
 
-   scaleInfo <- selectScale("CoverVeglayers") %>%
+   scaleInfo <- selectScale("Londo") %>%
     select(CoverID = KlasseID, Cover = BedekkingGem)
 
   veglayers <- bind_rows(herblayer, shrublayer, treelayer, mosslayer) %>%
@@ -1006,13 +1095,13 @@ getCoverSpeciesMHK <- function(db = dbHeideEn6510_2014_2015, plotIDs =NULL){
 getCoverSpeciesIV <- function(db = dbINBOVeg_2018, plotIDs = NULL) {
 
   # op basis van kopinfo kunnen we vegetatieplot en structuurplot onderscheiden; kopinfo bevat ook IDPlot
-  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000", sep = ""), stringsAsFactors = FALSE)
+  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000.csv", sep = ""), stringsAsFactors = FALSE)
 
   plotTypes <- kopinfo_N2000 %>%
   mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
   select(recording_givid, IDPlots = user_reference, TypePlot)
 
-  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000", sep = ""), stringsAsFactors = FALSE)
+  opnamen_N2000 <- read.csv2(paste(db, "opnamen_N2000.csv", sep = ""), stringsAsFactors = FALSE)
 
   # voor Tansley-schaal passen we de bedekking aan, voor de overige schalen nemen we de bedekking conform INBOVEG
   scaleTansley <- selectScale("Tansley") %>%
@@ -1047,18 +1136,114 @@ CoverSpecies <- opnamen_N2000 %>%
 
 }
 
+getCoverSpeciesIV_MONEOS <- function(db = dbINBOVeg_MONEOS, plotIDs = NULL) {
+
+  # op basis van kopinfo kunnen we vegetatieplot en structuurplot onderscheiden; kopinfo bevat ook IDPlot
+  kopinfo_MONEOS <- read.csv2(paste(db, "kopinfo_MONEOS.csv", sep = ""), stringsAsFactors = FALSE)
+
+  opnamen_MONEOS <- read.csv2(paste(db, "opnamen_MONEOS.csv", sep = ""), stringsAsFactors = FALSE)
+
+CoverSpecies <- opnamen_MONEOS %>%
+  mutate(Vegetatielaag = ifelse(layer_code %in% c("KL", "KH"), "kruidlaag",
+                                ifelse(layer_code == "BH", "boomlaag",
+                                       ifelse(layer_code %in% c("SH"), "struiklaag",
+                                              ifelse(layer_code == "MO", "moslaag", NA))))) %>%
+  left_join(select ( kopinfo_MONEOS, recording_givid, ID), by = "recording_givid") %>%
+  select(IDRecords = recording_givid, IDPlots = ID, NameSc = original_name, Vegetatielaag, Cover_code = coverage_code, Cover = pct_value) %>%
+  filter(!is.na(Vegetatielaag)) #geen algen en toestanden
+
+  if (is.null(plotIDs)){
+
+    result <- CoverSpecies
+
+  } else {
+
+    result <- CoverSpecies %>%
+      filter(IDRecords %in% plotIDs)
+
+  }
+
+  return(result)
+
+}
+
+getCoverSpeciesIV_PINK <- function(db = dbINBOVeg_PINK, plotIDs = NULL) {
+
+  # kopinfo bevatIDPlot
+  kopinfo_PINK <- read.csv2(paste(db, "kopinfo_PINK.csv", sep = ""), stringsAsFactors = FALSE)
+
+opnamen_PINK <- read.csv2(paste(db, "opnamen_PINK.csv", sep = ""), stringsAsFactors = FALSE)
+
+CoverSpecies <- opnamen_PINK %>%
+  mutate(Vegetatielaag = ifelse(layer_code == "K", "kruidlaag",
+                                ifelse(layer_code == "B", "boomlaag",
+                                       ifelse(layer_code == "S", "struiklaag",
+                                              ifelse(layer_code == "M", "moslaag", NA))))) %>%
+  left_join(select ( kopinfo_PINK, recording_givid, IDPlots), by = "recording_givid") %>%
+  select(ID = recording_givid, IDPlots, NameSc = original_name, Vegetatielaag, Cover_code = coverage_code, Cover = pct_value) %>%
+  filter(!is.na(Vegetatielaag)) #geen wieren
+
+  if (is.null(plotIDs)){
+
+    result <- CoverSpecies
+
+  } else {
+
+    result <- CoverSpecies %>%
+      filter(ID %in% plotIDs)
+
+  }
+
+  return(result)
+
+}
+
+getCoverVeglayersIV_PINK <- function(db = dbINBOVeg_PINK, plotIDs = NULL) {
+
+  # kopinfo bevatIDPlot
+  kopinfo_PINK <- read.csv2(paste(db, "kopinfo_PINK.csv", sep = ""), stringsAsFactors = FALSE)
+
+veglagen_PINK <- read.csv2(paste(db, "opnamen_PINK.csv", sep = ""), stringsAsFactors = FALSE)
+
+CoverSpecies <- veglagen_PINK %>%
+  mutate(Vegetatielaag = ifelse(layer_code == "K", "kruidlaag",
+                                ifelse(layer_code == "B", "boomlaag",
+                                       ifelse(layer_code == "S", "struiklaag",
+                                              ifelse(layer_code == "M", "moslaag", NA))))) %>%
+  left_join(select ( kopinfo_PINK, recording_givid, IDPlots), by = "recording_givid") %>%
+  select(ID = recording_givid, IDPlots, Vegetatielaag, Cover = cover_code) %>%
+  filter(!is.na(Vegetatielaag)) %>% #geen wieren
+  unique() %>%
+  spread(key = Vegetatielaag, value = Cover, fill = 0)
+
+  if (is.null(plotIDs)){
+
+    result <- CoverSpecies
+
+  } else {
+
+    result <- CoverSpecies %>%
+      filter(ID %in% plotIDs)
+
+  }
+
+  return(result)
+
+}
+
+
 ################################################################################################
 
 getCoverVeglayersIV <- function(db = dbINBOVeg_2018, plotIDs = NULL) {
 
   # op basis van kopinfo kunnen we vegetatieplot en structuurplot onderscheiden; kopinfo bevat ook IDPlot
-  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000", sep = ""), stringsAsFactors = FALSE)
+  kopinfo_N2000 <- read.csv2(paste(db, "kopinfo_N2000.csv", sep = ""), stringsAsFactors = FALSE)
 
   plotTypes <- kopinfo_N2000 %>%
   mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
   select(recording_givid, IDPlots = user_reference, TypePlot)
 
-  veglagen_N2000 <- read.csv2(paste(db, "veglagen_N2000", sep = ""), stringsAsFactors = FALSE)
+  veglagen_N2000 <- read.csv2(paste(db, "veglagen_N2000.csv", sep = ""), stringsAsFactors = FALSE)
 
   coverVeglayers <- veglagen_N2000 %>%
     filter(!is.na(layer_code)) %>%
@@ -1093,6 +1278,37 @@ getCoverVeglayersIV <- function(db = dbINBOVeg_2018, plotIDs = NULL) {
 
 }
 
+getCoverVeglayersIV_MONEOS <- function(db = dbINBOVeg_MONEOS, plotIDs = NULL) {
+
+  # kopinfo bevat ook IDPlot
+  kopinfo_MONEOS <- read.csv2(paste(db, "kopinfo_MONEOS.csv", sep = ""), stringsAsFactors = FALSE)
+
+  veglagen_MONEOS <- read.csv2(paste(db, "veglagen_MONEOS.csv", sep = ""), stringsAsFactors = FALSE)
+
+  coverVeglayers <- veglagen_MONEOS %>%
+    mutate(Vegetatielaag = ifelse(layer_code %in% c("KL", "KH"), "kruidlaag",
+                                ifelse(layer_code == "BH", "boomlaag",
+                                       ifelse(layer_code %in% c("SH"), "struiklaag",
+                                              ifelse(layer_code == "MO", "moslaag", NA))))) %>%
+  left_join(select ( kopinfo_MONEOS, recording_givid, ID), by = "recording_givid") %>%
+  select(IDRecords = recording_givid, IDPlots = ID, Vegetatielaag, Cover = cover_code) %>%
+  filter(!is.na(Vegetatielaag)) %>% #geen algen en toestanden
+  spread(key = Vegetatielaag, value = Cover, fill = 0)
+
+  if (is.null(plotIDs)){
+
+    result <- coverVeglayers
+
+  } else {
+
+    result <- coverVeglayers %>%
+      filter(IDRecords %in% plotIDs)
+
+  }
+
+  return(result)
+
+}
 
 
 ################################################################################################
@@ -1194,9 +1410,9 @@ getCoverVeglayersVBI1 <- function (db =  dbVBI1_veg, plotIDs = NULL) {
           CoverHerblayer = "Bedekking kruidlaag",
           CoverMosslayer = "Bedekking moslaag",
           CoverShrublayer = "Bedekking struiklaag",
-          CoverTreelayer = "Bedekking boomlaag")
-
-  veglayer$CoverTreeAndShrublayer <- (1 - (1 - veglayer$CoverTreelayer/100) * (1 - veglayer$CoverShrublayer/100))*100
+          CoverTreelayer = "Bedekking boomlaag") %>%
+    mutate(CoverHerbAndMosslayer =  CoverHerblayer + CoverMosslayer,
+           CoverTreeAndShrublayer = (1 - (1 - CoverTreelayer/100) * (1 - CoverShrublayer/100)) * 100)
 
   if (is.null(plotIDs)){
 
@@ -1559,86 +1775,155 @@ getTreesA3A4VBI2 <- function (db = dbVBI2, dbMeetproc = dbVBIMeetproces, plotIDs
 getTreesA3A4VBI1 <- function (db = dbVBI1, dbMeetproc = dbMeetproces, plotIDs = NULL){
 
   query_trees<-"
-SELECT
-tblA34.PLOTNR
-, tblA34.BOOMNR
-, tblA34.BOOMSOORT
-, tblBoomsoorten.NAAM,tblA34.AFSTAND
-, tblA34.OMTREK
-, tblA34.HOOGTE
-, tblA34.DOOD
-FROM tblBoomsoorten
-RIGHT JOIN tblA34
-ON tblBoomsoorten.BOOMSOORTID = tblA34.BOOMSOORT
-;"
+    SELECT
+    tblA34.PLOTNR
+    , tblA34.BOOMNR
+    , tblA34.BOOMSOORT
+    , tblBoomsoorten.NAAM,tblA34.AFSTAND
+    , tblA34.OMTREK
+    , tblA34.HOOGTE
+    , tblA34.DOOD
+    FROM tblBoomsoorten
+    RIGHT JOIN tblA34
+    ON tblBoomsoorten.BOOMSOORTID = tblA34.BOOMSOORT
+    ;"
 
   connectieVBI1<- odbcConnectAccess2007(db)
+
   treesA3A4Orig <- sqlQuery(connectieVBI1, query_trees)
   convC130 <- sqlFetch(connectieVBI1,"tblCoefOmzetOmtrek")
+
   odbcClose(connectieVBI1)
 
-  treesA3A4 <- plyr::rename(treesA3A4Orig,c(PLOTNR="IDPlots",
-                                  BOOMNR="ID",
-                                  BOOMSOORT="IDTreeSp",
-                                  NAAM="Species",
-                                  OMTREK="Perimeter_cm",
-                                  HOOGTE="Height_m",
-                                  DOOD="StatusTreeCode"
-  ))
+  convC130 <- convC130 %>%
+    rename(IDTreeSp = BOOMSOORTID)
 
-  #codering dood hout gelijk stellen aan VBI2
-  treesA3A4$StatusTreeCode <- treesA3A4$StatusTreeCode+1
-
-  #conversie omtrek op 1,5m naar 1,3m
-  convC130 <- plyr::rename(convC130,c(BOOMSOORTID="IDTreeSp"))
-  treesA3A4 <- merge(treesA3A4,convC130,by="IDTreeSp",all.x=TRUE)
-  treesA3A4$C130 <- treesA3A4$A+treesA3A4$B * treesA3A4$Perimeter_cm
-  treesA3A4$Perimeter_cm <- treesA3A4$C130
-
+  treesA3A4 <- treesA3A4Orig %>%
+    rename(IDPlots = PLOTNR,
+           ID = BOOMNR,
+           IDTreeSp = BOOMSOORT,
+           Species = NAAM,
+           Perimeter_cm = OMTREK,
+           Height_m = HOOGTE,
+           StatusTreeCode = DOOD) %>%
+    mutate(StatusTreeCode = StatusTreeCode + 1) %>% #codering dood hout gelijk stellen aan VBI2
+    left_join(convC130, by = "IDTreeSp") %>%
+    mutate(Perimeter_cm = A + B * Perimeter_cm) %>% #conversie omtrek op 1,5m naar 1,3m
+    group_by(IDPlots) %>%
+    mutate(medianHeight = median(Height_m, na.rm = TRUE)) %>% # Bijschatten ontbrekende hoogtes: mediaan van boomhoogte per plot
+    ungroup() %>%
+    mutate(Height_m = ifelse((Height_m == 0 | is.na(Height_m)) & StatusTreeCode == 1, medianHeight, Height_m), # !! enkel voor de levende bomen met hoogte = 0 (alle dode bomen standaard hoogte = 0)
+           Alive = StatusTreeCode == 1,
+           StatusTree = ifelse(Alive, "levend", "dood"),
+           IntactTreeCode = 10,
+           IntactTree = "Intacte boom",
+           Coppice_IndividualCode = 10,
+           Coppice_Individual = "Individuele boom",
+           AreaA4_m2 = pi * 18 * 18,
+           AreaA3_m2 = pi * 9 * 9,
+           DBH_mm = Perimeter_cm*10/pi,
+           IDSegments = 1) %>%
+    select(IDPlots, IDSegments, ID, AreaA4_m2, AreaA3_m2, Perimeter_cm, DBH_mm, Height_m, IDTreeSp, Alive, StatusTree, IntactTreeCode, IntactTree, Coppice_IndividualCode, Coppice_Individual)
   ### Bijschatten van hoogtes = 0 (slechts 4 bomen; normaal alle hoogtes opgemeten): mediaan van boomhoogte per plot
   # enkel levende bomen
 
-  plots_medianHeight <- treesA3A4 %>%
-    filter(StatusTreeCode == 1) %>%
-    dplyr::group_by(IDPlots) %>%
-    dplyr::summarise(medianHeight = median(Height_m,na.rm=TRUE) )
-
-  treesA3A4 <- left_join(treesA3A4, plots_medianHeight, by="IDPlots")
-
-  # !! enkel voor de levende bomen met hoogte = 0 (alle dode bomen standaard hoogte = 0)
-  treesA3A4$Height_m <- ifelse((treesA3A4$Height_m == 0 & treesA3A4$StatusTreeCode == 1),treesA3A4$medianHeight,treesA3A4$Height_m)
-  # (c)A: blijkbaar ook 13 NA's voor hoogte (+ als na controle blijkt dat een boom levend is, dan is de hoogte in "bosinv1_2011Val.accdb" plots niet meer "0", maar "NA")
-  treesA3A4$Height_m <- ifelse((is.na (treesA3A4$Height_m) & treesA3A4$StatusTreeCode == 1),treesA3A4$medianHeight,treesA3A4$Height_m)
-
-  ###ontberekende velden
-
-  treesA3A4$IntactTreeCode <- 10
-
-  #inA3A4 cirkel wordt geen hakhout opgemeten; enkel individuele bomen (code = 10)
-  treesA3A4$Coppice_IndividualCode <- 10
-
-  #plots worden niet opgesplitst in VBI1
-  treesA3A4$IDSegments <- 1
-  treesA3A4$AreaA4_m2 <- pi * 18 * 18
-  treesA3A4$AreaA3_m2 <- pi * 9 * 9
-  treesA3A4$DBH_mm <- treesA3A4$Perimeter_cm*10/pi
-
-  treesA3A4$DataSet <- "VBI1"
-
-  treesA3A4$Alive <- treesA3A4$StatusTreeCode==1
-
-  treesA3A4 <- treesA3A4[!is.na(treesA3A4$IDPlots),c("DataSet","IDPlots","IDSegments","ID","AreaA4_m2","AreaA3_m2","Perimeter_cm","DBH_mm","Height_m","IDTreeSp","Alive","IntactTreeCode","Coppice_IndividualCode")]
-
-
   #extra informatie over boomsoorten toevoegen
 
-  connectieExterneData <- odbcConnectAccess2007(dbExterneData)
+  connectieExterneData <- odbcConnectAccess2007(dbVBIExterneData)
 
     treeList <- sqlFetch(connectieExterneData,"tblTreeSpeciesCharacteristics")
 
   odbcClose(connectieExterneData)
 
-  treesA3A4 <- merge(treesA3A4,treeList,by="IDTreeSp",all.x=TRUE)
+  treesA3A4 <- treesA3A4 %>%
+    left_join(treeList, by = "IDTreeSp")
+
+  if (is.null(plotIDs)){
+
+    result <- treesA3A4
+
+  } else {
+
+    result <- treesA3A4 %>%
+      filter(IDPlots %in% plotIDs)
+
+  }
+
+  return(result)
+
+}
+
+#############################################################################################################
+#############################################################################################################
+getTreesA3A4MHK <- function (db = dbBosExtra,  plotIDs = NULL){
+
+  query_trees <- "
+  SELECT Trees_2eBosinv.IDPlots,
+  Trees_2eBosinv.ID,
+  Trees_2eBosinv.IDSegment,
+  Trees_2eBosinv.Perimeter_cm,
+  Trees_2eBosinv.DBH_mm,
+  Trees_2eBosinv.Height_m,
+  Trees_2eBosinv.Species,
+  qTreeSpecies.Value1,
+  Trees_2eBosinv.Status_tree,
+  qStatusTree.Value1,
+  Trees_2eBosinv.CodeCoppice_Individual,
+  qCoppice_Individual.Value1,
+  Trees_2eBosinv.IntactTree,
+  qIntactTree.Value1
+  FROM (((Trees_2eBosinv LEFT JOIN qTreeSpecies ON Trees_2eBosinv.Species = qTreeSpecies.ID)
+  LEFT JOIN qStatusTree ON Trees_2eBosinv.Status_tree = qStatusTree.ID)
+  LEFT JOIN qCoppice_Individual ON Trees_2eBosinv.CodeCoppice_Individual = qCoppice_Individual.ID)
+  LEFT JOIN qIntactTree ON Trees_2eBosinv.IntactTree = qIntactTree.ID;
+  "
+
+  connectieMHK <- odbcConnectAccess2007(db)
+  treesA3A4Orig <- sqlQuery(connectieMHK, query_trees, stringsAsFactors = FALSE)
+  odbcClose(connectieMHK)
+
+  plotWeights <- getPlotWeights(db)
+
+  # treeSegmentsOrig <- read.csv2(treeSegmentsFile)
+  # treeSegments <- treeSegmentsOrig %>%
+  #   rename(IDPlots = IDPLOTS, ID = ID_TREE, IDSegments = IDSEGMENT)
+
+  treesA3A4 <- treesA3A4Orig %>%
+    rename(IDTreeSp = Species,
+           IDSegments = IDSegment,
+          Species = Value1,
+          StatusTreeCode = Status_tree,
+          StatusTree = Value1.1,
+          Coppice_IndividualCode = CodeCoppice_Individual,
+          Coppice_Individual = Value1.2,
+          IntactTreeCode = IntactTree,
+          IntactTree = Value1.3) %>%
+    filter(ID > 0) %>% #Bomen met ID=0 verwijderen
+    #left_join(treeSegments, by = c("IDPlots", "ID")) %>%  #voor elke boom aangeven in welk segment het valt
+    mutate(IDSegments = ifelse(is.na(IDSegments), 1, IDSegments)) %>% #als niet geweten waar boom ligt --> segment 1
+    left_join(plotWeights, by = c("IDPlots","IDSegments")) %>% # grootte A3 en A4 plot/segment toevoegen --> bepaalt expansiefactor
+    mutate(StatusTreeCode = ifelse(is.na(StatusTreeCode), 1 , StatusTreeCode),
+           StatusTree = ifelse(is.na(StatusTree), "levend" , as.character(StatusTree)),# ontbrekende waarde voor status --> we veronderstellen levende boom;
+           Coppice_IndividualCode = ifelse(is.na(Coppice_IndividualCode), 10 , Coppice_IndividualCode),
+           Coppice_Individual = ifelse(is.na(Coppice_Individual), "Individuele boom" , as.character(Coppice_Individual)), #ontbrekende waarde voor hakhout-individueel --> we veronderstellen individuele boom
+           IntactTreeCode = ifelse(is.na(IntactTreeCode), 10 , IntactTreeCode),
+           IntactTree = ifelse(is.na(IntactTree), "Intacte boom" , as.character(IntactTree))) %>% #ontbrekende waarde voor intact/niet-intacte boom --> we veronderstellen een intacte boom
+    group_by(IDPlots) %>%
+    mutate(medianHeight = median(Height_m,na.rm=TRUE)) %>% # Bijschatten ontbrekende hoogtes: mediaan van boomhoogte per plot
+    ungroup() %>%
+    mutate(Height_m = ifelse(is.na(Height_m), medianHeight, Height_m),
+           Alive = StatusTreeCode == 1) %>%
+    select(IDPlots, IDSegments, ID, AreaA4_m2, AreaA3_m2, Perimeter_cm, DBH_mm, Height_m, IDTreeSp, Alive, StatusTree, IntactTreeCode, IntactTree, Coppice_IndividualCode, Coppice_Individual)
+
+
+  connectieExterneData <- odbcConnectAccess2007(dbVBIExterneData)
+
+  treeList <- sqlFetch(connectieExterneData,"tblTreeSpeciesCharacteristics")
+
+  odbcClose(connectieExterneData)
+
+  treesA3A4 <- treesA3A4 %>%
+    left_join(treeList, by = "IDTreeSp")
 
 
   if (is.null(plotIDs)){
@@ -1655,9 +1940,9 @@ ON tblBoomsoorten.BOOMSOORTID = tblA34.BOOMSOORT
 
 }
 
-#############################################################################################################
-#############################################################################################################
-getTreesA3A4MHK <- function (db = dbBosExtra,  plotIDs = NULL){
+############################################"
+
+getTreesA3A4VBI2 <- function (db = dbVBI2, dbMeetproces = dbVBIMeetproces, plotIDs = NULL){
 
   query_trees <- "
   SELECT Trees_2eBosinv.IDPlots,
@@ -1679,15 +1964,28 @@ getTreesA3A4MHK <- function (db = dbBosExtra,  plotIDs = NULL){
   LEFT JOIN qIntactTree ON Trees_2eBosinv.IntactTree = qIntactTree.ID;
   "
 
-  connectieMHK <- odbcConnectAccess2007(db)
-  treesA3A4Orig <- sqlQuery(connectieMHK, query_trees, stringsAsFactors = TRUE)
-  odbcClose(connectieMHK)
+  connectieVBI2<- odbcConnectAccess2007(db)
+  treesA3A4Orig <- sqlQuery(connectieVBI2, query_trees, stringsAsFactors = FALSE)
+  odbcClose(connectieVBI2)
 
-  plotWeights <- getPlotWeights(db)
+  connectieMetadata <- odbcConnectAccess2007(dbMeetproces)
 
-  treeSegmentsOrig <- read.csv2(treeSegmentsFile)
-  treeSegments <- treeSegmentsOrig %>%
-    rename(IDPlots = IDPLOTS, ID = ID_TREE, IDSegments = IDSEGMENT)
+  #tabel met plotgewichten en segmentgewichten en oppervlaktes van A2, A3 en A4 plots
+  plotWeights <- sqlFetch(connectieMetadata,"tblPlotWeights")
+
+  #tabel met info over reeks (in totaal 10 reeksen) waarin plot valt en gepaardheid van plots
+  plotDetails <- sqlFetch(connectieMetadata,"tblPlotDetails")
+
+  #tabel met per boom de ID van het segment waarbinnen de boom valt
+  treesSegmentID <- sqlFetch(connectieMetadata,"tblTreesSegmentID")
+
+  odbcClose(connectieMetadata)
+
+
+
+  # treeSegmentsOrig <- read.csv2(treeSegmentsFile)
+  # treeSegments <- treeSegmentsOrig %>%
+  #   rename(IDPlots = IDPLOTS, ID = ID_TREE, IDSegments = IDSEGMENT)
 
   treesA3A4 <- treesA3A4Orig %>%
     rename(IDTreeSp = Species,
@@ -1699,7 +1997,8 @@ getTreesA3A4MHK <- function (db = dbBosExtra,  plotIDs = NULL){
           IntactTreeCode = IntactTree,
           IntactTree = Value1.3) %>%
     filter(ID > 0) %>% #Bomen met ID=0 verwijderen
-    left_join(treeSegments, by = c("IDPlots", "ID")) %>%  #voor elke boom aangeven in welk segment het valt
+    left_join(treesSegmentID, by = c("IDPlots", "ID")) %>%  #voor elke boom aangeven in welk segment het valt
+    mutate(IDSegments = ifelse(is.na(IDSegments), 1, IDSegments)) %>% #als niet geweten waar boom ligt --> segment 1
     left_join(plotWeights, by = c("IDPlots","IDSegments")) %>% # grootte A3 en A4 plot/segment toevoegen --> bepaalt expansiefactor
     mutate(StatusTreeCode = ifelse(is.na(StatusTreeCode), 1 , StatusTreeCode),
            StatusTree = ifelse(is.na(StatusTree), "levend" , as.character(StatusTree)),# ontbrekende waarde voor status --> we veronderstellen levende boom;
@@ -1818,7 +2117,10 @@ SELECT
 
   odbcClose(connectieVBI2)
 
-  shoots <- plyr::rename(shootsOrig,c(ID="ShootID",IDTrees_2eBosinv="ID",Height_m="Height_shoot_m"))
+  shoots <- shootsOrig %>%
+    rename(ShootID = ID ,
+           ID = IDTrees_2eBosinv,
+           Height_shoot_m = Height_m)
 
   if (is.null(plotIDs)){
 
@@ -1862,39 +2164,38 @@ query_treesA2VBI1 <-"
   connectieVBI1 <- odbcConnectAccess2007(dbVBI1) #dit is een accdb file
 
   treesA2VBI1Orig <- sqlQuery(connectieVBI1, query_treesA2VBI1, stringsAsFactors = TRUE)
-  convC130 <- sqlFetch(connectieVBI1,"tblCoefOmzetOmtrek")
+  convC130 <- sqlFetch(connectieVBI1, "tblCoefOmzetOmtrek")
 
   odbcClose(connectieVBI1)
 
-  treesA2VBI1<-plyr::rename(treesA2VBI1Orig,c(PLOTNR="IDPlots",
-                                      IDTree="ID",    # ipv BOOMNR
-                                      BOOMSOORT="IDTreeSp",
-                                      NAAM="Species",
-                                      OMTREK="Perimeter_cm",
-                                      DOOD="StatusTreeCode"))
+  convC130 <- convC130 %>%
+    rename(IDTreeSp = BOOMSOORTID)
 
-  shootsVBI1 <- treesA2VBI1[treesA2VBI1$HOOGHOUT == 0 & treesA2VBI1$Perimeter_cm > 0,]
-  shootsVBI1$Alive <- shootsVBI1$StatusTreeCode == 0
+  shootsVBI1 <- treesA2VBI1Orig %>%
+    rename(IDPlots = PLOTNR,
+           ID = IDTree,
+           IDTreeSp = BOOMSOORT,
+           Species = NAAM,
+           Perimeter_cm = OMTREK,
+           StatusTreeCode = DOOD) %>%
+    filter(HOOGHOUT == 0 & Perimeter_cm > 0) %>% #selectie hakhout
+    mutate(StatusTreeCode = StatusTreeCode + 1) %>% #codering dood hout gelijk stellen aan VBI2
+    left_join(convC130, by = "IDTreeSp") %>%
+    mutate(Perimeter_cm = A + B * Perimeter_cm,
+           Alive = StatusTreeCode == 1,
+           IDSegments = 1)
 
-  #conversie omtrek op 1,5m naar 1,3m
-  convC130 <- plyr::rename(convC130,c(BOOMSOORTID="IDTreeSp"))
-  shootsVBI1 <- merge(shootsVBI1,convC130,by="IDTreeSp",all.x=TRUE)
-  shootsVBI1$C130 <- shootsVBI1$A + shootsVBI1$B * shootsVBI1$Perimeter_cm
-  shootsVBI1$Perimeter_cm <- shootsVBI1$C130
 
+  #extra informatie over boomsoorten toevoegen
 
-
-    #extra informatie over boomsoorten toevoegen
-
-  connectieExterneData <- odbcConnectAccess2007(dbExterneData)
+  connectieExterneData <- odbcConnectAccess2007(dbVBIExterneData)
 
     treeList <- sqlFetch(connectieExterneData,"tblTreeSpeciesCharacteristics")
 
   odbcClose(connectieExterneData)
 
-  shootsVBI1 <- merge(shootsVBI1,treeList,by="IDTreeSp",all.x=TRUE)
-
-
+  shootsVBI1 <- shootsVBI1 %>%
+    left_join(treeList, by = "IDTreeSp")
 
   if (is.null(plotIDs)){
 
@@ -1902,12 +2203,12 @@ query_treesA2VBI1 <-"
 
   } else {
 
-    result <- shootsVBI1[shootsVBI1$IDPlots %in% plotIDs,]
+    result <- shootsVBI1 %>%
+      filter(IDPlots %in% plotIDs)
 
   }
 
   return(result)
-
 
 }
 
@@ -1940,19 +2241,30 @@ query_treesA2VBI1 <-"
 
   odbcClose(connectieVBI1)
 
-  treesA2VBI1 <- plyr::rename(treesA2VBI1Orig,c(PLOTNR="IDPlots",
-                                      IDTree="ID",    # ipv BOOMNR
-                                      BOOMSOORT="IDTreeSp",
-                                      NAAM="Species",
-                                      OMTREK="Perimeter_cm",
-                                      DOOD="StatusTreeCode"))
+  treesA2VBI1 <- treesA2VBI1Orig %>%
+    rename(IDPlots = PLOTNR,
+           ID = IDTree,
+           IDTreeSp = BOOMSOORT,
+           Species = NAAM,
+           Perimeter_cm = OMTREK,
+           StatusTreeCode = DOOD) %>%
+    filter(Perimeter_cm == 0) %>%
+    mutate(Alive = StatusTreeCode == 0) %>%
+    group_by(IDPlots, IDTreeSp, Species) %>%
+    summarise(Number = n()) %>%
+    ungroup()
+
+  #extra informatie over boomsoorten toevoegen
+
+  connectieExterneData <- odbcConnectAccess2007(dbVBIExterneData)
+
+    treeList <- sqlFetch(connectieExterneData,"tblTreeSpeciesCharacteristics")
+
+  odbcClose(connectieExterneData)
 
   treesA2VBI1 <- treesA2VBI1 %>%
-    dplyr::filter(Perimeter_cm == 0)
-
-  treesA2VBI1$Alive <- treesA2VBI1$StatusTreeCode == 0
-
-
+    left_join(treeList, by="IDTreeSp") %>%
+    select(IDPlots, IDTreeSp, Number, NameNl, NameSc, ExoticSpecies, InvasiveSpecies, Genus, Spec)
 
   if (is.null(plotIDs)){
 
@@ -1960,12 +2272,12 @@ query_treesA2VBI1 <-"
 
   } else {
 
-    result <- treesA2VBI1[treesA2VBI1$IDPlots %in% plotIDs,]
+    result <- treesA2VBI1 %>%
+      filter(IDPlots %in% plotIDs)
 
   }
 
   return(result)
-
 
 }
 
@@ -2047,6 +2359,74 @@ getLogsVBI1 <- function (db = dbVBI1_veg, plotIDs = NULL ) {
 
 }
 
+
+###############"
+
+getStandDiscriptionVBI2 <- function(db = dbVBI2, IDPlots = NULL){
+
+  query_stand <- "SELECT Standdescription_segments.IDPlots,
+                  Standdescription_segments.ID,
+                  qStandType.Value1,
+                  qStandAge.Value1,
+                  qMixType.Value1
+                  FROM qMixType INNER JOIN (qStandAge INNER JOIN (qStandType INNER JOIN Standdescription_segments ON qStandType.ID = Standdescription_segments.StandType) ON qStandAge.ID = Standdescription_segments.StandAge) ON qMixType.ID = Standdescription_segments.MixType;
+"
+  connectieVBI2 <- odbcConnectAccess2007(db)
+
+  standOrig<- sqlQuery(connectieVBI2,query_stand, stringsAsFactors = FALSE)
+
+  odbcClose(connectieVBI2)
+
+  standDiscrip <- standOrig %>%
+    unique() %>%
+    rename(IDSegments = ID, Bestandstype = Value1, Bestandsleeftijd = Value1.1, Mengingsvorm = Value1.2)
+
+  return(standDiscrip)
+
+}
+
+################################
+
+getStandDiscriptionVBI1 <- function(db = dbVBI1, IDPlots = NULL){
+
+ query_stand <- "
+    SELECT
+    tblHoofd.PLOTNR,
+    tblHoofd.LEEFTKLASS,
+    tblLeeftijdklassen.NAAM,
+    tblHooghout.MENGVORMID,
+    tblMengingsvormen.NAAM,
+    tblHoofd.BESTTYPE1,
+    tblBestandstypes.NAAM,
+    tblHoofd.BEDRIJFSVORM,
+    tblBedrijfsvormen.NAAM
+    FROM tblMengingsvormen RIGHT JOIN (tblLeeftijdklassen RIGHT JOIN ((tblBestandstypes RIGHT JOIN (tblBedrijfsvormen RIGHT JOIN tblHoofd ON tblBedrijfsvormen.BEDRIJFSVORMID = tblHoofd.BEDRIJFSVORM) ON tblBestandstypes.BESTTYPEID = tblHoofd.BESTTYPE1) LEFT JOIN tblHooghout ON tblHoofd.PLOTNR = tblHooghout.PLOTNR) ON tblLeeftijdklassen.LEEFTIJDKLID = tblHoofd.LEEFTKLASS) ON tblMengingsvormen.MENGVORMID = tblHooghout.MENGVORMID
+    WHERE (((tblHoofd.DROPREDEN)=0));
+    "
+
+  connectieVBI1 <- odbcConnectAccess2007(dbVBI1)
+
+  standOrig <- sqlQuery(connectieVBI1, query_stand, stringsAsFactors = FALSE)
+
+  odbcClose(connectieVBI1)
+
+  #### Bestandsleeftijd en mengvorm en bestandstype
+  standDiscrip <- standOrig %>%
+    select(IDPlots = PLOTNR,
+           Mengingsvorm = NAAM.1,
+           Bestandsleeftijd = NAAM,
+           Bestandstype = NAAM.2) %>%
+    mutate(Bestandstype = ifelse(Bestandstype == "te herbebossen", "kapvlakte", Bestandstype),
+           Bestandsleeftijd = ifelse(Bestandsleeftijd == "later te bepalen", "niet van toepassing", Bestandsleeftijd),
+           IDSegments = 1)
+
+  return(standDiscrip)
+
+}
+
+
+
+
 ######################################################################################
 ### FUNCTIES VOOR BEREKENING GRONDVLAK EN VOLUME --> NODIG VOOR INDICATOREN HABITATSTRUCTUUR BOSSEN
 #######################################################################################
@@ -2072,18 +2452,18 @@ calcVolumeAndBasalAreaTree <- function(treeMeasurements, tarieven, nIngang) {
                             #spil
                             (exp(1.10597 * log(Height_m) + 1.78865 * log(Diameter_cm) - 3.07192) -
                             #Verlies
-                            exp(-4.608923 * log(Diameter_cm) + 3.005989 * log(Height_m) - 1.3209 * log(Height_m) * log(Height_m) + 1.605266 * log(Diameter_cm) * log(Height_m) + 5.410272))))
+                            exp(-4.608923 * log(Diameter_cm) + 3.005989 * log(Height_m) - 1.3209 * log(Height_m) * log(Height_m) + 1.605266 * log(Diameter_cm) * log(Height_m) + 5.410272)))) %>%
+    select(-a, -b, -c, -d, -e, -f, -g, -Formule_type, -Tarief, -groepNaam) %>%
+    mutate(Volume = pmax(0,Volume))
 
   } else if (nIngang == 1){
 
     trees <- trees %>%
-      mutate(Volume = a + b * Perimeter_cm + c * (Perimeter_cm^2) + d *(Perimeter_cm^3))
+      mutate(Volume = a + b * Perimeter_cm + c * (Perimeter_cm^2) + d *(Perimeter_cm^3)) %>%
+    select(-a, -b, -c, -d,  -Tarief, -groepNaam) %>%
+    mutate(Volume = pmax(0,Volume))
 
   }
-
-  trees <- trees %>%
-    select(-a, -b, -c, -d, -e, -f, -g, -Formule_type, -Tarief, -groepNaam) %>%
-    mutate(Volume = pmax(0,Volume))
 
   return(trees)
 }
@@ -2146,7 +2526,9 @@ SELECT
     group_by(IDPlots, ID) %>%
     summarise(Volume_ha_hakhout = sum(Volume_ha,na.rm = TRUE),
               BasalArea_ha_hakhout = sum(BasalArea_ha, na.rm = TRUE),
-              MaxPerimeter_cm = max(Perimeter_cm))
+              MaxPerimeter_cm = max(Perimeter_cm),
+              Volume_hakhout = sum(Volume,na.rm = TRUE),
+              BasalArea_hakhout = sum(BasalArea_m2, na.rm = TRUE))
 
   # volumes en grondvlak per boom voor alle bomen
 
@@ -2154,9 +2536,11 @@ SELECT
     left_join(hakhout, by = c("IDPlots", "ID")) %>%
     mutate(Volume_ha = ifelse(!is.na(Volume_ha_hakhout), Volume_ha_hakhout, Volume_ha),
            BasalArea_ha = ifelse(!is.na(BasalArea_ha_hakhout), BasalArea_ha_hakhout, BasalArea_ha),
+           Volume = ifelse(!is.na(Volume_hakhout), Volume_hakhout, Volume),
+           BasalArea = ifelse(!is.na(BasalArea_hakhout), BasalArea_hakhout, BasalArea_m2),
            Perimeter_cm = ifelse(!is.na(MaxPerimeter_cm), MaxPerimeter_cm, Perimeter_cm)) %>%
     mutate(Volume_ha = pmax(0, Volume_ha)) %>%  #negatieve volumes = 0
-    select(-BasalArea_m2, -Volume, -Volume_ha_hakhout, -BasalArea_ha_hakhout, -MaxPerimeter_cm, -Radius_m)
+    select(-Volume_ha_hakhout, -BasalArea_ha_hakhout, -MaxPerimeter_cm, -Radius_m, -Volume_hakhout, -BasalArea_hakhout,  -BasalArea_m2)
 
   return (allTreesA3A4)
 
@@ -2166,7 +2550,7 @@ SELECT
 
 ### Berkening volume en grondvlak op basis van hoogte- en omtrekgegevens VBI1
 
-calculateVolumeAndBasalAreaVBI1 <- function(treesA3A4, shoots){
+calculateVolumeAndBasalAreaVBI1 <- function(treesA3A4, shoots, dbExterneData = dbVBIExterneData){
 
   # tarieven
 
@@ -2207,45 +2591,39 @@ LEFT JOIN tblTarieven_1ing ON tblTariefgroepBoomsoort.TariefID = tblTarieven_1in
   tarieven1ingOrig <- sqlQuery(connectieExterneData, query_tarieven1ing, stringsAsFactors = TRUE)
   odbcClose(connectieExterneData)
 
-  tarieven2ing <- plyr::rename(tarieven2ingOrig,c(ID="IDTreeSp",Value="Species"))
-  tarieven1ing <- plyr::rename(tarieven1ingOrig,c(ID="IDTreeSp",Value="Species"))
+  tarieven2ing <- tarieven2ingOrig %>%
+    rename(IDTreeSp = ID, Species = Value)
+
+  tarieven1ing <- tarieven1ingOrig %>%
+    rename(IDTreeSp = ID, Species = Value)
 
   ### volume & grondvlak individuele bomen
   treesA3A4_levend <- treesA3A4 %>%
     filter(Alive | is.na(Alive)) %>%
-    calcVolumeAndBasalAreaTree(tarieven2ing,2)
+    calcVolumeAndBasalAreaTree(tarieven2ing, 2)
 
   #dood hout heeft steeds als hoogte 0 in databank --> tarieven met 1 ingang
   treesA3A4_dood <- treesA3A4 %>%
     filter(!Alive & !is.na(Alive)) %>%
-    calcVolumeAndBasalAreaTree(tarieven1ing,1)
+    calcVolumeAndBasalAreaTree(tarieven1ing, 1)
 
-  treesA3A4 <- bind_rows(treesA3A4_levend, treesA3A4_dood)
-
-  #expansiefactoren --> volume per ha
-  treesA3A4$Volume_ha <- ifelse(treesA3A4$Perimeter_cm < 122,
-                                  10000 * treesA3A4$Volume / treesA3A4$AreaA3_m2,
-                                  10000 * treesA3A4$Volume / treesA3A4$AreaA4_m2)
-
-  #expansiefactoren -->  grondvlak per hectare
-  treesA3A4$BasalArea_ha <- ifelse(treesA3A4$Perimeter_cm < 122,
-                                 10000 * treesA3A4$BasalArea_m2/treesA3A4$AreaA3_m2,
-                                 10000 * treesA3A4$BasalArea_m2/treesA3A4$AreaA4_m2)
-
-  treesA3A4 <- treesA3A4[order(treesA3A4$IDPlots),]
-
-  ### volume & grondvlak per shoot
-  shootsA2 <- calcVolumeAndBasalAreaTree(shoots,tarieven1ing,1)
-  shootsA2$AreaA2_m2 <- pi * 4.5 * 4.5
-
-  #expansiefactoren voor A2 plot
-  shootsA2$Volume_ha <- 10000 * shootsA2$Volume / shootsA2$AreaA2_m2
-  shootsA2$BasalArea_ha <- 10000 * shootsA2$BasalArea_m2 / shootsA2$AreaA2_m2
+  treesA3A4 <- bind_rows(treesA3A4_levend, treesA3A4_dood) %>%
+    mutate(Volume_ha = ifelse(Perimeter_cm < 122,
+                              10000 * Volume / AreaA3_m2,
+                              10000 * Volume / AreaA4_m2), #expansiefactoren --> volume per ha
+           BasalArea_ha = ifelse(Perimeter_cm < 122,
+                                 10000 * BasalArea_m2/AreaA3_m2,
+                                 10000 * BasalArea_m2/AreaA4_m2)) %>% #expansiefactoren -->  grondvlak per hectare
+    arrange(IDPlots)
 
   ### volume & grondvlak per hakhoutstoof
-  hakhout <- shootsA2 %>%
-    dplyr::group_by(IDPlots, ID, Alive) %>%
-    dplyr::summarise(Volume_ha = sum(Volume_ha, na.rm = TRUE),
+  hakhout <- shoots %>%
+    calcVolumeAndBasalAreaTree(tarieven1ing, 1) %>%
+    mutate(AreaA2_m2 = pi * 4.5 * 4.5,
+           Volume_ha = 10000 * Volume / AreaA2_m2,
+           BasalArea_ha = 10000 * BasalArea_m2 / AreaA2_m2) %>%
+    group_by(IDPlots, ID, Alive) %>%
+    summarise(Volume_ha = sum(Volume_ha, na.rm = TRUE),
               BasalArea_ha = sum(BasalArea_ha, na.rm = TRUE),
               Perimeter_cm = max(Perimeter_cm, na.rm =TRUE),
               IDTreeSp = unique(IDTreeSp)[1],
@@ -2255,16 +2633,15 @@ LEFT JOIN tblTarieven_1ing ON tblTariefgroepBoomsoort.TariefID = tblTarieven_1in
               InvasiveSpecies = unique(InvasiveSpecies)[1],
               Genus = unique(Genus)[1],
               Spec = unique(Spec)[1]) %>%
-    ungroup()
-
-  hakhout$DataSet <- "VBI1"
-  hakhout$IDSegments <- 1
-  hakhout$Coppice_IndividualCode <- 20
-  hakhout$IntactTreeCode <- 10
-  hakhout$DBH_mm <- hakhout$Perimeter_cm/pi * 10
+    ungroup() %>%
+    mutate( IDSegments = 1,
+           Coppice_IndividualCode = 20,
+           IntactTreeCode = 10,
+           DBH_mm = Perimeter_cm/pi * 10)
 
   trees_all <- treesA3A4 %>%
-    dplyr::select(-AreaA4_m2, -AreaA3_m2, -BasalArea_m2, -D, -Volume, -TariefID) %>%
+    rename(BasalArea = BasalArea_m2) %>%
+    select(-TariefID,  -Radius_m) %>%
     bind_rows(hakhout)
 
   return (trees_all)
@@ -2318,34 +2695,29 @@ SiteDescription_HEIDE.Edit_date,
   # tansleyScale <- data.frame(TansleyCode = c(1,5,11,16,22,23),Scale ="Tansley", Class = c("zeldzaam","occasioneel","frequent","abundant","codominant","dominant" ), Cover = c(0.5, 2.5, 15, 27.5,45,75 ))
 
 # een deel van de structuurvariabelen steeds via Tansley-schaal bepaald
-  structurePlots_Tansley_1 <- structurePlots %>%
+  structurePlots_Tansley <- structurePlots %>%
     select(IDPlots, Jaar, LowShrublayer, starts_with("Calluna")) %>%
     gather(-IDPlots, -Jaar, key = "StructureVar", value = "TansleyID") %>%
     left_join(tansleyScale, by = "TansleyID")
 
-# een deel van de structuurvariabelen via via Tansley-schaal bepaald voor 2016 en via bedekking na 2016 --> moet nog aangepast worden in de databank
-  structurePlots_Tansley_2 <- structurePlots %>%
-    select(-Edit_date, -LowShrublayer, -starts_with("Calluna"), -Shrub_and_Treelayer_18m) %>%
-    filter(Jaar < 2016) %>%
-    gather(-IDPlots, -Jaar, key = "StructureVar", value = "TansleyID") %>%
-    left_join(tansleyScale, by = "TansleyID")
+# een deel van de structuurvariabelen via via Tansley-schaal bepaald voor 2016 en via bedekking na 2016 --> moet nog aangepast worden in de databank --> aangepast
+  # structurePlots_Tansley_2 <- structurePlots %>%
+  #   select(-Edit_date, -LowShrublayer, -starts_with("Calluna"), -Shrub_and_Treelayer_18m) %>%
+  #   filter(Jaar < 2016) %>%
+  #   gather(-IDPlots, -Jaar, key = "StructureVar", value = "TansleyID") %>%
+  #   left_join(tansleyScale, by = "TansleyID")
 
-  structurePlots_Cover_1 <- structurePlots %>%
-    select(-Edit_date, -LowShrublayer, -starts_with("Calluna"), -Shrub_and_Treelayer_18m) %>%
-    filter(Jaar >= 2016) %>%
+  structurePlots_Cover <- structurePlots %>%
+    select(-Edit_date, -LowShrublayer, -starts_with("Calluna")) %>%
     gather(-IDPlots, -Jaar, key = "StructureVar", value = "Cover")
 
-# verbossing steeds als bedekking ingeschat
-  structurePlots_Cover_2 <- structurePlots %>%
-    select(IDPlots, Jaar,  Shrub_and_Treelayer_18m) %>%
-    gather(Shrub_and_Treelayer_18m, key = "StructureVar", value = "Cover")
+
 
 # alle records als bedekking uitgedrukt
-  structurePlots_cover_long <- bind_rows(structurePlots_Tansley_1,
-                                   structurePlots_Tansley_2,
-                                   structurePlots_Cover_1,
-                                   structurePlots_Cover_2) %>%
-    select(IDPlots, Jaar, StructureVar, Cover)
+  structurePlots_cover_long <- bind_rows(structurePlots_Tansley,
+                                   structurePlots_Cover) %>%
+    select(IDPlots, Jaar, StructureVar, Cover) %>%
+    mutate(Cover = ifelse(is.na(Cover), 0, Cover))
 
   structurePlots_cover_wide <- structurePlots_cover_long %>%
     spread(key = StructureVar, value = Cover)
@@ -2414,7 +2786,7 @@ getStructurePlot6510 <- function(db = dbHeideEn6510_2014_2015, plotIDs = NULL){
 
 getStructurePlotGraslandMoerassen <- function(db = dbINBOVeg_2018){
 
-  structureOrig <- read.csv2(paste(db, "structuur_N2000", sep = ""), stringsAsFactors = FALSE)
+  structureOrig <- read.csv2(paste(db, "structuur_N2000.csv", sep = ""), stringsAsFactors = FALSE)
 
   structure <- structureOrig %>%
     select(IDRecords = recording_givid, structure_var, structure_value) %>%
@@ -2428,6 +2800,27 @@ getStructurePlotGraslandMoerassen <- function(db = dbINBOVeg_2018){
 ######################################################################################
 ### FUNCTIES VOOR BEREKENING LSVI-INDICATOREN (OP NIVEAU VAN ANALYSEVARIABELE)
 #######################################################################################
+
+berekenLevensvormen <- function(db = dbINBOVeg_2018, plotHabtypes) {
+
+  levensvormen <- read.csv2("../LSVIData/selectieSoorten6230_lifeforms.csv", stringsAsFactors = FALSE)
+
+  coverSpecies <- getCoverSpeciesIV(db, plotHabtypes$IDPlots) %>%
+    left_join(levensvormen, by = "NameSc")
+
+  plot_nLevensvormen <- coverSpecies %>%
+    group_by(IDRecords) %>%
+    summarise(Schijngras = ifelse(sum(levensvorm == "schijngras", na.rm = TRUE) > 0, 1, 0) ,
+              Kruid = ifelse(sum(levensvorm == "kruid", na.rm = TRUE) > 0, 1, 0),
+              Dwergstruik = ifelse(sum(levensvorm == "dwergstruik", na.rm = TRUE) > 0, 1, 0)) %>%
+    ungroup() %>%
+    mutate(nLevensvormen = Schijngras + Kruid + Dwergstruik)
+
+  return(plot_nLevensvormen)
+}
+
+
+###################################################
 
 berekenDominanteSoort <- function(db = dbHeideEn6510_2018, plotHabtypes, offline = TRUE) {
 
@@ -2465,14 +2858,19 @@ berekenDominanteSoort <- function(db = dbHeideEn6510_2018, plotHabtypes, offline
 
 }
 
-
-
-
-
-berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
+berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot", databank = "VBI2"){
 
   # groeiklasse 4 tot groeiklasse 6 leiden we af uit A3A4 bomen
-  treesA3A4 <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
+
+  if(databank == "MHK"){
+
+    treesA3A4 <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
+
+  } else if(databank == "VBI2"){
+
+    treesA3A4 <- getTreesA3A4VBI2(db = db, plotIDs = plotIDs)
+
+  }
 
   # als we analyse op plotniveau wensen dan zetten we IDSegments overal op 1
   if (niveau == "plot"){
@@ -2480,7 +2878,7 @@ berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"
   }
 
   #voor hakhout bepalen we de groeiklasse op basis van de maixmale diameter van de shoots
-  shoots <- getShootsVBI2(db,plotIDs = plotIDs) %>%
+  shoots <- getShootsVBI2(db, plotIDs = plotIDs) %>%
     group_by(IDPlots,ID) %>%
     summarise(DBH_mm_max = max(DBH_MM)) %>%
     ungroup()
@@ -2515,10 +2913,71 @@ berekenGroeiklassenVBI2 <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"
     left_join(groeiklasse3, by = "IDPlots") %>%
     mutate(Groeiklasse3 = ifelse(is.na(Groeiklasse3), FALSE, Groeiklasse3)) %>%
     left_join(groeiklasse2, by = "IDPlots") %>%
-    mutate(Groeiklasse1 = NA) %>% #groeiklasse1 = open ruimte in bos --> kan niet afgeleid worden uit gegegevens
-    gather(-IDPlots,-IDSegments, key = "Groeiklasse", value = "Waarde") %>%
-    arrange(IDPlots, Groeiklasse) %>%
+    #mutate(Groeiklasse1 = NA) %>% #groeiklasse1 = open ruimte in bos --> kan niet afgeleid worden uit gegegevens
+    gather(-IDPlots,-IDSegments, key = "Kenmerk", value = "Waarde") %>%
+    arrange(IDPlots, Kenmerk) %>%
+    ungroup() %>%
+    mutate(ID = as.character(IDPlots),
+         Waarde = ifelse(Waarde, 1, 0),
+         TypeKenmerk = "studiegroep",
+         Type = "Ja/nee",
+         Eenheid = NA,
+         Kenmerk = gsub("Groeiklasse", "groeiklasse ", Kenmerk))
+
+return(groeiklassen)
+
+}
+
+berekenGroeiklassenVBI1 <- function(db = dbVBI1, plotIDs = NULL,  databank = "VBI1"){
+
+  # groeiklasse 4 tot groeiklasse 6 leiden we af uit A3A4 bomen
+  treesA3A4 <- getTreesA3A4VBI1(db = db, plotIDs = plotIDs)
+
+  #voor hakhout bepalen we de groeiklasse op basis van de maixmale diameter van de shoots
+  shoots <- getShootsVBI1(db = db, plotIDs = plotIDs) %>%
+    group_by(IDPlots,ID) %>%
+    summarise(DBH_mm = max(Perimeter_cm * 10 / pi)) %>%
     ungroup()
+
+  # groeiklassen voor levende bomen (dode bomen rekenen we niet mee)
+  groeiklassen_4_5_6_7 <- treesA3A4 %>%
+    bind_rows(shoots) %>%
+    filter(is.na(StatusTree) | StatusTree == "levend") %>%
+    group_by(IDPlots, IDSegments) %>%
+    summarise(Groeiklasse4 = sum(DBH_mm >= 70 & DBH_mm < 140, na.rm = TRUE) > 0,
+              Groeiklasse5 = sum(DBH_mm >= 140 & DBH_mm < 500, na.rm = TRUE) > 0,
+              Groeiklasse6 = sum(DBH_mm >= 500 & DBH_mm < 800, na.rm = TRUE) > 0,
+              Groeiklasse7 = sum(DBH_mm >= 800, na.rm = TRUE) > 0)
+
+  #groeiklasse3 komt overeen met A2-boom
+  treesA2 <- getTreesA2VBI1(db, plotIDs)
+
+  groeiklasse3 <- treesA2 %>%
+    mutate(Groeiklasse3 = TRUE) %>%
+    select(IDPlots, Groeiklasse3) %>%
+    unique()
+
+  #groeiklasse2 = natuurlijke verjonging (boomsoort in kruidlaag)
+  coverSpecies <- getCoverSpeciesVBI1(db = dbVBI1_veg, plotIDs = plotIDs)
+
+  groeiklasse2 <- coverSpecies %>%
+    group_by(IDPlots) %>%
+    summarise(Groeiklasse2 = sum(Tree & Vegetatielaag == "kruidlaag", na.rm = TRUE) > 0)
+
+  groeiklassen <- groeiklassen_4_5_6_7 %>%
+    left_join(groeiklasse3, by = "IDPlots") %>%
+    mutate(Groeiklasse3 = ifelse(is.na(Groeiklasse3), FALSE, Groeiklasse3)) %>%
+    left_join(groeiklasse2, by = "IDPlots") %>%
+    #mutate(Groeiklasse1 = NA) %>% #groeiklasse1 = open ruimte in bos --> kan niet afgeleid worden uit gegegevens
+    gather(-IDPlots, -IDSegments, key = "Kenmerk", value = "Waarde") %>%
+    arrange(IDPlots, Kenmerk) %>%
+    ungroup() %>%
+    mutate(ID = as.character(IDPlots),
+         Waarde = ifelse(Waarde, 1, 0),
+         TypeKenmerk = "studiegroep",
+         Type = "Ja/nee",
+         Eenheid = NA,
+         Kenmerk = gsub("Groeiklasse", "groeiklasse ", Kenmerk))
 
 return(groeiklassen)
 
@@ -2562,43 +3021,170 @@ berekenAVVegetatielagen <- function(db = dbVBI2, plotIDs = NULL) {
 
 }
 
+#######################################################################################
+geefVegetatielagenVBI2 <- function(db = dbVBI2, plotIDs = NULL) {
+
+    veglagen_bedekking <- getCoverVeglayersVBI2(db, plotIDs) %>%
+      select(IDPlots,
+             Kruidlaag = CoverHerblayer,
+             Struiklaag = CoverShrublayer,
+             Boomlaag = CoverTreelayer,
+             "Kruidlaag (incl. moslaag)" = CoverHerbAndMosslayer) %>%
+      gather(Kruidlaag, Struiklaag, Boomlaag, "Kruidlaag (incl. moslaag)", key = Kenmerk, value = Waarde) %>%
+      mutate(TypeKenmerk = "studiegroep",
+             ID =  paste("VBI", IDPlots, "_2"),
+             IDSegments = 1,
+             Eenheid = "%",
+             Type = "Percentage"
+             ) %>%
+      arrange(IDPlots)
+
+
+    return(veglagen_bedekking)
+
+}
+
+geefVegetatielagenVBI1 <- function(db = dbVBI1_veg, plotIDs = NULL) {
+
+    veglagen_bedekking <- getCoverVeglayersVBI1(db, plotIDs) %>%
+      select(IDPlots,
+             Kruidlaag = CoverHerblayer,
+             Struiklaag = CoverShrublayer,
+             Boomlaag = CoverTreelayer,
+             "Kruidlaag (incl. moslaag)" = CoverHerbAndMosslayer) %>%
+      gather(Kruidlaag, Struiklaag, Boomlaag, "Kruidlaag (incl. moslaag)", key = Kenmerk, value = Waarde) %>%
+      mutate(TypeKenmerk = "studiegroep",
+             ID = paste("VBI", IDPlots, "_1"),
+             IDSegments = 1,
+             Eenheid = "%",
+             Type = "Percentage"
+             ) %>%
+      arrange(IDPlots)
+
+
+    return(veglagen_bedekking)
+
+}
+
+
+geefVegetatielagenMONEOS <- function(db = dbINBOVeg_MONEOS, plotIDs = NULL) {
+
+    veglagen_bedekking <- getCoverVeglayersIV_MONEOS(db, plotIDs) %>%
+      select(ID = IDRecords, IDPlots,
+             Kruidlaag = kruidlaag,
+             Struiklaag = struiklaag,
+             Boomlaag = boomlaag) %>%
+      gather(Kruidlaag, Struiklaag, Boomlaag, key = Kenmerk, value = Waarde) %>%
+      mutate(TypeKenmerk = "studiegroep",
+             ID = as.character(ID),
+             Eenheid = "%",
+             Type = "Percentage"
+             ) %>%
+      arrange(IDPlots)
+
+
+    return(veglagen_bedekking)
+
+}
+
+geefVegetatielagenPINK <- function(db = dbINBOVeg_PINK, plotIDs = NULL) {
+
+    veglagen_bedekking <- getCoverVeglayersIV_PINK(db, plotIDs) %>%
+      select(ID,  IDPlots,
+             Kruidlaag = kruidlaag,
+             Struiklaag = struiklaag,
+             Boomlaag = boomlaag,
+             Moslaag = moslaag) %>%
+      gather(Kruidlaag, Struiklaag, Boomlaag, Moslaag, key = Kenmerk, value = Waarde) %>%
+      mutate(TypeKenmerk = "studiegroep",
+             ID = as.character(ID),
+             Eenheid = "%",
+             Type = "Percentage"
+             ) %>%
+      arrange(IDPlots)
+
+
+    return(veglagen_bedekking)
+
+}
+
+
+
 
 #######################################################################################
 
-berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
+berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot", databank = "VBI2"){
 
-  treesA3A4MHK <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
-  shootsMHK <- getShootsVBI2(db = db, plotIDs = plotIDs)
+  if(databank == "MHK"){
 
-  if(niveau == "plot"){
+    treesA3A4 <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
+    shoots <- getShootsVBI2(db = db, plotIDs = plotIDs)
+    logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
+    if(niveau == "plot"){
 
-    plotSize_adj <- treesA3A4MHK %>%
-      group_by(IDPlots, IDSegments) %>%
-      summarise(AreaA4_m2_segment = unique(AreaA4_m2),
-                AreaA3_m2_segment = unique(AreaA3_m2)) %>%
-      group_by(IDPlots) %>%
-      summarise(AreaA4_m2 = sum(AreaA4_m2_segment),
-                AreaA3_m2 = sum(AreaA3_m2_segment))
+      plotSize_adj <- treesA3A4 %>%
+        group_by(IDPlots, IDSegments) %>%
+        summarise(AreaA4_m2_segment = unique(AreaA4_m2),
+                  AreaA3_m2_segment = unique(AreaA3_m2)) %>%
+        group_by(IDPlots) %>%
+        summarise(AreaA4_m2 = sum(AreaA4_m2_segment),
+                  AreaA3_m2 = sum(AreaA3_m2_segment))
 
-    treesA3A4MHK <- treesA3A4MHK %>%
-      mutate(IDSegments = 1) %>%
-      select(-AreaA4_m2, -AreaA3_m2) %>%
-      left_join(plotSize_adj, by = "IDPlots")
+      treesA3A4 <- treesA3A4 %>%
+        mutate(IDSegments = 1) %>%
+        select(-AreaA4_m2, -AreaA3_m2) %>%
+        left_join(plotSize_adj, by = "IDPlots")
+    }
+
+    treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4, shoots, dbExterneData = dbVBIExterneData)
+
+  } else if (databank == "VBI2"){
+
+    treesA3A4 <- getTreesA3A4VBI2(db = db, plotIDs = plotIDs)
+    shoots <- getShootsVBI2(db = db, plotIDs = plotIDs)
+    logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
+    if(niveau == "plot"){
+
+      plotSize_adj <- treesA3A4 %>%
+        group_by(IDPlots, IDSegments) %>%
+        summarise(AreaA4_m2_segment = unique(AreaA4_m2),
+                  AreaA3_m2_segment = unique(AreaA3_m2)) %>%
+        group_by(IDPlots) %>%
+        summarise(AreaA4_m2 = sum(AreaA4_m2_segment),
+                  AreaA3_m2 = sum(AreaA3_m2_segment))
+
+      treesA3A4 <- treesA3A4 %>%
+        mutate(IDSegments = 1) %>%
+        select(-AreaA4_m2, -AreaA3_m2) %>%
+        left_join(plotSize_adj, by = "IDPlots")
+    }
+
+    treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4, shoots, dbExterneData = dbVBIExterneData)
+
+  }  else if (databank == "VBI1"){
+
+    treesA3A4 <- getTreesA3A4VBI1(db = db, plotIDs = plotIDs)
+    shoots <- getShootsVBI1(db = db, plotIDs = plotIDs)
+    logs <- treesA3A4 %>%
+      select(IDPlots) %>%
+      unique() %>%
+      mutate(Volume_ha = NA) #gegevens ontbreken voor VBI1
+
+    treesA3A4_Vol <-  calculateVolumeAndBasalAreaVBI1(treesA3A4, shoots, dbExterneData = dbVBIExterneData)
 
   }
-
-  treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
-  logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
 
   doodHoutStaand <- treesA3A4_Vol %>%
   group_by(IDPlots, IDSegments) %>%
   summarise(StaandDoodHout = sum(Volume_ha * (StatusTree == "dood"), na.rm = TRUE),
             StaandLevendHout = sum(Volume_ha * (StatusTree == "levend"), na.rm = TRUE),
-            DikStaandDoodHout = sum((Diameter_cm > 40) * (StatusTree == "dood") * 10000 / AreaA4_m2, na.rm =TRUE))
+            DikStaandDoodHout = sum((Diameter_cm > 40) * (StatusTree == "dood") * 10000 / AreaA4_m2, na.rm =TRUE)) %>%
+    ungroup()
 
   doodHoutLiggend <- logs %>%
     group_by(IDPlots) %>%
-    summarise(LiggendDoodHout = sum(Volume_ha, na.rm = TRUE))
+    summarise(LiggendDoodHout = sum(Volume_ha, na.rm = TRUE)) %>%
+    ungroup()
 
   doodHout <- doodHoutStaand %>%
     left_join(doodHoutLiggend, by = "IDPlots") %>%
@@ -2614,32 +3200,67 @@ berekenDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
 
 #######################################################################################
 
-berekenAVDoodHout <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
+berekenAVDoodHout <- function(db = dbVBI2, plotHabtypes, niveau = "plot", databank = "VBI2"){
 
-  doodHout <- berekenDoodHout(db, plotIDs, niveau)
+  doodHout <- berekenDoodHout(db, plotHabtypes$IDPlots, niveau, databank)
 
   doodHoutAV <- doodHout %>%
   select(-Eenheid) %>%
   spread(key = "Kenmerk", value = "Waarde" ) %>%
   mutate(volumeAandeelDoodHout = (StaandDoodHout + LiggendDoodHout)/(StaandDoodHout + StaandLevendHout + LiggendDoodHout) * 100,
+         volumeAandeelDoodHoutStaand = StaandDoodHout/(StaandDoodHout + StaandLevendHout) * 100,
          dikDoodHoutStaand_ha = DikStaandDoodHout) %>%
-  select(IDPlots, IDSegments, volumeAandeelDoodHout, dikDoodHoutStaand_ha) %>%
+  select(IDPlots, IDSegments, volumeAandeelDoodHout, dikDoodHoutStaand_ha)
+
+   #plots zonder bomen --> nulwaarneming
+
+  doodHoutAV_plus0 <- plotHabtypes %>%
+    select(IDPlots, IDSegments) %>%
+    unique() %>%
+    left_join(doodHoutAV, by = c("IDPlots", "IDSegments")) %>%
+    mutate(volumeAandeelDoodHout = ifelse(is.na(volumeAandeelDoodHout), 0, volumeAandeelDoodHout),
+           dikDoodHoutStaand_ha = ifelse(is.na(dikDoodHoutStaand_ha), 0, dikDoodHoutStaand_ha)) %>%
   gather(volumeAandeelDoodHout, dikDoodHoutStaand_ha,  key = "AnalyseVariabele", value = "Waarde")
 
-  return(doodHoutAV)
+  return(doodHoutAV_plus0)
 
 }
 
 #######################################################################################
 
-berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot"){
+berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot", eenheid = "Grondvlak_ha", databank = "VBI2"){
 
-  treesA3A4MHK <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
-  shootsMHK <- getShootsVBI2(db = db, plotIDs = plotIDs)
+  if(databank == "MHK"){
 
-  if(niveau == "plot"){
+    treesA3A4 <- getTreesA3A4MHK(db = db, plotIDs = plotIDs)
 
-    plotSize_adj <- treesA3A4MHK %>%
+    if(niveau == "plot"){
+
+      plotSize_adj <- treesA3A4 %>%
+        group_by(IDPlots, IDSegments) %>%
+        summarise(AreaA4_m2_segment = unique(AreaA4_m2),
+                  AreaA3_m2_segment = unique(AreaA3_m2)) %>%
+        group_by(IDPlots) %>%
+        summarise(AreaA4_m2 = sum(AreaA4_m2_segment),
+                  AreaA3_m2 = sum(AreaA3_m2_segment))
+
+      treesA3A4 <- treesA3A4 %>%
+        mutate(IDSegments = 1) %>%
+        select(-AreaA4_m2, -AreaA3_m2) %>%
+        left_join(plotSize_adj, by = "IDPlots")
+    }
+
+    shoots <- getShootsVBI2(db = db, plotIDs = plotIDs)
+
+    treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4, shoots, dbExterneData = dbVBIExterneData)
+
+  } else if(databank == "VBI2"){
+
+    treesA3A4 <- getTreesA3A4VBI2(db = db, plotIDs = plotIDs)
+
+    if(niveau == "plot"){
+
+    plotSize_adj <- treesA3A4 %>%
       group_by(IDPlots, IDSegments) %>%
       summarise(AreaA4_m2_segment = unique(AreaA4_m2),
                 AreaA3_m2_segment = unique(AreaA3_m2)) %>%
@@ -2647,15 +3268,24 @@ berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot")
       summarise(AreaA4_m2 = sum(AreaA4_m2_segment),
                 AreaA3_m2 = sum(AreaA3_m2_segment))
 
-    treesA3A4MHK <- treesA3A4MHK %>%
+    treesA3A4 <- treesA3A4 %>%
       mutate(IDSegments = 1) %>%
       select(-AreaA4_m2, -AreaA3_m2) %>%
       left_join(plotSize_adj, by = "IDPlots")
 
   }
+    shoots <- getShootsVBI2(db = db, plotIDs = plotIDs)
 
-  treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4MHK, shootsMHK, dbExterneData = dbVBIExterneData)
-  logs <- getLogsVBI2(db = db, plotIDs = plotIDs)
+    treesA3A4_Vol <-  calculateVolumeAndBasalArea(treesA3A4, shoots, dbExterneData = dbVBIExterneData)
+
+  } else if(databank == "VBI1"){
+
+    treesA3A4 <- getTreesA3A4VBI1(db = db, plotIDs = plotIDs)
+    shoots <- getShootsVBI1(db = db, plotIDs = plotIDs)
+
+    treesA3A4_Vol <-  calculateVolumeAndBasalAreaVBI1(treesA3A4, shoots, dbExterneData = dbVBIExterneData)
+
+    }
 
   levendHoutSoort <- treesA3A4_Vol %>%
     group_by(IDPlots, IDSegments, NameSc) %>%
@@ -2664,8 +3294,15 @@ berekenLevendHoutSoort <- function(db = dbVBI2, plotIDs = NULL, niveau = "plot")
     ungroup() %>%
     gather(Volume_ha, Grondvlak_ha, key = Eenheid, value = Waarde) %>%
     rename(Kenmerk = NameSc) %>%
-    mutate(TypeKenmerk = "Soort_Lat",
-           Type = NA)
+    mutate(TypeKenmerk = "soort_latijn",
+           Type = "Decimaal getal" ,
+           Kenmerk = as.character(Kenmerk),
+           ID = paste(substr(databank, 1, 3), IDPlots, ifelse(databank == "VBI2", "_2",
+                                                              ifelse(databank == "VBI1", "_1", "")), sep =""),
+           Vegetatielaag = "boomlaag") %>%
+    filter(Eenheid == eenheid)
+
+  return(levendHoutSoort)
 
 }
 
@@ -2971,6 +3608,8 @@ if (niveau == "plot"){
   return(indicatoren)
 
 }
+
+
 
 ###########################################################################################################################
   ############################################################################
@@ -3281,6 +3920,15 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
   klasseTalrijk <- selectScale("Beheermonitoringsschaal") %>%
   filter(KlasseCode == "T")
 
+  #Mozaiek2330 bij 2310 kan afgeleid worden uit veld steekproef met beschrijving polygoon op basis van Habitatkaart
+  meetnet <-  (readOGR(dsn = dirSample, layer = sampleHeideFile, verbose = FALSE))@data %>%
+    select(IDPlots = Ranking, Habitattype = habt, Pol_beschr) %>%
+    mutate(mozaiek2330 = ifelse(grepl("2330", Pol_beschr), 1, 0),
+           IDPlots = as.numeric(IDPlots)) %>%
+    select(IDPlots, mozaiek2330) %>%
+    unique()
+
+  #Andere structuurvariabelen
   structurePlotHeideAV <- structurePlotHeide %>%
     mutate(dwergstruiken = ifelse(is.na(LowShrublayer),0, LowShrublayer), # dwergstruiken
 
@@ -3289,7 +3937,8 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
             BedekkingOntwikkelingsstadium = ifelse(is.na(Calluna_phase_devel),0,Calluna_phase_devel),
             BedekkingClimaxstadium = ifelse(is.na(Calluna_phase_climax),0,Calluna_phase_climax),
             BedekkingDegeneratiestadium = ifelse(is.na(Calluna_phase_degen),0,Calluna_phase_degen),
-            ouderdomstadia = (BedekkingPionierstadium >= klasseTalrijk$BedekkingGem) + (BedekkingOntwikkelingsstadium >= klasseTalrijk$BedekkingGem) + (BedekkingClimaxstadium >= klasseTalrijk$BedekkingGem) + (BedekkingDegeneratiestadium >= klasseTalrijk$BedekkingGem),
+            ouderdomstadiaTalrijk = (BedekkingPionierstadium >= klasseTalrijk$BedekkingGem) + (BedekkingOntwikkelingsstadium >= klasseTalrijk$BedekkingGem) + (BedekkingClimaxstadium >= klasseTalrijk$BedekkingGem) + (BedekkingDegeneratiestadium >= klasseTalrijk$BedekkingGem),
+           ouderdomstadia = (BedekkingPionierstadium > 0) + (BedekkingOntwikkelingsstadium > 0) + (BedekkingClimaxstadium > 0) + (BedekkingDegeneratiestadium > 0),
            struikhei = ouderdomstadia > 0,
            climaxOfDegradatieStadium = (BedekkingClimaxstadium >= klasseTalrijk$BedekkingGem) + (BedekkingDegeneratiestadium >= klasseTalrijk$BedekkingGem),
 
@@ -3324,6 +3973,7 @@ berekenLSVI_structuurplotHeide <- function(db = dbHeideEn6510_2018, plotHabtypes
 
           #invasieve exoten
           invasieve_exoten = ifelse(is.na(Campylopus_introflexus), 0, Campylopus_introflexus)) %>%
+    left_join(meetnet, by = "IDPlots") %>%
     gather(-IDPlots, -Jaar, key = "AnalyseVariabele", value = "Waarde") %>%
     left_join(plotHabtypes, by = "IDPlots") %>%
     inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
@@ -3377,15 +4027,20 @@ berekenLSVI_structuurplotGraslandMoerassen <- function(db = dbINBOVeg_2018, plot
   # verbossing en structuurschade
   structurePlot <-getStructurePlotGraslandMoerassen(db)
 
+  #levensvormen --> moet nog in LSVI-rekenmodule komen
+  levensvormen <- berekenLevensvormen(db, plotHabtypes) %>%
+    select(IDRecords, nLevensvormen)
+
   structure <- structureLayers %>%
-    left_join(structurePlot, by = "IDRecords")
+    left_join(structurePlot, by = "IDRecords") %>%
+    left_join(levensvormen, by = "IDRecords")
 
   ### Indicatoren opvragen voor beide versies van LSVI
   indicatorenLSVI <- read.csv2(indicatorenLSVI_fn)
 
   structureAV <- structure %>%
-    select(IDRecords, naakte_bodem = CoverNaakteGrond, strooisellaag = CoverStrooisellaag, verbossing = Bos, betreding_brand = Struc) %>%
-    gather(naakte_bodem, strooisellaag, verbossing, betreding_brand, key = "AnalyseVariabele", value = "Waarde") %>%
+    select(IDRecords, naakte_bodem = CoverNaakteGrond, strooisellaag = CoverStrooisellaag, verbossing = Bos, betreding_brand = Struc, nLevensvormen) %>%
+    gather(naakte_bodem, strooisellaag, verbossing, betreding_brand, nLevensvormen, key = "AnalyseVariabele", value = "Waarde") %>%
     left_join(plotHabtypes, by = "IDRecords") %>%
     inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
     mutate(Beoordeling = ifelse(Indicatortype == "positief", ifelse(Waarde >= Drempelwaarde, 1, 0),
@@ -3401,6 +4056,516 @@ berekenLSVI_structuurplotGraslandMoerassen <- function(db = dbINBOVeg_2018, plot
 
 }
 
+
+geefVoorwaardenHeide <- function(db = dbHeideEn6510_2018, plotHabtypes){
+
+   structurePlotHeide <- getStructurePlotHeide(db, plotHabtypes$IDPlots)
+
+  ### Indicatoren opvragen voor beide versies van LSVI
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn, stringsAsFactors = FALSE)
+
+  klasseTalrijk <- selectScale("Beheermonitoringsschaal") %>%
+    filter(KlasseCode == "T")
+
+  #Mozaiek2330 bij 2310 kan afgeleid worden uit veld steekproef met beschrijving polygoon op basis van Habitatkaart
+  meetnet <-  (readOGR(dsn = dirSample, layer = sampleHeideFile, verbose = FALSE))@data %>%
+    select(IDPlots = Ranking, Habitattype = habt, Pol_beschr) %>%
+    mutate(mozaiek2330 = ifelse(grepl("2330", Pol_beschr), 1, 0),
+           IDPlots = as.numeric(as.character(IDPlots))) %>%
+    select(IDPlots, mozaiek2330) %>%
+    unique()
+
+  #Andere structuurvariabelen
+  structurePlotHeideAV <- structurePlotHeide %>%
+    mutate(dwergstruiken = ifelse(is.na(LowShrublayer),0, LowShrublayer), # dwergstruiken
+
+           # ouderdomstructuur struikhei
+            BedekkingPionierstadium = ifelse(is.na(Calluna_phase_pioneer),0,Calluna_phase_pioneer),
+            BedekkingOntwikkelingsstadium = ifelse(is.na(Calluna_phase_devel),0,Calluna_phase_devel),
+            BedekkingClimaxstadium = ifelse(is.na(Calluna_phase_climax),0,Calluna_phase_climax),
+            BedekkingDegeneratiestadium = ifelse(is.na(Calluna_phase_degen),0,Calluna_phase_degen),
+            ouderdomstadiaTalrijk = (BedekkingPionierstadium >= klasseTalrijk$BedekkingGem) + (BedekkingOntwikkelingsstadium >= klasseTalrijk$BedekkingGem) + (BedekkingClimaxstadium >= klasseTalrijk$BedekkingGem) + (BedekkingDegeneratiestadium >= klasseTalrijk$BedekkingGem),
+           ouderdomstadia = (BedekkingPionierstadium > 0) + (BedekkingOntwikkelingsstadium > 0) + (BedekkingClimaxstadium > 0) + (BedekkingDegeneratiestadium > 0),
+           struikhei = ouderdomstadia > 0,
+           climaxOfDegradatieStadium = (BedekkingClimaxstadium >= klasseTalrijk$BedekkingGem) + (BedekkingDegeneratiestadium >= klasseTalrijk$BedekkingGem),
+
+           # bedekking naakte bodem
+            naakte_bodem = ifelse(is.na(Pioneer_phase_open_soil),0,Pioneer_phase_open_soil),
+
+           # pionierstadia/ bedekking open vegetatie
+           moslaag = ifelse(is.na(Pioneer_Mos), 0, Pioneer_Mos),
+           BedekkingBuntgras = ifelse(is.na(Pioneer_Coryn_Aira), 0, Pioneer_Coryn_Aira),
+           korstmosvegetaties = ifelse(is.na(Pioneer_Lichenen), 0, Pioneer_Lichenen),
+           pionierStadia = (naakte_bodem > 0) + (BedekkingBuntgras > 0) + (moslaag > 0) + (korstmosvegetaties > 0),
+           openVegetatieOfKaalZand = pmin(moslaag + korstmosvegetaties + BedekkingBuntgras + naakte_bodem, 100),
+           openVegetatie = pmin(moslaag + korstmosvegetaties +  BedekkingBuntgras, 100),
+
+          # bedekking moslaag (mos + korstmos)
+          BedekkingMosEnKorstmos = moslaag + korstmosvegetaties,
+
+          # bedekking veenmos
+          veenmoslaag = ifelse(is.na(Sphagnumlayer),0,Sphagnumlayer),
+
+          # verbossing
+          verbossing = Shrub_and_Treelayer_18m,
+
+          # vergrassing
+          vergrassing = ifelse(is.na(Herbs), 0, Herbs),
+
+          # verruiging
+          verruiging = ifelse(is.na(Brushwood), 0, Brushwood),
+
+          # vergrassing+verruiging
+          vergrassingEnVerruiging = vergrassing + verruiging,
+
+          #invasieve exoten
+          invasieve_exoten = ifelse(is.na(Campylopus_introflexus), 0, Campylopus_introflexus)) %>%
+    left_join(meetnet, by = "IDPlots") %>%
+    gather(-IDPlots, -Jaar, key = "AnalyseVariabele", value = "Waarde") %>%
+    left_join(plotHabtypes, by = "IDPlots") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    rename(ID = IDPlots,  Versie = VersieLSVI, Habitatsubtype = HabCode) %>%
+    mutate(ID = as.character(ID),
+           Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(substring(Voorwaarde, 1, 9) == "bedekking", "Percentage",
+                       ifelse(AnalyseVariabele == "mozaiek2330", "Ja/nee", "Geheel getal")),
+         Invoertype = NA,
+         Eenheid = ifelse(substring(Voorwaarde, 1, 9) == "bedekking", "%", NA),
+         Versie = ifelse(Versie == "versie2", "Versie 2.0",
+                         ifelse(Versie == "versie3", "Versie 3",
+                                Versie))) %>%
+    select(ID, Habitattype, Habitatsubtype, Versie, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid) %>%
+    arrange(ID, Voorwaarde) %>%
+  ungroup()
+
+  return(structurePlotHeideAV)
+
+}
+
+
+geefVoorwaarden6510 <- function(db = dbHeideEn6510_2018, plotHabtypes){
+
+  structurePlot6510 <- getStructurePlot6510(db, plotHabtypes$IDPlots)
+
+  ### Indicatoren opvragen voor beide versies van LSVI
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn, stringsAsFactors = FALSE)
+
+  structurePlot6510AV <- structurePlot6510 %>%
+    rename(verbossing = Shrub_and_Treelayer_18m, strooisellaag = Litter) %>%
+    gather(-IDPlots, key = "AnalyseVariabele", value = "Waarde") %>%
+    left_join(plotHabtypes, by = "IDPlots") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    rename(ID = IDPlots,  Versie = VersieLSVI, Habitatsubtype = HabCode) %>%
+    mutate(ID = as.character(ID),
+           Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(substring(Voorwaarde, 1, 9) == "bedekking", "Percentage", "Geheel getal"),
+         Invoertype = NA,
+         Eenheid = ifelse(substring(Voorwaarde, 1, 9) == "bedekking", "%", NA),
+         Versie = ifelse(Versie == "versie2", "Versie 2.0",
+                         ifelse(Versie == "versie3", "Versie 3",
+                                Versie))) %>%
+    select(ID, Habitattype, Habitatsubtype, Versie, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid) %>%
+    arrange(ID, Voorwaarde) %>%
+  ungroup()
+
+  return(structurePlot6510AV)
+
+}
+
+geefVoorwaardenBosVBI2 <- function(db = dbVBI2, plotHabtypes, niveau = "plot", databank = "VBI2"){
+
+
+  ### Indicatoren opvragen voor beide versies van LSVI
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn, stringsAsFactors = FALSE)
+
+  #bestandskarakteristieken
+  standDiscrip <- getStandDiscriptionVBI2(db = db, plotHabtypes$IDPlots) %>%
+    filter(IDSegments == 1)
+
+  # overlay GIS-lagen
+  meetpunten_shape <- SpatialPointsDataFrame(coords = cbind(x = plotHabtypes$X_coord, y = plotHabtypes$Y_coord), data = plotHabtypes)
+
+  MSA_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Bos_clusters", verbose = FALSE)
+
+  Bosleeftijd_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Blftd", verbose = FALSE)
+
+  proj4string(meetpunten_shape) <- proj4string(MSA_shape)
+  proj4string(Bosleeftijd_shape) <- proj4string(MSA_shape)
+
+  meetpunten_shape$Clst_ID <- over(meetpunten_shape, MSA_shape)$Clst_ID
+  meetpunten_shape$BLK <- over(meetpunten_shape, Bosleeftijd_shape)$BLK
+
+  meetpunten_data_vw <- meetpunten_shape@data %>%
+    left_join(MSA_shape@data, by = "Clst_ID") %>%
+    rename(HT91E0_sf = HT91E0_s) %>%
+    gather(HT2180, HT9110, HT9120, HT9130, HT9150, HT9160, HT9190, HT91E0_vc, HT91E0_vn, HT91E0_vm, HT91E0_vo, HT91E0_sf, HT91F0,
+          key = "Habitatsubtype", value = "MSA") %>%
+    filter((paste("HT", HabCode, sep ="") == Habitatsubtype) | (HabCode == "91E0_va" & Habitatsubtype == "HT91E0_vc") ) %>% #HT91E0_vc en va worden samengenomen
+    mutate(MSA = ifelse(is.na(MSA), 0, MSA),
+           BLK = ifelse(is.na(BLK), "0", as.character(BLK))) %>%
+    left_join(standDiscrip, by = c("IDPlots", "IDSegments"))
+
+  bestandAV <- meetpunten_data_vw %>%
+    mutate(bosconstantie = ifelse(BLK %in% c("Bos ontstaan voor 1775", "Bos ontstaan tussen 1775 en 1850") | Bestandsleeftijd %in% c("101 - 120 jaar", "121 - 140 jaar", "141 - 160 jaar", "> 160 jaar"),
+           101,
+           ifelse(BLK %in% c("Bos ontstaan tussen 1850 en +/- 1930") | Bestandsleeftijd %in% c("81 - 100 jaar"), 81,
+                  ifelse( Bestandsleeftijd %in% c("41 - 60 jaar", "61 - 80 jaar"), 41, 20))),
+           natuurlijke_mozaiekstructuur = ifelse(Bestandsleeftijd == "ongelijkjarig", 1, 0)
+           ) %>%
+    select(IDPlots, HabCode, bosconstantie, natuurlijke_mozaiekstructuur, MSA) %>%
+    gather(bosconstantie, natuurlijke_mozaiekstructuur, MSA, key = "AnalyseVariabele", value = "Waarde") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    rename(ID = IDPlots, Habitatsubtype = HabCode) %>%
+    mutate(ID = as.character(ID),
+         Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(AnalyseVariabele == "natuurlijke_mozaiekstructuur", "Ja/nee",
+                       ifelse(AnalyseVariabele == "bosconstantie", "Geheel getal",
+                              "Decimaal getal")),
+         Invoertype = NA,
+         Eenheid =  NA) %>%
+    select(ID, Habitattype, Habitatsubtype, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid)
+
+
+  dendroAV <- berekenAVDoodHout(db = db, plotHabtypes, niveau = niveau) %>%
+    left_join(select(plotHabtypes, IDPlots, HabCode), by = "IDPlots") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    rename(ID = IDPlots,  Versie = VersieLSVI, Habitatsubtype = HabCode) %>%
+    mutate(ID = as.character(ID),
+         Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(AnalyseVariabele == "volumeAandeelDoodHout", "Percentage", "Decimaal getal"),
+         Invoertype = NA,
+         Eenheid = ifelse(Type == "Percentage", "%", NA)) %>%
+    select(ID, Habitattype, Habitatsubtype, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid)
+
+
+  voorwaarden <- dendroAV %>%
+    bind_rows(bestandAV) %>%
+    mutate(ID = paste(substr(databank, 1, 3), ID, ifelse(databank == "VBI2", "_2", ""), sep = "")) %>%
+    arrange(ID, Voorwaarde) %>%
+  ungroup()
+
+  return(voorwaarden)
+
+}
+
+
+geefVoorwaardenBosVBI1 <- function(db = dbVBI1, plotHabtypes,  databank = "VBI1"){
+
+
+  ### Indicatoren opvragen voor beide versies van LSVI
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn, stringsAsFactors = FALSE)
+
+  #bestandskarakteristieken
+  standDiscrip <- getStandDiscriptionVBI1(db = db, plotHabtypes$IDPlots)
+
+  # overlay GIS-lagen
+  meetpunten_shape <- SpatialPointsDataFrame(coords = cbind(x = plotHabtypes$X_coord, y = plotHabtypes$Y_coord), data = plotHabtypes)
+
+  MSA_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Bos_clusters", verbose = FALSE)
+
+  Bosleeftijd_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Blftd", verbose = FALSE)
+
+  proj4string(meetpunten_shape) <- proj4string(MSA_shape)
+  proj4string(Bosleeftijd_shape) <- proj4string(MSA_shape)
+
+  meetpunten_shape$Clst_ID <- over(meetpunten_shape, MSA_shape)$Clst_ID
+  meetpunten_shape$BLK <- over(meetpunten_shape, Bosleeftijd_shape)$BLK
+
+  meetpunten_data_vw <- meetpunten_shape@data %>%
+    left_join(MSA_shape@data, by = "Clst_ID") %>%
+    rename(HT91E0_sf = HT91E0_s) %>%
+    gather(HT2180, HT9110, HT9120, HT9130, HT9150, HT9160, HT9190, HT91E0_vc, HT91E0_vn, HT91E0_vm, HT91E0_vo, HT91E0_sf, HT91F0,
+          key = "Habitatsubtype", value = "MSA") %>%
+    filter((paste("HT", HabCode, sep ="") == Habitatsubtype) | (HabCode == "91E0_va" & Habitatsubtype == "HT91E0_vc") ) %>% #HT91E0_vc en va worden samengenomen
+    mutate(MSA = ifelse(is.na(MSA), 0, MSA),
+           BLK = ifelse(is.na(BLK), "0", as.character(BLK))) %>%
+    left_join(standDiscrip, by = c("IDPlots", "IDSegments"))
+
+  bestandAV <- meetpunten_data_vw %>%
+    mutate(bosconstantie = ifelse(BLK %in% c("Bos ontstaan voor 1775", "Bos ontstaan tussen 1775 en 1850") | Bestandsleeftijd %in% c("101 - 120", "121 - 140", "141 - 160", "> 160"),
+           101,
+           ifelse(BLK %in% c("Bos ontstaan tussen 1850 en +/- 1930") | Bestandsleeftijd %in% c("81 - 100"), 81,
+                  ifelse( Bestandsleeftijd %in% c("41 - 60", "61 - 80"), 41, 20))),
+           natuurlijke_mozaiekstructuur = ifelse(Bestandsleeftijd == "ongelijkjarig", 1, 0)
+           ) %>%
+    select(IDPlots, HabCode, bosconstantie, natuurlijke_mozaiekstructuur, MSA) %>%
+    gather(bosconstantie, natuurlijke_mozaiekstructuur, MSA, key = "AnalyseVariabele", value = "Waarde") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    rename(ID = IDPlots, Habitatsubtype = HabCode) %>%
+    mutate(ID = as.character(ID),
+         Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(AnalyseVariabele == "natuurlijke_mozaiekstructuur", "Ja/nee",
+                       ifelse(AnalyseVariabele == "bosconstantie", "Geheel getal",
+                              "Decimaal getal")),
+         Invoertype = NA,
+         Eenheid =  NA) %>%
+    select(ID, Habitattype, Habitatsubtype, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid)
+
+
+  dendroAV <- berekenAVDoodHout(db = db, plotHabtypes, niveau = niveau) %>%
+    left_join(select(plotHabtypes, IDPlots, HabCode), by = "IDPlots") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    rename(ID = IDPlots,  Versie = VersieLSVI, Habitatsubtype = HabCode) %>%
+    mutate(ID = as.character(ID),
+         Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(AnalyseVariabele == "volumeAandeelDoodHout", "Percentage", "Decimaal getal"),
+         Invoertype = NA,
+         Eenheid = ifelse(Type == "Percentage", "%", NA)) %>%
+    select(ID, Habitattype, Habitatsubtype, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid)
+
+
+  voorwaarden <- dendroAV %>%
+    bind_rows(bestandAV) %>%
+    mutate(ID = paste(substr(databank, 1, 3), ID, "_1", sep = "")) %>%
+    arrange(ID, Voorwaarde) %>%
+  ungroup()
+
+  return(voorwaarden)
+
+}
+
+
+geefVoorwaardenBosMONEOS <- function(plotHabtypes){
+
+  # overlay GIS-lagen
+  meetpunten_shape <- SpatialPointsDataFrame(coords = cbind(x = plotHabtypes$X_coord, y = plotHabtypes$Y_coord), data = plotHabtypes)
+
+  MSA_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Bos_clusters", verbose = FALSE)
+
+  Bosleeftijd_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Blftd", verbose = FALSE)
+
+  proj4string(meetpunten_shape) <- proj4string(MSA_shape)
+  proj4string(Bosleeftijd_shape) <- proj4string(MSA_shape)
+
+  meetpunten_shape$Clst_ID <- over(meetpunten_shape, MSA_shape)$Clst_ID
+  meetpunten_shape$BLK <- over(meetpunten_shape, Bosleeftijd_shape)$BLK
+
+  meetpunten_data_vw <- meetpunten_shape@data %>%
+    left_join(MSA_shape@data, by = "Clst_ID") %>%
+    rename(HT91E0_sf = HT91E0_s) %>%
+    gather(HT2180, HT9110, HT9120, HT9130, HT9150, HT9160, HT9190, HT91E0_vc, HT91E0_vn, HT91E0_vm, HT91E0_vo, HT91E0_sf, HT91F0,
+          key = "Habitatsubtype", value = "MSA") %>%
+    filter((paste("HT", HabCode, sep ="") == Habitatsubtype) | (HabCode == "91E0_va" & Habitatsubtype == "HT91E0_vc") ) %>% #HT91E0_vc en va worden samengenomen
+    mutate(MSA = ifelse(is.na(MSA), 0, MSA),
+           BLK = ifelse(is.na(BLK), "0", as.character(BLK)),
+           bosconstantie = ifelse(BLK %in% c("Bos ontstaan voor 1775", "Bos ontstaan tussen 1775 en 1850"), 101,
+                                  ifelse(BLK %in% c("Bos ontstaan tussen 1850 en +/- 1930"), 81, NA))) %>%
+    select(ID, IDPlots, HabCode, bosconstantie, MSA) %>%
+    gather(bosconstantie, MSA, key = "Voorwaarde", value = "Waarde") %>%
+    rename(Habitatsubtype = HabCode) %>%
+    ungroup() %>%
+    mutate(ID = as.character(ID),
+         Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(Voorwaarde == "bosconstantie", "Geheel getal",
+                              "Decimaal getal"),
+         Invoertype = NA,
+         Eenheid =  NA) %>%
+    select(ID, IDPlots, Habitattype, Habitatsubtype, Voorwaarde,  Waarde, Type, Invoertype, Eenheid)
+
+  return(meetpunten_data_vw)
+}
+
+
+
+
+
+geefVoorwaardenGraslandMoerassen <- function(db = dbINBOVeg_2018, plotHabtypes){
+
+  # bedekking strooisellaag en naakte bodem
+  structureLayers <- getCoverVeglayersIV(db, plotHabtypes$IDPlots)
+
+  # verbossing en structuurschade
+  structurePlot <-getStructurePlotGraslandMoerassen(db)
+
+  #levensvormen --> moet nog in LSVI-rekenmodule komen
+  levensvormen <- berekenLevensvormen(db, plotHabtypes) %>%
+    select(IDRecords, nLevensvormen)
+
+  #microrelief --> zit in apart bestand --> moet nog in INBOVEG komen
+  microrelief_data <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/1330_mircorelief_versie2018-08-20.csv", stringsAsFactors = FALSE)
+  microrelief_data <- microrelief_data %>%
+    rename(microrelief_bedekking = Microrelief) %>%
+    mutate(microrelief_aanwezigheid = ifelse(microrelief_bedekking > 0, 1 , 0)) %>%
+    unique()
+
+  structure <- structureLayers %>%
+    left_join(structurePlot, by = "IDRecords") %>%
+    left_join(levensvormen, by = "IDRecords") %>%
+    left_join(microrelief_data, by = "IDPlots")
+
+
+  ### Indicatoren opvragen voor beide versies van LSVI
+  indicatorenLSVI <- read.csv2(indicatorenLSVI_fn, stringsAsFactors = FALSE)
+
+  structureAV <- structure %>%
+    select(IDRecords, naakte_bodem = CoverNaakteGrond, strooisellaag = CoverStrooisellaag, verbossing = Bos, betreding_brand = Struc, nLevensvormen, microrelief_bedekking, microrelief_aanwezigheid) %>%
+    gather(naakte_bodem, strooisellaag, verbossing, betreding_brand, nLevensvormen, microrelief_bedekking, microrelief_aanwezigheid, key = "AnalyseVariabele", value = "Waarde") %>%
+    left_join(plotHabtypes, by = "IDRecords") %>%
+    inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
+    rename(ID = IDRecords,  Versie = VersieLSVI, Habitatsubtype = HabCode) %>%
+    mutate(ID = as.character(ID),
+           Habitattype = substr(Habitatsubtype, 1, 4),
+         Waarde = as.character(Waarde),
+         Type = ifelse(substring(Voorwaarde, 1, 9) == "bedekking", "Percentage",
+                       ifelse(AnalyseVariabele == "microrelief_aanwezigheid", "Ja/nee", "Geheel getal")),
+         Invoertype = NA,
+         Eenheid = ifelse(substring(Voorwaarde, 1, 9) == "bedekking", "%", NA),
+         Versie = ifelse(Versie == "versie2", "Versie 2.0",
+                         ifelse(Versie == "versie3", "Versie 3",
+                                Versie))) %>%
+    select(ID, IDPlots, TypePlot, Habitattype, Habitatsubtype, Versie, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid) %>%
+    arrange(IDPlots, TypePlot, Voorwaarde) %>%
+  ungroup()
+
+
+  return(structureAV)
+
+}
+
+geefSoortenKenmerkenGraslandMoerassen <- function(db = dbINBOVeg_2018, plotHabtypes){
+
+  coverSpecies <- getCoverSpeciesIV(db = db, plotIDs = plotHabtypes$IDPlots)
+
+  result <- coverSpecies %>%
+  select(ID = IDRecords, Kenmerk = NameSc, Waarde = Cover, Vegetatielaag) %>%
+  mutate(TypeKenmerk = "Soort_Latijn",
+         Type = "Percentage",
+         Invoertype = NA,
+         Eenheid = "%",
+         ID = as.character(ID)) %>%
+  unique()
+
+  return(result)
+
+}
+
+geefSoortenKenmerkenMONEOS <- function(db = dbINBOVeg_MONEOS, plotHabtypes){
+
+  coverSpecies <- getCoverSpeciesIV_MONEOS(db = db, plotIDs = plotHabtypes$ID)
+
+  data_soorten<- coverSpecies %>%
+  select(ID = IDRecords, IDPlots, Kenmerk = NameSc, Waarde = Cover, Vegetatielaag) %>%
+  mutate(TypeKenmerk = "Soort_Latijn",
+         Type = "Percentage",
+         Invoertype = NA,
+         Eenheid = "%",
+         ID = as.character(ID)) %>%
+  unique()
+
+  data_vegetatielagen <- geefVegetatielagenMONEOS(db = db,  plotIDs = plotHabtypes$ID)
+
+  result <- bind_rows(data_soorten, data_vegetatielagen)
+
+  return(result)
+
+}
+
+geefSoortenKenmerkenPINK <- function(db = dbINBOVeg_PINK, plotHabtypes){
+
+  coverSpecies <- getCoverSpeciesIV_PINK(db = db, plotIDs = plotHabtypes$ID)
+
+  data_soorten<- coverSpecies %>%
+  select(ID, IDPlots, Kenmerk = NameSc, Waarde = Cover, Vegetatielaag) %>%
+  mutate(TypeKenmerk = "Soort_Latijn",
+         Type = "Percentage",
+         Invoertype = NA,
+         Eenheid = "%",
+         ID = as.character(ID)) %>%
+  unique()
+
+  data_vegetatielagen <- geefVegetatielagenPINK(db = db,  plotIDs = plotHabtypes$ID)
+
+  result <- bind_rows(data_soorten, data_vegetatielagen)
+
+  return(result)
+
+}
+
+geefSoortenKenmerkenHeide6510 <- function(db = dbHeideEn6510_2018, plotHabtypes){
+
+  coverSpecies <- getCoverSpeciesMHK(db = db, plotIDs = plotHabtypes$IDPlots)
+
+  result <- coverSpecies %>%
+  select(ID = IDPlots, Kenmerk = NameSc, Waarde = Cover, Vegetatielaag) %>%
+  mutate(TypeKenmerk = "Soort_Latijn",
+         Type = "Percentage",
+         Invoertype = NA,
+         Eenheid = "%",
+         ID = as.character(ID)) %>%
+  unique()
+
+  return(result)
+
+}
+
+geefSoortenKenmerkenBosVBI2 <- function(db = dbVBI2, plotHabtypes, niveau = "plot", databank = "VBI2"){
+
+  coverSpecies <- getCoverSpeciesVBI2(db = db, plotIDs = plotHabtypes$IDPlots)
+
+  data_soorten <- coverSpecies %>%
+  select(IDPlots, Kenmerk = NameSc, Waarde = Cover, Vegetatielaag) %>%
+  mutate(TypeKenmerk = "soort_latijn",
+         Type = "Percentage",
+         Invoertype = NA,
+         Eenheid = "%",
+         ID = as.character(IDPlots)) %>%
+  unique()
+
+  #data_grondvlak <- berekenLevendHoutSoort(db = db,  plotIDs = plotHabtypes$IDPlots, niveau = "segment")
+
+  data_groeiklassen <- berekenGroeiklassenVBI2(db = db,  plotIDs = plotHabtypes$IDPlots, niveau = niveau, databank = databank)
+
+  data_vegetatielagen <- geefVegetatielagenVBI2(db = db,  plotIDs = plotHabtypes$IDPlots)
+
+  result <- bind_rows(data_soorten,
+                      #data_grondvlak,
+                      data_groeiklassen,
+                      data_vegetatielagen) %>%
+    mutate(ID = paste(substr(databank, 1, 3), IDPlots, ifelse(databank == "VBI2", "_2", "") , sep = "")) %>%
+    select(ID, IDPlots, everything() ) %>%
+    arrange(ID)
+
+  return(result)
+
+}
+
+geefSoortenKenmerkenBosVBI1 <- function(dbDendro = dbVBI1, dbVeg = dbVBI1_veg, plotHabtypes){
+
+  coverSpecies <- getCoverSpeciesVBI1(db = dbVeg, plotIDs = plotHabtypes$IDPlots)
+
+  data_soorten <- coverSpecies %>%
+  select(IDPlots, Kenmerk = NameSc, Waarde = Cover, Vegetatielaag) %>%
+  mutate(TypeKenmerk = "soort_latijn",
+         Type = "Percentage",
+         Invoertype = NA,
+         Eenheid = "%",
+         ID = as.character(IDPlots)) %>%
+  unique()
+
+  #data_grondvlak <- berekenLevendHoutSoort(db = db,  plotIDs = plotHabtypes$IDPlots, niveau = "segment")
+
+  data_groeiklassen <- berekenGroeiklassenVBI1(db = dbVBI1,  plotIDs = plotHabtypes$IDPlots)
+
+  data_vegetatielagen <- geefVegetatielagenVBI1(db = dbVBI1_veg,  plotIDs = plotHabtypes$IDPlots)
+
+  result <- bind_rows(data_soorten,
+                      #data_grondvlak,
+                      data_groeiklassen,
+                      data_vegetatielagen) %>%
+    mutate(ID = paste("VBI", IDPlots, "_1", sep = "")) %>%
+    select(ID, IDPlots, everything() ) %>%
+    arrange(ID)
+
+  return(result)
+
+}
 
 
 
@@ -3870,5 +5035,287 @@ critVoorkomenSoorten <- function(NR, habitat, soorten="<ALL>", fun="Aantal", laa
 
 
 
+##########################"
+geefParameters <- function(model, type = "binomial"){
+
+  if (type == "binomial"){
+
+    estimates <- NULL
+
+    for(var in rownames((summary(model))$coefficients)){
+
+      AandeelGunstig <- round(plogis(coef(model)[var]) *100, 2)
+
+      confidence_intervals <- confint(model)
+
+      AandeelGunstig_LLCI <- round(plogis(confidence_intervals[var, "2.5 %"])* 100, 2)
+      AandeelGunstig_ULCI <- round(plogis(confidence_intervals[var, "97.5 %"])* 100, 2)
+
+      estimates_temp <- data.frame(varName = as.character(var), AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI, stringsAsFactors = FALSE)
+      estimates <- bind_rows(estimates, estimates_temp)
+    }
+
+  } else if (type == "gaussian"){
+
+    estimates <- NULL
+
+    for(var in rownames((summary(model))$coefficients)){
+
+      Gemiddelde <- round(coef(model)[var], 4)
+
+      confidence_intervals <- confint(model)
+
+      Gemiddelde_LLCI <- round(confidence_intervals[var, "2.5 %"], 4)
+      Gemiddelde_ULCI <- round(confidence_intervals[var, "97.5 %"], 4)
+
+      estimates_temp <- data.frame(varName = as.character(var), Gemiddelde, Gemiddelde_LLCI, Gemiddelde_ULCI, stringsAsFactors = FALSE)
+      estimates <- bind_rows(estimates, estimates_temp)
+
+    }
+  }
 
 
+
+    return(estimates)
+
+}
+
+
+
+habitatandeelGunstig <- function(data, stratSBZH = FALSE){
+
+  output <- NULL
+
+  for(habitat in unique(data$Habitattype)){
+
+    for (versie in unique(data$Versie)){
+
+    data_versie <- data %>%
+      filter(Versie == versie) %>%
+      filter(Habitattype == habitat)
+
+    if (stratSBZH){
+      design <- svydesign(id = ~1, weights = ~WeightComb, strata = ~SBZH, data = data_versie)
+
+    } else {
+      design <- svydesign(id = ~1, weights = ~WeightComb,  data = data_versie)
+    }
+
+    #schatting schaal Vlaanderen
+
+    model_Vlaanderen <- svyglm(formula = Status_habitatvlek ~ 1, design = design, family = "quasibinomial")
+
+    param_Vlaanderen <- geefParameters(model_Vlaanderen)
+
+    output_Vlaanderen <- data_versie %>%
+      mutate(TypeResultaat = "Habitattype",
+        SBZH = "Binnen & Buiten") %>%
+      group_by(TypeResultaat, Versie, Habitattype, SBZH) %>%
+      summarise(Habitatsubtype = paste(unique(Habitatsubtype), collapse = "; "),
+              nObs = n(),
+              sumWeightsPlot = sum(PlotWeight)/100,
+              sumWeightStratum = sum(StratumWeight),
+              sumWeightsComb = sum(WeightComb),
+              mean = mean(Status_habitatvlek),
+              weightedMean = weighted.mean(Status_habitatvlek, WeightComb)
+              ) %>%
+      ungroup() %>%
+      bind_cols(param_Vlaanderen)
+
+    output <- bind_rows(output, output_Vlaanderen)
+
+     #schatting per SBZH
+
+    if(n_distinct(data_versie$SBZH) > 1) {
+
+      model_SBZH <- svyglm(formula = Status_habitatvlek ~ 0 + SBZH, design = design, family = "quasibinomial")
+
+    param_SBZH <- geefParameters(model_SBZH)
+
+    output_SBZH <- data_versie %>%
+      group_by(Versie, Habitattype, SBZH) %>%
+      summarise(TypeResultaat = "SBZH",
+        Habitatsubtype = paste(unique(Habitatsubtype), collapse = "; "),
+                nObs = n(),
+                sumWeightsPlot = sum(PlotWeight)/100,
+              sumWeightStratum = sum(StratumWeight),
+              sumWeightsComb = sum(WeightComb),
+              mean = mean(Status_habitatvlek),
+              weightedMean = weighted.mean(Status_habitatvlek, WeightComb)
+              ) %>%
+      ungroup() %>%
+      arrange(SBZH) %>%
+      bind_cols(param_SBZH)
+
+    output <- bind_rows(output, output_SBZH)
+
+    }
+
+    #schatting per Subtype
+
+    if(n_distinct(data_versie$Habitatsubtype) > 1){
+
+      #selecteer subtypen met meer dan 1 observatie
+      # data_versie <- data_versie %>%
+      #   group_by(Habitatsubtype) %>%
+      #   mutate(n = n()) %>%
+      #   ungroup() %>%
+      #   filter(n > 1) %>%
+      #   select(-n)
+
+      model_subt <- svyglm(formula = Status_habitatvlek ~ 0 + Habitatsubtype, design = design, family = "quasibinomial")
+
+    param_subt <- geefParameters(model_subt)
+
+    output_subt <- data_versie %>%
+      mutate(SBZH = "Binnen & Buiten") %>%
+      group_by(Versie, Habitattype, Habitatsubtype, SBZH) %>%
+      summarise(TypeResultaat = "Habitatsubtype",
+        nObs = n(),
+                 sumWeightsPlot = sum(PlotWeight)/100,
+              sumWeightStratum = sum(StratumWeight),
+              sumWeightsComb = sum(WeightComb),
+              mean = mean(Status_habitatvlek),
+              weightedMean = weighted.mean(Status_habitatvlek, WeightComb)
+              ) %>%
+      ungroup() %>%
+      arrange(Habitatsubtype) %>%
+      bind_cols(param_subt)
+
+    output <- bind_rows(output, output_subt)
+
+    }
+
+  }
+
+  }
+
+  # we geven geen betrouwbaarheidsinterval als n < 5
+  output <- output %>%
+    mutate(AandeelGunstig_LLCI = ifelse(nObs < 5, NA, AandeelGunstig_LLCI),
+           AandeelGunstig_ULCI  = ifelse(nObs < 5, NA, AandeelGunstig_ULCI))
+
+  return(output)
+
+}
+
+habitatGemiddeldeVW <- function(data, stratSBZH = TRUE){
+
+  output <- NULL
+
+  for(habitat in unique(data$Habitattype)){
+
+    for (versie in unique(data$Versie)){
+
+    data_versie <- data %>%
+      filter(Versie == versie) %>%
+      filter(Habitattype == habitat) %>%
+      mutate(Waarde = as.numeric(Waarde)) %>%
+      filter(!is.na(Waarde))
+
+    for(vw in unique(data_versie$Voorwaarde)){
+
+    if (stratSBZH){
+      design <- svydesign(id = ~1, weights = ~WeightComb, strata = ~SBZH, data = data_versie)
+
+    } else {
+      design <- svydesign(id = ~1, weights = ~WeightComb,  data = data_versie)
+    }
+
+    #schatting schaal Vlaanderen
+
+    model_Vlaanderen <- svyglm(formula = Waarde ~ 1, design = design, family = "gaussian")
+
+    param_Vlaanderen <- geefParameters(model_Vlaanderen, type = "gaussian")
+
+    output_Vlaanderen <- data_versie %>%
+      mutate(SBZH = "Binnen & Buiten") %>%
+      group_by(Versie, Habitattype, SBZH, Indicator, Voorwaarde) %>%
+      summarise(Habitatsubtype = paste(unique(Habitatsubtype), collapse = "; "),
+              nObs = n(),
+              sumWeightsPlot = sum(PlotWeight)/100,
+              sumWeightStratum = sum(StratumWeight),
+              sumWeightsComb = sum(WeightComb),
+              mean = mean(Waarde),
+              weightedMean = weighted.mean(Waarde, WeightComb)
+              ) %>%
+      ungroup() %>%
+      bind_cols(param_Vlaanderen)
+
+    output <- bind_rows(output, output_Vlaanderen)
+
+     #schatting per SBZH
+
+    if(n_distinct(data_versie$SBZH) > 1) {
+
+      model_SBZH <- svyglm(formula = Waarde ~ 0 + SBZH, design = design, family = "gaussian")
+
+    param_SBZH <- geefParameters(model_SBZH, type ="gaussian")
+
+    output_SBZH <- data_versie %>%
+      group_by(Versie, Habitattype, SBZH, Indicator, Voorwaarde) %>%
+      summarise(Habitatsubtype = paste(unique(Habitatsubtype), collapse = "; "),
+                nObs = n(),
+                sumWeightsPlot = sum(PlotWeight)/100,
+              sumWeightStratum = sum(StratumWeight),
+              sumWeightsComb = sum(WeightComb),
+              mean = mean(Waarde),
+              weightedMean = weighted.mean(Waarde, WeightComb)
+              ) %>%
+      ungroup() %>%
+      arrange(SBZH) %>%
+      bind_cols(param_SBZH)
+
+    output <- bind_rows(output, output_SBZH)
+
+    }
+
+    #schatting per Subtype
+
+    if(n_distinct(data_versie$Habitatsubtype) > 1){
+
+      #selecteer subtypen met meer dan 1 observatie
+      # data_versie <- data_versie %>%
+      #   group_by(Habitatsubtype) %>%
+      #   mutate(n = n()) %>%
+      #   ungroup() %>%
+      #   filter(n > 1) %>%
+      #   select(-n)
+
+      model_subt <- svyglm(formula = Waarde ~ 0 + Habitatsubtype, design = design, family = "gaussian")
+
+    param_subt <- geefParameters(model_subt, type = "gaussian")
+
+    output_subt <- data_versie %>%
+      mutate(SBZH = "Binnen & Buiten") %>%
+      group_by(Versie, Habitattype, Habitatsubtype, SBZH, Indicator, Voorwaarde) %>%
+      summarise( nObs = n(),
+                 sumWeightsPlot = sum(PlotWeight)/100,
+              sumWeightStratum = sum(StratumWeight),
+              sumWeightsComb = sum(WeightComb),
+              mean = mean(Waarde),
+              weightedMean = weighted.mean(Waarde, WeightComb)
+              ) %>%
+      ungroup() %>%
+      arrange(Habitatsubtype) %>%
+      bind_cols(param_subt)
+
+    output <- bind_rows(output, output_subt)
+
+    }
+
+
+    }
+
+    }
+  }
+
+
+  # we geven geen betrouwbaarheidsinterval als n < 5
+  output <- output %>%
+    mutate(Gemiddelde_LLCI = ifelse(nObs < 5, NA, Gemiddelde_LLCI),
+           Gemiddelde_ULCI  = ifelse(nObs < 5, NA, Gemiddelde_ULCI))
+
+  return(output)
+
+}
