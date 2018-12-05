@@ -1,0 +1,682 @@
+# Graslanden en moerassen
+
+## Data
+
+### Ruwe data uit INBOVEG
+
+De INBOVEG databank bevat volgende gegevens voor elke meetpunt:
+
+* Landbedekkingsklasse(n) in de plot (habitat(sub)typen, RBB of andere klassen) en bedekking van deze klasse(n) (een plot kan uit meerder klassen bestaan) 
+* Vegetatieopname (lijst van alles soorten + bedekking per soort)
+* Bedekking van vegetatielagen en structuurvariabelen die nodig zijn voor LSVI-berekening (zoals verbossing)
+
+Er werd zowel in de vegetatieplot als de structuurplot een vegetatieopname uitgevoerd. Bijkomende structuurgegevens werden enkel in de structuurplot opgemeten.
+
+```{r selectieSurveys, warning=FALSE}
+
+survey_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/survey_N2000.csv", stringsAsFactors = FALSE)
+
+kopinfo_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/kopinfo_N2000.csv", stringsAsFactors = FALSE)
+
+classif_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/classif_N2000.csv", stringsAsFactors = FALSE)
+
+opnamen_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/opnamen_N2000.csv", stringsAsFactors = FALSE)
+
+veglagen_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/veglagen_N2000.csv", stringsAsFactors = FALSE)
+
+
+
+#  analyseNaam <- paste("AnalyseGraslandMoeras", Sys.Date(), sep="_")
+# setwd("../Output")
+# dir.create(analyseNaam)
+# 
+# setwd(paste("../Output/", analyseNaam, sep =""))
+# dir.create("InputRekenmodule")
+
+analyseNaam <- "AnalyseGraslandMoeras_2018-11-13"
+```
+
+
+```{r voortgangVeldwerk}
+
+overzicht_GrasMoeras_shape <- readOGR("../Data/VoortgangGraslandMoeras/.", "Stavaza2018", verbose = FALSE)
+
+biogeo_regio <- readOGR("../Data/Shapefiles/.", "BioGeoregions_Lambert1972", verbose = FALSE)
+
+proj4string(overzicht_GrasMoeras_shape) <- proj4string(biogeo_regio)
+
+overzicht_GrasMoeras_shape$Regio <- over(overzicht_GrasMoeras_shape, biogeo_regio)$code
+
+overzicht_GrasMoeras <- overzicht_GrasMoeras_shape@data %>%
+         mutate(Visited = as.numeric(bezocht) > 0,
+         YearPlanned = year,
+         Measured = !is.na(opname) & opname == "ja",
+         Replaced = !is.na(verplaatst) & verplaatst == "ja") %>%
+  select(IDPlots = Ranking, SBZH, YearPlanned, HabTarget1 = habsubt, HabTarget2 = Doelhab2, Visited, Measured, Replaced,  X_coord = POINT_X, Y_coord = POINT_Y, Regio) %>%
+  group_by(IDPlots, SBZH) %>%
+     summarise(HabTarget1 = HabTarget1[1],
+               HabTarget2 = HabTarget2[1],
+               Visited = sum(Visited) >= 1,
+               Measured = sum(Measured) >= 1,
+               Replaced = sum(Replaced) >= 1,
+               YearPlanned = min(YearPlanned),
+               X_coord = X_coord[1],
+               Y_coord = Y_coord[1],
+               BiogeoRegio = Regio[1]) %>%
+     ungroup() %>%
+  mutate(IDPlots = as.character(IDPlots),
+         Status = ifelse(!Visited, "To do",
+                         ifelse(!Measured, "Geen doelhabitat - terreincheck",
+                                "Opname uitgevoerd")))
+
+overzicht <- overzicht_GrasMoeras %>%
+  group_by(HabTarget1, YearPlanned, Status) %>%
+  summarise(nPlots = n_distinct(IDPlots)) %>%
+  spread(key = YearPlanned, value = nPlots, fill = 0)
+
+```
+
+
+### Geobserveerd habitat(sub)type
+
+In principe wordt een meetpunt enkel opgemeten als het centrum van de plot in het doelhabitat valt. Als een plot uit meerdere segmenten bestaat, is het echter niet rechtstreeks uit de databank te halen welk segment in een centrum van de plot gelegen is. We gaan er daarom vanuit dat het segment, waarvoor het habitat(sub)type gelijk is aan het doelhabit, in het centrum van de plot gelegen is.  
+
+In sommige gevallen zien we dat er toch een opname gebeurd is, ook al bevat het meetpunt geen doelhabitat. We nemen het meetpunt mee voor de analyse als het geobserveerd habiatsubtype en het doelhabitatsubtype tot hetzelfde habitattype behoren. In andere gevallen wordt het meetpunt niet weerhouden. Ook meetpunten waarvoor de structuurplot doelhabitat bevat en de vegetatieplot niet, worden niet weerhouden (of omgekeerd). Bij sommige meetpunten ontbreekt de vegetatieopname of structuuropname. Ook deze worden niet weerhouden.
+
+Bij sommige meetpunten wordt het subtype van een habitat niet gespecifieerd. We gaan er dan vanuit dat het subtype met het doelhabitat overeenkomt.
+
+
+```{r habitattypen}
+
+classif_Habt_N2000 <- classif_N2000 %>%
+  filter(classification_type == "AC") %>%
+  select(recording_givid, recording_id, HabCode = classif, SegmentWeight = cover) %>%
+  mutate(SegmentWeight = as.numeric(SegmentWeight))
+
+#unique(classif_Habt_N2000$HabCode)
+
+#habitattype en plottype toevoegen aan opnamen
+plotDetails <- kopinfo_N2000 %>%
+  mutate(TypePlot = ifelse(area == 1017 & !is.na(area), "structuurplot", "vegetatieplot")) %>%
+  select(recording_givid, IDPlots = user_reference, TypePlot, Date = vague_date_begin) %>%
+  full_join(classif_Habt_N2000, by = "recording_givid") %>%
+  mutate(OpnameRecord = recording_givid %in% opnamen_N2000$recording_givid,
+         IDPlots = as.character(IDPlots)) %>%
+  left_join(overzicht_GrasMoeras, by = "IDPlots") 
+
+plotsCoverMissing <- plotDetails %>%
+  filter(TypePlot == "vegetatieplot") %>%
+  filter(is.na(SegmentWeight)) %>%
+  filter(!is.na(HabTarget1)) %>%
+  select(recording_givid, IDPlots, TypePlot, HabObserved = HabCode, CoverHabObserved = SegmentWeight, HabTarget1, HabTarget2)
+
+# --> OK alle plots hebben bedekking segmenten
+
+plotHabtypes_segments <- plotDetails %>%
+  select(recording_givid, IDPlots, TypePlot, HabCode, SegmentWeight, HabTarget1, HabTarget2, OpnameRecord) %>%
+  # subtype toevoegen bij 6410 en 6230
+  mutate(HabCode = ifelse(HabCode == "6410" & substring(HabTarget1, 1, 4) == "6410", HabTarget1,
+                          ifelse(HabCode == "6410" & substring(HabTarget2, 1, 4) == "6410" & !is.na(HabTarget2), HabTarget2, as.character(HabCode))),
+         HabCode = ifelse(HabCode == "6230" & substring(HabTarget1, 1, 4) == "6230", HabTarget1,
+                          ifelse(HabCode == "6230" & substring(HabTarget2, 1, 4) == "6230" & !is.na(HabTarget2), HabTarget2, as.character(HabCode)))) %>%
+  mutate(IsHabSubtTarget = HabCode == HabTarget1 | (HabCode == HabTarget2 & !is.na(HabTarget2)),
+         IsHabTarget = (substr(HabCode, 1, 4) == substr(HabTarget1, 1, 4)) | (substr(HabCode, 1, 4) == substr(HabTarget2, 1, 4) & !is.na(HabTarget2))) %>%
+  group_by(recording_givid, IDPlots, TypePlot, HabTarget1, HabTarget2, OpnameRecord) %>%
+  mutate(nSegments = n(),
+         sumWeight = sum(SegmentWeight, na.rm = TRUE),
+         nWeightMissing = sum(is.na(SegmentWeight)),
+         SegmentWeight = ifelse(is.na(SegmentWeight), (100 - sumWeight)/nWeightMissing, SegmentWeight),
+         sumWeightCorr = sum(SegmentWeight),
+        CoverHabTarget = sum(SegmentWeight * IsHabTarget),
+        CoverHabSubtTarget = sum(SegmentWeight * IsHabSubtTarget),
+        CoverNotHabTarget = sum(SegmentWeight * !IsHabTarget),
+        SelectSegment = ifelse(CoverHabSubtTarget > 0, IsHabSubtTarget,
+                               ifelse(CoverHabTarget > 0, IsHabTarget, FALSE))) %>%
+  ungroup() %>%
+  mutate(Meetpunt = !is.na(HabTarget1))
+  
+plotHabtypes_plot_check <-plotHabtypes_segments %>%
+  filter(Meetpunt) %>%
+  filter(OpnameRecord) %>%
+  select(IDPlots, TypePlot, CoverHabTarget) %>%
+  unique() %>% 
+  group_by(IDPlots, TypePlot) %>%
+  mutate(nr = rank(CoverHabTarget)) %>%
+  ungroup() %>%
+  spread(key = TypePlot, value = CoverHabTarget) %>%
+  mutate(StrtuctuurplotOntbreekt = is.na(structuurplot) & nr == 1, 
+         VegetatieplotOntbreekt = is.na(vegetatieplot) & nr == 1,
+         HabClassifMismatch = (structuurplot == 0 & vegetatieplot > 0) | (structuurplot > 0 & vegetatieplot == 0),
+         TweeStructuurplots = nr == 2 & !is.na(structuurplot),
+         TweeVegetatieplots = nr == 2 & !is.na(vegetatieplot)) %>%
+  filter(StrtuctuurplotOntbreekt | 
+           VegetatieplotOntbreekt |
+           HabClassifMismatch |
+           TweeStructuurplots |
+           TweeVegetatieplots) %>%
+  rename(bedekking_doelhab_structuurplot = structuurplot, bedekking_doelhab_vegetatieplot = vegetatieplot)
+
+#write.csv2(plotHabtypes_plot_check, "../Output/CheckMeetpuntenGraslandMoeras.csv")   
+
+  
+plotHabtypes_NoHabtarget <- plotHabtypes_segments %>%
+  filter(Meetpunt) %>%
+  filter(CoverHabTarget == 0) %>%
+  mutate(IDPlots = as.numeric(IDPlots)) %>%
+  arrange(IDPlots, TypePlot) %>%
+  select( IDPlots, TypePlot, CoverHabTarget) %>%
+  unique() %>%
+  spread(key = TypePlot, value = CoverHabTarget)
+
+#write.csv2(plotHabtypes_NoHabtarget, "../Output/Opnames_GeenHabMatch.csv")
+
+ #n_distinct(plotHabtypes_NoHabtarget$IDPlots)
+
+#143602
+ 
+grasland_moeras <- c("6230_hn", "6230_ha", "1330_hpr", "6230_hmo", "6410_ve", "6230",  "7140_meso", "7140_oli",  "6120",     
+"6410_mo")
+
+# voor sommige plots komen er nog twee segmenten in aanmerking om als doelhabitat geselecteerd te worden --> we selecteren het segment met de grootste bedekking
+
+plotHabtypes_plot <- plotHabtypes_segments %>%
+  filter(Meetpunt) %>%
+  filter(OpnameRecord) %>%
+  filter(SelectSegment) %>%
+  group_by(recording_givid, IDPlots, TypePlot, HabCode, HabTarget1, HabTarget2) %>%
+  summarise(PlotWeight = sum(SegmentWeight)) %>%
+  group_by(recording_givid, IDPlots, TypePlot) %>%
+  mutate(nHab = n(),
+         rank = rank(desc(PlotWeight), ties.method = "first")) %>%
+  ungroup() %>%
+  group_by(IDPlots) %>%
+  mutate(OpnameVolledig = ("vegetatieplot" %in% TypePlot) & ("structuurplot" %in% TypePlot)) %>%
+  ungroup()
+
+plotHabtypes_plot_dubbel <- plotHabtypes_plot %>%
+  filter(nHab == 2) 
+
+#er zitten nog dubbels in !! --> dubbels zijn er uit als we rank = 1 selecteren
+plotHabtypes <- plotHabtypes_plot %>%
+  filter(OpnameVolledig) %>%
+  filter(rank == 1) %>%
+  select(IDRecords = recording_givid, IDPlots, TypePlot, HabCode, PlotWeight, HabTarget1, HabTarget2) 
+
+steekproefgrootte <- getSampleSize() %>%
+  select(HabCode = habsubt, SBZH, nGewenst) %>%
+  mutate(nGewenst = round(nGewenst, 0))
+
+plot_SBZH <- overzicht_GrasMoeras %>%
+  select(IDPlots, SBZH, BiogeoRegio) %>%
+  mutate(SBZH = ifelse(SBZH == 1, "Binnen", "Buiten")) %>%
+  unique() 
+
+overzicht_plots <- plotHabtypes %>%
+  left_join(plot_SBZH, by = "IDPlots") %>%
+  select(IDPlots, HabCode, SBZH) %>%
+  unique() %>%
+  group_by(HabCode, SBZH) %>%
+  summarise(nPlots =n()) %>%
+  ungroup() %>%
+  left_join(steekproefgrootte, by = c("HabCode", "SBZH")) %>%
+  mutate(Voortgang = round(nPlots/ nGewenst * 100, 1))
+  
+
+overzicht_plots2 <- plotHabtypes %>%
+  mutate(HabTarget = ifelse(HabTarget1 == HabCode, HabTarget1,
+                            ifelse(HabTarget2 == HabCode & !is.na(HabTarget2), HabTarget2, HabTarget1))) %>%
+  select(IDPlots, HabCode, HabTarget) %>%
+  unique() %>%
+  group_by(HabCode, HabTarget) %>%
+  summarise(nPlots = n_distinct(IDPlots)) %>%
+  ungroup() %>%
+  spread(key = HabTarget, value = nPlots)
+          
+```
+
+### Meetpuntgewichten
+
+Om onvertekende uitspraken te doen op een hoger schaalniveau, moeten we rekening houden met de meetpuntgewichten. We onderscheiden twee types gewichten:
+
+* Plotgewichten: aandeel van de plot dat bedekt is door het habitat(sub)type (waarver we uitspraak doen).
+* Stratumgewicht: de verschillende strata (binnen/buiten SBZH + habitatsubtypes) worden niet evenredig bemonsterd. Sommige strata kennen een grotere dichtheid aan meetpunten (bv. binnen SBZH omdat we daar een hogere precisie wensen).We moeten hiervoor compenseren als we een uitspraak op schaal Vlaanderen wensen. Per stratum kennen we daarom een gewicht toe aan de meetpunten gelijk aan de verhouding tussen de oppervlakte van dit stratum en het aantal meetpunten binnen dit stratum. Meetpunten in een stratum met een lagere dichtheid krijgen dus een groter gewicht.   
+
+```{r gewichten}
+
+plot_SBZH <- overzicht_GrasMoeras %>%
+  select(IDPlots, SBZH, BiogeoRegio) %>%
+  mutate(SBZH = ifelse(SBZH == 1, "Binnen", "Buiten")) %>%
+  unique() 
+
+# habsubt_area <- read.csv2("../Data/Steekproef/Habsubt_opp_versie2015.csv", stringsAsFactors = FALSE) %>%
+#   select(HabCode = habsubt, SBZH, Area)
+
+#update oppervlaktes habtypes op basis van BWK2018
+habsubt_area <- read.csv2("../Data/Steekproef/BWK2018_Oppervlaktes.csv", stringsAsFactors = FALSE) %>%
+  select(HabCode, Binnen, Buiten) %>%
+  gather(Binnen, Buiten, key = SBZH, value = Area)
+
+plotHabtypes_gewicht <- plotHabtypes %>%
+  left_join(plot_SBZH, by = "IDPlots") %>%
+  group_by(HabCode, SBZH) %>%
+  summarise (nPlots = n_distinct(IDPlots)) %>%
+  ungroup() %>%
+  left_join(habsubt_area, by = c("SBZH", "HabCode")) %>%
+  mutate(StratumWeight = Area/ nPlots,
+         fps = round(Area * 10))
+
+plotHabtypes <- plotHabtypes %>%
+  left_join(plot_SBZH, by = "IDPlots") %>%
+  left_join(select(plotHabtypes_gewicht, HabCode, SBZH, StratumWeight, fps), by = c("HabCode", "SBZH"))
+
+plotHabtypes_continental <- plotHabtypes %>%
+  filter(BiogeoRegio == "Continental")
+
+
+```
+
+## Overzicht meetpunten
+
+```{r overzichtMeetpunten, warning=FALSE, eval =FALSE}
+
+ggplot(plotHabtypes,aes(x = HabCode, fill = SBZH)) + 
+  geom_bar() + 
+  labs(x= "Habitat(sub)type", y = "Aantal plots") + 
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+Tabel \@ref(tab:tabAantallen) geeft een overzicht van het huidige aantal opgemeten meetpunten en het totale steekproefgrootte die we na 12 jaar willen bereiken.
+
+```{r tabAantallen, message=FALSE, results='asis'}
+
+#steekproefgrootte
+
+steekproefgrootte <- getSampleSize(habtypes = plotHabtypes$HabCode) %>%
+  mutate(nGewenst = round(nGewenst,0)) %>%
+  select(habsubt, SBZH, nGewenst)
+  
+overzicht_GraslandMoeras <- plotHabtypes %>%
+  group_by(HabCode, SBZH) %>% 
+  summarise(nOpgemeten = n_distinct(IDPlots)) %>% 
+  ungroup() %>% 
+  full_join(steekproefgrootte, by = c("HabCode" = "habsubt", "SBZH")) %>%
+  arrange(HabCode, SBZH) %>%
+  mutate(nOpgemeten = ifelse(is.na(nOpgemeten), 0, nOpgemeten))
+    
+kable(overzicht_GraslandMoeras, 
+      format = "latex", 
+      caption = "Aantal opgemeten meetpunten en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", 
+      booktabs = T) 
+
+```
+
+
+## Input voor LSVI-rekenmodule
+
+We maken gebruik van de LSVI-rekenmodule. De rekenmodule vereist volgende input:
+
+* data habitat: bevat het habitat(sub)type voor elke plot
+* data voorwaarden: bevat de waarden voor de voorwaarden (elke indicator bestaat uit een of meerdere voorwaarden) die rechtstreeks op terrein worden opgemeten of die op voorhand berekend worden los van de rekenmodule
+* data soorten en kenmerken: bevat de gegevens van de vegetatieopname. Op basis hiervan berekent de rekenmodule de nog ontbrekende voorwaarden (die dus niet onder data voorwaarden werden ingevoerd)
+
+We voeren twee berekeningen uit:
+
+* op basis van vegetatiegegevens uit vegetatieplot en structuurgegevens uit cirkelplot
+* op basis van zowel vegetatiegegevens als structuurgegevens uit cirkelplot
+
+De data die als input voor de rekenmodule worden gebruikt, zijn terug te vinden in de folder 'AnalyseGraslandMoeras/InputRelenmodule'.
+
+
+```{r invoerData, echo=FALSE}
+
+### DATA HABITAT
+
+data_habitat_cirkelplot <- plotHabtypes %>%
+  filter(TypePlot == "structuurplot") %>%
+  rename(ID = IDRecords, Habitattype = HabCode) %>%
+  mutate(ID = as.character(ID))
+
+data_habitat_vegetatieplot <- plotHabtypes %>%
+  filter(TypePlot == "vegetatieplot") %>%
+  rename(ID = IDRecords, Habitattype = HabCode) %>%
+  mutate(ID = as.character(ID))
+
+### DATA_VOORWAARDEN
+
+# analysevar die rechtstreeks op het terrein gemeten worden + aantal levensvormen (zit nog niet in LSVI-rekenmodule)
+# we selecteren enkel metingen in structuurplot
+voorwaarden <- geefVoorwaardenGraslandMoerassen(db = dbINBOVeg_2018, plotHabtypes = plotHabtypes) %>%
+  filter(TypePlot == "structuurplot")
+
+#indicator en criterium aanhangen
+invoerHabt <- geefInvoervereisten(Kwaliteitsniveau = 1, Habitattype = plotHabtypes$HabCode) %>%
+  select(Habitatsubtype, Versie, Criterium, Indicator, Voorwaarde) %>%
+  unique()
+
+data_voorwaarden_cirkelplot <- voorwaarden %>%
+  left_join(invoerHabt, by = c("Habitatsubtype", "Versie", "Voorwaarde")) %>%
+  select(-Versie) %>%
+  unique() %>%
+  mutate(Waarde = ifelse(Waarde == "0-x-1", "0.5", Waarde),
+         Waarde = ifelse(is.na(Waarde) & Indicator == "structuurschade", "0", Waarde))
+                                    
+data_voorwaarden_vegetatieplot <- data_habitat_vegetatieplot %>%
+  select(ID,IDPlots) %>%
+  unique() %>% 
+  left_join(select(data_voorwaarden_cirkelplot, -ID), by = "IDPlots") %>%
+  filter(!is.na(Criterium))
+
+### DATA_SOORTENKENMERKEN
+
+data_soortenKenmerken_cirkelplot <- geefSoortenKenmerkenGraslandMoerassen(db = dbINBOVeg_2018, plotHabtypes = plotHabtypes) %>% 
+  filter(ID %in% data_habitat_cirkelplot$ID)
+
+data_soortenKenmerken_vegetatieplot <- geefSoortenKenmerkenGraslandMoerassen(db = dbINBOVeg_2018, plotHabtypes = plotHabtypes) %>% 
+  filter(ID %in% data_habitat_vegetatieplot$ID)
+
+
+write.csv2(data_habitat_vegetatieplot, paste("../Output/",
+                                             analyseNaam,   "/InputRekenmodule/data_habitat_vegetatieplot_graslandMoeras.csv", sep = ""),
+           row.names = FALSE)
+
+write.csv2(data_voorwaarden_vegetatieplot, paste("../Output/",
+                                             analyseNaam,                                  "/InputRekenmodule/data_voorwaarden_vegetatieplot_graslandMoeras.csv", sep = ""),
+           row.names = FALSE)
+
+write.csv2(data_soortenKenmerken_vegetatieplot, paste("../Output/",
+                                             analyseNaam,                                       "/InputRekenmodule/data_soortenKenmerken_vegetatieplot_graslandMoeras.csv", sep = ""),
+           row.names = FALSE)
+
+write.csv2(data_habitat_cirkelplot, paste("../Output/",
+                                             analyseNaam,                                  "/InputRekenmodule/data_habitat_cirkelplot_graslandMoeras.csv", sep = ""),
+           row.names = FALSE)
+
+write.csv2(data_voorwaarden_cirkelplot, paste("../Output/",
+                                             analyseNaam,                                 "/InputRekenmodule/data_voorwaarden_cirkelplot_graslandMoeras.csv", sep = ""),
+           row.names = FALSE)
+
+write.csv2(data_soortenKenmerken_cirkelplot, paste("../Output/",
+                                             analyseNaam,                                     "/InputRekenmodule/data_soortenKenmerken_cirkelplot_graslandMoeras.csv", sep = ""),
+           row.names = FALSE)
+
+```
+
+## LSVI-berekening per meetpunt
+
+```{r calcStatus, echo=FALSE, warning = FALSE, eval=FALSE}
+
+
+# resultaten op basis van vegetatieopname in cirkelplot + structuurmeting in cirkelplot
+resultsLSVI_cirkelplot <- berekenLSVIbasis(Kwaliteitsniveau = 1, 
+                                           Data_voorwaarden = data_voorwaarden_cirkelplot,
+                                           Data_soortenKenmerken = data_soortenKenmerken_cirkelplot,
+                                           Data_habitat = data_habitat_cirkelplot)
+
+# resultaten op basis van vegetatieopname in vegetatieplot + structuurmeting in cirkelplot
+resultsLSVI_vegetatieplot <- berekenLSVIbasis(Kwaliteitsniveau = 1, 
+                                           Data_voorwaarden = data_voorwaarden_vegetatieplot,
+                                           Data_soortenKenmerken = data_soortenKenmerken_vegetatieplot,
+                                           Data_habitat = data_habitat_vegetatieplot)
+
+
+resultsLSVI_vw_cirkelplot <- resultsLSVI_cirkelplot[[3]] %>%
+  mutate(Scenario = "Cirkelplot")
+
+resultsLSVI_vw_vegetatieplot <- resultsLSVI_vegetatieplot[[3]] %>%
+  mutate(Scenario = "Vegetatieplot")
+
+resultsLSVI_vw <- bind_rows(resultsLSVI_vw_cirkelplot, resultsLSVI_vw_vegetatieplot) %>%
+  mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4),
+    WeightComb = PlotWeight/100 * StratumWeight,
+          SBZH = ifelse(SBZH == 1, "Binnen",
+                  ifelse(SBZH == 0, "Buiten", SBZH)))  %>% 
+  select(Scenario, ID, IDPlots, Habitattype, Habitatsubtype, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, VoorwaardeID, Combinatie, SBZH, Regio = BiogeoRegio, PlotWeight, StratumWeight, WeightComb) 
+
+resultsLSVI_ind_cirkelplot <- resultsLSVI_cirkelplot[[2]] %>%
+  mutate(Scenario = "Cirkelplot")
+
+resultsLSVI_ind_vegetatieplot <- resultsLSVI_vegetatieplot[[2]] %>%
+  mutate(Scenario = "Vegetatieplot")
+
+resultsLSVI_ind <- bind_rows(resultsLSVI_ind_cirkelplot, resultsLSVI_ind_vegetatieplot) %>%
+  mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+  #left_join(belang, by = c("Habitattype", "Versie", "Indicator", "Criterium")) %>%
+  inner_join(select(plotHabtypes, IDRecords, IDPlots, Regio = BiogeoRegio, PlotWeight, SBZH, StratumWeight), by = c("ID" = "IDRecords")) %>%
+  mutate(WeightComb = PlotWeight/100 * StratumWeight,
+          SBZH = ifelse(SBZH == 1, "Binnen",
+                  ifelse(SBZH == 0, "Buiten", SBZH))) %>%
+  select(Scenario, ID, IDPlots, Habitattype, Habitatsubtype, Versie, Criterium, Indicator, Status_indicator, Belang, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
+  unique() 
+
+# write.csv2(resultsLSVI_vw, paste("../Output/", analyseNaam, "/Voorwaarden_graslandMoeras.csv", sep =""), row.names = FALSE)
+# 
+# write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaam, "/Indicatoren_graslandMoeras.csv", sep =""), row.names = FALSE)
+
+
+```
+
+De rekenmodule genereert resultaten voor de voorwaarden en indicatoren op basis van de vegetatieopname in de cirkelplot en op basis van de vegetatieopname in de vegetatieplot. Om tot een uitspraak van de status per meetpunt te komen, combineren we beide resultaten. De indicatoren 'invasieve exoten' en 'sleutelsoorten' leiden we af uit de vegetatieopname in de cirkelplot. De overige indicatoren (die afgeleid kunnen worden uit een vegetatieopname) leiden we af uit de vegetatieopname in de vegetatieplot.   
+
+Daarnaast kon één van de voorwaarden van de indicator 'verruiging/vermossing/vergrassing' uit LSVI versie 2.0 van habitatsubtype 7140_meso niet berekend worden (meer bepaald de voorwaarde 'gemiddelde vegetatiehoogte in cm'). De status van deze indicator is daarom enkel geëvalueerd op basis van de voorwaarde 'bedekking verruiging/vergrassing/vermossing'.
+
+Ook onderstaande indicatoren konden niet bepaald worden en werden daarom niet meegerekend bij de bepaling van de status per meetpunt:
+
+* Horizontale structuur voor habitatsubtype 1330_hpr (LSVI versie 2.0 en LSVI versie 3)
+* Horizontale structuur voor habitatsubtype 7140_oli en 7140_meso (LSVI versie 2.0)
+
+
+```{r combinatieOutputRekenmodule, eval = FALSE}
+
+# voor indicator 'verruiging/vermossing/vergrassing' kan één van de voorwaarden niet berekend worden, indicator evalueren op basis van de andere voorwaarde
+
+VVV_status_corr <- resultsLSVI_vw %>%
+  filter(Voorwaarde == "bedekking verruiging/vergrassing/vermossing") %>%
+  mutate(Status_Indicator_corr = Status_voorwaarde) %>%
+  select(ID, Indicator, Status_Indicator_corr)
+
+resultsLSVI_ind_corr <- resultsLSVI_ind %>%
+  left_join(VVV_status_corr, by = c("ID", "Indicator")) %>%
+  mutate(Status_indicator = ifelse(Indicator == "verruiging/vermossing/vergrassing",
+                                   Status_Indicator_corr,
+                                   Status_indicator)) %>%
+  select(-Status_Indicator_corr)
+
+resultsLSVI_ind <- resultsLSVI_ind_corr
+
+#check NA's
+resultsLSVI_ind_NA <- resultsLSVI_ind %>%
+  filter(is.na(Status_indicator)) %>%
+  group_by(Scenario, Versie, Indicator, Habitattype, Habitatsubtype) %>%
+  summarise(n = n())
+# 7140_meso: verruiging/vermossing/vergrassing --> NA --> gecorrigeerd
+
+# invasieve ex en aantal sleutelsoorten uit cirkelplot halen, andere berekende waarde uit vegetatieplot, gewichten uit cirkelplot
+
+resultsLSVI_vw_combinatie <- resultsLSVI_vw %>%
+  filter(((Indicator %in% c("sleutelsoorten", "invasieve exoten")) & 
+            (Scenario == "Cirkelplot")) |
+           (!(Indicator %in% c("sleutelsoorten", "invasieve exoten")) & 
+            (Scenario == "Vegetatieplot"))) %>%
+  mutate(Meting = ifelse(Indicator %in% c("sleutelsoorten",
+                                          "invasieve exoten",
+                                          "structuurschade",
+                                          "verbossing",
+                                          "verbossing/verstruweling",
+                                          "microreliëf",
+                                          "aantal levensvormen",
+                                          "strooisellaag",
+                                          "naakte bodem"),
+                         "Cirkelplot", "Vegetatieplot"),
+         Meting = ifelse(is.na(Waarde), NA, Meting),
+         Scenario = "Combinatie cirkelplot en vegetatieplot") %>%
+  select(-PlotWeight, -StratumWeight, -WeightComb) %>%
+  left_join(select(data_habitat_cirkelplot, IDPlots, PlotWeight, StratumWeight), by = "IDPlots") %>%
+  mutate(WeightComb = PlotWeight/ 100  * StratumWeight) %>%
+  arrange(IDPlots, Versie, Indicator) %>%
+  select(Scenario, Meting, everything())
+
+resultsLSVI_ind_combinatie <- resultsLSVI_ind %>%
+  filter(((Indicator %in% c("sleutelsoorten", "invasieve exoten")) & 
+            (Scenario == "Cirkelplot")) |
+           (!(Indicator %in% c("sleutelsoorten", "invasieve exoten")) & 
+            (Scenario == "Vegetatieplot"))) %>%
+  mutate(Meting = ifelse(Indicator %in% c("sleutelsoorten",
+                                          "invasieve exoten",
+                                          "structuurschade",
+                                          "verbossing",
+                                          "verbossing/verstruweling",
+                                          "microreliëf",
+                                          "aantal levensvormen",
+                                          "strooisellaag",
+                                          "naakte bodem"),
+                         "Cirkelplot", "Vegetatieplot"),
+         Meting = ifelse(is.na(Status_indicator), NA, Meting),
+         Scenario = "Combinatie cirkelplot en vegetatieplot") %>%
+  select(-PlotWeight, -StratumWeight, -WeightComb) %>%
+  left_join(select(data_habitat_cirkelplot, IDPlots, PlotWeight, StratumWeight), by = "IDPlots") %>%
+  mutate(WeightComb = PlotWeight/ 100  * StratumWeight) %>%
+  arrange(IDPlots, Versie, Indicator) %>%
+  select(Scenario, Meting, everything())
+  
+resultsLSVI_vw_exp <- resultsLSVI_vw_combinatie %>%
+  mutate(Waarde = gsub(".", ",", Waarde, fixed = TRUE),
+         Referentiewaarde = gsub(".", ",", Referentiewaarde, fixed = TRUE))
+
+#NAKIJKEN
+resultsLSVI_ind <- resultsLSVI_ind_combinatie %>%
+  mutate(Habitatsubtype = ifelse(IDPlots == "1711014", "6230_ha", Habitatsubtype),
+         Belang = ifelse(Indicator == "verbossing", "zb", Belang))
+
+resultsLSVI_vw_exp <- resultsLSVI_vw_exp %>%
+  mutate(Habitatsubtype = ifelse(IDPlots == "1711014", "6230_ha", Habitatsubtype),
+         Belang = ifelse(Indicator == "verbossing", "zb", Belang))
+
+write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaam, "/Voorwaarden_graslandMoeras.csv", sep =""), row.names = FALSE)
+
+write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaam, "/Indicatoren_graslandMoeras.csv", sep =""), row.names = FALSE)
+```
+
+In een volgende stap bepalen we per meetpunt de status van de habitatvlek, rekening houdend met het belang van de indicatoren: de habitatvlek is gunstig als meer dan de helft van de indicatoren gunstig zijn EN geen enkele 'zeer belangrijke' indicator ongunstig is.
+
+```{r integratiePlot}
+
+resultsLSVI_ind <- read.csv2(paste("../Output/", analyseNaam, "/Indicatoren_graslandMoeras.csv", sep =""), stringsAsFactors =  FALSE)
+
+statusHabitatvlek <- resultsLSVI_ind %>% 
+  filter(!is.na(Status_indicator)) %>%
+  group_by(Scenario, IDPlots, Habitattype, Habitatsubtype, Versie, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup()
+  
+test <- statusHabitatvlek %>%
+  group_by(Habitatsubtype, Versie,) %>%
+  summarise(n= n())
+
+nResults <- n_distinct(statusHabitatvlek$IDPlots)
+nPlots <- n_distinct(data_habitat_cirkelplot$IDPlots)
+
+write.csv2(statusHabitatvlek, paste("../Output/", analyseNaam,"/StatusHabitatvlek_graslandMoeras.csv", sep =""), row.names = FALSE)
+
+```
+
+## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
+
+Om tot een uitspraak te komen op schaal Vlaanderen (i.f.v. regionaal beleid) of de Vlaams-Atlantische regio (i.f.v. Europese rapportage), maken we een schatting van het aandeel habitat dat gunstig is en berekenen we bijhorende 95% betrouwbaarheidsinterval. Gezien er slechts 1 meetpunt in de Vlaams-Continentale regio gelegen is, maken we hier geen onderscheid tussen Vlaanderen en de Vlaams-Atlantische regio. 
+
+We maken een schatting:
+
+* per habitattype,
+* per habitatsubtype,
+* per habitattype binnen SBZH,
+* per habitattype buiten SBZH.
+
+We schatten de betrouwbaarheidsintervallen op basis van een binomiaal model, zodat deze steeds tussen de 0 en 100% gelegen zijn. Om de meetpuntgewichten op een correcte wijze toe te passen in de analyse, maken we gebruik de R-package survey (Thomas Lumley, 2018).
+
+```{r statusVlaanderen, echo=FALSE}
+
+statusHabitat <- habitatandeelGunstig(data = statusHabitatvlek) %>%
+  mutate(Scenario = "Combinatie crikelplot en vegetatieplot",
+         Schaal = "Vlaanderen") %>%
+  select(Scenario, Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
+  arrange(Habitattype, Versie, Scenario, TypeResultaat)
+
+write.csv2(statusHabitat, paste("../Output/", analyseNaam,"/StatusHabitat_graslandMoeras.csv", sep =""), row.names = FALSE)
+
+```
+ 
+Op een analoge manier berekenen we ook afzonderlijk per indicator het aandeel habitat dat gunstig scoort voor de indicator in kwestie. 
+ 
+```{r statusIndicatorVlaanderen, echo=FALSE}
+
+status_indicatoren_graslandMoeras <- NULL
+
+resultsLSVI_graslandMoeras_notNA <- resultsLSVI_ind %>%
+  filter(!is.na(Status_indicator))
+
+overzicht_ind <- resultsLSVI_graslandMoeras_notNA%>%
+  select(Habitattype, Versie, Criterium, Indicator, Belang) %>%
+  unique()
+
+for(habt in unique(resultsLSVI_graslandMoeras_notNA$Habitattype)){
+  
+  for(scen in unique(resultsLSVI_graslandMoeras_notNA$Scenario)){  
+    
+    data_habt <- resultsLSVI_graslandMoeras_notNA %>%
+    filter(Habitattype == habt & Scenario == scen)
+  
+      for(ind in unique(data_habt$Indicator)){
+    
+          data_ind <- data_habt %>%
+          filter(Indicator == ind) %>%
+          mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+          
+          if (nrow(data_ind) > 1){
+        
+        result_temp <- habitatandeelGunstig(data_ind, stratSBZH = FALSE) %>%
+          mutate(Indicator = ind,
+                 Scenario = scen,
+                 Schaal = "Vlaanderen") %>%
+          left_join(overzicht_ind, by = c("Versie", "Habitattype", "Indicator")) %>%
+          select(Scenario, Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+        
+        status_indicatoren_graslandMoeras <- bind_rows(status_indicatoren_graslandMoeras, result_temp)
+        }
+    }
+  }
+}
+
+status_indicatoren_graslandMoeras <- status_indicatoren_graslandMoeras %>%
+  arrange(Habitattype, Versie, Scenario, TypeResultaat, Criterium, Indicator)
+
+write.csv2(status_indicatoren_graslandMoeras, paste("../Output/", analyseNaam,"/Indicatoren_AandeelGunstigVlaanderen_graslandMoeras.csv", sep =""), row.names = FALSE)
+
+```
+ 
+## Resultaten
+ 
+De resultaten worden weggeschreven in de folder 'AnalyseGraslandMoeras':
+
+* voorwaarden_graslandmoeras: geeft de waarde en de status voor elke voorwaarde (een indicator bestaat uit één of meerdere voorwaarden);
+* Indicatoren_graslandmoeras: geeft de status voor elke indicator;
+* StatusHabitatvlek_graslandmoeras: geeft de status per meetpunt;
+* StatusHabitat_graslandmoeras: geeft de schatting van het aandeel gunstige habitat met 95%-betrouwbaarheidsinterval voor Vlaanderen,
+    - per habitattype,
+    - per habitatsubtype,
+    - per habitattype binnen SBZH,
+    - per habitattype buiten SBZH;
+* Indicatoren_AandeelGunstigVlaanderen_graslandMoeras: geeft per indicator de schatting van het aandeel habitat dat gunstig scoort voor de indicator in kwestie,
+    * per habitattype,
+    * per habitatsubtype,
+    * per habitattype binnen SBZH,
+    * per habitattype buiten SBZH.
+
+ 
+ 
+ 
