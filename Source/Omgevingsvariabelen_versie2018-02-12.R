@@ -20,14 +20,16 @@ dbHeideEn6510_2018 <- "../Data/MeetgegevensHeide6510/FieldMapData_Heide6510_vers
 # Gegevens INBOVEG
 #---------------------
 
-dbINBOVeg_2018 <- "../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export2018-06-07/"
-
+dbINBOVeg_2018_v0 <- "../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export2018-06-07/"
+dbINBOVeg_2018 <- "../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/"
+dbINBOVeg_MONEOS <- "../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-06/"
+dbINBOVeg_PINK <- "../Data/MeetgegevensPINK/INBOVeg_Export_2018-11-26/"
 
 #---------------------
 # Gegevens boshabitatsExtra
 #---------------------
 
-dbBosExtra <- "../Data/MeetgegevensBoshabitats/FieldMapData_BOSHAB_RAW_ACC_Val.accdb"
+dbBosExtra <- "../Data/MeetgegevensBoshabitats/FieldMapData_Boshab_versi2018-06-14.accdb"
 shapePlotsDir <- "../Data/MeetgegevensBoshabitats/Meetproces/."
 shapeA3 <- "A3_buffer9mGrid_points_ADM"
 shapeA2 <- "Regenerationplot_polyg_ADM"
