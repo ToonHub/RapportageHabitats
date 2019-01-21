@@ -21,16 +21,16 @@ opnamen_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-0
 veglagen_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-06/veglagen_MONEOS.csv", stringsAsFactors = FALSE)
 
 
-# analyseNaamMONEOS <- paste("AnalyseMONEOS", Sys.Date(), sep="_")
-# setwd("../Output")
-# 
-# dir.create(analyseNaamMONEOS)
-# 
-# setwd(paste("../Output/", analyseNaamMONEOS, sep =""))
-# 
-# dir.create("InputRekenmodule")
+analyseNaamMONEOS <- paste("AnalyseMONEOS", Sys.Date(), sep="_")
+setwd("../Output")
 
-analyseNaamMONEOS <- "AnalyseMONEOS_2018-11-26"
+dir.create(analyseNaamMONEOS)
+
+setwd(paste("../Output/", analyseNaamMONEOS, sep =""))
+
+dir.create("InputRekenmodule")
+
+# analyseNaamMONEOS <- "AnalyseMONEOS_2018-12-11"
 ```
 
 ### Structuurvariabelen
@@ -263,6 +263,7 @@ invoerHabt <- geefInvoervereisten(Kwaliteitsniveau = 1, Habitattype = data_habit
   select(Habitatsubtype, Criterium, Indicator, Voorwaarde, Belang, TypeVariabele) %>%
   unique()
 
+
 data_voorwaarden_MONEOS <- voorwaarden_MONEOS %>%
   mutate(Voorwaarde = ifelse(Voorwaarde == "aanwezigheid schorklif/breuksteenbestorting", "aandeel schorklif/breuksteenbestorting", Voorwaarde)) %>%
   left_join(invoerHabt, by = c("Habitatsubtype",  "Voorwaarde")) %>%
@@ -305,9 +306,11 @@ Op basis van de LSVI-rekenmodule berekenen we de waarden voor de voorwaarden. De
 
 De indicator 'verruiging' van habitatsubtype 1330_da is enkel van toepassing voor voor zoutwaterschor. Gezien alle meetpunten in brakwaterschor gelegen zijn, wordt deze indicator dus niet meegerekend in de analyse.
 
+De indicator 'sleutelsoorten' bestaat uit twee voorwaarden: 'aantal sleutelsoorten hoog schor' en 'aantal sleutelsoorten laag schor'. De indicator is gunstig als beide voorwaarden gunstig scoren. De indicator wordt echter beoordeeld op basis van een vegetatieopname in een plot van 3m x 3m die ofwel in hoog schor ofwel in laag schor gelegen is, waardoor er niet aan beide voorwaarden kan worden voldaan. Daarom beoordelen we in deze analyse de indicator 'sleutelsoorten' als gunstig wanneer (minstens) één van beide voorwaarden gunstig scoort.     
+
 In een volgende stap bepalen we per meetpunt de status van de habitatvlek, rekening houdend met het belang van de indicatoren: de habitatvlek is gunstig als meer dan de helft van de indicatoren gunstig zijn EN geen enkele 'zeer belangrijke' indicator ongunstig is.
 
-```{r MONEOScalcStatus, echo=FALSE, warning = TRUE, eval= FALSE}
+```{r MONEOScalcStatus, echo=FALSE, warning = TRUE, eval= TRUE}
 
 test <- geefInvoervereisten(Habitattype = "1330_da", Kwaliteitsniveau = 1)
 
@@ -315,7 +318,6 @@ resultsLSVI_MONEOS <- berekenLSVIbasis(Kwaliteitsniveau = 1,
                                            Data_voorwaarden = data_voorwaarden_MONEOS,
                                            Data_soortenKenmerken = data_soortenKenmerken_MONEOS,
                                            Data_habitat = data_habitat_MONEOS, Aggregatiemethode = "RapportageHR", na.rm = TRUE)
-
 
 # Volgende soortnamen zijn niet teruggevonden in de databank: Spergularia maritima (All.) Chiov., Salix x mollissima Hoffm. ex Elwert, Caltha palustris subsp. araneosa (v. Steenis) v. d. Meijden, Sambucus nigra cv laciniata, Rumex obtusifolius subsp. transiens (Simonk.) Rech. f., Salix x rubens Schrank, Hepatica, Salix x rubens nvar. basfordiana (Scaling ex Salter) Meikle, Salix x smithiana auct. non Willd., Populus x canadensis Moench, Salix x sepulcralis Simonk., Cochlearia officinalis ssp. officinalis. 
 
@@ -335,6 +337,15 @@ checkNA_vw <- resultsLSVI_vw %>%
             n = n(),
             nWaarde = n_distinct(Waarde))
 
+# sleutelsoorten indicator anders evalueren: gunstig indien minstens één van de voorwaarde gunstig is (een plot ligt ofwel in hoog schor ofwel in laag schor)
+
+indicator_sleutelsoorten <- resultsLSVI_vw %>%
+  filter(Habitattype == "1330") %>%
+  filter(Indicator == "sleutelsoorten") %>%
+  group_by(ID, Versie, Indicator) %>%
+  summarise(Status_indicator_corr = sum(Status_voorwaarde) > 0) %>%
+  ungroup()
+
 resultsLSVI_ind <- resultsLSVI_MONEOS[[2]] %>%
     mutate(Habitatsubtype = Habitattype,
     Habitattype = substr(Habitattype, 1, 4),
@@ -351,12 +362,17 @@ checkNA_ind <- resultsLSVI_ind %>%
             n = n(),
             nWaarde = n_distinct(Status_indicator))
 
+resultsLSVI_ind_corr <- resultsLSVI_ind %>%
+  left_join(indicator_sleutelsoorten, by = c("ID", "Versie", "Indicator")) %>%
+  mutate(Status_indicator = ifelse(Indicator == "sleutelsoorten", Status_indicator_corr, Status_indicator)) %>%
+  select(-Status_indicator_corr)
+
 resultsLSVI_vw_exp <- resultsLSVI_vw %>%
   mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
 
 write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamMONEOS, "/Voorwaarden_MONEOS.csv", sep =""), row.names = FALSE)
 
-write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaamMONEOS, "/Indicatoren_MONEOS.csv", sep =""), row.names = FALSE)
+write.csv2(resultsLSVI_ind_corr, paste("../Output/", analyseNaamMONEOS, "/Indicatoren_MONEOS.csv", sep =""), row.names = FALSE)
 
 ```
 
@@ -395,7 +411,7 @@ We schatten de betrouwbaarheidsintervallen op basis van een binomiaal model, zod
 
 ```{r MONEOS statusVlaanderen}
 
-analyseNaamGrasland <- "AnalyseGraslandMoeras_2018-11-13"
+analyseNaamGrasland <- "AnalyseGraslandMoeras_2018-12-05"
 
 statusHabitatvlek_1330_hpr <- read.csv2( paste("../Output/", analyseNaamGrasland, "/StatusHabitatvlek_GraslandMoeras.csv", sep =""), stringsAsFactors  = FALSE) %>%
   mutate(Habitattype = substr(Habitatsubtype, 1, 4),
