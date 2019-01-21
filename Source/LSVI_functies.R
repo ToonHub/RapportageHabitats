@@ -3210,7 +3210,7 @@ berekenAVDoodHout <- function(db = dbVBI2, plotHabtypes, niveau = "plot", databa
   mutate(volumeAandeelDoodHout = (StaandDoodHout + LiggendDoodHout)/(StaandDoodHout + StaandLevendHout + LiggendDoodHout) * 100,
          volumeAandeelDoodHoutStaand = StaandDoodHout/(StaandDoodHout + StaandLevendHout) * 100,
          dikDoodHoutStaand_ha = DikStaandDoodHout) %>%
-  select(IDPlots, IDSegments, volumeAandeelDoodHout, dikDoodHoutStaand_ha)
+  select(IDPlots, IDSegments, volumeAandeelDoodHout, volumeAandeelDoodHoutStaand, dikDoodHoutStaand_ha)
 
    #plots zonder bomen --> nulwaarneming
 
@@ -3219,8 +3219,9 @@ berekenAVDoodHout <- function(db = dbVBI2, plotHabtypes, niveau = "plot", databa
     unique() %>%
     left_join(doodHoutAV, by = c("IDPlots", "IDSegments")) %>%
     mutate(volumeAandeelDoodHout = ifelse(is.na(volumeAandeelDoodHout), 0, volumeAandeelDoodHout),
+           volumeAandeelDoodHoutStaand = ifelse(is.na(volumeAandeelDoodHoutStaand), 0, volumeAandeelDoodHoutStaand),
            dikDoodHoutStaand_ha = ifelse(is.na(dikDoodHoutStaand_ha), 0, dikDoodHoutStaand_ha)) %>%
-  gather(volumeAandeelDoodHout, dikDoodHoutStaand_ha,  key = "AnalyseVariabele", value = "Waarde")
+  gather(volumeAandeelDoodHout, volumeAandeelDoodHoutStaand, dikDoodHoutStaand_ha,  key = "AnalyseVariabele", value = "Waarde")
 
   return(doodHoutAV_plus0)
 
@@ -4229,7 +4230,7 @@ geefVoorwaardenBosVBI2 <- function(db = dbVBI2, plotHabtypes, niveau = "plot", d
     select(ID, Habitattype, Habitatsubtype, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid)
 
 
-  dendroAV <- berekenAVDoodHout(db = db, plotHabtypes, niveau = niveau) %>%
+  dendroAV <- berekenAVDoodHout(db = db, plotHabtypes, niveau = niveau, databank = databank) %>%
     left_join(select(plotHabtypes, IDPlots, HabCode), by = "IDPlots") %>%
     inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
     rename(ID = IDPlots,  Versie = VersieLSVI, Habitatsubtype = HabCode) %>%
@@ -4307,7 +4308,7 @@ geefVoorwaardenBosVBI1 <- function(db = dbVBI1, plotHabtypes,  databank = "VBI1"
     select(ID, Habitattype, Habitatsubtype, AnalyseVariabele,  Voorwaarde,  Waarde, Type, Invoertype, Eenheid)
 
 
-  dendroAV <- berekenAVDoodHout(db = db, plotHabtypes, niveau = niveau) %>%
+  dendroAV <- berekenAVDoodHout(db = db, plotHabtypes, niveau = niveau, databank = databank) %>%
     left_join(select(plotHabtypes, IDPlots, HabCode), by = "IDPlots") %>%
     inner_join(indicatorenLSVI, by = c("HabCode", "AnalyseVariabele")) %>%
     rename(ID = IDPlots,  Versie = VersieLSVI, Habitatsubtype = HabCode) %>%
@@ -5073,8 +5074,6 @@ geefParameters <- function(model, type = "binomial"){
 
     }
   }
-
-
 
     return(estimates)
 
