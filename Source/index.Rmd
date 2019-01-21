@@ -1,34 +1,43 @@
 ---
-title: 'Voortgang meetnet habitatkwaliteit'
+title: 'Analyse gegevens meetnet habitatkwaliteit'
 author: "Toon Westra"
-date: "mei 2018"
+date: "November 2018"
 output:
   bookdown::pdf_book:
     base_format: INBOmd::inbo_rapport
-    subtitle: "Tussentijds technisch rapport"
+    subtitle: "Technisch rapport"
     reportnr: "Intern Rapport"
     citation_package: none
     keep_tex: yes
+  bookdown::html_document2:    
+  # code_folding: hide
+    keep_md: TRUE
+    toc: TRUE
+    toc_float:
+      collapsed: FALSE
+      smooth_scroll: FALSE
+    # includes:
+    #     in_header: header.html
 site: bookdown::bookdown_site
 
 ---
 
 
-```{r results ='hide', echo = FALSE, message = FALSE, purl = FALSE, warning=FALSE}
+```{r results ='hide', echo = FALSE, message = FALSE, purl = FALSE, warning=FALSE, cache =FALSE}
 
 library(knitr)
 opts_chunk$set(
   echo = FALSE, 
   results = 'markup',
   eval = TRUE,
-  cache = FALSE,
+  cache = TRUE,
   autodep = TRUE,
   dev = "pdf",
   dpi = 300,
   fig.width = 150 / 25.4,
   fig.height = 100 / 25.4,
   warning = FALSE,
-  error = TRUE,
+  error = FALSE,
   message = FALSE
 )
 
@@ -38,17 +47,23 @@ opts_chunk$set(
 
 
 ```{r Rinit,  warning = FALSE, message = FALSE, results = 'hide', cache = FALSE}
+library(devtools)
+devtools::install_github("inbo/LSVI@develop", build_vignettes = TRUE)
+library("LSVI")
+#maakConnectiePool()
+
 library("RODBC")
-library("plyr")
+#library("plyr")
 library("tidyverse")
 library("INBOtheme")
-library("gridExtra")
+#library("gridExtra")
 library("rgeos")
 library("rgdal")
 library("stringr")
-library("ggmap")
-library("kableExtra")
-library("LSVI")
+#library("ggmap")
+#library("kableExtra")
+library(lme4)
+library("survey")
 
 source("../source/Omgevingsvariabelen_versie2018-02-12.R")
 source("../source/LSVI_functies.R") 
