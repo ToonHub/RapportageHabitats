@@ -545,10 +545,10 @@ resultsLSVI_vw_exp <- resultsLSVI_vw_combinatie %>%
   mutate(Waarde = gsub(".", ",", Waarde, fixed = TRUE),
          Referentiewaarde = gsub(".", ",", Referentiewaarde, fixed = TRUE))
 
-#NAKIJKEN
+#NAKIJKEN 
 resultsLSVI_ind <- resultsLSVI_ind_combinatie %>%
-  mutate(Habitatsubtype = ifelse(IDPlots == "1711014", "6230_ha", Habitatsubtype),
-         Belang = ifelse(Indicator == "verbossing", "zb", Belang))
+  mutate(Habitatsubtype = ifelse(IDPlots == "1711014", "6230_ha", Habitatsubtype))#,
+         #Belang = ifelse(Indicator == "verbossing", "zb", Belang)) # --> FOUT
 
 resultsLSVI_vw_exp <- resultsLSVI_vw_exp %>%
   mutate(Habitatsubtype = ifelse(IDPlots == "1711014", "6230_ha", Habitatsubtype),
@@ -565,6 +565,20 @@ In een volgende stap bepalen we per meetpunt de status van de habitatvlek, reken
 
 resultsLSVI_ind <- read.csv2(paste("../Output/", analyseNaam, "/Indicatoren_graslandMoeras.csv", sep =""), stringsAsFactors =  FALSE)
 
+resultsLSVI_vw <- read.csv2(paste("../Output/", analyseNaam, "/Voorwaarden_graslandMoeras.csv", sep =""), stringsAsFactors =  FALSE)
+
+# TIJDELIJK --> correctie
+resultsLSVI_ind <- resultsLSVI_ind %>%
+  mutate(Belang = ifelse(Indicator == "verbossing" & substr(Habitattype, 1, 1) == "6", "b", Belang))
+
+resultsLSVI_vw <- resultsLSVI_vw %>%
+  mutate(Belang = ifelse(Indicator == "verbossing" & substr(Habitattype, 1, 1) == "6", "b", Belang))
+
+plotsOngunstig_verbossing <- resultsLSVI_ind %>%
+  filter(Indicator == "verbossing") %>%
+  filter(substr(Habitattype, 1, 1) == "6") %>%
+  filter(!Status_indicator)
+
 statusHabitatvlek <- resultsLSVI_ind %>% 
   filter(!is.na(Status_indicator)) %>%
   group_by(Scenario, IDPlots, Habitattype, Habitatsubtype, Versie, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
@@ -579,10 +593,23 @@ test <- statusHabitatvlek %>%
   group_by(Habitatsubtype, Versie,) %>%
   summarise(n= n())
 
+test2 <- statusHabitatvlek %>%
+  filter(IDPlots %in% plotsOngunstig_verbossing$IDPlots) %>%
+  filter(Status_habitatvlek == 1) %>%
+  group_by(Versie, Habitatsubtype, Status_habitatvlek) %>%
+  summarise(n = n_distinct(IDPlots)) %>%
+  ungroup()
+
 nResults <- n_distinct(statusHabitatvlek$IDPlots)
 nPlots <- n_distinct(data_habitat_cirkelplot$IDPlots)
 
+analyseNaam <- "AnalyseGraslandMoeras_2018-12-05"
+
 write.csv2(statusHabitatvlek, paste("../Output/", analyseNaam,"/StatusHabitatvlek_graslandMoeras.csv", sep =""), row.names = FALSE)
+
+write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaam,"/Indicatoren_graslandMoeras.csv", sep =""), row.names = FALSE)
+
+write.csv2(resultsLSVI_vw, paste("../Output/", analyseNaam,"/Voorwaarden_graslandMoeras.csv", sep =""), row.names = FALSE)
 
 ```
 
