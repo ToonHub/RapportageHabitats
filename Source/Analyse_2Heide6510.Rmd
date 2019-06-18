@@ -1,16 +1,16 @@
-# Heidehabitats en habitat 6510
+# Heidehabitats en soortenrijke glanshavergraslanden
 
 ## Data
 
 ### Ruwe data
 
-De heidehabitats en habitat 6510 worden opgemeten door het ANB, die de gegevens invoeren in Fieldmap. De gegevens worden vervolgens vanuit Fieldmap naar een Access-bestand geëxporteerd en aangeleverd aan het INBO.
+De heidehabitats (2310, 2330, 4010, 4030) en het habitattype soortenrijke glanshavergraslanden (6510) worden opgemeten door het ANB, die de gegevens invoeren in Fieldmap. De gegevens worden vervolgens vanuit Fieldmap naar een Access-bestand geëxporteerd en aangeleverd aan het INBO.
 
 Dit Access-bestand bevat:
 
-* Geobserveerder habitattypen in de meetpunten
-* Vegetatieopname in vegetatieplot
-* Structuurgegevens in cirkelplot
+* Geobserveerde habitattypen in de meetpunten,
+* Vegetatieopname in de vierkante plot,
+* Structuurgegevens in de cirkelplot.
 
 ```{r Heide6510meetpunten, warning=FALSE}
 
@@ -37,7 +37,7 @@ plotHabtypes <- plots6510Heide %>%
                            ifelse(HabObserved == "6510", 
                                   HabTarget1, 
                                   as.character(HabObserved)))) %>%
-  select(IDPlots, SBZH, HabCode, Weight, Date, Regio) %>%
+  select(IDPlots, SBZH, HabCode, Weight, Date, Regio, X = X_coord, Y = Y_coord) %>%
   # filter(HabCode %in% c("4010", "4030", "2310", "2330_bu")) %>%
   mutate(TypePlot = "vegetatieopname",
          Jaar = as.numeric(format(as.Date(Date, format = "%Y-%m-%d"),"%Y")),
@@ -56,12 +56,7 @@ plotHabtypes <- plots6510Heide %>%
 analyseNaam <- "AnalyseHeide6510_2018-11-13"
 ```  
 
-### Meetpuntgewichten
-
-Om onvertekende uitspraken te doen op een hoger schaalniveau, moeten we rekening houden met de meetpuntgewichten. We onderscheiden twee types gewichten:
-
-* Plotgewichten: aandeel van de plot dat bedekt is door het habitat(sub)type (waarover we uitspraak doen).
-* Stratumgewicht: de verschillende strata (binnen/buiten SBZH + habitatsubtypes) worden niet evenredig bemonsterd. Sommige strata kennen een grotere dichtheid aan meetpunten (bv. binnen SBZH omdat we daar een hogere precisie wensen).We moeten hiervoor compenseren als we een uitspraak op schaal Vlaanderen wensen. Per stratum kennen we daarom een gewicht toe aan de meetpunten gelijk aan de verhouding tussen de oppervlakte van dit stratum en het aantal meetpunten binnen dit stratum. Meetpunten in een stratum met een lagere dichtheid krijgen dus een groter gewicht.   
+  
 
 ```{r Heide6510gewichten}
 
@@ -86,7 +81,8 @@ plotHabtypes_continental <- plotHabtypes %>%
 
 ```
 
-## Overzicht meetpunten
+
+### Overzicht meetpunten
 
 ```{r Heide6510overzichtMeetpunten, warning=FALSE, eval =FALSE}
 
@@ -97,7 +93,8 @@ ggplot(plotHabtypes,aes(x = HabCode, fill = SBZH)) +
 
 ```
 
-Tabel \@ref(tab:Heide6510tabAantallen) geeft een overzicht van het huidige aantal opgemeten meetpunten en het totale steekproefgrootte die we na 12 jaar willen bereiken.
+Tabel \@ref(tab:Heide6510tabAantallen) geeft een overzicht van het huidige aantal opgemeten meetpunten en de totale steekproefgrootte die we na 12 jaar willen bereiken.
+
 
 ```{r Heide6510tabAantallen, message=FALSE, results='asis'}
 
@@ -112,20 +109,19 @@ overzicht_Heide6510 <- plotHabtypes %>%
   full_join(steekproefgrootte, by = c("HabCode" = "habsubt", "SBZH")) %>%
   arrange(HabCode, SBZH) %>%
   mutate(nOpgemeten = ifelse(is.na(nOpgemeten), 0, nOpgemeten))
+
+#write.csv2(overzicht_Heide6510, "../Output/DataOverzicht/overzicht_Heide6510.csv", row.names = FALSE) 
     
 kable(overzicht_Heide6510, format = "latex", caption = "Aantal opgemeten meetpunten en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", booktabs = T) 
 
 ```
 
-## Input voor LSVI-rekenmodule
+\needspace{200mm}
 
-We maken gebruik van de LSVI-rekenmodule. De rekenmodule vereist volgende input:
+## LSVI-berekening per meetpunt
 
-* data habitat: bevat het habitat(sub)type voor elke plot
-* data voorwaarden: bevat de waarden voor de voorwaarden (elke indicator bestaat uit een of meerdere voorwaarden) die rechtstreeks op terrein worden opgemeten of die op voorhand berekend worden los van de rekenmodule
-* data soorten en kenmerken: bevat de gegevens van de vegetatieopname. Op basis hiervan berekent de rekenmodule de nog ontbrekende voorwaarden (die dus niet onder data voorwaarden werden ingevoerd)
-
-Voor de heidehabitats worden volgende voorwaarden afgeleid uit de gegevens ingezameld in de cirkelplot:
+### Heide
+Voor de heidehabitats worden de volgende voorwaarden afgeleid uit de gegevens ingezameld in de cirkelplot en worden de waarden rechtstreeks ingevoerd in de LSVI-rekenmodule:
 
 * bedekking verbossing,
 * bedekking dwergstruiken,
@@ -140,9 +136,15 @@ Voor de heidehabitats worden volgende voorwaarden afgeleid uit de gegevens ingez
 * bedekking open vegetaties,
 * bedekking open zand.
 
-De indicator 'mozaïek met 2330' wordt afgeleid uit de Habitatkaart. De indicator 'horizontale structuur' met voorwaarde 'afwisseling dopheidebulten en natte slenken' van LSVI versie 2.0 van habitattype 4010 kan niet bepaald worden en wordt dus niet meegerekend in de verdere analyse. De overige indicatoren van de heidehabitats worden afgeleid uit de vegetatieopnamegegevens van de vegetatieplot.
+De indicator 'mozaïek met 2330' leiden we af uit de Habitatkaart [@DeSaeger2018]. Ook de waarde van deze voorwaarde wordt rechtstreeks ingevoerd in de LSVI-rekenmodule. 
 
-Voor habitat 6510 wordt enkel 'bedekking verbossing' bepaalt op niveau van de cirkelplot. Alle andere indicatoren/voorwaarden worden afgeleid uit de vegetatieopnamegegevens van de vegetatieplot.  
+De indicator 'horizontale structuur' met voorwaarde 'afwisseling dopheidebulten en natte slenken' van LSVI versie 2.0 van habitattype 4010 kan niet bepaald worden en wordt daarom niet meegerekend in de verdere analyse. 
+
+De overige voorwaarden van de heidehabitats berekent de LSVI-rekenmodule op basis van de  vegetatieopname in de vierkante plot.
+
+### Soortenrijke glanshavergraslanden (6510)
+
+Voor habitattype 6510 bepalen we enkel de voorwaarde ‘bedekking verbossing’ op het niveau van de cirkelplot. De waarde voeren we rechtstreeks in in de LSVI-rekenmodule. Alle andere voorwaarden worden berekend op basis van de vegetatieopname in de vierkante plot.  
 
 ```{r Heide6510inputformaat voor LSVI-rekenmodule, warning=FALSE, eval=FALSE}
 
@@ -155,7 +157,7 @@ plotHabtypesHeide <- plotHabtypes %>%
 data_habitat_heide <- plotHabtypesHeide %>%
   rename(ID = IDPlots, Habitattype = HabCode) %>%
   mutate(ID = as.character(ID)) %>%
-  group_by(ID, SBZH, Habitattype, Weight, Regio, TypePlot, Jaar, StratumWeight) %>%
+  group_by(ID, SBZH, Habitattype, Weight, Regio, TypePlot, Jaar, StratumWeight, X, Y) %>%
   summarise(Date = max(Date)) %>%
   ungroup()
 
@@ -219,42 +221,39 @@ data_soortenKenmerken6510 <- geefSoortenKenmerkenHeide6510(plotHabtypes = plotHa
 data_soortenKenmerken6510_corr <- data_soortenKenmerken6510 %>%
   mutate(Kenmerk = ifelse(Kenmerk == "Centaurea L. subgenus Jacea", " Centaurea jacea L.", Kenmerk)) #Centaurea L. subgenus Jacea (knoopkruid s.l.) uit vegetatieopname wordt meegerekend als sleutelsoort 'Centaurea jacea L.'
 
-write.csv2(data_habitat_heide, paste("../Output/",
-                                             analyseNaam,
-                                             "/InputRekenmodule/data_habitat_heide.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_voorwaarden_heide, paste("../Output/",
-                                             analyseNaam,
-                                             "/InputRekenmodule/data_voorwaarden_heide.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_soortenKenmerkenHeide_corr, paste("../Output/",
-                                             analyseNaam,
-                                             "/InputRekenmodule/data_soortenKenmerken_heide.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_habitat_6510, paste("../Output/",
-                                             analyseNaam,
-                                             "/InputRekenmodule/data_habitat_6510.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_voorwaarden6510, paste("../Output/",
-                                             analyseNaam,
-                                             "/InputRekenmodule/data_voorwaarden_6510.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_soortenKenmerken6510_corr, paste("../Output/",
-                                             analyseNaam,
-                                             "/InputRekenmodule/data_soortenKenmerken_6510.csv", sep = ""),
-           row.names = FALSE)
+#write.csv2(data_habitat_heide, paste("../Output/",
+#                                              analyseNaam,
+#                                              "/InputRekenmodule/data_habitat_heide.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_voorwaarden_heide, paste("../Output/",
+#                                              analyseNaam,
+#                                              "/InputRekenmodule/data_voorwaarden_heide.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_soortenKenmerkenHeide_corr, paste("../Output/",
+#                                              analyseNaam,
+#                                              "/InputRekenmodule/data_soortenKenmerken_heide.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_habitat_6510, paste("../Output/",
+#                                              analyseNaam,
+#                                              "/InputRekenmodule/data_habitat_6510.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_voorwaarden6510, paste("../Output/",
+#                                              analyseNaam,
+#                                              "/InputRekenmodule/data_voorwaarden_6510.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_soortenKenmerken6510_corr, paste("../Output/",
+#                                              analyseNaam,
+#                                              "/InputRekenmodule/data_soortenKenmerken_6510.csv", sep = ""),
+#            row.names = FALSE)
 
 ```
 
 
-## LSVI-berekening per meetpunt
-
-Op basis van de LSVI-rekenmodule berekenen we de waarden voor de voorwaarden. Deze waarden worden afgetoetst aan de grenswaarden zodat we de status van elke voorwaarde krijgen. Vervolgens wordt de status per indicator bepaald. In een volgende stap bepalen we per meetpunt de status van de habitatvlek, rekening houdend met het belang van de indicatoren: de habitatvlek is gunstig als meer dan de helft van de indicatoren gunstig zijn EN geen enkele 'zeer belangrijke' indicator ongunstig is.
 
 ```{r Heide6510LSVI berekening LSVI-rekenmodule, warning=FALSE, eval = FALSE}
 
@@ -283,9 +282,9 @@ resultsLSVI_Heide_ind <- resultsLSVI_Heide[[2]] %>%
 resultsLSVI_Heide_vw_exp <- resultsLSVI_Heide_vw %>%
   mutate(Waarde = gsub(".", ",", Waarde, fixed = TRUE))
 
-write.csv2(resultsLSVI_Heide_vw_exp, paste("../Output/", analyseNaam, "/Voorwaarden_Heide.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_Heide_vw_exp, paste("../Output/", analyseNaam, "/Voorwaarden_Heide.csv", sep =""), row.names = FALSE)
 
-write.csv2(resultsLSVI_Heide_ind, paste("../Output/", analyseNaam, "/Indicatoren_Heide.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_Heide_ind, paste("../Output/", analyseNaam, "/Indicatoren_Heide.csv", sep =""), row.names = FALSE)
 
 # 6510
 
@@ -310,9 +309,9 @@ resultsLSVI_6510_ind <- resultsLSVI_6510[[2]] %>%
 resultsLSVI_6510_vw_exp <- resultsLSVI_6510_vw %>%
   mutate(Waarde = gsub(".", ",", Waarde, fixed = TRUE))
 
-write.csv2(resultsLSVI_6510_vw_exp, paste("../Output/", analyseNaam, "/Voorwaarden_6510.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_6510_vw_exp, paste("../Output/", analyseNaam, "/Voorwaarden_6510.csv", sep =""), row.names = FALSE)
 
-write.csv2(resultsLSVI_6510_ind, paste("../Output/", analyseNaam, "/Indicatoren_6510.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_6510_ind, paste("../Output/", analyseNaam, "/Indicatoren_6510.csv", sep =""), row.names = FALSE)
 
 ```
 
@@ -331,7 +330,7 @@ statusHabitatvlek_Heide <- resultsLSVI_Heide_ind %>%
             Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
   ungroup()
   
-write.csv2(statusHabitatvlek_Heide, paste("../Output/", analyseNaam,"/StatusHabitatvlek_Heide.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitatvlek_Heide, paste("../Output/", analyseNaam,"/StatusHabitatvlek_Heide.csv", sep =""), row.names = FALSE)
 
 resultsLSVI_6510_ind <- read.csv2(paste("../Output/", analyseNaam, "/Indicatoren_6510.csv", sep =""), stringsAsFactors = FALSE)
 
@@ -345,22 +344,14 @@ statusHabitatvlek_6510 <- resultsLSVI_6510_ind %>%
             Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
   ungroup()
   
-write.csv2(statusHabitatvlek_6510, paste("../Output/", analyseNaam,"/StatusHabitatvlek_6510.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitatvlek_6510, paste("../Output/", analyseNaam,"/StatusHabitatvlek_6510.csv", sep =""), row.names = FALSE)
 
 ```
 
 ## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
 
-Om tot een uitspraak te komen op schaal Vlaanderen (i.f.v. regionaal beleid) of de Vlaams-Atlantische regio (i.f.v. Europese rapportage), maken we een schatting van het aandeel habitat dat gunstig is en berekenen we bijhorende 95% betrouwbaarheidsinterval. Enkel voor habitat 6510 maken we een onderscheid tussen tussen Vlaanderen en de Vlaams-Atlantische regio. De opgemeten meetpunten van de heidehabitats liggen allemaal de Atlantische regio.  
+Enkel voor habitat 6510 maken we een onderscheid tussen Vlaanderen en de Vlaams-Atlantische regio. De opgemeten meetpunten van de heidehabitats liggen allemaal in de Atlantische regio.  
 
-We maken een schatting:
-
-* per habitattype,
-* per habitatsubtype,
-* per habitattype binnen SBZH,
-* per habitattype buiten SBZH.
-
-We schatten de betrouwbaarheidsintervallen op basis van een binomiaal model, zodat deze steeds tussen de 0 en 100% gelegen zijn. Om de meetpuntgewichten op een correcte wijze toe te passen in de analyse, maken we gebruik de R-package survey (Thomas Lumley, 2018).
 
 ```{r Heide6510statusVlaanderen}
 
@@ -370,7 +361,7 @@ statusHabitat_Heide <- habitatandeelGunstig(data = statusHabitatvlek_Heide) %>%
   select(Scenario, Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
   arrange(Habitattype, Versie, Scenario, TypeResultaat)
 
-write.csv2(statusHabitat_Heide, paste("../Output/", analyseNaam,"/StatusHabitat_Heide.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitat_Heide, paste("../Output/", analyseNaam,"/StatusHabitat_Heide.csv", sep =""), row.names = FALSE)
 
 statusHabitat_6510_Vlaanderen <- habitatandeelGunstig(data = statusHabitatvlek_6510) %>%
   mutate(Schaal = "Vlaanderen")
@@ -385,10 +376,10 @@ statusHabitat_6510 <-  bind_rows(statusHabitat_6510_Vlaanderen, statusHabitat_65
   select(Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
   arrange(Habitattype, Versie, Schaal, TypeResultaat)
 
-write.csv2(statusHabitat_6510, paste("../Output/", analyseNaam,"/StatusHabitat_6510.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitat_6510, paste("../Output/", analyseNaam,"/StatusHabitat_6510.csv", sep =""), row.names = FALSE)
 ```
 
-Op een analoge manier berekenen we ook afzonderlijk per indicator het aandeel habitat dat gunstig scoort voor de indicator in kwestie. 
+
 
 ```{r Heide6510statusIndicatorVlaanderen}
 
@@ -430,7 +421,7 @@ for(habt in unique(resultsLSVI_Heide_notNA$Habitattype)){
 status_indicatoren_heide <- status_indicatoren_heide %>%
   arrange(Habitattype, Versie, TypeResultaat, Criterium, Indicator)
 
-write.csv2(status_indicatoren_heide, paste("../Output/", analyseNaam,"/Indicatoren_AandeelGunstigVlaanderen_Heide.csv", sep =""), row.names = FALSE)
+#write.csv2(status_indicatoren_heide, paste("../Output/", analyseNaam,"/Indicatoren_AandeelGunstigVlaanderen_Heide.csv", sep =""), row.names = FALSE)
 
 status_indicatoren_6510 <- NULL
 
@@ -470,24 +461,11 @@ for(habt in unique(resultsLSVI_6510_ind$Habitattype)){
 status_indicatoren_6510 <- status_indicatoren_6510 %>%
   arrange(Habitattype, Versie, TypeResultaat, Criterium, Indicator)
 
-write.csv2(status_indicatoren_6510, paste("../Output/", analyseNaam, "/Indicatoren_AandeelGunstigVlaanderen_6510.csv", sep =""), row.names = FALSE)
+#write.csv2(status_indicatoren_6510, paste("../Output/", analyseNaam, "/Indicatoren_AandeelGunstigVlaanderen_6510.csv", sep =""), row.names = FALSE)
 
 ```
 
 ## Resultaten
  
-De resultaten worden weggeschreven in de folder 'AnalyseHeide6510':
+De resultaten worden weggeschreven in de folder 'AnalyseHeide6510_2018-11-13'.
 
-* Voorwaarden_heide6510: geeft de waarde en de status voor elke voorwaarde (een indicator bestaat uit één of meerdere voorwaarden);
-* Indicatoren_heide6510: geeft de status voor elke indicator;
-* StatusHabitatvlek_heide6510: geeft de status per meetpunt;
-* StatusHabitat_heide6510: geeft de schatting van het aandeel gunstige habitat met 95%-betrouwbaarheidsinterval voor Vlaanderen en voor de Vlaams-Atlantische regio (enkel bij habitattype 6510),
-    * per habitattype,
-    * per habitatsubtype,
-    * per habitattype binnen SBZH,
-    * per habitattype buiten SBZH;
-* Indicatoren_AandeelGunstigVlaanderen_heide6510: geeft per indicator de schatting van het aandeel habitat in Vlaanderen dat gunstig scoort voor de indicator in kwestie,
-    * per habitattype,
-    * per habitatsubtype,
-    * per habitattype binnen SBZH,
-    * per habitattype buiten SBZH.

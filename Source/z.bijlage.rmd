@@ -1,0 +1,13 @@
+\appendix
+
+# Bijlage: input-bestanden voor LSVI-rekenmodule en resultaten
+
+Als bijlage geven we de input-bestanden voor LSVI-rekenmodule en de bestanden met de resultaten van de analyse mee. Deze bestanden worden gegroepeerd in de volgende folders:
+
+* AnalyseGraslandMoeras_2018-12-05
+* AnalyseHeide6510_2018-11-13
+* AnalyseMONEOS_2019-01-14
+* AnalyseBoshabitats_2019-01-15
+* AnalysePINK_2019-01-14
+* AnalyseMeren_2018-11-06
+* AnalyseWaterlopen_2018-11-06

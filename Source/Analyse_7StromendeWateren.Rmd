@@ -1,0 +1,344 @@
+# Stromende wateren (3260) {#h:rivieren}
+
+## Data 
+
+### Ruwe data uit macrofytendatabank waterlopen
+
+Van de ‘macrofytendatabank waterlopen’ (versie 1.4; 31/07/2018) werden de volgende opnames gebruikt:
+
+* VMM-opnames: vegetatieopnames van VMM verzameld voor de rapportage van de Europese Kaderrichtlijn Water (opnames van 11 juni 2013 - 28 september 2017) 
+
+* INBO-opnames: vegetatieopnames van INBO verzameld voor de habitatkwaliteitsmonitoring van habitattype 3260 (opnames van 18 juni 2015 - 5 september 2017; eveneens beschikbaar via INBOVEG: survey HT3260)
+
+Van beide datasets werden enkel de opnames gebruikt die het habitattype bevatten volgens de habitatdefinitie en soortenlijst vermeld door @Leyssen2018.
+
+De databank bevat, naast algemene informatie (datum, waarnemer, locatie, locatiecode, meetnet), de volgende gegevens voor elk meetpunt:
+
+* vegetatieopname van 100m-traject met een 7-delige Tansley-schaal,
+* procentuele bedekking van verstoringsindicatoren (helofyten, eutrofiëringsindicatoren en invasieve exoten),
+* structuurvariabelen die nodig zijn voor de LSVI-berekening (oppervlakte grootste vegetatievlek en aantal groeivormen).
+
+```{r data inlezen rivieren}
+
+bestandsnaam <- "../data/meetgegevenswater/Data_MFDB3260.xlsx"
+Data_habitat_basis <- read_xlsx(bestandsnaam, sheet = "Data_habitat")
+Data_habitat_extra <- read_xlsx(bestandsnaam, sheet = "Data_habitat_extra")
+Data_voorwaarden_basis <- read_xlsx(bestandsnaam, sheet = "Data_voorwaarden_breed")
+Data_soortenKenmerken_basis <- read_xlsx(bestandsnaam, sheet = "Data_soortkenmerken")
+
+LijstVariabelen <- read_xlsx("../data/meetgegevenswater/LijstVariabelen3260.xlsx")
+
+#################################
+### omzetten in gewenste vorm ###
+#################################
+
+Data_habitat <- Data_habitat_basis %>%
+  left_join(Data_habitat_extra, by = "ID")
+
+#write.csv2(Data_habitat, "../output/AnalyseWaterlopen_2018-11-06/InputRekenmodule/Data_habitat_waterlopen.csv")
+
+Data_voorwaarden <- Data_voorwaarden_basis %>%
+  mutate(OppGrootsteVegetatievlek_m2 = case_when(
+    OppGrootsteVegetatievlek_klasse == "5-10" ~ "7",
+    OppGrootsteVegetatievlek_klasse == "<1" ~ "0.5",
+    OppGrootsteVegetatievlek_klasse == "10-100" ~ "60",
+    OppGrootsteVegetatievlek_klasse == "1-10" ~ "6",
+    OppGrootsteVegetatievlek_klasse == ">10-50" ~ "30",
+    OppGrootsteVegetatievlek_klasse == ">50" ~ "70",
+    TRUE ~ OppGrootsteVegetatievlek_klasse)) %>%
+  select(-OppGrootsteVegetatievlek_klasse) %>%
+  gather(key = VariabeleDB, value = Waarde, -CodeLocatie, -datum, -ID) %>%
+  left_join(LijstVariabelen, by = "VariabeleDB") %>%
+  select(ID, Criterium, Indicator, Voorwaarde, Waarde, Type, Invoertype, Eenheid) %>%
+  filter(!is.na(Waarde))
+#write.csv2(Data_habitat, "../output/AnalyseWaterlopen_2018-11-06/Data_voorwaarden_waterlopen.csv")
+# originele oppervlaken worden hierbij overschreven om de LSVI-module te kunnen toepassen op numerieke waarden
+
+Data_soortenKenmerken <- Data_soortenKenmerken_basis %>%
+  select(ID, Kenmerk = taxa, code, groeivorm) %>%
+  mutate(Waarde = case_when(
+    code == "z" ~ "r",
+    TRUE ~ code)) %>%
+  mutate(Vegetatielaag = NA, TypeKenmerk = "soort_Latijn", Type = "Categorie",
+         Invoertype = "TANSLEY (LEYSSEN)", Eenheid = NA)
+#write.csv2(Data_habitat, "../output/AnalyseWaterlopen_2018-11-06/Data_soortenKenmerken_waterlopen.csv")
+
+
+
+```
+
+
+### Overzicht meetpunten
+
+Tabel \@ref(tab:tabelMeetpuntenRivier) geeft een overzicht van het huidige aantal opgemeten meetpunten en de totale steekproefgrootte na 12 jaar.
+
+```{r tabelMeetpuntenRivier, cache=FALSE}
+
+overzicht_rivieren <- read.csv2("../data/meetgegevenswater/overzicht_meetpunten_3260.csv")
+
+kable(overzicht_rivieren, 
+      format = "latex", 
+      caption = "Aantal opgemeten meetpunten en totaal aantal gewenste meetpunten", 
+      booktabs = T) %>%
+  kable_styling(latex_options = "hold_position")
+
+```
+
+
+
+## LSVI-berekening per meetpunt
+
+Voor het merendeel van de voorwaarden worden de waarden rechtstreeks ingevoerd in de LSVI-rekenmodule. De voorwaarden met betrekking tot sleutelsoorten worden echter berekend door de LSVI-rekenmodule op basis van de vegetatiegegevens. Bij de VMM-opnames werd het percentage invasieve exoten niet genoteerd tijdens het veldbezoek. Voor deze opnames wordt de voorwaarde berekend door de LSVI-rekenmodule op basis van de vegetatieopname. Voor de VMM-opnames ontbreekt ook de voorwaarde 'grootste vegetatievlek in m²'. Deze voorwaarde kan niet afgeleid worden uit de vegetatieopname, wat dus resulteert in een ontbrekende waarde.
+
+```{r berekening meetpunt waterlopen, eval = FALSE}
+
+###################################
+### resultaat volledige dataset ###
+###################################
+
+resultaat <- berekenLSVIbasis(
+  Versie = "alle",
+  Kwaliteitsniveau = "1",
+  Data_habitat = Data_habitat,
+  Data_voorwaarden = Data_voorwaarden,
+  Data_soortenKenmerken = Data_soortenKenmerken,
+  Aggregatiemethode = "RapportageHR",
+  na.rm = TRUE)
+
+ResDetail <- resultaat$Resultaat_detail
+ResCrit <- resultaat$Resultaat_criterium
+ResInd <- resultaat$Resultaat_indicator
+ResGlob <- resultaat$Resultaat_globaal
+
+# write.csv2(ResDetail, "../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_detail.csv")
+# write.csv2(ResCrit, "../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_criteria.csv")
+# write.csv2(ResInd, "../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_indicatoren.csv")
+# write.csv2(ResGlob, "../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_globaal.csv")
+
+ResKT <- ResDetail %>%
+  select(CodeLocatie, Habitattype, Meetnet, datum,
+         Versie, Voorwaarde, Status_voorwaarde) %>%
+  spread(key = Voorwaarde, value = Status_voorwaarde)
+# write.csv2(ResKT, "../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_kruistabel.csv")
+
+
+```
+
+
+## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
+
+We maken opnieuw gebruik van meetpuntgewichten om tot een representatieve uitspraak te komen voor Vlaanderen en de Vlaams-Atlantische regio. Het habitatkwaliteitsmeetnet bevat immers relatief meer meetpunten binnen SBZH dan erbuiten. Daarnaast liggen de VMM-meetpunten allen in een stroomgebieden met een oppervlakte groter dan 10 km², terwijl habitattype 3260 ook in stroomgebieden met een oppervlakte kleiner dan 10 km² voorkomt. Ook hiervoor moet dus gecorrigeerd worden via de meetpuntgewichten.
+
+De strata bestaan uit de combinatie van de ligging t.o.v. SBZH (binnen en buiten) en de oppervlakte van het stroomgebied (< 10 km² en > 10 km²). Het meetpuntgewicht is omgekeerd evenredig met het aandeel waterlooptrajecten dat bemonsterd is binnen elk stratum. 
+
+```{r toestand waterlopen}
+
+# resultaat rekenmodule
+resultaat_detail <- read.csv2("../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_detail.csv", stringsAsFactors = FALSE)
+resultaat_indicator <- read.csv2("../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_indicatoren.csv", stringsAsFactors = FALSE)
+
+# stratum per meetpunt
+meetpunten_strata <- resultaat_detail %>%
+  select(ID, SGO, SBZH, Regio) %>%
+  unique()
+
+# n observaties per meetpunt? -> evenveel observaties per meetpunt -> OK
+meetpunten_observaties <- resultaat_detail %>%
+  group_by(ID) %>%
+  summarise(nObs= n())
+
+# aantal NA's nakijken
+check_NA <- resultaat_indicator %>%
+  group_by(Indicator, Versie) %>%
+  summarise(n =n(),
+    n_NA = sum(is.na(Status_indicator))) %>%
+  ungroup()
+
+resultaat_indicator_corr <- resultaat_indicator %>%
+  left_join(meetpunten_strata, by = "ID")
+
+# integratie plotniveau correct uitvoeren op basis van belang indicatoren
+
+statusHabitatvlek <- resultaat_indicator_corr %>%
+  filter(!is.na(Status_indicator)) %>%
+  group_by(ID, Habitattype, Versie, SGO, SBZH, Regio) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup()
+
+#write.csv2(statusHabitatvlek, "../Output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_statusHabitatvlek.csv", row.names = FALSE)
+
+# gewichten meetpunten: we kiezen een gewicht dat omgekeerd evenredig is met aandeel van de waterlopen dat bemonsterd is binnen elk stratum.
+
+strata_lengte <- read.csv2("../data/MeetgegevensWater/LengteStrata3260.csv", stringsAsFactors = FALSE)
+
+strata_lengte <- strata_lengte %>%
+  gather(binnen_sa, buiten, key = "SBZH", value = "Lengte")
+
+strata_gewichten <- resultaat_detail %>%
+  select(ID, SGO, SBZH) %>%
+  unique() %>%
+  group_by(SGO, SBZH) %>%
+  summarise(nMeetpunten = n_distinct(ID)) %>%
+  ungroup() %>%
+  full_join(strata_lengte, by = c("SGO", "SBZH")) %>%
+  mutate(AandeelBemonsterd = nMeetpunten * 100 / Lengte,
+         Gewicht = 1/AandeelBemonsterd,
+         Gewicht_herschaald = Gewicht/min(Gewicht),
+         PlotWeight = 1,
+         StratumWeight = Gewicht_herschaald)
+
+#gewicht toekennen aan meetpunten
+statusHabitatvlek_gewicht <- statusHabitatvlek %>%
+  left_join(select(strata_gewichten, SGO, SBZH, WeightComb = Gewicht_herschaald, PlotWeight, StratumWeight), by = c("SGO", "SBZH")) %>%
+  mutate(Habitatsubtype = Habitattype)
+
+#berekening habitataandeel in gunstige staat rekening houdend met gewichten
+statusHabitat_Vlaanderen <- habitatandeelGunstig(statusHabitatvlek_gewicht) %>%
+  mutate(Schaal = "Vlaanderen")
+
+statusHabitatvlek_gewicht_Atl <- statusHabitatvlek_gewicht %>%
+  filter(Regio == "Atl")
+
+statusHabitat_VlaanderenAtl <- habitatandeelGunstig(statusHabitatvlek_gewicht_Atl) %>%
+  mutate(Schaal = "Vlaanderen Atlantisch")
+
+statusHabitat <- bind_rows(statusHabitat_VlaanderenAtl, statusHabitat_Vlaanderen) %>%
+  select(Schaal, Habitattype, Versie, SBZH, nObs, sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+
+#write.csv2(statusHabitat, "../output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_statusHabitat.csv", row.names = FALSE)
+
+#berekening voor elke indicator: aandeel habitat dat gunstig scoort voor de indicator in kwestie
+
+resultaat_indicator_corr <- resultaat_indicator_corr %>%
+  left_join(select(strata_gewichten, SGO, SBZH, WeightComb = Gewicht_herschaald, PlotWeight, StratumWeight), by = c("SGO", "SBZH")) %>%
+  mutate(Habitatsubtype = Habitattype)
+
+status_indicatoren <- NULL
+
+for(v in unique(resultaat_indicator_corr$Versie)){
+
+  data_v <- resultaat_indicator_corr %>%
+    filter(Versie == v)
+
+  for(ind in unique(data_v$Indicator)){
+
+  data_ind_v <- data_v %>%
+    filter(Indicator == ind) %>%
+    mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+
+  result_temp <- habitatandeelGunstig(data_ind_v) %>%
+    mutate(Indicator = ind) %>%
+    select(Versie, Habitattype, Indicator, SBZH, nObs, sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+
+  status_indicatoren <- bind_rows(status_indicatoren, result_temp)
+
+  }
+}
+
+#write.csv2(status_indicatoren, "../output/AnalyseWaterlopen_2018-11-06/OutputRekenmodule/ResultaatWaterlopen_statusIndicatoren.csv", row.names = FALSE)
+
+
+
+```
+
+
+## Trend in habitatkwaliteit
+
+Voor 23 locaties is er zowel in de periode 2007-2012 als in de periode 2013-2017 een opmeting gebeurd door de VMM. Hiervan liggen 15 locaties in SBZ-H. Deze locaties zijn geen random steekproef. Door het aandeel gunstige locaties te vergelijken voor beide periodes krijgen we wel een ruwe indicatie voor de trend in habitatkwaliteit. 
+
+
+```{r trend waterlopen, eval = FALSE}
+
+#############################################
+#############################################
+###### Trend LSVI VMM-opnames (HT3260) ######
+#############################################
+#############################################
+
+#######################################
+### importeren van gegevens via xls ###
+#######################################
+
+
+bestandsnaam <- "../data/meetgegevenswater/Data_Waterlopen_trendLSVI_VMM.xlsx"
+Data_habitat_basis <- read_xlsx(bestandsnaam, sheet = "Data_habitat")
+Data_habitat_extra <- read_xlsx(bestandsnaam, sheet = "Data_habitat_extra")
+Data_voorwaarden_basis <- read_xlsx(bestandsnaam, sheet = "Data_voorwaarden_breed")
+Data_soortenKenmerken_basis <- read_xlsx(bestandsnaam, sheet = "Data_soortkenmerken")
+
+LijstVariabelen <- read_xlsx("../data/meetgegevenswater/LijstVariabelen3260.xlsx")
+
+#################################
+### omzetten in gewenste vorm ###
+#################################
+
+Data_habitat <- Data_habitat_basis %>% 
+  left_join(Data_habitat_extra, by = "CodeLocatie")
+#write.csv2(Data_habitat, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/Data_habitat_waterlopen_trendVMM.csv")
+
+Data_voorwaarden <- Data_voorwaarden_basis %>% 
+  select(ID, Waarde = AantalGV) %>% 
+  mutate(VariabeleDB = "AantalGV") %>% 
+  left_join(LijstVariabelen, by = "VariabeleDB") %>% 
+  select(ID, Criterium, Indicator, Voorwaarde, Waarde, Type, Invoertype, Eenheid) 
+#write.csv2(Data_habitat, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/Data_voorwaarden_waterlopen_trendVMM.csv")
+
+Data_soortenKenmerken <- Data_soortenKenmerken_basis %>% 
+  select(ID, Kenmerk = taxa, code, groeivorm) %>% 
+  mutate(Waarde = case_when(
+    code == "z" ~ "r",
+    TRUE ~ code)) %>% 
+  mutate(Vegetatielaag = NA, TypeKenmerk = "soort_Latijn", Type = "Categorie", 
+         Invoertype = "TANSLEY (LEYSSEN)", Eenheid = NA) 
+#write.csv2(Data_habitat, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/Data_soortenKenmerken_waterlopen_trendVMM.csv")
+
+#############################
+### algemene info dataset ###
+#############################
+
+# aantal opnames 
+#summarise(Data_habitat, n())
+
+
+###################################
+### resultaat volledige dataset ###
+###################################
+
+resultaat <- berekenLSVIbasis(
+  Versie = "alle", 
+  Kwaliteitsniveau = "1", 
+  Data_habitat = Data_habitat,
+  Data_voorwaarden = Data_voorwaarden, 
+  Data_soortenKenmerken = Data_soortenKenmerken,
+  Aggregatiemethode = "RapportageHR",
+  na.rm = TRUE)
+
+ResDetail <- resultaat$Resultaat_detail
+ResCrit <- resultaat$Resultaat_criterium
+ResInd <- resultaat$Resultaat_indicator
+ResGlob <- resultaat$Resultaat_globaal
+
+# write.csv2(ResDetail, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_detail.csv")
+# write.csv2(ResCrit, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_criteria.csv")
+# write.csv2(ResInd, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_indicatoren.csv")
+# write.csv2(ResGlob, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_globaal.csv")
+
+ResKT <- ResDetail %>% 
+  select(CodeLocatie, Habitattype, ID, Meetnet, datum, 
+         Versie, Voorwaarde, Status_voorwaarde) %>%
+  spread(key = Voorwaarde, value = Status_voorwaarde) %>% 
+  mutate(jaar = as.numeric(format(datum, '%Y')), periode = ifelse(jaar < 2013, "1","2"))
+
+# write.csv2(ResKT, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_kruistabel.csv")
+
+
+```
+
+## Resultaten
+
+De resultaten worden weggeschreven in de folder 'AnalyseWaterlopen_2018-11-06'
+

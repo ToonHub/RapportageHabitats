@@ -1,11 +1,13 @@
 
 # Synergie PINK: kustduinhabitats
 
-## Kartering 2110
+## Embryonale duinen (2110)
+
+Voor het habitattype embryonale duinen (2110) werd geen meetnet ontwikkeld omdat het om een zeer dynamisch habitattype gaat [@Westra2014]. In de plaats daarvan wordt de habitatkwaliteit ingeschat via kartering. De kartering werd uitgevoerd in het kader van PINK [@Provoost2015].
 
 ### Data
 
-De indicatoren voor habitattype 2110 worden ingeschat via kartering.
+De karteergegevens werden aangeleverd onder de vorm van een Excel-bestand met per polygoon een aantal structuur- en vegetatiegegevens waaruit het merendeel van de verschillende indicatoren/voorwaarden afgeleid kunnen worden.   
 
 ```{r PINKkartering}
 
@@ -14,8 +16,6 @@ invoer2110 <- geefInvoervereisten(Kwaliteitsniveau = 1, Habitattype = "2110") %>
   unique()
 
 data_2110 <- read.csv2("../Data/MeetgegevensPINK/Polygoon_2110_v2.csv", stringsAsFactors = FALSE)
-
-unique(data_2110$Rijshout)
 
 data_2110 <- data_2110 %>%
   mutate(ID = paste("Polygoon", FID, sep = ""),
@@ -57,6 +57,10 @@ data_habitat_2110 <- data_2110 %>%
 
 ### LSVI-berekening
 
+De waarden van alle voorwaarden worden rechtstreeks ingevoerd in de LSVI-rekenmodule. Voor de voorwaarden 'sleutelsoorten structuurvormend' en 'bedekking Biestarwegras' waren er echter geen gegevens beschikbaar. Beide voorwaarden beschouwen we steeds als gunstig voor alle polygonen op basis van expertinschatting.
+
+Op basis van de LSVI-rekenmodule berekenen we voor elke polygoon van de kartering de habitatkwaliteit. De verhouding van de oppervlakte polygonen in een gunstige staat t.o.v. de totale gekarteerde oppervlakte geeft dan het aandeel habitat in een gunstige staat.    
+
 ```{r PINKkarteringLSVI, warning= FALSE}
 
 resultsLSVI_2110 <- berekenLSVIbasis(Data_habitat = data_habitat_2110,
@@ -70,23 +74,6 @@ resultsLSVI_vw_2110 <- resultsLSVI_2110[[3]] %>%
            Meetnet = "PINK",
     Habitattype = substr(Habitattype, 1, 4)) %>%
   select(Meetnet, ID, Habitattype, Habitatsubtype, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, Verschilscore, VoorwaardeID, Combinatie,  Regio) 
-# %>%
-#   mutate(Status_voorwaarde = ifelse(Voorwaarde == "bedekking vloedmerkvegetatie" & Waarde == "0", FALSE, Status_voorwaarde),
-#          Status_voorwaarde = ifelse(Voorwaarde == "menselijke structuren aanwezig",
-#                                     Waarde == "0",
-#                                     Status_voorwaarde))
-
-# correctie_sleutelsoorten_v2 <- resultsLSVI_vw_2110 %>%
-#   filter(Indicator =="sleutelsoorten") %>%
-#   group_by(ID, Indicator) %>%
-#   summarise(Status_indicator_corr = sum(Status_voorwaarde) == 2) %>%
-#   ungroup()
-# 
-# correctie_dynamiek_v3 <- resultsLSVI_vw_2110 %>%
-#   filter(Indicator == "dynamiek" & Versie == "Versie 3") %>%
-#   group_by(ID, Indicator, Versie) %>%
-#   summarise(Status_indicator_corr = sum(Status_voorwaarde) == 2) %>%
-#   ungroup()
 
 resultsLSVI_ind_2110 <- resultsLSVI_2110[[2]] %>%
     mutate(Habitatsubtype = Habitattype,
@@ -95,13 +82,6 @@ resultsLSVI_ind_2110 <- resultsLSVI_2110[[2]] %>%
   left_join(data_habitat_2110, by = c("ID", "Habitattype")) %>%
    # WeightComb = Weight * StratumWeight) %>%
   select(Meetnet, ID, Habitattype, Habitatsubtype,  Versie, Criterium, Indicator, Belang, Status_indicator, Verschilscore,  Regio, PolygonWeight, PolygonWeight_std)
-# %>%
-#   left_join(correctie_sleutelsoorten_v2, by = c("ID", "Indicator")) %>%
-#   mutate(Status_indicator = ifelse(Indicator == "sleutelsoorten", Status_indicator_corr, Status_indicator)) %>%
-#   select(-Status_indicator_corr) %>%
-#   left_join(correctie_dynamiek_v3, by = c("ID", "Indicator", "Versie")) %>%
-#   mutate(Status_indicator = ifelse(Indicator == "dynamiek" & Versie == "Versie 3", Status_indicator_corr, Status_indicator)) %>%
-#   select(-Status_indicator_corr)
 
 statusHabitatvlek_2110 <- resultsLSVI_ind_2110 %>% 
   group_by(Meetnet, ID,  Habitattype, Habitatsubtype, Versie, Regio, PolygonWeight) %>%
@@ -114,9 +94,10 @@ statusHabitatvlek_2110 <- resultsLSVI_ind_2110 %>%
   ungroup()
   
 analyseNaamPINK <- "AnalysePINK_2019-01-14"
-write.csv2(resultsLSVI_vw_2110, paste("../Output/", analyseNaamPINK,"/Voorwaarden_2110.csv", sep =""), row.names = FALSE)
-write.csv2(resultsLSVI_ind_2110, paste("../Output/", analyseNaamPINK,"/Indicatoren_2110.csv", sep =""), row.names = FALSE)
-write.csv2(statusHabitatvlek_2110, paste("../Output/", analyseNaamPINK,"/StatusHabitatvlek_2110.csv", sep =""), row.names = FALSE)
+
+#write.csv2(resultsLSVI_vw_2110, paste("../Output/", analyseNaamPINK,"/Voorwaarden_2110.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_ind_2110, paste("../Output/", analyseNaamPINK,"/Indicatoren_2110.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitatvlek_2110, paste("../Output/", analyseNaamPINK,"/StatusHabitatvlek_2110.csv", sep =""), row.names = FALSE)
 
 #selecteer dataset
 statusHabitatvlek_2110 <- statusHabitatvlek_2110 %>%
@@ -131,10 +112,9 @@ statusHabitat_2110 <- habitatandeelGunstig(data = statusHabitatvlek_2110) %>%
   select(Meetnet, Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig) %>%
   arrange(Habitattype, Versie,  TypeResultaat) 
 
-write.csv2(statusHabitat_2110, paste("../Output/", analyseNaamPINK,"/StatusHabitat_210.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitat_2110, paste("../Output/", analyseNaamPINK,"/StatusHabitat_2110.csv", sep =""), row.names = FALSE)
 
 
-#####^
 status_indicatoren_2110 <- NULL
 
 resultsLSVI_2110_notNA <- resultsLSVI_ind_2110 %>%
@@ -172,23 +152,25 @@ for(habt in unique(resultsLSVI_2110_notNA$Habitattype)){
 status_indicatoren_2110 <- status_indicatoren_2110 %>%
   arrange(Habitattype, Versie, TypeResultaat, Criterium, Indicator) 
 
-write.csv2(status_indicatoren_2110, paste("../Output/", analyseNaamPINK,"/Indicatoren_AandeelGunstigVlaanderen_21110.csv", sep =""), row.names = FALSE)
-
+#write.csv2(status_indicatoren_2110, paste("../Output/", analyseNaamPINK,"/Indicatoren_AandeelGunstigVlaanderen_2110.csv", sep =""), row.names = FALSE)
 
 ```
 
 
-## PQ's
-## Data
+## Overige kustduinhabitats
 
+Voor de habitattypen vastgelegde duinen (2130), duindoornstruwelen (2160), kruipwilgstruwelen (2170) en vochtige duinvalleien (2190) maken we gebruik van vegetatieopnames in vierkante proefvlakken van 3 m x 3 m die uitgevoerd werden in het kader van PINK.
 
+\needspace{50mm}
 
-### Ruwe data uit INBOVEG
+### Data
 
-De INBOVEG databank bevat volgende gegevens voor elke meetpunt:
+#### Ruwe data uit INBOVEG
 
-* Vegetatieopname (lijst van alles soorten + bedekking per soort)
-* Bedekking van vegetatielagen 
+De INBOVEG-databank bevat de volgende gegevens voor elke meetpunt:
+
+* vegetatieopname (lijst van alle aanwezige soorten + bedekking per soort),
+* bedekking van vegetatielagen. 
 
 ```{r PINKselectie surveys}
 
@@ -200,24 +182,26 @@ opnamen_PINK <- read.csv2("../Data/MeetgegevensPINK/INBOVeg_Export_2018-11-26/op
 
 veglagen_PINK <- read.csv2("../Data/MeetgegevensPINK/INBOVeg_Export_2018-11-26/veglagen_PINK.csv", stringsAsFactors = FALSE)
 
-analyseNaamPINK <- paste("AnalysePINK", Sys.Date(), sep="_")
-setwd("../Output")
+# analyseNaamPINK <- paste("AnalysePINK", Sys.Date(), sep="_")
+# setwd("../Output")
 
-dir.create(analyseNaamPINK)
-
-setwd(paste("../Output/", analyseNaamPINK, sep =""))
-
-dir.create("InputRekenmodule")
+# dir.create(analyseNaamPINK)
+# 
+# setwd(paste("../Output/", analyseNaamPINK, sep =""))
+# 
+# dir.create("InputRekenmodule")
 
 #analyseNaamPINK <- "AnalysePINK_2018-11-27"
 
 ```
 
-### Geobserveerd habitattype
+#### Geobserveerd habitattype
 
-De shapefile 'PQ_Duinen_20180420' bevat de ligging van de PQ's en het geobserveerde habitattype. Elke PQ heeft een code waarmee de link naar de opname in INBOVEG kan worden gemaakt.
+De shapefile 'PQ_Duinen_20180420' bevat de ligging van de meetpunten en het geobserveerde habitattype. Elk meetpunt heeft een ID waarmee de link naar de opname in INBOVEG kan worden gemaakt.
 
+#### Gegevens verbossing voor duindoornstruwelen
 
+Voor het beoordelen van de voorwaarde 'verbossing' bij het habitattype duindoornstruwelen (2160) maken we gebruik van karteergegevens. De inschatting van verbossing op basis van een kartering is nauwkeuriger dan deze afgeleid uit een vegetatieopname in een proefvlak van 3m x 3m.   
 
 ```{r PINKselectie PQ}
 
@@ -259,12 +243,7 @@ data_habitat_PINK <- data_habitat_PINK %>%
 ```
 
 
-### Meetpuntgewichten
 
-Om onvertekende uitspraken te doen op een hoger schaalniveau, moeten we rekening houden met de meetpuntgewichten. We onderscheiden twee types gewichten:
-
-* Plotgewichten: aandeel van de plot dat bedekt is door het habitat(sub)type (waarver we uitspraak doen).
-* Stratumgewicht: de verschillende strata (binnen/buiten SBZH + habitatsubtypes) worden niet evenredig bemonsterd. Sommige strata kennen een grotere dichtheid aan meetpunten (bv. binnen SBZH omdat we daar een hogere precisie wensen).We moeten hiervoor compenseren als we een uitspraak op schaal Vlaanderen wensen. Per stratum kennen we daarom een gewicht toe aan de meetpunten gelijk aan de verhouding tussen de oppervlakte van dit stratum en het aantal meetpunten binnen dit stratum. Meetpunten in een stratum met een lagere dichtheid krijgen dus een groter gewicht.   
 
 ```{r PINKgewichten}
 
@@ -305,11 +284,10 @@ data_habitat_PINK <- data_habitat_PINK %>%
 
 ```
 
-## Overzicht meetpunten
+#### Overzicht meetpunten
 
-Tabel \@ref(tab:PINKtabAantallenToestand) geeft een overzicht van het aantal meetpunten binnen PINK waarvoor een opname is gebeurd in de periode 2010-2017 en de totale steekproefgrootte die we na 12 jaar willen bereiken. Daarbij moet opgemerkt worden dat alle meetpunten binnen ANB-domeinen gelegen zijn en bepaalde beheervormen relatief vaker bemonsterd zijn dan anderen. De meetpunten vormen dus geen representatieve steekproef voor vlaanderen. 
+Tabel \@ref(tab:PINKtabAantallenToestand) geeft een overzicht van het aantal meetpunten binnen PINK waarvoor een opname is gebeurd in de periode 2010-2017 en de totale steekproefgrootte die we na 12 jaar willen bereiken. Daarbij moet opgemerkt worden dat alle meetpunten binnen ANB-domeinen gelegen zijn en bepaalde beheervormen relatief vaker bemonsterd zijn dan anderen. De meetpunten vormen dus geen representatieve steekproef voor Vlaanderen. 
 
-Tabel \@ref(tab:PINKtabAantallenTrend) geeft het aantal meetpunten met herhaalde metingen.
 
 ```{r PINKtabAantallenToestand, message=FALSE, results='asis'}
 
@@ -326,11 +304,12 @@ overzicht_PINK_toestand <- data_habitat_PINK %>%
   arrange(Habitattype, SBZH) %>%
   mutate(nOpgemeten = ifelse(is.na(nOpgemeten), 0, nOpgemeten))
     
-kable(overzicht_PINK_toestand, format = "latex", caption = "Aantal meetpunten waarvoor een opname gebeurd is in de periode 2010-2017 en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", booktabs = T) 
+kable(overzicht_PINK_toestand, format = "latex", caption = "Aantal meetpunten waarvoor een opname gebeurd is in de periode 2010-2017 en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", booktabs = T) %>%
+  kable_styling(latex_options = "hold_position")
 
 ```
 
-```{r PINKtabAantallenTrend, message=FALSE, results='asis'}
+```{r PINKtabAantallenTrend, message=FALSE, results='asis', eval=FALSE}
 
 overzicht_PINK_trend <- data_habitat_PINK %>%
   filter(DatasetTrend) %>%
@@ -345,17 +324,13 @@ kable(overzicht_PINK_trend, format = "latex", caption = "Aantal meetpunten waarv
 ```
 
 
-## Input voor LSVI-rekenmodule
+### LSVI-berekening per meetpunt
 
-We maken gebruik van de LSVI-rekenmodule. De rekenmodule vereist volgende input:
+Er zijn geen gegevens beschikbaar om de indicator 'horizontale structuur' van  het habitattype duindoornstruwelen (2160) te beoordelen. Deze indicator is gebaseerd op de aanwezigheid van open plekken en het aantal struweeltypes. Ook voor de indicator 'ouderdomsstructuur Duindoorn' van habitattype 2160 zijn er geen gegevens beschikbaar om de beoordeling te kunnen uitvoeren. Beide indicatoren worden daarom niet meegenomen in de verdere analyse.
 
-* data habitat: bevat het habitat(sub)type voor elke plot
+Verder geven we enkel voor de voorwaarde 'verbossing' bij habitattype 2160 de waarden rechtstreeks in in de LSVI-rekenmodule. De waarden voor de overige voorwaarden worden berekend door de LSVI-rekenmodule op basis van  de gegevens van de vegetatieopname.
 
-* data soorten en kenmerken: bevat de gegevens van de vegetatieopname. Op basis hiervan berekent de rekenmodule de nog ontbrekende voorwaarden (die dus niet onder data voorwaarden werden ingevoerd)
-
-Er zijn geen gegevens beschikbaar om de indicator 'horizontale structuur' van habitattype 2160 te beoordelen. Deze indicator is gebaseerd op de aanwezigheid van open plekken en het aantal struweeltypes. Ook voor de indicator 'ouderdomsstructuur Duindoorn' van habitattype 2160 zijn er geen gegevens beschikbaar om de beoordeling te kunnen uitvoeren. Beide indicatoren zullen dus niet meegenomen worden in de verdere analyse.
-
-De meetpunten die in habitattype 2190 liggen maar niet tot het subtype 2190_mp behoren zullen toch beoordeeld worden op basis van de LSVI-beoordelingstabel van 2190_mp. Dit is immers de enige beoordelingstabel die beschikbaar is voor 2190.
+Voor het habitattype 2190 is er maar één beoordelingstabel beschikbaar in @TJollyn2009 en @Oosterlynck2018, namelijk deze voor het subtype 'duinpannen met kalkminnende vegetaties' (2190_mp). Meetpunten met habitattype 2190 die niet tot het subtype 2190_mp behoren worden daarom beoordeeld op basis van de LSVI-beoordelingstabel van 2190_mp.
 
 
 ```{r PINKinvoerData, echo=FALSE, eval = FALSE}
@@ -396,29 +371,25 @@ data_voorwaarden_2160 <- data_habitat_PINK %>%
   left_join(voorwaarden_2160, by = "IDPlots") %>%
   filter(!is.na(Waarde))
 
-write.csv2(data_habitat_PINK, paste("../Output/",
-                                             analyseNaamPINK,
-                                             "/InputRekenmodule/data_habitat_PINK.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_soortenKenmerken_PINK, paste("../Output/",
-                                             analyseNaamPINK,
-                                             "/InputRekenmodule/data_soortenKenmerken_PINK.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_voorwaarden_2160, paste("../Output/",
-                                             analyseNaamPINK,
-                                             "/InputRekenmodule/data_voorwaarden_2160.csv", sep = ""),
-           row.names = FALSE)
-
+# #write.csv2(data_habitat_PINK, paste("../Output/",
+#                                              analyseNaamPINK,
+#                                              "/InputRekenmodule/data_habitat_PINK.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_soortenKenmerken_PINK, paste("../Output/",
+#                                              analyseNaamPINK,
+#                                              "/InputRekenmodule/data_soortenKenmerken_PINK.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_voorwaarden_2160, paste("../Output/",
+#                                              analyseNaamPINK,
+#                                              "/InputRekenmodule/data_voorwaarden_2160.csv", sep = ""),
+#            row.names = FALSE)
+# 
 
 ```
 
-## LSVI-berekening
 
-Op basis van de LSVI-rekenmodule berekenen we de waarden voor de voorwaarden. Deze waarden worden afgetoetst aan de grenswaarden zodat we de status van elke voorwaarde krijgen. Vervolgens wordt de status per indicator bepaald.
-
-In een volgende stap bepalen we per meetpunt de status van de habitatvlek, rekening houdend met het belang van de indicatoren: de habitatvlek is gunstig als meer dan de helft van de indicatoren gunstig zijn EN geen enkele 'zeer belangrijke' indicator ongunstig is.
 
 ```{r PINKcalcStatus, echo=FALSE, warning = TRUE, eval= FALSE}
 
@@ -493,14 +464,12 @@ checkNA_ind <- resultsLSVI_ind %>%
 resultsLSVI_vw_exp <- resultsLSVI_vw %>%
   mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
 
-write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), row.names = FALSE)
 
-write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), row.names = FALSE)
 
 
 #check verbossing 2160 --> enkel boomsoorten --> OK
-
-
 
 ```
 
@@ -557,9 +526,9 @@ checkNA_ind <- resultsLSVI_ind_2160 %>%
 resultsLSVI_vw_2160_exp <- resultsLSVI_vw_2160 %>%
   mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
 
-write.csv2(resultsLSVI_vw_2160_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_2160_scenario2.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_vw_2160_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_2160_scenario2.csv", sep =""), row.names = FALSE)
 
-write.csv2(resultsLSVI_ind_2160, paste("../Output/", analyseNaamPINK, "/Indicatoren_2160_scenario2.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_ind_2160, paste("../Output/", analyseNaamPINK, "/Indicatoren_2160_scenario2.csv", sep =""), row.names = FALSE)
 
 #check verbossing 2160 --> enkel boomsoorten --> OK
 
@@ -631,12 +600,12 @@ checkNA_ind <- resultsLSVI_ind_2190 %>%
 
 #samenvoegen resultaten
 
-analyseNaamPINK_oud <- "AnalysePINK_2018-11-27"
+#analyseNaamPINK_oud <- "AnalysePINK_2018-11-27"
 
-resultsLSVI_vw <- read.csv2( paste("../Output/", analyseNaamPINK_oud, "/Voorwaarden_PINK.csv", sep =""), stringsAsFactors = FALSE) %>%
+resultsLSVI_vw <- read.csv2( paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), stringsAsFactors = FALSE) %>%
   mutate(Habitattype = as.character(Habitattype))
 
-resultsLSVI_vw_2160 <- read.csv2( paste("../Output/", analyseNaamPINK_oud, "/Verbossing_scenario2/Voorwaarden_2160_scenario2.csv", sep =""), stringsAsFactors = FALSE) %>%
+resultsLSVI_vw_2160 <- read.csv2( paste("../Output/", analyseNaamPINK, "/Voorwaarden_2160_scenario2.csv", sep =""), stringsAsFactors = FALSE) %>%
    mutate(Habitattype = as.character(Habitattype),
           Habitatsubtype = as.character(Habitatsubtype),
           HabCode= as.character(HabCode),
@@ -649,10 +618,10 @@ resultsLSVI_vw_n <- resultsLSVI_vw %>%
    bind_rows(resultsLSVI_vw_2160) #%>%
   # bind_rows(resultsLSVI_vw_2110)
 
-resultsLSVI_ind <- read.csv2( paste("../Output/", analyseNaamPINK_oud, "/Indicatoren_PINK.csv", sep =""), stringsAsFactors = FALSE) %>%
+resultsLSVI_ind <- read.csv2( paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), stringsAsFactors = FALSE) %>%
   mutate(Habitattype = as.character(Habitattype))
 
-resultsLSVI_ind_2160 <- read.csv2( paste("../Output/", analyseNaamPINK_oud, "/Verbossing_scenario2/Indicatoren_2160_scenario2.csv", sep =""), stringsAsFactors = FALSE) %>%
+resultsLSVI_ind_2160 <- read.csv2( paste("../Output/", analyseNaamPINK, "/Indicatoren_2160_scenario2.csv", sep =""), stringsAsFactors = FALSE) %>%
    mutate(Habitattype = as.character(Habitattype),
           Habitatsubtype = as.character(Habitatsubtype),
           HabCode= as.character(HabCode))
@@ -667,12 +636,11 @@ resultsLSVI_ind_n <- resultsLSVI_ind %>%
 resultsLSVI_vw_n_exp <- resultsLSVI_vw_n %>%
   mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
 
-write.csv2(resultsLSVI_vw_n_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_vw_n_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), row.names = FALSE)
 
-write.csv2(resultsLSVI_ind_n, paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_ind_n, paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), row.names = FALSE)
 
 ```
-
 
 
 ```{r PINKintegratiePlot}
@@ -691,91 +659,14 @@ statusHabitatvlek_PINK <- resultsLSVI_ind %>%
             Index_zb = round(sum(Verschilscore * (Belang == "zb")) /sum(Belang == "zb"), 3)) %>%
   ungroup()
   
-write.csv2(statusHabitatvlek_PINK, paste("../Output/", analyseNaamPINK,"/StatusHabitatvlek_PINK.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitatvlek_PINK, paste("../Output/", analyseNaamPINK,"/StatusHabitatvlek_PINK.csv", sep =""), row.names = FALSE)
 
 ```
 
+### Uitspraak Vlaanderen en de Vlaams-Atlantische regio
 
-```{r PINKintegratiePlot_Scenario2}
+De kustduinen liggen allemaal in de Atlantische regio. Bijgevolg gelden de resultaten voor Vlaanderen evenzeer voor de Vlaams-Atlantische regio.
 
-resultsLSVI_ind_2160 <- read.csv2( paste("../Output/", analyseNaamPINK, "/Indicatoren_2160_scenario2.csv", sep =""), stringsAsFactors = FALSE)
-
-statusHabitatvlek_2160 <- resultsLSVI_ind_2160 %>% 
-  group_by(Meetnet, ID, IDPlots, Jaar,  Habitattype, Habitatsubtype, Versie, SBZH, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend) %>%
-  filter(!is.na(Status_indicator)) %>%
-  summarise(nGunstig = sum(Status_indicator),
-            nIndicatoren = n(),
-            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
-            AandeelGunstig = nGunstig/nIndicatoren * 100,
-            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0),
-            Index = round(mean(Verschilscore), 3),
-            Index_zb = round(sum(Verschilscore * (Belang == "zb")) /sum(Belang == "zb"), 3)) %>%
-  ungroup()
-  
-write.csv2(statusHabitatvlek_2160, paste("../Output/", analyseNaamPINK,"/StatusHabitatvlek_2160_scenario2.csv", sep =""), row.names = FALSE)
-
-```
-
-
-
-```{r vergelijkVerbossing}
-
-verbossing_berekend <- resultsLSVI_ind %>%
-  filter(Habitattype == "2160") %>%
-  filter(Indicator == "verbossing") %>%
-  filter(DatasetToestand) %>%
-  select(Versie, IDPlots, Indicator, Status_indicator) %>%
-  rename(Status_sc1 = Status_indicator)
-
-verbossing_scenario2 <- resultsLSVI_ind_2160 %>%
-  filter(Habitattype == "2160") %>%
-  filter(Indicator == "verbossing") %>%
-  filter(DatasetToestand) %>%
-  select(Versie, IDPlots, Indicator, Status_indicator) %>%
-  rename(Status_sc2 = Status_indicator)
-
-verbossing_vergelijking <- verbossing_berekend %>%
-  left_join(verbossing_scenario2, by = c("Versie", "IDPlots", "Indicator"))
-
-verbossing_aandeel_vergelijking <- verbossing_vergelijking %>%
-  group_by(Versie) %>%
-  summarise(Aandeel_Sc1 = sum(Status_sc1)/ n() *100,
-            Aandeel_Sc2 = sum(Status_sc2)/ n() * 100) %>%
-  ungroup()
-
-statusHabitatvlek_scenario1 <- statusHabitatvlek_PINK_toestand %>%
-  filter(Habitattype == "2160") %>%
-  select(Versie, IDPlots, Status_sc1 = Status_habitatvlek)
-
-statusHabitatvlek_scenario2 <- statusHabitatvlek_2160_toestand %>%
-  select(Versie, IDPlots, Status_sc2 = Status_habitatvlek)
-  
-status_vergelijking <- statusHabitatvlek_scenario1 %>%
-  left_join(statusHabitatvlek_scenario2, by = c("Versie", "IDPlots"))
-
-status_aandeel_vergelijking <- status_vergelijking %>%
-  group_by(Versie) %>%
-  summarise(Aandeel_Sc1 = sum(Status_sc1)/ n() *100,
-            Aandeel_Sc2 = sum(Status_sc2)/ n() * 100) %>%
-  ungroup()
-
-```
-
-
-## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
-
-Om tot een uitspraak te komen op schaal Vlaanderen (i.f.v. regionaal beleid) of de Vlaams-Atlantische regio (i.f.v. Europese rapportage), maken we een schatting van het aandeel habitat dat gunstig is en berekenen we bijhorende 95% betrouwbaarheidsinterval. De kustduinen liggen uiteraard allemaal in de Atlantische regio dus we maken hier geen onderscheid tussen tussen Vlaanderen en de Vlaams-Atlantische regio. 
-
-Voor de toestandschatting maken we gebruik van de meest recente opnames per meetpunt in de periode 2010-2017.
-
-We maken een schatting:
-
-* per habitattype,
-* per habitatsubtype,
-* per habitattype binnen SBZH,
-* per habitattype buiten SBZH.
-
-We schatten de betrouwbaarheidsintervallen op basis van een binomiaal model, zodat deze steeds tussen de 0 en 100% gelegen zijn. Om de meetpuntgewichten op een correcte wijze toe te passen in de analyse, maken we gebruik de R-package survey (Thomas Lumley, 2018).
 
 ```{r PINKstatusVlaanderen}
 
@@ -793,31 +684,10 @@ statusHabitat_PINK <- habitatandeelGunstig(data = statusHabitatvlek_PINK_toestan
   arrange(Habitattype, Versie,  TypeResultaat) %>%
   mutate(SBZH = "Binnen")
 
-write.csv2(statusHabitat_PINK, paste("../Output/", analyseNaamPINK,"/StatusHabitat_PINK.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitat_PINK, paste("../Output/", analyseNaamPINK,"/StatusHabitat_PINK.csv", sep =""), row.names = FALSE)
 
 ```
 
-```{r 2160statusVlaanderen_scenario2}
-
-#selecteer dataset
-statusHabitatvlek_2160_toestand <- statusHabitatvlek_2160 %>%
-  filter(DatasetToestand) %>%
-  mutate(WeightComb = WeightCombToestand,
-         PlotWeight = PlotWeightToestand,
-         StratumWeight = StratumWeightToestand) 
-
-statusHabitat_2160 <- habitatandeelGunstig(data = statusHabitatvlek_2160_toestand) %>%
-  mutate(Schaal = "Vlaanderen",
-         Meetnet = "PINK") %>%
-  select(Meetnet, Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
-  arrange(Habitattype, Versie,  TypeResultaat) %>%
-  mutate(SBZH = "Binnen")
-
-write.csv2(statusHabitat_2160, paste("../Output/", analyseNaamPINK,"/statusHabitat_2160_scenario2.csv", sep =""), row.names = FALSE)
-
-```
-
-Op een analoge manier berekenen we ook afzonderlijk per indicator het aandeel habitat dat gunstig scoort voor de indicator in kwestie. 
 
 ```{r PINKstatusIndicatorVlaanderen}
 
@@ -859,70 +729,15 @@ status_indicatoren_PINK <- status_indicatoren_PINK %>%
   arrange(Habitattype, Versie, TypeResultaat, Criterium, Indicator) %>%
   mutate(SBZH = "Binnen")
 
-write.csv2(status_indicatoren_PINK, paste("../Output/", analyseNaamPINK,"/Indicatoren_AandeelGunstigVlaanderen_PINK.csv", sep =""), row.names = FALSE)
-
-```
-
-```{r 2160statusIndicatorVlaanderen_scenario2}
-
-status_indicatoren_2160 <- NULL
-
-resultsLSVI_2160_notNA <- resultsLSVI_ind_2160 %>%
-  filter(!is.na(Status_indicator)) %>%
-  filter(DatasetToestand) %>%
-  mutate(WeightComb = WeightCombToestand,
-         PlotWeight = PlotWeightToestand,
-         StratumWeight = StratumWeightToestand) 
-
-overzicht_ind <- resultsLSVI_2160_notNA%>%
-  select(Habitattype, Versie, Criterium, Indicator, Belang) %>%
-  unique()
-
-for(habt in unique(resultsLSVI_2160_notNA$Habitattype)){ 
-    
-    data_habt <- resultsLSVI_2160_notNA %>%
-    filter(Habitattype == habt)
-  
-      for(ind in unique(data_habt$Indicator)){
-      
-        data_ind <- data_habt %>%
-          filter(Indicator == ind) %>%
-          mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
-        
-        result_temp <- habitatandeelGunstig(data_ind, stratSBZH = FALSE) %>%
-          mutate(Indicator = ind) %>%
-          left_join(overzicht_ind, by = c("Versie", "Habitattype", "Indicator")) %>%
-          select(Versie, TypeResultaat, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
-        
-        status_indicatoren_2160 <- bind_rows(status_indicatoren_2160, result_temp)
-    
-  }
-}
-
-status_indicatoren_2160 <- status_indicatoren_2160 %>%
-  arrange(Habitattype, Versie, TypeResultaat, Criterium, Indicator) %>%
-  mutate(SBZH = "Binnen") %>%
-  filter(Indicator == "verbossing")
-
-write.csv2(status_indicatoren_2160, paste("../Output/", analyseNaamPINK,"/Verbpssing_AandeelGunstigVlaanderen_2160_scenario2.csv", sep =""), row.names = FALSE)
+#write.csv2(status_indicatoren_PINK, paste("../Output/", analyseNaamPINK,"/Indicatoren_AandeelGunstigVlaanderen_PINK.csv", sep =""), row.names = FALSE)
 
 ```
 
 
 ## Resultaten
  
-De resultaten worden weggeschreven in de folder 'AnalysePINK':
+De resultaten worden weggeschreven in de folder 'AnalysePINK_2019-01-14':
 
-* Voorwaarden_PINK: geeft de waarde en de status voor elke voorwaarde (een indicator bestaat uit één of meerdere voorwaarden);
-* Indicatoren_PINK: geeft de status voor elke indicator;
-* StatusHabitatvlek_PINK: geeft de status per meetpunt;
-* StatusHabitat_PINK: geeft de schatting van het aandeel gunstige habitat met 95%-betrouwbaarheidsinterval voor Vlaanderen ,
-    * per habitattype,
-    * per habitatsubtype,
-
-* Indicatoren_AandeelGunstigVlaanderen_PINK: geeft per indicator de schatting van het aandeel habitat in Vlaanderen dat gunstig scoort voor de indicator in kwestie,
-    * per habitattype,
-    * per habitatsubtype,
   
 
 

@@ -1,392 +1,552 @@
-HabCode;Criterium;Indicator;AnalyseVariabele;Voorwaarde;Soortengroep;Vegetatielaag;TypeSoortengroep;Eenheid;Drempelwaarde;Indicatortype;Drempelwaarde2;Meting;Combinatie;VersieLSVI
-2310;verstoring;invasieve_exoten;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-2310;verstoring;invasieve_exoten;invasieve_exoten;;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
-2310;vegetatie;sleutelsoorten;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;2;positief;;vegetatieplot;EN;versie3
-2310;vegetatie;sleutelsoorten;sleutelsoorten_andere;;sleutelsoorten_andere;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie2
-2310;habitatstructuur;ouderdomstructuur_struikhei;climaxOfDegradatieStadium;climax of degeneratiestadium;;;inclusief;aantalTalrijk;1;positief;;structuurplot;EN;versie3
-2310;habitatstructuur;dwergstruiken;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;50;positief;;vegetatieplot;;versie3
-2310;vegetatie;sleutelsoorten;struikhei;aanwezigheid specifieke sleutelsoorten;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie3
-2310;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-2310;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-2310;habitatstructuur;dwergstruiken;dwergstruiken;;;;inclusief;bedekking;45;positief;;vegetatieplot;;versie2
-2310;habitatstructuur;moslaag;moslaag;;;;inclusief;bedekking;1;positief;;structuurplot;;versie2
-2310;habitatstructuur;naakte_bodem;naakte_bodem;;;;inclusief;bedekking;10;positief;;structuurplot;;versie2
-2310;habitatstructuur;horizontale_structuur;openVegetatieOfKaalZand;;;;inclusief;bedekking;10;positief;;structuurplot;;versie3
-2310;habitatstructuur;ouderdomstructuur_struikhei;ouderdomstadia;aantal ouderdomsstadia;;;inclusief;aantalTalrijk;2;positief;;structuurplot;EN;versie3
-2310;habitatstructuur;ouderdomstructuur_struikhei;ouderdomstadia;;;;inclusief;aan/afwezig;2;positief;;structuurplot;;versie2
-2310;vegetatie;sleutelsoorten;struikhei;;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie2
-2310;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-2310;verstoring;verbossing;verbossing;;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
-2310;verstoring;vergrassingEnVerruiging;vergrassingEnVerruiging;;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie2
-4010;vegetatie;sleutelsoorten_ander;sleutelsoorten_andere;;sleutelsoorten_andere;;inclusief;aantal;2;positief;;vegetatieplot;;versie2
-4010;vegetatie;sleutelsoorten_veenmos;sleutelsoorten_veenmos;;sleutelsoorten_veenmos;;inclusief;aantal;1;positief;;vegetatieplot;;versie2
-4010;vegetatie;sleutelsoorten;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;4;positief;;vegetatieplot;EN;versie3
-4010;habitatstructuur;dwergstruiken;dwergstruiken;;;;inclusief;bedekking;25;positief;;vegetatieplot;;versie2
-4010;vegetatie;sleutelsoorten;sleutelsoorten_veenmos;aantal veenmossen;sleutelsoorten_veenmos;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie3
-4010;habitatstructuur;dwergstruiken;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;5;positief;;vegetatieplot;;versie3
-4010;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-4010;habitatstructuur;veenmoslaag;veenmoslaag;;;;inclusief;bedekking;5;positief;;structuurplot;;versie2
-4010;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-4010;verstoring;verbossing;verbossing;;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
-4010;verstoring;vergrassing;vergrassing;;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie2
-4030;habitatstructuur;ouderdomstructuur_struikhei;climaxOfDegradatieStadium;climax of degeneratiestadium;;;inclusief;aantalTalrijk;1;positief;;structuurplot;EN;versie3
-4030;vegetatie;sleutelsoorten;sleutelsoorten_andere;;sleutelsoorten_andere;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie2
-4030;habitatstructuur;dwergstruiken;dwergstruiken;;;;inclusief;bedekking;45;positief;;vegetatieplot;;versie2
-4030;vegetatie;sleutelsoorten;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie3
-4030;habitatstructuur;dwergstruiken;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;50;positief;;vegetatieplot;;versie3
-4030;verstoring;invasieve_exoten;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-4030;vegetatie;sleutelsoorten;struikhei;aanwezigheid specifieke sleutelsoorten;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie3
-4030;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-4030;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-4030;habitatstructuur;ouderdomstructuur_struikhei;ouderdomstadia;aantal ouderdomsstadia;;;inclusief;aantalTalrijk;2;positief;;structuurplot;EN;versie3
-4030;habitatstructuur;ouderdomstructuur_struikhei;ouderdomstadia;;;;inclusief;aantal;2;positief;;structuurplot;;versie2
-4030;vegetatie;sleutelsoorten;struikhei;;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie2
-4030;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-4030;verstoring;verbossing;verbossing;;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
-4030;verstoring;vergrassingEnVerruiging;vergrassingEnVerruiging;;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie2
-6120;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
-6120;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6120;habitatstructuur;naakte_bodem;naakte_bodem;bedekking open zand;;;inclusief;bedekking;3;range;75;structuurplot;;versie3
-6120;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6120;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6120;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6120;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6120;verstoring;verbraming;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6120;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6120;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-9110;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
-9110;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-9110;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-9110;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9110;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-9110;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-9110;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
-9120;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
-9110;verstoring;verruiging;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9110;verstoring;verruiging;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9110;verstoring;verruiging;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9110;verstoring;verruiging;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9110;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9110;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-9110;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-9110;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-9120;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
-9120;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-9120;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-9120;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-9120;verstoring;verruiging;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9120;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9120;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-9130;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
-9160;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
-9120;verstoring;verruiging;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9120;verstoring;verruiging;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9120;verstoring;verruiging;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9120;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9120;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-9120;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-9120;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-9130;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
-9130;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-9130;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-9130;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-9130;verstoring;verruiging;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9130;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9130;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-9190;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;3;positief;;vegetatieplot;EN;versie3
-91E0_sf;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
-9130;verstoring;verruiging;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9130;verstoring;verruiging;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9130;verstoring;verruiging;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9130;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9130;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-9130;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-9130;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-9160;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
-9160;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-9160;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-9160;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-9160;verstoring;verruiging;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9160;verstoring;verruiging;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9160;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9160;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-91E0_va;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
-91E0_vc;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;2;positief;;vegetatieplot;EN;versie3
-9160;verstoring;verruiging;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9160;verstoring;verruiging;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9160;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-9160;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-9160;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-9160;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-9190;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
-9190;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-9190;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-9190;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-9190;verstoring;verruiging;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-9190;verstoring;verruiging;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9190;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9190;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-91E0_vm;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
-91E0_vn;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;10;positief;;vegetatieplot;EN;versie3
-9190;verstoring;verruiging;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9190;verstoring;verruiging;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-9190;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-9190;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-9190;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-9190;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-1330_hpr;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;2;positief;;vegetatieplot;;versie3
-1330_hpr;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-1330_hpr;habitatstructuur;differentiatie_zoutplanten_tredplanten;differentiatie_zoutplanten_tredplanten;differentiatie in zout- en tredplanten;;;inclusief;;1;positief;;structuurplot;;versie3
-1330_hpr;habitatstructuur;microreliëf;microreliëf;bedekking microrelief;;;inclusief;bedekking;3;positief;;structuurplot;;versie3
-1330_hpr;habitatstructuur;dominantie_soort;max_bedekking_Heen_Zulte;bedekking heen of zulte;;;inclusief;maxBedekking;70;negatief;;vegetatieplot;;versie3
-1330_hpr;verstoring;rietontwikkeling;rietontwikkeling;bedekking;;;inclusief;bedekking;3;negatief;;vegetatieplot;;versie3
-1330_hpr;verstoring;overgang_rbbzil;overgang_rbbzil;som bedekking grasachtigen uit het zilverschoonver;;;inclusief;bedekking;;negatief;;vegetatieplot;;versie3
-2330_bu;verstoring;invasieve_exoten;invasieve_exoten;;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
-2330_bu;habitatstructuur;korstmosvegetaties;korstmosvegetaties;;;;inclusief;bedekking;1;positief;;structuurplot;;versie2
-2330_bu;habitatstructuur;naakte_bodem;naakte_bodem;bedekking open zand;;;inclusief;bedekking;10;positief;;structuurplot;;versie3
-2330_bu;habitatstructuur;naakte_bodem;naakte_bodem;;;;inclusief;bedekking;10;positief;;structuurplot;;versie2
-2330_bu;habitatstructuur;horizontale_structuur;openVegetatie;bedekking open vegetaties;;;inclusief;bedekking;10;positief;;structuurplot;;versie3
-2330_bu;habitatstructuur;horizontale_structuur;pionierStadia;;;;inclusief;aantal;2;positief;;structuurplot;;versie2
-2330_bu;verstoring;invasieve_exoten;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-2330_bu;vegetatie;sleutelsoorten;sleutelsoorten;;sleutelsoorten;;inclusief;aantalFrequent;1;positief;;vegetatieplot;;versie2
-2330_bu;vegetatie;sleutelsoorten;sleutelsoorten;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;2;positief;;vegetatieplot;;versie3
-2330_bu;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-2330_bu;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-2330_bu;verstoring;verbossing;verbossing;;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
-2330_bu;verstoring;vergrassing;vergrassing;;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
-6230_ha;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
-6230_ha;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6230_ha;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_ha;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6230_ha;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_ha;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_ha;verstoring;verbraming;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_ha;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_ha;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6230_hmo;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
-6230_hmo;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6230_hmo;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hmo;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6230_hmo;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hmo;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_hmo;verstoring;verbraming;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hmo;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_hmo;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6230_hmo;verstoring;vernatting;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6230_hmo;verstoring;verdroging;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6230_hn;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
-6230_hn;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6230_hn;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hn;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6230_hn;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hn;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_hn;verstoring;verbraming;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hn;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_hn;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6230_hnk;vegetatie;sleutelsoorten_aantal;sleutelsoorten_kalkminnend;aantal kalkminnende sleutelsoorten;;;inclusief;aantal;2;positief;EN;vegetatieplot;;versie3
-6230_hnk;vegetatie;sleutelsoorten_aantal;sleutelsoorten_heischraal;aantal heischrale sleutelsoorten;;;inclusief;aantal;2;positief;EN;vegetatieplot;;versie3
-6230_hnk;vegetatie;sleutelsoorten_aantal;sleutelsoorten_totaal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;EN;vegetatieplot;;versie3
-6230_hnk;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6230_hnk;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hnk;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6230_hnk;verstoring;verruiging;verruiging;bedekking ruderalisering;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hnk;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_hnk;verstoring;verbraming;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6230_hnk;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6230_hnk;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_mo;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;;vegetatieplot;;versie3
-6410_mo;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_exclPijipenstrootje_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6410_mo;habitatstructuur;levensvormen;schijngrassen_bedekking;bedekking schijngrassen;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6410_mo;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6410_mo;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6410_mo;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6410_mo;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6410_mo;verstoring;verbraming;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6410_mo;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6410_mo;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_mo;verstoring;vernatting;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_mo;verstoring;verdroging;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_mo;verstoring;verzuring;verzuring;bedekking verzuring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_ve;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;;vegetatieplot;;versie3
-6410_ve;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_exclPijipenstrootje_bedekking;bedekking bedekking;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6410_ve;habitatstructuur;levensvormen;schijngrassen_bedekking;bedekking schijngrassen;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6410_ve;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6410_ve;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6410_ve;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6410_ve;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6410_ve;verstoring;verbraming;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6410_ve;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6410_ve;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_ve;verstoring;vernatting;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_ve;verstoring;verdroging;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6410_ve;verstoring;verzuring;verzuring;bedekking verzuring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hu;habitatstructuur;dominantie_soort;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
-6510_hu;habitatstructuur;verticale_structuur;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie3
-6510_hu;habitatstructuur;verticale_structuur;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie3
-6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie3
-6510_hu;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6510_hu;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-6510_hu;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hu;verstoring;vergrassing_vervilting;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6510_hu;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hu;verstoring;verbraming;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6510_hu;verstoring;verbossing;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6510_hua;habitatstructuur;dominantie_soort;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
-6510_hua;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6510_hua;habitatstructuur;verticale_structuur;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie3
-6510_hua;habitatstructuur;verticale_structuur;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie3
-6510_hua;vegetatie;sleutelsoorten;sleutelsoorten_weidekervel;aanwezigheid specifieke sleutelsoorten;sleutelsoorten_weidekervel;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie3
-6510_hua;vegetatie;sleutelsoorten;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;3;positief;;vegetatieplot;EN;versie3
-6510_hua;vegetatie;sleutelsoorten;sleutelsoorten_exclVossenstaart;bedekking sleutelsoorten;sleutelsoorten_exclVossenstaart;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6510_hua;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hua;verstoring;vergrassing_vervilting;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6510_hua;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hua;verstoring;verbraming;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6510_hua;verstoring;vernatting;vernatting;bedekking vernatting;vernatting;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hua;verstoring;verdroging;verdroging;bedekking verdroging;verdroging;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hua;verstoring;verbossing;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6510_huk;habitatstructuur;dominantie_soort;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
-6510_huk;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6510_huk;vegetatie;sleutelsoorten;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie3
-6510_huk;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-6510_huk;habitatstructuur;levensvormen;levensvormen;bedekking rozetplanten;levensvormen;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
-6510_huk;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_huk;verstoring;vergrassing_vervilting;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6510_huk;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_huk;verstoring;verbraming;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6510_huk;verstoring;verbossing;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6510_hus;habitatstructuur;dominantie_soort;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
-6510_hus;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-6510_hus;habitatstructuur;verticale_structuur;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie3
-6510_hus;habitatstructuur;verticale_structuur;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie3
-6510_hus;vegetatie;sleutelsoorten;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie3
-6510_hus;vegetatie;sleutelsoorten;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-6510_hus;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hus;verstoring;vergrassing_vervilting;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
-6510_hus;verstoring;verruiging_ruderalisering;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-6510_hus;verstoring;verbraming;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-6510_hus;verstoring;verbossing;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-7140_meso;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
-7140_meso;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-7140_meso;habitatstructuur;moslaag;moslaag;bedekking moslaag;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-7140_meso;habitatstructuur;dominantie_soort;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;70;negatief;;vegetatieplot;;versie3
-7140_meso;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-7140_meso;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-7140_meso;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-7140_meso;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-7140_meso;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie3
-7140_meso;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-7140_meso;verstoring;structuur;betreding_brand;bedekking structuurschade;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-7140_meso;verstoring;invasieve_exoten;invasieve_exoten;bedekking invasieve exoten;;;inclusief;aantal;1;negatief;;vegetatieplot;;versie3
-7140_oli;vegetatie;sleutelsoorten_aantal;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;3;positief;;vegetatieplot;;versie3
-7140_oli;vegetatie;sleutelsoorten_bedekking;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-7140_oli;habitatstructuur;veenmossen;veenmossen;bedekking veenmossen;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
-7140_oli;verstoring;eutrofiëring;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-7140_oli;verstoring;vergrassing;vergrassing;bedekking vergrassing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-7140_oli;verstoring;verruiging;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
-7140_oli;verstoring;verbossing;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-7140_oli;verstoring;strooisellaag;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie3
-7140_oli;verstoring;vermossing;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
-7140_oli;verstoring;structuur;betreding_brand;bedekking structuurschade;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
-91E0_sf;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
-91E0_sf;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-91E0_sf;habitatstructuur;horizontale_structuur;groeiklasse5_6_7;groeiklasse 5 6 of 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-91E0_sf;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-91E0_sf;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-91E0_sf;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-91E0_sf;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
-91E0_sf;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_sf;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-91E0_vo;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;3;positief;;vegetatieplot;EN;versie3
-9110;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_sf;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-91E0_va;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;75;positief;;structuurplot;;versie3
-91E0_va;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-91E0_va;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-91E0_va;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-91E0_va;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-91E0_va;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-91E0_va;verstoring;verruiging;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_va;verstoring;verruiging;verruiging_GewoneVlier_Brandnetel_Kleefkruid;bedekking verruiging sublijst 2;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_va;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_va;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-9120;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-9130;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_va;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_va;verstoring;verruiging;verruiging_Waterpeper_Pitrus;bedekking verruiging sublijst 3;verruiging_Waterpeper_Pitrus;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_va;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-91E0_vc;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;75;positief;;structuurplot;;versie3
-91E0_vc;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-91E0_vc;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-91E0_vc;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-91E0_vc;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-91E0_vc;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-91E0_vc;verstoring;verruiging;verruiging_Braam_Vlier_GroteBrandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 1;verruiging_Braam_Vlier_GroteBrandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vc;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vc;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-9160;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_vc;verstoring;verruiging;verruiging_Pitrus;bedekking verruiging sublijst 2;verruiging_Pitrus;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vc;verstoring;verruiging;verruiging_Waterpeper;;verruiging_Waterpeper;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vc;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-91E0_vm;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
-91E0_vm;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-91E0_vm;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-91E0_vm;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-91E0_vm;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-91E0_vm;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-91E0_vm;verstoring;verruiging;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vm;verstoring;verruiging;verruiging_GewoneVlier_Brandnetel_Kleefkruid;bedekking verruiging sublijst 2;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_vm;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_vm;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vm;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-9190;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_sf;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_vm;verstoring;verruiging;verruiging_Waterpeper_Pitrus;bedekking verruiging sublijst 3;verruiging_Waterpeper_Pitrus;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vm;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-91E0_vn;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
-91E0_vn;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-91E0_vn;habitatstructuur;horizontale_structuur;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-91E0_vn;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-91E0_vn;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-91E0_vn;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-91E0_vn;verstoring;verruiging;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vn;verstoring;verruiging;verruiging_Brandnetel_Kleefkruid;bedekking verruiging sublijst 2;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_vn;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_vn;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vn;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-91E0_va;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_vm;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_vn;verstoring;verruiging;verruiging_Waterpeper_Pitrus;bedekking verruiging sublijst 3;verruiging_Waterpeper_Pitrus;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vn;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-91E0_vo;habitatstructuur;bosconstante;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
-91E0_vo;habitatstructuur;hoeveelheid_dikDoodHout;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
-91E0_vo;habitatstructuur;horizontale_structuur;groeiklasse5_6_7;groeiklasse 5 6 of 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
-91E0_vo;habitatstructuur;horizontale_structuur;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
-91E0_vo;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
-91E0_vo;habitatstructuur;verticale_structuur;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
-91E0_vo;verstoring;verruiging;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 2;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_GewoneVlier;;verruiging_GewoneVlier;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 3;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_GroteBrandnetel;;verruiging_GroteBrandnetel;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_Hondsdraf;;verruiging_Hondsdraf;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_IjleZegge;;verruiging_IjleZegge;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_Kleefkruid;;verruiging_Kleefkruid;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_Pijpenstrootje;bedekking verruiging sublijst 1;verruiging_Pijpenstrootje;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;invasieve_exoten;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;invasieve_exoten;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
-91E0_vn;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_vo;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_Pitrus;;verruiging_Pitrus;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vo;verstoring;verruiging;verruiging_Waterpeper;;verruiging_Waterpeper;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
-91E0_vo;habitatstructuur;aandeel_doodHout;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
-9110;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-9120;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-9130;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-9160;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-9190;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-91E0_sf;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-91E0_va;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-91E0_vm;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-91E0_vn;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
-91E0_vo;vegetatie;sleutelsoorten_kruidlaag;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+HabCode;Criterium;Indicator;Belang;AnalyseVariabele;Voorwaarde;Soortengroep;Vegetatielaag;TypeSoortengroep;Eenheid;Drempelwaarde;Indicatortype;Drempelwaarde2;Meting;Combinatie;VersieLSVI
+2310;habitatstructuur;dwergstruiken;b;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;50;positief;;vegetatieplot;;versie3
+2310;habitatstructuur;dwergstruiken;b;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;45;positief;;vegetatieplot;;versie2
+4010;habitatstructuur;dwergstruiken;b;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;25;positief;;vegetatieplot;;versie2
+4010;habitatstructuur;dwergstruiken;b;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;5;positief;;vegetatieplot;;versie3
+4030;habitatstructuur;dwergstruiken;b;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;45;positief;;vegetatieplot;;versie2
+4030;habitatstructuur;dwergstruiken;b;dwergstruiken;bedekking dwergstruiken;;;inclusief;bedekking;50;positief;;vegetatieplot;;versie3
+2330_bu;habitatstructuur;horizontale_structuur;zb;pionierStadia;aantal ontwikkelingsstadia;;;inclusief;aantal;2;positief;;structuurplot;;versie2
+2310;habitatstructuur;horizontale_structuur;zb;openVegetatieOfKaalZand;bedekking open vegetaties;;;inclusief;bedekking;10;positief;;structuurplot;EN;versie3
+2310;habitatstructuur;horizontale_structuur;zb;naakte_bodem;bedekking open zand;;;inclusief;bedekking;10;positief;;structuurplot;EN;versie3
+2330_bu;habitatstructuur;horizontale_structuur;zb;openVegetatie;bedekking open vegetaties;;;inclusief;bedekking;10;positief;;structuurplot;;versie3
+2310;habitatstructuur;horizontale_structuur;zb;mozaiek2330;mozaïek met 2330;;;inclusief;bedekking;1;positief;;structuurplot;EN;versie3
+2330_bu;verstoring;invasieve_exoten;zb;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+2310;verstoring;invasieve_exoten;zb;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+2310;verstoring;invasieve_exoten;zb;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+4030;verstoring;invasieve_exoten;zb;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+2330_bu;verstoring;invasieve_exoten;zb;invasieve_exoten;bedekking invasieve exoten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+2330_bu;habitatstructuur;korstmosvegetaties;b;korstmosvegetaties;bedekking korstmosvegetaties;;;inclusief;bedekking;1;positief;;structuurplot;;versie2
+2310;habitatstructuur;moslaag;b;moslaag;bedekking moslaag;;;inclusief;bedekking;1;positief;;structuurplot;;versie2
+2330_bu;habitatstructuur;naakte_bodem;zb;naakte_bodem;bedekking open zand;;;inclusief;bedekking;10;positief;;structuurplot;;versie2
+2310;habitatstructuur;naakte_bodem;zb;naakte_bodem;bedekking open zand;;;inclusief;bedekking;10;positief;;structuurplot;;versie2
+2330_bu;habitatstructuur;naakte_bodem;zb;naakte_bodem;bedekking open zand;;;inclusief;bedekking;10;positief;;structuurplot;;versie3
+2310;habitatstructuur;ouderdomstructuur_struikhei;b;ouderdomstadiaTalrijk;aantal talrijke ouderdomsstadia;;;inclusief;aantalTalrijk;2;positief;;structuurplot;EN;versie3
+2310;habitatstructuur;ouderdomstructuur_struikhei;b;ouderdomstadia;aantal ouderdomsstadia;;;inclusief;aan/afwezig;2;positief;;structuurplot;;versie2
+4030;habitatstructuur;ouderdomstructuur_struikhei;b;ouderdomstadiaTalrijk;aantal talrijke ouderdomsstadia;;;inclusief;aantalTalrijk;2;positief;;structuurplot;EN;versie3
+4030;habitatstructuur;ouderdomstructuur_struikhei;b;ouderdomstadia;aantal ouderdomsstadia;;;inclusief;aantal;2;positief;;structuurplot;;versie2
+2310;habitatstructuur;ouderdomstructuur_struikhei;b;climaxOfDegradatieStadium;climax- of degeneratiestadium aanwezig;;;inclusief;aantalTalrijk;1;positief;;structuurplot;EN;versie3
+4030;habitatstructuur;ouderdomstructuur_struikhei;b;climaxOfDegradatieStadium;climax- of degeneratiestadium aanwezig;;;inclusief;aantalTalrijk;1;positief;;structuurplot;EN;versie3
+2310;vegetatie;sleutelsoorten;b;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;2;positief;;vegetatieplot;EN;versie3
+2310;vegetatie;sleutelsoorten;b;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie2
+4010;vegetatie;sleutelsoorten;b;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;4;positief;;vegetatieplot;EN;versie3
+4030;vegetatie;sleutelsoorten;b;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie2
+4030;vegetatie;sleutelsoorten;b;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie3
+2330_bu;vegetatie;sleutelsoorten;b;sleutelsoorten;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantalFrequent;1;positief;;vegetatieplot;;versie2
+4010;vegetatie;sleutelsoorten;b;sleutelsoorten_veenmos;aantal veenmossen;sleutelsoorten_veenmos;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie3
+4030;vegetatie;sleutelsoorten;b;struikhei;aanwezigheid struikheide;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie2
+4030;vegetatie;sleutelsoorten;b;struikhei;aanwezigheid struikheide;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie3
+2310;vegetatie;sleutelsoorten;b;struikhei;aanwezigheid struikheide;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie3
+2310;vegetatie;sleutelsoorten;b;struikhei;aanwezigheid struikheide;;;inclusief;aan/afwezig;1;positief;;vegetatieplot;EN;versie2
+2330_bu;vegetatie;sleutelsoorten;b;sleutelsoorten;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;2;positief;;vegetatieplot;;versie3
+4010;vegetatie;sleutelsoorten_ander;b;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;2;positief;;vegetatieplot;;versie2
+4010;vegetatie;sleutelsoorten_veenmos;b;sleutelsoorten_veenmos;aantal veenmossen;sleutelsoorten_veenmos;;inclusief;aantal;1;positief;;vegetatieplot;;versie2
+4010;habitatstructuur;veenmoslaag;b;veenmoslaag;bedekking veenmoslaag;;;inclusief;bedekking;5;positief;;structuurplot;;versie2
+2330_bu;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+2310;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+2310;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+4010;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+4010;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6120;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
+6120;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6120;habitatstructuur;naakte_bodem;;naakte_bodem;bedekking naakte bodem;;;inclusief;bedekking;3;range;75;structuurplot;;versie3
+6120;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6120;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6120;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6120;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6120;verstoring;verbraming;;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6120;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6120;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+9110;habitatstructuur;;;MSA;MSA;;;;;;;;;;
+9110;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;
+9110;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
+9110;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+9110;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+9110;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9110;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+9110;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+9110;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
+9120;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
+9110;verstoring;verruiging;;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9110;verstoring;verruiging;;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9110;verstoring;verruiging;;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9110;verstoring;verruiging;;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9110;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9110;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+9110;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+9110;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9120;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
+9120;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+9120;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+9120;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+9120;verstoring;verruiging;;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9120;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9120;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+9130;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
+9160;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9120;verstoring;verruiging;;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9120;verstoring;verruiging;;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9120;verstoring;verruiging;;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9120;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9120;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+9120;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+9120;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9120;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+9130;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+9130;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+9130;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+9130;verstoring;verruiging;;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9130;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9130;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+9190;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;3;positief;;vegetatieplot;EN;versie3
+91E0_sf;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
+9130;verstoring;verruiging;;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9130;verstoring;verruiging;;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9130;verstoring;verruiging;;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9130;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9130;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+9130;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+9130;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9160;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+9160;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+9160;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
+9160;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+9160;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9160;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+9160;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+9160;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+91E0_va;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
+91E0_vc;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;2;positief;;vegetatieplot;EN;versie3
+9160;verstoring;verruiging;;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9160;verstoring;verruiging;;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9160;verstoring;verruiging;;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9160;verstoring;verruiging;;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9160;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+9120;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+9130;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
+9190;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+9190;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+9190;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+9190;verstoring;verruiging;;verruiging_GewoneBraam;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+9190;verstoring;verruiging;;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 2;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9190;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9190;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+91E0_vm;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;7;positief;;vegetatieplot;EN;versie3
+91E0_vn;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;10;positief;;vegetatieplot;EN;versie3
+9190;verstoring;verruiging;;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 3;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9190;verstoring;verruiging;;verruiging_Waterpeper_Pitrus_IjleZegge;bedekking verruiging sublijst 4;verruiging_Waterpeper_Pitrus_IjleZegge;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+9190;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+9190;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+9190;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+9190;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+1330_hpr;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;2;positief;;vegetatieplot;;versie3
+1330_hpr;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+1330_hpr;habitatstructuur;differentiatie_zoutplanten_tredplanten;;differentiatie_zoutplanten_tredplanten;differentiatie in zout- en tredplanten;;;inclusief;;1;positief;;structuurplot;;versie3
+1330_hpr;habitatstructuur;microreliëf;;microrelief_bedekking;bedekking microrelief;;;inclusief;bedekking;3;positief;;structuurplot;;versie3
+1330_hpr;habitatstructuur;dominantie_soort;;max_bedekking_Heen_Zulte;bedekking heen of zulte;;;inclusief;maxBedekking;70;negatief;;vegetatieplot;;versie3
+1330_hpr;verstoring;rietontwikkeling;;rietontwikkeling;bedekking;;;inclusief;bedekking;3;negatief;;vegetatieplot;;versie3
+1330_hpr;verstoring;overgang_rbbzil;;overgang_rbbzil;bedekking grasachtigen rbbzil;;;inclusief;bedekking;;negatief;;vegetatieplot;;versie3
+4030;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+4030;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+2330_bu;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+2330_bu;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+2310;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+4010;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+4010;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie2
+4030;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+2330_bu;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+2310;verstoring;vergrassingEnVerruiging;zb;vergrassingEnVerruiging;bedekking vergrassing/verruiging;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie2
+4030;verstoring;vergrassingEnVerruiging;zb;vergrassingEnVerruiging;bedekking vergrassing/verruiging;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie2
+2310;verstoring;verruiging;zb;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+4030;verstoring;verruiging;zb;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_ha;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
+6230_ha;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6230_ha;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_ha;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6230_ha;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_ha;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_ha;verstoring;verbraming;;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_ha;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_ha;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6230_hmo;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
+6230_hmo;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6230_hmo;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hmo;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6230_hmo;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hmo;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_hmo;verstoring;verbraming;;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hmo;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_hmo;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6230_hmo;verstoring;vernatting;;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6230_hmo;verstoring;verdroging;;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6230_hn;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
+6230_hn;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6230_hn;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hn;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6230_hn;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hn;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_hn;verstoring;verbraming;;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hn;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_hn;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6230_hnk;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_kalkminnend;aantal kalkminnende sleutelsoorten;;;inclusief;aantal;2;positief;EN;vegetatieplot;;versie3
+6230_hnk;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_heischraal;aantal heischrale sleutelsoorten;;;inclusief;aantal;2;positief;EN;vegetatieplot;;versie3
+6230_hnk;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_totaal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;EN;vegetatieplot;;versie3
+6230_hnk;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6230_hnk;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hnk;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6230_hnk;verstoring;verruiging;;verruiging;bedekking ruderalisering;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hnk;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_hnk;verstoring;verbraming;;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6230_hnk;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6230_hnk;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;eutrofiëring;zb;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;eutrofiëring;zb;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_ve;verstoring;eutrofiëring;zb;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;eutrofiëring;zb;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_mo;habitatstructuur;levensvormen;b;schijngrassen_bedekking;bedekking schijngrassen;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6410_mo;habitatstructuur;levensvormen;b;schijngrassen_bedekking;bedekking lage schijngrassen;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+6410_ve;habitatstructuur;levensvormen;b;schijngrassen_bedekking;bedekking schijngrassen;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6410_ve;habitatstructuur;levensvormen;b;schijngrassen_bedekking;bedekking lage schijngrassen;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+6410_mo;vegetatie;sleutelsoorten_aantal;b;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;;vegetatieplot;;versie3
+6410_mo;vegetatie;sleutelsoorten_aantal;b;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;;vegetatieplot;;versie2
+6410_ve;vegetatie;sleutelsoorten_aantal;b;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;;vegetatieplot;;versie3
+6410_ve;vegetatie;sleutelsoorten_aantal;b;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;;vegetatieplot;;versie2
+6410_mo;vegetatie;sleutelsoorten_bedekking;b;sleutelsoorten_exclPijipenstrootje_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6410_mo;vegetatie;sleutelsoorten_bedekking;b;sleutelsoorten_exclPijipenstrootje_bedekking;bedekking sleutelsoorten excl. pijpenstrootje;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6410_ve;vegetatie;sleutelsoorten_bedekking;b;sleutelsoorten_exclPijipenstrootje_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6410_ve;vegetatie;sleutelsoorten_bedekking;b;sleutelsoorten_exclPijipenstrootje_bedekking;bedekking sleutelsoorten excl. pijpenstrootje;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6410_mo;verstoring;strooisellaag;b;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6410_mo;verstoring;strooisellaag;b;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6410_ve;verstoring;strooisellaag;b;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6410_ve;verstoring;strooisellaag;b;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6410_mo;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6410_mo;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6410_ve;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6410_ve;verstoring;verbossing;b;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6410_mo;verstoring;verbraming;b;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;verbraming;b;verbraming;bedekking verbraming;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6510_hu;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
+6510_hu;habitatstructuur;verticale_structuur;;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie3
+6510_hu;habitatstructuur;verticale_structuur;;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie3
+6510_hu;vegetatie;sleutelsoorten;;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie3
+6510_hu;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6510_hu;vegetatie;sleutelsoorten;;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+6510_hu;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hu;verstoring;vergrassing_vervilting;;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6510_hu;verstoring;verruiging_ruderalisering;;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hu;verstoring;verbraming;;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6510_hu;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6510_hua;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
+6510_hua;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6510_hua;habitatstructuur;verticale_structuur;;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie3
+6510_hua;habitatstructuur;verticale_structuur;;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie3
+6510_hua;vegetatie;sleutelsoorten;;sleutelsoorten_weidekervel;aanwezigheid specifieke sleutelsoorten;sleutelsoorten_weidekervel;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie3
+6510_hua;vegetatie;sleutelsoorten;;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;3;positief;;vegetatieplot;EN;versie3
+6510_hua;vegetatie;sleutelsoorten;;sleutelsoorten_exclVossenstaart;bedekking sleutelsoorten;sleutelsoorten_exclVossenstaart;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6510_hua;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hua;verstoring;vergrassing_vervilting;;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6510_hua;verstoring;verruiging_ruderalisering;;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hua;verstoring;verbraming;;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6510_hua;verstoring;vernatting;;vernatting;bedekking vernatting;vernatting;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hua;verstoring;verdroging;;verdroging;bedekking verdroging;verdroging;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hua;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6510_huk;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
+6510_huk;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6510_huk;vegetatie;sleutelsoorten;;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie3
+6510_huk;vegetatie;sleutelsoorten;;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+6510_huk;habitatstructuur;levensvormen;;rozetplanten;bedekking rozetplanten;levensvormen;;inclusief;bedekking;10;positief;;vegetatieplot;;versie3
+6510_huk;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_huk;verstoring;vergrassing_vervilting;;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6510_huk;verstoring;verruiging_ruderalisering;;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_huk;verstoring;verbraming;;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6510_huk;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6510_hus;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;50;negatief;;vegetatieplot;;versie3
+6510_hus;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+6510_hus;habitatstructuur;verticale_structuur;;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie3
+6510_hus;habitatstructuur;verticale_structuur;;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie3
+6510_hus;vegetatie;sleutelsoorten;;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie3
+6510_hus;vegetatie;sleutelsoorten;;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+6510_hus;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;eutrofiëring;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hus;verstoring;vergrassing_vervilting;;vergrassing_vervilting;bedekking vergrassing;vergrassing_vervilting;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6510_hus;verstoring;verruiging_ruderalisering;;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6510_hus;verstoring;verbraming;;verbraming;bedekking verbraming;verbraming;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6510_hus;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+7140_meso;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie3
+7140_meso;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+7140_meso;habitatstructuur;moslaag;;moslaag;bedekking moslaag;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+7140_meso;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;exclusief;maxBedekking;70;negatief;;vegetatieplot;;versie3
+7140_meso;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+7140_meso;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+7140_meso;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+7140_meso;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+7140_meso;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie3
+7140_meso;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+7140_meso;verstoring;structuur;;betreding_brand;bedekking structuurschade;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+7140_meso;verstoring;invasieve_exoten;;invasieve_exoten;bedekking invasieve exoten;;;inclusief;aantal;1;negatief;;vegetatieplot;;versie3
+7140_oli;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;3;positief;;vegetatieplot;;versie3
+7140_oli;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+7140_oli;habitatstructuur;veenmossen;;veenmossen;bedekking veenmossen;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie3
+7140_oli;verstoring;eutrofiëring;;eutrofiëring;bedekking eutrofiëring;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+7140_oli;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+7140_oli;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+7140_oli;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+7140_oli;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie3
+7140_oli;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+7140_oli;verstoring;structuur;;betreding_brand;bedekking structuurschade;;;inclusief;bedekking;10;negatief;;structuurplot;;versie3
+9130;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+91E0_sf;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+91E0_sf;habitatstructuur;horizontale_structuur;;groeiklasse5_6_7;groeiklasse 5 6 of 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+91E0_sf;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+91E0_sf;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+91E0_sf;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+91E0_sf;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;50;negatief;;vegetatieplot;EN;versie3
+91E0_sf;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_sf;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+91E0_vo;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aantal;aantal sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;aantal;3;positief;;vegetatieplot;EN;versie3
+9110;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_sf;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9130;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+91E0_va;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+91E0_va;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+91E0_va;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+91E0_va;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+91E0_va;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+91E0_va;verstoring;verruiging;;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_va;verstoring;verruiging;;verruiging_GewoneVlier_Brandnetel_Kleefkruid;bedekking verruiging sublijst 2;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_va;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_va;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+9120;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+9130;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_va;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_va;verstoring;verruiging;;verruiging_Waterpeper_Pitrus;bedekking verruiging sublijst 3;verruiging_Waterpeper_Pitrus;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_va;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9160;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
+91E0_vc;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+91E0_vc;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+91E0_vc;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+91E0_vc;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+91E0_vc;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+91E0_vc;verstoring;verruiging;;verruiging_Braam_Vlier_GroteBrandnetel_Hondsdraf_Kleefkruid;bedekking verruiging sublijst 1;verruiging_Braam_Vlier_GroteBrandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vc;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vc;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+9160;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+91E0_vc;verstoring;verruiging;;verruiging_Pitrus;bedekking verruiging sublijst 2;verruiging_Pitrus;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vc;verstoring;verruiging;;verruiging_Waterpeper;;verruiging_Waterpeper;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vc;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9160;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+91E0_vm;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+91E0_vm;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+91E0_vm;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+91E0_vm;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+91E0_vm;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+91E0_vm;verstoring;verruiging;;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vm;verstoring;verruiging;;verruiging_GewoneVlier_Brandnetel_Kleefkruid;bedekking verruiging sublijst 2;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_vm;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_vm;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vm;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+9190;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_sf;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_vm;verstoring;verruiging;;verruiging_Waterpeper_Pitrus;bedekking verruiging sublijst 3;verruiging_Waterpeper_Pitrus;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vm;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9160;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+91E0_vn;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+91E0_vn;habitatstructuur;horizontale_structuur;;groeiklasse7;groeiklasse 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+91E0_vn;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+91E0_vn;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+91E0_vn;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+91E0_vn;verstoring;verruiging;;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 1;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vn;verstoring;verruiging;;verruiging_Brandnetel_Kleefkruid;bedekking verruiging sublijst 2;verruiging_GewoneVlier_Brandnetel_Hondsdraf_Kleefkruid;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_vn;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_vn;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vn;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+91E0_va;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_vm;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_vn;verstoring;verruiging;;verruiging_Waterpeper_Pitrus;bedekking verruiging sublijst 3;verruiging_Waterpeper_Pitrus;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vn;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9190;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;100;positief;;structuurplot;;versie3
+91E0_vo;habitatstructuur;hoeveelheid_dikDoodHout;;dikDoodHoutStaand_ha;aantal exemplaren dik dood hout per ha;;;inclusief;aantal/ha;1;positief;;structuurplot;;versie3
+91E0_vo;habitatstructuur;horizontale_structuur;;groeiklasse5_6_7;groeiklasse 5 6 of 7 aanwezig;;;inclusief;aan/afwezig;1;positief;;structuurplot;OF;versie3
+91E0_vo;habitatstructuur;horizontale_structuur;;groeiklassen;aantal groeiklassen aanwezig;;;inclusief;aantal;3;positief;;structuurplot;OF;versie3
+91E0_vo;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+91E0_vo;habitatstructuur;verticale_structuur;;talrijkeVegetatielagen;aantal vegetatielagen minimaal talrijk aanwezig;;;inclusief;aantal;3;positief;;structuurplot;;versie3
+91E0_vo;verstoring;verruiging;;verruiging_GewoneBraam_Rietgras_Liesgras;bedekking verruiging sublijst 2;verruiging_GewoneBraam;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_GewoneVlier;;verruiging_GewoneVlier;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_BredeStekelvaren_Witbol;bedekking verruiging sublijst 3;verruiging_BredeStekelvaren_Witbol;;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging;bedekking verruiging totaal;verruiging;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_GroteBrandnetel;;verruiging_GroteBrandnetel;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_Hondsdraf;;verruiging_Hondsdraf;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_IjleZegge;;verruiging_IjleZegge;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_Kleefkruid;;verruiging_Kleefkruid;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_Pijpenstrootje;bedekking verruiging sublijst 1;verruiging_Pijpenstrootje;;inclusief;bedekking;30;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;invasieve_exoten;;invasieve_exoten_boomEnStruiklaag;bedekking invasieve exoten boom- en struiklaag;invasieve_exoten_boomEnStruiklaag;boomEnStruiklaag;inclusief;bedekking;10;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;invasieve_exoten;;invasieve_exoten_kruidlaag;bedekking invasieve exoten kruidlaag;invasieve_exoten_kruidlaag;kruidlaag;inclusief;bedekking;1;negatief;;vegetatieplot;EN;versie3
+91E0_vn;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_vo;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_bedekking;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;15;positief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_Pitrus;;verruiging_Pitrus;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vo;verstoring;verruiging;;verruiging_Waterpeper;;verruiging_Waterpeper;;inclusief;bedekking;0,5;negatief;;vegetatieplot;EN;versie3
+91E0_vo;habitatstructuur;aandeel_doodHout;;volumeAandeelDoodHout;aandeel dood hout;;;inclusief;%;4;positief;;structuurplot;;versie3
+9110;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+9120;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+9130;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+9160;vegetatie;sleutelsoorten_boomlaagEnStruiklaag;;sleutelsoorten_boomlaag_grondvlakAandeel;grondvlak sleutelsoorten boom- en struiklaag;sleutelsoorten_boomlaag;;inclusief;%;70;positief;;structuurplot;;versie3
+9190;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+91E0_sf;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+91E0_va;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+91E0_vm;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+91E0_vn;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+91E0_vo;vegetatie;sleutelsoorten_kruidlaag;;sleutelsoorten_kruidlaag_aandeel;bedekking sleutelsoorten kruidlaag;sleutelsoorten_kruidlaag;kruidlaag;inclusief;bedekking;30;positief;;vegetatieplot;EN;versie3
+6230_ha;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie2
+6230_ha;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6230_ha;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+6230_ha;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6230_ha;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6230_ha;verstoring;vervilting;;vervilting;bedekking vervilting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6120;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie2
+6120;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6120;habitatstructuur;naakte_bodem;;naakte_bodem;bedekking naakte bodem;;;inclusief;bedekking;5;range;30;structuurplot;;versie2
+6120;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;70;negatief;;vegetatieplot;;versie2
+6120;verstoring;ruderalisering;;ruderalisering;bedekking ruderalisering;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6120;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6120;verstoring;verbraming;;verbraming;bedekking verbraming;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6120;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;70;negatief;;vegetatieplot;;versie2
+6230_hmo;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie2
+6230_hmo;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6230_hmo;verstoring;vergrassing;;vergrassing;bedekking vergrassing;;;inclusief;bedekking;70;negatief;;vegetatieplot;;versie2
+6230_hmo;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+6230_hmo;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6230_hmo;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6230_hmo;verstoring;vervilting;;vervilting;bedekking vervilting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6230_hmo;habitatstructuur;levensvormen;;nLevensvormen;aantal levensvormen aanwezig;;;inclusief;aantal;3;positief;;vegetatieplot;;versie2
+6230_hmo;habitatstructuur;hoogopschietende_soorten;;hoogopschietende_soorten;bedekking hoogopschietende soorten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+6230_hn;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie2
+6230_hn;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6230_hn;verstoring;verruiging;;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+6230_hn;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6230_hn;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6230_hn;verstoring;vervilting;;vervilting;bedekking vervilting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6230_hn;habitatstructuur;levensvormen;;nLevensvormen;aantal levensvormen aanwezig;;;inclusief;aantal;3;positief;;vegetatieplot;;versie2
+6230_hn;habitatstructuur;hoogopschietende_soorten;;hoogopschietende_soorten;bedekking hoogopschietende soorten;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+6230_hnk;vegetatie;sleutelsoorten_groep_aantal;;sleutelsoorten_kalkminnend;aantal kalkminnende sleutelsoorten;;;inclusief;aantal;3;positief;EN;vegetatieplot;;versie2
+6230_hnk;vegetatie;sleutelsoorten_groep_aantal;;sleutelsoorten_heischraal;aantal heischrale sleutelsoorten;;;inclusief;aantal;3;positief;EN;vegetatieplot;;versie2
+6230_hnk;vegetatie;sleutelsoorten_groep_aantal;;sleutelsoorten_heischraal_aanvullend;aantal heischrale sleutelsoorten aanvullend;;;inclusief;aantal;3;positief;EN;vegetatieplot;;versie2
+6230_hnk;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_totaal;aantal sleutelsoorten;;;inclusief;aantal;5;positief;;vegetatieplot;;versie2
+6230_hnk;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten;;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6230_hnk;verstoring;verruiging;;verruiging;bedekking ruderalisering;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie2
+6230_hnk;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6230_hnk;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6230_hnk;verstoring;vervilting;;vervilting;bedekking vervilting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6230_hnk;habitatstructuur;levensvormen;;nLevensvormen;aantal levensvormen aanwezig;;;inclusief;aantal;3;positief;;vegetatieplot;;versie2
+6410_mo;verstoring;verdroging;zb;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;verdroging;zb;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_ve;verstoring;verdroging;zb;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;verdroging;zb;verdroging;bedekking verdroging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_mo;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;70;negatief;;vegetatieplot;;versie2
+6410_ve;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;50;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;vergrassing;zb;vergrassing;bedekking vergrassing;;;inclusief;bedekking;70;negatief;;vegetatieplot;;versie2
+6410_mo;verstoring;vermossing;zb;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;vermossing;zb;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;vernatting;zb;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;vernatting;zb;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_ve;verstoring;vernatting;zb;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;vernatting;zb;vernatting;bedekking vernatting;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_mo;verstoring;verruiging;zb;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;verruiging;zb;verruiging;bedekking verruiging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_ve;verstoring;verruiging;zb;verruiging;bedekking verruiging;;;inclusief;bedekking;10;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;verruiging;zb;verruiging;bedekking verruiging;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_mo;verstoring;verzuring;zb;verzuring;bedekking verzuring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_mo;verstoring;verzuring;zb;verzuring;bedekking verzuring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6410_ve;verstoring;verzuring;zb;verzuring;bedekking verzuring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie3
+6410_ve;verstoring;verzuring;zb;verzuring;bedekking verzuring;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_hu;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;inclusief;maxBedekking;50;negatief;;vegetatieplot;;versie2
+6510_hu;habitatstructuur;verticale_structuur;;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie2
+6510_hu;habitatstructuur;verticale_structuur;;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie2
+6510_hu;vegetatie;sleutelsoorten;;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie2
+6510_hu;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6510_hu;vegetatie;sleutelsoorten;;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;50;positief;;vegetatieplot;;versie2
+6510_hu;verstoring;verruiging;;verruiging;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_hu;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6510_hua;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;inclusief;maxBedekking;50;negatief;;vegetatieplot;;versie2
+6510_hua;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6510_hua;habitatstructuur;verticale_structuur;;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie2
+6510_hua;habitatstructuur;verticale_structuur;;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie2
+6510_hua;vegetatie;sleutelsoorten;;sleutelsoorten_weidekervel;aanwezigheid specifieke sleutelsoorten;sleutelsoorten_weidekervel;;inclusief;aantal;1;positief;;vegetatieplot;EN;versie2
+6510_hua;vegetatie;sleutelsoorten;;sleutelsoorten_andere;aantal sleutelsoorten;sleutelsoorten_andere;;inclusief;aantal;3;positief;;vegetatieplot;EN;versie2
+6510_hua;vegetatie;sleutelsoorten;;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten_exclVossenstaart;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6510_hua;verstoring;verruiging_ruderalisering;;verruiging_ruderalisering;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_hua;verstoring;vernatting;;vernatting;bedekking vernatting;vernatting;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_hua;verstoring;verdroging;;verdroging;bedekking verdroging;verdroging;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_hua;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6510_hua;verstoring;verruiging;;verruiging;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_huk;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6510_huk;vegetatie;sleutelsoorten;;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;4;positief;;vegetatieplot;;versie2
+6510_huk;vegetatie;sleutelsoorten;;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;10;positief;;vegetatieplot;;versie2
+6510_huk;habitatstructuur;levensvormen;;rozetplanten;bedekking rozetplanten;levensvormen;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+6510_huk;verstoring;vervilting;;vervilting;bedekking vervilting;vergrassing_vervilting;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_huk;verstoring;verruiging;;verruiging;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_huk;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+6510_huk;vegetatie;sleutelsoorten;;sleutelsoorten_aantal_specifiek;gulden sleutelbloem en ruige weegbree aanwezig;sleutelsoorten;;inclusief;bedekking;1;positief;;vegetatieplot;;versie2
+6510_hus;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;inclusief;maxBedekking;50;negatief;;vegetatieplot;;versie2
+6510_hus;habitatstructuur;verticale_structuur;;hogeGrassen;bedekking hoge grassen;;;inclusief;bedekking;70;negatief;;vegetatieplot;EN;versie2
+6510_hus;habitatstructuur;verticale_structuur;;middelhogeGrassen;bedekking middelhoge grassen;;;inclusief;bedekking;5;positief;;vegetatieplot;EN;versie2
+6510_hus;vegetatie;sleutelsoorten;;sleutelsoorten_aantal;aantal sleutelsoorten;sleutelsoorten;;inclusief;aantal;7;positief;;vegetatieplot;;versie2
+6510_hus;verstoring;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+6510_hus;vegetatie;sleutelsoorten;;sleutelsoorten_bedekking;bedekking sleutelsoorten;sleutelsoorten;;inclusief;bedekking;50;positief;;vegetatieplot;;versie2
+6510_hus;verstoring;verruiging;;verruiging;bedekking verruiging;verruiging_ruderalisering;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+6510_hus;verstoring;verbossing;;verbossing;bedekking verbossing;verbossing;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+7140_meso;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie2
+7140_meso;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;totale bedekking sleutel- en overige soorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+7140_meso;habitatstructuur;moslaag;;moslaag;bedekking moslaag;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+7140_meso;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;inclusief;maxBedekking;70;negatief;;vegetatieplot;;versie2
+7140_meso;verstoring;vergrassing;;vergrassing_verruiging_vermossing;bedekking vergrassing/verruiging/vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+7140_meso;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+7140_meso;habitatstructuur;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+7140_meso;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+7140_meso;verstoring;structuur;;betreding_brand;bedekking structuurschade;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+7140_meso;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;totale bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+7140_oli;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;4;positief;;vegetatieplot;;versie2
+7140_oli;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;totale bedekking sleutel- en overige soorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+7140_oli;habitatstructuur;moslaag;;moslaag;bedekking moslaag;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+7140_oli;habitatstructuur;dominantie_soort;;dominantie_soort;dominantie van een soort;;;inclusief;maxBedekking;70;negatief;;vegetatieplot;;versie2
+7140_oli;verstoring;vergrassing;;vergrassing_verruiging_vermossing;bedekking vergrassing/verruiging/vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+7140_oli;verstoring;verbossing;;verbossing;bedekking verbossing;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+7140_oli;habitatstructuur;strooisellaag;;strooisellaag;bedekking strooisellaag;;;inclusief;bedekking;30;negatief;;structuurplot;;versie2
+7140_oli;verstoring;vermossing;;vermossing;bedekking vermossing;;;inclusief;bedekking;30;negatief;;vegetatieplot;;versie2
+7140_oli;verstoring;structuur;;betreding_brand;bedekking structuurschade;;;inclusief;bedekking;10;negatief;;structuurplot;;versie2
+7140_oli;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;totale bedekking sleutelsoorten;;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+1330_hpr;vegetatie;sleutelsoorten_aantal;;sleutelsoorten_aantal;aantal sleutelsoorten;;;inclusief;aantal;2;positief;;vegetatieplot;;versie2
+1330_hpr;vegetatie;sleutelsoorten_bedekking;;sleutelsoorten_bedekking;bedekking sleutelsoorten (excl. heen);;;inclusief;bedekking;30;positief;;vegetatieplot;;versie2
+1330_hpr;habitatstructuur;horizontale_structuur;;structuur;goed ontwikkelde structuur;;;inclusief;;1;positief;;structuurplot;;versie2
+1330_hpr;habitatstructuur;microreliëf;;microrelief_aanwezigheid;microreliëf aanwezig;;;inclusief;bedekking;3;positief;;structuurplot;;versie2
+1330_hpr;habitatstructuur;dominantie_soort;;max_bedekking_Heen_Zulte;dominantie van een soort;;;inclusief;maxBedekking;70;negatief;;vegetatieplot;;versie2
+1330_hpr;verstoring;rietontwikkeling;;rietontwikkeling;bedekking riet;;;inclusief;bedekking;3;negatief;;vegetatieplot;;versie2
+1330_hpr;verstoring;overgang_rbbzil;;overgang_rbbzil;bedekking grasachtigen rbbzil;;;inclusief;bedekking;;negatief;;vegetatieplot;;versie2
+9190;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+9160;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+9190;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+91E0_sf;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
+9120;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_sf;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+91E0_sf;habitatstructuur;;;natuurlijke_mozaiekstructuur;bosconstantie;;;;;;;;;;versie3
+9130;habitatstructuur;;;schaalgrootte_ingrepen;MSA;;;;;;;;;;versie3
+91E0_va;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;75;positief;;structuurplot;;versie3
+91E0_va;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+9190;habitatstructuur;;;natuurlijke_mozaiekstructuur;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_va;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+91E0_vc;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;75;positief;;structuurplot;;versie3
+91E0_sf;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_vc;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+91E0_vc;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+91E0_vc;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_vm;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
+91E0_vm;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+91E0_vn;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_vm;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+91E0_vn;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
+91E0_vm;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_vn;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+91E0_vn;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3
+91E0_vo;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_vo;habitatstructuur;bosconstante;;bosconstantie;bosconstantie;;;inclusief;jaar;30;positief;;structuurplot;;versie3
+91E0_vo;habitatstructuur;;;MSA;MSA;;;;;;;;;;versie3
+91E0_va;habitatstructuur;;;schaalgrootte_ingrepen;schaalgrootte ingrepen (ha);;;;;;;;;;versie3
+91E0_vo;habitatstructuur;;;natuurlijke_mozaiekstructuur;natuurlijke mozaïekstructuur;;;;;;;;;;versie3

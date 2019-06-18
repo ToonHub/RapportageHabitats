@@ -1,0 +1,528 @@
+
+# Stilstaande wateren {#h:plassen}
+
+## Data 
+
+### Ruwe data uit INBOVEG
+
+Het veldwerk voor een LSVI-opname van een meetpunt in stilstaande wateren bestaat uit een vegetatieopname van een volledige plas. De werkwijze hiervoor is beschreven door @Oosterlynck2018 en @Westra2014. Zowel de gegevens voor de toepassing van LSVI-versie 2 [@TJollyn2009] als voor versie 3 [@Oosterlynck2018] werden tijdens het veldwerk genoteerd. 
+
+De ruwe data gebruikt voor de LSVI-bepalingen in functie van de Natura 2000-rapportage 2013-2018 zijn opgenomen in INBOVEG (survey 196: HT31xx_LSVIPlassen). Enkel waarnemingen met een zekere habitatclassificatie werden opgenomen in de analyse (Classification: NotSure = 0). De oudste opname dateert van 1-09-2014; de recentste opname is van 19-10-2018. De INBOVEG databank bevat, naast algemene informatie (datum, waarnemer, locatie, locatiecode), de volgende gegevens voor elk meetpunt:
+
+* habitattype,
+* beperkte vegetatieopname: 6-delige Tansley-schatting per sleutelsoort en per verstoringsindicator,
+* procentuele bedekking van verstoringsindicatoren,
+* structuurvariabelen die nodig zijn voor de LSVI-berekening (afhankelijk van het habitat(sub)type).
+
+Via een MS Access-frontend (iv-query-prd_versie2_LSVIMeren.mdb) werd INBOVEG bevraagd; deze gegevens werden via een koppeling ingeladen in een excelbestand. In dit excelbestand zijn ook tabellen opgenomen voor de omzetting van klassen en tekst zodat de data omgevormd kan worden tot een geschikt formaat voor de LSVI-rekenmodule.
+
+```{r import data stilstaande wateren}
+
+bestandsnaam <- "../Data/MeetgegevensWater/Data_Meren.xlsx"
+
+TeSchrappenOpnames <- c("AN_KSV_002_GH_2017", "WV_BUL_002_WEG_17") # deze bevatten geen habitat
+
+HeadInformation <- read_xlsx(bestandsnaam, sheet = "HeadInformation") %>%
+  filter(!(UserReference %in% TeSchrappenOpnames))
+Classification <- read_xlsx(bestandsnaam, sheet = "Classification")
+Lqual <- read_xlsx(bestandsnaam, sheet = "LqualPerOpn") %>%
+  filter(!(UserReference %in% TeSchrappenOpnames))
+MSqual <- read_xlsx(bestandsnaam, sheet = "MSqualPerOpn") %>%
+  filter(!(UserReference %in% TeSchrappenOpnames))
+Soorten <- read_xlsx(bestandsnaam, sheet = "SpeciesCover2") %>%
+  filter(!(UserReference %in% TeSchrappenOpnames))
+Data_habitat_extra <- read_xlsx(bestandsnaam, sheet = "data_meren_extra")
+
+LijstVariabelen <- read_xlsx(bestandsnaam, sheet = "LijstVariabelen")
+LijstOmzKlasse <- read_xlsx(bestandsnaam, sheet = "LijstOmzKlasse") %>%
+  select(-Qualifier, -qry_01ACvalues_1.oms, -qry_01ACvalues_2.oms)
+
+
+```
+
+
+### Ruwe data uit LIMS databank
+
+Voor de LSVI-bepaling van habitattype 3160 (versie 2) zijn metingen van het elektrisch geleidingsvermogen nodig. Dit werd gemeten tijdens de staalname in het kader van de projecten ‘Platform Passende Beoordeling, partim abiotiek oppervlaktewater’ (INBOPRJ-10798) en ‘Meetnet abiotiek Natura 2000 habitattypen: oppervlaktewater’ (INBOPRJ-9430). De meetresultaten zijn opgeslagen in de LIMS-databank. De metingen werden meermaals per staalnamejaar uitgevoerd; het gemiddelde ervan werd berekend en gebruikt in de analyse.
+
+```{r data LIMS}
+
+EGV <- read_xlsx("../data/meetgegevenswater/Data_Meren_EGV.xlsx", sheet = "EGV")
+
+```
+
+
+### Overzicht meetpunten
+
+Tabel \@ref(tab:tabAantallenPlassen) geeft een overzicht van het huidige aantal opgemeten meetpunten en de totale steekproefgrootte. Habitattype 3110 en 3140 worden integraal bemonsterd. Dit betekent dat alle gekende waterlichamen die tot deze habitattypen behoren, worden opgemeten. Het gewenste aantal meetpunten voor deze habitattypes is gebaseerd op de meest recente versie van de Habitatkaart [@DeSaeger2018] en kunnen daarom verschillen van deze vermeld in @Westra2014.
+
+```{r data habitat stilstaande wateren}
+
+### Data_habitat ###
+
+# info betrouwbaarheid opname en uitzonderlijk waterpeil halen uit MSqual & hercoderen
+betrouwbaarheid <- MSqual %>%
+  filter(QualifierType =="SQ") %>%
+  mutate(Betrouwbaarheid = recode(ivRLQualifier.QualifierCode,
+                                  "RelHi" = "hoog",
+                                  "RelMe" = "matig",
+                                  "RelLo" = "laag")) %>%
+  select(RecordingGivid, Betrouwbaarheid)
+
+waterpeil <- MSqual %>%
+  filter(ivRLQualifier_2.QualifierCode %in% c("Ulaag","Norm","Uhoog","Droog")) %>%
+  select(RecordingGivid, Waterpeil = "qry_01ACvalues_2.oms")
+
+Data_habitat_extra <- Data_habitat_extra %>%
+  select(LocationCode = CODE, Regio, SBZH = SBZ_overlay, ID_Plas, OppKl, Oppervlakte_plas = OPPWVL)
+
+Data_habitat <- Classification %>%
+  select(ID = UserReference, Habitattype = Classif, RecordingGivid) %>%
+  left_join(HeadInformation, by = "RecordingGivid") %>%
+  left_join(betrouwbaarheid, by = "RecordingGivid") %>%
+  left_join(waterpeil, by = "RecordingGivid") %>%
+  left_join(Data_habitat_extra, by = "LocationCode")
+
+#write.csv2(Data_habitat, "../output/AnalyseMeren_2018-11-06/Data_habitat_meren.csv")
+
+```
+
+```{r tabAantallenPlassen}
+  
+overzicht_plassen <- read.csv2("../data/meetgegevenswater/overzicht_meetpunten_31xx.csv")
+
+kable(overzicht_plassen, 
+      format = "latex", 
+      caption = "Aantal opgemeten meetpunten en totaal aantal gewenste meetpunten", 
+      booktabs = T) %>%
+  kable_styling(latex_options = "hold_position")
+
+```
+
+
+
+
+## LSVI-berekening per meetpunt
+
+Het merendeel van de voorwaarden wordt rechtstreeks ingevoerd in de LSVI-rekenmodule. Enkel de voorwaarden met betrekking tot sleutelsoorten worden berekend door de LSVI-rekenmodule op basis van de vegetatiegegevens.
+
+De indicator 'doorzicht' wordt beoordeeld op basis van de secchidiepte. Wanneer de bodem zichtbaar is, is deze indicator gunstig, onafhankelijk van de diepte van het waterlichaam. Dit doen we in de praktijk door een secchidiepte van 4 meter in te geven in de rekenmodule. Deze waarde is groter dan de referentiewaarde, wat dus resulteert in een gunstige beoordeling. Ook bij droogval beschouwen we de indicator gunstig en gaan we op dezelfde manier te werk. 
+
+
+```{r preprocessing plassen}
+### Data_voorwaarden - klassevariabelen ###
+
+# In INBOVEG zijn ook oudere metingen opgenomen (bvb winterwaterpeil of secchidiepte tijdens de winterperiode); enkel de ‘actuele periode’ (plaatsbeschrijving > gebruiksqualifier: periode = A), dus de metingen tijdens het veldwerk, worden gebruikt in de analyse.
+
+# Percentages kleiner dan 1 % worden tijdens het veldwerk als dusdanig genoteerd (< 1 %); tijdens de verwerking zijn ze omgezet naar 0,5 %.
+
+RelVar <- c("VerSt", "HorSt", "Boom", "Chara") # Helo en HabVl zijn numeriek & info 7140o staat in Elucidation
+
+MSqual2 <- MSqual %>%
+  select(ID = UserReference, QualCode = ivRLQualifier.QualifierCode,
+         Qual1Code = ivRLQualifier_1.QualifierCode,
+         Qual1Oms = qry_01ACvalues_1.oms, Qual2Code = ivRLQualifier_2.QualifierCode,
+         Qual2Oms = qry_01ACvalues_2.oms, Elucidation, NotSure) %>%
+  filter(Qual1Code %in% RelVar & QualCode == "A" & !(Qual2Code %in% c("Helo", "HabVl", "7140o"))) %>%
+  left_join(LijstOmzKlasse, by = c("Qual2Code" = "ivRLQualifier_2.QualifierCode")) %>%
+  mutate(Waarde = as.numeric(Waarde)) %>%
+  select(ID, Criterium, Indicator, Voorwaarde, Type, Invoertype, Eenheid, Waarde)
+
+# gegevens van kenmerk 7140o (staat bij Elucidation)
+Var7140o <- MSqual %>%
+  select(ID = UserReference, Qual1Code = ivRLQualifier_1.QualifierCode,
+         Qual1Oms = qry_01ACvalues_1.oms, Qual2Code = ivRLQualifier_2.QualifierCode,
+         Qual2Oms = qry_01ACvalues_2.oms, Elucidation, NotSure) %>%
+  filter(Qual2Code == "7140o") %>%
+  left_join(LijstVariabelen, by = c("Qual2Code" = "ivRLQualifier_2.QualifierCode")) %>%
+  mutate(Waarde = case_when(
+           Elucidation == "ja" ~ "1",
+           Elucidation == "nee" ~ "0",
+           TRUE ~ Elucidation))  %>%
+  mutate(Waarde = as.numeric(Waarde)) %>%
+  select(ID, Criterium, Indicator, Voorwaarde, Type, Invoertype, Eenheid, Waarde)
+
+
+### Data_voorwaarden - Secchidiepte ###
+
+MSqual3 <- MSqual %>%
+  select(ID = UserReference, QualCode = ivRLQualifier.QualifierCode,
+         Qual1Code = ivRLQualifier_1.QualifierCode,
+         Qual1Oms = qry_01ACvalues_1.oms, Qual2Code = ivRLQualifier_2.QualifierCode,
+         Qual2Oms = qry_01ACvalues_2.oms, Elucidation, NotSure)
+
+MaxDiepte <- MSqual3 %>%
+  filter(Qual1Code == "Diept"& QualCode == "A") %>%
+  left_join(LijstOmzKlasse, by = c("Qual2Code" = "ivRLQualifier_2.QualifierCode")) %>%
+  select(ID, Gr6m = Waarde)
+
+Secchi <- MSqual3 %>%
+  filter(Qual2Code == "Secch") %>%
+  filter(!(ID == "AN_ZAM_003_3150_17" & QualCode == "W")) %>%
+  separate(Elucidation, into = c("S", "Ds"), sep = " op ", remove = FALSE) %>%
+  right_join(Data_habitat, by = "ID") %>%
+  mutate(Waarde = case_when(
+    S == "Bodemzicht" ~ "4",
+    S == "bodemzicht" ~ "4",
+    S == "Niet gemeten" ~ NA_character_,
+    S == "Meting niet mogelijk wegens dicht vegetatiedek" ~ NA_character_,
+    is.na(S) & Waterpeil == "Droogstaand (groot deel)" ~ "4",
+    TRUE ~ S))  %>%
+  mutate(Waarde = str_replace(Waarde,",",".")) %>%
+  mutate(Waarde = parse_number(Waarde)) %>%
+  select(ID, Qual2Code, Elucidation, Waarde) %>%
+  mutate(Qual2Code = "Secch") %>%
+  full_join(MaxDiepte, by = "ID") %>%
+  mutate(Voorwaarde = case_when(
+    Gr6m == "0" ~ "voor ondiepe plassen: Secchi-diepte in m",
+    Gr6m == "1" ~ "voor diepe plassen : Secchi-diepte in m")) %>%
+  left_join(LijstVariabelen, by = c("Qual2Code" = "ivRLQualifier_2.QualifierCode"))
+
+Secchi2 <- Secchi %>%
+  select(ID, Criterium, Indicator, Voorwaarde=Voorwaarde.x, Type, Invoertype, Eenheid, Waarde)
+
+# voor correct resultaat bij resultaat_indicator bij gebruik van de OF-functie
+SecchiDummy <- Secchi %>%
+  select(ID, Criterium, Indicator, Voorwaarde=Voorwaarde.x, Gr6m, Type, Invoertype, Eenheid, Waarde) %>%
+  mutate(Voorwaarde = case_when(
+    Gr6m == "0" ~ "voor diepe plassen : Secchi-diepte in m",
+    Gr6m == "1" ~ "voor ondiepe plassen: Secchi-diepte in m")) %>%
+  mutate(Waarde = 0) %>%
+  select(-Gr6m)
+
+Secchi3 <- bind_rows(Secchi2, SecchiDummy)
+
+
+### Data_voorwaarden - numerieke variabelen ###
+
+EGV2 <- EGV %>%
+  left_join(LijstVariabelen, by = c("Variabele" = "ivRLQualifier_2.QualifierCode")) %>%
+  select(ID, Criterium, Indicator, Voorwaarde, Type, Invoertype, Eenheid, Waarde = EGV)
+
+MSqualNum <- MSqual %>%
+  select(ID = UserReference, QualCode = ivRLQualifier.QualifierCode,
+         Qual1Code = ivRLQualifier_1.QualifierCode,
+         Qual1Oms = qry_01ACvalues_1.oms, Qual2Code = ivRLQualifier_2.QualifierCode,
+         Qual2Oms = qry_01ACvalues_2.oms, Elucidation, NotSure) %>%
+  filter(Qual2Code %in% c("Helo", "HabVl") & QualCode == "A") %>%
+  mutate(Waarde = case_when(
+    Elucidation == "<1" ~ "0.5",
+    Elucidation == "0-x-1" ~ "0.5",
+    TRUE ~ Elucidation)) %>%
+  mutate(Waarde = as.numeric(Waarde)) %>%
+  left_join(LijstVariabelen, by = c("Qual2Code" = "ivRLQualifier_2.QualifierCode")) %>%
+  select(ID, Criterium, Indicator, Voorwaarde, Type, Invoertype, Eenheid, Waarde)
+
+LqualNum <- Lqual %>%
+  select(ID = UserReference, LayerCode, CoverCode, NotSure) %>%
+  mutate(Waarde = case_when(
+    CoverCode == "0-x-1" ~ "0.5",
+    TRUE ~ CoverCode)) %>%
+  mutate(Waarde = as.numeric(Waarde)) %>%
+  left_join(LijstVariabelen, by = c("LayerCode" = "ivRLQualifier_2.QualifierCode")) %>%
+  left_join(Data_habitat, by = "ID") %>%
+  mutate(versie = case_when(
+    Habitattype == "3160" & LayerCode == "VZuSS" ~ "versie3",
+    Habitattype == "3160" & LayerCode == "Vzuur" ~ "versie2",
+    Habitattype == "3160" & LayerCode == "EutSS" ~ "versie2",
+    Habitattype == "3160" & LayerCode == "Eutro" ~ "versie3",
+    TRUE ~ "beide")) %>%
+  select(ID, Criterium, Indicator, Voorwaarde, Type, Invoertype, Eenheid, Waarde, versie)
+
+# opsplitsing door 2 verschillende % voor verzuring en eutrofiëring afhankelijk van de LSVI-versie
+
+LqualNumV2 <- LqualNum %>%
+  filter(versie %in% c("versie2", "beide")) %>%
+  select(-versie)
+
+LqualNumV3 <- LqualNum %>%
+  filter(versie %in% c("versie3", "beide")) %>%
+  select(-versie)
+
+
+### Data_voorwaarden - samen ###
+
+Data_voorwaarden_v2 <- bind_rows(MSqual2, Secchi3, MSqualNum, LqualNumV2, Var7140o, EGV2) %>%
+  filter(!is.na(Waarde))
+#write.csv2(Data_voorwaarden_v2, "../output/AnalyseMeren_2018-11-06/Data_voorwaarden_v2_meren.csv")
+
+Data_voorwaarden_v3 <- bind_rows(MSqual2, Secchi3, MSqualNum, LqualNumV3, Var7140o, EGV2) %>%
+  filter(!is.na(Waarde))
+#write.csv2(Data_voorwaarden_v3, "../output/AnalyseMeren_2018-11-06/Data_voorwaarden_v3_meren.csv")
+
+
+### Data_soortenKenmerken ###
+
+# lijst van my taxa inboveg omzetten naar gekende taxa in LSVI-databank
+Data_soortenKenmerken <- Soorten %>%
+  select(ID = UserReference, OriginalName, Waarde = CoverageCode) %>%
+  mutate(Kenmerk = case_when(
+    OriginalName == "Draadwier spec." ~ "Draadwier",
+    OriginalName == "kroossoorten" ~ "Lemna",
+    OriginalName == "kroossoorten (= Lemna sp., Spirodela polyrhiza, Wolffia arrhiza Uitz. Lemna trisulca)" ~ "Lemna",
+    OriginalName == "Hydrodictyon reticulatum (Linnaeus) Bory" ~ "Hydrodictyon reticulatum",
+    OriginalName == "Enteromorpha spec." ~ "Enteromorpha",
+    TRUE ~ OriginalName)) %>%
+  mutate(TypeKenmerk = "soort_Latijn", Type = "Categorie",
+         Invoertype = "TANSLEY MEREN", Eenheid = NA, Vegetatielaag = NA)
+#write.csv2(Data_soortenKenmerken, "../output/AnalyseMeren_2018-11-06/Data_soortenKenmerken_meren.csv")
+
+```
+
+## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
+
+Gezien er geen meetpunten in de Vlaams-Continentale regio gelegen zijn, is de uitspraak voor Vlaanderen dezelfde als deze voor de Vlaams-Atlantische regio. De werkwijze om tot een uitspraak voor Vlaanderen te komen, is verschillend voor een steekproefbenadering en een integrale bemonstering.
+
+### Steekproefbenadering (3130, 3150, 3160)
+
+Voor de habitattypen 3130, 3150 en 3160 maken we gebruik van een steekproef om tot een uitspraak te komen voor Vlaanderen. Net zoals voor de terrestrische habitats, maken we op basis van de steekproef een schatting van het oppervlakteaandeel habitat in een gunstige staat met bijhorende betrouwbaarheidsintervallen. 
+
+Om tot een representatieve uitspraak te komen, moeten we ook hier gebruik maken van meetpuntgewichten (zie paragraaf \@ref(h:meetpuntgewichten)). De strata worden bij de stilstaande wateren gevormd door een combinatie van de ligging t.o.v. SBZH (binnen SBZH en buiten SBZH) en de oppervlakteklassen van de waterlichamen (< 1 ha; 1 - 5 ha; 5 - 50 ha) [@Westra2014]. Het stratumgewicht is omgekeerd evenredig met het oppervlakteaandeel van de stilstaande wateren dat bemonsterd is binnen elk stratum. Het gewicht van het waterlichaam is evenredig met de oppervlakte van het waterlichaam. Dus niet de oppervlakte aan habitat, maar de oppervlakte van het volledige waterlichaam wordt gebruikt voor de weging. Het meetpuntgewicht is dan het product van het stratumgewicht en het gewicht van het waterlichaam.
+
+### Integrale bemonstering (3110, 3140 en plassen > 50 ha)
+
+Voor habitattype 3110 en 3140 en voor de stilstaande wateren die habitat bevatten en een oppervlakte hebben groter dan 50 hectare, wordt er een integrale bemonstering uitgevoerd van alle waterlichamen. Omdat de eerste monitoringscyclus nog niet volledig is afgewerkt, zijn nog niet alle veldgegevens beschikbaar. Enkel van de opgemeten plassen kan de status worden berekend en wordt de oppervlakte meegerekend in het oppervlakteaandeel gunstig of ongunstig. De oppervlakte van de waterlichamen die nog niet zijn gemeten wordt bij de categorie ‘onbekend’ gerekend (‘area where condition is not known’).
+
+### Combinatie steekproef en integrale bemonstering
+
+Voor habitattype 3130 en 3150 bestaat het meetnet uit een steekproef van de waterlichamen met een oppervlakte kleiner dan 50 hectare en een integrale bemonstering van de waterlichamen groter dan 50 hectare. Om een gecombineerde schatting te bekomen, wordt eerst de oppervlakte habitat met een gunstige staat geschat voor de waterlichamen kleiner dan 50 hectare met bijhorende betrouwbaarheidsintervallen. Vervolgens wordt de oppervlakte van de plassen groter dan 50 hectare met een gunstige kwaliteit hierbij opgeteld.      
+
+
+
+
+```{r}
+
+# resultaat rekenmodule
+
+resultaat_detail_v2 <- read.csv2("../Output/AnalyseMeren_2018-11-06/OutputRekenmodule_LSVIversie2/ResultaatMeren_v2_detail.csv", stringsAsFactors = FALSE)
+
+resultaat_detail_v3 <- read.csv2("../Output/AnalyseMeren_2018-11-06/OutputRekenmodule_LSVIversie3/ResultaatMeren_v3_detail.csv", stringsAsFactors = FALSE) %>%
+  mutate(Referentiewaarde = as.character(Referentiewaarde))
+
+resultaat_detail <- bind_rows(resultaat_detail_v2, resultaat_detail_v3) %>%
+  mutate(Habitatsubtype = Habitattype,
+         Habitattype = substr(Habitatsubtype, 1, 4)) %>%
+  select(ID, Versie, Habitattype, Habitatsubtype, Betrouwbaarheid, Waterpeil, Regio, SBZH, OppKl,
+         Oppervlakte_plas, Indicator, Belang,  Voorwaarde, Waarde, Referentiewaarde, Status_voorwaarde) %>%
+  filter(!OppKl == "> 50 ha")
+
+resultaat_indicatoren_v2 <- read.csv2("../Output/AnalyseMeren_2018-11-06/OutputRekenmodule_LSVIversie2/ResultaatMeren_v2_indicatoren.csv", stringsAsFactors = FALSE)
+
+resultaat_indicatoren_v3 <- read.csv2("../Output/AnalyseMeren_2018-11-06/OutputRekenmodule_LSVIversie3/ResultaatMeren_v3_indicatoren.csv", stringsAsFactors = FALSE)
+
+resultaat_indicator <- bind_rows(resultaat_indicatoren_v2, resultaat_indicatoren_v3) %>%
+  mutate(Habitatsubtype = Habitattype,
+         Habitattype = substr(Habitatsubtype, 1, 4)) %>%
+  select(ID, Versie, Habitattype, Habitatsubtype, Indicator, Belang, Status_indicator) %>%
+  filter(ID %in% resultaat_detail$ID)
+
+
+# stratum per meetpunt
+
+meetpunten_strata <- resultaat_detail %>%
+  select(ID, OppKl, Oppervlakte_plas, SBZH, Regio) %>%
+  unique()
+
+# unique(meetpunten_strata$Regio) #enkel meetpunten in Atlantische regio
+# unique(meetpunten_strata$OppKl)
+
+# n observaties per meetpunt? -> OK
+
+meetpunten_observaties <- resultaat_detail %>%
+  group_by(Habitatsubtype, ID, Versie) %>%
+  summarise(nObs= n()) %>%
+  ungroup() %>%
+  group_by(Habitatsubtype, Versie, nObs) %>%
+  summarise(nMeetpunten = n()) %>%
+  ungroup()
+
+# aantal NA's nakijken
+
+check_NA_ind <- resultaat_indicator %>%
+  group_by(Habitatsubtype, Indicator, Belang, Versie) %>%
+  summarise(n =n(),
+    n_NA = sum(is.na(Status_indicator))) %>%
+  ungroup()
+
+check_NA_vw <- resultaat_detail %>%
+  group_by(Habitatsubtype, Indicator, Belang, Voorwaarde, Versie) %>%
+  summarise(n =n(),
+    n_NA = sum(is.na(Status_voorwaarde))) %>%
+  ungroup()
+
+
+# meetpunten waarvoor een zb-indicator ontbreekt verwijderen --> heeft grote impact op integratie per meetpunt
+
+meetpunten_ind_zb_NA <- resultaat_indicator %>%
+  filter(Belang == "zb" & is.na(Status_indicator)) %>%
+  select(Habitatsubtype, ID, Belang, Indicator, Status_indicator) %>%
+  unique()
+
+resultaat_indicator_corr <- resultaat_indicator %>%
+  filter(! ID %in% meetpunten_ind_zb_NA$ID) %>%
+  left_join(meetpunten_strata, by = "ID")
+
+
+# integratie plotniveau opnieuw uitvoeren
+
+statusHabitatvlek <- resultaat_indicator_corr %>%
+  filter(!is.na(Status_indicator)) %>%
+  group_by(ID, Habitattype, Habitatsubtype, Versie, OppKl, Oppervlakte_plas, SBZH, Regio) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup()
+
+
+#write.csv2(statusHabitatvlek, "../output/AnalyseMeren_2018-11-06/ResultaatMeren_statusHabitatvlek.csv", row.names = FALSE)
+
+```
+
+```{r meetpuntgewichten}
+
+# gewichten meetpunten
+# we kiezen een stratumgewicht dat omgekeerd evenredig is met aandeel van het waterlichaamsen dat bemonsterd is binnen elk stratum.
+# we kiezen een meetpuntgewicht dat evenredig is met de oppervlakte van het waterlichaam
+
+
+#best oppervlakte plassen in elk stratum bekijken
+strata_opp <- read.csv2("../data/MeetgegevensWater/OppStrata31xx.csv", stringsAsFactors = FALSE)
+
+strata_opp <- strata_opp %>%
+  gather(binnen, buiten, key = "SBZH", value = "Opp") %>%
+  filter(!OppKl == "Opp > 50 ha")
+
+strata_gewichten <- resultaat_detail %>%
+  select(Habitattype, Habitatsubtype, ID, Oppervlakte_plas, OppKl, SBZH) %>%
+  unique() %>%
+  group_by(Habitattype, Habitatsubtype, OppKl, SBZH) %>%
+  summarise(OppBemonsterd = sum(Oppervlakte_plas)) %>%
+  ungroup() %>%
+  left_join(strata_opp, by = c("Habitatsubtype", "OppKl", "SBZH")) %>%
+  mutate(Opp = ifelse((Opp < OppBemonsterd) | is.na(Opp), OppBemonsterd, Opp),
+         AandeelBemonsterd = OppBemonsterd/ Opp,
+         StratumGewicht = 1/AandeelBemonsterd) %>%
+  group_by(Habitattype) %>%
+  mutate(StratumGewicht_herschaald = StratumGewicht/min(StratumGewicht)) %>%
+  ungroup()
+
+#gewicht toekennen aan meetpunten
+statusHabitatvlek_gewicht <- statusHabitatvlek %>%
+  left_join(select(strata_gewichten, Habitattype, Habitatsubtype, OppKl, SBZH, StratumWeight = StratumGewicht_herschaald), by = c("Habitattype", "Habitatsubtype", "OppKl", "SBZH")) %>%
+  mutate( PlasWeight = Oppervlakte_plas/ 10000,
+          PlotWeight = PlasWeight,
+         WeightComb = StratumWeight * PlasWeight)
+
+#berekening habitataandeel in gunstige staat rekening houdend met gewichten
+statusHabitat_Vlaanderen <- habitatandeelGunstig(statusHabitatvlek_gewicht, stratSBZH = FALSE) %>%
+  mutate(Schaal = "Vlaanderen Atlantisch") %>%
+  select(Schaal, Habitattype, Habitatsubtype, Versie, SBZH, nObs, sumWeights = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+
+#write.csv2(statusHabitat_Vlaanderen, "../output/AnalyseMeren_2018-11-06/ResultaatMeren_statusHabitat.csv", row.names = FALSE)
+
+#berekening voor elke indicator: aandeel habitat dat gunstig scoort voor de indicator in kwestie
+
+resultaat_indicator_gewicht <- resultaat_indicator_corr %>%
+  left_join(select(statusHabitatvlek_gewicht, ID, WeightComb,PlotWeight, StratumWeight, Versie), by = c("ID", "Versie"))
+
+status_indicatoren <- NULL
+
+for(habt in unique(resultaat_indicator_gewicht$Habitattype)){
+
+  for(v in unique(resultaat_indicator_gewicht$Versie)){
+
+    data_habt_v <- resultaat_indicator_gewicht %>%
+      filter(Versie == v & Habitattype == habt)
+
+    for(ind in unique(data_habt_v$Indicator)){
+
+      data_ind_v <- data_habt_v %>%
+        filter(Indicator == ind) %>%
+        mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+
+      result_temp <- habitatandeelGunstig(data_ind_v, stratSBZH = FALSE) %>%
+        mutate(Indicator = ind) %>%
+        select(Versie, Habitattype, Habitatsubtype, Indicator, SBZH, nObs, sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+
+      status_indicatoren <- bind_rows(status_indicatoren, result_temp)
+    }
+
+  }
+
+}
+
+#write.csv2(status_indicatoren, "../output/AnalyseMeren_2018-11-06/ResultaatMeren_statusIndicatoren.csv", row.names = FALSE)
+
+
+# resultaat rekenmodule plassen > 50ha
+
+resultaat_detail_50ha <- bind_rows(resultaat_detail_v2, resultaat_detail_v3) %>%
+  mutate(Habitatsubtype = Habitattype,
+         Habitattype = substr(Habitatsubtype, 1, 4)) %>%
+  select(ID, Versie, Habitattype, Habitatsubtype, Betrouwbaarheid, Waterpeil, Regio, SBZH, OppKl,
+         Oppervlakte_plas, Indicator, Belang,  Voorwaarde, Waarde, Referentiewaarde, Status_voorwaarde) %>%
+  filter(OppKl == "> 50 ha")
+
+resultaat_indicator_50ha <- bind_rows(resultaat_indicatoren_v2, resultaat_indicatoren_v3) %>%
+  mutate(Habitatsubtype = Habitattype,
+         Habitattype = substr(Habitatsubtype, 1, 4)) %>%
+  select(ID, Versie, Habitattype, Habitatsubtype, Indicator, Belang, Status_indicator) %>%
+  filter(ID %in% resultaat_detail_50ha$ID)
+
+# stratum per meetpunt
+meetpunten_strata <- resultaat_detail_50ha %>%
+  select(ID, OppKl, Oppervlakte_plas, SBZH, Regio) %>%
+  unique()
+
+resultaat_indicator_50ha_corr <- resultaat_indicator_50ha %>%
+  left_join(meetpunten_strata, by = "ID")
+
+# integratie plotniveau opnieuw uitvoeren
+
+statusHabitatvlek_50ha <- resultaat_indicator_50ha_corr %>%
+  filter(!is.na(Status_indicator)) %>%
+  group_by(ID, Habitattype, Habitatsubtype, Versie, OppKl, Oppervlakte_plas, SBZH, Regio) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup()
+
+#write.csv2(statusHabitatvlek_50ha, "../output/AnalyseMeren_2018-11-06/ResultaatMeren_statusHabitatvlek_50ha.csv", row.names = FALSE)
+
+# som oppervlakte bemonsterhet waterlichaamsen en som plassen in Vlaanderen
+OppVL <- read.csv2("../data/meetgegevenswater/OppStrata31xx.csv", stringsAsFactors = FALSE) %>%
+  mutate(OppVlaanderen = binnen + buiten) %>%
+  group_by(Habitatsubtype, OppKl) %>%
+  summarise(oppervlakte_Vlaanderen = sum(OppVlaanderen)) %>%
+  ungroup()
+
+bemonsterde_oppervlakte <- bind_rows(resultaat_detail_v2, resultaat_detail_v3) %>%
+  select(ID, OppKl, Oppervlakte_plas, Habitattype) %>%
+  mutate(OppKl = case_when(OppKl == "> 50 ha" ~ "Opp > 50 ha", TRUE ~ OppKl)) %>%
+  unique() %>%
+  group_by(Habitattype, OppKl) %>%
+  summarise(bemonsterde_oppervlakte = sum(Oppervlakte_plas)) %>%
+  ungroup() %>%
+  left_join(OppVL, by = c("Habitattype" = "Habitatsubtype", "OppKl"))
+
+#write.csv2(bemonsterde_oppervlakte, "../output/AnalyseMeren_2018-11-06/OppervlakteMeren.csv", row.names = FALSE)
+
+```
+
+
+## Resultaten 
+
+De resultaten zijn terug te vinden in de folder 'AnalyseMeren_2018-11-06'.
+
+
+
+
+
+
+
+
+

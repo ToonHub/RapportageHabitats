@@ -1,14 +1,16 @@
 
-# Synergie MONEOS: habitatsubtypen 1330_da en 91E0_sf
+# Synergie MONEOS: buitendijkse schorren (1330_da) en wilgenvloedbossen (91E0_sf) {#h:MONEOS}
 
 ## Data
 
 ### Ruwe data uit INBOVEG
 
-De INBOVEG databank bevat volgende gegevens voor elke meetpunt:
+De INBOVEG-databank bevat de volgende gegevens voor elk meetpunt:
 
-* Vegetatieopname (lijst van alles soorten + bedekking per soort)
-* Bedekking van vegetatielagen 
+* vegetatieopname (lijst van alle aanwezige soorten + bedekking per soort),
+
+* bedekking van vegetatielagen.
+
 
 ```{r MONEOSselectie surveys}
 
@@ -20,24 +22,23 @@ opnamen_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-0
 
 veglagen_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-06/veglagen_MONEOS.csv", stringsAsFactors = FALSE)
 
+# analyseNaamMONEOS <- paste("AnalyseMONEOS", Sys.Date(), sep="_")
+# setwd("../Output")
+# 
+# dir.create(analyseNaamMONEOS)
+# 
+# setwd(paste("../Output/", analyseNaamMONEOS, sep =""))
+# 
+# dir.create("InputRekenmodule")
 
-analyseNaamMONEOS <- paste("AnalyseMONEOS", Sys.Date(), sep="_")
-setwd("../Output")
-
-dir.create(analyseNaamMONEOS)
-
-setwd(paste("../Output/", analyseNaamMONEOS, sep =""))
-
-dir.create("InputRekenmodule")
-
-# analyseNaamMONEOS <- "AnalyseMONEOS_2018-12-11"
+analyseNaamMONEOS <- "AnalyseMONEOS_2019-01-14"
 ```
 
 ### Structuurvariabelen
 
-#### Habitatsubtype 91E0_sf
+#### Wilgenvloedbossen (91E0_sf)
 
-De structuurvariabelen zitten niet in INBOVEG en werden aangeleverd als afzonderlijk Excel-bestand. Voor habitat 91E0_sf gaat het om onderstaande variabelen. Deze variabelen worden rechtstreeks op het terrein ingeschat en dus niet afgeleid uit een dendrometrische opname zoals bij de overige boshabitats.
+De structuurvariabelen zitten niet in INBOVEG en werden aangeleverd als een afzonderlijk Excel-bestand. Voor habitat 91E0_sf gaat het om de onderstaande voorwaarden:
 
 * aantal groeiklassen aanwezig,
 * groeiklasse 5, 6 of 7 aanwezig,
@@ -45,11 +46,13 @@ De structuurvariabelen zitten niet in INBOVEG en werden aangeleverd als afzonder
 * aandeel dood hout,
 * grondvlak sleutelsoorten boom- en struiklaag.
 
-Volgende variabele kon niet bepaald worden en wordt dus niet meegerekend in de verdere analyse:
+Deze voorwaarden worden rechtstreeks op het terrein ingeschat en dus niet afgeleid uit een dendrometrische opname zoals bij de overige boshabitats (zie Hoofdstuk \@ref(h:Boshabitats)). De waarden worden rechtstreeks ingevoerd in de LSVI-rekenmodule. 
+
+De volgende voorwaarde kon niet bepaald worden en wordt daarom niet meegerekend in de verdere analyse:
 
 * aandeel overstromende vloeden.
 
-```{r MONEOSstructuurgegevens91E0_sf}
+```{r MONEOSstructuurgegevens91E0sf}
 
 structuur_91E0_sf_wide <- read.csv2("../Data/MeetgegevensMONEOS/Structuurgegevens_91E0_sf.csv")
 
@@ -63,26 +66,31 @@ structuur_91E0_sf <- structuur_91E0_sf_wide %>%
 
 ```
 
-#### Habitatsubtype 1330_da
+De overige voorwaarden worden berekend via de LSVI-rekenmodule op basis van de vegetatieopname.
 
-De structuurvariabelen zitten niet in INBOVEG en werden aangeleverd als afzonderlijk Excel-bestand. Voor habitat 1330_da gaat het om onderstaande variabelen. Deze variabelen werden afgeleid uit GIS-bestanden en werden bepaald op niveau van een schor. Dus alle meetpunten die binnen een bepaald schor gelegen zijn, hebben dezelfde waarde voor deze variabelen. 
+\needspace{70mm}
 
-* zowel lage als hoge schorvegetaties aanwezig
-* zowel lage als hoge (en climax-) schorvegetaties
-* aanwezigheid kreken, oeverwallen en kommen
-* kreken en oeverwallen aanwezig
-* bedekking riet
-* aanwezigheid schorklifvorming
-* schorklifvegetaties aanwezig
-* aanwezigheid schorklif/breuksteenbestorting
-* habitattype lager dan het klif
-* intertidale ruimte thv GHW aanwezig
+#### Buitendijkse schorren (1330_da)
 
-Volgende variabele kon niet bepaald worden en werden niet meegerekend in de verdere analyse:
+De structuurvariabelen zitten niet in INBOVEG en werden aangeleverd als afzonderlijk Excel-bestand. Voor de buitendijkse schorren (1330_da) gaat het om de onderstaande voorwaarden:
 
-* structuurvariatie binnen de verschillende zones aanwezig
+* zowel lage als hoge schorvegetaties aanwezig,
+* aanwezigheid kreken, oeverwallen en kommen,
+* bedekking riet,
+* schorklifvegetaties aanwezig,
+* aanwezigheid schorklif/breuksteenbestorting,
+* habitattype lager dan het klif,
+* intertidale ruimte ter hoogte van gemiddelde hoogwaterstand (GHW) aanwezig.
 
-```{r MONEOSstructuurgegevens1330_da}
+Deze voorwaarden werden bepaald op het niveau van een schor. Dit betekent dat alle meetpunten die binnen een zelfde schor gelegen zijn, dezelfde waarde voor deze voorwaarden hebben. De waarden van deze voorwaarden worden rechtstreeks ingevoerd in de LSVI-rekenmodule.
+
+De volgende variabele kon niet bepaald worden en wordt daarom niet meegerekend in de verdere analyse:
+
+* structuurvariatie binnen de verschillende zones aanwezig.
+
+Alle overige voorwaarden worden berekend via de LSVI-rekenmodule op basis van de vegetatieopname.
+
+```{r MONEOSstructuurgegevens1330da}
 
 structuur_1330_da_wide <- read.csv2("../Data/MeetgegevensMONEOS/Structuurgegevens_1330_da.csv", stringsAsFactors = FALSE)
 
@@ -97,20 +105,12 @@ structuur_1330_da <- structuur_1330_da_wide %>%
   ungroup() %>%
   filter(!Waarde %in% c("", "?", "nvt")) 
 
-
 test <- structuur_1330_da %>%
   group_by(Voorwaarde) %>%
   summarise(n())
 ```
 
-### Habitattypen
-
-### Meetpuntgewichten
-
-Om onvertekende uitspraken te doen op een hoger schaalniveau, moeten we rekening houden met de meetpuntgewichten. We onderscheiden twee types gewichten:
-
-* Plotgewichten: aandeel van de plot dat bedekt is door het habitat(sub)type (waarver we uitspraak doen).
-* Stratumgewicht: de verschillende strata (binnen/buiten SBZH + habitatsubtypes) worden niet evenredig bemonsterd. Sommige strata kennen een grotere dichtheid aan meetpunten (bv. binnen SBZH omdat we daar een hogere precisie wensen).We moeten hiervoor compenseren als we een uitspraak op schaal Vlaanderen wensen. Per stratum kennen we daarom een gewicht toe aan de meetpunten gelijk aan de verhouding tussen de oppervlakte van dit stratum en het aantal meetpunten binnen dit stratum. Meetpunten in een stratum met een lagere dichtheid krijgen dus een groter gewicht.   
+   
 
 ```{r MONEOSgewichten}
 
@@ -184,7 +184,7 @@ data_habitat_MONEOS <- data_habitat_MONEOS %>%
 
 ## Overzicht meetpunten
 
-Tabel \@ref(tab:MONEOStabAantallen) geeft een overzicht van het huidige aantal meetpunten binnen MONEOS en het totale steekproefgrootte die we na 12 jaar willen bereiken. In een groot deel van de meetpunten werden al meerdere opnamen uitgevoerd (Tabel \@ref(tab:MONEOStabAantallenJaar)).
+Tabel \@ref(tab:MONEOStabAantallen) geeft een overzicht van het huidige aantal meetpunten binnen MONEOS en de totale steekproefgrootte die we na 12 jaar willen bereiken. Tabel \@ref(tab:MONEOStabAantallenJaar) geeft een overzicht van de uitgevoerde vegetatieopnames in de meetpunten. Voor heel wat meetpunten werden zowel in 1995 als in 2013 een vegetatieopname uitgevoerd. Maar de structuurgegevens werden enkel in 2018 bepaald. Daarom zullen we enkel gebruik maken van de vegetatiegegevens uit 2013.
 
 ```{r MONEOStabAantallen, message=FALSE, results='asis'}
 
@@ -200,7 +200,9 @@ overzicht_MONEOS <- data_habitat_MONEOS %>%
   arrange(Habitattype, SBZH) %>%
   mutate(nOpgemeten = ifelse(is.na(nOpgemeten), 0, nOpgemeten))
     
-kable(overzicht_MONEOS, format = "latex", caption = "Aantal opgemeten meetpunten en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", booktabs = T) 
+kable(overzicht_MONEOS, format = "latex", caption = "Aantal opgemeten meetpunten en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", booktabs = T) %>%
+  kable_styling(latex_options = "hold_position")
+
 
 ```
 
@@ -211,21 +213,29 @@ overzicht_MONEOS <- data_habitat_MONEOS %>%
   summarise(nOpgemeten = n_distinct(IDPlots)) %>% 
   ungroup() %>%
   arrange(Habitattype, SBZH) 
+
+overzicht_MONEOS_herh <- data_habitat_MONEOS %>%
+  filter(Jaar %in% c(1995, 2013)) %>%
+  distinct(IDPlots, Habitattype, SBZH, Jaar) %>%
+  group_by(Habitattype, SBZH, IDPlots) %>% 
+  mutate(nHerhaling = n_distinct(Jaar)) %>% 
+  ungroup() %>%
+  group_by(Habitattype, SBZH, Jaar) %>%
+  summarise(nOpgemeten = n_distinct(IDPlots),
+            nHerhaling = sum(nHerhaling > 1)) %>%
+  ungroup() %>%
+  arrange(Habitattype, SBZH) 
     
-kable(overzicht_MONEOS, format = "latex", caption = "Overzicht van de jaren waarin de meetpunten werden opgemeten", booktabs = T) 
+kable(overzicht_MONEOS_herh, format = "latex", caption = "Overzicht van het aantal meetpunten waarvoor een vegetatieopname werd uitgevoerd per jaar en het aantal meetpunten met een vegetatieopname in beide jaren (nHerhaling)", booktabs = T) %>%
+  kable_styling(latex_options = "hold_position") #%>%
+  #collapse_rows(5)
 
 ```
 
-## Input voor LSVI-rekenmodule
-
-We maken gebruik van de LSVI-rekenmodule. De rekenmodule vereist volgende input:
-
-* data habitat: bevat het habitat(sub)type voor elke plot
-* data voorwaarden: bevat de waarden voor de voorwaarden (elke indicator bestaat uit een of meerdere voorwaarden) die rechtstreeks op terrein worden opgemeten of die op voorhand berekend worden los van de rekenmodule
-* data soorten en kenmerken: bevat de gegevens van de vegetatieopname. Op basis hiervan berekent de rekenmodule de nog ontbrekende voorwaarden (die dus niet onder data voorwaarden werden ingevoerd)
 
 
-```{r MONEOSinvoerData, echo=FALSE, eval = TRUE}
+
+```{r MONEOSinvoerData, echo=FALSE, eval = FALSE}
 
 ### DATA_HABITAT
 
@@ -282,35 +292,32 @@ data_voorwaarden_MONEOS <- voorwaarden_MONEOS %>%
 data_soortenKenmerken_MONEOS <- geefSoortenKenmerkenMONEOS(db = dbINBOVeg_MONEOS, plotHabtypes = data_habitat_MONEOS) %>%
   filter(IDPlots != "ZSCPQ285") # geen kruidlaag in opname
 
-write.csv2(data_habitat_MONEOS, paste("../Output/",
-                                             analyseNaamMONEOS,
-                                             "/InputRekenmodule/data_habitat_MONEOS.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_voorwaarden_MONEOS, paste("../Output/",
-                                             analyseNaamMONEOS,
-                                             "/InputRekenmodule/data_voorwaarden_MONEOS.csv", sep = ""),
-           row.names = FALSE)
-
-write.csv2(data_soortenKenmerken_MONEOS, paste("../Output/",
-                                             analyseNaamMONEOS,
-                                             "/InputRekenmodule/data_soortenKenmerken_MONEOS.csv", sep = ""),
-           row.names = FALSE)
+# #write.csv2(data_habitat_MONEOS, paste("../Output/",
+#                                              analyseNaamMONEOS,
+#                                              "/InputRekenmodule/data_habitat_MONEOS.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_voorwaarden_MONEOS, paste("../Output/",
+#                                              analyseNaamMONEOS,
+#                                              "/InputRekenmodule/data_voorwaarden_MONEOS.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_soortenKenmerken_MONEOS, paste("../Output/",
+#                                              analyseNaamMONEOS,
+#                                              "/InputRekenmodule/data_soortenKenmerken_MONEOS.csv", sep = ""),
+#            row.names = FALSE)
 
 
 ```
 
 ## LSVI-berekening
 
-Op basis van de LSVI-rekenmodule berekenen we de waarden voor de voorwaarden. Deze waarden worden afgetoetst aan de grenswaarden zodat we de status van elke voorwaarde krijgen. Vervolgens wordt de status per indicator bepaald.
-
-De indicator 'verruiging' van habitatsubtype 1330_da is enkel van toepassing voor voor zoutwaterschor. Gezien alle meetpunten in brakwaterschor gelegen zijn, wordt deze indicator dus niet meegerekend in de analyse.
+De indicator 'verruiging' van habitatsubtype 1330_da is enkel van toepassing voor zoutwaterschor. Gezien alle meetpunten in brakwaterschor gelegen zijn, wordt deze indicator niet meegerekend in de analyse.
 
 De indicator 'sleutelsoorten' bestaat uit twee voorwaarden: 'aantal sleutelsoorten hoog schor' en 'aantal sleutelsoorten laag schor'. De indicator is gunstig als beide voorwaarden gunstig scoren. De indicator wordt echter beoordeeld op basis van een vegetatieopname in een plot van 3m x 3m die ofwel in hoog schor ofwel in laag schor gelegen is, waardoor er niet aan beide voorwaarden kan worden voldaan. Daarom beoordelen we in deze analyse de indicator 'sleutelsoorten' als gunstig wanneer (minstens) één van beide voorwaarden gunstig scoort.     
 
-In een volgende stap bepalen we per meetpunt de status van de habitatvlek, rekening houdend met het belang van de indicatoren: de habitatvlek is gunstig als meer dan de helft van de indicatoren gunstig zijn EN geen enkele 'zeer belangrijke' indicator ongunstig is.
 
-```{r MONEOScalcStatus, echo=FALSE, warning = TRUE, eval= TRUE}
+```{r MONEOScalcStatus, echo=FALSE, warning = TRUE, eval= FALSE}
 
 test <- geefInvoervereisten(Habitattype = "1330_da", Kwaliteitsniveau = 1)
 
@@ -370,9 +377,9 @@ resultsLSVI_ind_corr <- resultsLSVI_ind %>%
 resultsLSVI_vw_exp <- resultsLSVI_vw %>%
   mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
 
-write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamMONEOS, "/Voorwaarden_MONEOS.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamMONEOS, "/Voorwaarden_MONEOS.csv", sep =""), row.names = FALSE)
 
-write.csv2(resultsLSVI_ind_corr, paste("../Output/", analyseNaamMONEOS, "/Indicatoren_MONEOS.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_ind_corr, paste("../Output/", analyseNaamMONEOS, "/Indicatoren_MONEOS.csv", sep =""), row.names = FALSE)
 
 ```
 
@@ -391,23 +398,16 @@ statusHabitatvlek <- resultsLSVI_ind %>%
             Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
   ungroup()
   
-write.csv2(statusHabitatvlek, paste("../Output/", analyseNaamMONEOS,"/StatusHabitatvlek_MONEOS.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitatvlek, paste("../Output/", analyseNaamMONEOS,"/StatusHabitatvlek_MONEOS.csv", sep =""), row.names = FALSE)
 
 ```
 
 ## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
 
-Voor habitattype 1330 maken we een schatting van het aandeel habitat dat gunstig is in Vlaanderen en berekenen we het bijhorende 95% betrouwbaarheidsinterval. Hiervoor gebruiken we de resultaten voor subtype 1330_da en 1330_hpr. Voor Habitatsubtype 1330_da gebruiken we de resultaten gebaseerd op de opnames van 2013.
+Voor habitattype 1330 (Atlantische schorren) maken we een schatting van het aandeel habitat dat gunstig is in Vlaanderen en berekenen we het bijhorende 95%-betrouwbaarheidsinterval. Hiervoor gebruiken we de resultaten voor subtype 1330_da (buitendijkse schorren) en 1330_hpr (zilte graslanden) (zie hoofdstuk@ref(h:GrasMoeras)). Voor het habitatsubtype 1330_da gebruiken we de resultaten gebaseerd op de opnames die dateren van 2013.
 
-We maken een schatting:
+De resultaten voor 91E0_sf worden geïntegreerd in de analyse van de boshabitats (zie paragraaf  \@ref(h:Boshabitats)). 
 
-* per habitatsubtype,
-* binnen SBZH,
-* buiten SBZH.
-
-De resultaten voor 91E0_sf worden geïntegreerd in de analyse van de boshabitats. 
-
-We schatten de betrouwbaarheidsintervallen op basis van een binomiaal model, zodat deze steeds tussen de 0 en 100% gelegen zijn. Om de meetpuntgewichten op een correcte wijze toe te passen in de analyse, maken we gebruik de R-package survey (Thomas Lumley, 2018).
 
 ```{r MONEOS statusVlaanderen}
 
@@ -431,11 +431,10 @@ statusHabitat_1330 <- habitatandeelGunstig(data = statusHabitatvlek_1330, stratS
   select(Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
   arrange(Schaal, Habitattype, Versie,  TypeResultaat)
 
-write.csv2(statusHabitat_1330, paste("../Output/", analyseNaamMONEOS, "/StatusHabitat_1330.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitat_1330, paste("../Output/", analyseNaamMONEOS, "/StatusHabitat_1330.csv", sep =""), row.names = FALSE)
 ```
 
-Op een analoge manier berekenen we ook afzonderlijk per indicator het aandeel habitat dat gunstig scoort voor de indicator in kwestie. 
- 
+
 ```{r MONEOSstatusIndicatorVlaanderen, echo=FALSE}
 
 indicatoren_1330_hpr <- read.csv2( paste("../Output/", analyseNaamGrasland, "/Indicatoren_GraslandMoeras.csv", sep =""), stringsAsFactors  = FALSE) %>%
@@ -482,8 +481,12 @@ for(habt in unique(indicatoren_1330$Habitattype)){
     }
 }
 
-write.csv2(status_indicatoren_1330, paste("../Output/", analyseNaamMONEOS,"/Indicatoren_AandeelGunstigVlaanderen_1330.csv", sep =""), row.names = FALSE)
+#write.csv2(status_indicatoren_1330, paste("../Output/", analyseNaamMONEOS,"/Indicatoren_AandeelGunstigVlaanderen_1330.csv", sep =""), row.names = FALSE)
 
 ```
+
+## resultaten
+
+De resultaten zijn terug te vinden in de folder 'AnalyseMONEOS_2019-01-14'.
 
 

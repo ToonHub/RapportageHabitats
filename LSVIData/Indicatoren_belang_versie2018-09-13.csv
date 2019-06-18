@@ -1,0 +1,769 @@
+Versie;Habitattype;Criterium;Indicator;Belang
+Versie 2.0;1310;Structuur;bodemstructuur;zb
+Versie 2.0;1310;Structuur;dynamiek;zb
+Versie 2.0;1310;Vegetatie;aandeel sleutelsoorten in de vegetatie;b
+Versie 2.0;1310;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;1310;Vegetatie;sleutelsoorten;b
+Versie 2.0;1310;Verstoring;verruiging;b
+Versie 3;1310;Structuur;dynamiek;zb
+Versie 3;1310;Structuur;horizontale structuur;zb
+Versie 3;1310;Structuur;schorklifvorming/breuksteenbestorting;zb
+Versie 3;1310;Structuur;verticale gradiënt;zb
+Versie 3;1310;Vegetatie;aandeel sleutelsoorten in de vegetatie;b
+Versie 3;1310;Vegetatie;sleutelsoorten;b
+Versie 3;1310;Verstoring;invasieve exoten;b
+Versie 3;1310;Verstoring;verruiging;b
+Versie 2.0;1320;Structuur;bodemstructuur;zb
+Versie 2.0;1320;Structuur;dynamiek;zb
+Versie 2.0;1320;Structuur;textuur;b
+Versie 2.0;1320;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;1320;Vegetatie;sleutelsoorten;zb
+Versie 2.0;1320;Verstoring;verruiging;zb
+Versie 3;1320;Structuur;horizontale structuur;zb
+Versie 3;1320;Structuur;schorklifvorming/breuksteenbestorting;zb
+Versie 3;1320;Structuur;verticale gradiënt;zb
+Versie 3;1320;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;1320;Vegetatie;sleutelsoorten;zb
+Versie 2.0;1330;Structuur;dominantie van één soort;zb
+Versie 2.0;1330;Structuur;horizontale structuur;b
+Versie 2.0;1330;Structuur;horizontale structuur_vegetatiegradient;zb
+Versie 2.0;1330;Structuur;kreken, oeverwallen en kommen;zb
+Versie 2.0;1330;Structuur;microreliëf;zb
+Versie 2.0;1330;Structuur;schorklifvorming;zb
+Versie 2.0;1330;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;1330;Vegetatie;sleutelsoorten;b
+Versie 2.0;1330;Verstoring;overgang naar rbbmr;zb
+Versie 2.0;1330;Verstoring;overgang naar rbbzil;zb
+Versie 3;1330;Structuur;dominantie van één soort;zb
+Versie 3;1330;Structuur;horizontale structuur;zb
+Versie 3;1330;Structuur;kreken, oeverwallen en kommen;zb
+Versie 3;1330;Structuur;microreliëf;zb
+Versie 3;1330;Structuur;schorklifvorming/breuksteenbestorting;zb
+Versie 3;1330;Structuur;verticale gradiënt;zb
+Versie 3;1330;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;1330;Vegetatie;sleutelsoorten;b
+Versie 3;1330;Verstoring;overgang naar rbbzil;zb
+Versie 3;1330;Verstoring;rietontwikkeling;zb
+Versie 3;1330;Verstoring;verruiging;zb
+Versie 3;1330;Verstoring;verzoeting;zb
+Versie 2.0;2110;Structuur;dynamiek;
+Versie 2.0;2110;Structuur;oppervlakte;
+Versie 2.0;2110;Structuur;vorming vloedmerk;
+Versie 2.0;2110;Vegetatie;sleutelsoorten;
+Versie 2.0;2110;Verstoring;recreatie;
+Versie 3;2110;Structuur;dynamiek;
+Versie 3;2110;Structuur;oppervlakte;
+Versie 3;2110;Structuur;vorming vloedmerk;
+Versie 3;2110;Vegetatie;sleutelsoorten;
+Versie 3;2110;Verstoring;recreatie;
+Versie 2.0;2120;Structuur;(korst)moslaag;
+Versie 2.0;2120;Structuur;dynamiek;
+Versie 2.0;2120;Structuur;horizontale structuur;
+Versie 2.0;2120;Structuur;kruidlaag;
+Versie 2.0;2120;Structuur;naakte bodem;
+Versie 2.0;2120;Vegetatie;sleutelsoorten van de zeereep;
+Versie 2.0;2120;Vegetatie;sleutelsoorten van het binnenduin;
+Versie 2.0;2120;Verstoring;exoten;
+Versie 2.0;2120;Verstoring;rijshout;
+Versie 2.0;2120;Verstoring;vergrassing;
+Versie 2.0;2120;Verstoring;verruiging;
+Versie 3;2120;Structuur;(korst)moslaag;
+Versie 3;2120;Structuur;dynamiek;
+Versie 3;2120;Structuur;horizontale structuur;
+Versie 3;2120;Structuur;kruidlaag;
+Versie 3;2120;Structuur;naakte bodem;
+Versie 3;2120;Vegetatie;sleutelsoorten;
+Versie 3;2120;Verstoring;exoten;
+Versie 3;2120;Verstoring;rijshout;
+Versie 3;2120;Verstoring;vergrassing;
+Versie 3;2120;Verstoring;verruiging;
+Versie 2.0;2130;Vegetatie;bedekking sleutelsoorten;
+Versie 2.0;2130;Vegetatie;bedekking sleutelsoorten van het droog tot vochtig duingrasland;
+Versie 2.0;2130;Vegetatie;bedekking sleutelsoorten van het kalkrijk mosduin en pionierduingrasland;
+Versie 2.0;2130;Vegetatie;sleutelsoorten;
+Versie 2.0;2130;Vegetatie;sleutelsoorten van het droog tot vochtig kalkrijk duingrasland;
+Versie 2.0;2130;Vegetatie;sleutelsoorten van het kalkrijk mosduin en pionierduingrasland;
+Versie 2.0;2130;Verstoring;invasieve exoten;
+Versie 2.0;2130;Verstoring;overbetreding;
+Versie 2.0;2130;Verstoring;verbossing/verstruweling;
+Versie 2.0;2130;Verstoring;vergrassing/verbraming;
+Versie 2.0;2130;Verstoring;verruiging;
+Versie 3;2130;Vegetatie;bedekking sleutelsoorten;
+Versie 3;2130;Vegetatie;sleutelsoorten;
+Versie 3;2130;Vegetatie;sleutelsoorten van het droog tot vochtig kalkrijk duingrasland;
+Versie 3;2130;Vegetatie;sleutelsoorten van het kalkrijk mosduin en pionierduingrasland;
+Versie 3;2130;Verstoring;invasieve exoten;
+Versie 3;2130;Verstoring;overbetreding;
+Versie 3;2130;Verstoring;overige exoten;
+Versie 3;2130;Verstoring;verbossing/verstruweling;
+Versie 3;2130;Verstoring;vergrassing;
+Versie 3;2130;Verstoring;verruiging;
+Versie 2.0;2150;Structuur;dwergstruiken;
+Versie 2.0;2150;Structuur;horizontale structuur;
+Versie 2.0;2150;Structuur;ouderdomsstructuur Struikheide;
+Versie 2.0;2150;Vegetatie;bedekking sleutelsoorten;
+Versie 2.0;2150;Vegetatie;sleutelsoorten;
+Versie 2.0;2150;Verstoring;invasieve exoten;
+Versie 2.0;2150;Verstoring;overbetreding;
+Versie 2.0;2150;Verstoring;verbossing/verstruweling;
+Versie 2.0;2150;Verstoring;vergrassing;
+Versie 2.0;2150;Verstoring;verruiging;
+Versie 3;2150;Structuur;dwergstruiken;
+Versie 3;2150;Structuur;ouderdomsstructuur Struikheide;
+Versie 3;2150;Vegetatie;bedekking sleutelsoorten;
+Versie 3;2150;Vegetatie;sleutelsoorten;
+Versie 3;2150;Verstoring;invasieve exoten;
+Versie 3;2150;Verstoring;overbetreding;
+Versie 3;2150;Verstoring;verbossing/verstruweling;
+Versie 3;2150;Verstoring;vergrassing;
+Versie 3;2150;Verstoring;verruiging;
+Versie 2.0;2160;Structuur;horizontale structuur;
+Versie 2.0;2160;Structuur;ouderdomsstructuur Struikheide;
+Versie 2.0;2160;Vegetatie;bedekking sleutelsoorten;
+Versie 2.0;2160;Vegetatie;sleutelsoorten;
+Versie 2.0;2160;Verstoring;invasieve exoten;
+Versie 2.0;2160;Verstoring;overige exoten;
+Versie 2.0;2160;Verstoring;verbossing;
+Versie 3;2160;Structuur;horizontale structuur;
+Versie 3;2160;Vegetatie;sleutelsoorten;
+Versie 3;2160;Verstoring;invasieve exoten;
+Versie 3;2160;Verstoring;overige exoten;
+Versie 3;2160;Verstoring;verbossing;
+Versie 2.0;2170;Vegetatie;bedekking sleutelsoorten;
+Versie 2.0;2170;Vegetatie;sleutelsoorten;
+Versie 2.0;2170;Verstoring;verbossing/verstruweling;
+Versie 2.0;2170;Verstoring;verruiging;
+Versie 3;2170;Vegetatie;sleutelsoorten;
+Versie 3;2170;Verstoring;invasieve exoten;
+Versie 3;2170;Verstoring;overige exoten;
+Versie 3;2170;Verstoring;verbossing/verstruweling;
+Versie 3;2170;Verstoring;verruiging;
+Versie 2.0;2180;Structuur;aandeel dood hout;b
+Versie 2.0;2180;Structuur;bosconstantie;zb
+Versie 2.0;2180;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;2180;Structuur;horizontale structuur;b
+Versie 2.0;2180;Structuur;minimum structuurareaal;geen score
+Versie 2.0;2180;Structuur;verticale structuur;b
+Versie 2.0;2180;Vegetatie;bedekking sleutelsoorten van de kruidlaag;b
+Versie 2.0;2180;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;2180;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;2180;Verstoring;invasieve exoten;b
+Versie 2.0;2180;Verstoring;overige exoten;b
+Versie 2.0;2180;Verstoring;verruiging;zb
+Versie 3;2180;Structuur;aandeel dood hout;b
+Versie 3;2180;Structuur;bosconstantie;zb
+Versie 3;2180;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;2180;Structuur;horizontale structuur;b
+Versie 3;2180;Structuur;minimum structuurareaal;geen score
+Versie 3;2180;Structuur;verticale structuur;b
+Versie 3;2180;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;2180;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;2180;Verstoring;invasieve exoten;b
+Versie 3;2180;Verstoring;overige exoten;b
+Versie 3;2180;Verstoring;verruiging;zb
+Versie 2.0;2190;Vegetatie;bedekking sleutelsoorten;
+Versie 2.0;2190;Vegetatie;sleutelsoorten;
+Versie 2.0;2190;Verstoring;verbossing/verstruweling;
+Versie 2.0;2190;Verstoring;verdroging;
+Versie 2.0;2190;Verstoring;verruiging;
+Versie 3;2190;Vegetatie;sleutelsoorten;
+Versie 3;2190;Verstoring;verbossing/verstruweling;
+Versie 3;2190;Verstoring;verdroging;
+Versie 3;2190;Verstoring;verruiging;
+Versie 2.0;2310;Structuur;(korst)moslaag;b
+Versie 2.0;2310;Structuur;dwergstruiken;b
+Versie 2.0;2310;Structuur;naakte bodem;zb
+Versie 2.0;2310;Structuur;ouderdomsstructuur Struikheide;b
+Versie 2.0;2310;Vegetatie;sleutelsoorten;b
+Versie 2.0;2310;Verstoring;invasieve exoten;zb
+Versie 2.0;2310;Verstoring;verbossing;b
+Versie 2.0;2310;Verstoring;vergrassing/verruiging;zb
+Versie 3;2310;Structuur;dwergstruiken;b
+Versie 3;2310;Structuur;horizontale structuur;zb
+Versie 3;2310;Structuur;ouderdomsstructuur Struikheide;b
+Versie 3;2310;Vegetatie;sleutelsoorten;b
+Versie 3;2310;Verstoring;invasieve exoten;zb
+Versie 3;2310;Verstoring;verbossing;b
+Versie 3;2310;Verstoring;vergrassing;zb
+Versie 3;2310;Verstoring;verruiging;zb
+Versie 2.0;2330;Structuur;éénjarigen;zb
+Versie 2.0;2330;Structuur;horizontale structuur;zb
+Versie 2.0;2330;Structuur;korstmosvegetaties;b
+Versie 2.0;2330;Structuur;naakte bodem;zb
+Versie 2.0;2330;Vegetatie;sleutelsoorten;b
+Versie 2.0;2330;Verstoring;invasieve exoten;zb
+Versie 2.0;2330;Verstoring;verbossing;b
+Versie 2.0;2330;Verstoring;vergrassing;zb
+Versie 3;2330;Structuur;éénjarigen;zb
+Versie 3;2330;Structuur;horizontale structuur;zb
+Versie 3;2330;Structuur;naakte bodem;zb
+Versie 3;2330;Vegetatie;sleutelsoorten;b
+Versie 3;2330;Verstoring;invasieve exoten;zb
+Versie 3;2330;Verstoring;verbossing;b
+Versie 3;2330;Verstoring;vergrassing;zb
+Versie 2.0;3110;Structuur;doorzicht;
+Versie 2.0;3110;Structuur;horizontale structuur;
+Versie 2.0;3110;Structuur;oeverzone ZW-zijde;
+Versie 2.0;3110;Structuur;verticale structuur;
+Versie 2.0;3110;Vegetatie;sleutelsoorten;
+Versie 2.0;3110;Verstoring;eutrofiëring;zb
+Versie 2.0;3110;Verstoring;invasieve exoten;
+Versie 2.0;3110;Verstoring;vergrassing;
+Versie 2.0;3110;Verstoring;verzuring;
+Versie 3;3110;Structuur;horizontale structuur;
+Versie 3;3110;Structuur;verticale structuur;
+Versie 3;3110;Vegetatie;sleutelsoorten;
+Versie 3;3110;Verstoring;eutrofiëring;zb
+Versie 3;3110;Verstoring;invasieve exoten;
+Versie 3;3110;Verstoring;verzuring;
+Versie 2.0;3130;Structuur;doorzicht;
+Versie 2.0;3130;Structuur;horizontale structuur;
+Versie 2.0;3130;Structuur;oeverzone ZW-zijde;
+Versie 2.0;3130;Structuur;verticale structuur;
+Versie 2.0;3130;Vegetatie;sleutelsoorten;
+Versie 2.0;3130;Verstoring;eutrofiëring;zb
+Versie 2.0;3130;Verstoring;invasieve exoten;
+Versie 2.0;3130;Verstoring;vergrassing;
+Versie 2.0;3130;Verstoring;verzuring;
+Versie 3;3130;Structuur;horizontale structuur;
+Versie 3;3130;Structuur;verticale structuur;
+Versie 3;3130;Vegetatie;sleutelsoorten;
+Versie 3;3130;Verstoring;eutrofiëring;zb
+Versie 3;3130;Verstoring;invasieve exoten;
+Versie 3;3130;Verstoring;verzuring;
+Versie 2.0;3140;Structuur;doorzicht;
+Versie 2.0;3140;Structuur;horizontale structuur;
+Versie 2.0;3140;Vegetatie;sleutelsoorten;
+Versie 2.0;3140;Verstoring;eutrofiëring;zb
+Versie 2.0;3140;Verstoring;invasieve exoten;
+Versie 3;3140;Structuur;horizontale structuur;
+Versie 3;3140;Structuur;verticale structuur;
+Versie 3;3140;Vegetatie;sleutelsoorten;
+Versie 3;3140;Verstoring;eutrofiëring;zb
+Versie 3;3140;Verstoring;invasieve exoten;
+Versie 2.0;3150;Structuur;doorzicht;
+Versie 2.0;3150;Structuur;horizontale structuur;
+Versie 2.0;3150;Vegetatie;sleutelsoorten;
+Versie 2.0;3150;Verstoring;eutrofiëring;zb
+Versie 2.0;3150;Verstoring;invasieve exoten;
+Versie 3;3150;Structuur;horizontale structuur;
+Versie 3;3150;Structuur;verticale structuur;
+Versie 3;3150;Vegetatie;sleutelsoorten;
+Versie 3;3150;Verstoring;eutrofiëring;zb
+Versie 3;3150;Verstoring;invasieve exoten;
+Versie 2.0;3160;Vegetatie;sleutelsoorten;
+Versie 2.0;3160;Verstoring;elektrisch geleidend vermogen;
+Versie 2.0;3160;Verstoring;eutrofiëring;zb
+Versie 2.0;3160;Verstoring;invasieve exoten;
+Versie 2.0;3160;Verstoring;vergrassing;
+Versie 2.0;3160;Verstoring;verzuring;
+Versie 3;3160;Structuur;horizontale structuur;
+Versie 3;3160;Vegetatie;sleutelsoorten;
+Versie 3;3160;Verstoring;eutrofiëring;zb
+Versie 3;3160;Verstoring;invasieve exoten;
+Versie 3;3160;Verstoring;verzuring;
+Versie 2.0;3260;Structuur;helofyten;
+Versie 2.0;3260;Structuur;verticale structuur;
+Versie 2.0;3260;Vegetatie;sleutelsoorten;
+Versie 2.0;3260;Verstoring;eutrofiëring;zb
+Versie 2.0;3260;Verstoring;invasieve exoten;
+Versie 3;3260;Structuur;horizontale structuur;
+Versie 3;3260;Structuur;verticale structuur;
+Versie 3;3260;Vegetatie;sleutelsoorten;
+Versie 3;3260;Verstoring;eutrofiëring;zb
+Versie 3;3260;Verstoring;invasieve exoten;
+Versie 2.0;3270;Structuur;dynamiek;
+Versie 2.0;3270;Structuur;structuurkwaliteit;
+Versie 2.0;3270;Vegetatie;bedekking sleutelsoorten;
+Versie 2.0;3270;Vegetatie;sleutelsoorten;
+Versie 2.0;3270;Verstoring;invasieve exoten;
+Versie 3;3270;Vegetatie;bedekking sleutelsoorten;
+Versie 3;3270;Vegetatie;sleutelsoorten;
+Versie 3;3270;Verstoring;invasieve exoten;
+Versie 2.0;4010;Structuur;dwergstruiken;b
+Versie 2.0;4010;Structuur;horizontale structuur;b
+Versie 2.0;4010;Structuur;veenmossen;b
+Versie 2.0;4010;Vegetatie;sleutelsoorten;b
+Versie 2.0;4010;Vegetatie;veenmossen;b
+Versie 2.0;4010;Verstoring;verbossing;b
+Versie 2.0;4010;Verstoring;vergrassing;zb
+Versie 3;4010;Structuur;dwergstruiken;b
+Versie 3;4010;Vegetatie;sleutelsoorten;b
+Versie 3;4010;Verstoring;verbossing;b
+Versie 3;4010;Verstoring;vergrassing;zb
+Versie 2.0;4030;Structuur;dwergstruiken;b
+Versie 2.0;4030;Structuur;ouderdomsstructuur Struikheide;b
+Versie 2.0;4030;Vegetatie;sleutelsoorten;b
+Versie 2.0;4030;Verstoring;verbossing;b
+Versie 2.0;4030;Verstoring;vergrassing/verruiging;zb
+Versie 3;4030;Structuur;dwergstruiken;b
+Versie 3;4030;Structuur;ouderdomsstructuur Struikheide;b
+Versie 3;4030;Vegetatie;sleutelsoorten;b
+Versie 3;4030;Verstoring;invasieve exoten;zb
+Versie 3;4030;Verstoring;verbossing;b
+Versie 3;4030;Verstoring;vergrassing;zb
+Versie 3;4030;Verstoring;verruiging;zb
+Versie 2.0;5130;Structuur;populatiegrootte;zb
+Versie 2.0;5130;Structuur;sexratio;b
+Versie 2.0;5130;Structuur;verjonging;zb
+Versie 2.0;5130;Verstoring;verbossing;b
+Versie 2.0;5130;Verstoring;vergrassing/verruiging;zb
+Versie 3;5130;Structuur;populatiegrootte;zb
+Versie 3;5130;Structuur;sexratio;b
+Versie 3;5130;Structuur;verjonging;zb
+Versie 3;5130;Verstoring;verbossing;b
+Versie 3;5130;Verstoring;vergrassing;zb
+Versie 3;5130;Verstoring;verruiging;zb
+Versie 2.0;6120;Structuur;naakte bodem;zb
+Versie 2.0;6120;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;6120;Vegetatie;sleutelsoorten;b
+Versie 2.0;6120;Verstoring;ruderalisering;zb
+Versie 2.0;6120;Verstoring;verbossing/verstruweling;b
+Versie 2.0;6120;Verstoring;verbraming;b
+Versie 2.0;6120;Verstoring;vergrassing;zb
+Versie 2.0;6120;Verstoring;vermossing;zb
+Versie 3;6120;Structuur;naakte bodem;zb
+Versie 3;6120;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;6120;Vegetatie;sleutelsoorten;b
+Versie 3;6120;Verstoring;eutrofiëring;zb
+Versie 3;6120;Verstoring;strooisellaag;b
+Versie 3;6120;Verstoring;verbossing;b
+Versie 3;6120;Verstoring;verbraming;b
+Versie 3;6120;Verstoring;vergrassing inclusief vervilting;zb
+Versie 3;6120;Verstoring;vermossing;zb
+Versie 3;6120;Verstoring;verruiging inclusief ruderalisering;zb
+Versie 2.0;6210;Vegetatie;(korst)moslaag;b
+Versie 2.0;6210;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;6210;Vegetatie;orchideeën;b
+Versie 2.0;6210;Vegetatie;sleutelsoorten;b
+Versie 2.0;6210;Verstoring;strooisellaag;b
+Versie 2.0;6210;Verstoring;verbossing/verstruweling;b
+Versie 2.0;6210;Verstoring;verbraming;b
+Versie 2.0;6210;Verstoring;vergrassing;zb
+Versie 2.0;6210;Verstoring;verruiging;zb
+Versie 2.0;6210;Verstoring;vervilting;zb
+Versie 3;6210;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;6210;Vegetatie;sleutelsoorten;b
+Versie 3;6210;Verstoring;eutrofiëring;zb
+Versie 3;6210;Verstoring;strooisellaag;b
+Versie 3;6210;Verstoring;verbossing;b
+Versie 3;6210;Verstoring;verbraming;b
+Versie 3;6210;Verstoring;vergrassing inclusief vervilting;zb
+Versie 3;6210;Verstoring;verruiging inclusief ruderalisering;zb
+Versie 2.0;6230;Structuur;hoogopschietende soorten;b
+Versie 2.0;6230;Structuur;horizontale structuur;b
+Versie 2.0;6230;Vegetatie;aantal sleutelsoorten per groep;b
+Versie 2.0;6230;Vegetatie;aantal sleutelsoorten totaal;b
+Versie 2.0;6230;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;6230;Vegetatie;sleutelsoorten;b
+Versie 2.0;6230;Verstoring;strooisellaag;b
+Versie 2.0;6230;Verstoring;verbossing/verstruweling;b
+Versie 2.0;6230;Verstoring;vergrassing;zb
+Versie 2.0;6230;Verstoring;verruiging;zb
+Versie 2.0;6230;Verstoring;vervilting;zb
+Versie 3;6230;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;6230;Vegetatie;sleutelsoorten;b
+Versie 3;6230;Verstoring;eutrofiëring;zb
+Versie 3;6230;Verstoring;strooisellaag;b
+Versie 3;6230;Verstoring;verbossing;b
+Versie 3;6230;Verstoring;verbraming;b
+Versie 3;6230;Verstoring;verdroging;zb
+Versie 3;6230;Verstoring;vergrassing inclusief vervilting;zb
+Versie 3;6230;Verstoring;vermossing;zb
+Versie 3;6230;Verstoring;vernatting;zb
+Versie 3;6230;Verstoring;verruiging inclusief ruderalisering;zb
+Versie 2.0;6410;Structuur;lage schijngrassen;b
+Versie 2.0;6410;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;6410;Vegetatie;sleutelsoorten;b
+Versie 2.0;6410;Verstoring;eutrofiëring;zb
+Versie 2.0;6410;Verstoring;strooisellaag;b
+Versie 2.0;6410;Verstoring;verbossing/verstruweling;b
+Versie 2.0;6410;Verstoring;verdroging;zb
+Versie 2.0;6410;Verstoring;vergrassing;zb
+Versie 2.0;6410;Verstoring;vernatting;zb
+Versie 2.0;6410;Verstoring;verruiging;zb
+Versie 2.0;6410;Verstoring;verzuring;zb
+Versie 3;6410;Structuur;levensvormen;b
+Versie 3;6410;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;6410;Vegetatie;sleutelsoorten;b
+Versie 3;6410;Verstoring;eutrofiëring;zb
+Versie 3;6410;Verstoring;strooisellaag;b
+Versie 3;6410;Verstoring;verbossing;b
+Versie 3;6410;Verstoring;verbraming;b
+Versie 3;6410;Verstoring;verdroging;zb
+Versie 3;6410;Verstoring;vergrassing inclusief vervilting;zb
+Versie 3;6410;Verstoring;vermossing;zb
+Versie 3;6410;Verstoring;vernatting;zb
+Versie 3;6410;Verstoring;verruiging inclusief ruderalisering;zb
+Versie 3;6410;Verstoring;verzuring;zb
+Versie 2.0;6430;Structuur;aard mantelzoomvegetatie;b
+Versie 2.0;6430;Structuur;breedte mantelzoomvegetatie;b
+Versie 2.0;6430;Structuur;grassen;b
+Versie 2.0;6430;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;6430;Vegetatie;sleutelsoorten;b
+Versie 2.0;6430;Verstoring;invasieve exoten;zb
+Versie 2.0;6430;Verstoring;ruderalisering;zb
+Versie 2.0;6430;Verstoring;verruiging;zb
+Versie 3;6430;Structuur;aard mantelzoomvegetatie;b
+Versie 3;6430;Structuur;breedte mantelzoomvegetatie;b
+Versie 3;6430;Structuur;grassen;b
+Versie 3;6430;Structuur;overgang mantelzoomvegetatie;b
+Versie 3;6430;Vegetatie;bedekking begeleidende en sleutelsoorten;b
+Versie 3;6430;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;6430;Vegetatie;sleutelsoorten;b
+Versie 3;6430;Verstoring;invasieve exoten;zb
+Versie 3;6430;Verstoring;verbossing;b
+Versie 3;6430;Verstoring;verruiging;zb
+Versie 3;6430;Verstoring;verruiging inclusief ruderalisering;zb
+Versie 2.0;6510;Structuur;dominantie van één soort;b
+Versie 2.0;6510;Structuur;horizontale structuur;b
+Versie 2.0;6510;Structuur;vegetatiehoogte;b
+Versie 2.0;6510;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;6510;Vegetatie;sleutelsoorten;b
+Versie 2.0;6510;Verstoring;strooisellaag;b
+Versie 2.0;6510;Verstoring;verbossing/verstruweling;b
+Versie 2.0;6510;Verstoring;verdroging;zb
+Versie 2.0;6510;Verstoring;vernatting;zb
+Versie 2.0;6510;Verstoring;verruiging;zb
+Versie 2.0;6510;Verstoring;vervilting;zb
+Versie 3;6510;Structuur;dominantie van één soort;b
+Versie 3;6510;Structuur;levensvormen;b
+Versie 3;6510;Structuur;verticale structuur;b
+Versie 3;6510;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;6510;Vegetatie;sleutelsoorten;b
+Versie 3;6510;Verstoring;eutrofiëring;zb
+Versie 3;6510;Verstoring;strooisellaag;b
+Versie 3;6510;Verstoring;verbossing;b
+Versie 3;6510;Verstoring;verbraming;b
+Versie 3;6510;Verstoring;verdroging;zb
+Versie 3;6510;Verstoring;vergrassing inclusief vervilting;zb
+Versie 3;6510;Verstoring;vernatting;zb
+Versie 3;6510;Verstoring;verruiging inclusief ruderalisering;zb
+Versie 2.0;7110;Structuur;horizontale structuur;zb
+Versie 2.0;7110;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;7110;Vegetatie;sleutelsoorten;b
+Versie 2.0;7110;Vegetatie;veenmossen;zb
+Versie 2.0;7110;Verstoring;afname veenvorming;zb
+Versie 2.0;7110;Verstoring;dwergstruiken;zb
+Versie 2.0;7110;Verstoring;eutrofiëring in bulten;zb
+Versie 2.0;7110;Verstoring;eutrofiëring in slenken;zb
+Versie 2.0;7110;Verstoring;overbetreding;b
+Versie 2.0;7110;Verstoring;structuurschade;b
+Versie 2.0;7110;Verstoring;verbossing;zb
+Versie 2.0;7110;Verstoring;vergrassing;zb
+Versie 2.0;7110;Verstoring;verruiging;zb
+Versie 3;7110;Structuur;bedekking veenmossen;zb
+Versie 3;7110;Structuur;dominantie van één soort;b
+Versie 3;7110;Structuur;microreliëf;zb
+Versie 3;7110;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;7110;Vegetatie;sleutelsoorten;b
+Versie 3;7110;Verstoring;afname veenvorming;zb
+Versie 3;7110;Verstoring;dwergstruiken;zb
+Versie 3;7110;Verstoring;eutrofiëring;zb
+Versie 3;7110;Verstoring;structuurschade;b
+Versie 3;7110;Verstoring;verbossing;zb
+Versie 3;7110;Verstoring;vergrassing;zb
+Versie 3;7110;Verstoring;verruiging;zb
+Versie 2.0;7140;Structuur;(korst)moslaag;b
+Versie 2.0;7140;Structuur;dominantie van één soort;b
+Versie 2.0;7140;Structuur;hoogveenontwikkeling;b
+Versie 2.0;7140;Structuur;horizontale structuur;zb
+Versie 2.0;7140;Structuur;strooisellaag;b
+Versie 2.0;7140;Structuur;veenmossen;zb
+Versie 2.0;7140;Vegetatie;bedekking sleutel- en overige soorten;b
+Versie 2.0;7140;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;7140;Vegetatie;sleutelsoorten;b
+Versie 2.0;7140;Verstoring;structuurschade;b
+Versie 2.0;7140;Verstoring;verbossing;zb
+Versie 2.0;7140;Verstoring;vergrassing/vermossing;zb
+Versie 2.0;7140;Verstoring;verruiging;zb
+Versie 2.0;7140;Verstoring;verruiging/vermossing/vergrassing;zb
+Versie 2.0;7140;Verstoring;verzuring;zb
+Versie 3;7140;Structuur;(korst)moslaag;b
+Versie 3;7140;Structuur;bedekking veenmossen;zb
+Versie 3;7140;Structuur;dominantie van één soort;b
+Versie 3;7140;Vegetatie;bedekking sleutel- en overige soorten;b
+Versie 3;7140;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;7140;Vegetatie;sleutelsoorten;b
+Versie 3;7140;Verstoring;eutrofiëring;zb
+Versie 3;7140;Verstoring;invasieve exoten;zb
+Versie 3;7140;Verstoring;strooisellaag;b
+Versie 3;7140;Verstoring;structuurschade;b
+Versie 3;7140;Verstoring;verbossing;zb
+Versie 3;7140;Verstoring;vergrassing;zb
+Versie 3;7140;Verstoring;vermossing;zb
+Versie 3;7140;Verstoring;verruiging;zb
+Versie 3;7140;Verstoring;verzuring;zb
+Versie 2.0;7150;Structuur;horizontale structuur;zb
+Versie 2.0;7150;Vegetatie;sleutelsoorten;b
+Versie 2.0;7150;Verstoring;dwergstruiken;zb
+Versie 2.0;7150;Verstoring;verbossing;b
+Versie 2.0;7150;Verstoring;vergrassing;zb
+Versie 2.0;7150;Verstoring;vermossing;zb
+Versie 2.0;7150;Verstoring;verruiging;zb
+Versie 3;7150;Structuur;open plekken;zb
+Versie 3;7150;Vegetatie;sleutelsoorten;b
+Versie 3;7150;Verstoring;dwergstruiken;zb
+Versie 3;7150;Verstoring;eutrofiëring;zb
+Versie 3;7150;Verstoring;verbossing;b
+Versie 3;7150;Verstoring;vergrassing;zb
+Versie 3;7150;Verstoring;vermossing;zb
+Versie 2.0;7210;Structuur;bloei;zb
+Versie 2.0;7210;Structuur;horizontale structuur;b
+Versie 2.0;7210;Structuur;reproductie;zb
+Versie 2.0;7210;Structuur;strooisellaag bij dichte galigaanvegetatie;b
+Versie 2.0;7210;Verstoring;strooisellaag bij soortenrijke galigaanvegetatie;b
+Versie 2.0;7210;Structuur;zuurstof;zb
+Versie 2.0;7210;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;7210;Vegetatie;sleutelsoorten;b
+Versie 2.0;7210;Verstoring;rietontwikkeling;zb
+Versie 2.0;7210;Verstoring;verbossing;zb
+Versie 2.0;7210;Verstoring;verruiging;zb
+Versie 3;7210;Structuur;bloei;zb
+Versie 3;7210;Structuur;reproductie;zb
+Versie 3;7210;Structuur;zuurstof;zb
+Versie 3;7210;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;7210;Verstoring;rietontwikkeling;zb
+Versie 3;7210;Structuur;strooisellaag bij dichte galigaanvegetatie;b
+Versie 3;7210;Verstoring;strooisellaag bij soortenrijke galigaanvegetatie;b
+Versie 3;7210;Verstoring;verbossing;zb
+Versie 3;7210;Verstoring;verruiging;zb
+Versie 2.0;7220;Structuur;(korst)moslaag;b
+Versie 2.0;7220;Structuur;aard van de kalkafzettingen;zb
+Versie 2.0;7220;Structuur;horizontale structuur;zb
+Versie 2.0;7220;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;7220;Vegetatie;sleutelsoorten;b
+Versie 2.0;7220;Verstoring;dynamiek;zb
+Versie 2.0;7220;Verstoring;eutrofiëring;zb
+Versie 2.0;7220;Verstoring;structuurschade;b
+Versie 3;7220;Structuur;aard van de kalkafzettingen;zb
+Versie 3;7220;Structuur;bedekking kalktuf;zb
+Versie 3;7220;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;7220;Vegetatie;sleutelsoorten;b
+Versie 3;7220;Verstoring;dynamiek;zb
+Versie 3;7220;Verstoring;eutrofiëring;zb
+Versie 3;7220;Verstoring;structuurschade;b
+Versie 2.0;7230;Structuur;(korst)moslaag;b
+Versie 2.0;7230;Structuur;bedekking pijpenstrootje en struikheide;b
+Versie 2.0;7230;Structuur;horizontale structuur;b
+Versie 2.0;7230;Structuur;lage schijngrassen;b
+Versie 2.0;7230;Structuur;strooisellaag;b
+Versie 2.0;7230;Structuur;zuurstof;zb
+Versie 2.0;7230;Vegetatie;bedekking sleutelsoorten;b
+Versie 2.0;7230;Vegetatie;sleutelsoorten;b
+Versie 2.0;7230;Verstoring;structuurschade;b
+Versie 2.0;7230;Verstoring;verbossing;zb
+Versie 2.0;7230;Verstoring;vergrassing/verruiging;zb
+Versie 2.0;7230;Verstoring;verruiging;zb
+Versie 2.0;7230;Verstoring;verzuring;zb
+Versie 3;7230;Structuur;(korst)moslaag;b
+Versie 3;7230;Structuur;lage schijngrassen;b
+Versie 3;7230;Structuur;zuurstof;zb
+Versie 3;7230;Vegetatie;bedekking sleutelsoorten;b
+Versie 3;7230;Vegetatie;sleutelsoorten;b
+Versie 3;7230;Verstoring;eutrofiëring;zb
+Versie 3;7230;Verstoring;invasieve exoten;zb
+Versie 3;7230;Verstoring;strooisellaag;b
+Versie 3;7230;Verstoring;structuurschade;b
+Versie 3;7230;Verstoring;verbossing;zb
+Versie 3;7230;Verstoring;vergrassing;zb
+Versie 3;7230;Verstoring;verruiging;zb
+Versie 3;7230;Verstoring;verzuring;zb
+Versie 2.0;9110;Structuur;aandeel dood hout;b
+Versie 2.0;9110;Structuur;bosconstantie;zb
+Versie 2.0;9110;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;9110;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;9110;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;9110;Structuur;minimum structuurareaal;geen score
+Versie 2.0;9110;Structuur;verticale structuur;b
+Versie 2.0;9110;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;9110;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;9110;Verstoring;invasieve exoten;b
+Versie 2.0;9110;Verstoring;ruderalisering;zb
+Versie 2.0;9110;Verstoring;verruiging;zb
+Versie 3;9110;Structuur;aandeel dood hout;b
+Versie 3;9110;Structuur;bosconstantie;zb
+Versie 3;9110;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;9110;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;9110;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;9110;Structuur;minimum structuurareaal;geen score
+Versie 3;9110;Structuur;verticale structuur;b
+Versie 3;9110;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;9110;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;9110;Verstoring;invasieve exoten ;b
+Versie 3;9110;Verstoring;verruiging;zb
+Versie 2.0;9120;Structuur;aandeel dood hout;b
+Versie 2.0;9120;Structuur;bosconstantie;zb
+Versie 2.0;9120;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;9120;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;9120;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;9120;Structuur;minimum structuurareaal;geen score
+Versie 2.0;9120;Structuur;verticale structuur;b
+Versie 2.0;9120;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;9120;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;9120;Verstoring;invasieve exoten;b
+Versie 2.0;9120;Verstoring;ruderalisering;zb
+Versie 2.0;9120;Verstoring;vergrassing;zb
+Versie 2.0;9120;Verstoring;verruiging;zb
+Versie 3;9120;Structuur;aandeel dood hout;b
+Versie 3;9120;Structuur;bosconstantie;zb
+Versie 3;9120;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;9120;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;9120;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;9120;Structuur;minimum structuurareaal;geen score
+Versie 3;9120;Structuur;verticale structuur;b
+Versie 3;9120;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;9120;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;9120;Verstoring;invasieve exoten;b
+Versie 3;9120;Verstoring;verruiging;zb
+Versie 2.0;9130;Structuur;aandeel dood hout;b
+Versie 2.0;9130;Structuur;bosconstantie;zb
+Versie 2.0;9130;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;9130;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;9130;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;9130;Structuur;minimum structuurareaal;geen score
+Versie 2.0;9130;Structuur;verticale structuur;b
+Versie 2.0;9130;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;9130;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;9130;Verstoring;invasieve exoten;b
+Versie 2.0;9130;Verstoring;ruderalisering;zb
+Versie 2.0;9130;Verstoring;verruiging;zb
+Versie 3;9130;Structuur;aandeel dood hout;b
+Versie 3;9130;Structuur;bosconstantie;zb
+Versie 3;9130;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;9130;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;9130;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;9130;Structuur;minimum structuurareaal;geen score
+Versie 3;9130;Structuur;verticale structuur;b
+Versie 3;9130;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;9130;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;9130;Verstoring;invasieve exoten ;b
+Versie 3;9130;Verstoring;verruiging;zb
+Versie 2.0;9150;Structuur;aandeel dood hout;b
+Versie 2.0;9150;Structuur;bosconstantie;zb
+Versie 2.0;9150;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;9150;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;9150;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;9150;Structuur;minimum structuurareaal;geen score
+Versie 2.0;9150;Structuur;verticale structuur;b
+Versie 2.0;9150;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;9150;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;9150;Verstoring;invasieve exoten;b
+Versie 2.0;9150;Verstoring;verdonkering;b
+Versie 2.0;9150;Verstoring;verruiging;zb
+Versie 3;9150;Structuur;aandeel dood hout;b
+Versie 3;9150;Structuur;bosconstantie;zb
+Versie 3;9150;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;9150;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;9150;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;9150;Structuur;minimum structuurareaal;geen score
+Versie 3;9150;Structuur;verticale structuur;b
+Versie 3;9150;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;9150;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;9150;Verstoring;invasieve exoten;b
+Versie 3;9150;Verstoring;verdonkering;b
+Versie 3;9150;Verstoring;verruiging;zb
+Versie 2.0;9160;Structuur;aandeel dood hout;b
+Versie 2.0;9160;Structuur;bosconstantie;zb
+Versie 2.0;9160;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;9160;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;9160;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;9160;Structuur;minimum structuurareaal;geen score
+Versie 2.0;9160;Structuur;verticale structuur;b
+Versie 2.0;9160;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;9160;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;9160;Verstoring;invasieve exoten;b
+Versie 2.0;9160;Verstoring;ruderalisering;zb
+Versie 2.0;9160;Verstoring;verruiging;zb
+Versie 3;9160;Structuur;aandeel dood hout;b
+Versie 3;9160;Structuur;bosconstantie;zb
+Versie 3;9160;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;9160;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;9160;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;9160;Structuur;minimum structuurareaal;geen score
+Versie 3;9160;Structuur;verticale structuur;b
+Versie 3;9160;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;9160;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;9160;Verstoring;invasieve exoten;b
+Versie 3;9160;Verstoring;verruiging;zb
+Versie 2.0;9190;Structuur;aandeel dood hout;b
+Versie 2.0;9190;Structuur;bosconstantie;zb
+Versie 2.0;9190;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;9190;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;9190;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;9190;Structuur;minimum structuurareaal;geen score
+Versie 2.0;9190;Structuur;verticale structuur;b
+Versie 2.0;9190;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;9190;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;9190;Verstoring;invasieve exoten;b
+Versie 2.0;9190;Verstoring;ruderalisering;zb
+Versie 2.0;9190;Verstoring;vergrassing;zb
+Versie 2.0;9190;Verstoring;verruiging;zb
+Versie 3;9190;Structuur;aandeel dood hout;b
+Versie 3;9190;Structuur;bosconstantie;zb
+Versie 3;9190;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;9190;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;9190;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;9190;Structuur;minimum structuurareaal;geen score
+Versie 3;9190;Structuur;verticale structuur;b
+Versie 3;9190;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;9190;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;9190;Verstoring;invasieve exoten;b
+Versie 3;9190;Verstoring;verruiging;zb
+Versie 2.0;9,10E+01;Structuur;aandeel dood hout;b
+Versie 2.0;9,10E+01;Structuur;bosconstantie;zb
+Versie 2.0;9,10E+01;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;9,10E+01;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;9,10E+01;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;9,10E+01;Structuur;minimum structuurareaal;geen score
+Versie 2.0;9,10E+01;Structuur;overstromingsregime;zb
+Versie 2.0;9,10E+01;Structuur;verticale structuur;b
+Versie 2.0;9,10E+01;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;9,10E+01;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;9,10E+01;Verstoring;invasieve exoten;b
+Versie 2.0;9,10E+01;Verstoring;ruderalisering;zb
+Versie 2.0;9,10E+01;Verstoring;verruiging;zb
+Versie 3;9,10E+01;Structuur;aandeel dood hout;b
+Versie 3;9,10E+01;Structuur;bosconstantie;zb
+Versie 3;9,10E+01;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;9,10E+01;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;9,10E+01;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;9,10E+01;Structuur;minimum structuurareaal;geen score
+Versie 3;9,10E+01;Structuur;overstromingsregime;zb
+Versie 3;9,10E+01;Structuur;verticale structuur;b
+Versie 3;9,10E+01;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;9,10E+01;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;9,10E+01;Verstoring;invasieve exoten;b
+Versie 3;9,10E+01;Verstoring;verruiging;zb
+Versie 2.0;91F0;Structuur;aandeel dood hout;b
+Versie 2.0;91F0;Structuur;bosconstantie;zb
+Versie 2.0;91F0;Structuur;hoeveelheid dik dood hout;zb
+Versie 2.0;91F0;Structuur;horizontale structuur - groeiklassen;b
+Versie 2.0;91F0;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 2.0;91F0;Structuur;minimum structuurareaal;geen score
+Versie 2.0;91F0;Structuur;overstromingsduur;zb
+Versie 2.0;91F0;Structuur;overstromingsfrequentie;zb
+Versie 2.0;91F0;Structuur;verticale structuur;b
+Versie 2.0;91F0;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 2.0;91F0;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 2.0;91F0;Verstoring;invasieve exoten ;b
+Versie 2.0;91F0;Verstoring;klimop- en moslaag;zb
+Versie 2.0;91F0;Verstoring;ruderalisering;zb
+Versie 3;91F0;Structuur;aandeel dood hout;b
+Versie 3;91F0;Structuur;bosconstantie;zb
+Versie 3;91F0;Structuur;hoeveelheid dik dood hout;zb
+Versie 3;91F0;Structuur;horizontale structuur - groeiklassen;b
+Versie 3;91F0;Structuur;horizontale structuur - natuurlijke mozaiekstructuur;b
+Versie 3;91F0;Structuur;minimum structuurareaal;geen score
+Versie 3;91F0;Structuur;overstromingsduur;zb
+Versie 3;91F0;Structuur;overstromingsfrequentie;zb
+Versie 3;91F0;Structuur;verticale structuur;b
+Versie 3;91F0;Vegetatie;sleutelsoorten van de boom- en struiklaag;b
+Versie 3;91F0;Vegetatie;sleutelsoorten van de kruidlaag;b
+Versie 3;91F0;Verstoring;invasieve exoten;b
+Versie 3;91F0;Verstoring;verruiging;zb
+;;;;
+;;;;
+;;;;
+;;;;
+;;; ;

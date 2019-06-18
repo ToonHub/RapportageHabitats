@@ -29,9 +29,9 @@ Tansley;11;f;frequent;3;;
 Tansley;16;a;abundant;27,5;;
 Tansley;22;cd;codominant;62,5;;
 Tansley;23;d;dominant;87,5;;
-Tansley;;la;lokaal abundant;6,875;;
-Tansley;;lf;lokaal frequent;0,75;;
-Tansley;;ld;lokaal dominant;21,875;;
+Tansley;999;la;lokaal abundant;6,875;;
+Tansley;998;lf;lokaal frequent;0,75;;
+Tansley;997;ld;lokaal dominant;21,875;;
 Londo;20;;r1 : sporadisch (< 1%);1;0;1
 Londo;21;;r2 : sporadisch (1-3%);2;1;3
 Londo;22;;r4 : sporadisch (3-5%);4;3;5
