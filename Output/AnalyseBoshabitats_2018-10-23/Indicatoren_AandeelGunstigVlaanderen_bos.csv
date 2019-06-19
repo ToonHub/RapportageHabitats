@@ -1,0 +1,957 @@
+"Versie";"Habitattype";"Habitatsubtype";"Indicator";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Versie 2.0";"9160";"9160";"aandeel dood hout";"Binnen & Buiten";47;45,8407358636387;57,57;42,86;71,05
+"Versie 2.0";"9160";"9160";"aandeel dood hout";"Binnen";28;27,0583910083736;60,09;40,96;76,56
+"Versie 2.0";"9160";"9160";"aandeel dood hout";"Buiten";19;18,7823448552651;53,95;31,59;74,82
+"Versie 3";"9160";"9160";"aandeel dood hout";"Binnen & Buiten";47;45,8407358636387;57,57;42,86;71,05
+"Versie 3";"9160";"9160";"aandeel dood hout";"Binnen";28;27,0583910083736;60,09;40,96;76,56
+"Versie 3";"9160";"9160";"aandeel dood hout";"Buiten";19;18,7823448552651;53,95;31,59;74,82
+"Versie 2.0";"9160";"9160";"bosconstantie";"Binnen & Buiten";47;45,8407358636387;59,38;44,59;72,64
+"Versie 2.0";"9160";"9160";"bosconstantie";"Binnen";28;27,0583910083736;57,13;38,28;74,12
+"Versie 2.0";"9160";"9160";"bosconstantie";"Buiten";19;18,7823448552651;62,61;39,02;81,42
+"Versie 3";"9160";"9160";"bosconstantie";"Binnen & Buiten";47;45,8407358636387;59,38;44,59;72,64
+"Versie 3";"9160";"9160";"bosconstantie";"Binnen";28;27,0583910083736;57,13;38,28;74,12
+"Versie 3";"9160";"9160";"bosconstantie";"Buiten";19;18,7823448552651;62,61;39,02;81,42
+"Versie 2.0";"9160";"9160";"hoeveelheid dik dood hout";"Binnen & Buiten";47;45,8407358636387;14,73;7,1;28,1
+"Versie 2.0";"9160";"9160";"hoeveelheid dik dood hout";"Binnen";28;27,0583910083736;10,35;3,28;28,22
+"Versie 2.0";"9160";"9160";"hoeveelheid dik dood hout";"Buiten";19;18,7823448552651;21,05;7,88;45,4
+"Versie 3";"9160";"9160";"hoeveelheid dik dood hout";"Binnen & Buiten";47;45,8407358636387;14,73;7,1;28,1
+"Versie 3";"9160";"9160";"hoeveelheid dik dood hout";"Binnen";28;27,0583910083736;10,35;3,28;28,22
+"Versie 3";"9160";"9160";"hoeveelheid dik dood hout";"Buiten";19;18,7823448552651;21,05;7,88;45,4
+"Versie 2.0";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen & Buiten";47;45,8407358636387;29,76;18,4;44,31
+"Versie 2.0";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen";28;27,0583910083736;22,17;10,2;41,69
+"Versie 2.0";"9160";"9160";"horizontale structuur - groeiklassen";"Buiten";19;18,7823448552651;40,68;21,09;63,77
+"Versie 3";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen & Buiten";47;45,8407358636387;100;100;100
+"Versie 3";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"horizontale structuur - groeiklassen";"Buiten";19;18,7823448552651;100;100;100
+"Versie 2.0";"9160";"9160";"minimum structuurareaal";"Binnen & Buiten";47;45,8407358636387;42,01;32,31;52,37
+"Versie 2.0";"9160";"9160";"minimum structuurareaal";"Binnen";28;27,0583910083736;71,17;51,66;85,08
+"Versie 2.0";"9160";"9160";"minimum structuurareaal";"Buiten";19;18,7823448552651;0;0;0
+"Versie 3";"9160";"9160";"minimum structuurareaal";"Binnen & Buiten";47;45,8407358636387;42,01;32,31;52,37
+"Versie 3";"9160";"9160";"minimum structuurareaal";"Binnen";28;27,0583910083736;71,17;51,66;85,08
+"Versie 3";"9160";"9160";"minimum structuurareaal";"Buiten";19;18,7823448552651;0;0;0
+"Versie 2.0";"9160";"9160";"verticale structuur";"Binnen & Buiten";47;45,8407358636387;97,75;85,44;99,69
+"Versie 2.0";"9160";"9160";"verticale structuur";"Binnen";28;27,0583910083736;100;100;100
+"Versie 2.0";"9160";"9160";"verticale structuur";"Buiten";19;18,7823448552651;94,52;68,52;99,27
+"Versie 3";"9160";"9160";"verticale structuur";"Binnen & Buiten";47;45,8407358636387;97,75;85,44;99,69
+"Versie 3";"9160";"9160";"verticale structuur";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"verticale structuur";"Buiten";19;18,7823448552651;94,52;68,52;99,27
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";46;44,8110020448194;56,8;41,93;70,53
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen";28;27,0583910083736;56,61;37,78;73,71
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Buiten";18;17,7526110364458;57,08;33,66;77,7
+"Versie 3";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";46;44,8110020448194;49,97;35,58;64,36
+"Versie 3";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen";28;27,0583910083736;52,92;34,48;70,59
+"Versie 3";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Buiten";18;17,7526110364458;45,48;24,18;68,57
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";47;45,8407358636387;25,89;15,56;39,83
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen";28;27,0583910083736;36,93;21,02;56,31
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de kruidlaag";"Buiten";19;18,7823448552651;9,98;2,38;33,47
+"Versie 3";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";47;45,8407358636387;51,95;37,95;65,66
+"Versie 3";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen";28;27,0583910083736;62,06;42,95;78,04
+"Versie 3";"9160";"9160";"sleutelsoorten van de kruidlaag";"Buiten";19;18,7823448552651;37,39;18,58;60,98
+"Versie 2.0";"9160";"9160";"invasieve exoten";"Binnen & Buiten";47;45,8407358636387;91,71;79,42;96,94
+"Versie 2.0";"9160";"9160";"invasieve exoten";"Binnen";28;27,0583910083736;93,57;76,81;98,46
+"Versie 2.0";"9160";"9160";"invasieve exoten";"Buiten";19;18,7823448552651;89,04;64,29;97,34
+"Versie 2.0";"9160";"9160";"ruderalisering";"Binnen & Buiten";47;45,8407358636387;93,41;81,1;97,91
+"Versie 2.0";"9160";"9160";"ruderalisering";"Binnen";28;27,0583910083736;92,63;74,4;98,2
+"Versie 2.0";"9160";"9160";"ruderalisering";"Buiten";19;18,7823448552651;94,52;68,52;99,27
+"Versie 2.0";"9160";"9160";"verruiging";"Binnen & Buiten";47;45,8407358636387;100;100;100
+"Versie 2.0";"9160";"9160";"verruiging";"Binnen";28;27,0583910083736;100;100;100
+"Versie 2.0";"9160";"9160";"verruiging";"Buiten";19;18,7823448552651;100;100;100
+"Versie 3";"9160";"9160";"verruiging";"Binnen & Buiten";47;45,8407358636387;65,72;51,18;77,81
+"Versie 3";"9160";"9160";"verruiging";"Binnen";28;27,0583910083736;57,15;38,3;74,14
+"Versie 3";"9160";"9160";"verruiging";"Buiten";19;18,7823448552651;78,07;53,37;91,72
+"Versie 3";"9160";"9160";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";47;45,8407358636387;95,51;83,88;98,86
+"Versie 3";"9160";"9160";"invasieve exoten van de boom- en struiklaag";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"invasieve exoten van de boom- en struiklaag";"Buiten";19;18,7823448552651;89,04;64,29;97,34
+"Versie 3";"9160";"9160";"invasieve exoten van de kruidlaag";"Binnen & Buiten";47;45,8407358636387;100;100;100
+"Versie 3";"9160";"9160";"invasieve exoten van de kruidlaag";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"invasieve exoten van de kruidlaag";"Buiten";19;18,7823448552651;100;100;100
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen & Buiten";172;194,627861799648;52,94;45,13;60,6
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen";97;95,97381605635;65,27;54,68;74,54
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"aandeel dood hout";"Buiten";75;98,6540457432985;40,94;29,99;52,88
+"Versie 2.0";"91E0";"91E0_va";"aandeel dood hout";"Binnen & Buiten";51;66,2011138962023;45,43;31,87;59,71
+"Versie 2.0";"91E0";"91E0_vc";"aandeel dood hout";"Binnen & Buiten";25;23,9007329514447;69,74;47,42;85,48
+"Versie 2.0";"91E0";"91E0_vm";"aandeel dood hout";"Binnen & Buiten";38;41,6171850506099;57,48;40,98;72,46
+"Versie 2.0";"91E0";"91E0_vn";"aandeel dood hout";"Binnen & Buiten";39;43,0960588041952;58,39;41,63;73,41
+"Versie 2.0";"91E0";"91E0_vo";"aandeel dood hout";"Binnen & Buiten";19;19,8127710971964;36,38;18,11;59,65
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen & Buiten";172;194,627861799648;52,94;45,13;60,6
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen";97;95,97381605635;65,27;54,68;74,54
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"aandeel dood hout";"Buiten";75;98,6540457432985;40,94;29,99;52,88
+"Versie 3";"91E0";"91E0_va";"aandeel dood hout";"Binnen & Buiten";51;66,2011138962023;45,43;31,87;59,71
+"Versie 3";"91E0";"91E0_vc";"aandeel dood hout";"Binnen & Buiten";25;23,9007329514447;69,74;47,42;85,48
+"Versie 3";"91E0";"91E0_vm";"aandeel dood hout";"Binnen & Buiten";38;41,6171850506099;57,48;40,98;72,46
+"Versie 3";"91E0";"91E0_vn";"aandeel dood hout";"Binnen & Buiten";39;43,0960588041952;58,39;41,63;73,41
+"Versie 3";"91E0";"91E0_vo";"aandeel dood hout";"Binnen & Buiten";19;19,8127710971964;36,38;18,11;59,65
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"bosconstantie";"Binnen & Buiten";172;194,627861799648;63,76;55,77;71,06
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"bosconstantie";"Binnen";97;95,97381605635;65,14;54,61;74,38
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"bosconstantie";"Buiten";75;98,6540457432985;62,42;50,27;73,18
+"Versie 2.0";"91E0";"91E0_va";"bosconstantie";"Binnen & Buiten";51;66,2011138962023;59,16;44,35;72,47
+"Versie 2.0";"91E0";"91E0_vc";"bosconstantie";"Binnen & Buiten";25;23,9007329514447;78,35;57,55;90,62
+"Versie 2.0";"91E0";"91E0_vm";"bosconstantie";"Binnen & Buiten";38;41,6171850506099;69,49;52,93;82,19
+"Versie 2.0";"91E0";"91E0_vn";"bosconstantie";"Binnen & Buiten";39;43,0960588041952;62,53;45,58;76,88
+"Versie 2.0";"91E0";"91E0_vo";"bosconstantie";"Binnen & Buiten";19;19,8127710971964;52,18;29,19;74,27
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"bosconstantie";"Binnen & Buiten";172;194,627861799648;63,76;55,77;71,06
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"bosconstantie";"Binnen";97;95,97381605635;65,14;54,61;74,38
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"bosconstantie";"Buiten";75;98,6540457432985;62,42;50,27;73,18
+"Versie 3";"91E0";"91E0_va";"bosconstantie";"Binnen & Buiten";51;66,2011138962023;59,16;44,35;72,47
+"Versie 3";"91E0";"91E0_vc";"bosconstantie";"Binnen & Buiten";25;23,9007329514447;78,35;57,55;90,62
+"Versie 3";"91E0";"91E0_vm";"bosconstantie";"Binnen & Buiten";38;41,6171850506099;69,49;52,93;82,19
+"Versie 3";"91E0";"91E0_vn";"bosconstantie";"Binnen & Buiten";39;43,0960588041952;62,53;45,58;76,88
+"Versie 3";"91E0";"91E0_vo";"bosconstantie";"Binnen & Buiten";19;19,8127710971964;52,18;29,19;74,27
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";172;194,627861799648;8,95;5,45;14,37
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen";97;95,97381605635;9,2;4,82;16,87
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"hoeveelheid dik dood hout";"Buiten";75;98,6540457432985;8,71;4,05;17,74
+"Versie 2.0";"91E0";"91E0_va";"hoeveelheid dik dood hout";"Binnen & Buiten";51;66,2011138962023;14;6,91;26,29
+"Versie 2.0";"91E0";"91E0_vc";"hoeveelheid dik dood hout";"Binnen & Buiten";25;23,9007329514447;0;0;0
+"Versie 2.0";"91E0";"91E0_vm";"hoeveelheid dik dood hout";"Binnen & Buiten";38;41,6171850506099;10,46;3,85;25,41
+"Versie 2.0";"91E0";"91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";39;43,0960588041952;8,82;3,28;21,61
+"Versie 2.0";"91E0";"91E0_vo";"hoeveelheid dik dood hout";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";172;194,627861799648;8,95;5,45;14,37
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen";97;95,97381605635;9,2;4,82;16,87
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"hoeveelheid dik dood hout";"Buiten";75;98,6540457432985;8,71;4,05;17,74
+"Versie 3";"91E0";"91E0_va";"hoeveelheid dik dood hout";"Binnen & Buiten";51;66,2011138962023;14;6,91;26,29
+"Versie 3";"91E0";"91E0_vc";"hoeveelheid dik dood hout";"Binnen & Buiten";25;23,9007329514447;0;0;0
+"Versie 3";"91E0";"91E0_vm";"hoeveelheid dik dood hout";"Binnen & Buiten";38;41,6171850506099;10,46;3,85;25,41
+"Versie 3";"91E0";"91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";39;43,0960588041952;8,82;3,28;21,61
+"Versie 3";"91E0";"91E0_vo";"hoeveelheid dik dood hout";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";172;194,627861799648;16,74;11,56;23,63
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen";97;95,97381605635;15,58;9,33;24,87
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"horizontale structuur - groeiklassen";"Buiten";75;98,6540457432985;17,87;10,42;28,93
+"Versie 2.0";"91E0";"91E0_va";"horizontale structuur - groeiklassen";"Binnen & Buiten";51;66,2011138962023;18,74;9,95;32,48
+"Versie 2.0";"91E0";"91E0_vc";"horizontale structuur - groeiklassen";"Binnen & Buiten";25;23,9007329514447;51,24;31,01;71,08
+"Versie 2.0";"91E0";"91E0_vm";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;41,6171850506099;9,99;3,23;26,96
+"Versie 2.0";"91E0";"91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";39;43,0960588041952;8,77;2,55;26,1
+"Versie 2.0";"91E0";"91E0_vo";"horizontale structuur - groeiklassen";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";172;194,627861799648;76,36;69,11;82,34
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen";97;95,97381605635;83,44;72,07;90,78
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"horizontale structuur - groeiklassen";"Buiten";75;98,6540457432985;69,47;58,6;78,53
+"Versie 3";"91E0";"91E0_va";"horizontale structuur - groeiklassen";"Binnen & Buiten";51;66,2011138962023;95,93;82,82;99,14
+"Versie 3";"91E0";"91E0_vc";"horizontale structuur - groeiklassen";"Binnen & Buiten";25;23,9007329514447;100;100;100
+"Versie 3";"91E0";"91E0_vm";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;41,6171850506099;95,19;82,58;98,81
+"Versie 3";"91E0";"91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";39;43,0960588041952;8,77;2,55;26,1
+"Versie 3";"91E0";"91E0_vo";"horizontale structuur - groeiklassen";"Binnen & Buiten";19;19,8127710971964;89,91;66,89;97,52
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verticale structuur";"Binnen & Buiten";172;194,627861799648;97,48;93,01;99,12
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verticale structuur";"Binnen";97;95,97381605635;96,99;90,99;99,04
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verticale structuur";"Buiten";75;98,6540457432985;97,95;86,75;99,71
+"Versie 2.0";"91E0";"91E0_va";"verticale structuur";"Binnen & Buiten";51;66,2011138962023;96,95;81,26;99,57
+"Versie 2.0";"91E0";"91E0_vc";"verticale structuur";"Binnen & Buiten";25;23,9007329514447;96,27;77,58;99,48
+"Versie 2.0";"91E0";"91E0_vm";"verticale structuur";"Binnen & Buiten";38;41,6171850506099;100;100;100
+"Versie 2.0";"91E0";"91E0_vn";"verticale structuur";"Binnen & Buiten";39;43,0960588041952;100;100;100
+"Versie 2.0";"91E0";"91E0_vo";"verticale structuur";"Binnen & Buiten";19;19,8127710971964;89,91;66,89;97,52
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verticale structuur";"Binnen & Buiten";172;194,627861799648;97,48;93,01;99,12
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verticale structuur";"Binnen";97;95,97381605635;96,99;90,99;99,04
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verticale structuur";"Buiten";75;98,6540457432985;97,95;86,75;99,71
+"Versie 3";"91E0";"91E0_va";"verticale structuur";"Binnen & Buiten";51;66,2011138962023;96,95;81,26;99,57
+"Versie 3";"91E0";"91E0_vc";"verticale structuur";"Binnen & Buiten";25;23,9007329514447;96,27;77,58;99,48
+"Versie 3";"91E0";"91E0_vm";"verticale structuur";"Binnen & Buiten";38;41,6171850506099;100;100;100
+"Versie 3";"91E0";"91E0_vn";"verticale structuur";"Binnen & Buiten";39;43,0960588041952;100;100;100
+"Versie 3";"91E0";"91E0_vo";"verticale structuur";"Binnen & Buiten";19;19,8127710971964;89,91;66,89;97,52
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";167;188,93555502286;46,7;38,8;54,76
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen";93;92,30381605635;52,18;41,43;62,74
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de boom- en struiklaag";"Buiten";74;96,6317389665105;41,46;30,14;53,75
+"Versie 2.0";"91E0";"91E0_va";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";47;61,5088071194143;47,54;33,11;62,39
+"Versie 2.0";"91E0";"91E0_vc";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";25;23,9007329514447;53,39;32,89;72,81
+"Versie 2.0";"91E0";"91E0_vm";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;41,6171850506099;55,54;39,21;70,76
+"Versie 2.0";"91E0";"91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";39;43,0960588041952;26,24;14,48;42,78
+"Versie 2.0";"91E0";"91E0_vo";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";18;18,8127710971964;62,72;37,92;82,25
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";167;188,93555502286;60,76;52,75;68,24
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen";93;92,30381605635;66,08;55,12;75,56
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de boom- en struiklaag";"Buiten";74;96,6317389665105;55,68;43,78;66,97
+"Versie 3";"91E0";"91E0_va";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";47;61,5088071194143;76,22;61,25;86,66
+"Versie 3";"91E0";"91E0_vc";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";25;23,9007329514447;61,93;40,57;79,5
+"Versie 3";"91E0";"91E0_vm";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;41,6171850506099;55,54;39,21;70,76
+"Versie 3";"91E0";"91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";39;43,0960588041952;42,25;26,94;59,2
+"Versie 3";"91E0";"91E0_vo";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";18;18,8127710971964;62,72;37,92;82,25
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";172;194,627861799648;29,2;22,43;37,05
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen";97;95,97381605635;27,36;18,91;37,81
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de kruidlaag";"Buiten";75;98,6540457432985;31;21,06;43,07
+"Versie 2.0";"91E0";"91E0_va";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";51;66,2011138962023;46,13;32,29;60,6
+"Versie 2.0";"91E0";"91E0_vc";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";25;23,9007329514447;18,25;6,91;40,18
+"Versie 2.0";"91E0";"91E0_vm";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;41,6171850506099;17,98;8,6;33,8
+"Versie 2.0";"91E0";"91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";39;43,0960588041952;33,54;19,8;50,78
+"Versie 2.0";"91E0";"91E0_vo";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";172;194,627861799648;28,03;21,44;35,74
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen";97;95,97381605635;30,89;22,2;41,17
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de kruidlaag";"Buiten";75;98,6540457432985;25,26;16,06;37,37
+"Versie 3";"91E0";"91E0_va";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";51;66,2011138962023;30,65;19,03;45,39
+"Versie 3";"91E0";"91E0_vc";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";25;23,9007329514447;41,4;23,22;62,27
+"Versie 3";"91E0";"91E0_vm";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;41,6171850506099;15,41;6,88;31
+"Versie 3";"91E0";"91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";39;43,0960588041952;14,03;5,65;30,81
+"Versie 3";"91E0";"91E0_vo";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";19;19,8127710971964;60,15;36,37;79,95
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"invasieve exoten";"Binnen & Buiten";172;194,627861799648;82,23;75,16;87,63
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"invasieve exoten";"Binnen";97;95,97381605635;84,64;75,31;90,88
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"invasieve exoten";"Buiten";75;98,6540457432985;79,89;68,47;87,9
+"Versie 2.0";"91E0";"91E0_va";"invasieve exoten";"Binnen & Buiten";51;66,2011138962023;84,91;69,83;93,19
+"Versie 2.0";"91E0";"91E0_vc";"invasieve exoten";"Binnen & Buiten";25;23,9007329514447;95,07;72,01;99,31
+"Versie 2.0";"91E0";"91E0_vm";"invasieve exoten";"Binnen & Buiten";38;41,6171850506099;79,63;63,55;89,76
+"Versie 2.0";"91E0";"91E0_vn";"invasieve exoten";"Binnen & Buiten";39;43,0960588041952;80,65;64,33;90,6
+"Versie 2.0";"91E0";"91E0_vo";"invasieve exoten";"Binnen & Buiten";19;19,8127710971964;66,7;42,03;84,7
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"ruderalisering";"Binnen & Buiten";172;194,627861799648;66,7;58,84;73,72
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"ruderalisering";"Binnen";97;95,97381605635;77,71;66,85;85,77
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"ruderalisering";"Buiten";75;98,6540457432985;55,98;44,05;67,26
+"Versie 2.0";"91E0";"91E0_va";"ruderalisering";"Binnen & Buiten";51;66,2011138962023;58,14;43,48;71,48
+"Versie 2.0";"91E0";"91E0_vc";"ruderalisering";"Binnen & Buiten";25;23,9007329514447;60,35;39,03;78,36
+"Versie 2.0";"91E0";"91E0_vm";"ruderalisering";"Binnen & Buiten";38;41,6171850506099;92,79;79,77;97,68
+"Versie 2.0";"91E0";"91E0_vn";"ruderalisering";"Binnen & Buiten";39;43,0960588041952;44,42;28,97;61,03
+"Versie 2.0";"91E0";"91E0_vo";"ruderalisering";"Binnen & Buiten";19;19,8127710971964;96,59;78,81;99,54
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verruiging";"Binnen & Buiten";172;194,627861799648;93,14;88,31;96,07
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verruiging";"Binnen";97;95,97381605635;89,26;81,44;94,02
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verruiging";"Buiten";75;98,6540457432985;96,92;87,61;99,29
+"Versie 2.0";"91E0";"91E0_va";"verruiging";"Binnen & Buiten";51;66,2011138962023;100;100;100
+"Versie 2.0";"91E0";"91E0_vc";"verruiging";"Binnen & Buiten";25;23,9007329514447;95,82;75,41;99,42
+"Versie 2.0";"91E0";"91E0_vm";"verruiging";"Binnen & Buiten";38;41,6171850506099;98,15;87,82;99,74
+"Versie 2.0";"91E0";"91E0_vn";"verruiging";"Binnen & Buiten";39;43,0960588041952;97,68;85,07;99,68
+"Versie 2.0";"91E0";"91E0_vo";"verruiging";"Binnen & Buiten";19;19,8127710971964;46,62;24,71;69,91
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verruiging";"Binnen & Buiten";172;194,627861799648;41,69;34,15;49,64
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verruiging";"Binnen";97;95,97381605635;48,09;37,81;58,53
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verruiging";"Buiten";75;98,6540457432985;35,46;24,82;47,77
+"Versie 3";"91E0";"91E0_va";"verruiging";"Binnen & Buiten";51;66,2011138962023;50,22;36,05;64,35
+"Versie 3";"91E0";"91E0_vc";"verruiging";"Binnen & Buiten";25;23,9007329514447;22,35;10,14;42,33
+"Versie 3";"91E0";"91E0_vm";"verruiging";"Binnen & Buiten";38;41,6171850506099;65,82;49,14;79,33
+"Versie 3";"91E0";"91E0_vn";"verruiging";"Binnen & Buiten";39;43,0960588041952;30,52;17,77;47,16
+"Versie 3";"91E0";"91E0_vo";"verruiging";"Binnen & Buiten";19;19,8127710971964;10,14;2,57;32,55
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen & Buiten";172;194,627861799648;17,8;12,89;24,07
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen";97;95,97381605635;25,71;17,91;35,44
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"minimum structuurareaal";"Buiten";75;98,6540457432985;10,1;4,96;19,49
+"Versie 3";"91E0";"91E0_va";"minimum structuurareaal";"Binnen & Buiten";51;66,2011138962023;27,43;17,28;40,61
+"Versie 3";"91E0";"91E0_vc";"minimum structuurareaal";"Binnen & Buiten";25;23,9007329514447;15,28;5,7;35,01
+"Versie 3";"91E0";"91E0_vm";"minimum structuurareaal";"Binnen & Buiten";38;41,6171850506099;24,49;13,39;40,47
+"Versie 3";"91E0";"91E0_vn";"minimum structuurareaal";"Binnen & Buiten";39;43,0960588041952;3,81;0,91;14,59
+"Versie 3";"91E0";"91E0_vo";"minimum structuurareaal";"Binnen & Buiten";19;19,8127710971964;5,05;0,69;28,84
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen & Buiten";147;170,727128848204;18,15;12,86;25
+"Versie 2.0";"91E0";"91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen";82;84,4736736513916;26,28;17,87;36,87
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vo; 91E0_vn; 91E0_va";"minimum structuurareaal";"Buiten";65;86,2534551968122;10,19;4,74;20,57
+"Versie 2.0";"91E0";"91E0_va";"minimum structuurareaal";"Binnen & Buiten";51;66,2011138962023;27,43;17,31;40,57
+"Versie 2.0";"91E0";"91E0_vm";"minimum structuurareaal";"Binnen & Buiten";38;41,6171850506099;24,49;13,39;40,49
+"Versie 2.0";"91E0";"91E0_vn";"minimum structuurareaal";"Binnen & Buiten";39;43,0960588041952;3,81;0,91;14,6
+"Versie 2.0";"91E0";"91E0_vo";"minimum structuurareaal";"Binnen & Buiten";19;19,8127710971964;5,05;0,69;28,87
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";172;194,627861799648;87,33;81,13;91,7
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"invasieve exoten van de boom- en struiklaag";"Binnen";97;95,97381605635;85,33;76,01;91,44
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"invasieve exoten van de boom- en struiklaag";"Buiten";75;98,6540457432985;89,27;79,78;94,61
+"Versie 3";"91E0";"91E0_va";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";51;66,2011138962023;93,92;81,63;98,17
+"Versie 3";"91E0";"91E0_vc";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";25;23,9007329514447;100;100;100
+"Versie 3";"91E0";"91E0_vm";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";38;41,6171850506099;84,06;68,24;92,83
+"Versie 3";"91E0";"91E0_vn";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";39;43,0960588041952;82,81;66,5;92,12
+"Versie 3";"91E0";"91E0_vo";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";19;19,8127710971964;66,7;42,03;84,7
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"invasieve exoten van de kruidlaag";"Binnen & Buiten";172;194,627861799648;89,55;83,08;93,74
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"invasieve exoten van de kruidlaag";"Binnen";97;95,97381605635;93,67;85;97,48
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"invasieve exoten van de kruidlaag";"Buiten";75;98,6540457432985;85,55;74,61;92,27
+"Versie 3";"91E0";"91E0_va";"invasieve exoten van de kruidlaag";"Binnen & Buiten";51;66,2011138962023;81,97;67,32;90,93
+"Versie 3";"91E0";"91E0_vc";"invasieve exoten van de kruidlaag";"Binnen & Buiten";25;23,9007329514447;85,41;63,09;95,25
+"Versie 3";"91E0";"91E0_vm";"invasieve exoten van de kruidlaag";"Binnen & Buiten";38;41,6171850506099;100;100;100
+"Versie 3";"91E0";"91E0_vn";"invasieve exoten van de kruidlaag";"Binnen & Buiten";39;43,0960588041952;88,61;71,77;95,97
+"Versie 3";"91E0";"91E0_vo";"invasieve exoten van de kruidlaag";"Binnen & Buiten";19;19,8127710971964;100;100;100
+"Versie 2.0";"9190";"9190";"aandeel dood hout";"Binnen & Buiten";59;60,8314353620715;40,1;27,97;53,59
+"Versie 2.0";"9190";"9190";"aandeel dood hout";"Binnen";31;28,9586816338972;44,86;28,22;62,73
+"Versie 2.0";"9190";"9190";"aandeel dood hout";"Buiten";28;31,8727537281743;35,79;19,62;55,99
+"Versie 3";"9190";"9190";"aandeel dood hout";"Binnen & Buiten";59;60,8314353620715;40,1;27,97;53,59
+"Versie 3";"9190";"9190";"aandeel dood hout";"Binnen";31;28,9586816338972;44,86;28,22;62,73
+"Versie 3";"9190";"9190";"aandeel dood hout";"Buiten";28;31,8727537281743;35,79;19,62;55,99
+"Versie 2.0";"9190";"9190";"bosconstantie";"Binnen & Buiten";59;60,8314353620715;44,72;32,03;58,13
+"Versie 2.0";"9190";"9190";"bosconstantie";"Binnen";31;28,9586816338972;44,89;28,18;62,84
+"Versie 2.0";"9190";"9190";"bosconstantie";"Buiten";28;31,8727537281743;44,56;26,73;63,9
+"Versie 3";"9190";"9190";"bosconstantie";"Binnen & Buiten";59;60,8314353620715;44,72;32,03;58,13
+"Versie 3";"9190";"9190";"bosconstantie";"Binnen";31;28,9586816338972;44,89;28,18;62,84
+"Versie 3";"9190";"9190";"bosconstantie";"Buiten";28;31,8727537281743;44,56;26,73;63,9
+"Versie 2.0";"9190";"9190";"hoeveelheid dik dood hout";"Binnen & Buiten";59;60,8314353620715;7,64;2,83;19,04
+"Versie 2.0";"9190";"9190";"hoeveelheid dik dood hout";"Binnen";31;28,9586816338972;6,91;1,7;24,17
+"Versie 2.0";"9190";"9190";"hoeveelheid dik dood hout";"Buiten";28;31,8727537281743;8,31;2,04;28,26
+"Versie 3";"9190";"9190";"hoeveelheid dik dood hout";"Binnen & Buiten";59;60,8314353620715;7,64;2,83;19,04
+"Versie 3";"9190";"9190";"hoeveelheid dik dood hout";"Binnen";31;28,9586816338972;6,91;1,7;24,17
+"Versie 3";"9190";"9190";"hoeveelheid dik dood hout";"Buiten";28;31,8727537281743;8,31;2,04;28,26
+"Versie 2.0";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen & Buiten";59;60,8314353620715;8,58;3,5;19,54
+"Versie 2.0";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen";31;28,9586816338972;6,91;1,7;24,17
+"Versie 2.0";"9190";"9190";"horizontale structuur - groeiklassen";"Buiten";28;31,8727537281743;10,1;3,09;28,34
+"Versie 3";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen & Buiten";59;60,8314353620715;96,18;85,52;99,08
+"Versie 3";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen";31;28,9586816338972;96,55;78,66;99,53
+"Versie 3";"9190";"9190";"horizontale structuur - groeiklassen";"Buiten";28;31,8727537281743;95,84;75,08;99,44
+"Versie 2.0";"9190";"9190";"minimum structuurareaal";"Binnen & Buiten";59;60,8314353620715;9,29;3,84;20,81
+"Versie 2.0";"9190";"9190";"minimum structuurareaal";"Binnen";31;28,9586816338972;10,36;3,33;27,97
+"Versie 2.0";"9190";"9190";"minimum structuurareaal";"Buiten";28;31,8727537281743;8,31;2,04;28,26
+"Versie 3";"9190";"9190";"minimum structuurareaal";"Binnen & Buiten";59;60,8314353620715;9,29;3,84;20,81
+"Versie 3";"9190";"9190";"minimum structuurareaal";"Binnen";31;28,9586816338972;10,36;3,33;27,97
+"Versie 3";"9190";"9190";"minimum structuurareaal";"Buiten";28;31,8727537281743;8,31;2,04;28,26
+"Versie 2.0";"9190";"9190";"verticale structuur";"Binnen & Buiten";59;60,8314353620715;94;82,69;98,09
+"Versie 2.0";"9190";"9190";"verticale structuur";"Binnen";31;28,9586816338972;96,55;78,66;99,53
+"Versie 2.0";"9190";"9190";"verticale structuur";"Buiten";28;31,8727537281743;91,69;71,74;97,96
+"Versie 3";"9190";"9190";"verticale structuur";"Binnen & Buiten";59;60,8314353620715;94;82,69;98,09
+"Versie 3";"9190";"9190";"verticale structuur";"Binnen";31;28,9586816338972;96,55;78,66;99,53
+"Versie 3";"9190";"9190";"verticale structuur";"Buiten";28;31,8727537281743;91,69;71,74;97,96
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";59;60,8314353620715;67,94;54,81;78,74
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen";31;28,9586816338972;62,71;44,39;77,98
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Buiten";28;31,8727537281743;72,69;53,25;86,15
+"Versie 3";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";59;60,8314353620715;63,89;50,55;75,38
+"Versie 3";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen";31;28,9586816338972;63,85;45,59;78,83
+"Versie 3";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Buiten";28;31,8727537281743;63,92;44,37;79,74
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";59;60,8314353620715;0;0;0
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen";31;28,9586816338972;0;0;0
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de kruidlaag";"Buiten";28;31,8727537281743;0;0;0
+"Versie 3";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";59;60,8314353620715;66,43;52,86;77,74
+"Versie 3";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen";31;28,9586816338972;71,34;52,82;84,69
+"Versie 3";"9190";"9190";"sleutelsoorten van de kruidlaag";"Buiten";28;31,8727537281743;61,97;42,07;78,52
+"Versie 2.0";"9190";"9190";"invasieve exoten";"Binnen & Buiten";59;60,8314353620715;45,6;33,99;57,71
+"Versie 2.0";"9190";"9190";"invasieve exoten";"Binnen";31;28,9586816338972;67,75;49,24;81,98
+"Versie 2.0";"9190";"9190";"invasieve exoten";"Buiten";28;31,8727537281743;25,48;12,24;45,59
+"Versie 2.0";"9190";"9190";"ruderalisering";"Binnen & Buiten";59;60,8314353620715;99,18;94,27;99,89
+"Versie 2.0";"9190";"9190";"ruderalisering";"Binnen";31;28,9586816338972;98,27;88,24;99,77
+"Versie 2.0";"9190";"9190";"ruderalisering";"Buiten";28;31,8727537281743;100;100;100
+"Versie 2.0";"9190";"9190";"vergrassing";"Binnen & Buiten";59;60,8314353620715;78,79;66,23;87,55
+"Versie 2.0";"9190";"9190";"vergrassing";"Binnen";31;28,9586816338972;69,16;50,4;83,2
+"Versie 2.0";"9190";"9190";"vergrassing";"Buiten";28;31,8727537281743;87,53;67,34;95,98
+"Versie 2.0";"9190";"9190";"verruiging";"Binnen & Buiten";59;60,8314353620715;100;100;100
+"Versie 2.0";"9190";"9190";"verruiging";"Binnen";31;28,9586816338972;100;100;100
+"Versie 2.0";"9190";"9190";"verruiging";"Buiten";28;31,8727537281743;100;100;100
+"Versie 3";"9190";"9190";"verruiging";"Binnen & Buiten";59;60,8314353620715;90,71;79,87;96,01
+"Versie 3";"9190";"9190";"verruiging";"Binnen";31;28,9586816338972;89,64;74,35;96,27
+"Versie 3";"9190";"9190";"verruiging";"Buiten";28;31,8727537281743;91,69;71,74;97,96
+"Versie 3";"9190";"9190";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";59;60,8314353620715;53,78;41,15;65,94
+"Versie 3";"9190";"9190";"invasieve exoten van de boom- en struiklaag";"Binnen";31;28,9586816338972;71,2;52,74;84,57
+"Versie 3";"9190";"9190";"invasieve exoten van de boom- en struiklaag";"Buiten";28;31,8727537281743;37,95;21,39;57,89
+"Versie 3";"9190";"9190";"invasieve exoten van de kruidlaag";"Binnen & Buiten";59;60,8314353620715;100;100;100
+"Versie 3";"9190";"9190";"invasieve exoten van de kruidlaag";"Binnen";31;28,9586816338972;100;100;100
+"Versie 3";"9190";"9190";"invasieve exoten van de kruidlaag";"Buiten";28;31,8727537281743;100;100;100
+"Versie 2.0";"9130";"9130";"aandeel dood hout";"Binnen & Buiten";38;114,487118275683;15,95;4,63;42,6
+"Versie 2.0";"9130";"9130";"aandeel dood hout";"Binnen";29;28,23;27,31;14,05;46,34
+"Versie 2.0";"9130";"9130";"aandeel dood hout";"Buiten";9;86,2571182756835;12,24;1,51;55,94
+"Versie 3";"9130";"9130";"aandeel dood hout";"Binnen & Buiten";38;114,487118275683;15,95;4,63;42,6
+"Versie 3";"9130";"9130";"aandeel dood hout";"Binnen";29;28,23;27,31;14,05;46,34
+"Versie 3";"9130";"9130";"aandeel dood hout";"Buiten";9;86,2571182756835;12,24;1,51;55,94
+"Versie 2.0";"9130";"9130";"bosconstantie";"Binnen & Buiten";38;114,487118275683;48,56;25,29;72,47
+"Versie 2.0";"9130";"9130";"bosconstantie";"Binnen";29;28,23;87,78;70,8;95,51
+"Versie 2.0";"9130";"9130";"bosconstantie";"Buiten";9;86,2571182756835;35,73;11,22;70,97
+"Versie 3";"9130";"9130";"bosconstantie";"Binnen & Buiten";38;114,487118275683;48,56;25,29;72,47
+"Versie 3";"9130";"9130";"bosconstantie";"Binnen";29;28,23;87,78;70,8;95,51
+"Versie 3";"9130";"9130";"bosconstantie";"Buiten";9;86,2571182756835;35,73;11,22;70,97
+"Versie 2.0";"9130";"9130";"hoeveelheid dik dood hout";"Binnen & Buiten";38;114,487118275683;1,49;0,37;5,84
+"Versie 2.0";"9130";"9130";"hoeveelheid dik dood hout";"Binnen";29;28,23;6,06;1,44;22,1
+"Versie 2.0";"9130";"9130";"hoeveelheid dik dood hout";"Buiten";9;86,2571182756835;0;0;0
+"Versie 3";"9130";"9130";"hoeveelheid dik dood hout";"Binnen & Buiten";38;114,487118275683;1,49;0,37;5,84
+"Versie 3";"9130";"9130";"hoeveelheid dik dood hout";"Binnen";29;28,23;6,06;1,44;22,1
+"Versie 3";"9130";"9130";"hoeveelheid dik dood hout";"Buiten";9;86,2571182756835;0;0;0
+"Versie 2.0";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;114,487118275683;23,15;8,12;50,66
+"Versie 2.0";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen";29;28,23;28,34;14,71;47,55
+"Versie 2.0";"9130";"9130";"horizontale structuur - groeiklassen";"Buiten";9;86,2571182756835;21,45;4,82;59,57
+"Versie 3";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;114,487118275683;100;100;100
+"Versie 3";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen";29;28,23;100;100;100
+"Versie 3";"9130";"9130";"horizontale structuur - groeiklassen";"Buiten";9;86,2571182756835;100;100;100
+"Versie 2.0";"9130";"9130";"minimum structuurareaal";"Binnen & Buiten";38;114,487118275683;13,56;9,49;19
+"Versie 2.0";"9130";"9130";"minimum structuurareaal";"Binnen";29;28,23;54,98;36,65;72,05
+"Versie 2.0";"9130";"9130";"minimum structuurareaal";"Buiten";9;86,2571182756835;0;0;0
+"Versie 3";"9130";"9130";"minimum structuurareaal";"Binnen & Buiten";38;114,487118275683;17,67;13,68;22,52
+"Versie 3";"9130";"9130";"minimum structuurareaal";"Binnen";29;28,23;71,66;52,45;85,29
+"Versie 3";"9130";"9130";"minimum structuurareaal";"Buiten";9;86,2571182756835;0;0;0
+"Versie 2.0";"9130";"9130";"verticale structuur";"Binnen & Buiten";38;114,487118275683;98,25;93,35;99,56
+"Versie 2.0";"9130";"9130";"verticale structuur";"Binnen";29;28,23;92,92;75,24;98,26
+"Versie 2.0";"9130";"9130";"verticale structuur";"Buiten";9;86,2571182756835;100;100;100
+"Versie 3";"9130";"9130";"verticale structuur";"Binnen & Buiten";38;114,487118275683;98,25;93,35;99,56
+"Versie 3";"9130";"9130";"verticale structuur";"Binnen";29;28,23;92,92;75,24;98,26
+"Versie 3";"9130";"9130";"verticale structuur";"Buiten";9;86,2571182756835;100;100;100
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;114,487118275683;37,07;17,65;61,81
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen";29;28,23;65,36;46,34;80,47
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Buiten";9;86,2571182756835;27,81;7,9;63,38
+"Versie 3";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;114,487118275683;37,07;17,65;61,81
+"Versie 3";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen";29;28,23;65,36;46,34;80,47
+"Versie 3";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Buiten";9;86,2571182756835;27,81;7,9;63,38
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;114,487118275683;11,84;2,32;43,21
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen";29;28,23;10,63;3,4;28,64
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de kruidlaag";"Buiten";9;86,2571182756835;12,24;1,51;55,94
+"Versie 3";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;114,487118275683;74,88;46,68;91,04
+"Versie 3";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen";29;28,23;69,93;50,98;83,87
+"Versie 3";"9130";"9130";"sleutelsoorten van de kruidlaag";"Buiten";9;86,2571182756835;76,51;37,89;94,56
+"Versie 2.0";"9130";"9130";"invasieve exoten";"Binnen & Buiten";38;114,487118275683;79,17;47,71;94,06
+"Versie 2.0";"9130";"9130";"invasieve exoten";"Binnen";29;28,23;90,29;73,18;96,94
+"Versie 2.0";"9130";"9130";"invasieve exoten";"Buiten";9;86,2571182756835;75,53;36,67;94,27
+"Versie 2.0";"9130";"9130";"ruderalisering";"Binnen & Buiten";38;114,487118275683;81,56;48,22;95,46
+"Versie 2.0";"9130";"9130";"ruderalisering";"Binnen";29;28,23;100;100;100
+"Versie 2.0";"9130";"9130";"ruderalisering";"Buiten";9;86,2571182756835;75,53;36,67;94,27
+"Versie 2.0";"9130";"9130";"verruiging";"Binnen & Buiten";38;114,487118275683;100;100;100
+"Versie 2.0";"9130";"9130";"verruiging";"Binnen";29;28,23;100;100;100
+"Versie 2.0";"9130";"9130";"verruiging";"Buiten";9;86,2571182756835;100;100;100
+"Versie 3";"9130";"9130";"verruiging";"Binnen & Buiten";38;114,487118275683;64,28;36,32;85,03
+"Versie 3";"9130";"9130";"verruiging";"Binnen";29;28,23;86,75;68,95;95,08
+"Versie 3";"9130";"9130";"verruiging";"Buiten";9;86,2571182756835;56,93;24,23;84,53
+"Versie 3";"9130";"9130";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";38;114,487118275683;79,17;47,71;94,06
+"Versie 3";"9130";"9130";"invasieve exoten van de boom- en struiklaag";"Binnen";29;28,23;90,29;73,18;96,94
+"Versie 3";"9130";"9130";"invasieve exoten van de boom- en struiklaag";"Buiten";9;86,2571182756835;75,53;36,67;94,27
+"Versie 3";"9130";"9130";"invasieve exoten van de kruidlaag";"Binnen & Buiten";38;114,487118275683;89,91;55,11;98,48
+"Versie 3";"9130";"9130";"invasieve exoten van de kruidlaag";"Binnen";29;28,23;96,46;78,14;99,52
+"Versie 3";"9130";"9130";"invasieve exoten van de kruidlaag";"Buiten";9;86,2571182756835;87,76;44,06;98,49
+"Versie 2.0";"9120";"9120";"aandeel dood hout";"Binnen & Buiten";265;255,958996338387;33,46;27,95;39,46
+"Versie 2.0";"9120";"9120";"aandeel dood hout";"Binnen";145;136,38;36,58;29,02;44,87
+"Versie 2.0";"9120";"9120";"aandeel dood hout";"Buiten";120;119,578996338387;29,9;22,24;38,87
+"Versie 3";"9120";"9120";"aandeel dood hout";"Binnen & Buiten";265;255,958996338387;33,46;27,95;39,46
+"Versie 3";"9120";"9120";"aandeel dood hout";"Binnen";145;136,38;36,58;29,02;44,87
+"Versie 3";"9120";"9120";"aandeel dood hout";"Buiten";120;119,578996338387;29,9;22,24;38,87
+"Versie 2.0";"9120";"9120";"bosconstantie";"Binnen & Buiten";265;255,958996338387;65,36;59,7;70,61
+"Versie 2.0";"9120";"9120";"bosconstantie";"Binnen";145;136,38;80,56;73,27;86,24
+"Versie 2.0";"9120";"9120";"bosconstantie";"Buiten";120;119,578996338387;48,01;39,06;57,1
+"Versie 3";"9120";"9120";"bosconstantie";"Binnen & Buiten";265;255,958996338387;65,36;59,7;70,61
+"Versie 3";"9120";"9120";"bosconstantie";"Binnen";145;136,38;80,56;73,27;86,24
+"Versie 3";"9120";"9120";"bosconstantie";"Buiten";120;119,578996338387;48,01;39,06;57,1
+"Versie 2.0";"9120";"9120";"hoeveelheid dik dood hout";"Binnen & Buiten";265;255,958996338387;8,45;5,58;12,61
+"Versie 2.0";"9120";"9120";"hoeveelheid dik dood hout";"Binnen";145;136,38;5,87;2,96;11,31
+"Versie 2.0";"9120";"9120";"hoeveelheid dik dood hout";"Buiten";120;119,578996338387;11,4;6,72;18,7
+"Versie 3";"9120";"9120";"hoeveelheid dik dood hout";"Binnen & Buiten";265;255,958996338387;8,45;5,58;12,61
+"Versie 3";"9120";"9120";"hoeveelheid dik dood hout";"Binnen";145;136,38;5,87;2,96;11,31
+"Versie 3";"9120";"9120";"hoeveelheid dik dood hout";"Buiten";120;119,578996338387;11,4;6,72;18,7
+"Versie 2.0";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen & Buiten";265;255,958996338387;32,72;27,29;38,66
+"Versie 2.0";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen";145;136,38;38,1;30,45;46,38
+"Versie 2.0";"9120";"9120";"horizontale structuur - groeiklassen";"Buiten";120;119,578996338387;26,59;19,32;35,38
+"Versie 3";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen & Buiten";265;255,958996338387;98,37;95,72;99,39
+"Versie 3";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen";145;136,38;98,53;94,3;99,63
+"Versie 3";"9120";"9120";"horizontale structuur - groeiklassen";"Buiten";120;119,578996338387;98,18;92,99;99,55
+"Versie 2.0";"9120";"9120";"minimum structuurareaal";"Binnen & Buiten";265;255,958996338387;37,84;33,01;42,93
+"Versie 2.0";"9120";"9120";"minimum structuurareaal";"Binnen";145;136,38;62,6;54,34;70,18
+"Versie 2.0";"9120";"9120";"minimum structuurareaal";"Buiten";120;119,578996338387;9,61;5,5;16,27
+"Versie 3";"9120";"9120";"minimum structuurareaal";"Binnen & Buiten";265;255,958996338387;37,84;33,01;42,93
+"Versie 3";"9120";"9120";"minimum structuurareaal";"Binnen";145;136,38;62,6;54,34;70,18
+"Versie 3";"9120";"9120";"minimum structuurareaal";"Buiten";120;119,578996338387;9,61;5,5;16,27
+"Versie 2.0";"9120";"9120";"verticale structuur";"Binnen & Buiten";265;255,958996338387;88,58;84,07;91,93
+"Versie 2.0";"9120";"9120";"verticale structuur";"Binnen";145;136,38;84,7;77,67;89,82
+"Versie 2.0";"9120";"9120";"verticale structuur";"Buiten";120;119,578996338387;92,99;86,56;96,47
+"Versie 3";"9120";"9120";"verticale structuur";"Binnen & Buiten";265;255,958996338387;88,58;84,07;91,93
+"Versie 3";"9120";"9120";"verticale structuur";"Binnen";145;136,38;84,7;77,67;89,82
+"Versie 3";"9120";"9120";"verticale structuur";"Buiten";120;119,578996338387;92,99;86,56;96,47
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";264;255,538996338387;63,1;57,05;68,77
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen";144;135,96;67,78;59,61;75
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Buiten";120;119,578996338387;57,78;48,64;66,42
+"Versie 3";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";264;255,538996338387;63,1;57,05;68,77
+"Versie 3";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen";144;135,96;67,78;59,61;75
+"Versie 3";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Buiten";120;119,578996338387;57,78;48,64;66,42
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";264;254,958996338387;2,63;1,28;5,35
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen";144;135,38;4,2;1,93;8,93
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de kruidlaag";"Buiten";120;119,578996338387;0,85;0,12;5,85
+"Versie 3";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";264;254,958996338387;26,46;21,59;31,98
+"Versie 3";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen";144;135,38;37,22;29,61;45,52
+"Versie 3";"9120";"9120";"sleutelsoorten van de kruidlaag";"Buiten";120;119,578996338387;14,28;9;21,91
+"Versie 2.0";"9120";"9120";"invasieve exoten";"Binnen & Buiten";265;255,958996338387;67,88;61,99;73,25
+"Versie 2.0";"9120";"9120";"invasieve exoten";"Binnen";145;136,38;75,71;67,9;82,12
+"Versie 2.0";"9120";"9120";"invasieve exoten";"Buiten";120;119,578996338387;58,96;49,79;67,54
+"Versie 2.0";"9120";"9120";"ruderalisering";"Binnen & Buiten";265;255,958996338387;93,84;90,28;96,15
+"Versie 2.0";"9120";"9120";"ruderalisering";"Binnen";145;136,38;97,8;93,38;99,29
+"Versie 2.0";"9120";"9120";"ruderalisering";"Buiten";120;119,578996338387;89,32;82,51;93,68
+"Versie 2.0";"9120";"9120";"vergrassing";"Binnen & Buiten";265;255,958996338387;99,36;97,39;99,85
+"Versie 2.0";"9120";"9120";"vergrassing";"Binnen";145;136,38;98,8;95,14;99,71
+"Versie 2.0";"9120";"9120";"vergrassing";"Buiten";120;119,578996338387;100;100;100
+"Versie 2.0";"9120";"9120";"verruiging";"Binnen & Buiten";265;255,958996338387;96,05;92,81;97,87
+"Versie 2.0";"9120";"9120";"verruiging";"Binnen";145;136,38;94,87;89,61;97,54
+"Versie 2.0";"9120";"9120";"verruiging";"Buiten";120;119,578996338387;97,4;92,2;99,17
+"Versie 3";"9120";"9120";"verruiging";"Binnen & Buiten";265;255,958996338387;76,02;70,46;80,83
+"Versie 3";"9120";"9120";"verruiging";"Binnen";145;136,38;77,99;70,42;84,06
+"Versie 3";"9120";"9120";"verruiging";"Buiten";120;119,578996338387;73,78;65,12;80,93
+"Versie 3";"9120";"9120";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";265;255,958996338387;68,23;62,34;73,58
+"Versie 3";"9120";"9120";"invasieve exoten van de boom- en struiklaag";"Binnen";145;136,38;75,27;67,46;81,72
+"Versie 3";"9120";"9120";"invasieve exoten van de boom- en struiklaag";"Buiten";120;119,578996338387;60,19;51,04;68,68
+"Versie 3";"9120";"9120";"invasieve exoten van de kruidlaag";"Binnen & Buiten";265;255,958996338387;100;100;100
+"Versie 3";"9120";"9120";"invasieve exoten van de kruidlaag";"Binnen";145;136,38;100;100;100
+"Versie 3";"9120";"9120";"invasieve exoten van de kruidlaag";"Buiten";120;119,578996338387;100;100;100
+"Versie 2.0";"9160";"9160";"aandeel dood hout";"Binnen & Buiten";47;45,8407358636387;57,57;42,99;70,94
+"Versie 2.0";"9160";"9160";"aandeel dood hout";"Binnen";28;27,0583910083736;60,09;41,1;76,46
+"Versie 2.0";"9160";"9160";"aandeel dood hout";"Buiten";19;18,7823448552651;53,95;31,91;74,54
+"Versie 3";"9160";"9160";"aandeel dood hout";"Binnen & Buiten";47;45,8407358636387;57,57;42,99;70,94
+"Versie 3";"9160";"9160";"aandeel dood hout";"Binnen";28;27,0583910083736;60,09;41,1;76,46
+"Versie 3";"9160";"9160";"aandeel dood hout";"Buiten";19;18,7823448552651;53,95;31,91;74,54
+"Versie 2.0";"9160";"9160";"bosconstantie";"Binnen & Buiten";47;45,8407358636387;59,38;44,73;72,53
+"Versie 2.0";"9160";"9160";"bosconstantie";"Binnen";28;27,0583910083736;57,13;38,41;74,01
+"Versie 2.0";"9160";"9160";"bosconstantie";"Buiten";19;18,7823448552651;62,61;39,4;81,18
+"Versie 3";"9160";"9160";"bosconstantie";"Binnen & Buiten";47;45,8407358636387;59,38;44,73;72,53
+"Versie 3";"9160";"9160";"bosconstantie";"Binnen";28;27,0583910083736;57,13;38,41;74,01
+"Versie 3";"9160";"9160";"bosconstantie";"Buiten";19;18,7823448552651;62,61;39,4;81,18
+"Versie 2.0";"9160";"9160";"hoeveelheid dik dood hout";"Binnen & Buiten";47;45,8407358636387;14,73;7,11;28,08
+"Versie 2.0";"9160";"9160";"hoeveelheid dik dood hout";"Binnen";28;27,0583910083736;10,35;3,31;28,04
+"Versie 2.0";"9160";"9160";"hoeveelheid dik dood hout";"Buiten";19;18,7823448552651;21,05;8,01;44,94
+"Versie 3";"9160";"9160";"hoeveelheid dik dood hout";"Binnen & Buiten";47;45,8407358636387;14,73;7,11;28,08
+"Versie 3";"9160";"9160";"hoeveelheid dik dood hout";"Binnen";28;27,0583910083736;10,35;3,31;28,04
+"Versie 3";"9160";"9160";"hoeveelheid dik dood hout";"Buiten";19;18,7823448552651;21,05;8,01;44,94
+"Versie 2.0";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen & Buiten";47;45,8407358636387;29,76;18,33;44,44
+"Versie 2.0";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen";28;27,0583910083736;22,17;10,26;41,53
+"Versie 2.0";"9160";"9160";"horizontale structuur - groeiklassen";"Buiten";19;18,7823448552651;40,68;21,34;63,41
+"Versie 3";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen & Buiten";47;45,8407358636387;100;100;100
+"Versie 3";"9160";"9160";"horizontale structuur - groeiklassen";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"horizontale structuur - groeiklassen";"Buiten";19;18,7823448552651;100;100;100
+"Versie 2.0";"9160";"9160";"minimum structuurareaal";"Binnen & Buiten";47;45,8407358636387;42,01;28,71;56,58
+"Versie 2.0";"9160";"9160";"minimum structuurareaal";"Binnen";28;27,0583910083736;71,17;51,82;85
+"Versie 2.0";"9160";"9160";"minimum structuurareaal";"Buiten";19;18,7823448552651;0;0;0
+"Versie 3";"9160";"9160";"minimum structuurareaal";"Binnen & Buiten";47;45,8407358636387;42,01;28,71;56,58
+"Versie 3";"9160";"9160";"minimum structuurareaal";"Binnen";28;27,0583910083736;71,17;51,82;85
+"Versie 3";"9160";"9160";"minimum structuurareaal";"Buiten";19;18,7823448552651;0;0;0
+"Versie 2.0";"9160";"9160";"verticale structuur";"Binnen & Buiten";47;45,8407358636387;97,75;85,45;99,69
+"Versie 2.0";"9160";"9160";"verticale structuur";"Binnen";28;27,0583910083736;100;100;100
+"Versie 2.0";"9160";"9160";"verticale structuur";"Buiten";19;18,7823448552651;94,52;69,24;99,25
+"Versie 3";"9160";"9160";"verticale structuur";"Binnen & Buiten";47;45,8407358636387;97,75;85,45;99,69
+"Versie 3";"9160";"9160";"verticale structuur";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"verticale structuur";"Buiten";19;18,7823448552651;94,52;69,24;99,25
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";46;44,8110020448194;56,8;42,1;70,39
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen";28;27,0583910083736;56,61;37,91;73,6
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Buiten";18;17,7526110364458;57,08;34,04;77,41
+"Versie 3";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";46;44,8110020448194;49,97;35,7;64,24
+"Versie 3";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Binnen";28;27,0583910083736;52,92;34,6;70,48
+"Versie 3";"9160";"9160";"sleutelsoorten van de boom- en struiklaag";"Buiten";18;17,7526110364458;45,48;24,49;68,21
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";47;45,8407358636387;25,89;15,24;40,43
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen";28;27,0583910083736;36,93;21,12;56,16
+"Versie 2.0";"9160";"9160";"sleutelsoorten van de kruidlaag";"Buiten";19;18,7823448552651;9,98;2,44;32,93
+"Versie 3";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";47;45,8407358636387;51,95;37,69;65,9
+"Versie 3";"9160";"9160";"sleutelsoorten van de kruidlaag";"Binnen";28;27,0583910083736;62,06;43,1;77,94
+"Versie 3";"9160";"9160";"sleutelsoorten van de kruidlaag";"Buiten";19;18,7823448552651;37,39;18,82;60,6
+"Versie 2.0";"9160";"9160";"invasieve exoten";"Binnen & Buiten";47;45,8407358636387;91,71;79,58;96,92
+"Versie 2.0";"9160";"9160";"invasieve exoten";"Binnen";28;27,0583910083736;93,57;77,01;98,44
+"Versie 2.0";"9160";"9160";"invasieve exoten";"Buiten";19;18,7823448552651;89,04;64,85;97,28
+"Versie 2.0";"9160";"9160";"ruderalisering";"Binnen & Buiten";47;45,8407358636387;93,41;81,28;97,88
+"Versie 2.0";"9160";"9160";"ruderalisering";"Binnen";28;27,0583910083736;92,63;74,6;98,18
+"Versie 2.0";"9160";"9160";"ruderalisering";"Buiten";19;18,7823448552651;94,52;69,24;99,25
+"Versie 2.0";"9160";"9160";"verruiging";"Binnen & Buiten";47;45,8407358636387;100;100;100
+"Versie 2.0";"9160";"9160";"verruiging";"Binnen";28;27,0583910083736;100;100;100
+"Versie 2.0";"9160";"9160";"verruiging";"Buiten";19;18,7823448552651;100;100;100
+"Versie 3";"9160";"9160";"verruiging";"Binnen & Buiten";47;45,8407358636387;65,72;50,97;77,96
+"Versie 3";"9160";"9160";"verruiging";"Binnen";28;27,0583910083736;57,15;38,44;74,03
+"Versie 3";"9160";"9160";"verruiging";"Buiten";19;18,7823448552651;78,07;53,82;91,58
+"Versie 3";"9160";"9160";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";47;45,8407358636387;95,51;83,55;98,89
+"Versie 3";"9160";"9160";"invasieve exoten van de boom- en struiklaag";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"invasieve exoten van de boom- en struiklaag";"Buiten";19;18,7823448552651;89,04;64,85;97,28
+"Versie 3";"9160";"9160";"invasieve exoten van de kruidlaag";"Binnen & Buiten";47;45,8407358636387;100;100;100
+"Versie 3";"9160";"9160";"invasieve exoten van de kruidlaag";"Binnen";28;27,0583910083736;100;100;100
+"Versie 3";"9160";"9160";"invasieve exoten van de kruidlaag";"Buiten";19;18,7823448552651;100;100;100
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen & Buiten";172;194,627861799648;52,94;44,95;60,78
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen";97;95,97381605635;65,27;54,7;74,52
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"aandeel dood hout";"Buiten";75;98,6540457432985;40,94;30,03;52,83
+"Versie 2.0";"91E0";"91E0_va";"aandeel dood hout";"Binnen & Buiten";51;66,2011138962023;45,43;31,77;59,81
+"Versie 2.0";"91E0";"91E0_vc";"aandeel dood hout";"Binnen & Buiten";25;23,9007329514447;69,74;47,22;85,58
+"Versie 2.0";"91E0";"91E0_vm";"aandeel dood hout";"Binnen & Buiten";38;41,6171850506099;57,48;40,88;72,54
+"Versie 2.0";"91E0";"91E0_vn";"aandeel dood hout";"Binnen & Buiten";39;43,0960588041952;58,39;41,68;73,37
+"Versie 2.0";"91E0";"91E0_vo";"aandeel dood hout";"Binnen & Buiten";19;19,8127710971964;36,38;18,01;59,81
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen & Buiten";172;194,627861799648;52,94;44,95;60,78
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"aandeel dood hout";"Binnen";97;95,97381605635;65,27;54,7;74,52
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"aandeel dood hout";"Buiten";75;98,6540457432985;40,94;30,03;52,83
+"Versie 3";"91E0";"91E0_va";"aandeel dood hout";"Binnen & Buiten";51;66,2011138962023;45,43;31,77;59,81
+"Versie 3";"91E0";"91E0_vc";"aandeel dood hout";"Binnen & Buiten";25;23,9007329514447;69,74;47,22;85,58
+"Versie 3";"91E0";"91E0_vm";"aandeel dood hout";"Binnen & Buiten";38;41,6171850506099;57,48;40,88;72,54
+"Versie 3";"91E0";"91E0_vn";"aandeel dood hout";"Binnen & Buiten";39;43,0960588041952;58,39;41,68;73,37
+"Versie 3";"91E0";"91E0_vo";"aandeel dood hout";"Binnen & Buiten";19;19,8127710971964;36,38;18,01;59,81
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"bosconstantie";"Binnen & Buiten";172;194,627861799648;63,76;55,79;71,04
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"bosconstantie";"Binnen";97;95,97381605635;65,14;54,64;74,36
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"bosconstantie";"Buiten";75;98,6540457432985;62,42;50,31;73,15
+"Versie 2.0";"91E0";"91E0_va";"bosconstantie";"Binnen & Buiten";51;66,2011138962023;59,16;44,35;72,47
+"Versie 2.0";"91E0";"91E0_vc";"bosconstantie";"Binnen & Buiten";25;23,9007329514447;78,35;57,59;90,6
+"Versie 2.0";"91E0";"91E0_vm";"bosconstantie";"Binnen & Buiten";38;41,6171850506099;69,49;52,96;82,17
+"Versie 2.0";"91E0";"91E0_vn";"bosconstantie";"Binnen & Buiten";39;43,0960588041952;62,53;45,62;76,85
+"Versie 2.0";"91E0";"91E0_vo";"bosconstantie";"Binnen & Buiten";19;19,8127710971964;52,18;29,23;74,24
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"bosconstantie";"Binnen & Buiten";172;194,627861799648;63,76;55,79;71,04
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"bosconstantie";"Binnen";97;95,97381605635;65,14;54,64;74,36
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"bosconstantie";"Buiten";75;98,6540457432985;62,42;50,31;73,15
+"Versie 3";"91E0";"91E0_va";"bosconstantie";"Binnen & Buiten";51;66,2011138962023;59,16;44,35;72,47
+"Versie 3";"91E0";"91E0_vc";"bosconstantie";"Binnen & Buiten";25;23,9007329514447;78,35;57,59;90,6
+"Versie 3";"91E0";"91E0_vm";"bosconstantie";"Binnen & Buiten";38;41,6171850506099;69,49;52,96;82,17
+"Versie 3";"91E0";"91E0_vn";"bosconstantie";"Binnen & Buiten";39;43,0960588041952;62,53;45,62;76,85
+"Versie 3";"91E0";"91E0_vo";"bosconstantie";"Binnen & Buiten";19;19,8127710971964;52,18;29,23;74,24
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";172;194,627861799648;8,95;5,45;14,35
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen";97;95,97381605635;9,2;4,82;16,84
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"hoeveelheid dik dood hout";"Buiten";75;98,6540457432985;8,71;4,06;17,69
+"Versie 2.0";"91E0";"91E0_va";"hoeveelheid dik dood hout";"Binnen & Buiten";51;66,2011138962023;14;6,91;26,31
+"Versie 2.0";"91E0";"91E0_vc";"hoeveelheid dik dood hout";"Binnen & Buiten";25;23,9007329514447;0;0;0
+"Versie 2.0";"91E0";"91E0_vm";"hoeveelheid dik dood hout";"Binnen & Buiten";38;41,6171850506099;10,46;3,86;25,35
+"Versie 2.0";"91E0";"91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";39;43,0960588041952;8,82;3,28;21,63
+"Versie 2.0";"91E0";"91E0_vo";"hoeveelheid dik dood hout";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";172;194,627861799648;8,95;5,45;14,35
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"hoeveelheid dik dood hout";"Binnen";97;95,97381605635;9,2;4,82;16,84
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"hoeveelheid dik dood hout";"Buiten";75;98,6540457432985;8,71;4,06;17,69
+"Versie 3";"91E0";"91E0_va";"hoeveelheid dik dood hout";"Binnen & Buiten";51;66,2011138962023;14;6,91;26,31
+"Versie 3";"91E0";"91E0_vc";"hoeveelheid dik dood hout";"Binnen & Buiten";25;23,9007329514447;0;0;0
+"Versie 3";"91E0";"91E0_vm";"hoeveelheid dik dood hout";"Binnen & Buiten";38;41,6171850506099;10,46;3,86;25,35
+"Versie 3";"91E0";"91E0_vn";"hoeveelheid dik dood hout";"Binnen & Buiten";39;43,0960588041952;8,82;3,28;21,63
+"Versie 3";"91E0";"91E0_vo";"hoeveelheid dik dood hout";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";172;194,627861799648;16,74;11,57;23,6
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen";97;95,97381605635;15,58;9,35;24,84
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"horizontale structuur - groeiklassen";"Buiten";75;98,6540457432985;17,87;10,44;28,88
+"Versie 2.0";"91E0";"91E0_va";"horizontale structuur - groeiklassen";"Binnen & Buiten";51;66,2011138962023;18,74;9,97;32,43
+"Versie 2.0";"91E0";"91E0_vc";"horizontale structuur - groeiklassen";"Binnen & Buiten";25;23,9007329514447;51,24;31,06;71,03
+"Versie 2.0";"91E0";"91E0_vm";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;41,6171850506099;9,99;3,21;27,05
+"Versie 2.0";"91E0";"91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";39;43,0960588041952;8,77;2,55;26,09
+"Versie 2.0";"91E0";"91E0_vo";"horizontale structuur - groeiklassen";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";172;194,627861799648;76,36;69,04;82,39
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"horizontale structuur - groeiklassen";"Binnen";97;95,97381605635;83,44;72,1;90,77
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"horizontale structuur - groeiklassen";"Buiten";75;98,6540457432985;69,47;58,64;78,5
+"Versie 3";"91E0";"91E0_va";"horizontale structuur - groeiklassen";"Binnen & Buiten";51;66,2011138962023;95,93;82,88;99,14
+"Versie 3";"91E0";"91E0_vc";"horizontale structuur - groeiklassen";"Binnen & Buiten";25;23,9007329514447;100;100;100
+"Versie 3";"91E0";"91E0_vm";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;41,6171850506099;95,19;82,57;98,81
+"Versie 3";"91E0";"91E0_vn";"horizontale structuur - groeiklassen";"Binnen & Buiten";39;43,0960588041952;8,77;2,55;26,09
+"Versie 3";"91E0";"91E0_vo";"horizontale structuur - groeiklassen";"Binnen & Buiten";19;19,8127710971964;89,91;66,9;97,52
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verticale structuur";"Binnen & Buiten";172;194,627861799648;97,48;93,03;99,11
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verticale structuur";"Binnen";97;95,97381605635;96,99;91,02;99,03
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verticale structuur";"Buiten";75;98,6540457432985;97,95;86,83;99,71
+"Versie 2.0";"91E0";"91E0_va";"verticale structuur";"Binnen & Buiten";51;66,2011138962023;96,95;81,3;99,57
+"Versie 2.0";"91E0";"91E0_vc";"verticale structuur";"Binnen & Buiten";25;23,9007329514447;96,27;77,54;99,49
+"Versie 2.0";"91E0";"91E0_vm";"verticale structuur";"Binnen & Buiten";38;41,6171850506099;100;100;100
+"Versie 2.0";"91E0";"91E0_vn";"verticale structuur";"Binnen & Buiten";39;43,0960588041952;100;100;100
+"Versie 2.0";"91E0";"91E0_vo";"verticale structuur";"Binnen & Buiten";19;19,8127710971964;89,91;66,9;97,52
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verticale structuur";"Binnen & Buiten";172;194,627861799648;97,48;93,03;99,11
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verticale structuur";"Binnen";97;95,97381605635;96,99;91,02;99,03
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verticale structuur";"Buiten";75;98,6540457432985;97,95;86,83;99,71
+"Versie 3";"91E0";"91E0_va";"verticale structuur";"Binnen & Buiten";51;66,2011138962023;96,95;81,3;99,57
+"Versie 3";"91E0";"91E0_vc";"verticale structuur";"Binnen & Buiten";25;23,9007329514447;96,27;77,54;99,49
+"Versie 3";"91E0";"91E0_vm";"verticale structuur";"Binnen & Buiten";38;41,6171850506099;100;100;100
+"Versie 3";"91E0";"91E0_vn";"verticale structuur";"Binnen & Buiten";39;43,0960588041952;100;100;100
+"Versie 3";"91E0";"91E0_vo";"verticale structuur";"Binnen & Buiten";19;19,8127710971964;89,91;66,9;97,52
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";167;188,93555502286;46,7;38,79;54,78
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen";93;92,30381605635;52,18;41,45;62,71
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de boom- en struiklaag";"Buiten";74;96,6317389665105;41,46;30,18;53,71
+"Versie 2.0";"91E0";"91E0_va";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";47;61,5088071194143;47,54;33,09;62,41
+"Versie 2.0";"91E0";"91E0_vc";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";25;23,9007329514447;53,39;32,95;72,75
+"Versie 2.0";"91E0";"91E0_vm";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;41,6171850506099;55,54;39,24;70,73
+"Versie 2.0";"91E0";"91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";39;43,0960588041952;26,24;14,48;42,76
+"Versie 2.0";"91E0";"91E0_vo";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";18;18,8127710971964;62,72;37,98;82,22
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";167;188,93555502286;60,76;52,73;68,26
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen";93;92,30381605635;66,08;55,14;75,54
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de boom- en struiklaag";"Buiten";74;96,6317389665105;55,68;43,82;66,93
+"Versie 3";"91E0";"91E0_va";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";47;61,5088071194143;76,22;61,24;86,67
+"Versie 3";"91E0";"91E0_vc";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";25;23,9007329514447;61,93;40,59;79,49
+"Versie 3";"91E0";"91E0_vm";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;41,6171850506099;55,54;39,24;70,73
+"Versie 3";"91E0";"91E0_vn";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";39;43,0960588041952;42,25;26,98;59,15
+"Versie 3";"91E0";"91E0_vo";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";18;18,8127710971964;62,72;37,98;82,22
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";172;194,627861799648;29,2;22,44;37,03
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen";97;95,97381605635;27,36;18,93;37,79
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de kruidlaag";"Buiten";75;98,6540457432985;31;21,09;43,03
+"Versie 2.0";"91E0";"91E0_va";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";51;66,2011138962023;46,13;32,33;60,56
+"Versie 2.0";"91E0";"91E0_vc";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";25;23,9007329514447;18,25;6,93;40,1
+"Versie 2.0";"91E0";"91E0_vm";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;41,6171850506099;17,98;8,62;33,77
+"Versie 2.0";"91E0";"91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";39;43,0960588041952;33,54;19,84;50,72
+"Versie 2.0";"91E0";"91E0_vo";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";19;19,8127710971964;0;0;0
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";172;194,627861799648;28,03;21,45;35,73
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen";97;95,97381605635;30,89;22,22;41,15
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"sleutelsoorten van de kruidlaag";"Buiten";75;98,6540457432985;25,26;16,09;37,32
+"Versie 3";"91E0";"91E0_va";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";51;66,2011138962023;30,65;19,06;45,34
+"Versie 3";"91E0";"91E0_vc";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";25;23,9007329514447;41,4;23,25;62,22
+"Versie 3";"91E0";"91E0_vm";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;41,6171850506099;15,41;6,89;30,96
+"Versie 3";"91E0";"91E0_vn";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";39;43,0960588041952;14,03;5,66;30,75
+"Versie 3";"91E0";"91E0_vo";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";19;19,8127710971964;60,15;36,41;79,92
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"invasieve exoten";"Binnen & Buiten";172;194,627861799648;82,23;75,17;87,62
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"invasieve exoten";"Binnen";97;95,97381605635;84,64;75,34;90,86
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"invasieve exoten";"Buiten";75;98,6540457432985;79,89;68,52;87,88
+"Versie 2.0";"91E0";"91E0_va";"invasieve exoten";"Binnen & Buiten";51;66,2011138962023;84,91;69,81;93,2
+"Versie 2.0";"91E0";"91E0_vc";"invasieve exoten";"Binnen & Buiten";25;23,9007329514447;95,07;72,05;99,31
+"Versie 2.0";"91E0";"91E0_vm";"invasieve exoten";"Binnen & Buiten";38;41,6171850506099;79,63;63,61;89,74
+"Versie 2.0";"91E0";"91E0_vn";"invasieve exoten";"Binnen & Buiten";39;43,0960588041952;80,65;64,39;90,58
+"Versie 2.0";"91E0";"91E0_vo";"invasieve exoten";"Binnen & Buiten";19;19,8127710971964;66,7;42,1;84,66
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"ruderalisering";"Binnen & Buiten";172;194,627861799648;66,7;58,67;73,85
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"ruderalisering";"Binnen";97;95,97381605635;77,71;66,88;85,75
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"ruderalisering";"Buiten";75;98,6540457432985;55,98;44,09;67,22
+"Versie 2.0";"91E0";"91E0_va";"ruderalisering";"Binnen & Buiten";51;66,2011138962023;58,14;43,37;71,58
+"Versie 2.0";"91E0";"91E0_vc";"ruderalisering";"Binnen & Buiten";25;23,9007329514447;60,35;38,88;78,46
+"Versie 2.0";"91E0";"91E0_vm";"ruderalisering";"Binnen & Buiten";38;41,6171850506099;92,79;79,73;97,68
+"Versie 2.0";"91E0";"91E0_vn";"ruderalisering";"Binnen & Buiten";39;43,0960588041952;44,42;29;60,99
+"Versie 2.0";"91E0";"91E0_vo";"ruderalisering";"Binnen & Buiten";19;19,8127710971964;96,59;78,85;99,54
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verruiging";"Binnen & Buiten";172;194,627861799648;93,14;88,25;96,09
+"Versie 2.0";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verruiging";"Binnen";97;95,97381605635;89,26;81,46;94,01
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verruiging";"Buiten";75;98,6540457432985;96,92;87,67;99,29
+"Versie 2.0";"91E0";"91E0_va";"verruiging";"Binnen & Buiten";51;66,2011138962023;100;100;100
+"Versie 2.0";"91E0";"91E0_vc";"verruiging";"Binnen & Buiten";25;23,9007329514447;95,82;75,37;99,42
+"Versie 2.0";"91E0";"91E0_vm";"verruiging";"Binnen & Buiten";38;41,6171850506099;98,15;87,84;99,74
+"Versie 2.0";"91E0";"91E0_vn";"verruiging";"Binnen & Buiten";39;43,0960588041952;97,68;85,13;99,68
+"Versie 2.0";"91E0";"91E0_vo";"verruiging";"Binnen & Buiten";19;19,8127710971964;46,62;24,73;69,88
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"verruiging";"Binnen & Buiten";172;194,627861799648;41,69;34,12;49,67
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"verruiging";"Binnen";97;95,97381605635;48,09;37,83;58,51
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"verruiging";"Buiten";75;98,6540457432985;35,46;24,86;47,72
+"Versie 3";"91E0";"91E0_va";"verruiging";"Binnen & Buiten";51;66,2011138962023;50,22;36,03;64,36
+"Versie 3";"91E0";"91E0_vc";"verruiging";"Binnen & Buiten";25;23,9007329514447;22,35;9,97;42,8
+"Versie 3";"91E0";"91E0_vm";"verruiging";"Binnen & Buiten";38;41,6171850506099;65,82;49,18;79,3
+"Versie 3";"91E0";"91E0_vn";"verruiging";"Binnen & Buiten";39;43,0960588041952;30,52;17,8;47,11
+"Versie 3";"91E0";"91E0_vo";"verruiging";"Binnen & Buiten";19;19,8127710971964;10,14;2,57;32,55
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen & Buiten";172;194,627861799648;17,8;12,8;24,2
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen";97;95,97381605635;25,71;17,93;35,42
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"minimum structuurareaal";"Buiten";75;98,6540457432985;10,1;4,97;19,44
+"Versie 3";"91E0";"91E0_va";"minimum structuurareaal";"Binnen & Buiten";51;66,2011138962023;27,43;17,11;40,91
+"Versie 3";"91E0";"91E0_vc";"minimum structuurareaal";"Binnen & Buiten";25;23,9007329514447;15,28;5,7;34,99
+"Versie 3";"91E0";"91E0_vm";"minimum structuurareaal";"Binnen & Buiten";38;41,6171850506099;24,49;13,41;40,44
+"Versie 3";"91E0";"91E0_vn";"minimum structuurareaal";"Binnen & Buiten";39;43,0960588041952;3,81;0,91;14,56
+"Versie 3";"91E0";"91E0_vo";"minimum structuurareaal";"Binnen & Buiten";19;19,8127710971964;5,05;0,69;28,78
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen & Buiten";147;170,727128848204;18,15;12,77;25,15
+"Versie 2.0";"91E0";"91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"minimum structuurareaal";"Binnen";82;84,4736736513916;26,28;17,89;36,84
+"Versie 2.0";"91E0";"91E0_vm; 91E0_vo; 91E0_vn; 91E0_va";"minimum structuurareaal";"Buiten";65;86,2534551968122;10,19;4,75;20,51
+"Versie 2.0";"91E0";"91E0_va";"minimum structuurareaal";"Binnen & Buiten";51;66,2011138962023;27,43;17,11;40,92
+"Versie 2.0";"91E0";"91E0_vm";"minimum structuurareaal";"Binnen & Buiten";38;41,6171850506099;24,49;13,41;40,45
+"Versie 2.0";"91E0";"91E0_vn";"minimum structuurareaal";"Binnen & Buiten";39;43,0960588041952;3,81;0,91;14,57
+"Versie 2.0";"91E0";"91E0_vo";"minimum structuurareaal";"Binnen & Buiten";19;19,8127710971964;5,05;0,69;28,8
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";172;194,627861799648;87,33;81,14;91,7
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"invasieve exoten van de boom- en struiklaag";"Binnen";97;95,97381605635;85,33;76,03;91,43
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"invasieve exoten van de boom- en struiklaag";"Buiten";75;98,6540457432985;89,27;79,83;94,59
+"Versie 3";"91E0";"91E0_va";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";51;66,2011138962023;93,92;81,69;98,17
+"Versie 3";"91E0";"91E0_vc";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";25;23,9007329514447;100;100;100
+"Versie 3";"91E0";"91E0_vm";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";38;41,6171850506099;84,06;68,28;92,81
+"Versie 3";"91E0";"91E0_vn";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";39;43,0960588041952;82,81;66,56;92,1
+"Versie 3";"91E0";"91E0_vo";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";19;19,8127710971964;66,7;42,1;84,66
+"Versie 3";"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn";"invasieve exoten van de kruidlaag";"Binnen & Buiten";172;194,627861799648;89,55;83,05;93,75
+"Versie 3";"91E0";"91E0_vc; 91E0_vo; 91E0_vm; 91E0_va; 91E0_vn";"invasieve exoten van de kruidlaag";"Binnen";97;95,97381605635;93,67;85,03;97,47
+"Versie 3";"91E0";"91E0_vm; 91E0_vc; 91E0_vo; 91E0_vn; 91E0_va";"invasieve exoten van de kruidlaag";"Buiten";75;98,6540457432985;85,55;74,66;92,25
+"Versie 3";"91E0";"91E0_va";"invasieve exoten van de kruidlaag";"Binnen & Buiten";51;66,2011138962023;81,97;67,31;90,93
+"Versie 3";"91E0";"91E0_vc";"invasieve exoten van de kruidlaag";"Binnen & Buiten";25;23,9007329514447;85,41;63,14;95,24
+"Versie 3";"91E0";"91E0_vm";"invasieve exoten van de kruidlaag";"Binnen & Buiten";38;41,6171850506099;100;100;100
+"Versie 3";"91E0";"91E0_vn";"invasieve exoten van de kruidlaag";"Binnen & Buiten";39;43,0960588041952;88,61;71,82;95,96
+"Versie 3";"91E0";"91E0_vo";"invasieve exoten van de kruidlaag";"Binnen & Buiten";19;19,8127710971964;100;100;100
+"Versie 2.0";"9190";"9190";"aandeel dood hout";"Binnen & Buiten";59;60,8314353620715;40,1;28,02;53,52
+"Versie 2.0";"9190";"9190";"aandeel dood hout";"Binnen";31;28,9586816338972;44,86;28,34;62,59
+"Versie 2.0";"9190";"9190";"aandeel dood hout";"Buiten";28;31,8727537281743;35,79;19,75;55,8
+"Versie 3";"9190";"9190";"aandeel dood hout";"Binnen & Buiten";59;60,8314353620715;40,1;28,02;53,52
+"Versie 3";"9190";"9190";"aandeel dood hout";"Binnen";31;28,9586816338972;44,86;28,34;62,59
+"Versie 3";"9190";"9190";"aandeel dood hout";"Buiten";28;31,8727537281743;35,79;19,75;55,8
+"Versie 2.0";"9190";"9190";"bosconstantie";"Binnen & Buiten";59;60,8314353620715;44,72;32,13;58,02
+"Versie 2.0";"9190";"9190";"bosconstantie";"Binnen";31;28,9586816338972;44,89;28,3;62,71
+"Versie 2.0";"9190";"9190";"bosconstantie";"Buiten";28;31,8727537281743;44,56;26,88;63,72
+"Versie 3";"9190";"9190";"bosconstantie";"Binnen & Buiten";59;60,8314353620715;44,72;32,13;58,02
+"Versie 3";"9190";"9190";"bosconstantie";"Binnen";31;28,9586816338972;44,89;28,3;62,71
+"Versie 3";"9190";"9190";"bosconstantie";"Buiten";28;31,8727537281743;44,56;26,88;63,72
+"Versie 2.0";"9190";"9190";"hoeveelheid dik dood hout";"Binnen & Buiten";59;60,8314353620715;7,64;2,86;18,9
+"Versie 2.0";"9190";"9190";"hoeveelheid dik dood hout";"Binnen";31;28,9586816338972;6,91;1,72;23,96
+"Versie 2.0";"9190";"9190";"hoeveelheid dik dood hout";"Buiten";28;31,8727537281743;8,31;2,07;27,97
+"Versie 3";"9190";"9190";"hoeveelheid dik dood hout";"Binnen & Buiten";59;60,8314353620715;7,64;2,86;18,9
+"Versie 3";"9190";"9190";"hoeveelheid dik dood hout";"Binnen";31;28,9586816338972;6,91;1,72;23,96
+"Versie 3";"9190";"9190";"hoeveelheid dik dood hout";"Buiten";28;31,8727537281743;8,31;2,07;27,97
+"Versie 2.0";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen & Buiten";59;60,8314353620715;8,58;3,52;19,43
+"Versie 2.0";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen";31;28,9586816338972;6,91;1,72;23,96
+"Versie 2.0";"9190";"9190";"horizontale structuur - groeiklassen";"Buiten";28;31,8727537281743;10,1;3,13;28,09
+"Versie 3";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen & Buiten";59;60,8314353620715;96,18;85,67;99,06
+"Versie 3";"9190";"9190";"horizontale structuur - groeiklassen";"Binnen";31;28,9586816338972;96,55;78,93;99,52
+"Versie 3";"9190";"9190";"horizontale structuur - groeiklassen";"Buiten";28;31,8727537281743;95,84;75,44;99,43
+"Versie 2.0";"9190";"9190";"minimum structuurareaal";"Binnen & Buiten";59;60,8314353620715;9,29;3,86;20,68
+"Versie 2.0";"9190";"9190";"minimum structuurareaal";"Binnen";31;28,9586816338972;10,36;3,36;27,78
+"Versie 2.0";"9190";"9190";"minimum structuurareaal";"Buiten";28;31,8727537281743;8,31;2,07;27,97
+"Versie 3";"9190";"9190";"minimum structuurareaal";"Binnen & Buiten";59;60,8314353620715;9,29;3,86;20,68
+"Versie 3";"9190";"9190";"minimum structuurareaal";"Binnen";31;28,9586816338972;10,36;3,36;27,78
+"Versie 3";"9190";"9190";"minimum structuurareaal";"Buiten";28;31,8727537281743;8,31;2,07;27,97
+"Versie 2.0";"9190";"9190";"verticale structuur";"Binnen & Buiten";59;60,8314353620715;94;82,77;98,08
+"Versie 2.0";"9190";"9190";"verticale structuur";"Binnen";31;28,9586816338972;96,55;78,93;99,52
+"Versie 2.0";"9190";"9190";"verticale structuur";"Buiten";28;31,8727537281743;91,69;72,03;97,93
+"Versie 3";"9190";"9190";"verticale structuur";"Binnen & Buiten";59;60,8314353620715;94;82,77;98,08
+"Versie 3";"9190";"9190";"verticale structuur";"Binnen";31;28,9586816338972;96,55;78,93;99,52
+"Versie 3";"9190";"9190";"verticale structuur";"Buiten";28;31,8727537281743;91,69;72,03;97,93
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";59;60,8314353620715;67,94;54,85;78,71
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen";31;28,9586816338972;62,71;44,53;77,88
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Buiten";28;31,8727537281743;72,69;53,45;86,06
+"Versie 3";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";59;60,8314353620715;63,89;50,67;75,29
+"Versie 3";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Binnen";31;28,9586816338972;63,85;45,73;78,73
+"Versie 3";"9190";"9190";"sleutelsoorten van de boom- en struiklaag";"Buiten";28;31,8727537281743;63,92;44,56;79,62
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";59;60,8314353620715;0;0;0
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen";31;28,9586816338972;0;0;0
+"Versie 2.0";"9190";"9190";"sleutelsoorten van de kruidlaag";"Buiten";28;31,8727537281743;0;0;0
+"Versie 3";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";59;60,8314353620715;66,43;52,92;77,69
+"Versie 3";"9190";"9190";"sleutelsoorten van de kruidlaag";"Binnen";31;28,9586816338972;71,34;52,98;84,61
+"Versie 3";"9190";"9190";"sleutelsoorten van de kruidlaag";"Buiten";28;31,8727537281743;61,97;42,26;78,39
+"Versie 2.0";"9190";"9190";"invasieve exoten";"Binnen & Buiten";59;60,8314353620715;45,6;33,03;58,76
+"Versie 2.0";"9190";"9190";"invasieve exoten";"Binnen";31;28,9586816338972;67,75;49,4;81,89
+"Versie 2.0";"9190";"9190";"invasieve exoten";"Buiten";28;31,8727537281743;25,48;12,33;45,38
+"Versie 2.0";"9190";"9190";"ruderalisering";"Binnen & Buiten";59;60,8314353620715;99,18;94,26;99,89
+"Versie 2.0";"9190";"9190";"ruderalisering";"Binnen";31;28,9586816338972;98,27;88,41;99,77
+"Versie 2.0";"9190";"9190";"ruderalisering";"Buiten";28;31,8727537281743;100;100;100
+"Versie 2.0";"9190";"9190";"vergrassing";"Binnen & Buiten";59;60,8314353620715;78,79;66;87,66
+"Versie 2.0";"9190";"9190";"vergrassing";"Binnen";31;28,9586816338972;69,16;50,55;83,11
+"Versie 2.0";"9190";"9190";"vergrassing";"Buiten";28;31,8727537281743;87,53;67,6;95,94
+"Versie 2.0";"9190";"9190";"verruiging";"Binnen & Buiten";59;60,8314353620715;100;100;100
+"Versie 2.0";"9190";"9190";"verruiging";"Binnen";31;28,9586816338972;100;100;100
+"Versie 2.0";"9190";"9190";"verruiging";"Buiten";28;31,8727537281743;100;100;100
+"Versie 3";"9190";"9190";"verruiging";"Binnen & Buiten";59;60,8314353620715;90,71;79,99;95,98
+"Versie 3";"9190";"9190";"verruiging";"Binnen";31;28,9586816338972;89,64;74,51;96,24
+"Versie 3";"9190";"9190";"verruiging";"Buiten";28;31,8727537281743;91,69;72,03;97,93
+"Versie 3";"9190";"9190";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";59;60,8314353620715;53,78;40,57;66,48
+"Versie 3";"9190";"9190";"invasieve exoten van de boom- en struiklaag";"Binnen";31;28,9586816338972;71,2;52,89;84,49
+"Versie 3";"9190";"9190";"invasieve exoten van de boom- en struiklaag";"Buiten";28;31,8727537281743;37,95;21,52;57,7
+"Versie 3";"9190";"9190";"invasieve exoten van de kruidlaag";"Binnen & Buiten";59;60,8314353620715;100;100;100
+"Versie 3";"9190";"9190";"invasieve exoten van de kruidlaag";"Binnen";31;28,9586816338972;100;100;100
+"Versie 3";"9190";"9190";"invasieve exoten van de kruidlaag";"Buiten";28;31,8727537281743;100;100;100
+"Versie 2.0";"9130";"9130";"aandeel dood hout";"Binnen & Buiten";38;114,487118275683;15,95;4,85;41,43
+"Versie 2.0";"9130";"9130";"aandeel dood hout";"Binnen";29;28,23;27,31;14,09;46,25
+"Versie 2.0";"9130";"9130";"aandeel dood hout";"Buiten";9;86,2571182756835;12,24;1,66;53,5
+"Versie 3";"9130";"9130";"aandeel dood hout";"Binnen & Buiten";38;114,487118275683;15,95;4,85;41,43
+"Versie 3";"9130";"9130";"aandeel dood hout";"Binnen";29;28,23;27,31;14,09;46,25
+"Versie 3";"9130";"9130";"aandeel dood hout";"Buiten";9;86,2571182756835;12,24;1,66;53,5
+"Versie 2.0";"9130";"9130";"bosconstantie";"Binnen & Buiten";38;114,487118275683;48,56;25,33;72,43
+"Versie 2.0";"9130";"9130";"bosconstantie";"Binnen";29;28,23;87,78;70,89;95,49
+"Versie 2.0";"9130";"9130";"bosconstantie";"Buiten";9;86,2571182756835;35,73;11,89;69,59
+"Versie 3";"9130";"9130";"bosconstantie";"Binnen & Buiten";38;114,487118275683;48,56;25,33;72,43
+"Versie 3";"9130";"9130";"bosconstantie";"Binnen";29;28,23;87,78;70,89;95,49
+"Versie 3";"9130";"9130";"bosconstantie";"Buiten";9;86,2571182756835;35,73;11,89;69,59
+"Versie 2.0";"9130";"9130";"hoeveelheid dik dood hout";"Binnen & Buiten";38;114,487118275683;1,49;0,33;6,47
+"Versie 2.0";"9130";"9130";"hoeveelheid dik dood hout";"Binnen";29;28,23;6,06;1,45;21,99
+"Versie 2.0";"9130";"9130";"hoeveelheid dik dood hout";"Buiten";9;86,2571182756835;0;0;0
+"Versie 3";"9130";"9130";"hoeveelheid dik dood hout";"Binnen & Buiten";38;114,487118275683;1,49;0,33;6,47
+"Versie 3";"9130";"9130";"hoeveelheid dik dood hout";"Binnen";29;28,23;6,06;1,45;21,99
+"Versie 3";"9130";"9130";"hoeveelheid dik dood hout";"Buiten";9;86,2571182756835;0;0;0
+"Versie 2.0";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;114,487118275683;23,15;8,51;49,37
+"Versie 2.0";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen";29;28,23;28,34;14,75;47,47
+"Versie 2.0";"9130";"9130";"horizontale structuur - groeiklassen";"Buiten";9;86,2571182756835;21,45;5,17;57,75
+"Versie 3";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen & Buiten";38;114,487118275683;100;100;100
+"Versie 3";"9130";"9130";"horizontale structuur - groeiklassen";"Binnen";29;28,23;100;100;100
+"Versie 3";"9130";"9130";"horizontale structuur - groeiklassen";"Buiten";9;86,2571182756835;100;100;100
+"Versie 2.0";"9130";"9130";"minimum structuurareaal";"Binnen & Buiten";38;114,487118275683;13,56;6,76;25,34
+"Versie 2.0";"9130";"9130";"minimum structuurareaal";"Binnen";29;28,23;54,98;36,72;71,99
+"Versie 2.0";"9130";"9130";"minimum structuurareaal";"Buiten";9;86,2571182756835;0;0;0
+"Versie 3";"9130";"9130";"minimum structuurareaal";"Binnen & Buiten";38;114,487118275683;17,67;9,16;31,37
+"Versie 3";"9130";"9130";"minimum structuurareaal";"Binnen";29;28,23;71,66;52,53;85,25
+"Versie 3";"9130";"9130";"minimum structuurareaal";"Buiten";9;86,2571182756835;0;0;0
+"Versie 2.0";"9130";"9130";"verticale structuur";"Binnen & Buiten";38;114,487118275683;98,25;92,63;99,6
+"Versie 2.0";"9130";"9130";"verticale structuur";"Binnen";29;28,23;92,92;75,36;98,25
+"Versie 2.0";"9130";"9130";"verticale structuur";"Buiten";9;86,2571182756835;100;100;100
+"Versie 3";"9130";"9130";"verticale structuur";"Binnen & Buiten";38;114,487118275683;98,25;92,63;99,6
+"Versie 3";"9130";"9130";"verticale structuur";"Binnen";29;28,23;92,92;75,36;98,25
+"Versie 3";"9130";"9130";"verticale structuur";"Buiten";9;86,2571182756835;100;100;100
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;114,487118275683;37,07;17,91;61,4
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen";29;28,23;65,36;46,42;80,42
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Buiten";9;86,2571182756835;27,81;8,4;61,82
+"Versie 3";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";38;114,487118275683;37,07;17,91;61,4
+"Versie 3";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Binnen";29;28,23;65,36;46,42;80,42
+"Versie 3";"9130";"9130";"sleutelsoorten van de boom- en struiklaag";"Buiten";9;86,2571182756835;27,81;8,4;61,82
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;114,487118275683;11,84;2,49;41,37
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen";29;28,23;10,63;3,42;28,54
+"Versie 2.0";"9130";"9130";"sleutelsoorten van de kruidlaag";"Buiten";9;86,2571182756835;12,24;1,66;53,5
+"Versie 3";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";38;114,487118275683;74,88;47,97;90,6
+"Versie 3";"9130";"9130";"sleutelsoorten van de kruidlaag";"Binnen";29;28,23;69,93;51,06;83,82
+"Versie 3";"9130";"9130";"sleutelsoorten van de kruidlaag";"Buiten";9;86,2571182756835;76,51;39,66;94,16
+"Versie 2.0";"9130";"9130";"invasieve exoten";"Binnen & Buiten";38;114,487118275683;79,17;49,13;93,73
+"Versie 2.0";"9130";"9130";"invasieve exoten";"Binnen";29;28,23;90,29;73,29;96,93
+"Versie 2.0";"9130";"9130";"invasieve exoten";"Buiten";9;86,2571182756835;75,53;38,41;93,85
+"Versie 2.0";"9130";"9130";"ruderalisering";"Binnen & Buiten";38;114,487118275683;81,56;49,51;95,23
+"Versie 2.0";"9130";"9130";"ruderalisering";"Binnen";29;28,23;100;100;100
+"Versie 2.0";"9130";"9130";"ruderalisering";"Buiten";9;86,2571182756835;75,53;38,41;93,85
+"Versie 2.0";"9130";"9130";"verruiging";"Binnen & Buiten";38;114,487118275683;100;100;100
+"Versie 2.0";"9130";"9130";"verruiging";"Binnen";29;28,23;100;100;100
+"Versie 2.0";"9130";"9130";"verruiging";"Buiten";9;86,2571182756835;100;100;100
+"Versie 3";"9130";"9130";"verruiging";"Binnen & Buiten";38;114,487118275683;64,28;37,15;84,57
+"Versie 3";"9130";"9130";"verruiging";"Binnen";29;28,23;86,75;69,05;95,05
+"Versie 3";"9130";"9130";"verruiging";"Buiten";9;86,2571182756835;56,93;25,41;83,68
+"Versie 3";"9130";"9130";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";38;114,487118275683;79,17;49,13;93,73
+"Versie 3";"9130";"9130";"invasieve exoten van de boom- en struiklaag";"Binnen";29;28,23;90,29;73,29;96,93
+"Versie 3";"9130";"9130";"invasieve exoten van de boom- en struiklaag";"Buiten";9;86,2571182756835;75,53;38,41;93,85
+"Versie 3";"9130";"9130";"invasieve exoten van de kruidlaag";"Binnen & Buiten";38;114,487118275683;89,91;57,15;98,35
+"Versie 3";"9130";"9130";"invasieve exoten van de kruidlaag";"Binnen";29;28,23;96,46;78,29;99,52
+"Versie 3";"9130";"9130";"invasieve exoten van de kruidlaag";"Buiten";9;86,2571182756835;87,76;46,5;98,34
+"Versie 2.0";"9120";"9120";"aandeel dood hout";"Binnen & Buiten";265;255,958996338387;33,46;27,94;39,47
+"Versie 2.0";"9120";"9120";"aandeel dood hout";"Binnen";145;136,38;36,58;29,03;44,85
+"Versie 2.0";"9120";"9120";"aandeel dood hout";"Buiten";120;119,578996338387;29,9;22,26;38,85
+"Versie 3";"9120";"9120";"aandeel dood hout";"Binnen & Buiten";265;255,958996338387;33,46;27,94;39,47
+"Versie 3";"9120";"9120";"aandeel dood hout";"Binnen";145;136,38;36,58;29,03;44,85
+"Versie 3";"9120";"9120";"aandeel dood hout";"Buiten";120;119,578996338387;29,9;22,26;38,85
+"Versie 2.0";"9120";"9120";"bosconstantie";"Binnen & Buiten";265;255,958996338387;65,36;59,35;70,91
+"Versie 2.0";"9120";"9120";"bosconstantie";"Binnen";145;136,38;80,56;73,28;86,23
+"Versie 2.0";"9120";"9120";"bosconstantie";"Buiten";120;119,578996338387;48,01;39,08;57,08
+"Versie 3";"9120";"9120";"bosconstantie";"Binnen & Buiten";265;255,958996338387;65,36;59,35;70,91
+"Versie 3";"9120";"9120";"bosconstantie";"Binnen";145;136,38;80,56;73,28;86,23
+"Versie 3";"9120";"9120";"bosconstantie";"Buiten";120;119,578996338387;48,01;39,08;57,08
+"Versie 2.0";"9120";"9120";"hoeveelheid dik dood hout";"Binnen & Buiten";265;255,958996338387;8,45;5,57;12,63
+"Versie 2.0";"9120";"9120";"hoeveelheid dik dood hout";"Binnen";145;136,38;5,87;2,96;11,3
+"Versie 2.0";"9120";"9120";"hoeveelheid dik dood hout";"Buiten";120;119,578996338387;11,4;6,73;18,68
+"Versie 3";"9120";"9120";"hoeveelheid dik dood hout";"Binnen & Buiten";265;255,958996338387;8,45;5,57;12,63
+"Versie 3";"9120";"9120";"hoeveelheid dik dood hout";"Binnen";145;136,38;5,87;2,96;11,3
+"Versie 3";"9120";"9120";"hoeveelheid dik dood hout";"Buiten";120;119,578996338387;11,4;6,73;18,68
+"Versie 2.0";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen & Buiten";265;255,958996338387;32,72;27,26;38,69
+"Versie 2.0";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen";145;136,38;38,1;30,47;46,37
+"Versie 2.0";"9120";"9120";"horizontale structuur - groeiklassen";"Buiten";120;119,578996338387;26,59;19,34;35,36
+"Versie 3";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen & Buiten";265;255,958996338387;98,37;95,73;99,39
+"Versie 3";"9120";"9120";"horizontale structuur - groeiklassen";"Binnen";145;136,38;98,53;94,32;99,63
+"Versie 3";"9120";"9120";"horizontale structuur - groeiklassen";"Buiten";120;119,578996338387;98,18;93,01;99,55
+"Versie 2.0";"9120";"9120";"minimum structuurareaal";"Binnen & Buiten";265;255,958996338387;37,84;32,14;43,9
+"Versie 2.0";"9120";"9120";"minimum structuurareaal";"Binnen";145;136,38;62,6;54,36;70,17
+"Versie 2.0";"9120";"9120";"minimum structuurareaal";"Buiten";120;119,578996338387;9,61;5,51;16,25
+"Versie 3";"9120";"9120";"minimum structuurareaal";"Binnen & Buiten";265;255,958996338387;37,84;32,14;43,9
+"Versie 3";"9120";"9120";"minimum structuurareaal";"Binnen";145;136,38;62,6;54,36;70,17
+"Versie 3";"9120";"9120";"minimum structuurareaal";"Buiten";120;119,578996338387;9,61;5,51;16,25
+"Versie 2.0";"9120";"9120";"verticale structuur";"Binnen & Buiten";265;255,958996338387;88,58;84,03;91,95
+"Versie 2.0";"9120";"9120";"verticale structuur";"Binnen";145;136,38;84,7;77,68;89,81
+"Versie 2.0";"9120";"9120";"verticale structuur";"Buiten";120;119,578996338387;92,99;86,58;96,47
+"Versie 3";"9120";"9120";"verticale structuur";"Binnen & Buiten";265;255,958996338387;88,58;84,03;91,95
+"Versie 3";"9120";"9120";"verticale structuur";"Binnen";145;136,38;84,7;77,68;89,81
+"Versie 3";"9120";"9120";"verticale structuur";"Buiten";120;119,578996338387;92,99;86,58;96,47
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";264;255,538996338387;63,1;57,03;68,79
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen";144;135,96;67,78;59,62;74,99
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Buiten";120;119,578996338387;57,78;48,66;66,4
+"Versie 3";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";264;255,538996338387;63,1;57,03;68,79
+"Versie 3";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Binnen";144;135,96;67,78;59,62;74,99
+"Versie 3";"9120";"9120";"sleutelsoorten van de boom- en struiklaag";"Buiten";120;119,578996338387;57,78;48,66;66,4
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";264;254,958996338387;2,63;1,27;5,36
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen";144;135,38;4,2;1,93;8,92
+"Versie 2.0";"9120";"9120";"sleutelsoorten van de kruidlaag";"Buiten";120;119,578996338387;0,85;0,12;5,83
+"Versie 3";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";264;254,958996338387;26,46;21,44;32,17
+"Versie 3";"9120";"9120";"sleutelsoorten van de kruidlaag";"Binnen";144;135,38;37,22;29,63;45,51
+"Versie 3";"9120";"9120";"sleutelsoorten van de kruidlaag";"Buiten";120;119,578996338387;14,28;9,01;21,89
+"Versie 2.0";"9120";"9120";"invasieve exoten";"Binnen & Buiten";265;255,958996338387;67,88;61,9;73,32
+"Versie 2.0";"9120";"9120";"invasieve exoten";"Binnen";145;136,38;75,71;67,91;82,11
+"Versie 2.0";"9120";"9120";"invasieve exoten";"Buiten";120;119,578996338387;58,96;49,81;67,52
+"Versie 2.0";"9120";"9120";"ruderalisering";"Binnen & Buiten";265;255,958996338387;93,84;90,22;96,18
+"Versie 2.0";"9120";"9120";"ruderalisering";"Binnen";145;136,38;97,8;93,39;99,29
+"Versie 2.0";"9120";"9120";"ruderalisering";"Buiten";120;119,578996338387;89,32;82,53;93,68
+"Versie 2.0";"9120";"9120";"vergrassing";"Binnen & Buiten";265;255,958996338387;99,36;97,38;99,85
+"Versie 2.0";"9120";"9120";"vergrassing";"Binnen";145;136,38;98,8;95,15;99,71
+"Versie 2.0";"9120";"9120";"vergrassing";"Buiten";120;119,578996338387;100;100;100
+"Versie 2.0";"9120";"9120";"verruiging";"Binnen & Buiten";265;255,958996338387;96,05;92,81;97,87
+"Versie 2.0";"9120";"9120";"verruiging";"Binnen";145;136,38;94,87;89,62;97,54
+"Versie 2.0";"9120";"9120";"verruiging";"Buiten";120;119,578996338387;97,4;92,22;99,16
+"Versie 3";"9120";"9120";"verruiging";"Binnen & Buiten";265;255,958996338387;76,02;70,46;80,83
+"Versie 3";"9120";"9120";"verruiging";"Binnen";145;136,38;77,99;70,43;84,05
+"Versie 3";"9120";"9120";"verruiging";"Buiten";120;119,578996338387;73,78;65,14;80,91
+"Versie 3";"9120";"9120";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";265;255,958996338387;68,23;62,27;73,64
+"Versie 3";"9120";"9120";"invasieve exoten van de boom- en struiklaag";"Binnen";145;136,38;75,27;67,47;81,71
+"Versie 3";"9120";"9120";"invasieve exoten van de boom- en struiklaag";"Buiten";120;119,578996338387;60,19;51,06;68,66
+"Versie 3";"9120";"9120";"invasieve exoten van de kruidlaag";"Binnen & Buiten";265;255,958996338387;100;100;100
+"Versie 3";"9120";"9120";"invasieve exoten van de kruidlaag";"Binnen";145;136,38;100;100;100
+"Versie 3";"9120";"9120";"invasieve exoten van de kruidlaag";"Buiten";120;119,578996338387;100;100;100
+"Versie 2.0";"9110";"9110";"aandeel dood hout";"Binnen & Buiten";3;11,0218068535826;90,93;NA;NA
+"Versie 2.0";"9110";"9110";"aandeel dood hout";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"aandeel dood hout";"Buiten";1;1;0;NA;NA
+"Versie 3";"9110";"9110";"aandeel dood hout";"Binnen & Buiten";3;11,0218068535826;90,93;NA;NA
+"Versie 3";"9110";"9110";"aandeel dood hout";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"aandeel dood hout";"Buiten";1;1;0;NA;NA
+"Versie 2.0";"9110";"9110";"bosconstantie";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"bosconstantie";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"bosconstantie";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"bosconstantie";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"bosconstantie";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"bosconstantie";"Buiten";1;1;100;NA;NA
+"Versie 2.0";"9110";"9110";"hoeveelheid dik dood hout";"Binnen & Buiten";3;11,0218068535826;0;NA;NA
+"Versie 2.0";"9110";"9110";"hoeveelheid dik dood hout";"Binnen";2;10,0218068535826;0;NA;NA
+"Versie 2.0";"9110";"9110";"hoeveelheid dik dood hout";"Buiten";1;1;0;NA;NA
+"Versie 3";"9110";"9110";"hoeveelheid dik dood hout";"Binnen & Buiten";3;11,0218068535826;0;NA;NA
+"Versie 3";"9110";"9110";"hoeveelheid dik dood hout";"Binnen";2;10,0218068535826;0;NA;NA
+"Versie 3";"9110";"9110";"hoeveelheid dik dood hout";"Buiten";1;1;0;NA;NA
+"Versie 2.0";"9110";"9110";"horizontale structuur - groeiklassen";"Binnen & Buiten";3;11,0218068535826;54,54;NA;NA
+"Versie 2.0";"9110";"9110";"horizontale structuur - groeiklassen";"Binnen";2;10,0218068535826;50;NA;NA
+"Versie 2.0";"9110";"9110";"horizontale structuur - groeiklassen";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"horizontale structuur - groeiklassen";"Binnen & Buiten";3;11,0218068535826;54,54;NA;NA
+"Versie 3";"9110";"9110";"horizontale structuur - groeiklassen";"Binnen";2;10,0218068535826;50;NA;NA
+"Versie 3";"9110";"9110";"horizontale structuur - groeiklassen";"Buiten";1;1;100;NA;NA
+"Versie 2.0";"9110";"9110";"minimum structuurareaal";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"minimum structuurareaal";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"minimum structuurareaal";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"minimum structuurareaal";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"minimum structuurareaal";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"minimum structuurareaal";"Buiten";1;1;100;NA;NA
+"Versie 2.0";"9110";"9110";"verticale structuur";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"verticale structuur";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"verticale structuur";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"verticale structuur";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"verticale structuur";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"verticale structuur";"Buiten";1;1;100;NA;NA
+"Versie 2.0";"9110";"9110";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"sleutelsoorten van de boom- en struiklaag";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"sleutelsoorten van de boom- en struiklaag";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"sleutelsoorten van de boom- en struiklaag";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"sleutelsoorten van de boom- en struiklaag";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"sleutelsoorten van de boom- en struiklaag";"Buiten";1;1;100;NA;NA
+"Versie 2.0";"9110";"9110";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";3;11,0218068535826;0;NA;NA
+"Versie 2.0";"9110";"9110";"sleutelsoorten van de kruidlaag";"Binnen";2;10,0218068535826;0;NA;NA
+"Versie 2.0";"9110";"9110";"sleutelsoorten van de kruidlaag";"Buiten";1;1;0;NA;NA
+"Versie 3";"9110";"9110";"sleutelsoorten van de kruidlaag";"Binnen & Buiten";3;11,0218068535826;0;NA;NA
+"Versie 3";"9110";"9110";"sleutelsoorten van de kruidlaag";"Binnen";2;10,0218068535826;0;NA;NA
+"Versie 3";"9110";"9110";"sleutelsoorten van de kruidlaag";"Buiten";1;1;0;NA;NA
+"Versie 2.0";"9110";"9110";"invasieve exoten";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"invasieve exoten";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"invasieve exoten";"Buiten";1;1;100;NA;NA
+"Versie 2.0";"9110";"9110";"ruderalisering";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"ruderalisering";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"ruderalisering";"Buiten";1;1;100;NA;NA
+"Versie 2.0";"9110";"9110";"verruiging";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"verruiging";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 2.0";"9110";"9110";"verruiging";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"verruiging";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"verruiging";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"verruiging";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"invasieve exoten van de boom- en struiklaag";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"invasieve exoten van de boom- en struiklaag";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"invasieve exoten van de boom- en struiklaag";"Buiten";1;1;100;NA;NA
+"Versie 3";"9110";"9110";"invasieve exoten van de kruidlaag";"Binnen & Buiten";3;11,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"invasieve exoten van de kruidlaag";"Binnen";2;10,0218068535826;100;NA;NA
+"Versie 3";"9110";"9110";"invasieve exoten van de kruidlaag";"Buiten";1;1;100;NA;NA

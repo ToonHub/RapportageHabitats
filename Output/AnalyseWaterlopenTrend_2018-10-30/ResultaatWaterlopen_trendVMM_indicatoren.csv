@@ -1,0 +1,851 @@
+"";"ID";"Habitattype";"Versie";"Habitattype.y";"Criterium";"Indicator";"Beoordeling";"Belang";"Kwaliteitsniveau";"BeoordelingID";"Status_indicator";"Verschilscore"
+"1";"TR100400.1_14/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,329428029956323
+"2";"TR100400.1_14/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"3";"TR100400.1_14/06/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"4";"TR100400.1_14/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,963366666666667
+"5";"TR100400.1_14/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"6";"TR100400.1_14/06/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"7";"TR100400.1_14/06/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,242000541472249
+"8";"TR100400.1_14/06/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"9";"TR100400.1_14/06/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,963366666666667
+"10";"TR100400.1_14/06/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"11";"TR100400.1_18/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,0838307104570502
+"12";"TR100400.1_18/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"13";"TR100400.1_18/06/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"14";"TR100400.1_18/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"15";"TR100400.1_18/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"16";"TR100400.1_18/06/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"17";"TR100400.1_18/06/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,487597860971521
+"18";"TR100400.1_18/06/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"19";"TR100400.1_18/06/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"20";"TR100400.1_18/06/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"21";"TR100400.2_14/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,841999066591071
+"22";"TR100400.2_14/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"23";"TR100400.2_14/06/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"24";"TR100400.2_14/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"25";"TR100400.2_14/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"26";"TR100400.2_14/06/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"27";"TR100400.2_14/06/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,631331155379166
+"28";"TR100400.2_14/06/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"29";"TR100400.2_14/06/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"30";"TR100400.2_14/06/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"31";"TR100400.2_18/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,73944204257947
+"32";"TR100400.2_18/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"33";"TR100400.2_18/06/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"34";"TR100400.2_18/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"35";"TR100400.2_18/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"36";"TR100400.2_18/06/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"37";"TR100400.2_18/06/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,392031432685429
+"38";"TR100400.2_18/06/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"39";"TR100400.2_18/06/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"40";"TR100400.2_18/06/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"41";"TR100400.4_18/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,878860569322543
+"42";"TR100400.4_18/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"43";"TR100400.4_18/06/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"44";"TR100400.4_18/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,963366666666667
+"45";"TR100400.4_18/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"46";"TR100400.4_18/06/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"47";"TR100400.4_18/06/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,717341328419267
+"48";"TR100400.4_18/06/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"49";"TR100400.4_18/06/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,963366666666667
+"50";"TR100400.4_18/06/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"51";"TR100400.4_26/05/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,536861991920759
+"52";"TR100400.4_26/05/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"53";"TR100400.4_26/05/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"54";"TR100400.4_26/05/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"55";"TR100400.4_26/05/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"56";"TR100400.4_26/05/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"57";"TR100400.4_26/05/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0345665795078126
+"58";"TR100400.4_26/05/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"59";"TR100400.4_26/05/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"60";"TR100400.4_26/05/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"61";"TR100400.4_9/09/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,550963185867142
+"62";"TR100400.4_9/09/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"63";"TR100400.4_9/09/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"64";"TR100400.4_9/09/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,8173683
+"65";"TR100400.4_9/09/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,65
+"66";"TR100400.4_9/09/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"67";"TR100400.4_9/09/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0204653855614298
+"68";"TR100400.4_9/09/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"69";"TR100400.4_9/09/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,8173683
+"70";"TR100400.4_9/09/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,035
+"71";"TR102500.1_11/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,750243415429422
+"72";"TR102500.1_11/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"73";"TR102500.1_11/06/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"74";"TR102500.1_11/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"75";"TR102500.1_11/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"76";"TR102500.1_11/06/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"77";"TR102500.1_11/06/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,417234636001984
+"78";"TR102500.1_11/06/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"79";"TR102500.1_11/06/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"80";"TR102500.1_11/06/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"81";"TR102500.1_17/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,739934687483953
+"82";"TR102500.1_17/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"83";"TR102500.1_17/06/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"84";"TR102500.1_17/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"85";"TR102500.1_17/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"86";"TR102500.1_17/06/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"87";"TR102500.1_17/06/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,393180937462556
+"88";"TR102500.1_17/06/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"89";"TR102500.1_17/06/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"90";"TR102500.1_17/06/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"91";"TR102500.1_6/07/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,649055517839009
+"92";"TR102500.1_6/07/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"93";"TR102500.1_6/07/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"94";"TR102500.1_6/07/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"95";"TR102500.1_6/07/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"96";"TR102500.1_6/07/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"97";"TR102500.1_6/07/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,181129541624354
+"98";"TR102500.1_6/07/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"99";"TR102500.1_6/07/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"100";"TR102500.1_6/07/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"101";"TR102500.2_11/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,58113667353651
+"102";"TR102500.2_11/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"103";"TR102500.2_11/06/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"104";"TR102500.2_11/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"105";"TR102500.2_11/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"106";"TR102500.2_11/06/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"107";"TR102500.2_11/06/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,0226522382518575
+"108";"TR102500.2_11/06/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"109";"TR102500.2_11/06/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"110";"TR102500.2_11/06/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"111";"TR102500.2_20/05/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,7610886206568
+"112";"TR102500.2_20/05/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"113";"TR102500.2_20/05/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"114";"TR102500.2_20/05/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"115";"TR102500.2_20/05/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"116";"TR102500.2_20/05/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"117";"TR102500.2_20/05/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,442540114865867
+"118";"TR102500.2_20/05/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"119";"TR102500.2_20/05/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"120";"TR102500.2_20/05/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"121";"TR102500.2_6/07/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,426330975098417
+"122";"TR102500.2_6/07/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"123";"TR102500.2_6/07/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"124";"TR102500.2_6/07/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"125";"TR102500.2_6/07/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"126";"TR102500.2_6/07/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"127";"TR102500.2_6/07/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,145097596330154
+"128";"TR102500.2_6/07/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"129";"TR102500.2_6/07/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"130";"TR102500.2_6/07/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"131";"TR102500.4_11/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,646858727616508
+"132";"TR102500.4_11/06/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"133";"TR102500.4_11/06/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"134";"TR102500.4_11/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"135";"TR102500.4_11/06/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"136";"TR102500.4_11/06/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"137";"TR102500.4_11/06/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,176003697771853
+"138";"TR102500.4_11/06/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"139";"TR102500.4_11/06/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"140";"TR102500.4_11/06/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"141";"TR102500.4_30/05/2012";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,400496229381196
+"142";"TR102500.4_30/05/2012";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"143";"TR102500.4_30/05/2012";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"144";"TR102500.4_30/05/2012";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,965
+"145";"TR102500.4_30/05/2012";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"146";"TR102500.4_30/05/2012";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"147";"TR102500.4_30/05/2012";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,170932342047376
+"148";"TR102500.4_30/05/2012";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"149";"TR102500.4_30/05/2012";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,965
+"150";"TR102500.4_30/05/2012";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"151";"TR102500.4_6/07/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,374714253826143
+"152";"TR102500.4_6/07/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"153";"TR102500.4_6/07/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"154";"TR102500.4_6/07/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,965
+"155";"TR102500.4_6/07/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"156";"TR102500.4_6/07/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"157";"TR102500.4_6/07/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,196714317602428
+"158";"TR102500.4_6/07/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"159";"TR102500.4_6/07/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,965
+"160";"TR102500.4_6/07/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"161";"TR147000.1_26/09/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,9843
+"162";"TR147000.1_26/09/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"163";"TR147000.1_26/09/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"164";"TR147000.1_26/09/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"165";"TR147000.1_26/09/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"166";"TR147000.1_26/09/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"167";"TR147000.1_26/09/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,963366666666667
+"168";"TR147000.1_26/09/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"169";"TR147000.1_26/09/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"170";"TR147000.1_26/09/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"171";"TR147000.1_9/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,999285714285714
+"172";"TR147000.1_9/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"173";"TR147000.1_9/07/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"174";"TR147000.1_9/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"175";"TR147000.1_9/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"176";"TR147000.1_9/07/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"177";"TR147000.1_9/07/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,998333333333333
+"178";"TR147000.1_9/07/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"179";"TR147000.1_9/07/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"180";"TR147000.1_9/07/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"181";"TR147000.2_26/09/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,920426523128571
+"182";"TR147000.2_26/09/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"183";"TR147000.2_26/09/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"184";"TR147000.2_26/09/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"185";"TR147000.2_26/09/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"186";"TR147000.2_26/09/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"187";"TR147000.2_26/09/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,814328553966666
+"188";"TR147000.2_26/09/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"189";"TR147000.2_26/09/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"190";"TR147000.2_26/09/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"191";"TR147000.2_9/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,811471359821428
+"192";"TR147000.2_9/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"193";"TR147000.2_9/07/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"194";"TR147000.2_9/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"195";"TR147000.2_9/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"196";"TR147000.2_9/07/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"197";"TR147000.2_9/07/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,560099839583333
+"198";"TR147000.2_9/07/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"199";"TR147000.2_9/07/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"200";"TR147000.2_9/07/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"201";"TR152500.1_13/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,9403788157494
+"202";"TR152500.1_13/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"203";"TR152500.1_13/09/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"204";"TR152500.1_13/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"205";"TR152500.1_13/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"206";"TR152500.1_13/09/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"207";"TR152500.1_13/09/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,860883903415267
+"208";"TR152500.1_13/09/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"209";"TR152500.1_13/09/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"210";"TR152500.1_13/09/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"211";"TR152500.1_25/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;1
+"212";"TR152500.1_25/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"213";"TR152500.1_25/07/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"214";"TR152500.1_25/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"215";"TR152500.1_25/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"216";"TR152500.1_25/07/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"217";"TR152500.1_25/07/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;1
+"218";"TR152500.1_25/07/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"219";"TR152500.1_25/07/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"220";"TR152500.1_25/07/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"221";"TR152500.1_25/07/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,953838746882006
+"222";"TR152500.1_25/07/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"223";"TR152500.1_25/07/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"224";"TR152500.1_25/07/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,929067666666667
+"225";"TR152500.1_25/07/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"226";"TR152500.1_25/07/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"227";"TR152500.1_25/07/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,892290409391347
+"228";"TR152500.1_25/07/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"229";"TR152500.1_25/07/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,929067666666667
+"230";"TR152500.1_25/07/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"231";"TR152500.1_27/08/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;1
+"232";"TR152500.1_27/08/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"233";"TR152500.1_27/08/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"234";"TR152500.1_27/08/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"235";"TR152500.1_27/08/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"236";"TR152500.1_27/08/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"237";"TR152500.1_27/08/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;1
+"238";"TR152500.1_27/08/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"239";"TR152500.1_27/08/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"240";"TR152500.1_27/08/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"241";"TR152500.2_13/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,893274289161951
+"242";"TR152500.2_13/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"243";"TR152500.2_13/09/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"244";"TR152500.2_13/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"245";"TR152500.2_13/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"246";"TR152500.2_13/09/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"247";"TR152500.2_13/09/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,750973341377887
+"248";"TR152500.2_13/09/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"249";"TR152500.2_13/09/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"250";"TR152500.2_13/09/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"251";"TR152500.2_24/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,906719977394571
+"252";"TR152500.2_24/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"253";"TR152500.2_24/07/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"254";"TR152500.2_24/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,930668333333333
+"255";"TR152500.2_24/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"256";"TR152500.2_24/07/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"257";"TR152500.2_24/07/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,782346613920666
+"258";"TR152500.2_24/07/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"259";"TR152500.2_24/07/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,930668333333333
+"260";"TR152500.2_24/07/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"261";"TR152500.2_25/07/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,78546559408625
+"262";"TR152500.2_25/07/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"263";"TR152500.2_25/07/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"264";"TR152500.2_25/07/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,883333333333333
+"265";"TR152500.2_25/07/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"266";"TR152500.2_25/07/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"267";"TR152500.2_25/07/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,499419719534583
+"268";"TR152500.2_25/07/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"269";"TR152500.2_25/07/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,883333333333333
+"270";"TR152500.2_25/07/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"271";"TR152500.2_27/08/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,860286950233939
+"272";"TR152500.2_27/08/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"273";"TR152500.2_27/08/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"274";"TR152500.2_27/08/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,883333333333333
+"275";"TR152500.2_27/08/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"276";"TR152500.2_27/08/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"277";"TR152500.2_27/08/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,67400288387919
+"278";"TR152500.2_27/08/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"279";"TR152500.2_27/08/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,883333333333333
+"280";"TR152500.2_27/08/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"281";"TR152500.3_13/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,941695825715
+"282";"TR152500.3_13/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"283";"TR152500.3_13/09/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"284";"TR152500.3_13/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"285";"TR152500.3_13/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"286";"TR152500.3_13/09/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"287";"TR152500.3_13/09/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,863956926668333
+"288";"TR152500.3_13/09/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"289";"TR152500.3_13/09/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"290";"TR152500.3_13/09/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"291";"TR152500.3_24/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,969600428571429
+"292";"TR152500.3_24/07/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"293";"TR152500.3_24/07/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"294";"TR152500.3_24/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"295";"TR152500.3_24/07/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"296";"TR152500.3_24/07/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"297";"TR152500.3_24/07/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,929067666666667
+"298";"TR152500.3_24/07/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"299";"TR152500.3_24/07/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"300";"TR152500.3_24/07/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"301";"TR152500.3_25/07/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,920426523128571
+"302";"TR152500.3_25/07/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"303";"TR152500.3_25/07/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"304";"TR152500.3_25/07/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"305";"TR152500.3_25/07/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"306";"TR152500.3_25/07/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"307";"TR152500.3_25/07/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,814328553966666
+"308";"TR152500.3_25/07/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"309";"TR152500.3_25/07/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"310";"TR152500.3_25/07/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"311";"TR152500.3_27/08/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,935728571428571
+"312";"TR152500.3_27/08/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"313";"TR152500.3_27/08/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"314";"TR152500.3_27/08/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"315";"TR152500.3_27/08/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"316";"TR152500.3_27/08/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"317";"TR152500.3_27/08/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,850033333333333
+"318";"TR152500.3_27/08/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"319";"TR152500.3_27/08/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"320";"TR152500.3_27/08/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"321";"TR190870.1_19/08/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,887707833322664
+"322";"TR190870.1_19/08/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"323";"TR190870.1_19/08/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"324";"TR190870.1_19/08/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,961734966666667
+"325";"TR190870.1_19/08/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"326";"TR190870.1_19/08/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"327";"TR190870.1_19/08/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,737984944419549
+"328";"TR190870.1_19/08/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"329";"TR190870.1_19/08/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,961734966666667
+"330";"TR190870.1_19/08/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"331";"TR190870.1_30/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,933072558769236
+"332";"TR190870.1_30/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"333";"TR190870.1_30/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"334";"TR190870.1_30/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"335";"TR190870.1_30/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"336";"TR190870.1_30/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"337";"TR190870.1_30/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,843835970461552
+"338";"TR190870.1_30/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"339";"TR190870.1_30/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"340";"TR190870.1_30/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"341";"TR262200.1_12/09/2007";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,695815558928571
+"342";"TR262200.1_12/09/2007";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"343";"TR262200.1_12/09/2007";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"344";"TR262200.1_12/09/2007";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,464285714285714
+"345";"TR262200.1_12/09/2007";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;FALSE;-0,583333333333333
+"346";"TR262200.1_12/09/2007";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"347";"TR262200.1_12/09/2007";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,290236304166666
+"348";"TR262200.1_12/09/2007";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"349";"TR262200.1_12/09/2007";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,464285714285714
+"350";"TR262200.1_12/09/2007";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,625
+"351";"TR262200.1_15/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,60236102544692
+"352";"TR262200.1_15/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"353";"TR262200.1_15/07/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"354";"TR262200.1_15/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,830526785714286
+"355";"TR262200.1_15/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;FALSE;-0,861111111111111
+"356";"TR262200.1_15/07/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"357";"TR262200.1_15/07/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,0721757260428128
+"358";"TR262200.1_15/07/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"359";"TR262200.1_15/07/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,830526785714286
+"360";"TR262200.1_15/07/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,875
+"361";"TR262200.1_17/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,203616353882694
+"362";"TR262200.1_17/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"363";"TR262200.1_17/08/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"364";"TR262200.1_17/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,8173683
+"365";"TR262200.1_17/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,5501
+"366";"TR262200.1_17/08/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"367";"TR262200.1_17/08/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,658692723092583
+"368";"TR262200.1_17/08/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"369";"TR262200.1_17/08/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,8173683
+"370";"TR262200.1_17/08/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,04499
+"371";"TR262200.1_22/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,0695157841525888
+"372";"TR262200.1_22/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"373";"TR262200.1_22/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"374";"TR262200.1_22/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,642946428571429
+"375";"TR262200.1_22/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;FALSE;-0,583333333333333
+"376";"TR262200.1_22/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"377";"TR262200.1_22/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,60122105035111
+"378";"TR262200.1_22/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"379";"TR262200.1_22/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,642946428571429
+"380";"TR262200.1_22/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,625
+"381";"TR262200.2_15/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,702253699168746
+"382";"TR262200.2_15/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"383";"TR262200.2_15/07/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"384";"TR262200.2_15/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,965
+"385";"TR262200.2_15/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"386";"TR262200.2_15/07/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"387";"TR262200.2_15/07/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,305258631393741
+"388";"TR262200.2_15/07/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"389";"TR262200.2_15/07/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,965
+"390";"TR262200.2_15/07/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"391";"TR262200.2_22/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,762648055843332
+"392";"TR262200.2_22/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"393";"TR262200.2_22/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"394";"TR262200.2_22/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,998333333333333
+"395";"TR262200.2_22/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"396";"TR262200.2_22/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"397";"TR262200.2_22/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,446178796967775
+"398";"TR262200.2_22/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"399";"TR262200.2_22/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,998333333333333
+"400";"TR262200.2_22/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"401";"TR274000.1_18/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,514571137674474
+"402";"TR274000.1_18/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"403";"TR274000.1_18/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"404";"TR274000.1_18/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,380531666666666
+"405";"TR274000.1_18/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,65
+"406";"TR274000.1_18/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"407";"TR274000.1_18/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0568574337540973
+"408";"TR274000.1_18/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"409";"TR274000.1_18/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,380531666666666
+"410";"TR274000.1_18/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,035
+"411";"TR274000.1_6/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,603179317224645
+"412";"TR274000.1_6/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"413";"TR274000.1_6/08/2007";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"414";"TR274000.1_6/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,290236304166666
+"415";"TR274000.1_6/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"416";"TR274000.1_6/08/2007";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"417";"TR274000.1_6/08/2007";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,0740850735241723
+"418";"TR274000.1_6/08/2007";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"419";"TR274000.1_6/08/2007";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,290236304166666
+"420";"TR274000.1_6/08/2007";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"421";"TR274000.1_8/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,307944067429821
+"422";"TR274000.1_8/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"423";"TR274000.1_8/07/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"424";"TR274000.1_8/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,0261447400000002
+"425";"TR274000.1_8/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,792005
+"426";"TR274000.1_8/07/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"427";"TR274000.1_8/07/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,26348450399875
+"428";"TR274000.1_8/07/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"429";"TR274000.1_8/07/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,0261447400000002
+"430";"TR274000.1_8/07/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0207995
+"431";"TR274000.2_18/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,0162642137035604
+"432";"TR274000.2_18/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"433";"TR274000.2_18/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"434";"TR274000.2_18/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,235096026785714
+"435";"TR274000.2_18/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,8901
+"436";"TR274000.2_18/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"437";"TR274000.2_18/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,555164357725011
+"438";"TR274000.2_18/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"439";"TR274000.2_18/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,235096026785714
+"440";"TR274000.2_18/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,01099
+"441";"TR274000.2_4/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,702338080543232
+"442";"TR274000.2_4/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"443";"TR274000.2_4/06/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0,0357142857142857
+"444";"TR274000.2_4/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,330230821281666
+"445";"TR274000.2_4/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,990005
+"446";"TR274000.2_4/06/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"447";"TR274000.2_4/06/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,305455521267542
+"448";"TR274000.2_4/06/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"449";"TR274000.2_4/06/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,330230821281666
+"450";"TR274000.2_4/06/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,000999499999999987
+"451";"TR274000.2_7/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,707181309786359
+"452";"TR274000.2_7/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"453";"TR274000.2_7/08/2007";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"454";"TR274000.2_7/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,0865513392857144
+"455";"TR274000.2_7/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;FALSE;-0,0555555555555556
+"456";"TR274000.2_7/08/2007";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"457";"TR274000.2_7/08/2007";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,316756389501504
+"458";"TR274000.2_7/08/2007";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"459";"TR274000.2_7/08/2007";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,0865513392857144
+"460";"TR274000.2_7/08/2007";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,15
+"461";"TR274000.2_8/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,0351972706260102
+"462";"TR274000.2_8/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"463";"TR274000.2_8/07/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"464";"TR274000.2_8/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,144130077925893
+"465";"TR274000.2_8/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,792005
+"466";"TR274000.2_8/07/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"467";"TR274000.2_8/07/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,536231300802561
+"468";"TR274000.2_8/07/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"469";"TR274000.2_8/07/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,144130077925893
+"470";"TR274000.2_8/07/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0207995
+"471";"TR274000.3_17/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,218853409630962
+"472";"TR274000.3_17/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"473";"TR274000.3_17/06/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"474";"TR274000.3_17/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,419392944906667
+"475";"TR274000.3_17/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,990005
+"476";"TR274000.3_17/06/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"477";"TR274000.3_17/06/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,35257516179761
+"478";"TR274000.3_17/06/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"479";"TR274000.3_17/06/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,419392944906667
+"480";"TR274000.3_17/06/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,000999499999999987
+"481";"TR274000.3_18/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,0426146603433231
+"482";"TR274000.3_18/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"483";"TR274000.3_18/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"484";"TR274000.3_18/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,8173683
+"485";"TR274000.3_18/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"486";"TR274000.3_18/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"487";"TR274000.3_18/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,589691997289996
+"488";"TR274000.3_18/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"489";"TR274000.3_18/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,8173683
+"490";"TR274000.3_18/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"491";"TR274000.3_23/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,582980400784529
+"492";"TR274000.3_23/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"493";"TR274000.3_23/08/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"494";"TR274000.3_23/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,965
+"495";"TR274000.3_23/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"496";"TR274000.3_23/08/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"497";"TR274000.3_23/08/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,0269542684972339
+"498";"TR274000.3_23/08/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"499";"TR274000.3_23/08/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,965
+"500";"TR274000.3_23/08/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"501";"TR274000.3_8/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,753504611978589
+"502";"TR274000.3_8/07/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"503";"TR274000.3_8/07/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"504";"TR274000.3_8/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,144130077925893
+"505";"TR274000.3_8/07/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,792005
+"506";"TR274000.3_8/07/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"507";"TR274000.3_8/07/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,894359119419395
+"508";"TR274000.3_8/07/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"509";"TR274000.3_8/07/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,144130077925893
+"510";"TR274000.3_8/07/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0207995
+"511";"TR276700.1_17/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,0450015938232069
+"512";"TR276700.1_17/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"513";"TR276700.1_17/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"514";"TR276700.1_17/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,315425
+"515";"TR276700.1_17/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,65
+"516";"TR276700.1_17/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"517";"TR276700.1_17/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,526426977605364
+"518";"TR276700.1_17/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"519";"TR276700.1_17/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,315425
+"520";"TR276700.1_17/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,035
+"521";"TR276700.1_23/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,248604574061811
+"522";"TR276700.1_23/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"523";"TR276700.1_23/08/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"524";"TR276700.1_23/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,469745340441666
+"525";"TR276700.1_23/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,8901
+"526";"TR276700.1_23/08/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"527";"TR276700.1_23/08/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,322823997366761
+"528";"TR276700.1_23/08/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"529";"TR276700.1_23/08/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,469745340441666
+"530";"TR276700.1_23/08/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,01099
+"531";"TR276700.1_25/08/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,903697654328378
+"532";"TR276700.1_25/08/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"533";"TR276700.1_25/08/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"534";"TR276700.1_25/08/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,331348486781666
+"535";"TR276700.1_25/08/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,545445
+"536";"TR276700.1_25/08/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"537";"TR276700.1_25/08/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,958727566140734
+"538";"TR276700.1_25/08/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"539";"TR276700.1_25/08/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,331348486781666
+"540";"TR276700.1_25/08/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0454555
+"541";"TR276700.1_8/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,581289443602004
+"542";"TR276700.1_8/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"543";"TR276700.1_8/08/2007";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"544";"TR276700.1_8/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,678245767066
+"545";"TR276700.1_8/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,792005
+"546";"TR276700.1_8/08/2007";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"547";"TR276700.1_8/08/2007";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,0230087017380091
+"548";"TR276700.1_8/08/2007";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"549";"TR276700.1_8/08/2007";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,678245767066
+"550";"TR276700.1_8/08/2007";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0207995
+"551";"TR276700.2_17/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,60397559547914
+"552";"TR276700.2_17/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"553";"TR276700.2_17/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"554";"TR276700.2_17/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,420568258416666
+"555";"TR276700.2_17/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,792005
+"556";"TR276700.2_17/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"557";"TR276700.2_17/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,0759430561179932
+"558";"TR276700.2_17/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"559";"TR276700.2_17/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,420568258416666
+"560";"TR276700.2_17/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0207995
+"561";"TR276700.2_23/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,558979770654588
+"562";"TR276700.2_23/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"563";"TR276700.2_23/08/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"564";"TR276700.2_23/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,378205330416666
+"565";"TR276700.2_23/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,5501
+"566";"TR276700.2_23/08/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"567";"TR276700.2_23/08/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0124488007739829
+"568";"TR276700.2_23/08/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"569";"TR276700.2_23/08/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,378205330416666
+"570";"TR276700.2_23/08/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,04499
+"571";"TR276700.2_25/08/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,627619063211001
+"572";"TR276700.2_25/08/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"573";"TR276700.2_25/08/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"574";"TR276700.2_25/08/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,0862425854166665
+"575";"TR276700.2_25/08/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;FALSE;-0,064825
+"576";"TR276700.2_25/08/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"577";"TR276700.2_25/08/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,131111147492336
+"578";"TR276700.2_25/08/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"579";"TR276700.2_25/08/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,0862425854166665
+"580";"TR276700.2_25/08/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,1583425
+"581";"TR276700.2_4/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,741178856929819
+"582";"TR276700.2_4/06/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"583";"TR276700.2_4/06/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0,0357142857142857
+"584";"TR276700.2_4/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,850033333333333
+"585";"TR276700.2_4/06/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"586";"TR276700.2_4/06/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"587";"TR276700.2_4/06/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,396083999502911
+"588";"TR276700.2_4/06/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0,0357142857142857
+"589";"TR276700.2_4/06/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,850033333333333
+"590";"TR276700.2_4/06/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"591";"TR276700.2_8/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,655596367685061
+"592";"TR276700.2_8/08/2007";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"593";"TR276700.2_8/08/2007";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"594";"TR276700.2_8/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,738341916666666
+"595";"TR276700.2_8/08/2007";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,5501
+"596";"TR276700.2_8/08/2007";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"597";"TR276700.2_8/08/2007";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,196391524598476
+"598";"TR276700.2_8/08/2007";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"599";"TR276700.2_8/08/2007";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,738341916666666
+"600";"TR276700.2_8/08/2007";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,04499
+"601";"TR277000.1_1/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,208341447703493
+"602";"TR277000.1_1/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"603";"TR277000.1_1/08/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"604";"TR277000.1_1/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,963366666666667
+"605";"TR277000.1_1/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"606";"TR277000.1_1/08/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"607";"TR277000.1_1/08/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,660717763301497
+"608";"TR277000.1_1/08/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"609";"TR277000.1_1/08/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,963366666666667
+"610";"TR277000.1_1/08/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"611";"TR277000.1_1/09/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,123505335784821
+"612";"TR277000.1_1/09/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"613";"TR277000.1_1/09/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"614";"TR277000.1_1/09/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,473416666666667
+"615";"TR277000.1_1/09/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;FALSE;-0,0555555555555556
+"616";"TR277000.1_1/09/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"617";"TR277000.1_1/09/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,44792323564375
+"618";"TR277000.1_1/09/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"619";"TR277000.1_1/09/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,473416666666667
+"620";"TR277000.1_1/09/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,15
+"621";"TR277000.1_16/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,00746411428787889
+"622";"TR277000.1_16/07/2013";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"623";"TR277000.1_16/07/2013";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0,0357142857142857
+"624";"TR277000.1_16/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,963366666666667
+"625";"TR277000.1_16/07/2013";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"626";"TR277000.1_16/07/2013";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"627";"TR277000.1_16/07/2013";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,563964457140693
+"628";"TR277000.1_16/07/2013";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0,0357142857142857
+"629";"TR277000.1_16/07/2013";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,963366666666667
+"630";"TR277000.1_16/07/2013";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"631";"TR277000.1_22/09/2010";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,590786570716677
+"632";"TR277000.1_22/09/2010";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"633";"TR277000.1_22/09/2010";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"634";"TR277000.1_22/09/2010";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,963366666666667
+"635";"TR277000.1_22/09/2010";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,8901
+"636";"TR277000.1_22/09/2010";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"637";"TR277000.1_22/09/2010";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,0451686650055788
+"638";"TR277000.1_22/09/2010";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"639";"TR277000.1_22/09/2010";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,963366666666667
+"640";"TR277000.1_22/09/2010";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,01099
+"641";"TR306500.1_1/08/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,603733455127495
+"642";"TR306500.1_1/08/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;FALSE;NA
+"643";"TR306500.1_1/08/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"644";"TR306500.1_1/08/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;0,378205330416666
+"645";"TR306500.1_1/08/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"646";"TR306500.1_1/08/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"647";"TR306500.1_1/08/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,830171480768926
+"648";"TR306500.1_1/08/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"649";"TR306500.1_1/08/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;0,378205330416666
+"650";"TR306500.1_1/08/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"651";"TR306500.1_3/07/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,485210440594851
+"652";"TR306500.1_3/07/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"653";"TR306500.1_3/07/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"654";"TR306500.1_3/07/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,783835344366666
+"655";"TR306500.1_3/07/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"656";"TR306500.1_3/07/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"657";"TR306500.1_3/07/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0862181308337208
+"658";"TR306500.1_3/07/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"659";"TR306500.1_3/07/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,783835344366666
+"660";"TR306500.1_3/07/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"661";"TR306500.1_7/08/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,622116921889133
+"662";"TR306500.1_7/08/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"663";"TR306500.1_7/08/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"664";"TR306500.1_7/08/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,738341916666666
+"665";"TR306500.1_7/08/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"666";"TR306500.1_7/08/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"667";"TR306500.1_7/08/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,838050109381057
+"668";"TR306500.1_7/08/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"669";"TR306500.1_7/08/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,738341916666666
+"670";"TR306500.1_7/08/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"671";"TR306500.2_1/08/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,133696183657661
+"672";"TR306500.2_1/08/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"673";"TR306500.2_1/08/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"674";"TR306500.2_1/08/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,540395089285714
+"675";"TR306500.2_1/08/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"676";"TR306500.2_1/08/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"677";"TR306500.2_1/08/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,628726935853283
+"678";"TR306500.2_1/08/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-0,5
+"679";"TR306500.2_1/08/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,540395089285714
+"680";"TR306500.2_1/08/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"681";"TR306500.2_1/08/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,000640512856067143
+"682";"TR306500.2_1/08/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"683";"TR306500.2_1/08/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"684";"TR306500.2_1/08/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,464464285714286
+"685";"TR306500.2_1/08/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"686";"TR306500.2_1/08/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"687";"TR306500.2_1/08/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,571703076938314
+"688";"TR306500.2_1/08/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"689";"TR306500.2_1/08/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,464464285714286
+"690";"TR306500.2_1/08/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"691";"TR306500.2_7/08/2008";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,620841418186824
+"692";"TR306500.2_7/08/2008";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"693";"TR306500.2_7/08/2008";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"694";"TR306500.2_7/08/2008";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,49875
+"695";"TR306500.2_7/08/2008";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"696";"TR306500.2_7/08/2008";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"697";"TR306500.2_7/08/2008";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,115296642435923
+"698";"TR306500.2_7/08/2008";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"699";"TR306500.2_7/08/2008";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,49875
+"700";"TR306500.2_7/08/2008";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"701";"TR306500.3_1/08/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,0683909477198671
+"702";"TR306500.3_1/08/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"703";"TR306500.3_1/08/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"704";"TR306500.3_1/08/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,419821428571429
+"705";"TR306500.3_1/08/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,995
+"706";"TR306500.3_1/08/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"707";"TR306500.3_1/08/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,503037623708704
+"708";"TR306500.3_1/08/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"709";"TR306500.3_1/08/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,419821428571429
+"710";"TR306500.3_1/08/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;5e-04
+"711";"TR306500.3_3/07/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;-0,5554241914351
+"712";"TR306500.3_3/07/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"713";"TR306500.3_3/07/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"714";"TR306500.3_3/07/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,472071071428572
+"715";"TR306500.3_3/07/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"716";"TR306500.3_3/07/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"717";"TR306500.3_3/07/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,809467510615043
+"718";"TR306500.3_3/07/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"719";"TR306500.3_3/07/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,472071071428572
+"720";"TR306500.3_3/07/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"721";"TR333500.2_12/08/2009";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,0442839246753517
+"722";"TR333500.2_12/08/2009";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"723";"TR333500.2_12/08/2009";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0,0714285714285714
+"724";"TR333500.2_12/08/2009";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,963366666666667
+"725";"TR333500.2_12/08/2009";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"726";"TR333500.2_12/08/2009";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"727";"TR333500.2_12/08/2009";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,52714464675322
+"728";"TR333500.2_12/08/2009";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0,037037037037037
+"729";"TR333500.2_12/08/2009";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,963366666666667
+"730";"TR333500.2_12/08/2009";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"731";"TR333500.2_20/09/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,629925161851893
+"732";"TR333500.2_20/09/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"733";"TR333500.2_20/09/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"734";"TR333500.2_20/09/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,850033333333333
+"735";"TR333500.2_20/09/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"736";"TR333500.2_20/09/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"737";"TR333500.2_20/09/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,136492044321084
+"738";"TR333500.2_20/09/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"739";"TR333500.2_20/09/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,850033333333333
+"740";"TR333500.2_20/09/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"741";"TR333500.2_7/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,717506394427329
+"742";"TR333500.2_7/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"743";"TR333500.2_7/09/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0,0357142857142857
+"744";"TR333500.2_7/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,88175
+"745";"TR333500.2_7/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,65
+"746";"TR333500.2_7/09/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"747";"TR333500.2_7/09/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,340848253663769
+"748";"TR333500.2_7/09/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"749";"TR333500.2_7/09/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,88175
+"750";"TR333500.2_7/09/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,035
+"751";"TR333500.3_11/08/2009";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,555317902638906
+"752";"TR333500.3_11/08/2009";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"753";"TR333500.3_11/08/2009";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0,0714285714285714
+"754";"TR333500.3_11/08/2009";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,850033333333333
+"755";"TR333500.3_11/08/2009";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,65
+"756";"TR333500.3_11/08/2009";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"757";"TR333500.3_11/08/2009";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0161106687896657
+"758";"TR333500.3_11/08/2009";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0,0714285714285714
+"759";"TR333500.3_11/08/2009";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,850033333333333
+"760";"TR333500.3_11/08/2009";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,035
+"761";"TR333500.3_20/09/2011";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,447081403244033
+"762";"TR333500.3_20/09/2011";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"763";"TR333500.3_20/09/2011";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0,0357142857142857
+"764";"TR333500.3_20/09/2011";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,965
+"765";"TR333500.3_20/09/2011";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"766";"TR333500.3_20/09/2011";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"767";"TR333500.3_20/09/2011";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,124347168184538
+"768";"TR333500.3_20/09/2011";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"769";"TR333500.3_20/09/2011";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,965
+"770";"TR333500.3_20/09/2011";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"771";"TR333500.3_7/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,186179933270011
+"772";"TR333500.3_7/09/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"773";"TR333500.3_7/09/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"774";"TR333500.3_7/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,8173683
+"775";"TR333500.3_7/09/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"776";"TR333500.3_7/09/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"777";"TR333500.3_7/09/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,385248638158561
+"778";"TR333500.3_7/09/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"779";"TR333500.3_7/09/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,8173683
+"780";"TR333500.3_7/09/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"781";"TR335600.3_18/08/2014";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,513917230878862
+"782";"TR335600.3_18/08/2014";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"783";"TR335600.3_18/08/2014";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"784";"TR335600.3_18/08/2014";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,965
+"785";"TR335600.3_18/08/2014";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"786";"TR335600.3_18/08/2014";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"787";"TR335600.3_18/08/2014";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,057511340549709
+"788";"TR335600.3_18/08/2014";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"789";"TR335600.3_18/08/2014";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,965
+"790";"TR335600.3_18/08/2014";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"791";"TR335600.3_19/07/2012";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,52895238899335
+"792";"TR335600.3_19/07/2012";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"793";"TR335600.3_19/07/2012";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"794";"TR335600.3_19/07/2012";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;1
+"795";"TR335600.3_19/07/2012";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"796";"TR335600.3_19/07/2012";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"797";"TR335600.3_19/07/2012";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0424761824352211
+"798";"TR335600.3_19/07/2012";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"799";"TR335600.3_19/07/2012";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;1
+"800";"TR335600.3_19/07/2012";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"801";"TR335600.3_24/07/2017";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,560228093430975
+"802";"TR335600.3_24/07/2017";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"803";"TR335600.3_24/07/2017";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"804";"TR335600.3_24/07/2017";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,930668333333333
+"805";"TR335600.3_24/07/2017";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"806";"TR335600.3_24/07/2017";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"807";"TR335600.3_24/07/2017";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,0112004779975962
+"808";"TR335600.3_24/07/2017";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"809";"TR335600.3_24/07/2017";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,930668333333333
+"810";"TR335600.3_24/07/2017";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"811";"TR418000.1_1/06/2007";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;FALSE;0,00263545325119709
+"812";"TR418000.1_1/06/2007";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"813";"TR418000.1_1/06/2007";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"814";"TR418000.1_1/06/2007";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;FALSE;-0,0487862732142858
+"815";"TR418000.1_1/06/2007";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,3145
+"816";"TR418000.1_1/06/2007";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"817";"TR418000.1_1/06/2007";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;-0,568793118177374
+"818";"TR418000.1_1/06/2007";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"819";"TR418000.1_1/06/2007";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;FALSE;-0,0487862732142858
+"820";"TR418000.1_1/06/2007";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0685500000000001
+"821";"TR418000.1_19/09/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,952498886794846
+"822";"TR418000.1_19/09/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"823";"TR418000.1_19/09/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"824";"TR418000.1_19/09/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,896991665
+"825";"TR418000.1_19/09/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,895
+"826";"TR418000.1_19/09/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"827";"TR418000.1_19/09/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,889164069187975
+"828";"TR418000.1_19/09/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"829";"TR418000.1_19/09/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,896991665
+"830";"TR418000.1_19/09/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,0105
+"831";"TR72000.2_28/06/2007";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,835546680187926
+"832";"TR72000.2_28/06/2007";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"833";"TR72000.2_28/06/2007";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;FALSE;-1
+"834";"TR72000.2_28/06/2007";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,896991665
+"835";"TR72000.2_28/06/2007";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;1
+"836";"TR72000.2_28/06/2007";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"837";"TR72000.2_28/06/2007";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;TRUE;0,61627558710516
+"838";"TR72000.2_28/06/2007";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;FALSE;-1
+"839";"TR72000.2_28/06/2007";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,896991665
+"840";"TR72000.2_28/06/2007";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;TRUE;0
+"841";"TR72000.2_30/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"helofyten";"B: 30-70 %";"zb";1;287;TRUE;0,638320370943833
+"842";"TR72000.2_30/08/2016";"3260";"Versie 2.0";"3260";"Structuur";"verticale structuur";"B: 3 groeivormen";"b";1;291;TRUE;NA
+"843";"TR72000.2_30/08/2016";"3260";"Versie 2.0";"3260";"Vegetatie";"sleutelsoorten";"B: >= 1 sleutelsoort is frequent tot (co)dominant aanwezig";"b";1;294;TRUE;0
+"844";"TR72000.2_30/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"eutrofiëring";"B: 10-30 %";"zb";1;1315;TRUE;0,769995833333333
+"845";"TR72000.2_30/08/2016";"3260";"Versie 2.0";"3260";"Verstoring";"invasieve exoten";"B: < 10 %";"zb";1;290;TRUE;0,65
+"846";"TR72000.2_30/08/2016";"3260";"Versie 3";"3260";"Structuur";"horizontale structuur";"grootste vegetatievlek > 10 m<U+00B2>";"zb";1;1294;NA;NA
+"847";"TR72000.2_30/08/2016";"3260";"Versie 3";"3260";"Structuur";"verticale structuur";"<= 30 % helofyten (uitgezonderd sleutelsoorten)";"zb";1;1291;FALSE;0,156080865535611
+"848";"TR72000.2_30/08/2016";"3260";"Versie 3";"3260";"Vegetatie";"sleutelsoorten";"minstens 1 sleutelsoort minstens laag-abundant aanwezig of minstens 2 sleutelsoorten frequent aanwezig";"b";1;1290;TRUE;0
+"849";"TR72000.2_30/08/2016";"3260";"Versie 3";"3260";"Verstoring";"eutrofiëring";"<= 30 %";"zb";1;1295;TRUE;0,769995833333333
+"850";"TR72000.2_30/08/2016";"3260";"Versie 3";"3260";"Verstoring";"invasieve exoten";"afwezig";"zb";1;1287;FALSE;0,035

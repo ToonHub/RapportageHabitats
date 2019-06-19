@@ -1,0 +1,102 @@
+"Scenario";"Schaal";"TypeResultaat";"Versie";"Habitattype";"Habitatsubtype";"Criterium";"Indicator";"Belang";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Structuur";"(korst)moslaag";"b";"Binnen & Buiten";52;2049,0623673608;70,01;55,95;81,1
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Structuur";"dwergstruiken";"b";"Binnen & Buiten";52;2049,0623673608;63,91;49,91;75,89
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Structuur";"naakte bodem";"zb";"Binnen & Buiten";52;2049,0623673608;53,08;39,37;66,34
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Structuur";"ouderdomsstructuur Struikheide";"b";"Binnen & Buiten";52;2049,0623673608;50,87;37,29;64,32
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";52;2049,0623673608;44,54;31,5;58,38
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Verstoring";"invasieve exoten";"zb";"Binnen & Buiten";52;2049,0623673608;85,8;72,98;93,11
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Verstoring";"verbossing";"b";"Binnen & Buiten";52;2049,0623673608;82,44;69,38;90,68
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2310;"2310";"Verstoring";"vergrassing/verruiging";"zb";"Binnen & Buiten";52;2049,0623673608;73,87;60,22;84,08
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Structuur";"dwergstruiken";"b";"Binnen & Buiten";52;2049,0623673608;59,85;45,88;72,39
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Structuur";"horizontale structuur";"zb";"Binnen & Buiten";52;2049,0623673608;52,34;38,66;65,68
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Structuur";"ouderdomsstructuur Struikheide";"b";"Binnen & Buiten";52;2049,0623673608;31,03;19,82;45,02
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";52;2049,0623673608;40,48;27,9;54,46
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Verstoring";"invasieve exoten";"zb";"Binnen & Buiten";52;2049,0623673608;85,8;72,98;93,11
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Verstoring";"verbossing";"b";"Binnen & Buiten";52;2049,0623673608;78,38;64,87;87,69
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Verstoring";"vergrassing";"zb";"Binnen & Buiten";52;2049,0623673608;73,87;60,22;84,08
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2310;"2310";"Verstoring";"verruiging";"zb";"Binnen & Buiten";52;2049,0623673608;100;100;100
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2330;"2330_bu";"Structuur";"horizontale structuur";"zb";"Binnen & Buiten";37;796,107316076219;95,99;85,76;98,96
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2330;"2330_bu";"Structuur";"korstmosvegetaties";"b";"Binnen & Buiten";37;796,107316076219;55,63;32,87;76,25
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2330;"2330_bu";"Structuur";"naakte bodem";"zb";"Binnen & Buiten";37;796,107316076219;44,44;23,81;67,19
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2330;"2330_bu";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";37;796,107316076219;62,16;37,88;81,57
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2330;"2330_bu";"Verstoring";"invasieve exoten";"zb";"Binnen & Buiten";37;796,107316076219;79,44;47;94,39
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2330;"2330_bu";"Verstoring";"verbossing";"b";"Binnen & Buiten";37;796,107316076219;39,08;21,7;59,75
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";2330;"2330_bu";"Verstoring";"vergrassing";"zb";"Binnen & Buiten";37;796,107316076219;80,9;64,08;90,95
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Structuur";"horizontale structuur";"zb";"Binnen";35;573,807316076219;94,44;81,61;98,48
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Structuur";"horizontale structuur";"zb";"Buiten";2;222,3;100;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Structuur";"korstmosvegetaties";"b";"Binnen";35;573,807316076219;57,81;40,65;73,27
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Structuur";"korstmosvegetaties";"b";"Buiten";2;222,3;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Structuur";"naakte bodem";"zb";"Binnen";35;573,807316076219;42,29;26,81;59,45
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Structuur";"naakte bodem";"zb";"Buiten";2;222,3;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Vegetatie";"sleutelsoorten";"b";"Binnen";35;573,807316076219;66,87;49,42;80,65
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Vegetatie";"sleutelsoorten";"b";"Buiten";2;222,3;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Verstoring";"invasieve exoten";"zb";"Binnen";35;573,807316076219;90,84;74,89;97,06
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Verstoring";"invasieve exoten";"zb";"Buiten";2;222,3;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Verstoring";"verbossing";"b";"Binnen";35;573,807316076219;54,22;37,28;70,23
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Verstoring";"verbossing";"b";"Buiten";2;222,3;0;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Verstoring";"vergrassing";"zb";"Binnen";35;573,807316076219;73,5;56,05;85,77
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";2330;"2330_bu";"Verstoring";"vergrassing";"zb";"Buiten";2;222,3;100;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2330;"2330_bu";"Structuur";"horizontale structuur";"zb";"Binnen & Buiten";37;796,107316076219;89,39;75,54;95,83
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2330;"2330_bu";"Structuur";"naakte bodem";"zb";"Binnen & Buiten";37;796,107316076219;44,44;23,81;67,19
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2330;"2330_bu";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";37;796,107316076219;2,2;0,29;14,78
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2330;"2330_bu";"Verstoring";"invasieve exoten";"zb";"Binnen & Buiten";37;796,107316076219;79,44;47;94,39
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2330;"2330_bu";"Verstoring";"verbossing";"b";"Binnen & Buiten";37;796,107316076219;55,24;32,54;75,94
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";2330;"2330_bu";"Verstoring";"vergrassing";"zb";"Binnen & Buiten";37;796,107316076219;80,9;64,08;90,95
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Structuur";"horizontale structuur";"zb";"Binnen";35;573,807316076219;85,28;69,31;93,7
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Structuur";"horizontale structuur";"zb";"Buiten";2;222,3;100;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Structuur";"naakte bodem";"zb";"Binnen";35;573,807316076219;42,29;26,81;59,45
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Structuur";"naakte bodem";"zb";"Buiten";2;222,3;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Vegetatie";"sleutelsoorten";"b";"Binnen";35;573,807316076219;3,05;0,42;19,14
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Vegetatie";"sleutelsoorten";"b";"Buiten";2;222,3;0;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Verstoring";"invasieve exoten";"zb";"Binnen";35;573,807316076219;90,84;74,89;97,06
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Verstoring";"invasieve exoten";"zb";"Buiten";2;222,3;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Verstoring";"verbossing";"b";"Binnen";35;573,807316076219;57,27;40,08;72,87
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Verstoring";"verbossing";"b";"Buiten";2;222,3;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Verstoring";"vergrassing";"zb";"Binnen";35;573,807316076219;73,5;56,05;85,77
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";2330;"2330_bu";"Verstoring";"vergrassing";"zb";"Buiten";2;222,3;100;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4010;"4010";"Structuur";"dwergstruiken";"b";"Binnen & Buiten";31;1661,60463111787;58,09;40,11;74,15
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4010;"4010";"Structuur";"veenmossen";"b";"Binnen & Buiten";31;1661,60463111787;29,07;15,68;47,47
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4010;"4010";"Vegetatie";"aantal veenmossen";"b";"Binnen & Buiten";31;1661,60463111787;3,32;0,45;20,68
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4010;"4010";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";31;1661,60463111787;32,45;18,23;50,86
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4010;"4010";"Verstoring";"verbossing";"b";"Binnen & Buiten";31;1661,60463111787;96,68;79,32;99,55
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4010;"4010";"Verstoring";"vergrassing";"zb";"Binnen & Buiten";31;1661,60463111787;37,53;22,32;55,68
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4010;"4010";"Structuur";"dwergstruiken";"b";"Binnen & Buiten";31;1661,60463111787;58,09;40,11;74,15
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4010;"4010";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";31;1661,60463111787;0;0;0
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4010;"4010";"Verstoring";"verbossing";"b";"Binnen & Buiten";31;1661,60463111787;80,05;61,85;90,85
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4010;"4010";"Verstoring";"vergrassing";"zb";"Binnen & Buiten";31;1661,60463111787;37,53;22,32;55,68
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4030;"4030";"Structuur";"dwergstruiken";"b";"Binnen & Buiten";37;4179,35821511253;49,07;32,11;66,24
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4030;"4030";"Structuur";"ouderdomsstructuur Struikheide";"b";"Binnen & Buiten";37;4179,35821511253;85,68;63,88;95,29
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4030;"4030";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";37;4179,35821511253;0;0;0
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4030;"4030";"Verstoring";"verbossing";"b";"Binnen & Buiten";37;4179,35821511253;70,81;49,78;85,58
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";4030;"4030";"Verstoring";"vergrassing/verruiging";"zb";"Binnen & Buiten";37;4179,35821511253;63,08;45,84;77,53
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Structuur";"dwergstruiken";"b";"Binnen";35;3567,85821511253;48,91;32,66;65,39
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Structuur";"dwergstruiken";"b";"Buiten";2;611,5;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Structuur";"ouderdomsstructuur Struikheide";"b";"Binnen";35;3567,85821511253;91,79;76,92;97,41
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Structuur";"ouderdomsstructuur Struikheide";"b";"Buiten";2;611,5;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Vegetatie";"sleutelsoorten";"b";"Binnen";35;3567,85821511253;0;0;0
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Vegetatie";"sleutelsoorten";"b";"Buiten";2;611,5;0;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Verstoring";"verbossing";"b";"Binnen";35;3567,85821511253;82,95;66,49;92,26
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Verstoring";"verbossing";"b";"Buiten";2;611,5;0;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Verstoring";"vergrassing/verruiging";"zb";"Binnen";35;3567,85821511253;56,75;39,79;72,27
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";4030;"4030";"Verstoring";"vergrassing/verruiging";"zb";"Buiten";2;611,5;100;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4030;"4030";"Structuur";"dwergstruiken";"b";"Binnen & Buiten";37;4179,35821511253;41,31;25,37;59,31
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4030;"4030";"Structuur";"ouderdomsstructuur Struikheide";"b";"Binnen & Buiten";37;4179,35821511253;18,49;8,99;34,24
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4030;"4030";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";37;4179,35821511253;29,71;16,96;46,66
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4030;"4030";"Verstoring";"invasieve exoten";"zb";"Binnen & Buiten";37;4179,35821511253;94,83;81,11;98,74
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4030;"4030";"Verstoring";"verbossing";"b";"Binnen & Buiten";37;4179,35821511253;58,33;39,76;74,81
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4030;"4030";"Verstoring";"vergrassing";"zb";"Binnen & Buiten";37;4179,35821511253;60,5;43,21;75,5
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";4030;"4030";"Verstoring";"verruiging";"zb";"Binnen & Buiten";37;4179,35821511253;97,42;83,34;99,65
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Structuur";"dwergstruiken";"b";"Binnen";35;3567,85821511253;39,82;24,82;57,02
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Structuur";"dwergstruiken";"b";"Buiten";2;611,5;50;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Structuur";"ouderdomsstructuur Struikheide";"b";"Binnen";35;3567,85821511253;21,66;10,84;38,6
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Structuur";"ouderdomsstructuur Struikheide";"b";"Buiten";2;611,5;0;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Vegetatie";"sleutelsoorten";"b";"Binnen";35;3567,85821511253;34,8;20,73;52,15
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Vegetatie";"sleutelsoorten";"b";"Buiten";2;611,5;0;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"invasieve exoten";"zb";"Binnen";35;3567,85821511253;93,95;78,48;98,51
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"invasieve exoten";"zb";"Buiten";2;611,5;100;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"verbossing";"b";"Binnen";35;3567,85821511253;68,33;51,01;81,72
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"verbossing";"b";"Buiten";2;611,5;0;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"vergrassing";"zb";"Binnen";35;3567,85821511253;53,73;37;69,66
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"vergrassing";"zb";"Buiten";2;611,5;100;NA;NA
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"verruiging";"zb";"Binnen";35;3567,85821511253;96,97;81;99,59
+"Combinatie cirkelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";4030;"4030";"Verstoring";"verruiging";"zb";"Buiten";2;611,5;100;NA;NA

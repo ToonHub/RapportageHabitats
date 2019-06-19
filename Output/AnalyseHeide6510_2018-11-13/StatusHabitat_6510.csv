@@ -1,0 +1,27 @@
+"Schaal";"TypeResultaat";"Versie";"Habitattype";"Habitatsubtype";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Binnen & Buiten";30;1000,36851406523;90,1;72,24;96,95
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Binnen & Buiten";7;105,7;42,86;14,18;77,29
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_huk";"Binnen & Buiten";6;53,3559790101188;26,51;5,28;70
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Binnen & Buiten";6;18,0050616905037;38,72;8,98;80,18
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_hu; 6510_hua; 6510_hus; 6510_huk";"Binnen & Buiten";49;1177,42955476585;82,19;63,45;92,46
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"Binnen";34;359,113807116246;75,17;58,36;86,73
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus; 6510_huk";"Buiten";15;818,315747649606;85,27;58,96;95,89
+"Vlaanderen-Atlantisch";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Binnen & Buiten";29;985,526206372922;89,95;71,67;96,94
+"Vlaanderen-Atlantisch";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Binnen & Buiten";7;105,7;42,86;14,15;77,34
+"Vlaanderen-Atlantisch";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Binnen & Buiten";6;18,0050616905037;38,72;8,95;80,23
+"Vlaanderen-Atlantisch";"Habitattype";"Versie 2.0";6510;"6510_hu; 6510_hua; 6510_hus";"Binnen & Buiten";42;1109,23126806343;84,63;65,98;93,99
+"Vlaanderen-Atlantisch";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus";"Binnen";28;311,61552041382;77,32;58,64;89,13
+"Vlaanderen-Atlantisch";"SBZH";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"Buiten";14;797,615747649606;87,48;61,93;96,78
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Binnen & Buiten";30;1000,36851406523;8,23;2,76;22,09
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Binnen & Buiten";7;105,7;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Binnen & Buiten";6;53,3559790101188;26,6;5,31;70,08
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_hu; 6510_hua; 6510_hus; 6510_huk";"Binnen & Buiten";49;1177,42955476585;8,2;3,16;19,63
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Binnen";34;359,113807116246;26,87;13,92;45,51
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hua; 6510_hu; 6510_hus; 6510_huk";"Buiten";15;818,315747649606;0;0;0
+"Vlaanderen-Atlantisch";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Binnen & Buiten";29;985,526206372922;8,35;2,77;22,58
+"Vlaanderen-Atlantisch";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Binnen & Buiten";7;105,7;0;0;0
+"Vlaanderen-Atlantisch";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Vlaanderen-Atlantisch";"Habitattype";"Versie 3";6510;"6510_hu; 6510_hua; 6510_hus";"Binnen & Buiten";42;1109,23126806343;7,42;2,62;19,29
+"Vlaanderen-Atlantisch";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus";"Binnen";28;311,61552041382;26,42;12,61;47,18
+"Vlaanderen-Atlantisch";"SBZH";"Versie 3";6510;"6510_hua; 6510_hu; 6510_hus";"Buiten";14;797,615747649606;0;0;0

@@ -1,0 +1,69 @@
+"Scenario";"Versie";"Habitattype";"Habitatsubtype";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Cirkelplot";"Versie 2.0";1330;"1330_hpr";"Binnen & Buiten";16;71,2813614998924;97,21;81,08;99,65
+"Vegetatieplot";"Versie 2.0";1330;"1330_hpr";"Binnen & Buiten";16;102,682258666202;100;100;100
+"Cirkelplot";"Versie 3";1330;"1330_hpr";"Binnen & Buiten";16;71,2813614998924;97,21;81,08;99,65
+"Vegetatieplot";"Versie 3";1330;"1330_hpr";"Binnen & Buiten";16;102,682258666202;100;100;100
+"Cirkelplot";"Versie 2.0";6120;"6120";"Binnen & Buiten";4;10,6001770447311;16,76;NA;NA
+"Vegetatieplot";"Versie 2.0";6120;"6120";"Binnen & Buiten";4;23,6875464686729;50;NA;NA
+"Cirkelplot";"Versie 3";6120;"6120";"Binnen & Buiten";4;10,6001770447311;0;NA;NA
+"Vegetatieplot";"Versie 3";6120;"6120";"Binnen & Buiten";4;23,6875464686729;0;NA;NA
+"Cirkelplot";"Versie 2.0";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen & Buiten";66;251,63315688201;37,11;25,25;50,75
+"Cirkelplot";"Versie 2.0";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen";52;175,418239773344;47,63;32,05;63,69
+"Cirkelplot";"Versie 2.0";6230;"6230_hn; 6230_hmo; 6230_ha";"Buiten";14;76,2149171086657;12,88;3,98;34,54
+"Cirkelplot";"Versie 2.0";6230;"6230_ha";"Binnen & Buiten";17;101,318223867817;27,56;10,33;55,68
+"Cirkelplot";"Versie 2.0";6230;"6230_hmo";"Binnen & Buiten";23;38,7073423658633;62,39;40,27;80,31
+"Cirkelplot";"Versie 2.0";6230;"6230_hn";"Binnen & Buiten";25;109,895584362568;36,03;20,05;55,84
+"Cirkelplot";"Versie 2.0";6230;"6230_hnk";"Binnen & Buiten";1;1,71200628576085;100;NA;NA
+"Vegetatieplot";"Versie 2.0";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen & Buiten";66;379,40477303939;51,04;37,21;64,71
+"Vegetatieplot";"Versie 2.0";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen";52;261,024012954462;53,81;38,25;68,67
+"Vegetatieplot";"Versie 2.0";6230;"6230_hn; 6230_hmo; 6230_ha";"Buiten";14;118,380760084928;44,92;20,33;72,27
+"Vegetatieplot";"Versie 2.0";6230;"6230_ha";"Binnen & Buiten";18;166,477380873186;34,08;16,46;57,57
+"Vegetatieplot";"Versie 2.0";6230;"6230_hmo";"Binnen & Buiten";23;51,7491076287534;69,18;47,85;84,6
+"Vegetatieplot";"Versie 2.0";6230;"6230_hn";"Binnen & Buiten";24;157,754271965928;61,92;40,28;79,68
+"Vegetatieplot";"Versie 2.0";6230;"6230_hnk";"Binnen & Buiten";1;3,4240125715217;100;NA;NA
+"Cirkelplot";"Versie 3";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen & Buiten";66;251,63315688201;47,63;33,75;61,89
+"Cirkelplot";"Versie 3";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen";52;175,418239773344;53,2;37,13;68,63
+"Cirkelplot";"Versie 3";6230;"6230_hn; 6230_hmo; 6230_ha";"Buiten";14;76,2149171086657;34,82;13,82;64,02
+"Cirkelplot";"Versie 3";6230;"6230_ha";"Binnen & Buiten";17;101,318223867817;36,45;16,42;62,6
+"Cirkelplot";"Versie 3";6230;"6230_hmo";"Binnen & Buiten";23;38,7073423658633;25,25;10,98;48,06
+"Cirkelplot";"Versie 3";6230;"6230_hn";"Binnen & Buiten";25;109,895584362568;66,58;43,47;83,76
+"Cirkelplot";"Versie 3";6230;"6230_hnk";"Binnen & Buiten";1;1,71200628576085;0;NA;NA
+"Vegetatieplot";"Versie 3";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen & Buiten";66;379,40477303939;56,3;42,01;69,62
+"Vegetatieplot";"Versie 3";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen";52;261,024012954462;59,07;43,09;73,34
+"Vegetatieplot";"Versie 3";6230;"6230_hn; 6230_hmo; 6230_ha";"Buiten";14;118,380760084928;50,2;23,76;76,52
+"Vegetatieplot";"Versie 3";6230;"6230_ha";"Binnen & Buiten";18;166,477380873186;34,08;16,46;57,57
+"Vegetatieplot";"Versie 3";6230;"6230_hmo";"Binnen & Buiten";23;51,7491076287534;48,11;28,61;68,2
+"Vegetatieplot";"Versie 3";6230;"6230_hn";"Binnen & Buiten";24;157,754271965928;81,49;58,57;93,2
+"Vegetatieplot";"Versie 3";6230;"6230_hnk";"Binnen & Buiten";1;3,4240125715217;100;NA;NA
+"Cirkelplot";"Versie 2.0";6410;"6410_ve; 6410_mo";"Binnen & Buiten";43;57,6204521300776;10,93;3,2;31,32
+"Cirkelplot";"Versie 2.0";6410;"6410_ve; 6410_mo";"Binnen";33;33,386277731927;15,28;4,43;41,23
+"Cirkelplot";"Versie 2.0";6410;"6410_mo; 6410_ve";"Buiten";10;24,2341743981506;4,94;0,54;33,31
+"Cirkelplot";"Versie 2.0";6410;"6410_mo";"Binnen & Buiten";31;11,2190579762604;28,73;14,52;48,9
+"Cirkelplot";"Versie 2.0";6410;"6410_ve";"Binnen & Buiten";12;46,4013941538172;6,63;0,79;38,85
+"Vegetatieplot";"Versie 2.0";6410;"6410_ve; 6410_mo";"Binnen & Buiten";44;67,6852173374972;30,05;12,74;55,82
+"Vegetatieplot";"Versie 2.0";6410;"6410_ve; 6410_mo";"Binnen";34;42,2403290253261;39,51;19,61;63,63
+"Vegetatieplot";"Versie 2.0";6410;"6410_mo; 6410_ve";"Buiten";10;25,4448883121712;14,33;2,17;55,74
+"Vegetatieplot";"Versie 2.0";6410;"6410_mo";"Binnen & Buiten";32;14,9802180754616;53,66;35,05;71,3
+"Vegetatieplot";"Versie 2.0";6410;"6410_ve";"Binnen & Buiten";12;52,7049992620356;23,34;6,97;55,28
+"Cirkelplot";"Versie 3";6410;"6410_ve; 6410_mo";"Binnen & Buiten";43;57,6204521300776;7,17;1,37;30,03
+"Cirkelplot";"Versie 3";6410;"6410_ve; 6410_mo";"Binnen";33;33,386277731927;10,2;1,69;42,82
+"Cirkelplot";"Versie 3";6410;"6410_mo; 6410_ve";"Buiten";10;24,2341743981506;3,01;0,22;30,6
+"Cirkelplot";"Versie 3";6410;"6410_mo";"Binnen & Buiten";31;11,2190579762604;9,44;2,06;34,01
+"Cirkelplot";"Versie 3";6410;"6410_ve";"Binnen & Buiten";12;46,4013941538172;6,63;0,79;38,85
+"Vegetatieplot";"Versie 3";6410;"6410_ve; 6410_mo";"Binnen & Buiten";44;67,6852173374972;21,72;8,47;45,42
+"Vegetatieplot";"Versie 3";6410;"6410_ve; 6410_mo";"Binnen";34;42,2403290253261;27,9;11,61;53,27
+"Vegetatieplot";"Versie 3";6410;"6410_mo; 6410_ve";"Buiten";10;25,4448883121712;11,47;1,69;49,44
+"Vegetatieplot";"Versie 3";6410;"6410_mo";"Binnen & Buiten";32;14,9802180754616;36,57;20,64;56,11
+"Vegetatieplot";"Versie 3";6410;"6410_ve";"Binnen & Buiten";12;52,7049992620356;17,5;4,62;48,15
+"Cirkelplot";"Versie 2.0";7140;"7140_meso; 7140_oli";"Binnen & Buiten";34;170,393620356666;18,46;8,6;35,27
+"Cirkelplot";"Versie 2.0";7140;"7140_meso";"Binnen & Buiten";23;100,458739852447;26,47;11,91;48,95
+"Cirkelplot";"Versie 2.0";7140;"7140_oli";"Binnen & Buiten";11;69,9348805042189;6,95;0,91;37,84
+"Vegetatieplot";"Versie 2.0";7140;"7140_meso; 7140_oli";"Binnen & Buiten";34;208,948085550967;31,89;18,12;49,76
+"Vegetatieplot";"Versie 2.0";7140;"7140_meso";"Binnen & Buiten";23;119,223478669055;34,78;18,25;56,03
+"Vegetatieplot";"Versie 2.0";7140;"7140_oli";"Binnen & Buiten";11;89,7246068819115;28,04;9,18;60,02
+"Cirkelplot";"Versie 3";7140;"7140_meso; 7140_oli";"Binnen & Buiten";34;170,393620356666;18,27;8,67;34,49
+"Cirkelplot";"Versie 3";7140;"7140_meso";"Binnen & Buiten";23;100,458739852447;24,82;11;46,86
+"Cirkelplot";"Versie 3";7140;"7140_oli";"Binnen & Buiten";11;69,9348805042189;8,87;1,66;35,98
+"Vegetatieplot";"Versie 3";7140;"7140_meso; 7140_oli";"Binnen & Buiten";34;208,948085550967;27,87;15,21;45,43
+"Vegetatieplot";"Versie 3";7140;"7140_meso";"Binnen & Buiten";23;119,223478669055;34,78;18,25;56,03
+"Vegetatieplot";"Versie 3";7140;"7140_oli";"Binnen & Buiten";11;89,7246068819115;18,69;4,62;52,16

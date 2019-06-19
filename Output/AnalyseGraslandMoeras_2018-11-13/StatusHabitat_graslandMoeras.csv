@@ -1,0 +1,35 @@
+"Scenario";"Schaal";"TypeResultaat";"Versie";"Habitattype";"Habitatsubtype";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";1330;"1330_hpr";"Binnen & Buiten";16;55,75025;100;100;100
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";1330;"1330_hpr";"Binnen & Buiten";16;55,75025;100;100;100
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";6120;"6120";"Binnen & Buiten";4;1,7005;33,52;NA;NA
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";6120;"6120";"Binnen & Buiten";4;1,7005;0;NA;NA
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";6230;"6230_ha";"Binnen & Buiten";18;135,174596078431;34,27;14,73;61,15
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";6230;"6230_hmo";"Binnen & Buiten";23;92,84415;69,11;46,23;85,34
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";6230;"6230_hn";"Binnen & Buiten";24;135,023823529412;57,37;36,01;76,29
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";6230;"6230_hnk";"Binnen & Buiten";1;1,8;100;NA;NA
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen & Buiten";66;364,842569607843;52,01;37,71;65,99
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen";52;252,945902941176;59,46;44,4;72,92
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";6230;"6230_hn; 6230_ha; 6230_hmo";"Buiten";14;111,896666666667;35,16;14,36;63,7
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";6230;"6230_ha";"Binnen & Buiten";18;135,174596078431;34,13;14,59;61,11
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";6230;"6230_hmo";"Binnen & Buiten";23;92,84415;46,37;26,22;67,77
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";6230;"6230_hn";"Binnen & Buiten";24;135,023823529412;76,16;51,55;90,56
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";6230;"6230_hnk";"Binnen & Buiten";1;1,8;100;NA;NA
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen & Buiten";66;364,842569607843;53,13;38,67;67,07
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";6230;"6230_hn; 6230_ha; 6230_hmo; 6230_hnk";"Binnen";52;252,945902941176;61,32;46,3;74,46
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";6230;"6230_hn; 6230_ha; 6230_hmo";"Buiten";14;111,896666666667;34,6;14,1;63,04
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";6410;"6410_mo";"Binnen & Buiten";32;17,3573285024155;50,53;32,71;68,22
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";6410;"6410_ve";"Binnen & Buiten";12;17,625;28,94;9,79;60,44
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";6410;"6410_mo; 6410_ve";"Binnen & Buiten";44;34,9823285024155;39,65;23,9;57,89
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";6410;"6410_mo; 6410_ve";"Binnen";34;24,0132173913043;42,06;24,72;61,6
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 2.0";6410;"6410_mo; 6410_ve";"Buiten";10;10,9691111111111;34,39;10,16;70,83
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";6410;"6410_mo";"Binnen & Buiten";32;17,3573285024155;28,03;14,07;48,09
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";6410;"6410_ve";"Binnen & Buiten";12;17,625;4,26;0,54;26,62
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";6410;"6410_mo; 6410_ve";"Binnen & Buiten";44;34,9823285024155;16,05;7,7;30,48
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";6410;"6410_mo; 6410_ve";"Binnen";34;24,0132173913043;9,6;3,66;22,88
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"SBZH";"Versie 3";6410;"6410_mo; 6410_ve";"Buiten";10;10,9691111111111;30,18;8,51;66,78
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";7140;"7140_meso";"Binnen & Buiten";23;119,650434782609;36,12;19;57,68
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 2.0";7140;"7140_oli";"Binnen & Buiten";11;83,1725454545454;20,86;5,48;54,54
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 2.0";7140;"7140_oli; 7140_meso";"Binnen & Buiten";34;202,822980237154;29,86;16,53;47,79
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";7140;"7140_meso";"Binnen & Buiten";23;119,650434782609;33,54;17,02;55,39
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitatsubtype";"Versie 3";7140;"7140_oli";"Binnen & Buiten";11;83,1725454545454;8,87;1,66;35,98
+"Combinatie crikelplot en vegetatieplot";"Vlaanderen";"Habitattype";"Versie 3";7140;"7140_oli; 7140_meso";"Binnen & Buiten";34;202,822980237154;23,42;12,18;40,28

@@ -1,0 +1,77 @@
+"Schaal";"Periode";"TypeResultaat";"Versie";"Habitattype";"Habitatsubtype";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Vlaanderen";1;"Habitattype";"Versie 2.0";"9120";"9120";"Binnen & Buiten";115;119,502569828225;31,03;23,3;40
+"Vlaanderen";2;"Habitattype";"Versie 2.0";"9120";"9120";"Binnen & Buiten";115;113,913893034263;30,12;22,39;39,16
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9120";"9120";"Binnen";63;63;57,14;44,68;68,76
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9120";"9120";"Buiten";52;56,502569828225;1,92;0,27;12,52
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9120";"9120";"Binnen";63;60,03;55,34;42,85;67,19
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9120";"9120";"Buiten";52;53,883893034263;2,02;0,28;13,06
+"Vlaanderen";1;"Habitattype";"Versie 3";"9120";"9120";"Binnen & Buiten";115;119,502569828225;28,52;21,06;37,37
+"Vlaanderen";2;"Habitattype";"Versie 3";"9120";"9120";"Binnen & Buiten";115;113,913893034263;25,25;18,1;34,05
+"Vlaanderen";1;"SBZH";"Versie 3";"9120";"9120";"Binnen";63;63;52,38;40,1;64,38
+"Vlaanderen";1;"SBZH";"Versie 3";"9120";"9120";"Buiten";52;56,502569828225;1,92;0,27;12,52
+"Vlaanderen";2;"SBZH";"Versie 3";"9120";"9120";"Binnen";63;60,03;46,11;34,11;58,58
+"Vlaanderen";2;"SBZH";"Versie 3";"9120";"9120";"Buiten";52;53,883893034263;2,02;0,28;13,06
+"Vlaanderen";1;"Habitattype";"Versie 2.0";"9130";"9130";"Binnen & Buiten";13;32,1078904991948;21,8;6,16;54,21
+"Vlaanderen";2;"Habitattype";"Versie 2.0";"9130";"9130";"Binnen & Buiten";13;31,8878904991948;21,26;5,97;53,45
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9130";"9130";"Binnen";11;11;63,64;32,76;86,27
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9130";"9130";"Buiten";2;21,1078904991948;0;NA;NA
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9130";"9130";"Binnen";11;10,78;62,89;32,03;85,91
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9130";"9130";"Buiten";2;21,1078904991948;0;NA;NA
+"Vlaanderen";1;"Habitattype";"Versie 3";"9130";"9130";"Binnen & Buiten";13;32,1078904991948;24,92;7,14;58,87
+"Vlaanderen";2;"Habitattype";"Versie 3";"9130";"9130";"Binnen & Buiten";13;31,8878904991948;27,53;7,9;62,74
+"Vlaanderen";1;"SBZH";"Versie 3";"9130";"9130";"Binnen";11;11;72,73;40,13;91,39
+"Vlaanderen";1;"SBZH";"Versie 3";"9130";"9130";"Buiten";2;21,1078904991948;0;NA;NA
+"Vlaanderen";2;"SBZH";"Versie 3";"9130";"9130";"Binnen";11;10,78;81,45;47,1;95,58
+"Vlaanderen";2;"SBZH";"Versie 3";"9130";"9130";"Buiten";2;21,1078904991948;0;NA;NA
+"Vlaanderen";1;"Habitattype";"Versie 2.0";"9160";"9160";"Binnen & Buiten";19;19,2378705505549;15,59;4,95;39,61
+"Vlaanderen";2;"Habitattype";"Versie 2.0";"9160";"9160";"Binnen & Buiten";19;18,3453823466508;14,94;4,66;38,65
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9160";"9160";"Binnen";11;11;27,27;8,75;59,45
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9160";"9160";"Buiten";8;8,23787055055488;0;0;0
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9160";"9160";"Binnen";11;10,54;26;8,17;58,1
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9160";"9160";"Buiten";8;7,80538234665075;0;0;0
+"Vlaanderen";1;"Habitattype";"Versie 3";"9160";"9160";"Binnen & Buiten";19;19,2378705505549;10,4;2,51;34,33
+"Vlaanderen";2;"Habitattype";"Versie 3";"9160";"9160";"Binnen & Buiten";19;18,3453823466508;14,94;4,66;38,65
+"Vlaanderen";1;"SBZH";"Versie 3";"9160";"9160";"Binnen";11;11;18,18;4,4;51,75
+"Vlaanderen";1;"SBZH";"Versie 3";"9160";"9160";"Buiten";8;8,23787055055488;0;0;0
+"Vlaanderen";2;"SBZH";"Versie 3";"9160";"9160";"Binnen";11;10,54;26;8,17;58,1
+"Vlaanderen";2;"SBZH";"Versie 3";"9160";"9160";"Buiten";8;7,80538234665075;0;0;0
+"Vlaanderen";1;"Habitattype";"Versie 2.0";"9190";"9190";"Binnen & Buiten";17;19,5977568505982;5,1;0,66;30,17
+"Vlaanderen";2;"Habitattype";"Versie 2.0";"9190";"9190";"Binnen & Buiten";17;19,0877568505982;5,24;0,68;30,78
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9190";"9190";"Binnen";9;9;11,11;1,45;51,58
+"Vlaanderen";1;"SBZH";"Versie 2.0";"9190";"9190";"Buiten";8;10,5977568505982;0;0;0
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9190";"9190";"Binnen";9;8,49;11,78;1,54;53,3
+"Vlaanderen";2;"SBZH";"Versie 2.0";"9190";"9190";"Buiten";8;10,5977568505982;0;0;0
+"Vlaanderen";1;"Habitattype";"Versie 3";"9190";"9190";"Binnen & Buiten";17;19,5977568505982;5,1;0,66;30,17
+"Vlaanderen";2;"Habitattype";"Versie 3";"9190";"9190";"Binnen & Buiten";17;19,0877568505982;5,24;0,68;30,78
+"Vlaanderen";1;"SBZH";"Versie 3";"9190";"9190";"Binnen";9;9;11,11;1,45;51,58
+"Vlaanderen";1;"SBZH";"Versie 3";"9190";"9190";"Buiten";8;10,5977568505982;0;0;0
+"Vlaanderen";2;"SBZH";"Versie 3";"9190";"9190";"Binnen";9;8,49;11,78;1,54;53,3
+"Vlaanderen";2;"SBZH";"Versie 3";"9190";"9190";"Buiten";8;10,5977568505982;0;0;0
+"Vlaanderen";1;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_va";"Binnen & Buiten";17;23,1338406607278;21,71;7,69;48
+"Vlaanderen";1;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_vm";"Binnen & Buiten";13;14,931430054503;24,4;7,76;55,32
+"Vlaanderen";1;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_vn";"Binnen & Buiten";10;11,0775091881555;0;0;0
+"Vlaanderen";1;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_vo";"Binnen & Buiten";3;4,03485576923077;0;NA;NA
+"Vlaanderen";2;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_va";"Binnen & Buiten";17;21,8626872723338;17,34;6,21;39,9
+"Vlaanderen";2;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_vm";"Binnen & Buiten";13;13,9460965481443;29,17;10,97;57,92
+"Vlaanderen";2;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_vn";"Binnen & Buiten";10;10,8875091881555;0;0;0
+"Vlaanderen";2;"Habitatsubtype";"Versie 2.0";"91E0";"91E0_vo";"Binnen & Buiten";3;3,5471875;0;NA;NA
+"Vlaanderen";1;"Habitattype";"Versie 2.0";"91E0";"91E0_va; 91E0_vm; 91E0_vn; 91E0_vo";"Binnen & Buiten";43;53,1776356726171;16,3;7,61;31,51
+"Vlaanderen";2;"Habitattype";"Versie 2.0";"91E0";"91E0_va; 91E0_vm; 91E0_vn; 91E0_vo";"Binnen & Buiten";43;50,2434805086336;15,64;7,78;28,94
+"Vlaanderen";1;"SBZH";"Versie 2.0";"91E0";"91E0_va; 91E0_vm; 91E0_vo; 91E0_vn";"Binnen";24;25,0775091881555;19,94;8,38;40,42
+"Vlaanderen";1;"SBZH";"Versie 2.0";"91E0";"91E0_va; 91E0_vn; 91E0_vm; 91E0_vo";"Buiten";19;28,1001264844616;13,05;3,25;40,16
+"Vlaanderen";2;"SBZH";"Versie 2.0";"91E0";"91E0_va; 91E0_vm; 91E0_vo; 91E0_vn";"Binnen";24;24,3675091881555;27,86;13,56;48,75
+"Vlaanderen";2;"SBZH";"Versie 2.0";"91E0";"91E0_va; 91E0_vn; 91E0_vm; 91E0_vo";"Buiten";19;25,8759713204781;4,13;0,56;24,94
+"Vlaanderen";1;"Habitatsubtype";"Versie 3";"91E0";"91E0_va";"Binnen & Buiten";17;23,1338406607278;21,71;7,69;48
+"Vlaanderen";1;"Habitatsubtype";"Versie 3";"91E0";"91E0_vm";"Binnen & Buiten";13;14,931430054503;17,71;4,29;50,79
+"Vlaanderen";1;"Habitatsubtype";"Versie 3";"91E0";"91E0_vn";"Binnen & Buiten";10;11,0775091881555;0;0;0
+"Vlaanderen";1;"Habitatsubtype";"Versie 3";"91E0";"91E0_vo";"Binnen & Buiten";3;4,03485576923077;0;NA;NA
+"Vlaanderen";2;"Habitatsubtype";"Versie 3";"91E0";"91E0_va";"Binnen & Buiten";17;21,8626872723338;12,81;3,92;34,56
+"Vlaanderen";2;"Habitatsubtype";"Versie 3";"91E0";"91E0_vm";"Binnen & Buiten";13;13,9460965481443;21,51;6,85;50,55
+"Vlaanderen";2;"Habitatsubtype";"Versie 3";"91E0";"91E0_vn";"Binnen & Buiten";10;10,8875091881555;0;0;0
+"Vlaanderen";2;"Habitatsubtype";"Versie 3";"91E0";"91E0_vo";"Binnen & Buiten";3;3,5471875;0;NA;NA
+"Vlaanderen";1;"Habitattype";"Versie 3";"91E0";"91E0_va; 91E0_vm; 91E0_vn; 91E0_vo";"Binnen & Buiten";43;53,1776356726171;14,42;6,31;29,64
+"Vlaanderen";2;"Habitattype";"Versie 3";"91E0";"91E0_va; 91E0_vm; 91E0_vn; 91E0_vo";"Binnen & Buiten";43;50,2434805086336;11,54;5,13;23,96
+"Vlaanderen";1;"SBZH";"Versie 3";"91E0";"91E0_va; 91E0_vm; 91E0_vo; 91E0_vn";"Binnen";24;25,0775091881555;15,95;5,99;36,1
+"Vlaanderen";1;"SBZH";"Versie 3";"91E0";"91E0_va; 91E0_vn; 91E0_vm; 91E0_vo";"Buiten";19;28,1001264844616;13,05;3,25;40,16
+"Vlaanderen";2;"SBZH";"Versie 3";"91E0";"91E0_va; 91E0_vm; 91E0_vo; 91E0_vn";"Binnen";24;24,3675091881555;23,8;10,83;44,55
+"Vlaanderen";2;"SBZH";"Versie 3";"91E0";"91E0_va; 91E0_vn; 91E0_vm; 91E0_vo";"Buiten";19;25,8759713204781;0;0;0

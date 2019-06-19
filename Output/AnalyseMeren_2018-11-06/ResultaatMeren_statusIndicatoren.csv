@@ -1,0 +1,178 @@
+"Versie";"Habitattype";"Habitatsubtype";"Indicator";"SBZH";"nObs";"sumWeights";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Versie 2.0";"3130";"alle";"doorzicht";"Binnen & Buiten";93;335,735089462032;70,49;51,3;84,41
+"Versie 2.0";"3130";"alle";"doorzicht";"binnen";87;276,587367998888;65,44;46,2;80,68
+"Versie 2.0";"3130";"alle";"doorzicht";"buiten";6;59,147721463144;94,12;56,62;99,49
+"Versie 2.0";"3130";"alle";"horizontale structuur";"Binnen & Buiten";149;649,57783217834;80,34;70,18;87,65
+"Versie 2.0";"3130";"alle";"horizontale structuur";"binnen";141;538,651704872405;78,13;67,55;85,98
+"Versie 2.0";"3130";"alle";"horizontale structuur";"buiten";8;110,926127305935;91,07;50,72;99,02
+"Versie 2.0";"3130";"3130_aom";"horizontale structuur";"Binnen & Buiten";93;335,735089462032;76,86;60,86;87,65
+"Versie 2.0";"3130";"3130_na";"horizontale structuur";"Binnen & Buiten";56;313,842742716309;84,07;70,7;92,03
+"Versie 2.0";"3130";"alle";"oeverzone ZW-zijde";"Binnen & Buiten";93;335,735089462032;53,63;34,22;72
+"Versie 2.0";"3130";"alle";"oeverzone ZW-zijde";"binnen";87;276,587367998888;63,72;44,54;79,35
+"Versie 2.0";"3130";"alle";"oeverzone ZW-zijde";"buiten";6;59,147721463144;6,43;0,63;42,76
+"Versie 2.0";"3130";"alle";"sleutelsoorten";"Binnen & Buiten";149;649,57783217834;23,99;14,81;36,42
+"Versie 2.0";"3130";"alle";"sleutelsoorten";"binnen";141;538,651704872405;27,47;17,38;40,56
+"Versie 2.0";"3130";"alle";"sleutelsoorten";"buiten";8;110,926127305935;7,06;0,81;41,56
+"Versie 2.0";"3130";"3130_aom";"sleutelsoorten";"Binnen & Buiten";93;335,735089462032;43,35;26,56;61,82
+"Versie 2.0";"3130";"3130_na";"sleutelsoorten";"Binnen & Buiten";56;313,842742716309;3,28;0,45;20,25
+"Versie 2.0";"3130";"alle";"eutrofiëring";"Binnen & Buiten";149;649,57783217834;71,22;60,02;80,3
+"Versie 2.0";"3130";"alle";"eutrofiëring";"binnen";141;538,651704872405;66,22;54,68;76,1
+"Versie 2.0";"3130";"alle";"eutrofiëring";"buiten";8;110,926127305935;95,47;69,15;99,5
+"Versie 2.0";"3130";"3130_aom";"eutrofiëring";"Binnen & Buiten";93;335,735089462032;62,67;45,8;76,93
+"Versie 2.0";"3130";"3130_na";"eutrofiëring";"Binnen & Buiten";56;313,842742716309;80,36;65,13;89,96
+"Versie 2.0";"3130";"alle";"invasieve exoten";"Binnen & Buiten";149;649,57783217834;81,96;60,63;93,06
+"Versie 2.0";"3130";"alle";"invasieve exoten";"binnen";141;538,651704872405;93,97;83,38;97,97
+"Versie 2.0";"3130";"alle";"invasieve exoten";"buiten";8;110,926127305935;23,65;5,18;63,75
+"Versie 2.0";"3130";"3130_aom";"invasieve exoten";"Binnen & Buiten";93;335,735089462032;83,37;50,43;96,11
+"Versie 2.0";"3130";"3130_na";"invasieve exoten";"Binnen & Buiten";56;313,842742716309;80,45;48,53;94,72
+"Versie 2.0";"3130";"alle";"vergrassing";"Binnen & Buiten";149;649,57783217834;98,02;93,71;99,39
+"Versie 2.0";"3130";"alle";"vergrassing";"binnen";141;538,651704872405;98,53;93,92;99,66
+"Versie 2.0";"3130";"alle";"vergrassing";"buiten";8;110,926127305935;95,55;68,92;99,52
+"Versie 2.0";"3130";"3130_aom";"vergrassing";"Binnen & Buiten";93;335,735089462032;96,17;87,99;98,85
+"Versie 2.0";"3130";"3130_na";"vergrassing";"Binnen & Buiten";56;313,842742716309;100;100;100
+"Versie 2.0";"3130";"alle";"verzuring";"Binnen & Buiten";149;649,57783217834;90,74;83,81;94,89
+"Versie 2.0";"3130";"alle";"verzuring";"binnen";141;538,651704872405;89,8;82,13;94,4
+"Versie 2.0";"3130";"alle";"verzuring";"buiten";8;110,926127305935;95,35;69,45;99,46
+"Versie 2.0";"3130";"3130_aom";"verzuring";"Binnen & Buiten";93;335,735089462032;82,53;69,56;90,71
+"Versie 2.0";"3130";"3130_na";"verzuring";"Binnen & Buiten";56;313,842742716309;99,53;97,89;99,9
+"Versie 2.0";"3130";"alle";"verticale structuur";"Binnen & Buiten";56;313,842742716309;90,36;70,56;97,35
+"Versie 2.0";"3130";"alle";"verticale structuur";"binnen";54;262,064336873518;88,46;66,48;96,73
+"Versie 2.0";"3130";"alle";"verticale structuur";"buiten";2;51,7784058427912;100;NA;NA
+"Versie 3";"3130";"alle";"horizontale structuur";"Binnen & Buiten";149;649,57783217834;44,49;31,47;58,32
+"Versie 3";"3130";"alle";"horizontale structuur";"binnen";141;538,651704872405;51,31;38,56;63,89
+"Versie 3";"3130";"alle";"horizontale structuur";"buiten";8;110,926127305935;11,38;1,95;45,3
+"Versie 3";"3130";"3130_aom";"horizontale structuur";"Binnen & Buiten";93;335,735089462032;37,72;22,94;55,2
+"Versie 3";"3130";"3130_na";"horizontale structuur";"Binnen & Buiten";56;313,842742716309;51,73;31,38;71,52
+"Versie 3";"3130";"alle";"verticale structuur";"Binnen & Buiten";149;649,57783217834;82,17;72,31;89,05
+"Versie 3";"3130";"alle";"verticale structuur";"binnen";141;538,651704872405;79,46;68,77;87,17
+"Versie 3";"3130";"alle";"verticale structuur";"buiten";8;110,926127305935;95,35;69,45;99,46
+"Versie 3";"3130";"3130_aom";"verticale structuur";"Binnen & Buiten";93;335,735089462032;74,52;60,33;84,9
+"Versie 3";"3130";"3130_na";"verticale structuur";"Binnen & Buiten";56;313,842742716309;90,36;70,71;97,33
+"Versie 3";"3130";"alle";"sleutelsoorten";"Binnen & Buiten";149;649,57783217834;4,6;1,63;12,3
+"Versie 3";"3130";"alle";"sleutelsoorten";"binnen";141;538,651704872405;5,55;1,99;14,51
+"Versie 3";"3130";"alle";"sleutelsoorten";"buiten";8;110,926127305935;0;0;0
+"Versie 3";"3130";"3130_aom";"sleutelsoorten";"Binnen & Buiten";93;335,735089462032;5,83;1,75;17,68
+"Versie 3";"3130";"3130_na";"sleutelsoorten";"Binnen & Buiten";56;313,842742716309;3,28;0,45;20,25
+"Versie 3";"3130";"alle";"eutrofiëring";"Binnen & Buiten";149;649,57783217834;75,29;64,79;83,47
+"Versie 3";"3130";"alle";"eutrofiëring";"binnen";141;538,651704872405;71,14;60,13;80,12
+"Versie 3";"3130";"alle";"eutrofiëring";"buiten";8;110,926127305935;95,47;69,15;99,5
+"Versie 3";"3130";"3130_aom";"eutrofiëring";"Binnen & Buiten";93;335,735089462032;70,56;55,03;82,44
+"Versie 3";"3130";"3130_na";"eutrofiëring";"Binnen & Buiten";56;313,842742716309;80,36;65,13;89,96
+"Versie 3";"3130";"alle";"invasieve exoten";"Binnen & Buiten";149;649,57783217834;36,39;25,38;49,03
+"Versie 3";"3130";"alle";"invasieve exoten";"binnen";141;538,651704872405;41,51;30,06;53,96
+"Versie 3";"3130";"alle";"invasieve exoten";"buiten";8;110,926127305935;11,51;2;45,35
+"Versie 3";"3130";"3130_aom";"invasieve exoten";"Binnen & Buiten";93;335,735089462032;38,86;24,24;55,81
+"Versie 3";"3130";"3130_na";"invasieve exoten";"Binnen & Buiten";56;313,842742716309;33,74;18,6;53,17
+"Versie 3";"3130";"alle";"verzuring";"Binnen & Buiten";149;649,57783217834;90,74;83,81;94,89
+"Versie 3";"3130";"alle";"verzuring";"binnen";141;538,651704872405;89,8;82,13;94,4
+"Versie 3";"3130";"alle";"verzuring";"buiten";8;110,926127305935;95,35;69,45;99,46
+"Versie 3";"3130";"3130_aom";"verzuring";"Binnen & Buiten";93;335,735089462032;82,53;69,56;90,71
+"Versie 3";"3130";"3130_na";"verzuring";"Binnen & Buiten";56;313,842742716309;99,53;97,89;99,9
+"Versie 2.0";"3150";"alle";"doorzicht";"Binnen & Buiten";36;81,4953779434893;42,48;11,69;80,47
+"Versie 2.0";"3150";"alle";"doorzicht";"binnen";32;79,030489262293;40,7;10,41;80,22
+"Versie 2.0";"3150";"alle";"doorzicht";"buiten";4;2,4648886811963;99,23;NA;NA
+"Versie 2.0";"3150";"alle";"horizontale structuur";"Binnen & Buiten";36;81,4953779434893;90,87;71,83;97,49
+"Versie 2.0";"3150";"alle";"horizontale structuur";"binnen";32;79,030489262293;90,67;70,79;97,5
+"Versie 2.0";"3150";"alle";"horizontale structuur";"buiten";4;2,4648886811963;97,17;NA;NA
+"Versie 2.0";"3150";"alle";"sleutelsoorten";"Binnen & Buiten";36;81,4953779434893;43,87;12,23;81,42
+"Versie 2.0";"3150";"alle";"sleutelsoorten";"binnen";32;79,030489262293;42,14;10,95;81,18
+"Versie 2.0";"3150";"alle";"sleutelsoorten";"buiten";4;2,4648886811963;99,23;NA;NA
+"Versie 2.0";"3150";"alle";"eutrofiëring";"Binnen & Buiten";36;81,4953779434893;95,06;79,17;98,99
+"Versie 2.0";"3150";"alle";"eutrofiëring";"binnen";32;79,030489262293;97,96;88,14;99,68
+"Versie 2.0";"3150";"alle";"eutrofiëring";"buiten";4;2,4648886811963;2,06;NA;NA
+"Versie 2.0";"3150";"alle";"invasieve exoten";"Binnen & Buiten";36;81,4953779434893;96,38;80,61;99,42
+"Versie 2.0";"3150";"alle";"invasieve exoten";"binnen";32;79,030489262293;99,3;95,84;99,89
+"Versie 2.0";"3150";"alle";"invasieve exoten";"buiten";4;2,4648886811963;2,83;NA;NA
+"Versie 3";"3150";"alle";"horizontale structuur";"Binnen & Buiten";36;81,4953779434893;70,2;34,64;91,29
+"Versie 3";"3150";"alle";"horizontale structuur";"binnen";32;79,030489262293;72,35;35,93;92,43
+"Versie 3";"3150";"alle";"horizontale structuur";"buiten";4;2,4648886811963;1,3;NA;NA
+"Versie 3";"3150";"alle";"verticale structuur";"Binnen & Buiten";36;81,4953779434893;69,27;25,69;93,63
+"Versie 3";"3150";"alle";"verticale structuur";"binnen";32;79,030489262293;71,34;25,17;94,85
+"Versie 3";"3150";"alle";"verticale structuur";"buiten";4;2,4648886811963;2,83;NA;NA
+"Versie 3";"3150";"alle";"sleutelsoorten";"Binnen & Buiten";36;81,4953779434893;43,87;12,23;81,42
+"Versie 3";"3150";"alle";"sleutelsoorten";"binnen";32;79,030489262293;42,14;10,95;81,18
+"Versie 3";"3150";"alle";"sleutelsoorten";"buiten";4;2,4648886811963;99,23;NA;NA
+"Versie 3";"3150";"alle";"eutrofiëring";"Binnen & Buiten";36;81,4953779434893;95,06;79,17;98,99
+"Versie 3";"3150";"alle";"eutrofiëring";"binnen";32;79,030489262293;97,96;88,14;99,68
+"Versie 3";"3150";"alle";"eutrofiëring";"buiten";4;2,4648886811963;2,06;NA;NA
+"Versie 3";"3150";"alle";"invasieve exoten";"Binnen & Buiten";36;81,4953779434893;24,55;6,57;60,11
+"Versie 3";"3150";"alle";"invasieve exoten";"binnen";32;79,030489262293;25,29;6,61;61,82
+"Versie 3";"3150";"alle";"invasieve exoten";"buiten";4;2,4648886811963;0,77;NA;NA
+"Versie 2.0";"3140";"alle";"doorzicht";"Binnen & Buiten";18;54,6849158084344;98,96;92,51;99,86
+"Versie 2.0";"3140";"alle";"doorzicht";"binnen";17;16,9170674790997;96,65;85;99,32
+"Versie 2.0";"3140";"alle";"doorzicht";"buiten";1;37,7678483293347;100;NA;NA
+"Versie 2.0";"3140";"alle";"horizontale structuur";"Binnen & Buiten";18;54,6849158084344;98,37;84,16;99,85
+"Versie 2.0";"3140";"alle";"horizontale structuur";"binnen";17;16,9170674790997;94,73;69,02;99,32
+"Versie 2.0";"3140";"alle";"horizontale structuur";"buiten";1;37,7678483293347;100;NA;NA
+"Versie 2.0";"3140";"alle";"sleutelsoorten";"Binnen & Buiten";18;54,6849158084344;24,9;4,25;71,21
+"Versie 2.0";"3140";"alle";"sleutelsoorten";"binnen";17;16,9170674790997;80,48;43,85;95,6
+"Versie 2.0";"3140";"alle";"sleutelsoorten";"buiten";1;37,7678483293347;0;NA;NA
+"Versie 2.0";"3140";"alle";"eutrofiëring";"Binnen & Buiten";18;54,6849158084344;93,93;62,17;99,32
+"Versie 2.0";"3140";"alle";"eutrofiëring";"binnen";17;16,9170674790997;80,38;39,7;96,22
+"Versie 2.0";"3140";"alle";"eutrofiëring";"buiten";1;37,7678483293347;100;NA;NA
+"Versie 2.0";"3140";"alle";"invasieve exoten";"Binnen & Buiten";18;54,6849158084344;25,74;4,36;72,46
+"Versie 2.0";"3140";"alle";"invasieve exoten";"binnen";17;16,9170674790997;83,19;48,83;96,25
+"Versie 2.0";"3140";"alle";"invasieve exoten";"buiten";1;37,7678483293347;0;NA;NA
+"Versie 3";"3140";"alle";"horizontale structuur";"Binnen & Buiten";18;54,6849158084344;17,79;3;60,2
+"Versie 3";"3140";"alle";"horizontale structuur";"binnen";17;16,9170674790997;57,51;25,96;83,94
+"Versie 3";"3140";"alle";"horizontale structuur";"buiten";1;37,7678483293347;0;NA;NA
+"Versie 3";"3140";"alle";"verticale structuur";"Binnen & Buiten";18;54,6849158084344;82,62;41,33;96,98
+"Versie 3";"3140";"alle";"verticale structuur";"binnen";17;16,9170674790997;43,82;16,37;75,66
+"Versie 3";"3140";"alle";"verticale structuur";"buiten";1;37,7678483293347;100;NA;NA
+"Versie 3";"3140";"alle";"sleutelsoorten";"Binnen & Buiten";18;54,6849158084344;24,9;4,25;71,21
+"Versie 3";"3140";"alle";"sleutelsoorten";"binnen";17;16,9170674790997;80,48;43,85;95,6
+"Versie 3";"3140";"alle";"sleutelsoorten";"buiten";1;37,7678483293347;0;NA;NA
+"Versie 3";"3140";"alle";"eutrofiëring";"Binnen & Buiten";18;54,6849158084344;85,54;46,39;97,59
+"Versie 3";"3140";"alle";"eutrofiëring";"binnen";17;16,9170674790997;53,25;22,53;81,68
+"Versie 3";"3140";"alle";"eutrofiëring";"buiten";1;37,7678483293347;100;NA;NA
+"Versie 3";"3140";"alle";"invasieve exoten";"Binnen & Buiten";18;54,6849158084344;2,97;0,52;15,12
+"Versie 3";"3140";"alle";"invasieve exoten";"binnen";17;16,9170674790997;9,61;2,97;26,95
+"Versie 3";"3140";"alle";"invasieve exoten";"buiten";1;37,7678483293347;0;NA;NA
+"Versie 2.0";"3160";"alle";"sleutelsoorten";"Binnen & Buiten";44;159,574365467795;26,89;12,4;48,86
+"Versie 2.0";"3160";"alle";"sleutelsoorten";"binnen";42;156,58727849435;27,4;12,5;49,92
+"Versie 2.0";"3160";"alle";"sleutelsoorten";"buiten";2;2,98708697344517;0;NA;NA
+"Versie 2.0";"3160";"alle";"elektrisch geleidend vermogen";"Binnen & Buiten";44;159,574365467795;87,99;71,86;95,46
+"Versie 2.0";"3160";"alle";"elektrisch geleidend vermogen";"binnen";42;156,58727849435;87,76;71,24;95,4
+"Versie 2.0";"3160";"alle";"elektrisch geleidend vermogen";"buiten";2;2,98708697344517;100;NA;NA
+"Versie 2.0";"3160";"alle";"eutrofiëring";"Binnen & Buiten";44;159,574365467795;45,26;21,25;71,69
+"Versie 2.0";"3160";"alle";"eutrofiëring";"binnen";42;156,58727849435;44,21;20,42;71
+"Versie 2.0";"3160";"alle";"eutrofiëring";"buiten";2;2,98708697344517;100;NA;NA
+"Versie 2.0";"3160";"alle";"invasieve exoten";"Binnen & Buiten";44;159,574365467795;100;100;100
+"Versie 2.0";"3160";"alle";"invasieve exoten";"binnen";42;156,58727849435;100;100;100
+"Versie 2.0";"3160";"alle";"invasieve exoten";"buiten";2;2,98708697344517;100;NA;NA
+"Versie 2.0";"3160";"alle";"vergrassing";"Binnen & Buiten";44;159,574365467795;88,1;72,47;95,42
+"Versie 2.0";"3160";"alle";"vergrassing";"binnen";42;156,58727849435;89,78;74,11;96,42
+"Versie 2.0";"3160";"alle";"vergrassing";"buiten";2;2,98708697344517;0;NA;NA
+"Versie 2.0";"3160";"alle";"verzuring";"Binnen & Buiten";44;159,574365467795;82,21;61,9;92,93
+"Versie 2.0";"3160";"alle";"verzuring";"binnen";42;156,58727849435;81,87;61,1;92,85
+"Versie 2.0";"3160";"alle";"verzuring";"buiten";2;2,98708697344517;100;NA;NA
+"Versie 3";"3160";"alle";"horizontale structuur";"Binnen & Buiten";44;159,574365467795;29,31;13,09;53,3
+"Versie 3";"3160";"alle";"horizontale structuur";"binnen";42;156,58727849435;28,9;12,65;53,27
+"Versie 3";"3160";"alle";"horizontale structuur";"buiten";2;2,98708697344517;50,94;NA;NA
+"Versie 3";"3160";"alle";"sleutelsoorten";"Binnen & Buiten";44;159,574365467795;26,89;12,4;48,86
+"Versie 3";"3160";"alle";"sleutelsoorten";"binnen";42;156,58727849435;27,4;12,5;49,92
+"Versie 3";"3160";"alle";"sleutelsoorten";"buiten";2;2,98708697344517;0;NA;NA
+"Versie 3";"3160";"alle";"eutrofiëring";"Binnen & Buiten";44;159,574365467795;18,8;7,99;38,19
+"Versie 3";"3160";"alle";"eutrofiëring";"binnen";42;156,58727849435;19,16;8,07;39,02
+"Versie 3";"3160";"alle";"eutrofiëring";"buiten";2;2,98708697344517;0;NA;NA
+"Versie 3";"3160";"alle";"invasieve exoten";"Binnen & Buiten";44;159,574365467795;93,86;79,63;98,35
+"Versie 3";"3160";"alle";"invasieve exoten";"binnen";42;156,58727849435;93,74;79,21;98,33
+"Versie 3";"3160";"alle";"invasieve exoten";"buiten";2;2,98708697344517;100;NA;NA
+"Versie 3";"3160";"alle";"verzuring";"Binnen & Buiten";44;159,574365467795;86,26;66,66;95,17
+"Versie 3";"3160";"alle";"verzuring";"binnen";42;156,58727849435;85,99;65,98;95,11
+"Versie 3";"3160";"alle";"verzuring";"buiten";2;2,98708697344517;100;NA;NA
+"Versie 2.0";"3110";"alle";"doorzicht";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 2.0";"3110";"alle";"horizontale structuur";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 2.0";"3110";"alle";"oeverzone ZW-zijde";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 2.0";"3110";"alle";"verticale structuur";"Binnen & Buiten";2;16,4261705141;51,7;NA;NA
+"Versie 2.0";"3110";"alle";"sleutelsoorten";"Binnen & Buiten";2;16,4261705141;48,3;NA;NA
+"Versie 2.0";"3110";"alle";"eutrofiëring";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 2.0";"3110";"alle";"invasieve exoten";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 2.0";"3110";"alle";"vergrassing";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 2.0";"3110";"alle";"verzuring";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 3";"3110";"alle";"horizontale structuur";"Binnen & Buiten";2;16,4261705141;0;NA;NA
+"Versie 3";"3110";"alle";"verticale structuur";"Binnen & Buiten";2;16,4261705141;51,7;NA;NA
+"Versie 3";"3110";"alle";"sleutelsoorten";"Binnen & Buiten";2;16,4261705141;48,3;NA;NA
+"Versie 3";"3110";"alle";"eutrofiëring";"Binnen & Buiten";2;16,4261705141;100;NA;NA
+"Versie 3";"3110";"alle";"invasieve exoten";"Binnen & Buiten";2;16,4261705141;48,3;NA;NA
+"Versie 3";"3110";"alle";"verzuring";"Binnen & Buiten";2;16,4261705141;100;NA;NA

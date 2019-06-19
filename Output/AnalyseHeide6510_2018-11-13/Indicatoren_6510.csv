@@ -1,0 +1,862 @@
+"ID";"Habitattype";"Habitatsubtype";"Versie";"Criterium";"Indicator";"Belang";"Status_indicator";"SBZH";"Regio";"PlotWeight";"StratumWeight";"WeightComb"
+"1007490";"6510";"6510_huk";"Versie 2.0";"Structuur";"horizontale structuur";"b";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 2.0";"Verstoring";"vervilting";"zb";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Structuur";"levensvormen";"b";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1007490";"6510";"6510_huk";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Continental";1;20,7;20,7
+"1152657";"6510";"6510_hua";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"1152657";"6510";"6510_hua";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"118441";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"118441";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";FALSE;"Buiten";"Atlantic";0,124808913397496;304,3;37,9793523468581
+"127218";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"127218";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"1280278";"6510";"6510_hus";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verruiging";"zb";FALSE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"1280278";"6510";"6510_hus";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;5,06666666666667;5,06666666666667
+"143382";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"143382";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";0,922031742351525;304,3;280,574259197569
+"1487746";"6510";"6510_huk";"Versie 2.0";"Structuur";"horizontale structuur";"b";FALSE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 2.0";"Verstoring";"vervilting";"zb";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Structuur";"levensvormen";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Vegetatie";"sleutelsoorten";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1487746";"6510";"6510_huk";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Continental";0,585855240148789;8,92;5,22582874212719
+"1569666";"6510";"6510_huk";"Versie 2.0";"Structuur";"horizontale structuur";"b";FALSE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verruiging";"zb";FALSE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 2.0";"Verstoring";"vervilting";"zb";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Structuur";"levensvormen";"b";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1569666";"6510";"6510_huk";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Continental";0,652432110695137;8,92;5,81969442740062
+"1618818";"6510";"6510_huk";"Versie 2.0";"Structuur";"horizontale structuur";"b";FALSE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 2.0";"Verstoring";"vervilting";"zb";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Structuur";"levensvormen";"b";FALSE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Vegetatie";"sleutelsoorten";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Continental";1;8,92;8,92
+"1618818";"6510";"6510_huk";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Continental";1;8,92;8,92
+"162790";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"162790";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,685502935968961;14,8423076923077;10,1744454996316
+"18546";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"18546";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,894104962028499;14,8423076923077;13,2705809556461
+"20217";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"20217";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"206134";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"206134";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,797450754551543;14,8423076923077;11,8360094685169
+"231702";"6510";"6510_hus";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verruiging";"zb";FALSE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"231702";"6510";"6510_hus";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,888326262181175;5,06666666666667;4,50085306171795
+"2328854";"6510";"6510_hus";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"2328854";"6510";"6510_hus";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,893693320539885;5,06666666666667;4,52804615740208
+"243846";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"243846";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"258390";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"2867990";"6510";"6510_hus";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"2867990";"6510";"6510_hus";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";0,931165467696743;1,46666666666667;1,36570935262189
+"308098";"6510";"6510_huk";"Versie 2.0";"Structuur";"horizontale structuur";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 2.0";"Verstoring";"vervilting";"zb";TRUE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Structuur";"levensvormen";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"308098";"6510";"6510_huk";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Continental";0,831717206774397;8,92;7,41891748442762
+"327153";"6510";"6510_hus";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"327153";"6510";"6510_hus";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";0,734399853701224;1,46666666666667;1,07711978542846
+"333385";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"333385";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,535834413435679;14,8423076923077;7,95301923633955
+"366225";"6510";"6510_hua";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verruiging";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"366225";"6510";"6510_hua";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Verstoring";"vernatting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"vernatting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"38545";"6510";"6510_hua";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"386674";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"386674";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,826190011034674;14,8423076923077;12,2625663560877
+"398529";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";FALSE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"398529";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,313336785431129;14,8423076923077;4,65064098068741
+"409654";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"409654";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,844637247864529;14,8423076923077;12,5363659211893
+"41814";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"41814";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";0,637587473719097;304,3;194,017868252721
+"452066";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"452066";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"47446";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"47446";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,544040717384114;14,8423076923077;8,07481972455883
+"501046";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"501046";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"528582";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"528582";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,731927057455778;14,8423076923077;10,863486595084
+"556006";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"556006";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"576033";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"576033";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,542693794995355;14,8423076923077;8,05482828802721
+"589110";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589110";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"589698";"6510";"6510_huk";"Versie 2.0";"Structuur";"horizontale structuur";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 2.0";"Verstoring";"vervilting";"zb";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Structuur";"levensvormen";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Verstoring";"verbossing";"b";FALSE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"589698";"6510";"6510_huk";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Continental";0,59097963634118;8,92;5,27153835616332
+"605493";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"605493";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,528374762306686;14,8423076923077;7,84230079900578
+"63270";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"63270";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";0,576519132591985;304,3;175,434772047741
+"636561";"6510";"6510_hus";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 2.0";"Verstoring";"verruiging";"zb";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"636561";"6510";"6510_hus";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;1,46666666666667;1,46666666666667
+"643970";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"643970";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Continental";1;14,8423076923077;14,8423076923077
+"659794";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"659794";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";FALSE;"Binnen";"Atlantic";0,55040691510779;14,8423076923077;8,1693087900037
+"676914";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"676914";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"677174";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"720369";"6510";"6510_hua";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Verstoring";"vernatting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"vernatting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"720369";"6510";"6510_hua";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"78294";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"78294";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";1;14,8423076923077;14,8423076923077
+"79986";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";FALSE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";FALSE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"79986";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,690272672072116;14,8423076923077;10,2452393904858
+"845457";"6510";"6510_hua";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"845457";"6510";"6510_hua";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"vernatting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"968217";"6510";"6510_hua";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Verstoring";"vernatting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"eutrofiëring";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"strooisellaag";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"verdroging";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"vernatting";"zb";FALSE;"Buiten";"Atlantic";1;15,1;15,1
+"980625";"6510";"6510_hua";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Buiten";"Atlantic";1;15,1;15,1
+"99521";"6510";"6510_hu";"Versie 2.0";"Structuur";"dominantie van één soort";"b";FALSE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 2.0";"Structuur";"vegetatiehoogte";"b";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 2.0";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 2.0";"Verstoring";"strooisellaag";"b";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 2.0";"Verstoring";"verruiging";"zb";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Structuur";"dominantie van één soort";"b";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Structuur";"verticale structuur";"b";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Vegetatie";"bedekking sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Vegetatie";"sleutelsoorten";"b";FALSE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Verstoring";"eutrofiëring";"zb";FALSE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Verstoring";"strooisellaag";"b";FALSE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Verstoring";"verbossing";"b";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Verstoring";"verbraming";"b";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Verstoring";"vergrassing inclusief vervilting";"zb";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435
+"99521";"6510";"6510_hu";"Versie 3";"Verstoring";"verruiging inclusief ruderalisering";"zb";TRUE;"Binnen";"Atlantic";0,560624269479122;14,8423076923077;8,32095790738435

@@ -1,0 +1,91 @@
+"Versie";"TypeResultaat";"Habitattype";"Habitatsubtype";"Criterium";"Indicator";"Belang";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Versie 2.0";"Habitatsubtype";2130;"2130_had";"Verstoring";"overbetreding";"b";"Binnen";29;126;100;100;100
+"Versie 2.0";"Habitatsubtype";2130;"2130_hd";"Verstoring";"overbetreding";"b";"Binnen";159;622,4;100;100;100
+"Versie 2.0";"Habitatsubtype";2130;"2130_had";"Verstoring";"verbossing";"b";"Binnen";29;126;100;100;100
+"Versie 2.0";"Habitatsubtype";2130;"2130_hd";"Verstoring";"verbossing";"b";"Binnen";159;622,4;98,74;95,1;99,69
+"Versie 2.0";"Habitatsubtype";2130;"2130_had";"Verstoring";"vergrassing/verbraming";"zb";"Binnen";29;126;93,1;76,18;98,28
+"Versie 2.0";"Habitatsubtype";2130;"2130_hd";"Verstoring";"vergrassing/verbraming";"zb";"Binnen";159;622,4;88,05;82,01;92,26
+"Versie 2.0";"Habitatsubtype";2130;"2130_had";"Verstoring";"verruiging";"zb";"Binnen";29;126;100;100;100
+"Versie 2.0";"Habitatsubtype";2130;"2130_hd";"Verstoring";"verruiging";"zb";"Binnen";159;622,4;100;100;100
+"Versie 2.0";"Habitattype";2130;"2130_had";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";29;126;51,72;33,8;69,22
+"Versie 2.0";"Habitattype";2130;"2130_hd";"Vegetatie";"bedekking sleutelsoorten van het droog tot vochtig duingrasland";"b";"Binnen";159;622,4;35,85;28,76;43,62
+"Versie 2.0";"Habitattype";2130;"2130_hd";"Vegetatie";"bedekking sleutelsoorten van het kalkrijk mosduin en pionierduingrasland";"b";"Binnen";159;622,4;17,61;12,43;24,35
+"Versie 2.0";"Habitattype";2130;"2130_had";"Vegetatie";"sleutelsoorten";"b";"Binnen";29;126;41,38;24,97;59,96
+"Versie 2.0";"Habitattype";2130;"2130_hd";"Vegetatie";"sleutelsoorten van het droog tot vochtig kalkrijk duingrasland";"b";"Binnen";159;622,4;8,81;5,28;14,34
+"Versie 2.0";"Habitattype";2130;"2130_hd";"Vegetatie";"sleutelsoorten van het kalkrijk mosduin en pionierduingrasland";"b";"Binnen";159;622,4;9,43;5,76;15,08
+"Versie 2.0";"Habitattype";2130;"2130_had";"Verstoring";"invasieve exoten";"zb";"Binnen";29;126;96,55;78,62;99,53
+"Versie 2.0";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"overbetreding";"b";"Binnen";188;748,4;100;100;100
+"Versie 2.0";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"verbossing";"b";"Binnen";188;748,4;98,95;95,9;99,74
+"Versie 2.0";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"vergrassing/verbraming";"zb";"Binnen";188;748,4;88,9;83,55;92,66
+"Versie 2.0";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"verruiging";"zb";"Binnen";188;748,4;100;100;100
+"Versie 3";"Habitatsubtype";2130;"2130_had";"Vegetatie";"bedekking sleutelsoorten";"b;";"Binnen";29;126;17,24;7,35;35,38
+"Versie 3";"Habitatsubtype";2130;"2130_hd";"Vegetatie";"bedekking sleutelsoorten";"b;";"Binnen";159;622,4;3,77;1,7;8,16
+"Versie 3";"Habitatsubtype";2130;"2130_had";"Verstoring";"invasieve exoten";"zb";"Binnen";29;126;100;100;100
+"Versie 3";"Habitatsubtype";2130;"2130_hd";"Verstoring";"invasieve exoten";"zb";"Binnen";159;622,4;98,74;95,1;99,69
+"Versie 3";"Habitatsubtype";2130;"2130_had";"Verstoring";"overbetreding";"b";"Binnen";29;126;100;100;100
+"Versie 3";"Habitatsubtype";2130;"2130_hd";"Verstoring";"overbetreding";"b";"Binnen";159;622,4;98,74;95,1;99,69
+"Versie 3";"Habitatsubtype";2130;"2130_had";"Verstoring";"verbossing";"b";"Binnen";29;126;96,55;79,12;99,52
+"Versie 3";"Habitatsubtype";2130;"2130_hd";"Verstoring";"verbossing";"b";"Binnen";159;622,4;96,23;91,84;98,3
+"Versie 3";"Habitatsubtype";2130;"2130_had";"Verstoring";"vergrassing";"zb";"Binnen";29;126;93,1;76,18;98,28
+"Versie 3";"Habitatsubtype";2130;"2130_hd";"Verstoring";"vergrassing";"zb";"Binnen";159;622,4;91,82;86,41;95,2
+"Versie 3";"Habitatsubtype";2130;"2130_had";"Verstoring";"verruiging";"zb";"Binnen";29;126;96,55;79,12;99,52
+"Versie 3";"Habitatsubtype";2130;"2130_hd";"Verstoring";"verruiging";"zb";"Binnen";159;622,4;86,16;79,86;90,72
+"Versie 3";"Habitattype";2130;"2130_hd; 2130_had";"Vegetatie";"bedekking sleutelsoorten";"b;";"Binnen";188;748,4;6,04;3,37;10,59
+"Versie 3";"Habitattype";2130;"2130_had";"Vegetatie";"sleutelsoorten";"b";"Binnen";29;126;0;0;0
+"Versie 3";"Habitattype";2130;"2130_hd";"Vegetatie";"sleutelsoorten van het droog tot vochtig kalkrijk duingrasland";"b";"Binnen";159;622,4;1,89;0,61;5,7
+"Versie 3";"Habitattype";2130;"2130_hd";"Vegetatie";"sleutelsoorten van het kalkrijk mosduin en pionierduingrasland";"b";"Binnen";159;622,4;0;0;0
+"Versie 3";"Habitattype";2130;"2130_had";"Verstoring";"invasief mos";"zb";"Binnen";29;126;96,55;78,62;99,53
+"Versie 3";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"invasieve exoten";"zb";"Binnen";188;748,4;98,95;95,9;99,74
+"Versie 3";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"overbetreding";"b";"Binnen";188;748,4;98,95;95,9;99,74
+"Versie 3";"Habitattype";2130;"2130_hd";"Verstoring";"overige exoten";"b";"Binnen";159;622,4;100;100;100
+"Versie 3";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"verbossing";"b";"Binnen";188;748,4;96,28;92,39;98,22
+"Versie 3";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"vergrassing";"zb";"Binnen";188;748,4;92,04;87,2;95,15
+"Versie 3";"Habitattype";2130;"2130_hd; 2130_had";"Verstoring";"verruiging";"zb";"Binnen";188;748,4;87,91;82,44;91,85
+"Versie 2.0";"Habitattype";2160;"2160";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";41;620,200000000001;95,12;82,23;98,8
+"Versie 2.0";"Habitattype";2160;"2160";"Vegetatie";"sleutelsoorten";"b";"Binnen";41;620,200000000001;29,27;17,31;44,98
+"Versie 2.0";"Habitattype";2160;"2160";"Verstoring";"invasieve exoten";"zb";"Binnen";41;620,200000000001;97,56;84,29;99,67
+"Versie 2.0";"Habitattype";2160;"2160";"Verstoring";"overige exoten";"b";"Binnen";41;620,200000000001;95,12;82,23;98,8
+"Versie 2.0";"Habitattype";2160;"2160";"Verstoring";"verbossing";"b";"Binnen";41;620,200000000001;95,12;82,23;98,8
+"Versie 3";"Habitattype";2160;"2160";"Vegetatie";"sleutelsoorten";"b";"Binnen";41;620,200000000001;0;0;0
+"Versie 3";"Habitattype";2160;"2160";"Verstoring";"invasieve exoten";"zb";"Binnen";41;620,200000000001;95,12;82,23;98,8
+"Versie 3";"Habitattype";2160;"2160";"Verstoring";"overige exoten";"b";"Binnen";41;620,200000000001;95,12;82,23;98,8
+"Versie 3";"Habitattype";2160;"2160";"Verstoring";"verbossing";"b";"Binnen";41;620,200000000001;82,93;68,07;91,71
+"Versie 2.0";"Habitattype";2170;"2170";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";11;75,7;63,64;32,55;86,39
+"Versie 2.0";"Habitattype";2170;"2170";"Vegetatie";"sleutelsoorten";"b";"Binnen";11;75,7;54,55;25,68;80,64
+"Versie 2.0";"Habitattype";2170;"2170";"Verstoring";"verbossing";"b";"Binnen";11;75,7;63,64;32,55;86,39
+"Versie 2.0";"Habitattype";2170;"2170";"Verstoring";"verruiging";"zb";"Binnen";11;75,7;54,55;25,68;80,64
+"Versie 3";"Habitattype";2170;"2170";"Vegetatie";"sleutelsoorten";"b";"Binnen";11;75,7;54,55;25,68;80,64
+"Versie 3";"Habitattype";2170;"2170";"Verstoring";"invasieve exoten";"zb";"Binnen";11;75,7;100;100;100
+"Versie 3";"Habitattype";2170;"2170";"Verstoring";"overige exoten";"b";"Binnen";11;75,7;100;100;100
+"Versie 3";"Habitattype";2170;"2170";"Verstoring";"verbossing";"b";"Binnen";11;75,7;27,27;8,53;60,13
+"Versie 3";"Habitattype";2170;"2170";"Verstoring";"verruiging";"zb";"Binnen";11;75,7;36,36;13,61;67,45
+"Versie 2.0";"Habitatsubtype";2190;"2190";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";34;48,1;17,65;8,11;34,23
+"Versie 2.0";"Habitatsubtype";2190;"2190_mp";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";44;7,39999999999999;63,64;48,54;76,46
+"Versie 2.0";"Habitatsubtype";2190;"2190";"Vegetatie";"sleutelsoorten";"b";"Binnen";34;48,1;5,88;1,46;20,84
+"Versie 2.0";"Habitatsubtype";2190;"2190_mp";"Vegetatie";"sleutelsoorten";"b";"Binnen";44;7,39999999999999;52,27;37,65;66,52
+"Versie 2.0";"Habitatsubtype";2190;"2190";"Verstoring";"verbossing";"b";"Binnen";34;48,1;91,18;75,82;97,15
+"Versie 2.0";"Habitatsubtype";2190;"2190_mp";"Verstoring";"verbossing";"b";"Binnen";44;7,39999999999999;95,45;83,44;98,87
+"Versie 2.0";"Habitatsubtype";2190;"2190";"Verstoring";"verdroging";"zb";"Binnen";34;48,1;38,24;23,58;55,39
+"Versie 2.0";"Habitatsubtype";2190;"2190_mp";"Verstoring";"verdroging";"zb";"Binnen";44;7,39999999999999;70,45;55,41;82,07
+"Versie 2.0";"Habitatsubtype";2190;"2190";"Verstoring";"verruiging";"zb";"Binnen";34;48,1;91,18;75,82;97,15
+"Versie 2.0";"Habitatsubtype";2190;"2190_mp";"Verstoring";"verruiging";"zb";"Binnen";44;7,39999999999999;97,73;85,39;99,68
+"Versie 2.0";"Habitattype";2190;"2190; 2190_mp";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";78;55,5;23,78;14,13;37,16
+"Versie 2.0";"Habitattype";2190;"2190; 2190_mp";"Vegetatie";"sleutelsoorten";"b";"Binnen";78;55,5;12,07;6,3;21,88
+"Versie 2.0";"Habitattype";2190;"2190; 2190_mp";"Verstoring";"verbossing";"b";"Binnen";78;55,5;91,75;78,66;97,1
+"Versie 2.0";"Habitattype";2190;"2190; 2190_mp";"Verstoring";"verdroging";"zb";"Binnen";78;55,5;42,53;29,06;57,21
+"Versie 2.0";"Habitattype";2190;"2190; 2190_mp";"Verstoring";"verruiging";"zb";"Binnen";78;55,5;92,05;78,73;97,31
+"Versie 3";"Habitatsubtype";2190;"2190";"Vegetatie";"sleutelsoorten";"b";"Binnen";34;48,1;0;0;0
+"Versie 3";"Habitatsubtype";2190;"2190_mp";"Vegetatie";"sleutelsoorten";"b";"Binnen";44;7,39999999999999;4,55;1,13;16,56
+"Versie 3";"Habitatsubtype";2190;"2190";"Verstoring";"invasieve exoten";"zb";"Binnen";34;48,1;97,06;81,67;99,59
+"Versie 3";"Habitatsubtype";2190;"2190_mp";"Verstoring";"invasieve exoten";"zb";"Binnen";44;7,39999999999999;100;100;100
+"Versie 3";"Habitatsubtype";2190;"2190";"Verstoring";"verbossing";"b";"Binnen";34;48,1;85,29;69,05;93,78
+"Versie 3";"Habitatsubtype";2190;"2190_mp";"Verstoring";"verbossing";"b";"Binnen";44;7,39999999999999;90,91;78,04;96,57
+"Versie 3";"Habitatsubtype";2190;"2190";"Verstoring";"verdroging";"zb";"Binnen";34;48,1;67,65;50,36;81,16
+"Versie 3";"Habitatsubtype";2190;"2190_mp";"Verstoring";"verdroging";"zb";"Binnen";44;7,39999999999999;84,09;70,1;92,26
+"Versie 3";"Habitatsubtype";2190;"2190";"Verstoring";"verruiging";"zb";"Binnen";34;48,1;91,18;75,82;97,15
+"Versie 3";"Habitatsubtype";2190;"2190_mp";"Verstoring";"verruiging";"zb";"Binnen";44;7,39999999999999;97,73;85,39;99,68
+"Versie 3";"Habitattype";2190;"2190; 2190_mp";"Vegetatie";"sleutelsoorten";"b";"Binnen";78;55,5;0,61;0,15;2,48
+"Versie 3";"Habitattype";2190;"2190; 2190_mp";"Verstoring";"invasieve exoten";"zb";"Binnen";78;55,5;97,45;83,87;99,65
+"Versie 3";"Habitattype";2190;"2190; 2190_mp";"Verstoring";"verbossing";"b";"Binnen";78;55,5;86,04;72,08;93,64
+"Versie 3";"Habitattype";2190;"2190; 2190_mp";"Verstoring";"verdroging";"zb";"Binnen";78;55,5;69,84;54,58;81,69
+"Versie 3";"Habitattype";2190;"2190; 2190_mp";"Verstoring";"verruiging";"zb";"Binnen";78;55,5;92,05;78,73;97,31

@@ -1,0 +1,130 @@
+"Schaal";"TypeResultaat";"Versie";"Habitattype";"Habitatsubtype";"Criterium";"Indicator";"Belang";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";30;1000,36851406523;33,57;9,74;70,31
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";7;105,7;28,57;7,07;67,76
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";6;18,0050616905037;84,27;47,78;96,91
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Structuur";"vegetatiehoogte";"b";"Binnen & Buiten";30;1000,36851406523;96,17;87,4;98,91
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Structuur";"vegetatiehoogte";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Structuur";"vegetatiehoogte";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";30;1000,36851406523;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";7;105,7;57,14;22,71;85,82
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_huk";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";6;53,3559790101188;26,51;5,28;70
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";30;1000,36851406523;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";7;105,7;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_huk";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";6;53,3559790101188;26,51;5,28;70
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";30;1000,36851406523;98,39;92,46;99,67
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_huk";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Verstoring";"verbossing";"b";"Binnen & Buiten";30;1000,36851406523;97,71;89,02;99,56
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Verstoring";"verbossing";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_huk";"Verstoring";"verbossing";"b";"Binnen & Buiten";6;53,3559790101188;59,5;19,41;89,96
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Verstoring";"verbossing";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hu";"Verstoring";"verruiging";"zb";"Binnen & Buiten";30;1000,36851406523;95,39;76,44;99,25
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hua";"Verstoring";"verruiging";"zb";"Binnen & Buiten";7;105,7;85,71;41,41;98,07
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_huk";"Verstoring";"verruiging";"zb";"Binnen & Buiten";6;53,3559790101188;89,09;46,64;98,71
+"Vlaanderen";"Habitatsubtype";"Versie 2.0";6510;"6510_hus";"Verstoring";"verruiging";"zb";"Binnen & Buiten";6;18,0050616905037;38,72;8,98;80,18
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";43;1124,07357575573;33,92;11,46;67,06
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_huk";"Structuur";"horizontale structuur";"b";"Binnen & Buiten";6;53,3559790101188;0;0;0
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"Structuur";"vegetatiehoogte";"b";"Binnen & Buiten";43;1124,07357575573;96,59;89,19;98,98
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";49;1177,42955476585;6,33;2,2;16,91
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";49;1177,42955476585;1,2;0,25;5,65
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";49;1177,42955476585;98,63;93,84;99,71
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verbossing";"b";"Binnen & Buiten";49;1177,42955476585;96,22;88,81;98,79
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_hua";"Verstoring";"verdroging";"zb";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_hua";"Verstoring";"vernatting";"zb";"Binnen & Buiten";7;105,7;57,14;20,93;87,04
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verruiging";"zb";"Binnen & Buiten";49;1177,42955476585;93,37;79,47;98,08
+"Vlaanderen";"Habitattype";"Versie 2.0";6510;"6510_huk";"Verstoring";"vervilting";"zb";"Binnen & Buiten";6;53,3559790101188;61,2;12,95;94,36
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus";"Structuur";"dominantie van één soort";"b";"Binnen";29;326,457828106127;47,77;29,61;66,54
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"Structuur";"dominantie van één soort";"b";"Buiten";14;797,615747649606;28,25;4,72;75,78
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk";"Structuur";"horizontale structuur";"b";"Binnen";5;32,6559790101187;0;0;0
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk";"Structuur";"horizontale structuur";"b";"Buiten";1;20,7;0;NA;NA
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus";"Structuur";"vegetatiehoogte";"b";"Binnen";29;326,457828106127;88,27;71,7;95,72
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"Structuur";"vegetatiehoogte";"b";"Buiten";14;797,615747649606;100;100;100
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";34;359,113807116246;3,94;0,91;15,45
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"bedekking sleutelsoorten";"b";"Buiten";15;818,315747649606;7,38;1,9;24,7
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"Vegetatie";"sleutelsoorten";"b";"Binnen";34;359,113807116246;3,94;0,91;15,45
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"sleutelsoorten";"b";"Buiten";15;818,315747649606;0;0;0
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"strooisellaag";"b";"Binnen";34;359,113807116246;95,51;83,32;98,91
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"strooisellaag";"b";"Buiten";15;818,315747649606;100;100;100
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"verbossing";"b";"Binnen";34;359,113807116246;87,61;71,84;95,14
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verbossing";"b";"Buiten";15;818,315747649606;100;100;100
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"verruiging";"zb";"Binnen";34;359,113807116246;93,44;82,78;97,69
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verruiging";"zb";"Buiten";15;818,315747649606;93,33;70,03;98,82
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk";"Verstoring";"vervilting";"zb";"Binnen";5;32,6559790101187;100;100;100
+"Vlaanderen";"SBZH";"Versie 2.0";6510;"6510_huk";"Verstoring";"vervilting";"zb";"Buiten";1;20,7;0;NA;NA
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";30;1000,36851406523;78,31;36,44;95,79
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";6;53,3559790101188;86,1;39,66;98,31
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Structuur";"verticale structuur";"b";"Binnen & Buiten";30;1000,36851406523;96,17;87,4;98,91
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Structuur";"verticale structuur";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Structuur";"verticale structuur";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";30;1000,36851406523;2,5;0,5;11,57
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";7;105,7;14,29;1,93;58,59
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";6;53,3559790101188;16,72;2,07;65,55
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";30;1000,36851406523;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";7;105,7;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";6;53,3559790101188;26,51;5,28;70
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Verstoring";"eutrofiëring";"zb";"Binnen & Buiten";30;1000,36851406523;12,51;4,63;29,61
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Verstoring";"eutrofiëring";"zb";"Binnen & Buiten";7;105,7;71,43;32,29;92,91
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Verstoring";"eutrofiëring";"zb";"Binnen & Buiten";6;53,3559790101188;26,6;5,31;70,08
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Verstoring";"eutrofiëring";"zb";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";30;1000,36851406523;92,28;74,95;97,95
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Verstoring";"verbossing";"b";"Binnen & Buiten";30;1000,36851406523;97,71;89,02;99,56
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Verstoring";"verbossing";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Verstoring";"verbossing";"b";"Binnen & Buiten";6;53,3559790101188;59,5;19,41;89,96
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Verstoring";"verbossing";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Verstoring";"verbraming";"b";"Binnen & Buiten";30;1000,36851406523;99,54;96,23;99,94
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Verstoring";"verbraming";"b";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Verstoring";"verbraming";"b";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Verstoring";"verbraming";"b";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Verstoring";"vergrassing inclusief vervilting";"zb";"Binnen & Buiten";30;1000,36851406523;93,57;81,06;98,02
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Verstoring";"vergrassing inclusief vervilting";"zb";"Binnen & Buiten";7;105,7;42,86;14,18;77,29
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Verstoring";"vergrassing inclusief vervilting";"zb";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Verstoring";"vergrassing inclusief vervilting";"zb";"Binnen & Buiten";6;18,0050616905037;63,71;19,75;92,61
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hu";"Verstoring";"verruiging inclusief ruderalisering";"zb";"Binnen & Buiten";30;1000,36851406523;95,39;76,44;99,25
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hua";"Verstoring";"verruiging inclusief ruderalisering";"zb";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_huk";"Verstoring";"verruiging inclusief ruderalisering";"zb";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Vlaanderen";"Habitatsubtype";"Versie 3";6510;"6510_hus";"Verstoring";"verruiging inclusief ruderalisering";"zb";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Structuur";"dominantie van één soort";"b";"Binnen & Buiten";49;1177,42955476585;80,94;43,05;95,98
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk";"Structuur";"levensvormen";"b";"Binnen & Buiten";6;53,3559790101188;20,7;3,55;64,9
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_hua; 6510_hu; 6510_hus";"Structuur";"verticale structuur";"b";"Binnen & Buiten";43;1124,07357575573;96,59;89,19;98,98
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen & Buiten";49;1177,42955476585;4,16;1,26;12,91
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"sleutelsoorten";"b";"Binnen & Buiten";49;1177,42955476585;1,2;0,25;5,65
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"eutrofiëring";"zb";"Binnen & Buiten";49;1177,42955476585;18,24;8,02;36,34
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"strooisellaag";"b";"Binnen & Buiten";49;1177,42955476585;93,44;79,33;98,14
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verbossing";"b";"Binnen & Buiten";49;1177,42955476585;96,22;88,81;98,79
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verbraming";"b";"Binnen & Buiten";49;1177,42955476585;99,61;96,9;99,95
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_hua";"Verstoring";"verdroging";"zb";"Binnen & Buiten";7;105,7;100;100;100
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"vergrassing inclusief vervilting";"zb";"Binnen & Buiten";49;1177,42955476585;88,85;74,96;95,5
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_hua";"Verstoring";"vernatting";"zb";"Binnen & Buiten";7;105,7;57,14;20,93;87,04
+"Vlaanderen";"Habitattype";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verruiging inclusief ruderalisering";"zb";"Binnen & Buiten";49;1177,42955476585;96,08;80,17;99,33
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Structuur";"dominantie van één soort";"b";"Binnen";34;359,113807116246;86,37;68,04;94,97
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Structuur";"dominantie van één soort";"b";"Buiten";15;818,315747649606;78,56;27,88;97,2
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk";"Structuur";"levensvormen";"b";"Binnen";5;32,6559790101187;33,82;6,6;78,71
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk";"Structuur";"levensvormen";"b";"Buiten";1;20,7;0;NA;NA
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus";"Structuur";"verticale structuur";"b";"Binnen";29;326,457828106127;88,27;71,7;95,72
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hua; 6510_hu; 6510_hus";"Structuur";"verticale structuur";"b";"Buiten";14;797,615747649606;100;100;100
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Vegetatie";"bedekking sleutelsoorten";"b";"Binnen";34;359,113807116246;9,45;2,95;26,35
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"bedekking sleutelsoorten";"b";"Buiten";15;818,315747649606;1,85;0,21;14,49
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Vegetatie";"sleutelsoorten";"b";"Binnen";34;359,113807116246;3,94;0,91;15,45
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Vegetatie";"sleutelsoorten";"b";"Buiten";15;818,315747649606;0;0;0
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"eutrofiëring";"zb";"Binnen";34;359,113807116246;38,79;23,18;57,1
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"eutrofiëring";"zb";"Buiten";15;818,315747649606;9,23;2,55;28,35
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"strooisellaag";"b";"Binnen";34;359,113807116246;89,06;73;96,08
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"strooisellaag";"b";"Buiten";15;818,315747649606;95,36;69,28;99,47
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"verbossing";"b";"Binnen";34;359,113807116246;87,61;71,84;95,14
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verbossing";"b";"Buiten";15;818,315747649606;100;100;100
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"verbraming";"b";"Binnen";34;359,113807116246;98,7;91,05;99,83
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verbraming";"b";"Buiten";15;818,315747649606;100;100;100
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"vergrassing inclusief vervilting";"zb";"Binnen";34;359,113807116246;80,68;61,99;91,45
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"vergrassing inclusief vervilting";"zb";"Buiten";15;818,315747649606;92,44;75,08;98,02
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"Verstoring";"verruiging inclusief ruderalisering";"zb";"Binnen";34;359,113807116246;97,73;85,15;99,69
+"Vlaanderen";"SBZH";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"Verstoring";"verruiging inclusief ruderalisering";"zb";"Buiten";15;818,315747649606;95,36;69,28;99,47

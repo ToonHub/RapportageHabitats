@@ -1,0 +1,13 @@
+"Periode";"Habitattype";"Habitatsubtype";"Indicator";"Voorwaarde";"SBZH";"nObs";"sumWeight";"Gemiddelde";"Gemiddelde_LLCI";"Gemiddelde_ULCI"
+2;"9160";"9160";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";39;38,056824180553;0;0;0
+2;"91E0";"91E0_vc; 91E0_vm; 91E0_vo; 91E0_va; 91E0_vn; 91E0_sf";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";184;517,039918863065;1,4465;0,415;2,4779
+2;"91E0";"91E0_sf";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";30;342,2;2,1855;0,6078;3,7632
+2;"91E0";"91E0_va";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";43;56,9349769178057;0;0;0
+2;"91E0";"91E0_vc";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";24;22,5312322099717;0;0;0
+2;"91E0";"91E0_vm";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";33;36,2648798338957;0;0;0
+2;"91E0";"91E0_vn";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";35;39,2960588041952;0;0;0
+2;"91E0";"91E0_vo";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";19;19,8127710971964;0;0;0
+2;"9190";"9190";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";54;55,1819961494219;0;0;0
+2;"9130";"9130";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";36;112,777118275683;0;0;0
+2;"9120";"9120";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";247;236,988906309234;0;0;0
+2;"9110";"9110";"hoeveelheid dik dood hout";"aantal exemplaren dik dood hout per ha";"Binnen & Buiten";3;11,0218068535826;0;NA;NA

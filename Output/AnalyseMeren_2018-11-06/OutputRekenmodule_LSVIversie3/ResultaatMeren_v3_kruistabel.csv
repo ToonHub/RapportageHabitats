@@ -1,0 +1,255 @@
+"";"ID";"Habitattype";"Observer";"VagueDateBegin";"Betrouwbaarheid";"Waterpeil";"Versie";"% begroeid met opgaande vegetatie";"aandeel isoëtiden > overige groeivormen";"aantal sleutelsoorten abundant";"aantal sleutelsoorten excl. moerashertshooi";"aantal sleutelsoorten frequent";"bedekking eutrofiëring";"bedekking helofyten";"bedekking invasieve exoten";"bedekking verzuring";"contact met 7110 of 7140_oli";"grootste vegetatievlek in m²";"kranswiervelden voor > = 50 % sleutelsoorten"
+"1";"AN_ABH_007_3130a_18";"3130_aom";"Vincent Smeekens";"2018-09-24";"matig";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;FALSE;NA;TRUE;NA
+"2";"AN_ARE_001_3130a_18";"3130_aom";"Vincent Smeekens & Kevin Scheers & An Leyssen";"2018-09-21";"hoog";"Normaal";"Versie 3";NA;NA;NA;TRUE;NA;TRUE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"3";"AN_ARE_001_3130n_18";"3130_na";"Vincent Smeekens & Kevin Scheers & An Leyssen";"2018-09-21";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"4";"AN_BAS_001_3150_17";"3150";"Jo Packet";"2017-10-09";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;FALSE;NA
+"5";"AN_BEE_001_3130a_16";"3130_aom";"Vincent Smeekens";"2016-10-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;FALSE;FALSE;NA;FALSE;NA
+"6";"AN_BEE_001_3130n_16";"3130_na";"Vincent Smeekens";"2016-10-20";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;FALSE;NA;TRUE;NA
+"7";"AN_BEE_002_3130a_16";"3130_aom";"Vincent Smeekens";"2016-09-21";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;TRUE;NA
+"8";"AN_BGO_001_3130a_17";"3130_aom";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"9";"AN_BGO_001_3130n_17";"3130_na";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";FALSE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"10";"AN_BGO_001_3150_17";"3150";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;TRUE;TRUE;TRUE;FALSE;NA;NA;TRUE;NA
+"11";"AN_BGO_002_3130a_17";"3130_aom";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"12";"AN_BGO_002_3130n_17";"3130_na";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"13";"AN_BGO_002_3140_17";"3140";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;TRUE;FALSE;FALSE;NA;NA;FALSE;TRUE
+"14";"AN_BGO_002_3160_17";"3160";"Vincent Smeekens";"2017-09-06";"laag";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;TRUE;NA;NA
+"15";"AN_BLA_001_3130a_17";"3130_aom";"Vincent Smeekens";"2017-07-14";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"16";"AN_BLA_001_3130n_17";"3130_na";"Vincent Smeekens";"2017-07-14";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"17";"AN_BOG_001_3130a_17";"3130_aom";"Vincent Smeekens";"2017-09-28";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"18";"AN_BOG_001_3130n_17";"3130_na";"Vincent Smeekens";"2017-09-28";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;FALSE;NA
+"19";"AN_DEB_001_3130a_18";"3130_aom";"Vincent Smeekens";"2018-09-25";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"20";"AN_DES_004_3130a_16";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2016-09-15";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"21";"AN_DES_004_3160_16";"3160";"Vincent Smeekens & Kevin Scheers";"2016-09-15";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;FALSE;NA;NA
+"22";"AN_DVH_001_3130n_18";"3130_na";"Vincent Smeekens & Kevin Scheers";"2018-10-03";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"23";"AN_DVH_003_3130n_16";"3130_na";"Vincent Smeekens";"2016-09-21";"hoog";"Normaal";"Versie 3";FALSE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"24";"AN_DVH_004_3130n_16";"3130_na";"Vincent Smeekens";"2016-08-23";"hoog";"Normaal";"Versie 3";FALSE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"25";"AN_DVH_004_3140_16";"3140";"Vincent Smeekens";"2016-08-23";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;TRUE;FALSE;TRUE;NA;NA;TRUE;TRUE
+"26";"AN_DVH_005_3130a_18";"3130_aom";"Vincent Smeekens & An Leyssen";"2018-07-26";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"27";"AN_DVH_005_3130n_18";"3130_na";"Vincent Smeekens & An Leyssen";"2018-07-26";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"28";"AN_DVH_007_3130n_17";"3130_na";"Vincent Smeekens";"2017-09-14";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"29";"AN_E10_001_3130a_18";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2018-09-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"30";"AN_E10_001_3130n_18";"3130_na";"Vincent Smeekens & Kevin Scheers";"2018-09-20";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"31";"AN_E10_001_3140_18";"3140";"Vincent Smeekens & Kevin Scheers";"2018-09-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;TRUE;TRUE;FALSE;NA;NA;FALSE;FALSE
+"32";"AN_E10_002_3130a_18";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2018-07-25";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"33";"AN_E10_002_3150_18";"3150";"Vincent Smeekens & Kevin Scheers";"2018-07-25";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;FALSE;NA;NA;TRUE;NA
+"34";"AN_ENK_001_3160_18";"3160";"Vincent Smeekens";"2018-08-24";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"35";"AN_ENK_002_3130a_18";"3130_aom";"Vincent Smeekens";"2018-08-24";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;FALSE;NA
+"36";"AN_ENK_002_3160_18";"3160";"Vincent Smeekens";"2018-08-24";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"37";"AN_GIE_001_3130a_18";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2018-09-28";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"38";"AN_GIE_001_3130n_18";"3130_na";"Vincent Smeekens & Kevin Scheers";"2018-09-28";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"39";"AN_GKH_001_3130n_18";"3130_na";"Vincent Smeekens & Kevin Scheers";"2018-09-27";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"40";"AN_GRD_003_3130n_17";"3130_na";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;TRUE;NA
+"41";"AN_GRD_003_3140_17";"3140";"Vincent Smeekens";"2017-09-06";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;FALSE;FALSE;FALSE;NA;NA;FALSE;TRUE
+"42";"AN_GSV_002_3130n_16";"3130_na";"Vincent Smeekens";"2016-09-30";"hoog";"Normaal";"Versie 3";FALSE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;FALSE;NA
+"43";"AN_GSV_003_3130a_17";"3130_aom";"Vincent Smeekens";"2017-08-18";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"44";"AN_GSV_004_3140_17";"3140";"Vincent Smeekens";"2017-08-18";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;TRUE;FALSE;TRUE;NA;NA;FALSE;TRUE
+"45";"AN_GSV_004_3150_17";"3150";"Vincent Smeekens";"2017-08-18";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;NA;FALSE;NA
+"46";"AN_GSV_005_3160_17";"3160";"Vincent Smeekens";"2017-09-29";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;FALSE;NA;NA
+"47";"AN_GSV_006_3160_17";"3160";"Vincent Smeekens";"2017-08-18";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;FALSE;FALSE;NA;NA
+"48";"AN_HAZ_001_3140_14";"3140";"Jo Packet & Luc Denys";"2014-09-08";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;FALSE;TRUE;FALSE;NA;NA;TRUE;TRUE
+"49";"AN_KAL_003_3160_16";"3160";"Vincent Smeekens";"2016-09-20";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"50";"AN_KAL_004_3130a_16";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2016-11-04";"matig";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;FALSE;NA
+"51";"AN_KAL_006_3160_17";"3160";"Vincent Smeekens & Kevin Scheers";"2017-10-27";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"52";"AN_KAL_007_3160_16";"3160";"Vincent Smeekens & Kevin Scheers";"2016-11-04";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"53";"AN_KDN_001_3130a_16";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2016-10-14";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;TRUE;NA;TRUE;FALSE;FALSE;TRUE;NA;TRUE;NA
+"54";"AN_KDN_002_3130a_16";"3130_aom";"Vincent Smeekens";"2016-10-14";"hoog";NA;"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"55";"AN_KDN_002_3140_16";"3140";"Vincent Smeekens";"2016-10-14";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;TRUE;TRUE;TRUE;NA;NA;FALSE;FALSE
+"56";"AN_KDN_003_3130a_17";"3130_aom";"Vincent Smeekens";"2017-06-23";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"57";"AN_KDN_003_3140_17";"3140";"Vincent Smeekens";"2017-06-23";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;TRUE;FALSE;TRUE;NA;NA;TRUE;TRUE
+"58";"AN_KSV_001_3160_18";"3160";"Vincent Smeekens";"2018-09-25";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;TRUE;TRUE;NA;TRUE;FALSE;TRUE;NA;NA
+"59";"AN_KSV_004_3160_17";"3160";"Vincent Smeekens";"2017-10-10";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"60";"AN_KSV_005_3160_17";"3160";"Vincent Smeekens";"2017-10-06";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"61";"AN_KVD_003_3130a_17";"3130_aom";"Vincent Smeekens";"2017-09-15";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"62";"AN_KVD_003_3160_17";"3160";"Vincent Smeekens";"2017-09-15";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;FALSE;NA;NA
+"63";"AN_LDL_001_3160_16";"3160";"Vincent Smeekens";"2016-09-08";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;FALSE;TRUE;NA;NA
+"64";"AN_LDL_002_3130a_16";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2016-09-15";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"65";"AN_LDL_003_3160_16";"3160";"Vincent Smeekens";"2016-09-08";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"66";"AN_LDL_004_3130a_18";"3130_aom";"Vincent Smeekens en Jonathan Verborgt";"2018-08-31";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;TRUE;NA
+"67";"AN_LIL_001_3130a_16";"3130_aom";"Vincent Smeekens";"2016-10-13";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"68";"AN_MEC_002_3150_18";"3150";"Vincent Smeekens";"2018-06-06";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;FALSE;NA
+"69";"AN_MOE_001_3130a_17";"3130_aom";"Vincent Smeekens";"2017-09-29";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"70";"AN_MOE_001_3140_17";"3140";"Vincent Smeekens";"2017-09-29";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;FALSE;FALSE;FALSE;NA;NA;TRUE;TRUE
+"71";"AN_MOL_001_3130n_14";"3130_na";"Jo Packet & Luc Denys";"2014-09-01";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"72";"AN_MOL_001_3140_14";"3140";"Jo Packet & Luc Denys";"2014-09-01";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;TRUE;TRUE;FALSE;NA;NA;TRUE;TRUE
+"73";"AN_MOL_001_3150_14";"3150";"Jo Packet & Luc Denys";"2014-09-01";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;FALSE;NA;NA;FALSE;NA
+"74";"AN_MOL_002_3150_14";"3150";"Jo Packet & Luc Denys";"2014-09-01";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;FALSE;NA;NA;FALSE;NA
+"75";"AN_MOL_003_3130a_16";"3130_aom";"Vincent Smeekens";"2016-10-13";"hoog";"Normaal";"Versie 3";NA;NA;NA;TRUE;NA;FALSE;FALSE;FALSE;TRUE;NA;TRUE;NA
+"76";"AN_MOL_003_3140_16";"3140";"Vincent Smeekens";"2016-10-13";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;TRUE;TRUE;FALSE;NA;NA;TRUE;TRUE
+"77";"AN_MOL_003_3160_16";"3160";"Vincent Smeekens";"2016-10-13";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;FALSE;TRUE;TRUE;NA;NA
+"78";"AN_MOS_002_3160_18";"3160";"Vincent Smeekens";"2018-07-18";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"79";"AN_OLB_002_3130a_18";"3130_aom";"Vincent Smeekens";"2018-06-18";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"80";"AN_RAV_002_3130a_17";"3130_aom";"Vincent Smeekens";"2017-09-15";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"81";"AN_RAV_003_3130a_18";"3130_aom";"Vincent Smeekens";"2018-06-04";NA;"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"82";"AN_RPT_002_3130a_16";"3130_aom";"Vincent Smeekens";"2016-09-09";"hoog";NA;"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"83";"AN_RPT_002_3130n_16";"3130_na";"Vincent Smeekens";"2016-09-09";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"84";"AN_RPT_003_3130a_17";"3130_aom";"Vincent Smeekens";"2017-07-26";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"85";"AN_RPT_003_3130n_17";"3130_na";"Vincent Smeekens";"2017-07-26";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"86";"AN_RPT_005_3140_18";"3150";"Vincent Smeekens";"2018-07-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;FALSE;FALSE;NA;NA;TRUE;NA
+"87";"AN_RPT_005_3150_18";"3150";"Vincent Smeekens";"2018-07-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;FALSE;FALSE;NA;NA;TRUE;NA
+"88";"AN_RVS_002_3130n_17";"3130_na";"Vincent Smeekens & Kevin Scheers";"2017-09-01";"hoog";"Normaal";"Versie 3";FALSE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"89";"AN_SEL_002_3150_17";"3150";"Vincent Smeekens & Kevin Scheers";"2017-06-29";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;TRUE;NA
+"90";"AN_SNE_003_3130a_16";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2016-09-28";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"91";"AN_SNE_003_3160_16";"3160";"Vincent Smeekens & Kevin Scheers";"2016-09-28";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"92";"AN_SNE_004_3130a_16";"3130_aom";"Vincent Smeekens";"2016-10-18";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"93";"AN_SNE_004_3160_16";"3160";"Vincent Smeekens";"2016-10-18";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"94";"AN_SNE_006_3130a_18";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2018-09-14";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;FALSE;TRUE;NA;TRUE;NA
+"95";"AN_SNE_008_3130a_18";"3130_aom";"Vincent Smeekens";"2018-09-17";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"96";"AN_SPB_002_3130a_18";"3130_aom";"Jo Packet";"2018-09-24";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;TRUE;NA;FALSE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"97";"AN_STB_001_3150_17";"3150";"Jo Packet";"2017-08-21";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;FALSE;TRUE;NA;NA;FALSE;NA
+"98";"AN_TIE_002_3130a_17";"3130_aom";"Vincent Smeekens";"2017-10-05";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;TRUE;FALSE;NA;FALSE;NA
+"99";"AN_TIE_002_3160_17";"3160";"Vincent Smeekens";"2017-10-05";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"100";"AN_TIK_002_3130a_16";"3130_aom";"Vincent Smeekens";"2016-09-12";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"101";"AN_TUR_001_3130a_16";"3130_aom";"Vincent Smeekens";"2016-10-20";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"102";"AN_TVG_002_3110_18";"3110";"Vincent Smeekens en Kevin Scheers";"2018-07-13";"hoog";"Uitzonderlijk laag";"Versie 3";NA;TRUE;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"103";"AN_TVG_002_3130a_18";"3130_aom";"Kevin Scheers en Vincent Smeekens";"2018-07-13";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"104";"AN_TVG_002_3130n_18";"3130_na";"Vincent Smeekens en Kevin Scheers";"2018-07-13";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"105";"AN_TVG_003_3130a_16";"3130_aom";"Vincent Smeekens";"2016-08-25";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"106";"AN_TVG_003_3130n_16";"3130_na";"Vincent Smeekens";"2016-08-25";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;TRUE;NA
+"107";"AN_TVG_004_3130a_16";"3130_aom";"Vincent Smeekens";"2016-10-20";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"108";"AN_TVG_005_3110_18";"3110";"Kevin Scheers en Vincent Smeekens";"2018-07-10";"hoog";"Normaal";"Versie 3";NA;FALSE;NA;NA;TRUE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"109";"AN_TVG_005_3130a_18";"3130_aom";"Kevin Scheers en Vincent Smeekens";"2018-07-10";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"110";"AN_TVG_005_3130n_18";"3130_na";"Kevin Scheers en Vincent Smeekens";"2018-07-10";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"111";"AN_VOL_001_3130a_16";"3130_aom";"Vincent Smeekens";"2016-09-27";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"112";"AN_VOL_002_3130a_18";"3130_aom";"Vincent Smeekens";"2018-07-18";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;TRUE;NA;TRUE;FALSE;TRUE;FALSE;NA;TRUE;NA
+"113";"AN_VOL_002_3130n_18";"3130_na";"Vincent Smeekens";"2018-07-18";"hoog";"Droogstaand (groot deel)";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;FALSE;NA
+"114";"AN_VVM_001_3130n_16";"3130_na";"Vincent Smeekens";"2016-09-20";"hoog";"Droogstaand (groot deel)";"Versie 3";FALSE;NA;NA;NA;FALSE;FALSE;NA;TRUE;FALSE;NA;FALSE;NA
+"115";"AN_VVM_002_3160_16";"3160";"Vincent Smeekens";"2016-10-21";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"116";"AN_VVM_003_3130a_18";"3130_aom";"Vincent Smeekens";"2018-06-21";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;FALSE;NA;FALSE;NA
+"117";"AN_VVM_004_3130a_18";"3130_aom";"Vincent Smeekens en Jo Packet";"2018-08-17";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;TRUE;NA
+"118";"AN_VVM_004_3160_18";"3160";"Vincent Smeekens en Jo Packet";"2018-08-17";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"119";"AN_ZAM_002_3150_17";"3150";"Kevin Scheers";"2017-08-02";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;NA;FALSE;NA
+"120";"AN_ZAM_003_3150_17";"3150";"Kevin Scheers";"2017-08-02";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;FALSE;NA
+"121";"AN_ZEG_002_3130n_17";"3130_na";"Kevin Scheers en Vincent Smeekens";"2017-08-31";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"122";"AN_ZEG_002_3150_17";"3150";"Vincent Smeekens en Kevin Scheers";"2017-08-25";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;FALSE;NA
+"123";"AN_ZEG_003_3150_17";"3150";"Vincent Smeekens & Kevin Scheers";"2017-08-24";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;TRUE;TRUE;FALSE;FALSE;NA;NA;TRUE;NA
+"124";"AN_ZEG_004_3130a_18";"3130_aom";"Kevin Scheers";"2017-07-17";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"125";"LI_ABH_011_3160_17";"3160";"Vincent Smeekens";"2017-06-30";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"126";"LI_BAT_001_3130a_18";"3130_aom";"Kevin Scheers";"2018-08-01";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;FALSE;NA
+"127";"LI_BAT_001_3160_18";"3160";"Kevin Scheers";"2018-08-01";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;FALSE;FALSE;NA;NA
+"128";"LI_BBV_001_3130a_18";"3130_aom";"Vincent Smeekens";"2018-09-10";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"129";"LI_BEG_002_3130a_18";"3130_aom";"Jo Packet";"2018-09-24";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"130";"LI_BEG_003_3130a_18";"3130_aom";"Jo Packet";"2018-09-25";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"131";"LI_BER_001_3130a_18";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2018-10-05";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"132";"LI_BER_001_3130n_18";"3130_na";"Vincent Smeekens & Kevin Scheers";"2018-10-05";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"133";"LI_BER_003_3130n_18";"3130_na";"Vincent Smeekens & Kevin Scheers";"2018-10-17";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"134";"LI_BER_003_3140_18";"3140";"Vincent Smeekens & Kevin Scheers";"2018-10-17";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;TRUE;TRUE;FALSE;NA;NA;TRUE;TRUE
+"135";"LI_BER_004_3130a_18";"3130_aom";"Kevin Scheers";"2018-08-02";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"136";"LI_BOK_001_3150_18";"3150";"Vincent Smeekens";"2018-09-18";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;TRUE;NA
+"137";"LI_BOK_002_3130n_18";"3130_na";"Vincent Smeekens";"2018-10-01";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;FALSE;NA
+"138";"LI_BOK_003_3130n_18";"3130_na";"Vincent Smeekens";"2018-09-18";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"139";"LI_BOK_004_3130a_16";"3130_aom";"Vincent Smeekens, Jo P, An L, Kevin S";"2016-09-16";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"140";"LI_BOK_004_3130n_16";"3130_na";"Vincent Smeekens, Jo P, An L, Kevin S";"2016-09-16";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"141";"LI_BOK_006_3130a_16";"3130_aom";"An Leyssen";"2016-09-13";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"142";"LI_BOK_006_3130n_16";"3130_na";"An Leyssen";"2016-09-13";"hoog";"Uitzonderlijk laag";"Versie 3";FALSE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"143";"LI_BOK_007_3130a_17";"3130_aom";"An Leyssen";"2016-09-20";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"144";"LI_BOK_007_3130n_17";"3130_na";"An Leyssen";"2016-09-20";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"145";"LI_BOK_008_3130a_16";"3130_aom";"An Leyssen";"2016-09-20";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"146";"LI_BOK_008_3130n_16";"3130_na";"An Leyssen";"2016-09-08";"hoog";"Normaal";"Versie 3";FALSE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;FALSE;NA
+"147";"LI_DKV_002_3140_17";"3140";"Kevin Scheers";"2017-06-27";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;TRUE;FALSE;TRUE;NA;NA;FALSE;TRUE
+"148";"LI_DON_002_3130a_17";"3130_aom";"Vincent Smeekens & Kevin Scheers";"2017-09-22";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;FALSE;NA
+"149";"LI_DON_002_3160_17";"3160";"Vincent Smeekens & Kevin Scheers";"2017-09-22";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"150";"LI_DON_003_3160_17";"3160";"Vincent Smeekens & Kevin Scheers";"2017-09-22";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"151";"LI_EGO_001_3150_18";"3150";"Jo Packet";"2018-09-24";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;FALSE;TRUE;TRUE;NA;NA;TRUE;NA
+"152";"LI_HAG_001_3160_18";"3160";"Vincent Smeekens";"2018-06-25";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"153";"LI_HAG_002_3130a_18";"3130_aom";"Vincent Smeekens";"2018-06-05";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;FALSE;NA
+"154";"LI_HAG_003_3160_18";"3160";"Vincent Smeekens";"2018-06-25";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"155";"LI_HAG_004_3130a_18";"3130_aom";"Vincent Smeekens";"2018-06-05";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"156";"LI_HAG_004_3130n_18";"3130_na";"Vincent Smeekens";"2018-06-05";"matig";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"157";"LI_HOE_001_3130a_18";"3130_aom";"Kevin Scheers";"2018-08-03";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"158";"LI_JUF_001_3130a_18";"3130_aom";"Jo Packet";"2018-08-16";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"159";"LI_JUF_001_3130n_18";"3130_na";"Jo Packet";"2018-08-16";"hoog";NA;"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;FALSE;NA
+"160";"LI_LAN_008_3150_16";"3150";"Vincent Smeekens";"2016-09-22";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;FALSE;FALSE;NA;NA;FALSE;NA
+"161";"LI_LOM_001_3130a_18";"3130_aom";"Vincent Smeekens";"2018-07-17";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"162";"LI_MAT_001_3130n_16";"3130_na";"Vincent Smeekens & Kevin Scheers";"2016-07-28";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"163";"LI_MAT_002_3130a_16";"3130_aom";"Vincent Smeekens";"2016-08-31";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"164";"LI_MAT_002_3130n_16";"3130_na";"Vincent Smeekens";"2016-08-31";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;FALSE;NA
+"165";"LI_MAT_002_3140_16";"3140";"Vincent Smeekens";"2016-08-31";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;FALSE;FALSE;FALSE;NA;NA;FALSE;TRUE
+"166";"LI_MAT_003_3150_16";"3150";"Vincent Smeekens";"2016-08-31";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;FALSE;FALSE;NA;NA;FALSE;NA
+"167";"LI_MAT_004_3130n_16";"3130_na";"Vincent Smeekens";"2016-08-30";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"168";"LI_MAT_007_3140_16";"3140";"Vincent Smeekens";"2016-07-27";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;TRUE;TRUE;FALSE;NA;NA;TRUE;TRUE
+"169";"LI_MAT_007_3150_16";"3150";"Vincent Smeekens";"2016-07-27";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;TRUE;FALSE;NA;NA;TRUE;NA
+"170";"LI_MAT_009_3130n_16";"3130_na";"Vincent Smeekens & Kevin Scheers";"2016-09-14";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;TRUE;NA
+"171";"LI_MAT_011_3130n_18";"3130_na";"Vincent Smeekens";"2018-10-19";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"172";"LI_MAT_012_3130n_18";"3130_na";"Vincent Smeekens";"2018-10-18";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;TRUE;TRUE;NA;TRUE;TRUE;NA;TRUE;NA
+"173";"LI_MEC_001_3160_16";"3160";"Vincent Smeekens";"2016-08-26";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"174";"LI_MEC_002_3160_16";"3160";"Vincent Smeekens";"2016-08-26";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"175";"LI_MLV_002_3130n_18";"3130_na";"Vincent Smeekens";"2018-08-14";"hoog";"Uitzonderlijk laag";"Versie 3";FALSE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;FALSE;NA
+"176";"LI_MLV_010_3130a_17";"3130_aom";"Vincent Smeekens";"2017-10-12";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"177";"LI_MLV_010_3130n_17";"3130_na";"Vincent Smeekens";"2017-10-12";"hoog";"Droogstaand (groot deel)";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;FALSE;NA
+"178";"LI_MLV_010_3140_17";"3140";"Vincent Smeekens";"2017-10-12";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;NA;NA;TRUE;FALSE;FALSE;NA;NA;FALSE;TRUE
+"179";"LI_MLV_011_3130n_18";"3130_na";"Vincent Smeekens";"2018-08-30";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;FALSE;NA
+"180";"LI_MLV_014_3130n_18";"3130_na";"Vincent Smeekens";"2018-08-23";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"181";"LI_MLV_016_3130a_17";"3130_aom";"Vincent Smeekens";"2017-10-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"182";"LI_MLV_016_3130n_17";"3130_na";"Vincent Smeekens";"2017-10-20";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;FALSE;NA
+"183";"LI_MLV_016_3140_17";"3140";"Vincent Smeekens";"2017-10-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;FALSE;FALSE;FALSE;NA;NA;FALSE;TRUE
+"184";"LI_MLV_026_3130a_16";"3130_aom";"An Leyssen";"2016-09-21";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"185";"LI_MLV_026_3130n_16";"3130_na";"An Leyssen";"2017-09-21";"hoog";"Normaal";"Versie 3";FALSE;NA;NA;NA;FALSE;TRUE;NA;FALSE;TRUE;NA;TRUE;NA
+"186";"LI_MOB_001_3130n_18";"3130_na";"Kevin Scheers";"2018-08-01";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;TRUE;NA
+"187";"LI_MOB_001_3150_18";"3150";"Kevin Scheers";"2018-08-01";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;FALSE;NA
+"188";"LI_MUN_002_3130n_17";"3130_na";"Vincent Smeekens";"2017-09-18";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"189";"LI_OPH_005_3160_16";"3160";"Vincent Smeekens & Kevin Scheers";"2016-11-03";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"190";"LI_OPH_006_3160_16";"3160";"Vincent Smeekens, Kevin Scheers & Jo Packet";"2016-09-29";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"191";"LI_PIJ_001_3160_16";"3160";"Vincent Smeekens";"2016-10-13";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"192";"LI_PIJ_002_3130a_17";"3130_aom";"Jo Packet";"2017-08-08";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"193";"LI_PIJ_002_3160_17";"3160";"Jo Packet";"2017-08-08";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"194";"LI_SBB_004_3130n_16";"3130_na";"An Leyssen en Kevin Scheers";"2016-09-27";"hoog";"Droogstaand (groot deel)";"Versie 3";FALSE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;FALSE;NA
+"195";"LI_SBB_005_3130a_16";"3130_aom";"Kevin Scheers en An Leyssen";"2016-09-22";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;TRUE;NA
+"196";"LI_SBB_005_3160_16";"3160";"An Leyssen en Kevin Scheers";"2016-09-22";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;FALSE;NA;NA
+"197";"LI_SCH_001_3130n_18";"3130_na";"Kevin Scheers";"2018-08-02";"hoog";"Droogstaand (groot deel)";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;FALSE;NA
+"198";"LI_SLU_001_3130a_18";"3130_aom";"Jo Packet";"2018-08-16";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"199";"LI_SLU_001_3130n_18";"3130_na";"Jo Packet";"2018-08-16";"hoog";"Droogstaand (groot deel)";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"200";"LI_TEU_004_3130a_17";"3130_aom";"Vincent Smeekens";"2017-08-28";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;FALSE;NA;TRUE;NA
+"201";"LI_TEU_004_3160_17";"3160";"Vincent Smeekens";"2017-08-28";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"202";"LI_TEU_005_3130a_17";"3130_aom";"Vincent Smeekens";"2017-08-28";"hoog";NA;"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;TRUE;NA
+"203";"LI_TEU_005_3160_16";"3160";"Kevin Scheers";"2016-10-20";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"204";"LI_TEU_005_3160_17";"3160";"Vincent Smeekens";"2017-08-28";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"205";"LI_TOM_001_3150_17";"3150";"Vincent Smeekens";"2017-08-01";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;FALSE;FALSE;NA;NA;TRUE;NA
+"206";"LI_TOM_002_3130a_17";"3130_aom";"Vincent Smeekens";"2017-10-02";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"207";"LI_TOM_002_3150_17";"3150";"Vincent Smeekens";"2017-10-02";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;TRUE;FALSE;TRUE;FALSE;NA;NA;FALSE;NA
+"208";"LI_VZB_001_3160_17";"3160";"Vincent Smeekens";"2017-10-18";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;FALSE;NA;TRUE;TRUE;TRUE;NA;NA
+"209";"LI_VZB_002_3160_18";"3160";"Kevin Scheers en Vincent Smeekens";"2018-06-28";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;TRUE;NA;TRUE;FALSE;FALSE;NA;NA
+"210";"LI_VZB_003_3130a_18";"3130_aom";"An Leyssen en Vincent Smeekens";"2018-07-19";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"211";"LI_VZB_003_3160_18";"3160";"An Leyssen en Vincent Smeekens";"2018-07-19";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;TRUE;NA;TRUE;TRUE;FALSE;NA;NA
+"212";"LI_VZB_005_3130a_18";"3130_aom";"Kevin Scheers en Vincent Smeekens";"2018-06-28";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;TRUE;FALSE;NA;FALSE;NA
+"213";"LI_VZB_005_3160_18";"3160";"Kevin Scheers en Vincent Smeekens";"2018-06-28";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;FALSE;TRUE;NA;TRUE;FALSE;FALSE;NA;NA
+"214";"LI_VZB_007_3160_18";"3160";"Vincent Smeekens en Kevin Scheers";"2018-06-29";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;TRUE;NA;TRUE;TRUE;FALSE;NA;NA
+"215";"LI_VZB_008_3160_16";"3160";"Vincent Smeekens";"2016-09-26";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;TRUE;TRUE;NA;TRUE;TRUE;TRUE;NA;NA
+"216";"LI_WIK_002_3130a_16";"3130_aom";"Vincent Smeekens";"2016-07-25";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"217";"LI_WIK_005_3130a_16";"3130_aom";"Vincent Smeekens";"2016-08-04";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"218";"LI_WIK_007_3130a_16";"3130_aom";"An Leyssen";"2016-09-08";"matig";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;TRUE;NA;TRUE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"219";"LI_WIK_007_3130n_16";"3130_na";"An Leyssen";"2016-09-08";"laag";"Droogstaand (groot deel)";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"220";"LI_WIK_008_3130a_18";"3130_aom";"Vincent Smeekens";"2018-08-01";"hoog";"Normaal";"Versie 3";NA;NA;NA;TRUE;NA;TRUE;TRUE;TRUE;FALSE;NA;TRUE;NA
+"221";"LI_ZUT_001_3130a_17";"3130_aom";"Vincent Smeekens";"2017-09-19";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;FALSE;TRUE;NA;FALSE;NA
+"222";"LI_ZUT_001_3140_17";"3140";"Vincent Smeekens";"2017-09-19";"hoog";"Normaal";"Versie 3";NA;NA;NA;NA;NA;FALSE;FALSE;FALSE;NA;NA;TRUE;FALSE
+"223";"OV_DAM_001_3150_18";"3150";"Kevin Scheers en Vincent Smeekens";"2018-07-16";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;NA;FALSE;NA
+"224";"OV_DON_003_3150_18";"3150";"Kevin Scheers";"2018-08-08";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;NA;FALSE;NA
+"225";"OV_FON_001_3150_17";"3150";"Kevin Scheers";"2017-07-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;NA;FALSE;NA
+"226";"OV_FON_002_3140_17";"3140";"Kevin Scheers";"2017-07-14";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;FALSE;TRUE;TRUE;NA;NA;TRUE;FALSE
+"227";"OV_KRA_001_3130a_18";"3130_aom";"Jo Packet";"2018-10-03";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;TRUE;NA
+"228";"OV_KRA_001_3130n_18";"3130_na";"Jo Packet";"2018-10-03";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;FALSE;TRUE;NA;FALSE;NA
+"229";"OV_LIN_001_3150_18";"3150";"Kevin Scheers";"2018-07-27";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;NA;TRUE;NA
+"230";"OV_STB_002_3130a_17";"3130_aom";"Kevin Scheers";"2017-08-04";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"231";"OV_STB_002_3140_17";"3140";"Kevin Scheers";"2017-08-04";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;NA;NA;FALSE;TRUE;TRUE;NA;NA;TRUE;TRUE
+"232";"VB_ASD_001_3130a_18";"3130_aom";"Vincent Smeekens";"2018-06-22";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"233";"VB_KBL_001_3150_17";"3150";"Vincent Smeekens";"2017-08-16";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;TRUE;NA;FALSE;FALSE;TRUE;FALSE;NA;NA;TRUE;NA
+"234";"VB_KBL_002_3130a_17";"3130_aom";"Vincent Smeekens";"2017-08-16";"hoog";"Droogstaand (groot deel)";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;FALSE;TRUE;TRUE;NA;FALSE;NA
+"235";"VB_KOR_001_3150_18";"3150";"Vincent Smeekens en Kevin Scheers";"2018-08-22";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;TRUE;FALSE;NA;NA;TRUE;NA
+"236";"VB_VDB_001_3150_17";"3150";"Vincent Smeekens";"2017-10-02";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;TRUE;TRUE;FALSE;FALSE;NA;NA;FALSE;NA
+"237";"VB_VIE_004_3130a_17";"3130_aom";"Vincent Smeekens";"2017-07-07";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;FALSE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"238";"VB_VIE_004_3150_17";"3150";"Vincent Smeekens";"2017-07-07";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;FALSE;TRUE;FALSE;NA;NA;FALSE;NA
+"239";"VB_VIN_002_3150_18";"3150";"Jo Packet";"2018-09-24";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;FALSE;TRUE;NA;NA;TRUE;NA
+"240";"VB_VOR_002_3150_17";"3150";"Vincent Smeekens";"2017-08-16";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;FALSE;TRUE;TRUE;NA;NA;TRUE;NA
+"241";"VB_VOR_003_3150_17";"3150";"Vincent Smeekens";"2017-08-16";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;FALSE;FALSE;TRUE;NA;NA;FALSE;NA
+"242";"VB_VOR_005_3130a_18";"3130_aom";"Vincent Smeekens";"2018-09-24";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;FALSE;TRUE;NA;FALSE;NA
+"243";"VB_VOR_005_3150_18";"3150";"Vincent Smeekens";"2018-09-24";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;TRUE;FALSE;NA;NA;FALSE;NA
+"244";"WV_BBV_001_3130a_17";"3130_aom";"Kevin Scheers";"2017-10-18";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;FALSE;TRUE;TRUE;NA;TRUE;NA
+"245";"WV_BBV_002_3130a_17";"3130_aom";"Kevin Scheers";"2017-10-18";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"246";"WV_BBV_002_3130n_17";"3130_na";"Kevin Scheers";"2017-10-18";"hoog";"Normaal";"Versie 3";TRUE;NA;NA;NA;FALSE;FALSE;NA;TRUE;TRUE;NA;FALSE;NA
+"247";"WV_BBV_003_3130a_17";"3130_aom";"Kevin Scheers";"2017-10-18";"hoog";"Normaal";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"248";"WV_BUL_002_3130a_17";"3130_aom";"Kevin Scheers";"2017-10-20";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;FALSE;NA;FALSE;NA
+"249";"WV_DAM_001_3150_17";"3150";"Jo Packet";"2017-10-10";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;TRUE;FALSE;FALSE;FALSE;NA;NA;FALSE;NA
+"250";"WV_GUP_001_3130a_18";"3130_aom";"Kevin Scheers";"2017-10-04";"hoog";"Normaal";"Versie 3";NA;NA;NA;TRUE;NA;FALSE;TRUE;TRUE;TRUE;NA;TRUE;NA
+"251";"WV_GUP_002_3130a_17";"3130_aom";"Kevin Scheers";"2017-10-04";"hoog";"Uitzonderlijk laag";"Versie 3";NA;NA;NA;FALSE;NA;TRUE;TRUE;TRUE;TRUE;NA;FALSE;NA
+"252";"WV_GUP_002_3130n_17";"3130_na";"Kevin Scheers";"2017-10-04";"hoog";"Uitzonderlijk laag";"Versie 3";TRUE;NA;NA;NA;FALSE;TRUE;NA;TRUE;TRUE;NA;FALSE;NA
+"253";"WV_KPV_001_3150_17";"3150";"Kevin Scheers";"2017-10-04";"hoog";"Normaal";"Versie 3";NA;NA;FALSE;NA;FALSE;TRUE;FALSE;FALSE;NA;NA;FALSE;NA
+"254";"WV_LEI_003_3150_17";"3150";"Kevin Scheers";"2017-08-09";"hoog";"Normaal";"Versie 3";NA;NA;TRUE;NA;FALSE;TRUE;TRUE;FALSE;NA;NA;TRUE;NA

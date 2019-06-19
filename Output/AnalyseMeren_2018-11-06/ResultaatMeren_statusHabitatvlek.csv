@@ -1,0 +1,499 @@
+"ID";"Habitattype";"Habitatsubtype";"Versie";"OppKl";"Oppervlakte_plas";"SBZH";"Regio";"nGunstig";"nIndicatoren";"n_zb_Ongunstig";"AandeelGunstig";"Status_habitatvlek"
+"AN_ABH_007_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";39479,726685;"binnen";"Atlantisch";7;8;1;87,5;0
+"AN_ABH_007_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";39479,726685;"binnen";"Atlantisch";3;6;2;50;0
+"AN_ARE_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";110470,597782;"binnen";"Atlantisch";6;8;1;75;0
+"AN_ARE_001_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";110470,597782;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"AN_ARE_001_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";110470,597782;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_ARE_001_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";110470,597782;"binnen";"Atlantisch";3;6;2;50;0
+"AN_BAS_001_3150_17";"3150";"3150";"Versie 2.0";"1 ha < Opp <= 5 ha";25126,518047;"binnen";"Atlantisch";4;5;0;80;1
+"AN_BAS_001_3150_17";"3150";"3150";"Versie 3";"1 ha < Opp <= 5 ha";25126,518047;"binnen";"Atlantisch";4;5;1;80;0
+"AN_BEE_001_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";6431,654903;"binnen";"Atlantisch";4;8;3;50;0
+"AN_BEE_001_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";6431,654903;"binnen";"Atlantisch";0;6;5;0;0
+"AN_BEE_001_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";6431,654903;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"AN_BEE_001_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";6431,654903;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_BEE_002_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";629,578564;"binnen";"Atlantisch";5;8;2;62,5;0
+"AN_BEE_002_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";629,578564;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_BGO_001_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";4787,599815;"binnen";"Atlantisch";6;8;0;75;1
+"AN_BGO_001_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";4787,599815;"binnen";"Atlantisch";3;6;2;50;0
+"AN_BGO_001_3130n_17";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";4787,599815;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_BGO_001_3130n_17";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";4787,599815;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_BGO_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";4787,599815;"binnen";"Atlantisch";4;5;0;80;1
+"AN_BGO_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";4787,599815;"binnen";"Atlantisch";4;5;1;80;0
+"AN_BGO_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";8;8;0;100;1
+"AN_BGO_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_BGO_002_3130n_17";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_BGO_002_3130n_17";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";3;6;2;50;0
+"AN_BGO_002_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";4;5;1;80;0
+"AN_BGO_002_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";2;5;3;40;0
+"AN_BGO_002_3160_17";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";4;6;0;66,6666666666667;1
+"AN_BGO_002_3160_17";"3160";"3160";"Versie 3";"Opp <= 1 ha";5631,651554;"binnen";"Atlantisch";3;5;1;60;0
+"AN_BLA_001_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";19186,151005;"binnen";"Atlantisch";5;8;0;62,5;1
+"AN_BLA_001_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";19186,151005;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_BLA_001_3130n_17";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";19186,151005;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_BLA_001_3130n_17";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";19186,151005;"binnen";"Atlantisch";3;6;2;50;0
+"AN_BOG_001_3130a_17";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";65589,871109;"binnen";"Atlantisch";5;8;1;62,5;0
+"AN_BOG_001_3130a_17";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";65589,871109;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_BOG_001_3130n_17";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";65589,871109;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_BOG_001_3130n_17";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";65589,871109;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_DEB_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";6362,441292;"buiten";"Atlantisch";6;8;0;75;1
+"AN_DEB_001_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";6362,441292;"buiten";"Atlantisch";3;6;2;50;0
+"AN_DES_004_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";8308,914497;"binnen";"Atlantisch";8;8;0;100;1
+"AN_DES_004_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";8308,914497;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_DES_004_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";8308,914497;"binnen";"Atlantisch";4;6;0;66,6666666666667;1
+"AN_DES_004_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";8308,914497;"binnen";"Atlantisch";3;5;1;60;0
+"AN_DVH_001_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";33767,012237;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_DVH_001_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";33767,012237;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_DVH_003_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";9335,065559;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"AN_DVH_003_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";9335,065559;"binnen";"Atlantisch";3;6;2;50;0
+"AN_DVH_004_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";465,13797;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_DVH_004_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";465,13797;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_DVH_004_3140_16";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";465,13797;"binnen";"Atlantisch";5;5;0;100;1
+"AN_DVH_004_3140_16";"3140";"3140";"Versie 3";"Opp <= 1 ha";465,13797;"binnen";"Atlantisch";4;5;1;80;0
+"AN_DVH_005_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";70921,570164;"binnen";"Atlantisch";6;8;0;75;1
+"AN_DVH_005_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";70921,570164;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_DVH_005_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";70921,570164;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_DVH_005_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";70921,570164;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_DVH_007_3130n_17";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";2712,651581;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_DVH_007_3130n_17";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";2712,651581;"binnen";"Atlantisch";3;6;2;50;0
+"AN_E10_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";76612,67963;"buiten";"Atlantisch";5;8;1;62,5;0
+"AN_E10_001_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";76612,67963;"buiten";"Atlantisch";3;6;2;50;0
+"AN_E10_001_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";76612,67963;"buiten";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_E10_001_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";76612,67963;"buiten";"Atlantisch";3;6;2;50;0
+"AN_E10_001_3140_18";"3140";"3140";"Versie 2.0";"5 ha < Opp < 50 ha";76612,67963;"buiten";"Atlantisch";3;5;1;60;0
+"AN_E10_001_3140_18";"3140";"3140";"Versie 3";"5 ha < Opp < 50 ha";76612,67963;"buiten";"Atlantisch";2;5;2;40;0
+"AN_E10_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";275122,541382;"binnen";"Atlantisch";6;8;0;75;1
+"AN_E10_002_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";275122,541382;"binnen";"Atlantisch";3;6;2;50;0
+"AN_E10_002_3150_18";"3150";"3150";"Versie 2.0";"5 ha < Opp < 50 ha";275122,541382;"binnen";"Atlantisch";3;5;0;60;1
+"AN_E10_002_3150_18";"3150";"3150";"Versie 3";"5 ha < Opp < 50 ha";275122,541382;"binnen";"Atlantisch";3;5;1;60;0
+"AN_ENK_001_3160_18";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";6990,273334;"binnen";"Atlantisch";3;6;2;50;0
+"AN_ENK_001_3160_18";"3160";"3160";"Versie 3";"Opp <= 1 ha";6990,273334;"binnen";"Atlantisch";2;5;2;40;0
+"AN_ENK_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";4774,786533;"binnen";"Atlantisch";5;8;2;62,5;0
+"AN_ENK_002_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";4774,786533;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"AN_ENK_002_3160_18";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";4774,786533;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_ENK_002_3160_18";"3160";"3160";"Versie 3";"Opp <= 1 ha";4774,786533;"binnen";"Atlantisch";2;5;2;40;0
+"AN_GIE_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";74816,938496;"binnen";"Atlantisch";6;8;1;75;0
+"AN_GIE_001_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";74816,938496;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_GIE_001_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";74816,938496;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_GIE_001_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";74816,938496;"binnen";"Atlantisch";3;6;2;50;0
+"AN_GKH_001_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";40500,045918;"buiten";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_GKH_001_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";40500,045918;"buiten";"Atlantisch";3;6;2;50;0
+"AN_GRD_003_3130n_17";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";3032,858749;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_GRD_003_3130n_17";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";3032,858749;"binnen";"Atlantisch";3;6;2;50;0
+"AN_GRD_003_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";3032,858749;"binnen";"Atlantisch";5;5;0;100;1
+"AN_GRD_003_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";3032,858749;"binnen";"Atlantisch";1;5;4;20;0
+"AN_GSV_002_3130n_16";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";14866,952404;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"AN_GSV_002_3130n_16";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";14866,952404;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"AN_GSV_003_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";519,351395;"binnen";"Atlantisch";5;8;1;62,5;0
+"AN_GSV_003_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";519,351395;"binnen";"Atlantisch";3;6;2;50;0
+"AN_GSV_004_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";866,308739;"binnen";"Atlantisch";5;5;0;100;1
+"AN_GSV_004_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";866,308739;"binnen";"Atlantisch";3;5;2;60;0
+"AN_GSV_004_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";866,308739;"binnen";"Atlantisch";3;5;1;60;0
+"AN_GSV_004_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";866,308739;"binnen";"Atlantisch";2;5;2;40;0
+"AN_GSV_005_3160_17";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";13563,797699;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_GSV_005_3160_17";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";13563,797699;"binnen";"Atlantisch";3;5;1;60;0
+"AN_GSV_006_3160_17";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";2328,183292;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"AN_GSV_006_3160_17";"3160";"3160";"Versie 3";"Opp <= 1 ha";2328,183292;"binnen";"Atlantisch";2;5;3;40;0
+"AN_KAL_003_3160_16";"3160";"3160";"Versie 2.0";"5 ha < Opp < 50 ha";101274,056522;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_KAL_003_3160_16";"3160";"3160";"Versie 3";"5 ha < Opp < 50 ha";101274,056522;"binnen";"Atlantisch";3;5;1;60;0
+"AN_KAL_004_3130a_16";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";16361,627731;"binnen";"Atlantisch";3;8;4;37,5;0
+"AN_KAL_004_3130a_16";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";16361,627731;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"AN_KAL_006_3160_17";"3160";"3160";"Versie 2.0";"5 ha < Opp < 50 ha";417914,873924;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_KAL_006_3160_17";"3160";"3160";"Versie 3";"5 ha < Opp < 50 ha";417914,873924;"binnen";"Atlantisch";2;5;2;40;0
+"AN_KAL_007_3160_16";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";37545,878696;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_KAL_007_3160_16";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";37545,878696;"binnen";"Atlantisch";2;5;2;40;0
+"AN_KDN_001_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";2815,375767;"binnen";"Atlantisch";8;8;0;100;1
+"AN_KDN_001_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";2815,375767;"binnen";"Atlantisch";4;6;2;66,6666666666667;0
+"AN_KDN_002_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";2290,394165;"binnen";"Atlantisch";6;8;0;75;1
+"AN_KDN_002_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";2290,394165;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_KDN_002_3140_16";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";2290,394165;"binnen";"Atlantisch";3;5;0;60;1
+"AN_KDN_002_3140_16";"3140";"3140";"Versie 3";"Opp <= 1 ha";2290,394165;"binnen";"Atlantisch";3;5;1;60;0
+"AN_KDN_003_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1388,593571;"binnen";"Atlantisch";6;8;0;75;1
+"AN_KDN_003_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1388,593571;"binnen";"Atlantisch";3;6;2;50;0
+"AN_KDN_003_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";1388,593571;"binnen";"Atlantisch";4;5;0;80;1
+"AN_KDN_003_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";1388,593571;"binnen";"Atlantisch";4;5;1;80;0
+"AN_KSV_001_3160_18";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";17019,908485;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"AN_KSV_001_3160_18";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";17019,908485;"binnen";"Atlantisch";4;5;1;80;0
+"AN_KSV_004_3160_17";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";1780,523212;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_KSV_004_3160_17";"3160";"3160";"Versie 3";"Opp <= 1 ha";1780,523212;"binnen";"Atlantisch";2;5;2;40;0
+"AN_KSV_005_3160_17";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";3748,376251;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_KSV_005_3160_17";"3160";"3160";"Versie 3";"Opp <= 1 ha";3748,376251;"binnen";"Atlantisch";2;5;2;40;0
+"AN_KVD_003_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";26129,43882;"binnen";"Atlantisch";8;8;0;100;1
+"AN_KVD_003_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";26129,43882;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_KVD_003_3160_17";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";26129,43882;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_KVD_003_3160_17";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";26129,43882;"binnen";"Atlantisch";2;5;2;40;0
+"AN_LDL_001_3160_16";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";21852,945663;"binnen";"Atlantisch";4;6;2;66,6666666666667;0
+"AN_LDL_001_3160_16";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";21852,945663;"binnen";"Atlantisch";3;5;2;60;0
+"AN_LDL_002_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1806,009232;"binnen";"Atlantisch";8;8;0;100;1
+"AN_LDL_002_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1806,009232;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_LDL_003_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";579,358772;"binnen";"Atlantisch";4;6;0;66,6666666666667;1
+"AN_LDL_003_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";579,358772;"binnen";"Atlantisch";3;5;1;60;0
+"AN_LDL_004_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";10566,899303;"binnen";"Atlantisch";6;8;2;75;0
+"AN_LDL_004_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";10566,899303;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_LIL_001_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";780,394421;"binnen";"Atlantisch";4;8;1;50;0
+"AN_LIL_001_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";780,394421;"binnen";"Atlantisch";3;6;2;50;0
+"AN_MEC_002_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";61,166452;"buiten";"Atlantisch";2;5;1;40;0
+"AN_MEC_002_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";61,166452;"buiten";"Atlantisch";3;5;1;60;0
+"AN_MOE_001_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";524,855659;"binnen";"Atlantisch";5;8;2;62,5;0
+"AN_MOE_001_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";524,855659;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"AN_MOE_001_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";524,855659;"binnen";"Atlantisch";5;5;0;100;1
+"AN_MOE_001_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";524,855659;"binnen";"Atlantisch";2;5;3;40;0
+"AN_MOL_003_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";8644,193672;"binnen";"Atlantisch";7;8;1;87,5;0
+"AN_MOL_003_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";8644,193672;"binnen";"Atlantisch";3;6;3;50;0
+"AN_MOL_003_3140_16";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";8644,193672;"binnen";"Atlantisch";5;5;0;100;1
+"AN_MOL_003_3140_16";"3140";"3140";"Versie 3";"Opp <= 1 ha";8644,193672;"binnen";"Atlantisch";4;5;1;80;0
+"AN_MOL_003_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";8644,193672;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_MOL_003_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";8644,193672;"binnen";"Atlantisch";3;5;2;60;0
+"AN_MOS_002_3160_18";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";120,661869;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_MOS_002_3160_18";"3160";"3160";"Versie 3";"Opp <= 1 ha";120,661869;"binnen";"Atlantisch";2;5;2;40;0
+"AN_OLB_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";118,193451;"binnen";"Atlantisch";7;8;0;87,5;1
+"AN_OLB_002_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";118,193451;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_RAV_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";2163,513268;"binnen";"Atlantisch";6;8;0;75;1
+"AN_RAV_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";2163,513268;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_RAV_003_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";11572,732212;"binnen";"Atlantisch";4;8;1;50;0
+"AN_RAV_003_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";11572,732212;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_RPT_002_3130a_16";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";142741,603577;"binnen";"Atlantisch";7;8;0;87,5;1
+"AN_RPT_002_3130a_16";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";142741,603577;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_RPT_002_3130n_16";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";142741,603577;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_RPT_002_3130n_16";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";142741,603577;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_RPT_003_3130a_17";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";51862,660225;"binnen";"Atlantisch";6;8;1;75;0
+"AN_RPT_003_3130a_17";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";51862,660225;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_RPT_003_3130n_17";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";51862,660225;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_RPT_003_3130n_17";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";51862,660225;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_RPT_005_3140_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";2540,804508;"binnen";"Atlantisch";4;5;0;80;1
+"AN_RPT_005_3140_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";2540,804508;"binnen";"Atlantisch";2;5;2;40;0
+"AN_RPT_005_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";2540,804508;"binnen";"Atlantisch";5;5;0;100;1
+"AN_RPT_005_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";2540,804508;"binnen";"Atlantisch";3;5;2;60;0
+"AN_RVS_002_3130n_17";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";152751,473328;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_RVS_002_3130n_17";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";152751,473328;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_SEL_002_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";936,498775;"binnen";"Atlantisch";4;5;0;80;1
+"AN_SEL_002_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";936,498775;"binnen";"Atlantisch";5;5;0;100;1
+"AN_SNE_003_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";7285,933887;"binnen";"Atlantisch";6;8;1;75;0
+"AN_SNE_003_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";7285,933887;"binnen";"Atlantisch";3;6;2;50;0
+"AN_SNE_003_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";7285,933887;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"AN_SNE_003_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";7285,933887;"binnen";"Atlantisch";4;5;1;80;0
+"AN_SNE_004_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";497,445564;"binnen";"Atlantisch";4;8;2;50;0
+"AN_SNE_004_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";497,445564;"binnen";"Atlantisch";3;6;2;50;0
+"AN_SNE_004_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";497,445564;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_SNE_004_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";497,445564;"binnen";"Atlantisch";2;5;2;40;0
+"AN_SNE_006_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";44217,188934;"binnen";"Atlantisch";6;8;1;75;0
+"AN_SNE_006_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";44217,188934;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_SNE_008_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";76267,550941;"binnen";"Atlantisch";4;8;2;50;0
+"AN_SNE_008_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";76267,550941;"binnen";"Atlantisch";3;6;2;50;0
+"AN_SPB_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";554,795002;"binnen";"Atlantisch";6;8;1;75;0
+"AN_SPB_002_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";554,795002;"binnen";"Atlantisch";4;6;2;66,6666666666667;0
+"AN_STB_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";107,689245;"binnen";"Atlantisch";5;5;0;100;1
+"AN_STB_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";107,689245;"binnen";"Atlantisch";3;5;2;60;0
+"AN_TIE_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";81135,950512;"binnen";"Atlantisch";3;8;3;37,5;0
+"AN_TIE_002_3130a_17";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";81135,950512;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_TIE_002_3160_17";"3160";"3160";"Versie 2.0";"5 ha < Opp < 50 ha";81135,950512;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_TIE_002_3160_17";"3160";"3160";"Versie 3";"5 ha < Opp < 50 ha";81135,950512;"binnen";"Atlantisch";2;5;2;40;0
+"AN_TIK_002_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1878,47036;"binnen";"Atlantisch";7;8;1;87,5;0
+"AN_TIK_002_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1878,47036;"binnen";"Atlantisch";3;6;2;50;0
+"AN_TUR_001_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1456,533268;"binnen";"Atlantisch";6;8;1;75;0
+"AN_TUR_001_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1456,533268;"binnen";"Atlantisch";3;6;2;50;0
+"AN_TVG_002_3110_18";"3110";"3110";"Versie 2.0";"5 ha < Opp < 50 ha";84929,308151;"binnen";"Atlantisch";8;9;0;88,8888888888889;1
+"AN_TVG_002_3110_18";"3110";"3110";"Versie 3";"5 ha < Opp < 50 ha";84929,308151;"binnen";"Atlantisch";3;6;2;50;0
+"AN_TVG_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";84929,308151;"binnen";"Atlantisch";8;8;0;100;1
+"AN_TVG_002_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";84929,308151;"binnen";"Atlantisch";3;6;2;50;0
+"AN_TVG_002_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";84929,308151;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_TVG_002_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";84929,308151;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_TVG_003_3130a_16";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";54973,859318;"binnen";"Atlantisch";6;8;1;75;0
+"AN_TVG_003_3130a_16";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";54973,859318;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_TVG_003_3130n_16";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";54973,859318;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_TVG_003_3130n_16";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";54973,859318;"binnen";"Atlantisch";3;6;2;50;0
+"AN_TVG_004_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1721,956276;"binnen";"Atlantisch";7;8;1;87,5;0
+"AN_TVG_004_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1721,956276;"binnen";"Atlantisch";3;6;2;50;0
+"AN_TVG_005_3110_18";"3110";"3110";"Versie 2.0";"1 ha < Opp <= 5 ha";36234,007214;"binnen";"Atlantisch";8;9;1;88,8888888888889;0
+"AN_TVG_005_3110_18";"3110";"3110";"Versie 3";"1 ha < Opp <= 5 ha";36234,007214;"binnen";"Atlantisch";4;6;2;66,6666666666667;0
+"AN_TVG_005_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";36234,007214;"binnen";"Atlantisch";8;8;0;100;1
+"AN_TVG_005_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";36234,007214;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_TVG_005_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";36234,007214;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"AN_TVG_005_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";36234,007214;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"AN_VOL_001_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";6135,532871;"binnen";"Atlantisch";4;8;1;50;0
+"AN_VOL_001_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";6135,532871;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_VOL_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";3958,81284;"binnen";"Atlantisch";6;8;1;75;0
+"AN_VOL_002_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";3958,81284;"binnen";"Atlantisch";4;6;2;66,6666666666667;0
+"AN_VOL_002_3130n_18";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";3958,81284;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_VOL_002_3130n_18";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";3958,81284;"binnen";"Atlantisch";3;6;2;50;0
+"AN_VVM_001_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";3299,12944;"binnen";"Atlantisch";2;7;4;28,5714285714286;0
+"AN_VVM_001_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";3299,12944;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"AN_VVM_002_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";7147,407295;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_VVM_002_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";7147,407295;"binnen";"Atlantisch";2;5;2;40;0
+"AN_VVM_003_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";423,448551;"buiten";"Atlantisch";7;8;1;87,5;0
+"AN_VVM_003_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";423,448551;"buiten";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_VVM_004_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";9018,33725;"buiten";"Atlantisch";3;8;3;37,5;0
+"AN_VVM_004_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";9018,33725;"buiten";"Atlantisch";2;6;3;33,3333333333333;0
+"AN_VVM_004_3160_18";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";9018,33725;"buiten";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_VVM_004_3160_18";"3160";"3160";"Versie 3";"Opp <= 1 ha";9018,33725;"buiten";"Atlantisch";3;5;1;60;0
+"AN_ZAM_002_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";771,373142;"binnen";"Atlantisch";3;5;1;60;0
+"AN_ZAM_002_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";771,373142;"binnen";"Atlantisch";2;5;2;40;0
+"AN_ZAM_003_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";1522,384792;"binnen";"Atlantisch";3;5;1;60;0
+"AN_ZAM_003_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";1522,384792;"binnen";"Atlantisch";3;5;1;60;0
+"AN_ZEG_002_3130n_17";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";43779,012199;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"AN_ZEG_002_3130n_17";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";43779,012199;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"AN_ZEG_002_3150_17";"3150";"3150";"Versie 2.0";"1 ha < Opp <= 5 ha";43779,012199;"binnen";"Atlantisch";3;5;0;60;1
+"AN_ZEG_002_3150_17";"3150";"3150";"Versie 3";"1 ha < Opp <= 5 ha";43779,012199;"binnen";"Atlantisch";3;5;1;60;0
+"AN_ZEG_003_3150_17";"3150";"3150";"Versie 2.0";"5 ha < Opp < 50 ha";192394,179955;"binnen";"Atlantisch";5;5;0;100;1
+"AN_ZEG_003_3150_17";"3150";"3150";"Versie 3";"5 ha < Opp < 50 ha";192394,179955;"binnen";"Atlantisch";3;5;2;60;0
+"AN_ZEG_004_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";2669,631702;"binnen";"Atlantisch";4;8;1;50;0
+"AN_ZEG_004_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";2669,631702;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_ABH_011_3160_17";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";13921,384739;"binnen";"Atlantisch";3;6;2;50;0
+"LI_ABH_011_3160_17";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";13921,384739;"binnen";"Atlantisch";2;5;2;40;0
+"LI_BAT_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";39875,486691;"binnen";"Atlantisch";3;8;3;37,5;0
+"LI_BAT_001_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";39875,486691;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_BAT_001_3160_18";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";39875,486691;"binnen";"Atlantisch";3;6;2;50;0
+"LI_BAT_001_3160_18";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";39875,486691;"binnen";"Atlantisch";1;5;3;20;0
+"LI_BBV_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";899,419361;"binnen";"Atlantisch";7;8;1;87,5;0
+"LI_BBV_001_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";899,419361;"binnen";"Atlantisch";3;6;2;50;0
+"LI_BEG_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";10549,089981;"binnen";"Atlantisch";5;8;1;62,5;0
+"LI_BEG_002_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";10549,089981;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_BEG_003_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1561,732288;"binnen";"Atlantisch";7;8;1;87,5;0
+"LI_BEG_003_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1561,732288;"binnen";"Atlantisch";3;6;2;50;0
+"LI_BER_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";150207,242523;"binnen";"Atlantisch";6;8;1;75;0
+"LI_BER_001_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";150207,242523;"binnen";"Atlantisch";3;6;2;50;0
+"LI_BER_001_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";150207,242523;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"LI_BER_001_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";150207,242523;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_BER_003_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";17273,322865;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_BER_003_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";17273,322865;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_BER_003_3140_18";"3140";"3140";"Versie 2.0";"1 ha < Opp <= 5 ha";17273,322865;"binnen";"Atlantisch";4;5;1;80;0
+"LI_BER_003_3140_18";"3140";"3140";"Versie 3";"1 ha < Opp <= 5 ha";17273,322865;"binnen";"Atlantisch";4;5;1;80;0
+"LI_BER_004_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1592,331173;"binnen";"Atlantisch";6;8;1;75;0
+"LI_BER_004_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1592,331173;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_BOK_001_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";7373,111309;"binnen";"Atlantisch";5;5;0;100;1
+"LI_BOK_001_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";7373,111309;"binnen";"Atlantisch";5;5;0;100;1
+"LI_BOK_002_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";35800,909416;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_BOK_002_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";35800,909416;"binnen";"Atlantisch";3;6;2;50;0
+"LI_BOK_003_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";22321,763317;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"LI_BOK_003_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";22321,763317;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_BOK_004_3130a_16";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";24757,82822;"binnen";"Atlantisch";7;8;0;87,5;1
+"LI_BOK_004_3130a_16";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";24757,82822;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_BOK_004_3130n_16";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";24757,82822;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"LI_BOK_004_3130n_16";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";24757,82822;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_BOK_006_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";6854,46545;"binnen";"Atlantisch";7;8;0;87,5;1
+"LI_BOK_006_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";6854,46545;"binnen";"Atlantisch";3;6;2;50;0
+"LI_BOK_006_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";6854,46545;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"LI_BOK_006_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";6854,46545;"binnen";"Atlantisch";3;6;2;50;0
+"LI_BOK_007_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";25272,535984;"binnen";"Atlantisch";6;8;1;75;0
+"LI_BOK_007_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";25272,535984;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_BOK_007_3130n_17";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";25272,535984;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"LI_BOK_007_3130n_17";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";25272,535984;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_BOK_008_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";4985,520946;"binnen";"Atlantisch";4;8;2;50;0
+"LI_BOK_008_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";4985,520946;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_BOK_008_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";4985,520946;"binnen";"Atlantisch";3;7;3;42,8571428571429;0
+"LI_BOK_008_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";4985,520946;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_DKV_002_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";152,154621;"binnen";"Atlantisch";4;5;1;80;0
+"LI_DKV_002_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";152,154621;"binnen";"Atlantisch";3;5;2;60;0
+"LI_DON_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";50477,601448;"binnen";"Atlantisch";2;8;4;25;0
+"LI_DON_002_3130a_17";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";50477,601448;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_DON_002_3160_17";"3160";"3160";"Versie 2.0";"5 ha < Opp < 50 ha";50477,601448;"binnen";"Atlantisch";4;6;2;66,6666666666667;0
+"LI_DON_002_3160_17";"3160";"3160";"Versie 3";"5 ha < Opp < 50 ha";50477,601448;"binnen";"Atlantisch";4;5;1;80;0
+"LI_DON_003_3160_17";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";1484,459328;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_DON_003_3160_17";"3160";"3160";"Versie 3";"Opp <= 1 ha";1484,459328;"binnen";"Atlantisch";3;5;1;60;0
+"LI_EGO_001_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";95,344122;"binnen";"Atlantisch";4;5;1;80;0
+"LI_EGO_001_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";95,344122;"binnen";"Atlantisch";4;5;1;80;0
+"LI_HAG_001_3160_18";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";2653,010189;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"LI_HAG_001_3160_18";"3160";"3160";"Versie 3";"Opp <= 1 ha";2653,010189;"binnen";"Atlantisch";3;5;2;60;0
+"LI_HAG_002_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";194,639362;"binnen";"Atlantisch";6;8;2;75;0
+"LI_HAG_002_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";194,639362;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_HAG_003_3160_18";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";893,817307;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_HAG_003_3160_18";"3160";"3160";"Versie 3";"Opp <= 1 ha";893,817307;"binnen";"Atlantisch";2;5;2;40;0
+"LI_HAG_004_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";10156,040855;"binnen";"Atlantisch";7;8;0;87,5;1
+"LI_HAG_004_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";10156,040855;"binnen";"Atlantisch";3;6;2;50;0
+"LI_HAG_004_3130n_18";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";10156,040855;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_HAG_004_3130n_18";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";10156,040855;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_HOE_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";8865,684246;"binnen";"Atlantisch";7;8;0;87,5;1
+"LI_HOE_001_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";8865,684246;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_JUF_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";34838,577919;"binnen";"Atlantisch";5;8;2;62,5;0
+"LI_JUF_001_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";34838,577919;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_JUF_001_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";34838,577919;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"LI_JUF_001_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";34838,577919;"binnen";"Atlantisch";3;6;2;50;0
+"LI_LAN_008_3150_16";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";9282,693283;"binnen";"Atlantisch";2;5;1;40;0
+"LI_LAN_008_3150_16";"3150";"3150";"Versie 3";"Opp <= 1 ha";9282,693283;"binnen";"Atlantisch";1;5;3;20;0
+"LI_LOM_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";11299,603226;"buiten";"Atlantisch";7;8;0;87,5;1
+"LI_LOM_001_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";11299,603226;"buiten";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_MAT_001_3130n_16";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";33350,516384;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MAT_001_3130n_16";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";33350,516384;"binnen";"Atlantisch";3;6;2;50;0
+"LI_MAT_002_3130a_16";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";15539,41119;"binnen";"Atlantisch";6;8;1;75;0
+"LI_MAT_002_3130a_16";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";15539,41119;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_MAT_002_3130n_16";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";15539,41119;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MAT_002_3130n_16";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";15539,41119;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_MAT_002_3140_16";"3140";"3140";"Versie 2.0";"1 ha < Opp <= 5 ha";15539,41119;"binnen";"Atlantisch";5;5;0;100;1
+"LI_MAT_002_3140_16";"3140";"3140";"Versie 3";"1 ha < Opp <= 5 ha";15539,41119;"binnen";"Atlantisch";1;5;4;20;0
+"LI_MAT_003_3150_16";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";2858,853298;"binnen";"Atlantisch";3;5;1;60;0
+"LI_MAT_003_3150_16";"3150";"3150";"Versie 3";"Opp <= 1 ha";2858,853298;"binnen";"Atlantisch";1;5;3;20;0
+"LI_MAT_004_3130n_16";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";15155,190968;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MAT_004_3130n_16";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";15155,190968;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_MAT_007_3140_16";"3140";"3140";"Versie 2.0";"1 ha < Opp <= 5 ha";31704,343483;"binnen";"Atlantisch";5;5;0;100;1
+"LI_MAT_007_3140_16";"3140";"3140";"Versie 3";"1 ha < Opp <= 5 ha";31704,343483;"binnen";"Atlantisch";4;5;1;80;0
+"LI_MAT_007_3150_16";"3150";"3150";"Versie 2.0";"1 ha < Opp <= 5 ha";31704,343483;"binnen";"Atlantisch";5;5;0;100;1
+"LI_MAT_007_3150_16";"3150";"3150";"Versie 3";"1 ha < Opp <= 5 ha";31704,343483;"binnen";"Atlantisch";4;5;1;80;0
+"LI_MAT_009_3130n_16";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";19470,1949;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MAT_009_3130n_16";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";19470,1949;"binnen";"Atlantisch";3;6;2;50;0
+"LI_MAT_011_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";97194,011292;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"LI_MAT_011_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";97194,011292;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_MAT_012_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";81555,021137;"binnen";"Atlantisch";7;7;0;100;1
+"LI_MAT_012_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";81555,021137;"binnen";"Atlantisch";6;6;0;100;1
+"LI_MEC_001_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";3408,070621;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"LI_MEC_001_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";3408,070621;"binnen";"Atlantisch";4;5;1;80;0
+"LI_MEC_002_3160_16";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";12692,052078;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"LI_MEC_002_3160_16";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";12692,052078;"binnen";"Atlantisch";4;5;1;80;0
+"LI_MLV_002_3130n_18";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";6516,441246;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"LI_MLV_002_3130n_18";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";6516,441246;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_MLV_010_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";11163,913715;"binnen";"Atlantisch";6;8;2;75;0
+"LI_MLV_010_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";11163,913715;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_MLV_010_3130n_17";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";11163,913715;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"LI_MLV_010_3130n_17";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";11163,913715;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_MLV_010_3140_17";"3140";"3140";"Versie 2.0";"1 ha < Opp <= 5 ha";11163,913715;"binnen";"Atlantisch";4;5;1;80;0
+"LI_MLV_010_3140_17";"3140";"3140";"Versie 3";"1 ha < Opp <= 5 ha";11163,913715;"binnen";"Atlantisch";2;5;3;40;0
+"LI_MLV_011_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";18107,591152;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MLV_011_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";18107,591152;"binnen";"Atlantisch";3;6;2;50;0
+"LI_MLV_014_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";146240,797993;"binnen";"Atlantisch";6;7;0;85,7142857142857;1
+"LI_MLV_014_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";146240,797993;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_MLV_016_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";26730,302193;"binnen";"Atlantisch";4;8;2;50;0
+"LI_MLV_016_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";26730,302193;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_MLV_016_3130n_17";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";26730,302193;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"LI_MLV_016_3130n_17";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";26730,302193;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_MLV_016_3140_17";"3140";"3140";"Versie 2.0";"1 ha < Opp <= 5 ha";26730,302193;"binnen";"Atlantisch";4;5;1;80;0
+"LI_MLV_016_3140_17";"3140";"3140";"Versie 3";"1 ha < Opp <= 5 ha";26730,302193;"binnen";"Atlantisch";1;5;4;20;0
+"LI_MLV_026_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";6589,860851;"binnen";"Atlantisch";7;8;0;87,5;1
+"LI_MLV_026_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";6589,860851;"binnen";"Atlantisch";3;6;2;50;0
+"LI_MLV_026_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";6589,860851;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MLV_026_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";6589,860851;"binnen";"Atlantisch";3;6;2;50;0
+"LI_MOB_001_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";14332,019806;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MOB_001_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";14332,019806;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_MOB_001_3150_18";"3150";"3150";"Versie 2.0";"1 ha < Opp <= 5 ha";14332,019806;"binnen";"Atlantisch";2;5;1;40;0
+"LI_MOB_001_3150_18";"3150";"3150";"Versie 3";"1 ha < Opp <= 5 ha";14332,019806;"binnen";"Atlantisch";3;5;1;60;0
+"LI_MUN_002_3130n_17";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";4087,557808;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_MUN_002_3130n_17";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";4087,557808;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_OPH_005_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";4847,098099;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"LI_OPH_005_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";4847,098099;"binnen";"Atlantisch";3;5;2;60;0
+"LI_OPH_006_3160_16";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";21733,120079;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_OPH_006_3160_16";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";21733,120079;"binnen";"Atlantisch";2;5;2;40;0
+"LI_PIJ_001_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";8685,361149;"buiten";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_PIJ_001_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";8685,361149;"buiten";"Atlantisch";2;5;2;40;0
+"LI_PIJ_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";2375,23172;"binnen";"Atlantisch";6;8;1;75;0
+"LI_PIJ_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";2375,23172;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_PIJ_002_3160_17";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";2375,23172;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_PIJ_002_3160_17";"3160";"3160";"Versie 3";"Opp <= 1 ha";2375,23172;"binnen";"Atlantisch";2;5;2;40;0
+"LI_SBB_004_3130n_16";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";16082,179787;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"LI_SBB_004_3130n_16";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";16082,179787;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_SBB_005_3130a_16";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";18796,72913;"binnen";"Atlantisch";4;8;2;50;0
+"LI_SBB_005_3130a_16";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";18796,72913;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_SBB_005_3160_16";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";18796,72913;"binnen";"Atlantisch";3;6;2;50;0
+"LI_SBB_005_3160_16";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";18796,72913;"binnen";"Atlantisch";2;5;2;40;0
+"LI_SCH_001_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";18629,485432;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"LI_SCH_001_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";18629,485432;"binnen";"Atlantisch";3;6;2;50;0
+"LI_SLU_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";12130,268929;"binnen";"Atlantisch";8;8;0;100;1
+"LI_SLU_001_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";12130,268929;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_SLU_001_3130n_18";"3130";"3130_na";"Versie 2.0";"1 ha < Opp <= 5 ha";12130,268929;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_SLU_001_3130n_18";"3130";"3130_na";"Versie 3";"1 ha < Opp <= 5 ha";12130,268929;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_TEU_004_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";18060,779244;"binnen";"Atlantisch";7;8;1;87,5;0
+"LI_TEU_004_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";18060,779244;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_TEU_004_3160_17";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";18060,779244;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"LI_TEU_004_3160_17";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";18060,779244;"binnen";"Atlantisch";4;5;1;80;0
+"LI_TEU_005_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";18487,672524;"binnen";"Atlantisch";6;8;2;75;0
+"LI_TEU_005_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";18487,672524;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_TEU_005_3160_16";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";18487,672524;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_TEU_005_3160_16";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";18487,672524;"binnen";"Atlantisch";4;5;1;80;0
+"LI_TEU_005_3160_17";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";18487,672524;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_TEU_005_3160_17";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";18487,672524;"binnen";"Atlantisch";4;5;1;80;0
+"LI_TOM_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";103,608997;"buiten";"Atlantisch";4;5;1;80;0
+"LI_TOM_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";103,608997;"buiten";"Atlantisch";3;5;2;60;0
+"LI_TOM_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";164,589863;"buiten";"Atlantisch";6;8;1;75;0
+"LI_TOM_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";164,589863;"buiten";"Atlantisch";3;6;2;50;0
+"LI_TOM_002_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";164,589863;"buiten";"Atlantisch";3;5;2;60;0
+"LI_TOM_002_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";164,589863;"buiten";"Atlantisch";2;5;3;40;0
+"LI_VZB_001_3160_17";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";670,039509;"binnen";"Atlantisch";6;6;0;100;1
+"LI_VZB_001_3160_17";"3160";"3160";"Versie 3";"Opp <= 1 ha";670,039509;"binnen";"Atlantisch";4;5;1;80;0
+"LI_VZB_002_3160_18";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";5914,604641;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_VZB_002_3160_18";"3160";"3160";"Versie 3";"Opp <= 1 ha";5914,604641;"binnen";"Atlantisch";2;5;2;40;0
+"LI_VZB_003_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";23421,008411;"binnen";"Atlantisch";7;8;0;87,5;1
+"LI_VZB_003_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";23421,008411;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_VZB_003_3160_18";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";23421,008411;"binnen";"Atlantisch";5;6;0;83,3333333333333;1
+"LI_VZB_003_3160_18";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";23421,008411;"binnen";"Atlantisch";4;5;1;80;0
+"LI_VZB_005_3130a_18";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";26090,677879;"binnen";"Atlantisch";4;8;3;50;0
+"LI_VZB_005_3130a_18";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";26090,677879;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"LI_VZB_005_3160_18";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";26090,677879;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_VZB_005_3160_18";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";26090,677879;"binnen";"Atlantisch";2;5;2;40;0
+"LI_VZB_007_3160_18";"3160";"3160";"Versie 2.0";"1 ha < Opp <= 5 ha";15332,035454;"binnen";"Atlantisch";6;6;0;100;1
+"LI_VZB_007_3160_18";"3160";"3160";"Versie 3";"1 ha < Opp <= 5 ha";15332,035454;"binnen";"Atlantisch";4;5;1;80;0
+"LI_VZB_008_3160_16";"3160";"3160";"Versie 2.0";"Opp <= 1 ha";2604,42601;"binnen";"Atlantisch";6;6;0;100;1
+"LI_VZB_008_3160_16";"3160";"3160";"Versie 3";"Opp <= 1 ha";2604,42601;"binnen";"Atlantisch";5;5;0;100;1
+"LI_WIK_002_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";5520,877754;"binnen";"Atlantisch";6;8;1;75;0
+"LI_WIK_002_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";5520,877754;"binnen";"Atlantisch";3;6;2;50;0
+"LI_WIK_005_3130a_16";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";10273,098244;"binnen";"Atlantisch";5;8;2;62,5;0
+"LI_WIK_005_3130a_16";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";10273,098244;"binnen";"Atlantisch";3;6;2;50;0
+"LI_WIK_007_3130a_16";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";6751,375416;"binnen";"Atlantisch";8;8;0;100;1
+"LI_WIK_007_3130a_16";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";6751,375416;"binnen";"Atlantisch";6;6;0;100;1
+"LI_WIK_007_3130n_16";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";6751,375416;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"LI_WIK_007_3130n_16";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";6751,375416;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"LI_WIK_008_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";9731,347748;"binnen";"Atlantisch";7;8;1;87,5;0
+"LI_WIK_008_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";9731,347748;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"LI_ZUT_001_3130a_17";"3130";"3130_aom";"Versie 2.0";"1 ha < Opp <= 5 ha";23038,029923;"binnen";"Atlantisch";6;8;2;75;0
+"LI_ZUT_001_3130a_17";"3130";"3130_aom";"Versie 3";"1 ha < Opp <= 5 ha";23038,029923;"binnen";"Atlantisch";1;6;4;16,6666666666667;0
+"LI_ZUT_001_3140_17";"3140";"3140";"Versie 2.0";"1 ha < Opp <= 5 ha";23038,029923;"binnen";"Atlantisch";4;5;0;80;1
+"LI_ZUT_001_3140_17";"3140";"3140";"Versie 3";"1 ha < Opp <= 5 ha";23038,029923;"binnen";"Atlantisch";1;5;3;20;0
+"OV_DAM_001_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";8791,702574;"binnen";"Atlantisch";2;5;2;40;0
+"OV_DAM_001_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";8791,702574;"binnen";"Atlantisch";1;5;3;20;0
+"OV_DON_003_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";6936,676874;"binnen";"Atlantisch";3;5;1;60;0
+"OV_DON_003_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";6936,676874;"binnen";"Atlantisch";3;5;1;60;0
+"OV_FON_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";1378,028564;"binnen";"Atlantisch";2;5;1;40;0
+"OV_FON_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";1378,028564;"binnen";"Atlantisch";2;5;2;40;0
+"OV_FON_002_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";4196,550087;"binnen";"Atlantisch";3;5;1;60;0
+"OV_FON_002_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";4196,550087;"binnen";"Atlantisch";3;5;1;60;0
+"OV_KRA_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"5 ha < Opp < 50 ha";89100,381771;"binnen";"Atlantisch";5;8;0;62,5;1
+"OV_KRA_001_3130a_18";"3130";"3130_aom";"Versie 3";"5 ha < Opp < 50 ha";89100,381771;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"OV_KRA_001_3130n_18";"3130";"3130_na";"Versie 2.0";"5 ha < Opp < 50 ha";89100,381771;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"OV_KRA_001_3130n_18";"3130";"3130_na";"Versie 3";"5 ha < Opp < 50 ha";89100,381771;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"OV_LIN_001_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";1131,329;"binnen";"Atlantisch";4;5;0;80;1
+"OV_LIN_001_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";1131,329;"binnen";"Atlantisch";3;5;1;60;0
+"OV_STB_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1194,803576;"binnen";"Atlantisch";6;8;2;75;0
+"OV_STB_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1194,803576;"binnen";"Atlantisch";3;6;2;50;0
+"OV_STB_002_3140_17";"3140";"3140";"Versie 2.0";"Opp <= 1 ha";1194,803576;"binnen";"Atlantisch";5;5;0;100;1
+"OV_STB_002_3140_17";"3140";"3140";"Versie 3";"Opp <= 1 ha";1194,803576;"binnen";"Atlantisch";4;5;1;80;0
+"VB_ASD_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";4612,083736;"binnen";"Atlantisch";5;8;1;62,5;0
+"VB_ASD_001_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";4612,083736;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"VB_KBL_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";240,763981;"binnen";"Atlantisch";4;5;1;80;0
+"VB_KBL_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";240,763981;"binnen";"Atlantisch";3;5;2;60;0
+"VB_KBL_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";238,430313;"binnen";"Atlantisch";5;8;2;62,5;0
+"VB_KBL_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";238,430313;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"VB_KOR_001_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";6621,360788;"binnen";"Atlantisch";4;5;0;80;1
+"VB_KOR_001_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";6621,360788;"binnen";"Atlantisch";3;5;1;60;0
+"VB_VDB_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";588,085823;"binnen";"Atlantisch";4;5;0;80;1
+"VB_VDB_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";588,085823;"binnen";"Atlantisch";2;5;3;40;0
+"VB_VIE_004_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";748,348824;"binnen";"Atlantisch";5;8;1;62,5;0
+"VB_VIE_004_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";748,348824;"binnen";"Atlantisch";2;6;3;33,3333333333333;0
+"VB_VIE_004_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";748,348824;"binnen";"Atlantisch";1;5;2;20;0
+"VB_VIE_004_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";748,348824;"binnen";"Atlantisch";1;5;3;20;0
+"VB_VIN_002_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";874,109455;"binnen";"Atlantisch";5;5;0;100;1
+"VB_VIN_002_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";874,109455;"binnen";"Atlantisch";4;5;1;80;0
+"VB_VOR_002_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";121,483492;"binnen";"Atlantisch";3;5;1;60;0
+"VB_VOR_002_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";121,483492;"binnen";"Atlantisch";4;5;1;80;0
+"VB_VOR_003_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";67,345087;"binnen";"Atlantisch";2;4;2;50;0
+"VB_VOR_003_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";67,345087;"binnen";"Atlantisch";2;5;3;40;0
+"VB_VOR_005_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";91,690865;"binnen";"Atlantisch";8;8;0;100;1
+"VB_VOR_005_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";91,690865;"binnen";"Atlantisch";3;6;2;50;0
+"VB_VOR_005_3150_18";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";91,690865;"binnen";"Atlantisch";5;5;0;100;1
+"VB_VOR_005_3150_18";"3150";"3150";"Versie 3";"Opp <= 1 ha";91,690865;"binnen";"Atlantisch";3;5;2;60;0
+"WV_BBV_001_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";241,830942;"binnen";"Atlantisch";8;8;0;100;1
+"WV_BBV_001_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";241,830942;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"WV_BBV_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";5310,550331;"binnen";"Atlantisch";7;8;1;87,5;0
+"WV_BBV_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";5310,550331;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"WV_BBV_002_3130n_17";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";5310,550331;"binnen";"Atlantisch";4;7;2;57,1428571428571;0
+"WV_BBV_002_3130n_17";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";5310,550331;"binnen";"Atlantisch";3;6;2;50;0
+"WV_BBV_003_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";452,318834;"binnen";"Atlantisch";8;8;0;100;1
+"WV_BBV_003_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";452,318834;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"WV_BUL_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";2239,284758;"binnen";"Atlantisch";6;8;1;75;0
+"WV_BUL_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";2239,284758;"binnen";"Atlantisch";3;6;2;50;0
+"WV_DAM_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";7661,479421;"buiten";"Atlantisch";3;5;2;60;0
+"WV_DAM_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";7661,479421;"buiten";"Atlantisch";1;5;4;20;0
+"WV_GUP_001_3130a_18";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";1170,537502;"binnen";"Atlantisch";7;8;1;87,5;0
+"WV_GUP_001_3130a_18";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";1170,537502;"binnen";"Atlantisch";5;6;1;83,3333333333333;0
+"WV_GUP_002_3130a_17";"3130";"3130_aom";"Versie 2.0";"Opp <= 1 ha";7796,773072;"binnen";"Atlantisch";7;8;1;87,5;0
+"WV_GUP_002_3130a_17";"3130";"3130_aom";"Versie 3";"Opp <= 1 ha";7796,773072;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"WV_GUP_002_3130n_17";"3130";"3130_na";"Versie 2.0";"Opp <= 1 ha";7796,773072;"binnen";"Atlantisch";5;7;1;71,4285714285714;0
+"WV_GUP_002_3130n_17";"3130";"3130_na";"Versie 3";"Opp <= 1 ha";7796,773072;"binnen";"Atlantisch";4;6;1;66,6666666666667;0
+"WV_KPV_001_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";707,559087;"binnen";"Atlantisch";2;5;2;40;0
+"WV_KPV_001_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";707,559087;"binnen";"Atlantisch";1;5;3;20;0
+"WV_LEI_003_3150_17";"3150";"3150";"Versie 2.0";"Opp <= 1 ha";151,994032;"binnen";"Atlantisch";4;5;1;80;0
+"WV_LEI_003_3150_17";"3150";"3150";"Versie 3";"Opp <= 1 ha";151,994032;"binnen";"Atlantisch";4;5;1;80;0

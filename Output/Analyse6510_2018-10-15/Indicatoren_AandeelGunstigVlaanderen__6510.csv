@@ -1,0 +1,130 @@
+"Scenario";"Versie";"Habitattype";"Habitatsubtype";"Indicator";"SBZH";"nObs";"sumWeight";"AandeelGunstig";"AandeelGunstig_LLCI";"AandeelGunstig_ULCI"
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"horizontale structuur";"Binnen & Buiten";6;53,3559790101188;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"horizontale structuur";"Binnen";5;32,6559790101188;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"horizontale structuur";"Buiten";1;20,7;0;NA;NA
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"bedekking sleutelsoorten";"Binnen & Buiten";49;1177,42955476585;6,33;2,2;16,91
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"bedekking sleutelsoorten";"Binnen";34;359,113807116246;3,94;0,91;15,45
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"bedekking sleutelsoorten";"Buiten";15;818,315747649606;7,38;1,9;24,7
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu";"bedekking sleutelsoorten";"Binnen & Buiten";30;1000,36851406523;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"bedekking sleutelsoorten";"Binnen & Buiten";7;105,7;57,14;22,71;85,82
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"bedekking sleutelsoorten";"Binnen & Buiten";6;53,3559790101188;26,51;5,28;70
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hus";"bedekking sleutelsoorten";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"bedekking sleutelsoorten";"Binnen & Buiten";49;1177,42955476585;4,16;1,26;12,91
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"bedekking sleutelsoorten";"Binnen";34;359,113807116246;9,45;2,95;26,35
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"bedekking sleutelsoorten";"Buiten";15;818,315747649606;1,85;0,21;14,49
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"bedekking sleutelsoorten";"Binnen & Buiten";30;1000,36851406523;2,5;0,5;11,57
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"bedekking sleutelsoorten";"Binnen & Buiten";7;105,7;14,29;1,93;58,59
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"bedekking sleutelsoorten";"Binnen & Buiten";6;53,3559790101188;16,72;2,07;65,55
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"bedekking sleutelsoorten";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"sleutelsoorten";"Binnen & Buiten";49;1177,42955476585;1,2;0,25;5,65
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"sleutelsoorten";"Binnen";34;359,113807116246;3,94;0,91;15,45
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"sleutelsoorten";"Buiten";15;818,315747649606;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu";"sleutelsoorten";"Binnen & Buiten";30;1000,36851406523;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"sleutelsoorten";"Binnen & Buiten";7;105,7;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"sleutelsoorten";"Binnen & Buiten";6;53,3559790101188;26,51;5,28;70
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hus";"sleutelsoorten";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"sleutelsoorten";"Binnen & Buiten";49;1177,42955476585;1,2;0,25;5,65
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"sleutelsoorten";"Binnen";34;359,113807116246;3,94;0,91;15,45
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"sleutelsoorten";"Buiten";15;818,315747649606;0;0;0
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"sleutelsoorten";"Binnen & Buiten";30;1000,36851406523;0;0;0
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"sleutelsoorten";"Binnen & Buiten";7;105,7;0;0;0
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"sleutelsoorten";"Binnen & Buiten";6;53,3559790101188;26,51;5,28;70
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"sleutelsoorten";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"strooisellaag";"Binnen & Buiten";49;1177,42955476585;98,63;93,84;99,71
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"strooisellaag";"Binnen";34;359,113807116246;95,51;83,32;98,91
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"strooisellaag";"Buiten";15;818,315747649606;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu";"strooisellaag";"Binnen & Buiten";30;1000,36851406523;98,39;92,46;99,67
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"strooisellaag";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"strooisellaag";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hus";"strooisellaag";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"strooisellaag";"Binnen & Buiten";49;1177,42955476585;93,44;79,33;98,14
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"strooisellaag";"Binnen";34;359,113807116246;89,06;73;96,08
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"strooisellaag";"Buiten";15;818,315747649606;95,36;69,28;99,47
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"strooisellaag";"Binnen & Buiten";30;1000,36851406523;92,28;74,95;97,95
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"strooisellaag";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"strooisellaag";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"strooisellaag";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verbossing/verstruweling";"Binnen & Buiten";49;1177,42955476585;96,22;88,81;98,79
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"verbossing/verstruweling";"Binnen";34;359,113807116246;87,61;71,84;95,14
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verbossing/verstruweling";"Buiten";15;818,315747649606;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu";"verbossing/verstruweling";"Binnen & Buiten";30;1000,36851406523;97,71;89,02;99,56
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"verbossing/verstruweling";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"verbossing/verstruweling";"Binnen & Buiten";6;53,3559790101188;59,5;19,41;89,96
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hus";"verbossing/verstruweling";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verruiging";"Binnen & Buiten";49;1177,42955476585;94,06;79,99;98,43
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu; 6510_hus; 6510_huk";"verruiging";"Binnen";34;359,113807116246;95,72;86,96;98,68
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verruiging";"Buiten";15;818,315747649606;93,33;70,03;98,82
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu";"verruiging";"Binnen & Buiten";30;1000,36851406523;96,2;74,96;99,54
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"verruiging";"Binnen & Buiten";7;105,7;85,71;41,41;98,07
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"verruiging";"Binnen & Buiten";6;53,3559790101188;89,09;46,64;98,71
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hus";"verruiging";"Binnen & Buiten";6;18,0050616905037;38,72;8,98;80,18
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"vervilting";"Binnen & Buiten";6;53,3559790101188;61,2;12,95;94,36
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"vervilting";"Binnen";5;32,6559790101188;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_huk";"vervilting";"Buiten";1;20,7;0;NA;NA
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"dominantie van één soort";"Binnen & Buiten";49;1177,42955476585;80,94;43,05;95,98
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"dominantie van één soort";"Binnen";34;359,113807116246;86,37;68,04;94,97
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"dominantie van één soort";"Buiten";15;818,315747649606;78,56;27,88;97,2
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"dominantie van één soort";"Binnen & Buiten";30;1000,36851406523;78,31;36,44;95,79
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"dominantie van één soort";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"dominantie van één soort";"Binnen & Buiten";6;53,3559790101188;86,1;39,66;98,31
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"dominantie van één soort";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"dominantie van één soort";"Binnen & Buiten";43;1124,07357575573;33,92;11,46;67,06
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu; 6510_hus";"dominantie van één soort";"Binnen";29;326,457828106127;47,77;29,61;66,54
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"dominantie van één soort";"Buiten";14;797,615747649606;28,25;4,72;75,78
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu";"dominantie van één soort";"Binnen & Buiten";30;1000,36851406523;33,57;9,74;70,31
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"dominantie van één soort";"Binnen & Buiten";7;105,7;28,57;7,07;67,76
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hus";"dominantie van één soort";"Binnen & Buiten";6;18,0050616905037;84,27;47,78;96,91
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"levensvormen";"Binnen & Buiten";6;53,3559790101188;20,7;3,55;64,9
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"levensvormen";"Binnen";5;32,6559790101188;33,82;6,6;78,71
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"levensvormen";"Buiten";1;20,7;0;NA;NA
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"eutrofiëring";"Binnen & Buiten";49;1177,42955476585;18,24;8,02;36,34
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"eutrofiëring";"Binnen";34;359,113807116246;38,79;23,18;57,1
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"eutrofiëring";"Buiten";15;818,315747649606;9,23;2,55;28,35
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"eutrofiëring";"Binnen & Buiten";30;1000,36851406523;12,51;4,63;29,61
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"eutrofiëring";"Binnen & Buiten";7;105,7;71,43;32,29;92,91
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"eutrofiëring";"Binnen & Buiten";6;53,3559790101188;26,6;5,31;70,08
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"eutrofiëring";"Binnen & Buiten";6;18,0050616905037;0;0;0
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verbossing";"Binnen & Buiten";49;1177,42955476585;96,22;88,81;98,79
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"verbossing";"Binnen";34;359,113807116246;87,61;71,84;95,14
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verbossing";"Buiten";15;818,315747649606;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"verbossing";"Binnen & Buiten";30;1000,36851406523;97,71;89,02;99,56
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"verbossing";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"verbossing";"Binnen & Buiten";6;53,3559790101188;59,5;19,41;89,96
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"verbossing";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verbraming";"Binnen & Buiten";49;1177,42955476585;99,61;96,9;99,95
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"verbraming";"Binnen";34;359,113807116246;98,7;91,05;99,83
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verbraming";"Buiten";15;818,315747649606;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"verbraming";"Binnen & Buiten";30;1000,36851406523;99,54;96,23;99,94
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"verbraming";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"verbraming";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"verbraming";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"vergrassing inclusief vervilting";"Binnen & Buiten";49;1177,42955476585;88,85;74,96;95,5
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"vergrassing inclusief vervilting";"Binnen";34;359,113807116246;80,68;61,99;91,45
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"vergrassing inclusief vervilting";"Buiten";15;818,315747649606;92,44;75,08;98,02
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"vergrassing inclusief vervilting";"Binnen & Buiten";30;1000,36851406523;93,57;81,06;98,02
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"vergrassing inclusief vervilting";"Binnen & Buiten";7;105,7;42,86;14,18;77,29
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"vergrassing inclusief vervilting";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"vergrassing inclusief vervilting";"Binnen & Buiten";6;18,0050616905037;63,71;19,75;92,61
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verruiging inclusief ruderalisering";"Binnen & Buiten";49;1177,42955476585;96,08;80,17;99,33
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus; 6510_huk";"verruiging inclusief ruderalisering";"Binnen";34;359,113807116246;97,73;85,15;99,69
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk; 6510_hua; 6510_hu; 6510_hus";"verruiging inclusief ruderalisering";"Buiten";15;818,315747649606;95,36;69,28;99,47
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"verruiging inclusief ruderalisering";"Binnen & Buiten";30;1000,36851406523;95,39;76,44;99,25
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"verruiging inclusief ruderalisering";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_huk";"verruiging inclusief ruderalisering";"Binnen & Buiten";6;53,3559790101188;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"verruiging inclusief ruderalisering";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"vegetatiehoogte";"Binnen & Buiten";43;1124,07357575573;96,59;89,19;98,98
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu; 6510_hus";"vegetatiehoogte";"Binnen";29;326,457828106127;88,27;71,7;95,72
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua; 6510_hu; 6510_hus";"vegetatiehoogte";"Buiten";14;797,615747649606;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hu";"vegetatiehoogte";"Binnen & Buiten";30;1000,36851406523;96,17;87,4;98,91
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"vegetatiehoogte";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hus";"vegetatiehoogte";"Binnen & Buiten";6;18,0050616905037;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"verdroging";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"verdroging";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 2.0";6510;"6510_hua";"vernatting";"Binnen & Buiten";7;105,7;57,14;20,93;87,04
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"vernatting";"Binnen & Buiten";7;105,7;57,14;20,93;87,04
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua; 6510_hu; 6510_hus";"verticale structuur";"Binnen & Buiten";43;1124,07357575573;96,59;89,19;98,98
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu; 6510_hus";"verticale structuur";"Binnen";29;326,457828106127;88,27;71,7;95,72
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua; 6510_hu; 6510_hus";"verticale structuur";"Buiten";14;797,615747649606;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hu";"verticale structuur";"Binnen & Buiten";30;1000,36851406523;96,17;87,4;98,91
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hua";"verticale structuur";"Binnen & Buiten";7;105,7;100;100;100
+"Schaal Vlaanderen";"Versie 3";6510;"6510_hus";"verticale structuur";"Binnen & Buiten";6;18,0050616905037;100;100;100
