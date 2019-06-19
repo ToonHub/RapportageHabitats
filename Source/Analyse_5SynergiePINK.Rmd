@@ -1,0 +1,754 @@
+
+# Synergie PINK: kustduinhabitats
+
+## Embryonale duinen (2110)
+
+Voor het habitattype embryonale duinen (2110) werd geen meetnet ontwikkeld omdat het om een zeer dynamisch habitattype gaat [@Westra2014]. In de plaats daarvan wordt de habitatkwaliteit ingeschat via kartering. De kartering werd uitgevoerd in het kader van PINK [@Provoost2015].
+
+### Data
+
+De karteergegevens werden aangeleverd onder de vorm van een Excel-bestand met per polygoon een aantal structuur- en vegetatiegegevens waaruit het merendeel van de verschillende indicatoren/voorwaarden afgeleid kunnen worden.   
+
+```{r PINKkartering}
+
+invoer2110 <- geefInvoervereisten(Kwaliteitsniveau = 1, Habitattype = "2110") %>%
+  select(Criterium, Indicator, Belang, Voorwaarde, Eenheid, Type = TypeVariabele, Invoertype) %>% 
+  unique()
+
+data_2110 <- read.csv2(data2110, stringsAsFactors = FALSE)
+
+data_2110 <- data_2110 %>%
+  mutate(ID = paste("Polygoon", FID, sep = ""),
+         "aantal sleutelsoorten" = Aantal.spec,
+         "bedekking aanvullende sleutelsoorten" = ifelse(Schaal == "Geen", 0,
+                                                         ifelse(Schaal == "Talrijk", 3,
+                                                                ifelse(Schaal == "Weinig talrijk", 1.5, NA))),
+         "sleutelsoorten structuurvormend" = 15,
+         "bedekking Biestarwegras" = 15,
+         "bedekking vloedmerkvegetatie" = ifelse(Schaal == "Geen", 0,
+                                                         ifelse(Schaal == "Talrijk", 3,
+                                                                ifelse(Schaal == "Weinig talrijk", 1.5, NA))),
+         "spontane verstuiving aanwezig" = ifelse(Dynamiek == "Achter dijk", 0, 1),
+         "menselijke structuren aanwezig" = ifelse(Rijshout == "Structuurbepalend", 1, 
+                                                   ifelse(Rijshout %in% c("Geen", "Aanwezig", "Afwezig"), 0, NA)),
+         recreatie = ifelse(Recreatie %in% c("Vrij intensief", "Afwezig"), 1,
+                            ifelse(Recreatie == "Zeer intensief", 0, NA)),
+         "intensieve recreatie" = recreatie,
+         "oppervlakte in m²" = Area_m2) %>%
+  select(ID, FID, "aantal sleutelsoorten", "bedekking aanvullende sleutelsoorten", "sleutelsoorten structuurvormend", "bedekking Biestarwegras", "bedekking vloedmerkvegetatie","spontane verstuiving aanwezig",  "menselijke structuren aanwezig", recreatie,  "intensieve recreatie", "oppervlakte in m²")
+
+data_voorwaarden_2110 <- data_2110 %>%
+  gather(-ID, -FID, key = Voorwaarde, value = Waarde) %>%
+  arrange(FID) %>%
+  left_join(invoer2110, by = "Voorwaarde") %>%
+  mutate(Type = ifelse(Type == "Categorie", "Percentage", Type),
+         Eenheid = ifelse(Type == "Percentage", "%", Eenheid),
+         Invoertype = NA,
+         Waarde = as.character(Waarde))
+  
+data_habitat_2110 <- data_2110 %>%
+  select(ID, PolygonWeight = `oppervlakte in m²`) %>%
+  unique() %>%
+  mutate(Habitattype = "2110",
+         Regio = "Atlantic",
+         PolygonWeight_std = PolygonWeight/min(PolygonWeight))
+
+```
+
+### LSVI-berekening
+
+De waarden van alle voorwaarden worden rechtstreeks ingevoerd in de LSVI-rekenmodule. Voor de voorwaarden 'sleutelsoorten structuurvormend' en 'bedekking Biestarwegras' waren er echter geen gegevens beschikbaar. Beide voorwaarden beschouwen we steeds als gunstig voor alle polygonen op basis van expertinschatting.
+
+Op basis van de LSVI-rekenmodule berekenen we voor elke polygoon van de kartering de habitatkwaliteit. De verhouding van de oppervlakte polygonen in een gunstige staat t.o.v. de totale gekarteerde oppervlakte geeft dan het aandeel habitat in een gunstige staat.    
+
+```{r PINKkarteringLSVI, warning= FALSE}
+
+resultsLSVI_2110 <- berekenLSVIbasis(Data_habitat = data_habitat_2110,
+                                     Data_voorwaarden = data_voorwaarden_2110,
+                                     Kwaliteitsniveau = 1,
+                                     Aggregatiemethode = "RapportageHR",
+                                     na.rm = TRUE)
+
+resultsLSVI_vw_2110 <- resultsLSVI_2110[[3]] %>%
+    mutate(Habitatsubtype = Habitattype,
+           Meetnet = "PINK",
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+  select(Meetnet, ID, Habitattype, Habitatsubtype, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, Verschilscore, VoorwaardeID, Combinatie,  Regio) 
+
+resultsLSVI_ind_2110 <- resultsLSVI_2110[[2]] %>%
+    mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4),
+    Meetnet = "PINK") %>%
+  left_join(data_habitat_2110, by = c("ID", "Habitattype")) %>%
+   # WeightComb = Weight * StratumWeight) %>%
+  select(Meetnet, ID, Habitattype, Habitatsubtype,  Versie, Criterium, Indicator, Belang, Status_indicator, Verschilscore,  Regio, PolygonWeight, PolygonWeight_std)
+
+statusHabitatvlek_2110 <- resultsLSVI_ind_2110 %>% 
+  group_by(Meetnet, ID,  Habitattype, Habitatsubtype, Versie, Regio, PolygonWeight) %>%
+  filter(!is.na(Status_indicator)) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup()
+  
+analyseNaamPINK <- "AnalysePINK_2019-01-14"
+
+#write.csv2(resultsLSVI_vw_2110, paste("../Output/", analyseNaamPINK,"/Voorwaarden_2110.csv", sep =""), row.names = FALSE)
+#write.csv2(resultsLSVI_ind_2110, paste("../Output/", analyseNaamPINK,"/Indicatoren_2110.csv", sep =""), row.names = FALSE)
+#write.csv2(statusHabitatvlek_2110, paste("../Output/", analyseNaamPINK,"/StatusHabitatvlek_2110.csv", sep =""), row.names = FALSE)
+
+#selecteer dataset
+statusHabitatvlek_2110 <- statusHabitatvlek_2110 %>%
+  mutate(WeightComb = PolygonWeight,
+         PlotWeight = PolygonWeight,
+         StratumWeight = 1,
+         SBZH = "Binnen") 
+
+statusHabitat_2110 <- habitatandeelGunstig(data = statusHabitatvlek_2110) %>%
+  mutate(Schaal = "Vlaanderen",
+         Meetnet = "PINK") %>%
+  select(Meetnet, Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig) %>%
+  arrange(Habitattype, Versie,  TypeResultaat) 
+
+#write.csv2(statusHabitat_2110, paste("../Output/", analyseNaamPINK,"/StatusHabitat_2110.csv", sep =""), row.names = FALSE)
+
+
+status_indicatoren_2110 <- NULL
+
+resultsLSVI_2110_notNA <- resultsLSVI_ind_2110 %>%
+  filter(!is.na(Status_indicator)) %>%
+ mutate(WeightComb = PolygonWeight,
+         PlotWeight = PolygonWeight,
+         StratumWeight = 1,
+         SBZH = "Binnen") 
+
+overzicht_ind <- resultsLSVI_2110_notNA%>%
+  select(Habitattype, Versie, Criterium, Indicator, Belang) %>%
+  unique()
+
+for(habt in unique(resultsLSVI_2110_notNA$Habitattype)){ 
+    
+    data_habt <- resultsLSVI_2110_notNA %>%
+    filter(Habitattype == habt)
+  
+      for(ind in unique(data_habt$Indicator)){
+      
+        data_ind <- data_habt %>%
+          filter(Indicator == ind) %>%
+          mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+        
+        result_temp <- habitatandeelGunstig(data_ind, stratSBZH = FALSE) %>%
+          mutate(Indicator = ind) %>%
+          left_join(overzicht_ind, by = c("Versie", "Habitattype", "Indicator")) %>%
+          select(Versie, TypeResultaat, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig)
+        
+        status_indicatoren_2110 <- bind_rows(status_indicatoren_2110, result_temp)
+    
+  }
+}
+
+status_indicatoren_2110 <- status_indicatoren_2110 %>%
+  arrange(Habitattype, Versie, TypeResultaat, Criterium, Indicator) 
+
+#write.csv2(status_indicatoren_2110, paste("../Output/", analyseNaamPINK,"/Indicatoren_AandeelGunstigVlaanderen_2110.csv", sep =""), row.names = FALSE)
+
+```
+
+
+## Overige kustduinhabitats
+
+Voor de habitattypen vastgelegde duinen (2130), duindoornstruwelen (2160), kruipwilgstruwelen (2170) en vochtige duinvalleien (2190) maken we gebruik van vegetatieopnames in vierkante proefvlakken van 3 m x 3 m die uitgevoerd werden in het kader van PINK.
+
+\needspace{50mm}
+
+### Data
+
+#### Ruwe data uit INBOVEG
+
+De INBOVEG-databank bevat de volgende gegevens voor elke meetpunt:
+
+* vegetatieopname (lijst van alle aanwezige soorten + bedekking per soort),
+* bedekking van vegetatielagen. 
+
+```{r PINKselectie surveys}
+
+survey_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "survey_PINK.csv"), stringsAsFactors = FALSE)
+
+kopinfo_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "kopinfo_PINK.csv"), stringsAsFactors = FALSE)
+
+opnamen_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "opnamen_PINK.csv"), stringsAsFactors = FALSE)
+
+veglagen_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "veglagen_PINK.csv"), stringsAsFactors = FALSE)
+
+# analyseNaamPINK <- paste("AnalysePINK", Sys.Date(), sep="_")
+# setwd("../Output")
+
+# dir.create(analyseNaamPINK)
+# 
+# setwd(paste("../Output/", analyseNaamPINK, sep =""))
+# 
+# dir.create("InputRekenmodule")
+
+#analyseNaamPINK <- "AnalysePINK_2018-11-27"
+
+```
+
+#### Geobserveerd habitattype
+
+De shapefile 'PQ_Duinen_20180420' bevat de ligging van de meetpunten en het geobserveerde habitattype. Elk meetpunt heeft een ID waarmee de link naar de opname in INBOVEG kan worden gemaakt.
+
+#### Gegevens verbossing voor duindoornstruwelen
+
+Voor het beoordelen van de voorwaarde 'verbossing' bij het habitattype duindoornstruwelen (2160) maken we gebruik van karteergegevens. De inschatting van verbossing op basis van een kartering is nauwkeuriger dan deze afgeleid uit een vegetatieopname in een proefvlak van 3m x 3m.   
+
+```{r PINKselectie PQ}
+
+PQsPINK_shape <- readOGR(PINKdir, PINK_PQ_shape, verbose = FALSE) 
+
+#code aanpassen conform habitatkaart
+PQsPINK_shape$Habitat <- ifelse(PQsPINK_shape$Habitat %in% c("2130", "2130_mos"), "2130_hd",
+                          ifelse(PQsPINK_shape$Habitat == "2130-had", "2130_had", as.character(PQsPINK_shape$Habitat)))
+
+#geen steekproef voor 2110
+PQsPINK_selectie <- PQsPINK_shape@data %>%
+  filter(!is.na(Habitat) & (!Habitat %in% c("GH", "2110", "?", "2180", "2120")) )
+
+PQ_PINK_ID <-  kopinfo_PINK %>%
+  select(ID = recording_givid,
+         IDPlots, Date = vague_date_end) %>%
+  unique()
+
+data_habitat_PINK <- PQsPINK_selectie %>%
+  select(IDPlots = Code, Habitattype = Habitat, Gebied) %>%
+  mutate(SBZH = "Binnen",
+         Regio = "Atlantic") %>%
+  left_join(PQ_PINK_ID, by = "IDPlots")
+
+PQNotInINBOVEG <- data_habitat_PINK %>%
+  filter(is.na(ID))
+
+data_habitat_PINK <- data_habitat_PINK %>%
+  filter(!is.na(ID)) %>%
+  mutate(HabCode = Habitattype,
+         Date = as.Date(Date, format = "%Y-%m-%d"),
+         Jaar =  as.numeric(format(Date ,"%Y"))) %>%
+  group_by(IDPlots) %>%
+  mutate(nOpnamesPlot = n(),
+         OpnameNr = rank(Date),
+         RecentsteOpname = OpnameNr == nOpnamesPlot) %>%
+  ungroup()
+
+```
+
+
+
+
+```{r PINKgewichten}
+
+#update oppervlaktes habtypes op basis van BWK2018
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
+  select(HabCode, Binnen, Buiten) %>%
+  gather(Binnen, Buiten, key = SBZH, value = Area)
+
+#dataset voor schatting toestand en trend afbakenen
+
+data_habitat_PINK <- data_habitat_PINK %>%
+  mutate(DatasetToestand = Jaar >= 2010 & RecentsteOpname,
+         DatasetTrend = nOpnamesPlot >= 2)
+
+gewichten_toestand <- data_habitat_PINK %>%
+  filter(DatasetToestand) %>%
+  group_by( HabCode, SBZH) %>%
+  summarise (nPlots = n_distinct(IDPlots)) %>%
+  ungroup() %>%
+  left_join(habsubt_area, by = c("SBZH", "HabCode")) %>%
+  mutate(PlotWeightToestand = 1,
+         StratumWeightToestand = Area/ nPlots,
+         WeightCombToestand = PlotWeightToestand * StratumWeightToestand)
+
+gewichten_trend <- data_habitat_PINK %>%
+  filter(DatasetTrend) %>%
+  group_by( HabCode, SBZH) %>%
+  summarise (nPlots = n_distinct(IDPlots)) %>%
+  ungroup() %>%
+  left_join(habsubt_area, by = c("SBZH", "HabCode")) %>%
+  mutate(PlotWeightTrend = 1,
+         StratumWeightTrend = Area/ nPlots,
+         WeightCombTrend = PlotWeightTrend * StratumWeightTrend)
+
+data_habitat_PINK <- data_habitat_PINK %>%
+  left_join(select(gewichten_toestand, HabCode, SBZH, PlotWeightToestand, StratumWeightToestand, WeightCombToestand), by = c("HabCode", "SBZH")) %>%
+  left_join(select(gewichten_trend, HabCode, SBZH, PlotWeightTrend, StratumWeightTrend, WeightCombTrend), by = c("HabCode", "SBZH"))
+
+```
+
+#### Overzicht meetpunten
+
+Tabel \@ref(tab:PINKtabAantallenToestand) geeft een overzicht van het aantal meetpunten binnen PINK waarvoor een opname is gebeurd in de periode 2010-2017 en de totale steekproefgrootte die we na 12 jaar willen bereiken. Daarbij moet opgemerkt worden dat alle meetpunten binnen ANB-domeinen gelegen zijn en bepaalde beheervormen relatief vaker bemonsterd zijn dan anderen. De meetpunten vormen dus geen representatieve steekproef voor Vlaanderen. 
+
+
+```{r PINKtabAantallenToestand, message=FALSE, results='asis'}
+
+steekproefgrootte <- getSampleSize(habtypes = unique(data_habitat_PINK$Habitattype)) %>%
+  mutate(nGewenst = round(nGewenst, 0)) %>%
+  select(habsubt, SBZH, nGewenst)
+  
+overzicht_PINK_toestand <- data_habitat_PINK %>%
+  filter(DatasetToestand) %>%
+  group_by(Habitattype, SBZH) %>% 
+  summarise(nOpgemeten = n_distinct(IDPlots)) %>% 
+  ungroup() %>% 
+  full_join(steekproefgrootte, by = c("Habitattype" = "habsubt", "SBZH")) %>%
+  arrange(Habitattype, SBZH) %>%
+  mutate(nOpgemeten = ifelse(is.na(nOpgemeten), 0, nOpgemeten))
+    
+kable(overzicht_PINK_toestand, format = "latex", caption = "Aantal meetpunten waarvoor een opname gebeurd is in de periode 2010-2017 en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", booktabs = T) %>%
+  kable_styling(latex_options = "hold_position")
+
+```
+
+```{r PINKtabAantallenTrend, message=FALSE, results='asis', eval=FALSE}
+
+overzicht_PINK_trend <- data_habitat_PINK %>%
+  filter(DatasetTrend) %>%
+  group_by(Habitattype, SBZH) %>% 
+  summarise(nOpgemeten = n_distinct(IDPlots)) %>% 
+  ungroup() %>% 
+  arrange(Habitattype, SBZH) %>%
+  mutate(nOpgemeten = ifelse(is.na(nOpgemeten), 0, nOpgemeten))
+    
+kable(overzicht_PINK_trend, format = "latex", caption = "Aantal meetpunten waarvoor meerdere opnames gebeurd zijn in de periode 1997-2017", booktabs = T) 
+
+```
+
+
+### LSVI-berekening per meetpunt
+
+Er zijn geen gegevens beschikbaar om de indicator 'horizontale structuur' van  het habitattype duindoornstruwelen (2160) te beoordelen. Deze indicator is gebaseerd op de aanwezigheid van open plekken en het aantal struweeltypes. Ook voor de indicator 'ouderdomsstructuur Duindoorn' van habitattype 2160 zijn er geen gegevens beschikbaar om de beoordeling te kunnen uitvoeren. Beide indicatoren worden daarom niet meegenomen in de verdere analyse.
+
+Verder geven we enkel voor de voorwaarde 'verbossing' bij habitattype 2160 de waarden rechtstreeks in in de LSVI-rekenmodule. De waarden voor de overige voorwaarden worden berekend door de LSVI-rekenmodule op basis van  de gegevens van de vegetatieopname.
+
+Voor het habitattype 2190 is er maar één beoordelingstabel beschikbaar in @TJollyn2009 en @Oosterlynck2018, namelijk deze voor het subtype 'duinpannen met kalkminnende vegetaties' (2190_mp). Meetpunten met habitattype 2190 die niet tot het subtype 2190_mp behoren worden daarom beoordeeld op basis van de LSVI-beoordelingstabel van 2190_mp.
+
+
+```{r PINKinvoerData, echo=FALSE, eval = FALSE}
+
+invoerKust <- geefInvoervereisten(Kwaliteitsniveau = 1, Habitattype = data_habitat_PINK$Habitattype) %>%
+  select(Habitattype, Habitatsubtype, Indicator, Voorwaarde, AnalyseVariabele, TypeVariabele, Referentiewaarde) %>%
+  unique()
+
+data_soortenKenmerken_PINK <- geefSoortenKenmerkenPINK(db = dbINBOVeg_PINK, plotHabtypes = data_habitat_PINK)
+
+data_habitat_PINK <- data_habitat_PINK %>%
+  mutate(Habitattype = ifelse(Habitattype == "2190", "2190_mp", Habitattype)) %>%
+  filter(ID != "IV2017103017130465") # lege opname
+  
+data_soortenKenmerken_PINK %>%
+  mutate(Kenmerk = ifelse(Kenmerk == "Ononis repens var. repens", "Ononis repens subsp. repens", Kenmerk),
+         Kenmerk = ifelse(Kenmerk == "Populus x canadensis Moench", "Populus", Kenmerk)) %>%
+  filter(ID != "IV2017103017130465") # lege opname
+
+voorwaarden_2160 <- read.csv2(verbossing_2160, stringsAsFactors = FALSE) %>%
+  gather(-PQ_Code, key = "Klasse", value = "Oppervlakte") %>%
+  group_by(PQ_Code) %>%
+  summarise(Waarde = sum(Oppervlakte * (Klasse == "Loofbos"), na.rm = TRUE) / sum(Oppervlakte, na.rm = TRUE) * 100) %>%
+  ungroup() %>%
+  rename(IDPlots = PQ_Code) %>%
+  mutate(Type = "Percentage",
+         Eenheid = "%",
+         Invoertype = NA,
+         Indicator = "verbossing",
+         Voorwaarde = "bedekking boomlaag",
+         Criterium = "Verstoring",
+         Waarde = as.character(Waarde))
+  
+data_voorwaarden_2160 <- data_habitat_PINK %>%
+  filter(RecentsteOpname) %>%
+  filter(Habitattype == "2160") %>%
+  select(ID, IDPlots) %>%
+  left_join(voorwaarden_2160, by = "IDPlots") %>%
+  filter(!is.na(Waarde))
+
+# #write.csv2(data_habitat_PINK, paste("../Output/",
+#                                              analyseNaamPINK,
+#                                              "/InputRekenmodule/data_habitat_PINK.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_soortenKenmerken_PINK, paste("../Output/",
+#                                              analyseNaamPINK,
+#                                              "/InputRekenmodule/data_soortenKenmerken_PINK.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_voorwaarden_2160, paste("../Output/",
+#                                              analyseNaamPINK,
+#                                              "/InputRekenmodule/data_voorwaarden_2160.csv", sep = ""),
+#            row.names = FALSE)
+# 
+
+```
+
+
+
+```{r PINKcalcStatus, echo=FALSE, warning = TRUE, eval= FALSE}
+
+namenNietHerkend <- c("Bryum spec", 
+                      "Ononis repens var. repens", 
+                      "Tortula ruralis (Hedw.) Gürtn.,Meyer & Scherb. var. ruraliformis (Besch.) Wild.",
+                      "cladonia (struik)", 
+                      "mos", 
+                      "cladonia (beker)", 
+                      "gras", 
+                      "Tortula ruraliformis (Besch.) W. Ingham, Rhinanthus x fallax (Wimm. et Grab) Chabert", 
+                      "Syntrichia ruralis (Hedw.) F.Weber & D.Mohr var. ruraliformis (Besch.) De Wild.",
+                      "Syntrichia ruralis var. ruraliformis", 
+                      "Juncus arcticus Willd.", 
+                      "levermos", 
+                      "Mossen overige", 
+                      "Cladonia portentosa (Dufour) Coem.", 
+                      "Cladonia acuminata (Ach.) Norrl.",
+                      " Senecio jacobaea var. jacobaea",
+                      "Peltigera aphthosa auct. belg., non (L.) Willd.", 
+                      "Peltigera Willd.", 
+                      "Gentianella amarella (L.) Bürner", 
+                      "Populus x canadensis Moench", 
+                      "Collema auriculatum Hoffm.", 
+                      "Peltigera canina (L.) Willd.", 
+                      "Cladina portentosa (Dufour) Follmann, Cladonia grayi Sandst.")
+
+namenNietHerkend_overzicht <- data_soortenKenmerken_PINK %>%
+  filter(Kenmerk %in% namenNietHerkend) %>%
+  group_by(Kenmerk) %>%
+  summarise(n = n()) %>%
+  ungroup()
+
+
+# resultaten op basis van vegetatieopname
+resultsLSVI_PINK <- berekenLSVIbasis(Kwaliteitsniveau = 1, 
+                                           Data_soortenKenmerken = data_soortenKenmerken_PINK,
+                                           Data_habitat = data_habitat_PINK, Aggregatiemethode = "RapportageHR", na.rm = TRUE)
+
+resultsLSVI_vw <- resultsLSVI_PINK[[3]] %>%
+    mutate(Habitatsubtype = Habitattype,
+           Meetnet = "PINK",
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+  filter(! Voorwaarde %in% c("aantal stadia aanwezig", "open plekken aanwezig", "aantal struweelsoorten")) %>%
+  select(Meetnet, ID, IDPlots, Jaar, Habitattype, Habitatsubtype, HabCode, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, Verschilscore, VoorwaardeID, Combinatie, SBZH, Regio) %>%
+  filter(ID != "IV2017103017130465") %>% # lege opname
+  mutate(Habitatsubtype = ifelse(HabCode == "2190", "2190", Habitatsubtype))
+
+checkNA_vw <- resultsLSVI_vw %>%
+  group_by(Versie, Voorwaarde) %>%
+  summarise(nNA = sum(is.na(Waarde)),
+            n = n(),
+            nWaarde = n_distinct(Waarde))
+
+resultsLSVI_ind <- resultsLSVI_PINK[[2]] %>%
+    mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4),
+    Meetnet = "PINK") %>%
+  filter(! Indicator %in% c("horizontale structuur", "ouderdomsstructuur Duindoorn")) %>%
+  left_join(select(data_habitat_PINK, ID, IDPlots, HabCode, Date, SBZH, Regio, Jaar, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend), by = "ID") %>%
+   # WeightComb = Weight * StratumWeight) %>%
+  select(Meetnet, ID, IDPlots, Jaar, Habitattype, Habitatsubtype, HabCode,  Versie, Criterium, Indicator, Belang, Status_indicator, Verschilscore, SBZH, Regio, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend) %>%
+  filter(ID != "IV2017103017130465") %>% # lege opname
+   mutate(Habitatsubtype = ifelse(HabCode == "2190", "2190", Habitatsubtype))
+
+checkNA_ind <- resultsLSVI_ind %>%
+  group_by(Versie, Indicator) %>%
+  summarise(nNA = sum(is.na(Status_indicator)),
+            n = n(),
+            nWaarde = n_distinct(Status_indicator))
+
+resultsLSVI_vw_exp <- resultsLSVI_vw %>%
+  mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
+
+#write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), row.names = FALSE)
+
+#write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), row.names = FALSE)
+
+
+#check verbossing 2160 --> enkel boomsoorten --> OK
+
+```
+
+```{r PINKcalcStatus2160, echo=FALSE, warning = TRUE, eval= FALSE}
+# 2160
+# resultaten op basis van vegetatieopname + verbossing op basis van kartering
+
+data_habitat_2160 <- data_habitat_PINK %>%
+  filter(Habitattype == "2160") %>%
+  filter(RecentsteOpname)
+
+data_soortenKenmerken_2160 <- data_soortenKenmerken_PINK %>%
+  filter(ID %in% data_habitat_2160$ID)
+
+resultsLSVI_2160 <- berekenLSVIbasis(Kwaliteitsniveau = 1, 
+                                     Data_soortenKenmerken = data_soortenKenmerken_2160,
+                                     Data_habitat = data_habitat_2160,
+                                     Data_voorwaarden = data_voorwaarden_2160,
+                                     Aggregatiemethode = "RapportageHR", 
+                                     na.rm = TRUE)
+
+resultsLSVI_vw_2160 <- resultsLSVI_2160[[3]] %>%
+    mutate(Habitatsubtype = Habitattype,
+           Meetnet = "PINK",
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+  filter(! Voorwaarde %in% c("aantal stadia aanwezig", "open plekken aanwezig", "aantal struweelsoorten")) %>%
+  select(Meetnet, ID, IDPlots, Jaar, Habitattype, Habitatsubtype, HabCode, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, AfkomstWaarde, Operator, Referentiewaarde, Status_voorwaarde, Verschilscore, VoorwaardeID, Combinatie, SBZH, Regio) %>%
+  filter(ID != "IV2017103017130465") %>% # lege opname
+  mutate(Habitatsubtype = ifelse(HabCode == "2190", "2190", Habitatsubtype))
+
+checkNA_vw <- resultsLSVI_vw_2160 %>%
+  group_by(Versie, Voorwaarde) %>%
+  summarise(nNA = sum(is.na(Waarde)),
+            n = n(),
+            nWaarde = n_distinct(Waarde))
+
+resultsLSVI_ind_2160 <- resultsLSVI_2160[[2]] %>%
+    mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4),
+    Meetnet = "PINK") %>%
+  filter(! Indicator %in% c("horizontale structuur", "ouderdomsstructuur Duindoorn")) %>%
+  left_join(select(data_habitat_PINK, ID, IDPlots, HabCode, Date, SBZH, Regio, Jaar, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend), by = "ID") %>%
+   # WeightComb = Weight * StratumWeight) %>%
+  select(Meetnet, ID, IDPlots, Jaar, Habitattype, Habitatsubtype, HabCode,  Versie, Criterium, Indicator, Belang, Status_indicator, Verschilscore, SBZH, Regio, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend) %>%
+  filter(ID != "IV2017103017130465") %>% # lege opname
+   mutate(Habitatsubtype = ifelse(HabCode == "2190", "2190", Habitatsubtype))
+
+checkNA_ind <- resultsLSVI_ind_2160 %>%
+  group_by(Versie, Indicator) %>%
+  summarise(nNA = sum(is.na(Status_indicator)),
+            n = n(),
+            nWaarde = n_distinct(Status_indicator))
+
+resultsLSVI_vw_2160_exp <- resultsLSVI_vw_2160 %>%
+  mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
+
+#write.csv2(resultsLSVI_vw_2160_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_2160_scenario2.csv", sep =""), row.names = FALSE)
+
+#write.csv2(resultsLSVI_ind_2160, paste("../Output/", analyseNaamPINK, "/Indicatoren_2160_scenario2.csv", sep =""), row.names = FALSE)
+
+#check verbossing 2160 --> enkel boomsoorten --> OK
+
+```
+
+```{r PINKcalcStatus2190, echo=FALSE, warning = TRUE, eval= FALSE}
+
+#2190 opnieuw laten lopen
+data_habitat_2190 <- data_habitat_PINK %>%
+  filter(Habitattype == "2190_mp")
+
+data_soortenKenmerken_2190 <- data_soortenKenmerken_PINK %>%
+  filter(ID %in% data_habitat_2190$ID)
+
+resultsLSVI_2190 <- berekenLSVIbasis(Kwaliteitsniveau = 1, 
+                                     Data_soortenKenmerken = data_soortenKenmerken_2190,
+                                     Data_habitat = data_habitat_2190,
+                                     Aggregatiemethode = "RapportageHR", 
+                                     na.rm = TRUE)
+
+resultsLSVI_vw_2190 <- resultsLSVI_2190[[3]] %>%
+    mutate(Habitatsubtype = Habitattype,
+           Meetnet = "PINK",
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+  filter(! Voorwaarde %in% c("aantal stadia aanwezig", "open plekken aanwezig", "aantal struweelsoorten")) %>%
+  select(Meetnet, ID, IDPlots, Jaar, Habitattype, Habitatsubtype, HabCode, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, AfkomstWaarde, Operator, Referentiewaarde, Status_voorwaarde, Verschilscore, VoorwaardeID, Combinatie, SBZH, Regio) %>%
+  filter(ID != "IV2017103017130465") %>% # lege opname
+  mutate(Habitatsubtype = ifelse(HabCode == "2190", "2190", Habitatsubtype))
+
+# correctie verdroging
+
+resultsLSVI_vw_2190 <- resultsLSVI_vw_2190 %>%
+  mutate(Status_voorwaarde = ifelse(Indicator == "verdroging" & Waarde == "Afwezig", FALSE, Status_voorwaarde))
+
+#plots die ongunstig zijn voor versie3 verdroging
+verdroging_ongunstig <- resultsLSVI_vw_2190 %>%
+  filter(Versie == "Versie 3" & Indicator == "verdroging") %>%
+  filter(Status_voorwaarde == FALSE)
+
+checkNA_vw <- resultsLSVI_vw_2190 %>%
+  group_by(Versie, Voorwaarde) %>%
+  summarise(nNA = sum(is.na(Waarde)),
+            n = n(),
+            nWaarde = n_distinct(Waarde))
+
+resultsLSVI_ind_2190 <- resultsLSVI_2190[[2]] %>%
+    mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4),
+    Meetnet = "PINK") %>%
+  filter(! Indicator %in% c("horizontale structuur", "ouderdomsstructuur Duindoorn")) %>%
+  left_join(select(data_habitat_PINK, ID, IDPlots, HabCode, Date, SBZH, Regio, Jaar, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend), by = "ID") %>%
+   # WeightComb = Weight * StratumWeight) %>%
+  select(Meetnet, ID, IDPlots, Jaar, Habitattype, Habitatsubtype, HabCode,  Versie, Criterium, Indicator, Belang, Status_indicator, Verschilscore, SBZH, Regio, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend) %>%
+  filter(ID != "IV2017103017130465") %>% # lege opname
+   mutate(Habitatsubtype = ifelse(HabCode == "2190", "2190", Habitatsubtype))
+
+#correctie verdroging
+
+resultsLSVI_ind_2190 <- resultsLSVI_ind_2190 %>%
+  mutate(Status_indicator = ifelse(Versie == "Versie 3" & Indicator == "verdroging" & ID %in% verdroging_ongunstig$ID, FALSE, Status_indicator))
+
+
+checkNA_ind <- resultsLSVI_ind_2190 %>%
+  group_by(Versie, Indicator) %>%
+  summarise(nNA = sum(is.na(Status_indicator)),
+            n = n(),
+            nWaarde = n_distinct(Status_indicator))
+
+
+#samenvoegen resultaten
+
+#analyseNaamPINK_oud <- "AnalysePINK_2018-11-27"
+
+resultsLSVI_vw <- read.csv2( paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), stringsAsFactors = FALSE) %>%
+  mutate(Habitattype = as.character(Habitattype))
+
+resultsLSVI_vw_2160 <- read.csv2( paste("../Output/", analyseNaamPINK, "/Voorwaarden_2160_scenario2.csv", sep =""), stringsAsFactors = FALSE) %>%
+   mutate(Habitattype = as.character(Habitattype),
+          Habitatsubtype = as.character(Habitatsubtype),
+          HabCode= as.character(HabCode),
+          Combinatie = as.character(Combinatie))
+
+resultsLSVI_vw_n <- resultsLSVI_vw %>%
+  filter(substr(Habitattype, 1, 4) != "2190") %>%
+  filter(Habitattype != "2160") %>%
+  bind_rows(resultsLSVI_vw_2190) %>%
+   bind_rows(resultsLSVI_vw_2160) #%>%
+  # bind_rows(resultsLSVI_vw_2110)
+
+resultsLSVI_ind <- read.csv2( paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), stringsAsFactors = FALSE) %>%
+  mutate(Habitattype = as.character(Habitattype))
+
+resultsLSVI_ind_2160 <- read.csv2( paste("../Output/", analyseNaamPINK, "/Indicatoren_2160_scenario2.csv", sep =""), stringsAsFactors = FALSE) %>%
+   mutate(Habitattype = as.character(Habitattype),
+          Habitatsubtype = as.character(Habitatsubtype),
+          HabCode= as.character(HabCode))
+
+resultsLSVI_ind_n <- resultsLSVI_ind %>%
+  filter(substr(Habitattype, 1, 4) != "2190") %>%
+  filter(Habitattype != "2160") %>%
+  bind_rows(resultsLSVI_ind_2190) %>%
+  bind_rows(resultsLSVI_ind_2160) #%>%
+  #bind_rows(resultsLSVI_ind_2110)
+ 
+resultsLSVI_vw_n_exp <- resultsLSVI_vw_n %>%
+  mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
+
+#write.csv2(resultsLSVI_vw_n_exp, paste("../Output/", analyseNaamPINK, "/Voorwaarden_PINK.csv", sep =""), row.names = FALSE)
+
+#write.csv2(resultsLSVI_ind_n, paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), row.names = FALSE)
+
+```
+
+
+```{r PINKintegratiePlot}
+
+resultsLSVI_ind <- read.csv2( paste("../Output/", analyseNaamPINK, "/Indicatoren_PINK.csv", sep =""), stringsAsFactors = FALSE)
+
+statusHabitatvlek_PINK <- resultsLSVI_ind %>% 
+  group_by(Meetnet, ID, IDPlots, Jaar,  Habitattype, Habitatsubtype, Versie, SBZH, DatasetToestand, PlotWeightToestand, StratumWeightToestand, WeightCombToestand, DatasetTrend, PlotWeightTrend, StratumWeightTrend, WeightCombTrend) %>%
+  filter(!is.na(Status_indicator)) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0),
+            Index = round(mean(Verschilscore), 3),
+            Index_zb = round(sum(Verschilscore * (Belang == "zb")) /sum(Belang == "zb"), 3)) %>%
+  ungroup()
+  
+#write.csv2(statusHabitatvlek_PINK, paste("../Output/", analyseNaamPINK,"/StatusHabitatvlek_PINK.csv", sep =""), row.names = FALSE)
+
+```
+
+### Uitspraak Vlaanderen en de Vlaams-Atlantische regio
+
+De kustduinen liggen allemaal in de Atlantische regio. Bijgevolg gelden de resultaten voor Vlaanderen evenzeer voor de Vlaams-Atlantische regio.
+
+
+```{r PINKstatusVlaanderen}
+
+#selecteer dataset
+statusHabitatvlek_PINK_toestand <- statusHabitatvlek_PINK %>%
+  filter(DatasetToestand) %>%
+  mutate(WeightComb = WeightCombToestand,
+         PlotWeight = PlotWeightToestand,
+         StratumWeight = StratumWeightToestand) 
+
+statusHabitat_PINK <- habitatandeelGunstig(data = statusHabitatvlek_PINK_toestand) %>%
+  mutate(Schaal = "Vlaanderen",
+         Meetnet = "PINK") %>%
+  select(Meetnet, Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
+  arrange(Habitattype, Versie,  TypeResultaat) %>%
+  mutate(SBZH = "Binnen")
+
+#write.csv2(statusHabitat_PINK, paste("../Output/", analyseNaamPINK,"/StatusHabitat_PINK.csv", sep =""), row.names = FALSE)
+
+```
+
+
+```{r PINKstatusIndicatorVlaanderen}
+
+status_indicatoren_PINK <- NULL
+
+resultsLSVI_PINK_notNA <- resultsLSVI_ind %>%
+  filter(!is.na(Status_indicator)) %>%
+  filter(DatasetToestand) %>%
+  mutate(WeightComb = WeightCombToestand,
+         PlotWeight = PlotWeightToestand,
+         StratumWeight = StratumWeightToestand) 
+
+overzicht_ind <- resultsLSVI_PINK_notNA%>%
+  select(Habitattype, Versie, Criterium, Indicator, Belang) %>%
+  unique()
+
+for(habt in unique(resultsLSVI_PINK_notNA$Habitattype)){ 
+    
+    data_habt <- resultsLSVI_PINK_notNA %>%
+    filter(Habitattype == habt)
+  
+      for(ind in unique(data_habt$Indicator)){
+      
+        data_ind <- data_habt %>%
+          filter(Indicator == ind) %>%
+          mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+        
+        result_temp <- habitatandeelGunstig(data_ind, stratSBZH = FALSE) %>%
+          mutate(Indicator = ind) %>%
+          left_join(overzicht_ind, by = c("Versie", "Habitattype", "Indicator")) %>%
+          select(Versie, TypeResultaat, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+        
+        status_indicatoren_PINK <- bind_rows(status_indicatoren_PINK, result_temp)
+    
+  }
+}
+
+status_indicatoren_PINK <- status_indicatoren_PINK %>%
+  arrange(Habitattype, Versie, TypeResultaat, Criterium, Indicator) %>%
+  mutate(SBZH = "Binnen")
+
+#write.csv2(status_indicatoren_PINK, paste("../Output/", analyseNaamPINK,"/Indicatoren_AandeelGunstigVlaanderen_PINK.csv", sep =""), row.names = FALSE)
+
+```
+
+
+## Resultaten
+ 
+De resultaten worden weggeschreven in de folder 'AnalysePINK_2019-01-14':
+
+  
+
+
+```{r PINKTrendVlaanderen, eval= FALSE}
+
+statusHabitatvlek_PINK_trend <- statusHabitatvlek_PINK %>%
+  filter(DatasetTrend)
+
+ggplot(data = statusHabitatvlek_PINK_trend, aes(x = Jaar, y = Index)) +
+  geom_point() +
+  facet_wrap(~Habitatsubtype, scales = "free_x") +
+  geom_smooth()
+
+```
