@@ -18,7 +18,7 @@ Via een MS Access-frontend (iv-query-prd_versie2_LSVIMeren.mdb) werd INBOVEG bev
 
 ```{r import data stilstaande wateren}
 
-bestandsnaam <- "../Data/MeetgegevensWater/Data_Meren.xlsx"
+bestandsnaam <- dataMeren
 
 TeSchrappenOpnames <- c("AN_KSV_002_GH_2017", "WV_BUL_002_WEG_17") # deze bevatten geen habitat
 
@@ -47,7 +47,7 @@ Voor de LSVI-bepaling van habitattype 3160 (versie 2) zijn metingen van het elek
 
 ```{r data LIMS}
 
-EGV <- read_xlsx("../data/meetgegevenswater/Data_Meren_EGV.xlsx", sheet = "EGV")
+EGV <- read_xlsx(dataMerenEGV, sheet = "EGV")
 
 ```
 
@@ -89,7 +89,7 @@ Data_habitat <- Classification %>%
 
 ```{r tabAantallenPlassen}
   
-overzicht_plassen <- read.csv2("../data/meetgegevenswater/overzicht_meetpunten_31xx.csv")
+overzicht_plassen <- read.csv2(overzichtMeetpuntenMeren)
 
 kable(overzicht_plassen, 
       format = "latex", 
@@ -388,7 +388,7 @@ statusHabitatvlek <- resultaat_indicator_corr %>%
 
 
 #best oppervlakte plassen in elk stratum bekijken
-strata_opp <- read.csv2("../data/MeetgegevensWater/OppStrata31xx.csv", stringsAsFactors = FALSE)
+strata_opp <- read.csv2(oppervlakteStrataMeren, stringsAsFactors = FALSE)
 
 strata_opp <- strata_opp %>%
   gather(binnen, buiten, key = "SBZH", value = "Opp") %>%
@@ -494,7 +494,7 @@ statusHabitatvlek_50ha <- resultaat_indicator_50ha_corr %>%
 #write.csv2(statusHabitatvlek_50ha, "../output/AnalyseMeren_2018-11-06/ResultaatMeren_statusHabitatvlek_50ha.csv", row.names = FALSE)
 
 # som oppervlakte bemonsterhet waterlichaamsen en som plassen in Vlaanderen
-OppVL <- read.csv2("../data/meetgegevenswater/OppStrata31xx.csv", stringsAsFactors = FALSE) %>%
+OppVL <- read.csv2(oppervlakteStrataMeren, stringsAsFactors = FALSE) %>%
   mutate(OppVlaanderen = binnen + buiten) %>%
   group_by(Habitatsubtype, OppKl) %>%
   summarise(oppervlakte_Vlaanderen = sum(OppVlaanderen)) %>%

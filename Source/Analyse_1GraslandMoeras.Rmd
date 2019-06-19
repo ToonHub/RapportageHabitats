@@ -16,15 +16,15 @@ Er werd zowel in de vierkante plot als in de cirkelplot een vegetatieopname uitg
 
 ```{r selectieSurveys, warning=FALSE}
 
-survey_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/survey_N2000.csv", stringsAsFactors = FALSE)
+survey_N2000 <- read.csv2(paste0(dbINBOVeg_2018, "survey_N2000.csv"), stringsAsFactors = FALSE)
 
-kopinfo_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/kopinfo_N2000.csv", stringsAsFactors = FALSE)
+kopinfo_N2000 <- read.csv2(paste0(dbINBOVeg_2018, "kopinfo_N2000.csv"), stringsAsFactors = FALSE)
 
-classif_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/classif_N2000.csv", stringsAsFactors = FALSE)
+classif_N2000 <- read.csv2(paste0(dbINBOVeg_2018,"classif_N2000.csv"), stringsAsFactors = FALSE)
 
-opnamen_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/opnamen_N2000.csv", stringsAsFactors = FALSE)
+opnamen_N2000 <- read.csv2(paste0(dbINBOVeg_2018, "/opnamen_N2000.csv"), stringsAsFactors = FALSE)
 
-veglagen_N2000 <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/INBOVeg_Export_2018-11-12/veglagen_N2000.csv", stringsAsFactors = FALSE)
+veglagen_N2000 <- read.csv2(paste0(dbINBOVeg_2018, "veglagen_N2000.csv"), stringsAsFactors = FALSE)
 
 #  analyseNaam <- paste("AnalyseGraslandMoeras", Sys.Date(), sep="_")
 # setwd("../Output")
@@ -38,9 +38,9 @@ analyseNaam <- "AnalyseGraslandMoeras_2018-12-05"
 
 ```{r voortgangVeldwerk}
 
-overzicht_GrasMoeras_shape <- readOGR("../Data/VoortgangGraslandMoeras/.", "Stavaza2018", verbose = FALSE)
+overzicht_GrasMoeras_shape <- readOGR(voortgangDir  , voortgangFile, verbose = FALSE)
 
-biogeo_regio <- readOGR("../Data/Shapefiles/.", "BioGeoregions_Lambert1972", verbose = FALSE)
+biogeo_regio <- readOGR(dirStrata, bioGeoregions, verbose = FALSE)
 
 proj4string(overzicht_GrasMoeras_shape) <- proj4string(biogeo_regio)
 
@@ -243,7 +243,7 @@ plot_SBZH <- overzicht_GrasMoeras %>%
 #   select(HabCode = habsubt, SBZH, Area)
 
 #update oppervlaktes habtypes op basis van BWK2018
-habsubt_area <- read.csv2("../Data/Steekproef/BWK2018_Oppervlaktes.csv", stringsAsFactors = FALSE) %>%
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
   select(HabCode, Binnen, Buiten) %>%
   gather(Binnen, Buiten, key = SBZH, value = Area)
 

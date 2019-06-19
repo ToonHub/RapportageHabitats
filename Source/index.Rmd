@@ -60,8 +60,8 @@ library("lme4")
 library("survey")
 library("readxl")
 
-source("../source/Omgevingsvariabelen_versie2018-02-12.R")
-source("../source/LSVI_functies.R") 
+source("../source/Omgevingsvariabelen_versie2019.R")
+source("../source/MHK_functies_2019.R") 
 ```
 
 # Dankwoord {-}

@@ -34,26 +34,22 @@ Het habitattype waarin elk meetpunt gelegen is, werd niet op het terrein bepaald
 
 connectionStrata <- odbcConnectAccess2007(dbVBIStrata)
 
-VBI_plots_N2000_2017 <- sqlFetch(connectionStrata,"tblN2000Habitat_versie2017-01-01" )
 VBI_plots_N2000_2018 <- sqlFetch(connectionStrata,"tblN2000Habitat_versie2018-01-01" )
 
 odbcClose(connectionStrata)
-
-#test --> OK
-
-VBI_plots_N2000_compare <- VBI_plots_N2000_2017 %>%
-  left_join(VBI_plots_N2000_2018, by = "IDPlots") %>%
-  select(IDPlots, starts_with("Pol"))
 
 VBI_plots_N2000 <- VBI_plots_N2000_2018 %>%
   filter(Boshabitat)
 
 ```
 
+
 ```{r Bos overlayVBISBZH}
-SBZH_shape <- readOGR("../Data/Shapefiles/.", "SBZH", verbose = FALSE)
+
+SBZH_shape <- readOGR(dirStrata, SBZH, verbose = FALSE)
 
 ```
+
 
 ```{r datum vegetatieOpname}
 connectionVBI2 <- odbcConnectAccess2007(dbVBI2)
@@ -115,7 +111,7 @@ recordDetails <- recordsVBI2 %>%
   select(IDPlots, Periode, DendroRecord, VegRecord) %>%
   bind_rows(select(recordsVBI1, IDPlots, Periode, VegRecord, DendroRecord))
 
-biogeo_regio <- readOGR("../Data/Shapefiles/.", "BioGeoregions_Lambert1972", verbose = FALSE)
+biogeo_regio <- readOGR(dirStrata, bioGeoregions, verbose = FALSE)
 
 VBI_plots_selection <- VBI_plots_N2000 %>%
   filter(Boshabitat) %>%
@@ -228,7 +224,7 @@ data_habitat_bos <- bind_rows(data_habitat_VBI, data_habitat_bosExtra) %>%
 ```{r Bos gewichten}
 
 #update oppervlaktes habtypes op basis van BWK2018
-habsubt_area <- read.csv2("../Data/Steekproef/BWK2018_Oppervlaktes.csv", stringsAsFactors = FALSE) %>%
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
   select(HabCode, Binnen, Buiten) %>%
   gather(Binnen, Buiten, key = SBZH, value = Area)
 

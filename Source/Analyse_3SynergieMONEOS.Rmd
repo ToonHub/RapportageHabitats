@@ -14,13 +14,13 @@ De INBOVEG-databank bevat de volgende gegevens voor elk meetpunt:
 
 ```{r MONEOSselectie surveys}
 
-survey_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-06/survey_MONEOS.csv", stringsAsFactors = FALSE)
+survey_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "survey_MONEOS.csv"), stringsAsFactors = FALSE)
 
-kopinfo_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-06/kopinfo_MONEOS.csv", stringsAsFactors = FALSE)
+kopinfo_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "kopinfo_MONEOS.csv"), stringsAsFactors = FALSE)
 
-opnamen_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-06/opnamen_MONEOS.csv", stringsAsFactors = FALSE)
+opnamen_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "opnamen_MONEOS.csv"), stringsAsFactors = FALSE)
 
-veglagen_MONEOS <- read.csv2("../Data/MeetgegevensMONEOS/INBOVeg_Export_2018-11-06/veglagen_MONEOS.csv", stringsAsFactors = FALSE)
+veglagen_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "veglagen_MONEOS.csv"), stringsAsFactors = FALSE)
 
 # analyseNaamMONEOS <- paste("AnalyseMONEOS", Sys.Date(), sep="_")
 # setwd("../Output")
@@ -54,7 +54,7 @@ De volgende voorwaarde kon niet bepaald worden en wordt daarom niet meegerekend 
 
 ```{r MONEOSstructuurgegevens91E0sf}
 
-structuur_91E0_sf_wide <- read.csv2("../Data/MeetgegevensMONEOS/Structuurgegevens_91E0_sf.csv")
+structuur_91E0_sf_wide <- read.csv2(structuur91E0_sf)
 
 structuur_91E0_sf <- structuur_91E0_sf_wide %>%
   gather( starts_with("ZSCPQ"), key = "IDPlots", value =  "Waarde") %>%
@@ -92,7 +92,7 @@ Alle overige voorwaarden worden berekend via de LSVI-rekenmodule op basis van de
 
 ```{r MONEOSstructuurgegevens1330da}
 
-structuur_1330_da_wide <- read.csv2("../Data/MeetgegevensMONEOS/Structuurgegevens_1330_da.csv", stringsAsFactors = FALSE)
+structuur_1330_da_wide <- read.csv2(structuur1330_da, stringsAsFactors = FALSE)
 
 structuur_1330_da <- structuur_1330_da_wide %>%
   gather( starts_with("ZSCPQ"), key = "IDPlots", value =  "Waarde") %>%
@@ -117,7 +117,7 @@ test <- structuur_1330_da %>%
 #ligging punten t.o.v. SBZH
 
 #bestand met coördinaten inlezen om ligging t.o.v. SBZH te bepalen voor 91E0_sf. Habitat 1330_da ligt volledig binnen SBZH
-coordPQ_orig <- read.csv2("../Data/MeetgegevensMONEOS/PQsMoneos_91E0_sf_Coord.csv")  
+coordPQ_orig <- read.csv2(coordinatenPQ91E0_sf)  
 coordPQ <- coordPQ_orig %>%
   mutate(X_coord = (Lambert_X_r + Lambert_X_l)/2,
          Y_coord = (Lambert_Y_r + Lambert_Y_l)/2) %>% 
@@ -132,8 +132,8 @@ data_habitat_91E0_sf <- structuur_91E0_sf %>%
 data_habitat_91E0_sf_shape <- SpatialPointsDataFrame(coords = cbind(data_habitat_91E0_sf$X_coord, data_habitat_91E0_sf$Y_coord),
                                                     data = data_habitat_91E0_sf)  
 
-SBZH_shape <- readOGR("../../Basisdata/SBZH/.", "SBZH" , verbose = FALSE)
-biogeo_regio <- readOGR("../Data/Shapefiles/.", "BioGeoregions_Lambert1972", verbose = FALSE)
+SBZH_shape <- readOGR(dirStrata, SBZH , verbose = FALSE)
+biogeo_regio <- readOGR(dirStrata, bioGeoregions, verbose = FALSE)
 
 proj4string(data_habitat_91E0_sf_shape) <- proj4string(SBZH_shape)
 
@@ -163,7 +163,7 @@ data_habitat_MONEOS <- bind_rows(data_habitat_91E0_sf, data_habitat_1330_da) %>%
 #   select(HabCode = habsubt, SBZH, Area)
 
 #update oppervlaktes habtypes op basis van BWK2018
-habsubt_area <- read.csv2("../Data/Steekproef/BWK2018_Oppervlaktes.csv", stringsAsFactors = FALSE) %>%
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
   select(HabCode, Binnen, Buiten) %>%
   gather(Binnen, Buiten, key = SBZH, value = Area)
 

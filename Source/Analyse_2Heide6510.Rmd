@@ -26,7 +26,8 @@ plots6510Heide <- getVisitedPlotsMHK(db = dbHeideEn6510_2018) %>%
 plots6510Heide_shape <- SpatialPointsDataFrame(coords = cbind(x = plots6510Heide$X_coord, y = plots6510Heide$Y_coord), 
                                                data = plots6510Heide)
 
-biogeo_regio <- readOGR("../Data/Shapefiles/.", "BioGeoregions_Lambert1972", verbose = FALSE)
+biogeo_regio <- readOGR(dirStrata, bioGeoregions, verbose = FALSE)
+
 proj4string(plots6510Heide_shape) <- proj4string(biogeo_regio)
 
 plots6510Heide$Regio <- over(plots6510Heide_shape, biogeo_regio)$code
@@ -61,7 +62,7 @@ analyseNaam <- "AnalyseHeide6510_2018-11-13"
 ```{r Heide6510gewichten}
 
 #update oppervlaktes habtypes op basis van BWK2018
-habsubt_area <- read.csv2("../Data/Steekproef/BWK2018_Oppervlaktes.csv", stringsAsFactors = FALSE) %>%
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
   select(HabCode, Binnen, Buiten) %>%
   gather(Binnen, Buiten, key = SBZH, value = Area)
 

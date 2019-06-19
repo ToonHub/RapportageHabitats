@@ -15,7 +15,7 @@ invoer2110 <- geefInvoervereisten(Kwaliteitsniveau = 1, Habitattype = "2110") %>
   select(Criterium, Indicator, Belang, Voorwaarde, Eenheid, Type = TypeVariabele, Invoertype) %>% 
   unique()
 
-data_2110 <- read.csv2("../Data/MeetgegevensPINK/Polygoon_2110_v2.csv", stringsAsFactors = FALSE)
+data_2110 <- read.csv2(data2110, stringsAsFactors = FALSE)
 
 data_2110 <- data_2110 %>%
   mutate(ID = paste("Polygoon", FID, sep = ""),
@@ -174,13 +174,13 @@ De INBOVEG-databank bevat de volgende gegevens voor elke meetpunt:
 
 ```{r PINKselectie surveys}
 
-survey_PINK <- read.csv2("../Data/MeetgegevensPINK/INBOVeg_Export_2018-11-26/survey_PINK.csv", stringsAsFactors = FALSE)
+survey_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "survey_PINK.csv"), stringsAsFactors = FALSE)
 
-kopinfo_PINK <- read.csv2("../Data/MeetgegevensPINK/INBOVeg_Export_2018-11-26/kopinfo_PINK.csv", stringsAsFactors = FALSE)
+kopinfo_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "kopinfo_PINK.csv"), stringsAsFactors = FALSE)
 
-opnamen_PINK <- read.csv2("../Data/MeetgegevensPINK/INBOVeg_Export_2018-11-26/opnamen_PINK.csv", stringsAsFactors = FALSE)
+opnamen_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "opnamen_PINK.csv"), stringsAsFactors = FALSE)
 
-veglagen_PINK <- read.csv2("../Data/MeetgegevensPINK/INBOVeg_Export_2018-11-26/veglagen_PINK.csv", stringsAsFactors = FALSE)
+veglagen_PINK <- read.csv2(paste0(dbINBOVeg_PINK, "veglagen_PINK.csv"), stringsAsFactors = FALSE)
 
 # analyseNaamPINK <- paste("AnalysePINK", Sys.Date(), sep="_")
 # setwd("../Output")
@@ -205,7 +205,7 @@ Voor het beoordelen van de voorwaarde 'verbossing' bij het habitattype duindoorn
 
 ```{r PINKselectie PQ}
 
-PQsPINK_shape <- readOGR("../data/MeetgegevensPINK/.", "PQ_Duinen_20180420", verbose = FALSE) 
+PQsPINK_shape <- readOGR(PINKdir, PINK_PQ_shape, verbose = FALSE) 
 
 #code aanpassen conform habitatkaart
 PQsPINK_shape$Habitat <- ifelse(PQsPINK_shape$Habitat %in% c("2130", "2130_mos"), "2130_hd",
@@ -248,7 +248,7 @@ data_habitat_PINK <- data_habitat_PINK %>%
 ```{r PINKgewichten}
 
 #update oppervlaktes habtypes op basis van BWK2018
-habsubt_area <- read.csv2("../Data/Steekproef/BWK2018_Oppervlaktes.csv", stringsAsFactors = FALSE) %>%
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
   select(HabCode, Binnen, Buiten) %>%
   gather(Binnen, Buiten, key = SBZH, value = Area)
 
@@ -350,7 +350,7 @@ data_soortenKenmerken_PINK %>%
          Kenmerk = ifelse(Kenmerk == "Populus x canadensis Moench", "Populus", Kenmerk)) %>%
   filter(ID != "IV2017103017130465") # lege opname
 
-voorwaarden_2160 <- read.csv2("../data/MeetgegevensPINK/Verbossing_2160.csv", stringsAsFactors = FALSE) %>%
+voorwaarden_2160 <- read.csv2(verbossing_2160, stringsAsFactors = FALSE) %>%
   gather(-PQ_Code, key = "Klasse", value = "Oppervlakte") %>%
   group_by(PQ_Code) %>%
   summarise(Waarde = sum(Oppervlakte * (Klasse == "Loofbos"), na.rm = TRUE) / sum(Oppervlakte, na.rm = TRUE) * 100) %>%

@@ -20,13 +20,13 @@ De databank bevat, naast algemene informatie (datum, waarnemer, locatie, locatie
 
 ```{r data inlezen rivieren}
 
-bestandsnaam <- "../data/meetgegevenswater/Data_MFDB3260.xlsx"
+bestandsnaam <- dataRivieren
 Data_habitat_basis <- read_xlsx(bestandsnaam, sheet = "Data_habitat")
 Data_habitat_extra <- read_xlsx(bestandsnaam, sheet = "Data_habitat_extra")
 Data_voorwaarden_basis <- read_xlsx(bestandsnaam, sheet = "Data_voorwaarden_breed")
 Data_soortenKenmerken_basis <- read_xlsx(bestandsnaam, sheet = "Data_soortkenmerken")
 
-LijstVariabelen <- read_xlsx("../data/meetgegevenswater/LijstVariabelen3260.xlsx")
+LijstVariabelen <- read_xlsx(variabelenRivieren)
 
 #################################
 ### omzetten in gewenste vorm ###
@@ -74,7 +74,7 @@ Tabel \@ref(tab:tabelMeetpuntenRivier) geeft een overzicht van het huidige aanta
 
 ```{r tabelMeetpuntenRivier, cache=FALSE}
 
-overzicht_rivieren <- read.csv2("../data/meetgegevenswater/overzicht_meetpunten_3260.csv")
+overzicht_rivieren <- read.csv2(overzichtMeetpuntenRivieren)
 
 kable(overzicht_rivieren, 
       format = "latex", 
@@ -173,7 +173,7 @@ statusHabitatvlek <- resultaat_indicator_corr %>%
 
 # gewichten meetpunten: we kiezen een gewicht dat omgekeerd evenredig is met aandeel van de waterlopen dat bemonsterd is binnen elk stratum.
 
-strata_lengte <- read.csv2("../data/MeetgegevensWater/LengteStrata3260.csv", stringsAsFactors = FALSE)
+strata_lengte <- read.csv2(lengteStrataRivieren, stringsAsFactors = FALSE)
 
 strata_lengte <- strata_lengte %>%
   gather(binnen_sa, buiten, key = "SBZH", value = "Lengte")
@@ -264,13 +264,13 @@ Voor 23 locaties is er zowel in de periode 2007-2012 als in de periode 2013-2017
 #######################################
 
 
-bestandsnaam <- "../data/meetgegevenswater/Data_Waterlopen_trendLSVI_VMM.xlsx"
+bestandsnaam <- dataRivierentrend
 Data_habitat_basis <- read_xlsx(bestandsnaam, sheet = "Data_habitat")
 Data_habitat_extra <- read_xlsx(bestandsnaam, sheet = "Data_habitat_extra")
 Data_voorwaarden_basis <- read_xlsx(bestandsnaam, sheet = "Data_voorwaarden_breed")
 Data_soortenKenmerken_basis <- read_xlsx(bestandsnaam, sheet = "Data_soortkenmerken")
 
-LijstVariabelen <- read_xlsx("../data/meetgegevenswater/LijstVariabelen3260.xlsx")
+LijstVariabelen <- read_xlsx(variabelenRivieren)
 
 #################################
 ### omzetten in gewenste vorm ###
@@ -278,14 +278,14 @@ LijstVariabelen <- read_xlsx("../data/meetgegevenswater/LijstVariabelen3260.xlsx
 
 Data_habitat <- Data_habitat_basis %>% 
   left_join(Data_habitat_extra, by = "CodeLocatie")
-#write.csv2(Data_habitat, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/Data_habitat_waterlopen_trendVMM.csv")
+#write.csv2(Data_habitat, "../output/AnalyseWaterlopenTrend_2018-10-30/Data_habitat_waterlopen_trendVMM.csv")
 
 Data_voorwaarden <- Data_voorwaarden_basis %>% 
   select(ID, Waarde = AantalGV) %>% 
   mutate(VariabeleDB = "AantalGV") %>% 
   left_join(LijstVariabelen, by = "VariabeleDB") %>% 
   select(ID, Criterium, Indicator, Voorwaarde, Waarde, Type, Invoertype, Eenheid) 
-#write.csv2(Data_habitat, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/Data_voorwaarden_waterlopen_trendVMM.csv")
+#write.csv2(Data_habitat, "../output/AnalyseWaterlopenTrend_2018-10-30/Data_voorwaarden_waterlopen_trendVMM.csv")
 
 Data_soortenKenmerken <- Data_soortenKenmerken_basis %>% 
   select(ID, Kenmerk = taxa, code, groeivorm) %>% 
@@ -294,7 +294,7 @@ Data_soortenKenmerken <- Data_soortenKenmerken_basis %>%
     TRUE ~ code)) %>% 
   mutate(Vegetatielaag = NA, TypeKenmerk = "soort_Latijn", Type = "Categorie", 
          Invoertype = "TANSLEY (LEYSSEN)", Eenheid = NA) 
-#write.csv2(Data_habitat, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/Data_soortenKenmerken_waterlopen_trendVMM.csv")
+#write.csv2(Data_habitat, "../output/AnalyseWaterlopenTrend_2018-10-30/Data_soortenKenmerken_waterlopen_trendVMM.csv")
 
 #############################
 ### algemene info dataset ###
@@ -322,10 +322,10 @@ ResCrit <- resultaat$Resultaat_criterium
 ResInd <- resultaat$Resultaat_indicator
 ResGlob <- resultaat$Resultaat_globaal
 
-# write.csv2(ResDetail, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_detail.csv")
-# write.csv2(ResCrit, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_criteria.csv")
-# write.csv2(ResInd, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_indicatoren.csv")
-# write.csv2(ResGlob, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_globaal.csv")
+# write.csv2(ResDetail, "../output/AnalyseWaterlopenTrend_2018-10-30/ResultaatWaterlopen_trendVMM_detail.csv")
+# write.csv2(ResCrit, "../output/AnalyseWaterlopenTrend_2018-10-30/ResultaatWaterlopen_trendVMM_criteria.csv")
+# write.csv2(ResInd, "../output/AnalyseWaterlopenTrend_2018-10-30/ResultaatWaterlopen_trendVMM_indicatoren.csv")
+# write.csv2(ResGlob, "../output/AnalyseWaterlopenTrend_2018-10-30/ResultaatWaterlopen_trendVMM_globaal.csv")
 
 ResKT <- ResDetail %>% 
   select(CodeLocatie, Habitattype, ID, Meetnet, datum, 
@@ -333,12 +333,12 @@ ResKT <- ResDetail %>%
   spread(key = Voorwaarde, value = Status_voorwaarde) %>% 
   mutate(jaar = as.numeric(format(datum, '%Y')), periode = ifelse(jaar < 2013, "1","2"))
 
-# write.csv2(ResKT, "../output/resultaat_2018-10-30_trendbepaling_waterlopen/ResultaatWaterlopen_trendVMM_kruistabel.csv")
+# write.csv2(ResKT, "../output/AnalyseWaterlopenTrend_2018-10-30/ResultaatWaterlopen_trendVMM_kruistabel.csv")
 
 
 ```
 
 ## Resultaten
 
-De resultaten worden weggeschreven in de folder 'AnalyseWaterlopen_2018-11-06'
+De resultaten worden weggeschreven in de folder 'AnalyseWaterlopen_2018-11-06' en de folder 'AnalyseWaterlopenrend_2018-10-30'. 
 

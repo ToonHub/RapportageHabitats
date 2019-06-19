@@ -302,7 +302,7 @@ getVisitedPlotsMHK <- function(db = dbHeideEn6510_2014_2015){
 ####################################################
 getMeasuredPlotsIV <- function(db = dbINBOVeg_2018){
 
-  overzicht_GrasMoeras_shape <- readOGR("../Data/VoortgangGraslandMoeras/.", "Stavaza2018", verbose = FALSE)
+  overzicht_GrasMoeras_shape <- readOGR(voortgangDir, voortgangFile, verbose = FALSE)
 
   overzicht_GrasMoeras <- overzicht_GrasMoeras_shape@data %>%
          mutate(Visited = as.numeric(bezocht) > 0,
@@ -2767,7 +2767,7 @@ getStructurePlotGraslandMoerassen <- function(db = dbINBOVeg_2018){
 
 berekenLevensvormen <- function(db = dbINBOVeg_2018, plotHabtypes) {
 
-  levensvormen <- read.csv2("../LSVIData/selectieSoorten6230_lifeforms.csv", stringsAsFactors = FALSE)
+  levensvormen <- read.csv2(lifeforms6230, stringsAsFactors = FALSE)
 
   coverSpecies <- getCoverSpeciesIV(db, plotHabtypes$IDPlots) %>%
     left_join(levensvormen, by = "NameSc")
@@ -3505,9 +3505,9 @@ geefVoorwaardenBosVBI2 <- function(db = dbVBI2, plotHabtypes, niveau = "plot", d
   # overlay GIS-lagen
   meetpunten_shape <- SpatialPointsDataFrame(coords = cbind(x = plotHabtypes$X_coord, y = plotHabtypes$Y_coord), data = plotHabtypes)
 
-  MSA_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Bos_clusters", verbose = FALSE)
+   MSA_shape <- readOGR(dsn = bosGISdir, layer = MSA, verbose = FALSE)
 
-  Bosleeftijd_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Blftd", verbose = FALSE)
+  Bosleeftijd_shape <- readOGR(dsn = bosGISdir, layer = bosleeftijd, verbose = FALSE)
 
   proj4string(meetpunten_shape) <- proj4string(MSA_shape)
   proj4string(Bosleeftijd_shape) <- proj4string(MSA_shape)
@@ -3583,9 +3583,9 @@ geefVoorwaardenBosVBI1 <- function(db = dbVBI1, plotHabtypes,  databank = "VBI1"
   # overlay GIS-lagen
   meetpunten_shape <- SpatialPointsDataFrame(coords = cbind(x = plotHabtypes$X_coord, y = plotHabtypes$Y_coord), data = plotHabtypes)
 
-  MSA_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Bos_clusters", verbose = FALSE)
+   MSA_shape <- readOGR(dsn = bosGISdir, layer = MSA, verbose = FALSE)
 
-  Bosleeftijd_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Blftd", verbose = FALSE)
+  Bosleeftijd_shape <- readOGR(dsn = bosGISdir, layer = bosleeftijd, verbose = FALSE)
 
   proj4string(meetpunten_shape) <- proj4string(MSA_shape)
   proj4string(Bosleeftijd_shape) <- proj4string(MSA_shape)
@@ -3654,9 +3654,9 @@ geefVoorwaardenBosMONEOS <- function(plotHabtypes){
   # overlay GIS-lagen
   meetpunten_shape <- SpatialPointsDataFrame(coords = cbind(x = plotHabtypes$X_coord, y = plotHabtypes$Y_coord), data = plotHabtypes)
 
-  MSA_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Bos_clusters", verbose = FALSE)
+  MSA_shape <- readOGR(dsn = bosGISdir, layer = MSA, verbose = FALSE)
 
-  Bosleeftijd_shape <- readOGR(dsn = "../Data/MeetgegevensBoshabitats/GISdata/.", layer = "Blftd", verbose = FALSE)
+  Bosleeftijd_shape <- readOGR(dsn = bosGISdir, layer = bosleeftijd, verbose = FALSE)
 
   proj4string(meetpunten_shape) <- proj4string(MSA_shape)
   proj4string(Bosleeftijd_shape) <- proj4string(MSA_shape)
@@ -3705,7 +3705,7 @@ geefVoorwaardenGraslandMoerassen <- function(db = dbINBOVeg_2018, plotHabtypes){
     select(IDRecords, nLevensvormen)
 
   #microrelief --> zit in apart bestand --> moet nog in INBOVEG komen
-  microrelief_data <- read.csv2("../Data/MeetnetgegevensMoerasGrasland/1330_mircorelief_versie2018-08-20.csv", stringsAsFactors = FALSE)
+  microrelief_data <- read.csv2(dataMicrorelief, stringsAsFactors = FALSE)
   microrelief_data <- microrelief_data %>%
     rename(microrelief_bedekking = Microrelief) %>%
     mutate(microrelief_aanwezigheid = ifelse(microrelief_bedekking > 0, 1 , 0)) %>%
