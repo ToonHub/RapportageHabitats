@@ -1,0 +1,492 @@
+
+# Synergie MONEOS: buitendijkse schorren (1330_da) en wilgenvloedbossen (91E0_sf) {#h:MONEOS}
+
+## Data
+
+### Ruwe data uit INBOVEG
+
+De INBOVEG-databank bevat de volgende gegevens voor elk meetpunt:
+
+* vegetatieopname (lijst van alle aanwezige soorten + bedekking per soort),
+
+* bedekking van vegetatielagen.
+
+
+```{r MONEOSselectie surveys}
+
+survey_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "survey_MONEOS.csv"), stringsAsFactors = FALSE)
+
+kopinfo_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "kopinfo_MONEOS.csv"), stringsAsFactors = FALSE)
+
+opnamen_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "opnamen_MONEOS.csv"), stringsAsFactors = FALSE)
+
+veglagen_MONEOS <- read.csv2(paste0(dbINBOVeg_MONEOS, "veglagen_MONEOS.csv"), stringsAsFactors = FALSE)
+
+# analyseNaamMONEOS <- paste("AnalyseMONEOS", Sys.Date(), sep="_")
+# setwd("../Output")
+# 
+# dir.create(analyseNaamMONEOS)
+# 
+# setwd(paste("../Output/", analyseNaamMONEOS, sep =""))
+# 
+# dir.create("InputRekenmodule")
+
+analyseNaamMONEOS <- "AnalyseMONEOS_2019-01-14"
+```
+
+### Structuurvariabelen
+
+#### Wilgenvloedbossen (91E0_sf)
+
+De structuurvariabelen zitten niet in INBOVEG en werden aangeleverd als een afzonderlijk Excel-bestand. Voor habitat 91E0_sf gaat het om de onderstaande voorwaarden:
+
+* aantal groeiklassen aanwezig,
+* groeiklasse 5, 6 of 7 aanwezig,
+* aantal exemplaren dik dood hout per ha,
+* aandeel dood hout,
+* grondvlak sleutelsoorten boom- en struiklaag.
+
+Deze voorwaarden worden rechtstreeks op het terrein ingeschat en dus niet afgeleid uit een dendrometrische opname zoals bij de overige boshabitats (zie Hoofdstuk \@ref(h:Boshabitats)). De waarden worden rechtstreeks ingevoerd in de LSVI-rekenmodule. 
+
+De volgende voorwaarde kon niet bepaald worden en wordt daarom niet meegerekend in de verdere analyse:
+
+* aandeel overstromende vloeden.
+
+```{r MONEOSstructuurgegevens91E0sf}
+
+structuur_91E0_sf_wide <- read.csv2(structuur91E0_sf)
+
+structuur_91E0_sf <- structuur_91E0_sf_wide %>%
+  gather( starts_with("ZSCPQ"), key = "IDPlots", value =  "Waarde") %>%
+  filter(!is.na(Waarde)) %>%
+  filter(Versie != "") %>%
+  group_by(IDPlots, Voorwaarde) %>%
+  summarise(Waarde = unique(Waarde)) %>%
+  ungroup()
+
+```
+
+De overige voorwaarden worden berekend via de LSVI-rekenmodule op basis van de vegetatieopname.
+
+\needspace{70mm}
+
+#### Buitendijkse schorren (1330_da)
+
+De structuurvariabelen zitten niet in INBOVEG en werden aangeleverd als afzonderlijk Excel-bestand. Voor de buitendijkse schorren (1330_da) gaat het om de onderstaande voorwaarden:
+
+* zowel lage als hoge schorvegetaties aanwezig,
+* aanwezigheid kreken, oeverwallen en kommen,
+* bedekking riet,
+* schorklifvegetaties aanwezig,
+* aanwezigheid schorklif/breuksteenbestorting,
+* habitattype lager dan het klif,
+* intertidale ruimte ter hoogte van gemiddelde hoogwaterstand (GHW) aanwezig.
+
+Deze voorwaarden werden bepaald op het niveau van een schor. Dit betekent dat alle meetpunten die binnen een zelfde schor gelegen zijn, dezelfde waarde voor deze voorwaarden hebben. De waarden van deze voorwaarden worden rechtstreeks ingevoerd in de LSVI-rekenmodule.
+
+De volgende variabele kon niet bepaald worden en wordt daarom niet meegerekend in de verdere analyse:
+
+* structuurvariatie binnen de verschillende zones aanwezig.
+
+Alle overige voorwaarden worden berekend via de LSVI-rekenmodule op basis van de vegetatieopname.
+
+```{r MONEOSstructuurgegevens1330da}
+
+structuur_1330_da_wide <- read.csv2(structuur1330_da, stringsAsFactors = FALSE)
+
+structuur_1330_da <- structuur_1330_da_wide %>%
+  gather( starts_with("ZSCPQ"), key = "IDPlots", value =  "Waarde") %>%
+  mutate(Waarde = ifelse(Voorwaarde %in% c("schorklifvegetaties aanwezig", "habitattype lager dan het klif") & Waarde == "nvt", "nee",
+                         Waarde)) %>%
+  filter(!is.na(Waarde)) %>%
+  filter(Versie != "") %>%
+  group_by(IDPlots, Voorwaarde) %>%
+  summarise(Waarde = unique(Waarde)) %>%
+  ungroup() %>%
+  filter(!Waarde %in% c("", "?", "nvt")) 
+
+test <- structuur_1330_da %>%
+  group_by(Voorwaarde) %>%
+  summarise(n())
+```
+
+   
+
+```{r MONEOSgewichten}
+
+#ligging punten t.o.v. SBZH
+
+#bestand met coördinaten inlezen om ligging t.o.v. SBZH te bepalen voor 91E0_sf. Habitat 1330_da ligt volledig binnen SBZH
+coordPQ_orig <- read.csv2(coordinatenPQ91E0_sf)  
+coordPQ <- coordPQ_orig %>%
+  mutate(X_coord = (Lambert_X_r + Lambert_X_l)/2,
+         Y_coord = (Lambert_Y_r + Lambert_Y_l)/2) %>% 
+  select(IDPlots = NummerPQ, X_coord, Y_coord)
+
+data_habitat_91E0_sf <- structuur_91E0_sf %>%
+  select(IDPlots) %>%
+  mutate(Habitattype = "91E0_sf") %>%
+  unique() %>%
+  left_join(coordPQ, by = "IDPlots") 
+
+data_habitat_91E0_sf_shape <- SpatialPointsDataFrame(coords = cbind(data_habitat_91E0_sf$X_coord, data_habitat_91E0_sf$Y_coord),
+                                                    data = data_habitat_91E0_sf)  
+
+SBZH_shape <- readOGR(dirStrata, SBZH , verbose = FALSE)
+biogeo_regio <- readOGR(dirStrata, bioGeoregions, verbose = FALSE)
+
+proj4string(data_habitat_91E0_sf_shape) <- proj4string(SBZH_shape)
+
+data_habitat_91E0_sf_shape$SBZH <- over(data_habitat_91E0_sf_shape, SBZH_shape)$GEBCODE
+
+proj4string(data_habitat_91E0_sf_shape) <- proj4string(biogeo_regio)
+
+data_habitat_91E0_sf_shape$Regio <- over(data_habitat_91E0_sf_shape, biogeo_regio)$code
+
+data_habitat_91E0_sf <- data_habitat_91E0_sf_shape@data %>%
+  mutate(SBZH = ifelse(is.na(SBZH), "Buiten", "Binnen"),
+         HabCode = Habitattype)
+
+data_habitat_1330_da <- structuur_1330_da %>%
+  select(IDPlots) %>%
+  mutate(Habitattype = "1330_da",
+         HabCode = "1330_da",
+         SBZH = "Binnen",
+         Regio = "Atlantic") %>%
+  unique() 
+
+data_habitat_MONEOS <- bind_rows(data_habitat_91E0_sf, data_habitat_1330_da) %>%
+  left_join(select(kopinfo_MONEOS, IDRecords = recording_givid, IDPlots = ID, Date = vague_date_end), by = "IDPlots") %>%
+  mutate(Jaar = as.numeric(format(as.Date(Date, format = "%Y-%m-%d"),"%Y")))
+
+# habsubt_area <- read.csv2("../Data/Steekproef/Habsubt_opp_versie2015.csv", stringsAsFactors = FALSE) %>%
+#   select(HabCode = habsubt, SBZH, Area)
+
+#update oppervlaktes habtypes op basis van BWK2018
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
+  select(HabCode, Binnen, Buiten) %>%
+  gather(Binnen, Buiten, key = SBZH, value = Area)
+
+gewichten <- data_habitat_MONEOS %>%
+  group_by( HabCode, SBZH) %>%
+  summarise (nPlots = n_distinct(IDPlots)) %>%
+  ungroup() %>%
+  left_join(habsubt_area, by = c("SBZH", "HabCode")) %>%
+  mutate(PlotWeight = 1,
+         StratumWeight = Area/ nPlots,
+         WeightComb = PlotWeight * StratumWeight,
+         fps = round(Area * 10))
+
+data_habitat_MONEOS <- data_habitat_MONEOS %>%
+  left_join(select(gewichten, HabCode, SBZH, PlotWeight, StratumWeight, WeightComb), by = c("HabCode", "SBZH"))
+
+```
+
+## Overzicht meetpunten
+
+Tabel \@ref(tab:MONEOStabAantallen) geeft een overzicht van het huidige aantal meetpunten binnen MONEOS en de totale steekproefgrootte die we na 12 jaar willen bereiken. Tabel \@ref(tab:MONEOStabAantallenJaar) geeft een overzicht van de uitgevoerde vegetatieopnames in de meetpunten. Voor heel wat meetpunten werden zowel in 1995 als in 2013 een vegetatieopname uitgevoerd. Maar de structuurgegevens werden enkel in 2018 bepaald. Daarom zullen we enkel gebruik maken van de vegetatiegegevens uit 2013.
+
+```{r MONEOStabAantallen, message=FALSE, results='asis'}
+
+steekproefgrootte <- getSampleSize(habtypes = c("1330_da", "91E0_sf")) %>%
+  mutate(nGewenst = round(nGewenst, 0)) %>%
+  select(habsubt, SBZH, nGewenst)
+  
+overzicht_MONEOS <- data_habitat_MONEOS %>%
+  group_by(Habitattype, SBZH) %>% 
+  summarise(nOpgemeten = n_distinct(IDPlots)) %>% 
+  ungroup() %>% 
+  full_join(steekproefgrootte, by = c("Habitattype" = "habsubt", "SBZH")) %>%
+  arrange(Habitattype, SBZH) %>%
+  mutate(nOpgemeten = ifelse(is.na(nOpgemeten), 0, nOpgemeten))
+    
+kable(overzicht_MONEOS, format = "latex", caption = "Aantal opgemeten meetpunten en totaal aantal gewenste meetpunten na meetcyclus van 12 jaar", booktabs = T) %>%
+  kable_styling(latex_options = "hold_position")
+
+
+```
+
+```{r MONEOStabAantallenJaar, message=FALSE, results='asis'}
+
+overzicht_MONEOS <- data_habitat_MONEOS %>%
+  group_by(Habitattype, SBZH, Jaar) %>% 
+  summarise(nOpgemeten = n_distinct(IDPlots)) %>% 
+  ungroup() %>%
+  arrange(Habitattype, SBZH) 
+
+overzicht_MONEOS_herh <- data_habitat_MONEOS %>%
+  filter(Jaar %in% c(1995, 2013)) %>%
+  distinct(IDPlots, Habitattype, SBZH, Jaar) %>%
+  group_by(Habitattype, SBZH, IDPlots) %>% 
+  mutate(nHerhaling = n_distinct(Jaar)) %>% 
+  ungroup() %>%
+  group_by(Habitattype, SBZH, Jaar) %>%
+  summarise(nOpgemeten = n_distinct(IDPlots),
+            nHerhaling = sum(nHerhaling > 1)) %>%
+  ungroup() %>%
+  arrange(Habitattype, SBZH) 
+    
+kable(overzicht_MONEOS_herh, format = "latex", caption = "Overzicht van het aantal meetpunten waarvoor een vegetatieopname werd uitgevoerd per jaar en het aantal meetpunten met een vegetatieopname in beide jaren (nHerhaling)", booktabs = T) %>%
+  kable_styling(latex_options = "hold_position") #%>%
+  #collapse_rows(5)
+
+```
+
+
+
+
+```{r MONEOSinvoerData, echo=FALSE, eval = FALSE}
+
+### DATA_HABITAT
+
+data_habitat_MONEOS <- data_habitat_MONEOS %>%
+  rename(ID = IDRecords) %>%
+  filter(IDPlots != "ZSCPQ285") # geen kruidlaag in opname
+
+### DATA_VOORWAARDEN --> slechts 1 observatie per plot!!
+
+#bosconstantie en MSA
+voorwaarden_GIS <- geefVoorwaardenBosMONEOS(filter(data_habitat_MONEOS, Habitattype == "91E0_sf")) 
+
+#overige voorwaarden
+
+voorwaarden_opname_91E0_sf <- structuur_91E0_sf %>%
+  mutate(Waarde = ifelse(Voorwaarde == "groeiklasse 5 6 of 7 aanwezig",
+                         ifelse(Waarde > 0, 1, 0),
+                         Waarde),
+         Waarde = as.character(Waarde),
+         Habitatsubtype = "91E0_sf",
+         Habitattype = "91E0")
+         
+voorwaarden_opname_1330_da <- structuur_1330_da %>%
+  mutate(Habitatsubtype = "1330_da",
+         Habitattype = "1330")
+
+voorwaarden_opname <- bind_rows(voorwaarden_opname_91E0_sf, voorwaarden_opname_1330_da)  %>%
+ left_join(select(data_habitat_MONEOS, ID, IDPlots), by = "IDPlots")
+         
+voorwaarden_MONEOS <-  voorwaarden_GIS %>%
+  bind_rows(voorwaarden_opname) 
+  
+#indicator en criterium aanhangen
+invoerHabt <- geefInvoervereisten(Kwaliteitsniveau = 1, Habitattype = data_habitat_MONEOS$HabCode) %>%
+  select(Habitatsubtype, Criterium, Indicator, Voorwaarde, Belang, TypeVariabele) %>%
+  unique()
+
+
+data_voorwaarden_MONEOS <- voorwaarden_MONEOS %>%
+  mutate(Voorwaarde = ifelse(Voorwaarde == "aanwezigheid schorklif/breuksteenbestorting", "aandeel schorklif/breuksteenbestorting", Voorwaarde)) %>%
+  left_join(invoerHabt, by = c("Habitatsubtype",  "Voorwaarde")) %>%
+    mutate(Type = ifelse(TypeVariabele == "Categorie", "Percentage", TypeVariabele),
+         Eenheid = ifelse(Type == "Percentage", "%", NA),
+         Waarde = ifelse(Waarde == "ja", "1",
+                         ifelse(Waarde == "nee", "0", Waarde))) %>%
+  arrange(ID, Voorwaarde) %>%
+  unique() %>%
+  select(-TypeVariabele) %>%
+  filter(IDPlots != "ZSCPQ285") # geen kruidlaag in opname
+  
+                                    
+### DATA_SOORTENKENMERKEN --> verschillende observaties per plot!!
+
+data_soortenKenmerken_MONEOS <- geefSoortenKenmerkenMONEOS(db = dbINBOVeg_MONEOS, plotHabtypes = data_habitat_MONEOS) %>%
+  filter(IDPlots != "ZSCPQ285") # geen kruidlaag in opname
+
+# #write.csv2(data_habitat_MONEOS, paste("../Output/",
+#                                              analyseNaamMONEOS,
+#                                              "/InputRekenmodule/data_habitat_MONEOS.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_voorwaarden_MONEOS, paste("../Output/",
+#                                              analyseNaamMONEOS,
+#                                              "/InputRekenmodule/data_voorwaarden_MONEOS.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_soortenKenmerken_MONEOS, paste("../Output/",
+#                                              analyseNaamMONEOS,
+#                                              "/InputRekenmodule/data_soortenKenmerken_MONEOS.csv", sep = ""),
+#            row.names = FALSE)
+
+
+```
+
+## LSVI-berekening
+
+De indicator 'verruiging' van habitatsubtype 1330_da is enkel van toepassing voor zoutwaterschor. Gezien alle meetpunten in brakwaterschor gelegen zijn, wordt deze indicator niet meegerekend in de analyse.
+
+De indicator 'sleutelsoorten' bestaat uit twee voorwaarden: 'aantal sleutelsoorten hoog schor' en 'aantal sleutelsoorten laag schor'. De indicator is gunstig als beide voorwaarden gunstig scoren. De indicator wordt echter beoordeeld op basis van een vegetatieopname in een plot van 3m x 3m die ofwel in hoog schor ofwel in laag schor gelegen is, waardoor er niet aan beide voorwaarden kan worden voldaan. Daarom beoordelen we in deze analyse de indicator 'sleutelsoorten' als gunstig wanneer (minstens) één van beide voorwaarden gunstig scoort.     
+
+
+```{r MONEOScalcStatus, echo=FALSE, warning = TRUE, eval= FALSE}
+
+test <- geefInvoervereisten(Habitattype = "1330_da", Kwaliteitsniveau = 1)
+
+resultsLSVI_MONEOS <- berekenLSVIbasis(Kwaliteitsniveau = 1, 
+                                           Data_voorwaarden = data_voorwaarden_MONEOS,
+                                           Data_soortenKenmerken = data_soortenKenmerken_MONEOS,
+                                           Data_habitat = data_habitat_MONEOS, Aggregatiemethode = "RapportageHR", na.rm = TRUE)
+
+# Volgende soortnamen zijn niet teruggevonden in de databank: Spergularia maritima (All.) Chiov., Salix x mollissima Hoffm. ex Elwert, Caltha palustris subsp. araneosa (v. Steenis) v. d. Meijden, Sambucus nigra cv laciniata, Rumex obtusifolius subsp. transiens (Simonk.) Rech. f., Salix x rubens Schrank, Hepatica, Salix x rubens nvar. basfordiana (Scaling ex Salter) Meikle, Salix x smithiana auct. non Willd., Populus x canadensis Moench, Salix x sepulcralis Simonk., Cochlearia officinalis ssp. officinalis. 
+
+resultsLSVI_vw <- resultsLSVI_MONEOS[[3]] %>%
+    mutate(Habitatsubtype = Habitattype,
+           Meetnet = "MONEOS",
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+  filter(!Voorwaarde %in% c("bedekking glycofyten zoutwaterschor", "bedekking verruiging")) %>%
+  mutate(Waarde = ifelse(Voorwaarde == "aandeel dood hout" & is.na(Waarde), 0, Waarde),
+         Status_voorwaarde = ifelse(Voorwaarde == "aandeel dood hout" & is.na(Status_voorwaarde), 0, Status_voorwaarde) ) %>%
+  select(Meetnet, ID, IDPlots, Date, Habitattype, Habitatsubtype, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, VoorwaardeID, Combinatie, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
+  filter(IDPlots != "ZSCPQ285") # geen kruidlaag in opname
+
+checkNA_vw <- resultsLSVI_vw %>%
+  group_by(Habitatsubtype, Versie, Voorwaarde) %>%
+  summarise(nNA = sum(is.na(Waarde)),
+            n = n(),
+            nWaarde = n_distinct(Waarde))
+
+# sleutelsoorten indicator anders evalueren: gunstig indien minstens één van de voorwaarde gunstig is (een plot ligt ofwel in hoog schor ofwel in laag schor)
+
+indicator_sleutelsoorten <- resultsLSVI_vw %>%
+  filter(Habitattype == "1330") %>%
+  filter(Indicator == "sleutelsoorten") %>%
+  group_by(ID, Versie, Indicator) %>%
+  summarise(Status_indicator_corr = sum(Status_voorwaarde) > 0) %>%
+  ungroup()
+
+resultsLSVI_ind <- resultsLSVI_MONEOS[[2]] %>%
+    mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4),
+    Meetnet = "MONEOS") %>%
+  left_join(select(data_habitat_MONEOS, ID, IDPlots, Date, SBZH, Regio, PlotWeight, StratumWeight, WeightComb), by = "ID") %>%
+  filter(Indicator != "verruiging") %>%
+   mutate(Status_indicator = ifelse(Indicator == "aandeel dood hout" & is.na(Status_indicator), FALSE, Status_indicator) ) %>%
+  select(Meetnet, ID, IDPlots, Date, Habitattype, Habitatsubtype,  Versie, Criterium, Indicator, Belang, Status_indicator, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
+  filter(IDPlots != "ZSCPQ285") # geen kruidlaag in opname
+
+checkNA_ind <- resultsLSVI_ind %>%
+  group_by(Habitatsubtype, Versie, Indicator) %>%
+  summarise(nNA = sum(is.na(Status_indicator)),
+            n = n(),
+            nWaarde = n_distinct(Status_indicator))
+
+resultsLSVI_ind_corr <- resultsLSVI_ind %>%
+  left_join(indicator_sleutelsoorten, by = c("ID", "Versie", "Indicator")) %>%
+  mutate(Status_indicator = ifelse(Indicator == "sleutelsoorten", Status_indicator_corr, Status_indicator)) %>%
+  select(-Status_indicator_corr)
+
+resultsLSVI_vw_exp <- resultsLSVI_vw %>%
+  mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
+
+#write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamMONEOS, "/Voorwaarden_MONEOS.csv", sep =""), row.names = FALSE)
+
+#write.csv2(resultsLSVI_ind_corr, paste("../Output/", analyseNaamMONEOS, "/Indicatoren_MONEOS.csv", sep =""), row.names = FALSE)
+
+```
+
+
+```{r MONEOSintegratiePlot}
+resultsLSVI_ind <- read.csv2( paste("../Output/", analyseNaamMONEOS, "/Indicatoren_MONEOS.csv", sep =""), stringsAsFactors = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4))
+
+statusHabitatvlek <- resultsLSVI_ind %>% 
+  group_by(Meetnet, ID, IDPlots, Date,  Habitattype, Habitatsubtype, Versie, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
+  filter(!is.na(Status_indicator)) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup()
+  
+#write.csv2(statusHabitatvlek, paste("../Output/", analyseNaamMONEOS,"/StatusHabitatvlek_MONEOS.csv", sep =""), row.names = FALSE)
+
+```
+
+## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
+
+Voor habitattype 1330 (Atlantische schorren) maken we een schatting van het aandeel habitat dat gunstig is in Vlaanderen en berekenen we het bijhorende 95%-betrouwbaarheidsinterval. Hiervoor gebruiken we de resultaten voor subtype 1330_da (buitendijkse schorren) en 1330_hpr (zilte graslanden) (zie hoofdstuk@ref(h:GrasMoeras)). Voor het habitatsubtype 1330_da gebruiken we de resultaten gebaseerd op de opnames die dateren van 2013.
+
+De resultaten voor 91E0_sf worden geïntegreerd in de analyse van de boshabitats (zie paragraaf  \@ref(h:Boshabitats)). 
+
+
+```{r MONEOS statusVlaanderen}
+
+analyseNaamGrasland <- "AnalyseGraslandMoeras_2018-12-05"
+
+statusHabitatvlek_1330_hpr <- read.csv2( paste("../Output/", analyseNaamGrasland, "/StatusHabitatvlek_GraslandMoeras.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4),
+         IDPlots = as.character((IDPlots))) %>%
+  filter(Habitattype == "1330")
+
+statusHabitatvlek_1330_da <- statusHabitatvlek %>%
+  mutate(Date = as.Date(Date, format = "%Y-%m-%d"),
+         Jaar = as.numeric(format(Date, "%Y"))) %>%
+  filter(Habitattype == "1330" & Jaar == 2013)
+
+statusHabitatvlek_1330 <- bind_rows(statusHabitatvlek_1330_hpr,
+                                    statusHabitatvlek_1330_da)
+
+statusHabitat_1330 <- habitatandeelGunstig(data = statusHabitatvlek_1330, stratSBZH = FALSE) %>%
+  mutate(Schaal = "Vlaanderen") %>%
+  select(Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
+  arrange(Schaal, Habitattype, Versie,  TypeResultaat)
+
+#write.csv2(statusHabitat_1330, paste("../Output/", analyseNaamMONEOS, "/StatusHabitat_1330.csv", sep =""), row.names = FALSE)
+```
+
+
+```{r MONEOSstatusIndicatorVlaanderen, echo=FALSE}
+
+indicatoren_1330_hpr <- read.csv2( paste("../Output/", analyseNaamGrasland, "/Indicatoren_GraslandMoeras.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4),
+         IDPlots = as.character((IDPlots))) %>%
+  filter(Habitattype == "1330")
+
+indicatoren_1330_da <- resultsLSVI_ind %>%
+  mutate(Date = as.Date(Date, format = "%Y-%m-%d"),
+         Jaar = as.numeric(format(Date, "%Y"))) %>%
+  filter(Habitattype == "1330" & Jaar == 2013)
+
+indicatoren_1330 <- bind_rows(indicatoren_1330_hpr,
+                                    indicatoren_1330_da) %>%
+  filter(!is.na(Status_indicator))
+
+status_indicatoren_1330 <- NULL
+
+overzicht_ind <- indicatoren_1330 %>%
+  select(Habitattype, Versie, Criterium, Indicator, Belang) %>%
+  unique()
+
+for(habt in unique(indicatoren_1330$Habitattype)){ 
+    
+    data_habt <- indicatoren_1330 %>%
+    filter(Habitattype == habt)
+  
+      for(ind in unique(data_habt$Indicator)){
+    
+          data_ind <- data_habt %>%
+          filter(Indicator == ind) %>%
+          mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+          
+          if (nrow(data_ind) > 1){
+        
+        result_temp <- habitatandeelGunstig(data_ind, stratSBZH = FALSE) %>%
+          mutate(Indicator = ind,
+                 Schaal = "Vlaanderen") %>%
+          left_join(overzicht_ind, by = c("Versie", "Habitattype", "Indicator")) %>%
+          select(Schaal, TypeResultaat, Versie, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+        
+        status_indicatoren_1330 <- bind_rows(status_indicatoren_1330, result_temp)
+        }
+    }
+}
+
+#write.csv2(status_indicatoren_1330, paste("../Output/", analyseNaamMONEOS,"/Indicatoren_AandeelGunstigVlaanderen_1330.csv", sep =""), row.names = FALSE)
+
+```
+
+## resultaten
+
+De resultaten zijn terug te vinden in de folder 'AnalyseMONEOS_2019-01-14'.
+
+

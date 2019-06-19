@@ -1,58 +1,289 @@
 ---
-title: 'Voortgang meetnet habitatkwaliteit'
-author: "Toon Westra"
-date: "mei 2018"
+title: "Analyse van de gegevens van het meetnet habitatkwaliteit ten behoeve van de rapportage voor de Habitatrichtlijn (periode 2013-2018)"
+author: 
+  - 
+    name: "Toon Westra, An Leyssen, Patrik Oosterlynck, Els Lommelen, Jeroen Vanden Borre, Steven De Saeger, Bart Vandevoorde, Arno Thomaes, Sam Provoost, Desiré Paelinckx"
+    email: "toon.westra@inbo.be"
+site: bookdown::bookdown_site
+link-citations: TRUE
+bibliography: RapportageHR2.bib
+csl: methods-in-ecology-and-evolution.csl
+subtitle: "Technisch rapport"
+lof: FALSE
+reportnr: "Hier komt de DOI van het rapport"
 output:
   bookdown::pdf_book:
     base_format: INBOmd::inbo_rapport
-    subtitle: "Tussentijds technisch rapport"
-    reportnr: "Intern Rapport"
-    citation_package: none
-    keep_tex: yes
-site: bookdown::bookdown_site
-
+  bookdown::gitbook:
+    split_by: "chapter+number"
+    template: !expr INBOmd::inbo_rapport_css("html")
+  bookdown::epub_book:
+    stylesheet: "css/inbo_rapport.css"
+    template: !expr INBOmd::inbo_rapport_css("epub")
 ---
 
 
-```{r results ='hide', echo = FALSE, message = FALSE, purl = FALSE, warning=FALSE}
+```{r results ='hide', echo = FALSE, message = FALSE, purl = FALSE, warning=FALSE, cache =FALSE}
 
 library(knitr)
 opts_chunk$set(
   echo = FALSE, 
   results = 'markup',
   eval = TRUE,
-  cache = FALSE,
+  cache = TRUE,
   autodep = TRUE,
   dev = "pdf",
   dpi = 300,
   fig.width = 150 / 25.4,
   fig.height = 100 / 25.4,
   warning = FALSE,
-  error = TRUE,
+  error = FALSE,
   message = FALSE
 )
 
 #theme_set(theme_bw(base_size = 9))
-
 ```
 
-
 ```{r Rinit,  warning = FALSE, message = FALSE, results = 'hide', cache = FALSE}
+# library(devtools)
+# devtools::install_github("inbo/LSVI@develop", build_vignettes = TRUE)
+library("LSVI")
+maakConnectiePool()
 library("RODBC")
-library("plyr")
 library("tidyverse")
 library("INBOtheme")
-library("gridExtra")
 library("rgeos")
 library("rgdal")
 library("stringr")
-library("ggmap")
 library("kableExtra")
-library("LSVI")
+library("lme4")
+library("survey")
+library("readxl")
 
-source("../source/Omgevingsvariabelen_versie2018-02-12.R")
-source("../source/LSVI_functies.R") 
+source("../source/Omgevingsvariabelen_versie2019.R")
+source("../source/MHK_functies_2019.R") 
 ```
+
+# Dankwoord {-}
+
+We bedanken iedereen die heeft meegeholpen bij het inzamelen van de gegevens voor het meetnet habitatkwaliteit.
+
+* Voor de aquatische habitats zijn dit:  Vincent Smeekens, Kevin Scheers, Jo Packet, Luc Denys, Jonathan Verborgt, Nils Bouillard, Ivy Jansen, Wim Jambon, Toon Westra.
+* Voor de bos- en heidehabitats: Leen Govaere, Jan Meulemans, Raf Schrey, Luc Schrey, Peter Sannen, Alex Vandebon, Geert Fierens, Anke Balleux, Patrick Deckers. 
+* Voor de duinhabitats: Wouter Van Gompel, Ward Vercruysse, Sam Provoost.
+* Voor grasland- en moerashabitats: Indra Jacobs, Remar Erens, Robin Guelinckx, Patrick Oosterlynck.
+* Voor buitendijkse schorren en wilgenvloedbossen: Frederic Van Lierop.
+
+
+# Samenvatting {-}
+
+Om de zes jaar rapporteert het Instituut voor Natuur- en Bosonderzoek (INBO) over de staat van instandhouding van Europees beschermde habitats in Vlaanderen. Een deel van deze rapportage gaat over de kwaliteit van de habitats. Om de kwaliteit van habitats te kunnen bepalen, startten het INBO en het Agentschap voor Natuur en Bos (ANB) in 2014 met een meetnet. Dit meetnet bestaat uit een steekproef van locaties waar medewerkers van het INBO en het ANB gegevens verzamelen over de vegetatiesamenstelling en de habitatstructuur. In dit rapport beschrijven we in detail hoe we deze gegevens analyseren om tot een uitspraak te komen over de kwaliteit van de habitats op Vlaamse schaal.
+
+De gegevensanalyse bestaat uit verschillende stappen. Eerst halen we de ruwe gegevens, die op het terrein werden verzameld, uit de databanken. De ruwe gegevens gebruiken we om voor elk meetpunt indicatoren te beoordelen voor verschillende aspecten van de habitatkwaliteit. We maken hiervoor gebruik van een rekenmodule die het INBO ontwikkelde. Door de verschillende indicatoren te combineren, verkrijgen we een oordeel (gunstig of ongunstig) over de habitatkwaliteit in elk meetpunt. Ten slotte maken we voor elk habitattype een schatting van het oppervlakteaandeel in Vlaanderen dat zich in een gunstige staat bevindt. We berekenen ook een betrouwbaarheidsinterval op het geschatte oppervlakteaandeel zodat we een idee krijgen van de onzekerheid op de schatting. De resultaten van de analyse maken een onderdeel uit van de habitatrapportage voor de periode 2013-2018 die beschreven staat in @Paelinckx2019.
+
+Naast dit rapport, stellen we ook de code ter beschikking die we gebruikten voor het uitvoeren van de analyses in het softwareprogramma R. Ook de resultaten van de analyses geven we mee in bijlage van dit rapport. 
+
+# English abstract {-}
+
+\benglish
+
+The Research Institute for Nature and Forests (INBO) reports every six years on the conservation status of the habitat types of the Habitat Directive in Flanders. The conservation status of habitats is based on four criteria:
+
+* range,
+* area,
+* structure and functions,
+* future prospects.
+
+To evaluate 'structure and functions' we use data from the habitat quality monitoring programme [@Westra2014] which was initiated in 2014. This monitoring programme consists of a sample of permanent plots in which vegetations composition and habitat structure is measured. In this report we describe in detail how the data from the habitat quality monitoring programme was analysed in order to evaluate the 'structure and functions' criterium. The results of this analysis were used in the overall habitat reporting for the 2013-2018 period [@Paelinckx2019]. 
+
+The analysis consists of different steps. First, the raw data which was collected in the field, is exported from different databases. The raw data is used to calculate and evaluate different indicators related to habitat quality. INBO developed an R-package 'LSVI' [@Lommelen2019] to calculate and evaluate habitat quality indicators in a standardised and automated way. Next, indicators are combined to evaluate overall habitat quality (favoourable or unfavourable) for each sampling location. Finally, for each habitat type, we estimate the proportion with a favourable condition in Flanders.
+
+De R-code which was used for the analysis in this report can be found on [Github](https://github.com/ToonHub/RapportageHabitats/).
+
+\eenglish
+
+
+# Inleiding
+
+## Situering
+
+Om de zes jaar rapporteert het Instituut voor Natuur- en Bosonderzoek (INBO) over de staat van instandhouding van de habitattypen van de Habitatrichtlijn. De meest recente rapportage is terug te vinden in @Paelinckx2019. In deze rapportage wordt voor het eerst gebruik gemaakt van gegevens van het meetnet habitatkwaliteit [@Westra2014] dat INBO en het Agentschap voor Natuur en Bos (ANB) opstartten in 2014. 
+
+De staat van instandhouding van de habitattypen is gebaseerd op volgende onderdelen:
+
+* verspreiding,
+* oppervlakte,
+* specifieke structuren en functies (incl. habitattypische soorten),
+* toekomstperspectieven.
+
+De gegevens van het meetnet habitatkwaliteit worden gebruikt om het onderdeel specifieke structuren en functies te beoordelen. In dit rapport geven we de technische achtergrond van de analyse van deze gegevens in functie van de rapportage van @Paelinckx2019.      
+
+## Meetnet habitatkwaliteit
+
+### Meetnetontwerp {#h:meetnetontwerp}
+
+Het meetnet habitatkwaliteit bestaat uit een steekproef van meetpunten voor elk habitattype in Vlaanderen, uitgezonderd de zeer zeldzame habitattypen [@Westra2014]. De zeer zeldzame habitattypen worden gebiedsdekkend opgevolgd via een kartering. 
+
+Voor de terrestrische habitattypen bestaat een meetpunt uit een vierkante plot (3 m x 3 m voor open habitattypen en 9 m x 9 m voor boshabitattypen) waarin een vegetatieopname [@INBO2016a] wordt gemaakt, en een cirkelplot (straal 18 m) waarin bijkomende variabelen worden bepaald die voornamelijk betrekking hebben op de habitatstructuur.
+
+Voor aquatische habitattypen in stilstaande wateren bestaat een meetpunt uit een volledig waterlichaam. Voor aquatische habitattypen in stromende wateren bestaat een meetpunt uit een riviersegment van 100 meter, waarin gegevens worden ingezameld overeenkomstig het veldprotocol van @INBO2017.
+
+Op basis van de ingezamelde gegevens kunnen voor elk meetpunt de indicatoren van de Lokale Staat van Instandhouding, zowel LSVI versie 2 [@TJollyn2009] als LSVI versie 3 [@Oosterlynck2018], berekend worden. Vervolgens kan op basis hiervan een schatting gemaakt worden van het oppervlakteaandeel van een habitattype in Vlaanderen dat een gunstige habitatkwaliteit heeft. 
+
+De meetpunten van het meetnet habitatkwaliteit worden bemonsterd over een periode van 12 jaar (= de meetcyclus), waarbij er getracht wordt elk jaar een random gekozen subset van 1/12de van de meetpunten af te werken. Gezien het meetnet pas in 2014 werd opgestart, is er meestal nog maar een beperkt aandeel van de volledige steekproefgrootte afgerond. Toch kunnen we op basis hiervan al representatieve schattingen maken van het aandeel habitat met gunstige habitatkwaliteit. De precisie zal uiteraard lager zijn, wat zich vertaalt in bredere betrouwbaarheidsintervallen. 
+
+Uit de analyse van de informatiebehoefte [@Adriaens2011] bleek dat men een grotere precisie wenste te bekomen binnen Habitatrichtlijngebieden (SBZ-H) en dat men ook een uitspraak over de habitatkwaliteit per habitatsubtype wenste te bekomen. Daarom werd er een relatief groter aantal meetpunten binnen SBZ-H geselecteerd en werden de relatief minder algemene habitatsubtypen overbemonsterd. Wanneer we een representatieve uitspraak willen per habitattype voor Vlaanderen (zowel binnen als buiten SBZ-H), moeten we hiermee rekening houden. Dit kan door gebruik te maken van meetpuntgewichten (zie paragraaf \@ref(h:meetpuntgewichten)).
+   
+### Synergie andere meetnetten   
+ 
+Voor sommige habitattypen lopen er al langer monitoringprogramma's op basis waarvan de habitatkwaliteit kan ingeschat worden. We maken uiteraard zo veel mogelijk gebruik van de gegevens van deze monitoringprogramma's. Het gaat om de volgende monitoringprogramma's:
+
+* Vlaamse Bosinventarisatie (VBI) voor boshabitattypen [@Wouters2008c];
+* Permanente Inventarisatie van de Natuurreservaten aan de Kust (PINK) voor kustduinhabitattypen [@Provoost2015];
+* Geïntegreerde systeemmonitoring van het Schelde-estuarium (MONEOS) voor wilgenvloedbossen (91E0_sf) en buitendijkse schorren (1330_da) [@VanRyckegem2018].
+
+## Opbouw rapport
+
+Eerst overlopen we de generieke stappen van de analyse, gevolgd door een detailbespreking per dataset. Deze datasets komen niet volledig overeen met de habitattypegroepen, wat een gevolg is van de manier waarop de gegevensinzameling georganiseerd is. De gegevensinzameling gebeurt door verschillende teams van zowel het INBO als het ANB, waardoor er hier en daar wat verschillen zijn in de manier waarop de data worden opgeslagen. Voor de analyse is het dan ook eenvoudiger om deze dataset per dataset uit te voeren.
+
+# Analysestappen
+
+Voor de analyse maken we gebruik van de LSVI-rekenmodule. Dit is een R-package genaamd 'LSVI' ontwikkeld door @Lommelen2019. De LSVI-rekenmodule maakt gebruik van een databank met alle kenmerken van de LSVI-indicatoren, zoals soortenlijsten en drempelwaarden voor een gunstige staat. Op basis van deze databank en op basis van terreingegevens berekent de LSVI-rekenmodule de waarden voor de verschillende indicatoren van een bepaald habitat(sub)type. Daarnaast wordt er ook een beoordeling gemaakt per indicator en een geïntegreerde beoordeling over alle indicatoren heen.
+
+De R-code van de analyses voor dit rapport kan geraadpleegd worden op [Github](https://github.com/ToonHub/RapportageHabitats/).
+
+## Inlezen ruwe data
+
+In een eerste stap worden de ruwe data ingelezen. De meeste gegevens die door INBO worden ingezameld zitten in de [Vlaamse databank vegetatieopnamen (INBOVEG)](https://inboveg.inbo.be/). ANB maakt gebruik van FieldMap voor de invoer van terreingegevens. Deze gegevens zitten nog niet in INBOVEG of een andere gecentraliseerde databank. We maken daarom gebruik van een export uit FieldMap onder de vorm van een Acces-bestand.
+
+## Invoerformaat voor LSVI-rekenmodule {#h:datainvoer}
+
+De LSVI-rekenmodule vereist een specifiek invoerformaat.  Onderstaande onderdelen moeten ingevoerd worden in de rekenmodule.
+
+In eerste instantie moet voor elk meetpunt het habitattype of het habitatsubtype (als het habitattype is opgesplitst in verschillende subtypen) opgegeven worden. Dit is noodzakelijk omdat de LSVI-berekening specifiek is voor elk habitat(sub)type. De informatie m.b.t. habitat(sub)typen wordt ingevoerd via het attribuut **Data_habitat**.
+Daarnaast worden ook de terreingegevens ingevoerd. Een LSVI-indicator bestaat uit één of meerdere voorwaarden. De indicator 'sleutelsoorten' kan bijvoorbeeld onderverdeeld worden in de voorwaarde 'aantal sleutelsoorten' en de voorwaarde 'bedekking sleutelsoorten'. De gebruiker heeft enerzijds de mogelijkheid om de waarden van de voorwaarden rechtstreeks in te voeren in de LSVI-rekenmodule (bv. aantal sleutelsoorten = 3 en bedekking sleutelsoorten = 10 %). Deze gegevens worden ingevoerd via het attribuut **Data_voorwaarden**. Anderzijds kan ook een lijst met de bedekkingen van de aanwezige soorten ingevoerd worden, op basis waarvan de rekenmodule de waarden berekent voor de voorwaarden. Deze gegevens worden ingevoerd via het attribuut **Data_soortenKenmerken**. Ook andere variabelen op basis waarvan de waarde van voorwaarden berekend kan worden, worden ingegeven via Data_soortenKenmerken. Voorbeelden hiervan zijn de aanwezige groeiklassen bij boshabitattypen (voor de berekening van de voorwaarde 'aantal groeiklassen') of het grondvlak van de aanwezige boomsoorten (voor de berekening van de voorwaarde 'grondvlakaandeel sleutelsoorten').
+
+Voor elke analyse bewaren we de gegevens die als invoer voor de LSVI-rekenmodule gebruikt worden. We maken voor elke analyse een map 'InputRekenmodule' aan met volgende bestanden:
+
+* data_habitat_*naamDataset*.csv,
+* data_soortenKenmerken_*naamDataset*.csv,
+* data_voorwaarden_*naamDataset*.csv.
+
+## Bepalen van meetpuntgewichten {#h:meetpuntgewichten}
+
+Zoals vermeld in paragraaf \@ref(h:meetnetontwerp) is het meetnet habitatkwaliteit zo ontworpen dat de dichtheid aan meetpunten voor een bepaald habitattype niet overal gelijk is. Meer bepaald zijn er verschillen binnen en buiten SBZ-H (relatief groter aantal meetpunten binnen SBZ-H) en tussen de verschillende habitatsubtypen (relatief groter aantal meetpunten in de minder voorkomende habitatsubtypen). We moeten hiermee rekening houden als we een onvertekende schatting wensen te bekomen voor Vlaanderen. Daarnaast bestaan sommige meetpunten maar gedeeltelijk uit het doelhabitattype. Deze meetpunten vertegenwoordigen dus in mindere mate het doelhabitattype dan de meetpunten die volledig uit doelhabitat bestaan.
+
+Voor de terrestrische habitattypen onderscheiden we twee typen gewichten:
+
+* **Plotgewichten**. Dit is de fractie van de cirkelplot (straal 18 m) die uit doelhabitat bestaat.
+* **Stratumgewichten**. In het meetnet habitatkwaliteit kunnen verschillende strata onderscheiden worden. Voor een habitattype dat niet is onderverdeeld in subtypen zijn de strata het deel van het habitattype dat gelegen is binnen SBZ-H en het deel buiten SBZ-H. Voor een habitattype dat wel is onderverdeeld in subtypen worden de strata gevormd door de combinatie van de subtypen en de ligging t.o.v. SBZ-H. De strata zijn in dat geval als volgt: subtype 1 binnen SBZ-H, subtype 1 buiten SBZ-H, subtype 2 binnen SBZ-H, subtype 2 buiten SBZ-H, etc... Voor elk stratum berekenen we de dichtheid van de meetpunten, m.a.w. het aantal (bemonsterde) meetpunten gedeeld door de oppervlakte van het stratum. We maken hiervoor gebruik van de gerapporteerde oppervlaktes per habitat(sub)type in @Paelinckx2019. Om een onvertekende schatting te bekomen voor Vlaanderen moeten we compenseren voor verschillen in de dichtheid van meetpunten tussen de strata. Meer bepaald moeten meetpunten in een stratum met een hogere dichtheid een lager gewicht krijgen dan de meetpunten in een stratum met een lagere dichtheid. Dit kan door een stratumgewicht te gebruiken dat omgekeerd evenredig is met de dichtheid van de meetpunten in het stratum. Dit komt dus neer op de oppervlakte van het stratum gedeeld door het aantal meetpunten in het stratum. Het stratumgewicht kan dus geïnterpreteerd worden als de oppervlakte doelhabitat die elk meetpunt vertegenwoordigt.
+
+Op basis van het plotgewicht en het stratumgewicht bepalen we dan de meetpuntgewichten, namelijk het product van beide gewichten.
+
+De bepaling van de meetpuntgewichten voor stilstaande wateren en de stromende wateren bespreken we in respectievelijk Hoofdstuk \@ref(h:plassen) en Hoofdstuk \@ref(h:rivieren).
+
+## Berekening LSVI per meetpunt
+
+```{r voorbeeld}
+
+voorwaarden_voorbeeld <- read.csv2("../Output/AnalyseHeide6510_2018-11-13/Voorwaarden_Heide.csv") %>%
+  filter(Versie == "Versie 3") %>%
+  filter(ID %in% c(11218, 100050)) %>%
+  select(ID, Habitattype, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, VoorwaardeID, Combinatie) %>%
+  arrange(ID)
+
+indicatoren_voorbeeld <- read.csv2("../Output/AnalyseHeide6510_2018-11-13/Indicatoren_heide.csv") %>%
+  filter(Versie == "Versie 3") %>%
+  filter(ID %in% c(11218, 100050)) %>%
+  select(ID, Habitattype, Indicator, Belang, Status_indicator) %>%
+  arrange(ID)
+
+status_voorbeeld <- read.csv2("../Output/AnalyseHeide6510_2018-11-13/StatusHabitatvlek_heide.csv") %>%
+  filter(Versie == "Versie 3") %>%
+  filter(ID %in% c(11218, 100050)) %>%
+  select(ID, Habitattype, Status_habitatvlek) %>%
+  mutate(Status_habitatvlek = Status_habitatvlek == 1) %>%
+  arrange(ID)
+
+# beoordeling <- voorwaarden %>%
+#   left_join(indicatoren, by = c("ID", "Indicator")) %>%
+#   left_join(status, by = "ID") %>%
+#   select(ID, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, Combinatie, Status_indicator, Status_habitatvlek) %>%
+#   group_by(ID, Habitattype, Indicator) %>%
+#  mutate(n = n()) %>%
+#   ungroup()
+
+```
+
+We maken gebruik van de LSVI-rekenmodule om per meetpunt de volgende zaken te berekenen:
+
+* de waarde en beoordeling (gunstig/ongunstig) van de **voorwaarden** ;
+* de beoordeling (gunstig/ongunstig) van de **indicatoren**;
+* de beoordeling (gunstig/ongunstig) van het **meetpunt/de habitatvlek**.
+
+Tabel \@ref(tab:tabelVoorwaarden) geeft als voorbeeld de uitkomst van de rekenmodule voor de voorwaarden van LSVI versie 3. De tabel bevat de uitkomst voor twee meetpunten met habitattype 4010 die geïdentificeerd worden op basis van de kolom 'ID'. 
+
+```{r tabelVoorwaarden, eval = TRUE}
+
+voorwaarden_voorbeeld %>%
+  kable(booktabs = TRUE,
+        caption = "Voorbeeld van de output van de LSVI-rekenmodule voor de voorwaarden",
+        align = c("c","c","l","c","l","c","c","c","c","c","c","c")) %>%
+  kable_styling(latex_options = "hold_position", font_size = 9) %>%
+  landscape()
+
+```
+
+Voor elk meetpunt worden vier indicatoren berekend, waarvan de indicator sleutelsoorten uit twee voorwaarden bestaat en de overige indicatoren uit één voorwaarde. Verder toont de tabel de waarde van de voorwaarde. In dit voorbeeld werd de waarde voor de voorwaarden 'bedekking dwergstruiken' en 'bedekking verossing' rechtstreeks ingevoerd via het attribuut Data_voorwaarden (zie paragraaf \@ref(h:datainvoer)). De waarde voor de overige voorwaarden berekende de rekenmodule op basis van de soortgegevens die werden ingevoerd via het attribuut Data_soortenKenmerken (zie paragraaf \@ref(h:datainvoer)). De tabel toont ook de operator en referentiewaarde op basis waarvan de beoordeling gebeurt. De referentiewaarde kan een numerieke waarde zijn of een bedekkingsklasse. In dit voorbeeld komt de referentiewaarde 'B' van de voorwaarde 'bedekking dwergstruiken' overeen met de bedekkingsklasse 'bedekkend' van de beheermonitoringsschaal  [@INBO2017b], wat overeenkomt met een indicatieve bedekking tussen 5% en 25%. De beoordeling wordt uitgedrukt in TRUE (gunstig) of FALSE (ongunstig). Ten slotte geven de kolommen VoorwaardeID en Combinatie aan hoe de voorwaarden gecombineerd moeten worden om tot een beoordeling van de indicatoren te komen. Dit is enkel relevant als een indicator meerdere voorwaarden bevat. In dit voorbeeld staat er bij sleutelsoorten 'AND' in de kolom Combinatie, wat betekent dat beide voorwaarden gunstig moeten zijn voor een gunstige beoordeling van de indicator (Tabel \@ref(tab:tabelIndicatoren)). Voorwaarden kunnen ook gecombineerd worden via 'OR', wat dan betekent dat slechts één van de voorwaarden gunstig moet zijn voor een gunstige beoordeling van de indicator.
+
+```{r tabelIndicatoren}
+
+indicatoren_voorbeeld %>%
+  kable(booktabs = TRUE,
+        caption = "Voorbeeld van de output van de LSVI-rekenmodule voor de indicatoren",
+        align = c("c","c","l","c","c")) %>%
+  kable_styling( latex_options = "hold_position", font_size = 9, full_width = FALSE)
+```
+
+De beoordeling van het meetpunt/de habitatvlek is gebaseerd op de beoordeling van de verschillende indicatoren en het belang van de indicatoren uitgedrukt in 'belangrijk' (b) of 'zeer belangrijk' (zb). De volgende regel geldt: een meetpunt is gunstig als meer dan 50 % van de indicatoren gunstig zijn en geen enkele zeer belangrijke indicator ongunstig is [@Paelinckx2019]. Tabel \@ref(tab:tabelStatus) geeft de beoordeling voor beide meetpunten. Het meetpunt met ID 11218 scoort ongunstig omdat de zeer belangrijke indicator vergrassing ongunstig scoort. Het meetpunt met ID 100050 scoort gunstig: alle zeer belangrijke indicatoren zijn gunstig en meer dan de helft van alle indicatoren zijn gunstig.
+
+```{r tabelStatus}
+
+status_voorbeeld %>%
+  kable(booktabs = TRUE,
+        caption = "Voorbeeld van de output van de LSVI-rekenmodule voor de status de habitatvlek",
+        align = c("c","c","c")) %>%
+  kable_styling( latex_options = "hold_position", font_size = 9, full_width = FALSE)
+
+```
+De resultaten worden weggeschreven in drie bestanden:
+
+* Voorwaarden_*naamDataset*.csv
+* Indicatoren_*naamDataset*.csv
+* StatusHabitatvlek_*naamDataset*.csv
+
+
+## Schatting aandeel habitat met gunstige kwaliteit
+
+Op basis van de beoordelingen per meetpunt maken we per habitattype een schatting van het aandeel habitat dat gunstig is en berekenen we het bijhorende 95%-betrouwbaarheidsinterval. We doen dit zowel voor Vlaanderen als voor het deel van Vlaanderen dat in de Atlantische biogeografische regio gelegen is (het deel van Vlaanderen zonder Voeren). Voor veel habitattypen is het onderscheid tussen Vlaanderen en Vlaanderen-Atlantisch evenwel niet relevant, omdat het habitattype enkel in de Atlantische regio voorkomt (bv. kusthabitattypen) of omdat de gebruikte dataset nog geen bemonsterde meetpunten uit Voeren bevat.
+
+Naast een schatting per habitattype maken we ook een schatting van het aandeel:
+
+* per habitatsubtype,
+* per habitattype binnen SBZ-H,
+* per habitattype buiten SBZ-H.
+
+We schatten de betrouwbaarheidsintervallen op basis van een binomiaal model, zodat deze steeds tussen de 0 en 100% gelegen zijn. Om de meetpuntgewichten op een correcte wijze toe te passen in de analyse, maken we gebruik van het R-package survey [@Lumley2019].
+
+Het resultaat wordt weggeschreven in het bestand StatusHabitat_*naamDataset*.csv.
+
+
+
+
+
+
+
+
 
 
 

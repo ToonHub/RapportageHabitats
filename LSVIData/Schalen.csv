@@ -1,0 +1,60 @@
+Schaal;KlasseID;KlasseCode;KlasseBeschrijving;BedekkingGem;BedekkingMin;BedekkingMax
+CoverVeglayers;0;;NVT : niet van toepassing;0;0;0
+CoverVeglayers;1;;< 5%;2,5;0;5
+CoverVeglayers;2;;5 - 12,5 %;8,75;5;12,5
+CoverVeglayers;3;;12,5 - 25 %;18,75;12,5;25
+CoverVeglayers;4;;25 - 50 %;37,5;25;50
+CoverVeglayers;5;;50 - 75 %;62,5;50;75
+CoverVeglayers;6;;75 - 100 %;87,5;75;100
+Beheermonitoringsschaal;0;ZS;Zeer schaars;0,5;0;5
+Beheermonitoringsschaal;1;S;Schaars;1;0;5
+Beheermonitoringsschaal;2;WT;Weinig talrijk;1,5;0;5
+Beheermonitoringsschaal;3;T;Talrijk;3;0;5
+Beheermonitoringsschaal;4;B;Bedekkend;15;5;25
+Beheermonitoringsschaal;5;KB;Kwartbedekkend;37,5;25;50
+Beheermonitoringsschaal;6;HB;Halfbedekkend;62,5;50;75
+Beheermonitoringsschaal;7;D;Dominant;87,5;75;100
+Braun-Blanquet;1;;r       : < 5 % (1 - 2 );0,25;0;5
+Braun-Blanquet;2;;+      : < 5 % (3 - 20);1;0;5
+Braun-Blanquet;3;;1      : < 5 % (20 - 100);2,25;0;5
+Braun-Blanquet;4;;2m   : < 5 % (> 100);4;0;5
+Braun-Blanquet;5;;2a     : 5 - 12,5 %;8,75;5;12,5
+Braun-Blanquet;6;;2b     : 12,5 - 25 %;18,75;12,5;25
+Braun-Blanquet;7;;3       : 25 - 50  %;37,5;25;50
+Braun-Blanquet;8;;4       : 50 - 75 %;62,5;50;75
+Braun-Blanquet;9;;5       : 75 - 100 %;87,5;75;100
+Tansley;1;r;zeldzaam;1;;
+Tansley;5;o;occasioneel;1,5;;
+Tansley;11;f;frequent;3;;
+Tansley;16;a;abundant;27,5;;
+Tansley;22;cd;codominant;62,5;;
+Tansley;23;d;dominant;87,5;;
+Tansley;999;la;lokaal abundant;6,875;;
+Tansley;998;lf;lokaal frequent;0,75;;
+Tansley;997;ld;lokaal dominant;21,875;;
+Londo;20;;r1 : sporadisch (< 1%);1;0;1
+Londo;21;;r2 : sporadisch (1-3%);2;1;3
+Londo;22;;r4 : sporadisch (3-5%);4;3;5
+Londo;23;;p1 : weinig talrijk (< 1%);1;0;1
+Londo;24;;p2 : weinig talrijk (1-3%);2;1;3
+Londo;25;;p4 : weinig talrijk (3-5%);4;3;5
+Londo;26;;a1 : talrijk (< 1%);1;0;1
+Londo;27;;a2 : talrijk (1-3%);2;1;3
+Londo;28;;a4 : talrijk (3-5%);4;3;5
+Londo;29;;m1 : zeer talrijk (< 1%);1;0;1
+Londo;30;;m2 : zeer talrijk (1-3%);2;1;3
+Londo;31;;m4 : zeer talrijk (3-5%);4;3;5
+Londo;19;;1 : willekeurig (5-15%);10;5;15
+Londo;8;;1 - : willekeurig (5-10%);7;5;10
+Londo;33;;1 + : willekeurig (10-15%);12;10;15
+Londo;10;;2 : willekeurig (15-25%);20;15;25
+Londo;11;;3 : willekeurig (25-35%);30;25;35
+Londo;12;;4 : willekeurig (35-45%);40;35;45
+Londo;13;;5 : willekeurig (45-55%);50;45;55
+Londo;34;;5 - : willekeurig (45-50%);47;45;50
+Londo;35;;5 +: willekeurig (50-55%);52;50;55
+Londo;14;;6 : willekeurig (55-65%);60;55;65
+Londo;15;;7 : willekeurig (65-75%);70;65;75
+Londo;16;;8 : willekeurig (75-85%);80;75;85
+Londo;17;;9 : willekeurig (85-95%);90;85;95
+Londo;18;;10 : willekeurig (95-100%);97;95;100

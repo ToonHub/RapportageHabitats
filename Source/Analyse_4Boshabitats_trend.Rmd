@@ -1,0 +1,984 @@
+# Boshabitats {#h:Boshabitats}
+
+Voor de boshabitats maken we gebruik van meetpunten uit de Bosinventarisatie [@Wouters2008c] en van bijkomende meetpunten uit het meetnet habitatkwaliteit [@Westra2014].
+
+## Data
+
+```{r Bos outputFolder}
+# analyseNaamBos <- paste("AnalyseBoshabitats", Sys.Date(), sep="_")
+# setwd("../Output")
+# dir.create(analyseNaamBos)
+# 
+# setwd(paste("../Output/", analyseNaamBos, sep =""))
+# dir.create("InputRekenmodule")
+
+analyseNaamBos <- "AnalyseBoshabitats_2019-01-15"
+
+```  
+
+### Ruwe Data
+
+#### Bosinventarisatie
+
+Een groot deel van de gegevens voor de boshabitats wordt via de Bosinventarisatie ingezameld. De gegevens van de tweede Bosinventarisatie (2009 - 2018) worden door ANB ingevoerd in Fieldmap. De gegevens worden vervolgens vanuit Fieldmap naar een Access-bestand geëxporteerd en aangeleverd aan het INBO. Ook de gegevens van de eerste Bosinventarisatie (1997 - 1999) zitten in een Access-bestand.
+
+Deze Access-bestanden bevatten:
+
+* een vegetatieopname in de vierkante plot,
+* dendrometrische gegevens in de cirkelplot,
+* een bestandsbeschrijving in de cirkelplot.
+
+Het habitattype waarin elk meetpunt gelegen is, werd niet op het terrein bepaald (dit zal in de toekomst wel gebeuren). Daarom maken we (1) een overlay tussen de meetpunten van de Bosinventarisatie en de Habitatkaart [@DeSaeger2018] om te bepalen welke punten in boshabitat vallen, waarna we vervolgens (2) de punten selecteren die in een polygoon van de Habitatkaart vallen met meer dan 50% van een bepaald boshabitattype.
+
+```{r Bos getDataHabtypes, cache = TRUE}
+
+connectionStrata <- odbcConnectAccess2007(dbVBIStrata)
+
+VBI_plots_N2000_2018 <- sqlFetch(connectionStrata,"tblN2000Habitat_versie2018-01-01" )
+
+odbcClose(connectionStrata)
+
+VBI_plots_N2000 <- VBI_plots_N2000_2018 %>%
+  filter(Boshabitat)
+
+```
+
+
+```{r Bos overlayVBISBZH}
+
+SBZH_shape <- readOGR(dirStrata, SBZH, verbose = FALSE)
+
+```
+
+
+```{r datum vegetatieOpname}
+connectionVBI2 <- odbcConnectAccess2007(dbVBI2)
+
+dateVeg_VBI2 <- sqlFetch(connectionVBI2, "Observer_date_VEG")
+
+odbcClose(connectionVBI2)
+
+connectionVBI1 <- odbcConnectAccess2007(dbVBI1_veg)
+
+dateVeg_VBI1Orig <- sqlFetch(connectionVBI1, "KOP")
+
+odbcClose(connectionVBI1)
+
+dateVeg_VBI2 <- dateVeg_VBI2 %>%
+  group_by(IDPlots) %>%
+  summarise(DateVeg = max(Date_vegetation)) %>%
+  ungroup() %>%
+  mutate(Periode = 2)
+
+dateVeg_VBI1 <- dateVeg_VBI1Orig %>%
+  mutate(DateVeg = pmax(`Datum 1`, `Datum 2`, na.rm = TRUE),
+         Periode = 1) %>%
+  select(IDPlots = Opnamenummer, Periode, DateVeg)
+
+dateVeg_VBI <- dateVeg_VBI1 %>%
+  bind_rows(dateVeg_VBI2)
+```
+
+```{r Bos selectieplots}
+
+### Aanduiding van VBI-plots die al opgemeten werden in 2de cyclus
+
+connectionMeetproces <- odbcConnectAccess2007(dbVBIMeetproces)
+
+recordsVBI2 <- sqlFetch(connectionMeetproces, "tblRecordsVBI2+")
+recordsVBI1 <- sqlFetch(connectionMeetproces, "tblRecordsVBI1")
+plotCordinates <- sqlFetch(connectionMeetproces,"tblCoordinaten")
+plotDetails <- sqlFetch(connectionMeetproces,"tblPlotDetails")
+plotWeights <- sqlFetch(connectionMeetproces, "tblPlotWeights")
+
+odbcClose(connectionMeetproces)
+
+plotDetailsVBI2 <- plotDetails %>%
+  filter(Periode == 2) %>%
+  select(IDPlots, Reeks)
+
+# selectie alle opnames uit VBI2 en de plots uit VBI die ook al in VBI2 werden opgemeten
+plotDetailsVBI <- plotDetails %>%
+  select(IDPlots, Periode, Reeks, DateDendro, DateVeg, Replaced, StartPeriode) %>%
+  group_by(IDPlots) %>%
+  mutate(nOpnames = n()) %>%
+  ungroup() %>%
+  filter(Periode == 2 | nOpnames == 2)
+
+recordsVBI1$Periode <- 1
+
+recordDetails <- recordsVBI2 %>%
+  select(IDPlots, Periode, DendroRecord, VegRecord) %>%
+  bind_rows(select(recordsVBI1, IDPlots, Periode, VegRecord, DendroRecord))
+
+biogeo_regio <- readOGR(dirStrata, bioGeoregions, verbose = FALSE)
+
+VBI_plots_selection <- VBI_plots_N2000 %>%
+  filter(Boshabitat) %>%
+  filter(Phab >= 50) %>%
+  left_join(plotDetailsVBI, by = "IDPlots") %>%
+  left_join(recordDetails, by = c("IDPlots", "Periode")) %>%
+  filter(!is.na(Reeks)) %>%
+  filter(DendroRecord & VegRecord) %>%
+  filter(!(Periode == 1 & Replaced))
+
+#table(VBI_plots_selection$HabCode)
+  
+VBI_plots_selection_shape <- SpatialPointsDataFrame(coords = cbind(x = VBI_plots_selection$X_coord, y = VBI_plots_selection$Y_coord),
+                                                    data = VBI_plots_selection)
+
+proj4string(VBI_plots_selection_shape) <- proj4string(SBZH_shape)
+VBI_plots_selection_shape$SBZH <- over(VBI_plots_selection_shape, SBZH_shape)$DEELGEBIED
+VBI_plots_selection_shape$SBZH <- ifelse(is.na(VBI_plots_selection_shape$SBZH), 0, 1)
+
+proj4string(VBI_plots_selection_shape) <- proj4string(biogeo_regio)
+VBI_plots_selection_shape$Regio <- over(VBI_plots_selection_shape, biogeo_regio)$code
+
+plotHabtypesVBI <- VBI_plots_selection_shape@data %>%
+  mutate(HabCode = ifelse(HabCode == "91E0_vnva", "91E0_vn", as.character(HabCode)),
+         HabCode = ifelse(HabCode == "9120_qb", "9120", as.character(HabCode)),
+         HabCode = ifelse(HabCode == "9130_end", "9130", as.character(HabCode)),
+         Meetnet = "VBI",
+         IDSegments = 1) %>%
+  left_join(select(plotWeights, IDPlots, Periode, IDSegments, PlotWeight, SegmentWeight), by = c("IDPlots", "IDSegments", "Periode")) %>%
+  select(-DateVeg) %>%
+  left_join(dateVeg_VBI, by = c("IDPlots", "Periode")) %>%
+  select(Meetnet, Periode, IDPlots, IDSegments, HabCode, Phab, SBZH, Regio, PlotWeight, SegmentWeight, X_coord, Y_coord, DateVeg, DateDendro)
+
+data_habitat_VBI<- plotHabtypesVBI %>%
+  mutate(ID = paste(Meetnet, IDPlots, "_", Periode, sep = ""),
+         Habitattype = HabCode,
+         PlotWeight = ifelse(is.na(PlotWeight), 1, PlotWeight),
+         SegmentWeight = ifelse(is.na(SegmentWeight), 1, SegmentWeight),
+         Weight = PlotWeight * SegmentWeight) %>%
+  unique() %>%
+  filter(HabCode != "91E0") %>% #subtype niet gespecifieerd in habitatkaart
+  filter(HabCode != "91E0_sf") #VBI bevat onvoldoende gegevens voor LSVI-beoordeling 
+
+```
+
+
+#### Bijkomende meetpunten van Habitatkwaliteitsmeetnet
+
+De gegevens van het Habitatkwaliteitsmeetnet [@Westra2014] worden eveneens ingezameld door ANB en aangeleverd aan INBO onder de vorm van een Access-bestand. De meetpunten worden op dezelfde manier opgemeten als in de Bosinventarisatie. Bijkomend wordt ook het habitattype per meetpunt bepaald.
+
+
+```{r Bos bosTest, warning=FALSE}
+
+connectionBosExtra <- odbcConnectAccess2007(dbBosExtra)
+dateVeg_BosExtra<- sqlFetch(connectionBosExtra, "Observer_date_VEG")
+odbcClose(connectionBosExtra)
+
+dateVeg_BosExtra <- dateVeg_BosExtra %>%
+  group_by(IDPlots) %>%
+  summarise(DateVeg = max(Date_vegetation)) %>%
+  ungroup() %>%
+  mutate(Periode = 2)
+
+#Data_habitat: check 155346 --> ok
+
+overzicht_plots <- getVisitedPlotsBosMHK(db = dbBosExtra)
+
+plotHabtypes_all <- overzicht_plots %>%
+  filter(Measured == "ja") %>%
+  #filter(IDSegments == 1) %>%
+  select(IDPlots, IDSegments, HabCode= HabObserved) %>%
+  mutate(HabCode = ifelse(HabCode == "91E0 vc", "91E0_vc", as.character(HabCode)),
+         HabCode = ifelse(HabCode == "9130_end", "9130", as.character(HabCode)))
+
+plotHabtypesMHK <- overzicht_plots %>%
+  filter(Measured == "ja") %>%
+  filter(IDSegments == 1) %>%
+  mutate(X_coord = ifelse(is.na(X_m), X, X_m),
+         Y_coord = ifelse(is.na(Y_m), Y, Y_m)) %>%
+  select(IDPlots, IDSegments, SBZH, HabCode= HabObserved, Weight, X_coord, Y_coord, Date) %>%
+  mutate(HabCode = ifelse(HabCode == "91E0 vc", "91E0_vc", as.character(HabCode)),
+         HabCode = ifelse(HabCode == "9130_end", "9130", as.character(HabCode)))
+
+plotHabtypesMHK_shape <- SpatialPointsDataFrame(coords = cbind(x = plotHabtypesMHK$X_coord, y = plotHabtypesMHK$Y_coord), 
+                                               data = plotHabtypesMHK)
+
+proj4string(plotHabtypesMHK_shape) <- proj4string(biogeo_regio)
+
+plotHabtypesMHK$Regio <- over(plotHabtypesMHK_shape, biogeo_regio)$code
+
+data_habitat_bosExtra <- plotHabtypesMHK %>%
+  mutate(Meetnet = "MHK",
+         ID = paste(Meetnet, IDPlots, sep = ""),
+         Habitattype = HabCode,
+         Periode = 2) %>%
+  unique() %>%
+  left_join(dateVeg_BosExtra, by = c("IDPlots", "Periode"))
+
+data_habitat_bosExtra <- data_habitat_bosExtra %>%
+  mutate(DateDendro = as.numeric(format(Date, "%Y")))
+  
+data_habitat_bos <- bind_rows(data_habitat_VBI, data_habitat_bosExtra) %>%
+  mutate(SBZH = ifelse(SBZH == 1, "Binnen", "Buiten"),
+         Weight = ifelse(is.na(Weight), 1, Weight))
+
+```
+
+   
+
+```{r Bos gewichten}
+
+#update oppervlaktes habtypes op basis van BWK2018
+habsubt_area <- read.csv2(oppervlakteBWK, stringsAsFactors = FALSE) %>%
+  select(HabCode, Binnen, Buiten) %>%
+  gather(Binnen, Buiten, key = SBZH, value = Area)
+
+habtypes_gewicht <- data_habitat_bos %>%
+  filter(Periode == 2) %>% #enkelhiervoor gewichten nodig
+  group_by(HabCode, SBZH) %>%
+  summarise (nPlots = n_distinct(ID)) %>%
+  ungroup() %>%
+  left_join(habsubt_area, by = c("SBZH", "HabCode")) %>%
+  mutate(StratumWeight = Area/ nPlots,
+         fps = round(Area * 10))
+
+data_habitat_bos_weights <- data_habitat_bos %>%
+  left_join(select(habtypes_gewicht, HabCode, SBZH, StratumWeight), by = c("HabCode", "SBZH")) %>%
+  group_by(Habitattype) %>%
+  mutate(StratumWeight_std = StratumWeight/ min(StratumWeight)) %>%
+  ungroup() %>%
+  mutate(WeightComb = Weight * StratumWeight_std)
+
+plotHabtypes_continental <- data_habitat_bos %>%
+  filter(Regio == "Continental")
+
+data_habitat_bos <- data_habitat_bos_weights
+
+```
+
+### Overzicht meetpunten
+
+Tabel \@ref(tab:BostabAantallen) geeft een overzicht van het aantal opgemeten meetpunten in de tweede Bosinventarisatie en het Habitatkwaliteitsmeetnet, en de totale steekproefgrootte die we na 12 jaar willen bereiken. Deze dataset gebruiken we om de toestand te schatten: het huidige aandeel habitat in een gunstige staat.
+
+```{r BostabAantallen, message=FALSE, results='asis'}
+
+data_habitat_bos_tbl <- data_habitat_bos %>%
+  mutate(HabCode = ifelse(HabCode == "9130", "9130_end", HabCode))
+
+steekproefgrootte <- getSampleSize(habtypes = data_habitat_bos_tbl$HabCode) %>%
+  mutate(nGewenst = round(nGewenst, 0)) %>%
+  select(habsubt, SBZH, nGewenst)
+  
+overzicht_Bos <- data_habitat_bos_tbl %>%
+  filter(Periode == 2) %>%
+  group_by(HabCode, SBZH, Meetnet) %>% 
+  summarise(nOpgemeten = n_distinct(ID)) %>% 
+  ungroup() %>% 
+  #mutate(Meetnet = ifelse(is.na(Meetnet), "VBI2", Meetnet)) %>%
+  spread(key = "Meetnet", value = "nOpgemeten", fill = 0) %>%
+  full_join(steekproefgrootte, by = c("HabCode" = "habsubt", "SBZH")) %>%
+  mutate(VBI = ifelse(is.na(VBI), 0, VBI),
+         MHK = ifelse(is.na(MHK), 0, MHK),
+         nGewenst = ifelse(is.na(nGewenst), 0, nGewenst),
+         nOpgemetenTot = VBI + MHK) %>%
+  select(HabCode, SBZH, "nOpgemeten VBI2" = VBI, "nOpgemeten MHK" = MHK, "nOpgemeten totaal" = nOpgemetenTot, nGewenst) %>%
+  arrange(HabCode, SBZH)
+  
+kable(overzicht_Bos, format = "latex", caption = "Aantal opgemeten meetpunten in de 2de Bosinventarisatie (VBI2) en in het meetnet habitatkwaliteit (MHK), en totaal aantal gewenste meetpunten na de meetcyclus van 12 jaar", booktabs = T) 
+
+```
+
+\needspace{50mm}
+
+Voor het schatten van veranderingen in habitatkwaliteit gebruiken we meetpunten die zowel in de eerste als in de tweede Bosinventarisatie werden opgemeten. In de eerste Bosinventarisatie werden meetpunten die op een bosrand liggen, verplaatst naar homogeen bos. Tijdens de tweede Bosinventarisatie werden deze meetpunten echter terug naar de oorspronkelijke locatie verplaatst omdat dit een meer representatief beeld geeft van het bos in Vlaanderen [@Wouters2008c]. We maken geen gebruik van deze verplaatste punten om de veranderingen in habitatkwaliteit te analyseren.    
+
+Tabel \@ref(tab:BosTrends) geeft een overzicht van het aantal meetpunten die: 
+
+* zowel in de eerste als in de tweede Bosinventarisatie werden opgemeten EN
+* die niet werden verplaatst in de eerste Bosinventarisatie EN
+* waarvoor zowel een dendrometrische opname als een vegetatieopname werd uitgevoerd (in de eerste Bosinventarisatie werd slechts in de helft van de meetpunten een vegetatieopname uitgevoerd).
+
+Deze dataset gebruiken we om veranderingen te schatten in het aandeel habitat met gunstige kwaliteit tussen de periode 1997 - 1999 (eerste Bosinventarisatie) en de periode 2009 - 2018 (tweede Bosinventarisatie).  
+
+```{r BosTrends, message=FALSE, results='asis'}
+
+overzicht_Bos <- data_habitat_bos_tbl %>%
+  filter(Periode == 1) %>%
+  group_by(HabCode, SBZH, Meetnet) %>% 
+  summarise(nOpgemeten = n_distinct(ID)) %>% 
+  ungroup() %>% 
+  #mutate(Meetnet = ifelse(is.na(Meetnet), "VBI2", Meetnet)) %>%
+  spread(key = "Meetnet", value = "nOpgemeten", fill = 0) %>%
+  #full_join(steekproefgrootte, by = c("HabCode" = "habsubt", "SBZH")) %>%
+  mutate(VBI = ifelse(is.na(VBI), 0, VBI)) %>%
+  select(HabCode, SBZH, "nOpgemeten VBI" = VBI) %>%
+  arrange(HabCode, SBZH)
+  
+kable(overzicht_Bos, format = "latex", caption = "Aantal meetpunten die zowel in de eerste als in de tweede Bosinventarisatie werden opgemeten", booktabs = T) 
+
+```
+
+\needspace{60mm}
+
+
+## LSVI-berekening per meetpunt
+
+Voor de volgende voorwaarden worden de waarden rechtstreeks ingevoerd in de LSVI-rekenmodule:
+
+* aandeel dood hout,
+* hoeveelheid dik dood hout,
+* bosconstantie,
+* minimum structuurareaal (MSA).
+
+\needspace{60mm}
+De *bosconstantie* wordt afgeleid uit de bosleeftijdskaart en de bestandsleeftijd opgemeten op het terrein:
+
+* bosconstantie >= 100 jaar als het meetpunt tot de klasse 'voor 1775' of 'tussen 1775 en 1850' behoort OF als de bestandsleeftijd > 100 jaar;
+* bosconstantie >= 75 jaar als het meetpunt tot de klasse 'tussen 1850 en +-1930' behoort OF als de bestandsleeftijd > 80 jaar;
+* bosconstantie >= 30 jaar als het meetpunt tot de klasse 'na +-1930' behoort  EN als de  bestandsleeftijd > 40 jaar heeft;
+* bosconstantie < 30 jaar in alle andere gevallen.
+
+*Aandeel dood hout* en *hoeveelheid dik dood hout* worden berekend op basis van de dendrometrische gegevens. Beide variabelen worden steeds voor de volledige plot berekend, ook al bestaat het meetpunt slechts gedeeltelijk uit doelhabitat. Voor de schatting van de toestand op basis van de tweede Bosinventarisatie en het Meetnet Habitatkwaliteit, gebruiken we gegevens van liggend en staand dood hout om beide voorwaarden te berekenen. In de eerste Bosinventarisatie werd echter enkel staand dood hout opgemeten. Voor de schatting van veranderingen tussen beide inventarisaties gebruiken we dus enkel gegevens van staand dood hout, zodat de resultaten voor beide periodes vergelijkbaar zijn. We gebruiken dan ook een aangepaste referentiewaarde voor de indicator 'aandeel dood hout', meer bepaald 2 m²/ha i.p.v. 4 m²/ha. 
+
+Het is niet aangewezen om de indicator ‘hoeveelheid dik dood hout’ te beoordelen op meetpuntniveau. Dik dood hout is immers dermate zeldzaam, dat dit op niveau van een boscomplex zou moeten beoordeeld worden. Daarom rekenen we de beoordeling van deze indicator niet mee bij het bepalen van de status van de habitatvlek. Wel schatten we het gemiddeld aantal exemplaren dik dood hout per hectare voor geheel Vlaanderen. Door dit voor beide periodes van de Bosinventarisatie te doen, geeft dit een idee hoe de indicator evolueert in de tijd.  
+
+\needspace{50mm}
+De overige voorwaarden van de boshabitats worden via de LSVI-rekenmodule berekend op basis van de volgende gegevens:
+
+* de bedekking van de soorten in de vegetatieplot,
+* de bedekking van de vegetatielagen in de vegetatieplot,
+* de aanwezige groeiklassen,
+* het grondvlak per boomsoort.
+
+De aanwezige groeiklassen worden afgeleid uit de vegetatiegegevens (groeiklasse 2) en de dendrometrische gegevens (groeiklassen 3 tot 7).  Groeiklasse 1 (= open ruimte in bos) kan niet afgeleid worden uit de meetgegevens en ontbreekt dus steeds. Wanneer een meetpunt slechts gedeeltelijk uit doelhabitat bestaat, tellen we toch alle aanwezige groeiklasse binnen het volledige meetpunt mee. Een dikke boom uit groeiklasse 7 die niet in het doelhabitat ligt maar wel binnen het meetpunt valt (de cirkelplot met straal van 18 meter) zal dus toch meegerekend worden.
+
+Het grondvlak per boomsoort leiden we af uit de dendrometrische gegevens. Als een meetpunt slechts gedeeltelijk uit doelhabitat bestaat, zullen we hier enkel de bomen meerekenen die gelegen zijn binnen het deel van de plot met doelhabitat. Op basis deze gegevens wordt immers de voorwaarde 'grondvlakaandeel van de sleutelsoorten in de boomlaag' bepaald. Een uitzondering hierop is habitatsubtype 91E0_vc, dat vaak slechts over een kleine oppervlakte voorkomt en waarvoor ook de bomen in de omliggende habitatvlekken (maar binnen het meetpunt) meegenomen worden voor het bepalen van het aandeel sleutelsoorten. Ten slotte rekenen we, zoals aangegeven in @TJollyn2009 en @Oosterlynck2018, bij habitattype 91E0 het grondvlak van populieren niet mee als de bedekking van de boomlaag zonder populier groter is dan 70 %. De bedekking van de boomlaag zonder populier leiden we af uit de vegetatieopname.
+
+De voorwaarde 'schaalgrootte ingrepen (ha)', die onderdeel uitmaakt van de indicator 'horizontale structuur - natuurlijke mozaiekstructuur', kan niet worden afgeleid uit de beschikbare gegevens en en wordt daarom niet meegerekend bij de evaluatie van de LSVI.
+
+
+
+```{r Bos inputRekenmodule, warning=FALSE, eval= FALSE}
+
+invoerBos <- geefInvoervereisten(Habitatgroep =  "Bossen en struwelen" , Kwaliteitsniveau = "1") %>%
+  select(Habitatsubtype, Criterium, Indicator, Voorwaarde) %>%
+  unique()
+
+data_soortenKenmerkenVBI2 <- geefSoortenKenmerkenBosVBI2(db= dbVBI2, filter(data_habitat_VBI, Periode == "2"), databank = "VBI2")
+
+data_soortenKenmerkenMHK <- geefSoortenKenmerkenBosVBI2(db = dbBosExtra, data_habitat_bosExtra, databank = "MHK") 
+
+data_soortenKenmerkenVBI1 <- geefSoortenKenmerkenBosVBI1(dbDendro = dbVBI1, dbVeg = dbVBI1_veg, filter(data_habitat_VBI, Periode == "1"))
+
+data_soortenKenmerken_bos <- bind_rows(data_soortenKenmerkenVBI2, data_soortenKenmerkenVBI1, data_soortenKenmerkenMHK) %>%
+  select(-IDSegments)
+
+bedekkingBoomlaagZonderPopulier <- data_soortenKenmerken_bos %>%
+  filter(!is.na(Vegetatielaag) & Vegetatielaag %in% c("boomlaag", "struiklaag")) %>%
+  filter(substr(Kenmerk,1,7) != "Populus" ) %>%
+  group_by(ID) %>%
+  summarise(BedekkingBL_zonderPopulier = (1 - prod(Waarde/100)) * 100) %>%
+  ungroup()
+
+data_habitat_VBI2_ander <- data_habitat_VBI %>%
+  filter(HabCode != "91E0_vc") %>%
+  filter(Periode == 2)
+
+data_habitat_VBI2_91E0_vc <- data_habitat_VBI %>%
+  filter(HabCode == "91E0_vc") %>%
+  filter(Periode == 2)
+
+data_habitat_VBI1_ander <- data_habitat_VBI %>%
+  filter(HabCode != "91E0_vc") %>%
+  filter(Periode == 1)
+
+data_habitat_VBI1_91E0_vc <- data_habitat_VBI %>%
+  filter(HabCode == "91E0_vc") %>%
+  filter(Periode == 1)
+
+data_habitat_bosExtra_ander <- data_habitat_bosExtra %>%
+  filter(HabCode != "91E0_vc")
+
+data_habitat_bosExtra_91E0_vc <- data_habitat_bosExtra %>%
+  filter(HabCode == "91E0_vc")
+
+ 
+#grondvlak op niveau segment (habitatvlek) behalve voor 91E0_vc
+data_grondvlak_VBI2_ander <- berekenLevendHoutSoort(db = dbVBI2, plotIDs = data_habitat_VBI2_ander$IDPlots, niveau = "segment", databank = "VBI2") %>%
+  filter(IDSegments == 1)
+
+data_grondvlak_VBI2_91E0_vc <-  berekenLevendHoutSoort(db = dbVBI2, plotIDs = data_habitat_VBI2_91E0_vc$IDPlots, niveau = "plot", databank = "VBI2" )
+
+data_grondvlak_bosExtra_ander <- berekenLevendHoutSoort(db = dbBosExtra, plotIDs = data_habitat_bosExtra_ander$IDPlots, niveau = "segment", databank = "MHK") %>%
+  filter(IDSegments == 1)
+
+data_grondvlak_bosExtra_91E0_vc <-  berekenLevendHoutSoort(db = dbBosExtra, plotIDs = data_habitat_bosExtra_91E0_vc$IDPlots, niveau = "plot", databank = "MHK")
+
+data_grondvlak_VBI1_ander <- berekenLevendHoutSoort(db = dbVBI1, plotIDs = data_habitat_VBI1_ander$IDPlots, niveau = "segment", databank = "VBI1") %>%
+  filter(IDSegments == 1)
+
+data_grondvlak_VBI1_91E0_vc <-  berekenLevendHoutSoort(db = dbVBI1, plotIDs = data_habitat_VBI1_91E0_vc$IDPlots, niveau = "plot", databank = "VBI1" )
+
+# populier mag verwijderd worden als de resterende bedekking van de boom- en struiklaag >=70%
+# habtypes <- plotHabtypes %>%
+#   select(ID = IDPlots, HabCode) %>%
+#   mutate(ID = as.character(ID))
+
+data_grondvlak_bos <- bind_rows(data_grondvlak_VBI1_ander,
+                            data_grondvlak_VBI1_91E0_vc,
+                            data_grondvlak_VBI2_ander,
+                            data_grondvlak_VBI2_91E0_vc,
+                            data_grondvlak_bosExtra_ander,
+                            data_grondvlak_bosExtra_91E0_vc
+                            ) %>%
+  filter(!is.na(Kenmerk)) %>%
+  left_join(bedekkingBoomlaagZonderPopulier, by = "ID") %>%
+  left_join(select(data_habitat_bos, ID, HabCode), by = "ID") %>%
+  mutate(Kenmerk = gsub(" species", "", Kenmerk),
+         Kenmerk = gsub(" spec", "", Kenmerk),
+         Kenmerk = ifelse(Kenmerk == "Quercus robur/petraea",
+                          "Quercus robur",
+                          ifelse(Kenmerk == "Betula tremula/alba",
+                                 ifelse(HabCode %in% c("9110", "9120", "9130", "9160", "91E0_vo", "91E0_vm"), "Betula pendula", "Betula pubescens"), 
+                                 ifelse(Kenmerk == "Lariks", 
+                                        "Larix", Kenmerk))),
+    VerwijderPopulier = (substr(Kenmerk,1,7) == "Populus") &
+           (substr(HabCode,1,4) == "91E0") &
+           ((!is.na(BedekkingBL_zonderPopulier)) & (BedekkingBL_zonderPopulier >= 70)))
+
+data_grondvlak_bos_corr <- data_grondvlak_bos %>%
+  filter(!VerwijderPopulier) %>%
+  select(-HabCode, -BedekkingBL_zonderPopulier, -VerwijderPopulier)
+
+data_soortenKenmerken_bos_all <- bind_rows(data_soortenKenmerken_bos,
+                                   data_grondvlak_bos_corr) %>%
+  mutate( Kenmerk = ifelse(Kenmerk == "Loofhout", "Quercus", Kenmerk),
+         Kenmerk = ifelse(Kenmerk == "Naaldhout", "Pinus", Kenmerk),
+         Kenmerk = ifelse(Kenmerk == "F. excelsior/A. pseudoplatanus", "Fraxinus excelsior", Kenmerk),
+         Kenmerk = ifelse(Kenmerk == "Picaea abies", "Picea abies", Kenmerk), #foute spelling
+         Kenmerk = ifelse(Kenmerk == "Platanus hispanica L.", "Platanus", Kenmerk), # soort niet herkend
+         Kenmerk = ifelse(Kenmerk == "Alnus x pubescens Tausch", "Alnus glutinosa x incana", Kenmerk), # soort niet herkend
+          Kenmerk = ifelse(Kenmerk == "Salix x reichardtii A. Kerner", "Salix", Kenmerk), # soort niet herkend
+         Kenmerk = ifelse(Kenmerk == "Taraxacum Wiggers sectie Subvulgaria Christians.", "Taraxacum Wiggers", Kenmerk),
+         Kenmerk = ifelse(Kenmerk == "Populus x canadensis Moench", "Populus", Kenmerk), # soort niet herkend
+         Kenmerk = ifelse(Kenmerk == "Rumex x pratensis Mert. et Koch", "Rumex", Kenmerk), # soort niet herkend
+         Kenmerk = ifelse(Kenmerk == "Platanus x hispanica Mill. ex Münchh.", "Platanus", Kenmerk), # soort niet herkend
+         Kenmerk = ifelse(Kenmerk == "Tilia x europaea L.", "Tilia", Kenmerk), # soort niet herkend
+         Kenmerk = ifelse(Kenmerk %in% c("Cedrus atlantica (Endl.) Carr.", "Cedrus libani A. Rich.", "Sequoiadendron giganteum", "Sequoia", "Cupressus"), "Picea", Kenmerk)) %>% #exoten die niet herkend worden 
+  arrange(ID)
+
+# VBI2187065 --> kruidlaag = 0 maar wel soorten in de kruidlaag --> geeft Inf voor aandeel kruidlaag
+# VBI2318028 --> geen kruidlaag --> geeft NA voor aandeel kruidlaag
+
+#VBI2187065 --> onvolledige opname --> verwijderen
+data_soortenKenmerken_bos_all <- data_soortenKenmerken_bos_all %>%
+  filter(ID != "VBI2187065_2")
+
+data_habitat_bos <- data_habitat_bos  %>%
+  filter(ID != "VBI2187065_2")
+
+#alles op plotniveau behalve natuurlijke mozaiekstructuur
+data_vw_bosExtra <-  geefVoorwaardenBosVBI2(db = dbBosExtra, plotHabtypes =  data_habitat_bosExtra, niveau = "plot", databank = "MHK") 
+
+data_vw_VBI2 <-  geefVoorwaardenBosVBI2(db = dbVBI2, plotHabtypes =  filter(data_habitat_VBI, Periode == 2), niveau = "plot", databank = "VBI2") 
+
+data_vw_VBI1 <-  geefVoorwaardenBosVBI1(db = dbVBI1, plotHabtypes =  filter(data_habitat_VBI, Periode == 1),  databank = "VBI1") 
+
+data_vw_bos <- bind_rows(data_vw_VBI2, data_vw_VBI1, data_vw_bosExtra)
+
+data_voorwaarden_bos <- data_vw_bos %>%
+  inner_join(invoerBos, by = c("Habitatsubtype", "Voorwaarde")) %>%
+  filter(ID != "VBI2187065") %>%
+  filter(!is.na(Waarde))
+
+#test
+soorten <- data_soortenKenmerken_bos_all %>%
+  filter(Eenheid == "Grondvlak_ha") %>%
+  select( Kenmerk) %>%
+  unique()
+
+# #write.csv2(data_habitat_bos, paste("../Output/",
+#                                              analyseNaamBos,
+#                                              "/InputRekenmodule/data_habitat_bos.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_soortenKenmerken_bos_all, paste("../Output/",
+#                                              analyseNaamBos,
+#                                              "/InputRekenmodule/data_soortenKenmerken_bos.csv", sep = ""),
+#            row.names = FALSE)
+# 
+# #write.csv2(data_voorwaarden_bos, paste("../Output/",
+#                                              analyseNaamBos,
+#                                              "/InputRekenmodule/data_voorwaarden_bos.csv", sep = ""),
+#            row.names = FALSE)
+
+```
+
+
+
+
+```{r Bos berekenLSVI, warning = TRUE, eval = FALSE}
+
+data_voorwaarden_bos <- read.csv2(paste("../Output/",
+                                             analyseNaamBos,
+                                             "/InputRekenmodule/data_voorwaarden_bos.csv", sep = ""),
+           stringsAsFactors = FALSE)
+
+data_soortenKenmerken_bos_all <- read.csv2(paste("../Output/",
+                                             analyseNaamBos,
+                                             "/InputRekenmodule/data_soortenkenmerken_bos.csv", sep = ""),
+           stringsAsFactors = FALSE)
+
+data_habitat_bos <- read.csv2(paste("../Output/",
+                                             analyseNaamBos,
+                                             "/InputRekenmodule/data_habitat_bos.csv", sep = ""),
+           stringsAsFactors = FALSE)
+
+soortnaamNietHerkend <- c("Populus x canadensis Moench", "Taraxacum Wiggers sectie Subvulgaria Christians.", "Alnus x pubescens Tausch", "Picaea abies", "Salix x reichardtii A. Kerner", "ANDERE SOORT", "Bamboe", "Rumex x pratensis Mert. et Koch", "Cedrus atlantica (Endl.) Carr.", "Platanus x hispanica Mill. ex Münchh.", "Platanus hispanica L.", "Tilia x europaea L.", "Cedrus libani A. Rich." , "Sequoiadendron giganteum", "Sequoia", "Cupressus", "_ANDERE SOORT")
+
+selectieNietHerkend <- data_soortenKenmerken_bos_all %>%
+  filter(Kenmerk %in% soortnaamNietHerkend) %>%
+  group_by(Kenmerk) %>%
+  mutate(nObs = n()) %>%
+  ungroup()
+
+test <- geefSoortenlijst(Habitattype = "9120", Indicator = "invasieve exoten van de boom- en struiklaag", Versie = "Versie 3")
+
+resultsLSVI <- berekenLSVIbasis(Kwaliteitsniveau = 1, 
+                                           Data_voorwaarden = data_voorwaarden_bos,
+                                           Data_soortenKenmerken = data_soortenKenmerken_bos_all,
+                                           Data_habitat = data_habitat_bos ) 
+
+resultsLSVI_vw <- resultsLSVI[[3]] %>%
+    mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+   # WeightComb = Weight * StratumWeight) %>%
+  select(Meetnet, Periode, ID, IDPlots, Habitattype, Habitatsubtype, Phab, Versie, Criterium, Indicator, Belang, Voorwaarde, Waarde, Operator, Referentiewaarde, Status_voorwaarde, Verschilscore, VoorwaardeID, Combinatie, SBZH, Regio, PlotWeight = Weight, StratumWeight, WeightComb)
+
+# 1 plot zonder kruidlaag --> aandeel sleutelsoorten kruidlaag = 0 maken
+# 7 plots zonder grondvlak --> aandeel sleutelsoorten boomlaag = 0 maken
+
+resultsLSVI_vw <- resultsLSVI_vw %>%
+  mutate(Waarde = ifelse(Voorwaarde %in% c("aandeel sleutelsoorten kruidlaag", "grondvlak sleutelsoorten boom- en struiklaag") & is.na(Waarde), "0", Waarde),
+         Status_voorwaarde = ifelse(Voorwaarde %in% c("aandeel sleutelsoorten kruidlaag", "grondvlak sleutelsoorten boom- en struiklaag") & is.na(Status_voorwaarde), FALSE, Status_voorwaarde))
+
+#checkNA
+checkNA_vw <- resultsLSVI_vw %>%
+  group_by(Habitatsubtype, Versie, Voorwaarde) %>%
+  summarise(nNA = sum(is.na(Waarde)),
+            n = n(),
+            nWaarde = n_distinct(Waarde))
+
+belang_bos <- resultsLSVI_vw %>%
+  select(Indicator, Belang) %>%
+  filter(!is.na(Belang)) %>%
+  unique()
+
+resultsLSVI_ind <- resultsLSVI[[2]] %>%
+    mutate(Habitatsubtype = Habitattype,
+    Habitattype = substr(Habitattype, 1, 4)) %>%
+  mutate( Status_indicator = ifelse(Indicator %in% c("sleutelsoorten van de kruidlaag", "sleutelsoorten van de boom- en struiklaag") & is.na(Status_indicator), FALSE, Status_indicator)) %>%
+  left_join(select(data_habitat_bos, Meetnet, Periode, ID, IDPlots, Phab, SBZH, Regio, PlotWeight = Weight, StratumWeight, WeightComb), by = "ID") %>%
+   # WeightComb = Weight * StratumWeight) %>%
+  select(-Belang) %>%
+  left_join(belang_bos, by = "Indicator") %>%
+  select(Meetnet, Periode, ID, IDPlots, Habitattype, Habitatsubtype, Phab, Versie, Criterium, Indicator, Belang, Status_indicator, SBZH, Regio, PlotWeight, StratumWeight, WeightComb)
+
+#checkNA
+
+checkNA_ind <- resultsLSVI_ind %>%
+  group_by(Habitatsubtype, Versie, Indicator) %>%
+  summarise(nNA = sum(is.na(Status_indicator)),
+            n = n(),
+            nWaarde = n_distinct(Status_indicator))
+
+resultsLSVI_ind <- resultsLSVI_ind %>%
+  mutate(Status_indicator = ifelse(Indicator %in% c("sleutelsoorten kruidlaag", "sleutelsoorten boom- en struiklaag") & is.na(Status_indicator), FALSE, Status_indicator))
+
+resultsLSVI_vw_exp <- resultsLSVI_vw %>%
+  mutate(Waarde = gsub(".",  ",", Waarde, fixed = TRUE))
+
+#write.csv2(resultsLSVI_vw_exp, paste("../Output/", analyseNaamBos, "/Voorwaarden_bos.csv", sep =""), row.names = FALSE)
+
+#write.csv2(resultsLSVI_ind, paste("../Output/", analyseNaamBos, "/Indicatoren_bos.csv", sep =""), row.names = FALSE)
+
+```
+
+
+
+
+```{r Bos statushabitatvlek_toestand}
+
+resultsLSVI_ind <- read.csv2( paste("../Output/", analyseNaamBos, "/Indicatoren_bos.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4))
+
+# hoeveelheid dik dood houtnemen we niet mee in integratie habitatvlekniveau
+
+statusHabitatvlek_bos_toestand <- resultsLSVI_ind %>%
+  filter(Periode == 2) %>%
+  filter(!is.na(Status_indicator)) %>%
+  filter(Indicator != "hoeveelheid dik dood hout") %>%
+  group_by(Meetnet, Periode, ID, IDPlots, Habitattype, Habitatsubtype, Phab, Versie, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup()
+  
+#write.csv2(statusHabitatvlek_bos_toestand, paste("../Output/", analyseNaamBos,"/StatusHabitatvlek_bos_toestand.csv", sep =""), row.names = FALSE)
+```
+
+
+```{r Bos statushabitatvlek_trend}
+
+resultsLSVI_ind <- read.csv2( paste("../Output/", analyseNaamBos, "/Indicatoren_bos.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4))
+
+#aandeel dood hout enkel op basis van staand dood hout want in VBI1 wordt liggend dood hout niet opgemeten
+
+doodHoutVBI1 <- berekenAVDoodHout(db = dbVBI1, plotHabtypes = filter(data_habitat_bos, Periode == 1 & Meetnet == "VBI"), databank = "VBI1") %>%
+  mutate(ID = paste("VBI", IDPlots, "_1", sep =""))
+
+doodHoutVBI2 <- berekenAVDoodHout(db = dbVBI2, plotHabtypes = filter(data_habitat_bos, Periode == 2 & Meetnet == "VBI"), databank = "VBI2") %>%
+  mutate(ID = paste("VBI", IDPlots, "_2", sep =""))
+
+doodHoutStaand <- bind_rows(doodHoutVBI1, doodHoutVBI2)%>%
+  filter(AnalyseVariabele == "volumeAandeelDoodHoutStaand") %>%
+  mutate(Indicator = "aandeel dood hout",
+    Status_indicator_trend = Waarde >= 2) %>%
+  select(ID, Indicator, Status_indicator_trend)
+
+resultsLSVI_ind_trend <- resultsLSVI_ind %>%
+  filter(IDPlots %in% (filter(data_habitat_bos, Periode == 1))$IDPlots) %>%
+  left_join(doodHoutStaand, by = c("ID", "Indicator")) %>%
+  mutate(Status_indicator = ifelse(Indicator == "aandeel dood hout", Status_indicator_trend, Status_indicator))
+           
+
+# hoeveelheid dik dood houtnemen we niet mee in integratie habitatvlekniveau
+
+statusHabitatvlek_bos_trend<- resultsLSVI_ind_trend %>%
+  filter(!is.na(Status_indicator)) %>%
+  filter(Indicator != "hoeveelheid dik dood hout") %>%
+  group_by(Meetnet, Periode, ID, IDPlots, Habitattype, Habitatsubtype, Phab, Versie, SBZH, Regio, PlotWeight, StratumWeight, WeightComb) %>%
+  summarise(nGunstig = sum(Status_indicator),
+            nIndicatoren = n(),
+            n_zb_Ongunstig = sum(Status_indicator == FALSE & Belang == "zb"),
+            AandeelGunstig = nGunstig/nIndicatoren * 100,
+            Status_habitatvlek =  ifelse(n_zb_Ongunstig == 0 & AandeelGunstig > 50, 1, 0)) %>%
+  ungroup() %>%
+  left_join(select(plotDetails, IDPlots, Periode, DateDendro, DateVeg, StartPeriode, IDGroup, Replaced), by = c("IDPlots", "Periode"))
+
+# er zitten nog enkele plots die maar 1 maal zijn opgemeten
+
+statusHabitatvlek_bos_trend <- statusHabitatvlek_bos_trend %>%
+  group_by(IDPlots) %>%
+  mutate(nOpnames = n_distinct(Periode)) %>%
+  ungroup() %>%
+  filter(nOpnames == 2) 
+  
+#write.csv2(statusHabitatvlek_bos_trend, paste("../Output/", analyseNaamBos,"/StatusHabitatvlek_bos_trend.csv", sep =""), row.names = FALSE)
+```
+
+## Uitspraak Vlaanderen en de Vlaams-Atlantische regio
+
+We maken enerzijds een schatting van de huidige toestand op basis van de meetpunten van de tweede Bosinventarisatie en het Meetnet Habitatkwaliteit. 
+
+Daarnaast maken we ook een schatting voor beide periodes op basis van de meetpunten die zowel in de eerste Bosinventarisatie als in de tweede Bosinventarisatie werden opgemeten. Op basis van deze schattingen kunnen veranderingen gedetecteerd worden.
+
+Voor habitattype 91E0 maken we ook gebruik van de resultaten van habitatsubtype 91E0_sf die werden bekomen op basis van de MONEOS-gegevens (zie Hoofdstuk \@ref(h:MONEOS)). We gebruiken daarvoor enkel de gegevens die in 2013 werden ingezameld. 
+
+Gezien er enkele meetpunten met boshabitat in de Continentale regio (Voeren) gelegen zijn, maken we schatting voor Vlaanderen en voor de Vlaams-Atlantische regio. 
+
+
+```{r Bos statusVlaanderen}
+
+analyseNaamMONEOS <- "AnalyseMONEOS_2019-01-14"
+
+statusHabitatvlek_91E0_sf <- read.csv2( paste("../Output/", analyseNaamMONEOS, "/StatusHabitatvlek_MONEOS.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4),
+         Jaar = as.numeric(format(as.Date(Date, format = "%Y-%m-%d"),"%Y"))) %>%
+  filter(Habitattype == "91E0" & Jaar == 2013) %>%
+  select(-Date, -Jaar)
+
+statusHabitatvlek_bos_toestand <- statusHabitatvlek_bos_toestand %>%
+  mutate(IDPlots = as.character(IDPlots))
+
+statusHabitatvlek_bos_91E0_sf <- bind_rows(statusHabitatvlek_91E0_sf, statusHabitatvlek_bos_toestand)
+
+
+statusHabitat_bos_Vlaanderen <- habitatandeelGunstig(data = statusHabitatvlek_bos_91E0_sf, stratSBZH = FALSE) %>%
+  mutate(Schaal = "Vlaanderen",
+         Periode = 2)
+
+statusHabitat_bos_Vlaanderen_Atlantisch <- habitatandeelGunstig(data = filter(statusHabitatvlek_bos_91E0_sf, Regio == "Atlantic" ), stratSBZH = FALSE) %>%
+  mutate(Schaal = "Vlaanderen Atlantisch",
+         Periode = 2)
+
+statusHabitat_bos <-  bind_rows(statusHabitat_bos_Vlaanderen, statusHabitat_bos_Vlaanderen_Atlantisch) %>%
+  select(Schaal, Periode, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
+  arrange(Schaal, Habitattype, Versie,  TypeResultaat)
+
+#write.csv2(statusHabitat_bos, paste("../Output/", analyseNaamBos,"/StatusHabitat_bos_toestand.csv", sep =""), row.names = FALSE)
+```
+
+
+```{r Bos statusVlaanderen_trend}
+
+statusHabitatvlek_bos_trend <- statusHabitatvlek_bos_trend %>%
+  filter(Habitattype != "9110")
+
+statusHabitat_bos_Vlaanderen_P2 <- habitatandeelGunstig(data = filter(statusHabitatvlek_bos_trend, Periode == 2), stratSBZH = FALSE) %>%
+  mutate(Schaal = "Vlaanderen",
+         Periode = 2)
+
+statusHabitat_bos_Vlaanderen_P1 <- habitatandeelGunstig(data = filter(statusHabitatvlek_bos_trend, Periode == 1), stratSBZH = FALSE) %>%
+  mutate(Schaal = "Vlaanderen",
+         Periode = 1)
+
+statusHabitat_bos_trend <-  bind_rows(statusHabitat_bos_Vlaanderen_P1, statusHabitat_bos_Vlaanderen_P2) %>%
+  select(Schaal, Periode, TypeResultaat, Versie, Habitattype, Habitatsubtype, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI) %>%
+  arrange(Schaal, Habitattype, Versie,  TypeResultaat)
+
+#write.csv2(statusHabitat_bos_trend, paste("../Output/", analyseNaamBos,"/StatusHabitat_bos_trend.csv", sep =""), row.names = FALSE)
+```
+
+
+
+```{r Bos statusIndicatorVlaanderen}
+
+resultsLSVI_ind_91E0_sf <- read.csv2( paste("../Output/", analyseNaamMONEOS, "/Indicatoren_MONEOS.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4),
+         Jaar = as.numeric(format(as.Date(Date, format = "%Y-%m-%d"),"%Y"))) %>%
+  filter(Habitattype == "91E0" & Jaar == 2013) %>%
+  select(-Date, -Jaar)
+
+resultsLSVI_ind_toestand <- resultsLSVI_ind %>%
+  mutate(IDPlots = as.character(IDPlots)) %>%
+  filter(Periode == 2)
+
+resultsLSVI_ind <- bind_rows(resultsLSVI_ind_91E0_sf, resultsLSVI_ind_toestand)
+
+overzicht_ind <- resultsLSVI_ind %>%
+  select(Habitattype, Versie, Criterium, Indicator, Belang) %>%
+  unique()
+
+status_indicatoren_bos <- NULL
+
+resultsLSVI_bos_notNA <- resultsLSVI_ind %>%
+  filter(!is.na(Status_indicator))
+
+for(habt in unique(resultsLSVI_bos_notNA$Habitattype)){ 
+    
+    data_habt <- resultsLSVI_bos_notNA %>%
+    filter(Habitattype == habt)
+  
+      for(ind in unique(data_habt$Indicator)){
+      
+        data_ind <- data_habt %>%
+          filter(Indicator == ind) %>%
+          mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+        
+        result_temp <- habitatandeelGunstig(data_ind, stratSBZH = FALSE) %>%
+          mutate(Indicator = ind,
+                 Schaal = "Vlaanderen",
+                 Periode = 2) %>%
+          left_join(overzicht_ind, by = c("Versie", "Habitattype", "Indicator")) %>%
+          select(Schaal, Periode, TypeResultaat, Versie, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+        
+        status_indicatoren_bos <- bind_rows(status_indicatoren_bos, result_temp)
+    
+  }
+}
+
+#write.csv2(status_indicatoren_bos, paste("../Output/", analyseNaamBos,"/Indicatoren_AandeelGunstigVlaanderen_bos_toestand.csv", sep =""), row.names = FALSE)
+
+
+```
+
+
+
+```{r Bos statusIndicatorVlaanderen_trend}
+
+overzicht_ind <- resultsLSVI_ind_trend %>%
+  select(Habitattype, Versie, Criterium, Indicator, Belang) %>%
+  unique()
+
+status_indicatoren_bos <- NULL
+
+resultsLSVI_bos_notNA <- resultsLSVI_ind_trend %>%
+  filter(!is.na(Status_indicator)) %>%
+  filter(Habitattype != "9110")
+
+for(P in unique(resultsLSVI_bos_notNA$Periode)){
+  
+  for(habt in unique(resultsLSVI_bos_notNA$Habitattype)){ 
+    
+    data_habt <- resultsLSVI_bos_notNA %>%
+    filter(Habitattype == habt & Periode == P)
+  
+      for(ind in unique(data_habt$Indicator)){
+      
+        data_ind <- data_habt %>%
+          filter(Indicator == ind) %>%
+          mutate(Status_habitatvlek = ifelse(Status_indicator, 1, 0))
+        
+        result_temp <- habitatandeelGunstig(data_ind, stratSBZH = FALSE) %>%
+          mutate(Indicator = ind,
+                 Schaal = "Vlaanderen",
+                 Periode = P) %>%
+          left_join(overzicht_ind, by = c("Versie", "Habitattype", "Indicator")) %>%
+          select(Schaal, Periode, TypeResultaat, Versie, Habitattype, Habitatsubtype, Criterium, Indicator, Belang, SBZH, nObs, sumWeight = sumWeightsComb, AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI)
+        
+        status_indicatoren_bos <- bind_rows(status_indicatoren_bos, result_temp)
+    
+  }
+}
+  
+}
+
+#write.csv2(status_indicatoren_bos, paste("../Output/", analyseNaamBos,"/Indicatoren_AandeelGunstigVlaanderen_bos_trend.csv", sep =""), row.names = FALSE)
+
+```
+
+
+
+```{r Bos gemiddeldeVoorwaarde, echo=FALSE}
+
+#Voor de indicator 'hoeveelheid dik dood hout' berekenen we de gemiddelde waarde voor Vlaanderen.
+
+resultsLSVI_vw <- read.csv2( paste("../Output/", analyseNaamBos, "/Voorwaarden_bos.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4))
+
+resultsLSVI_vw_91E0_sf <- read.csv2( paste("../Output/", analyseNaamMONEOS, "/Voorwaarden_MONEOS.csv", sep =""), stringsAsFactors  = FALSE) %>%
+  mutate(Habitattype = substr(Habitatsubtype, 1, 4),
+         Jaar = as.numeric(format(as.Date(Date, format = "%Y-%m-%d"),"%Y")),
+         Status_voorwaarde = as.logical(Status_voorwaarde)) %>%
+  filter(Habitattype == "91E0" & Jaar == 2013) %>%
+  select(-Date, -Jaar)
+
+resultsLSVI_vw_toestand <- resultsLSVI_vw %>%
+  mutate(IDPlots = as.character(IDPlots)) %>%
+  filter(Periode == 2) %>%
+  bind_rows(resultsLSVI_vw_91E0_sf)
+
+mean_vw_bos <- NULL
+
+resultsLSVI_bos_notNA <- resultsLSVI_vw_toestand %>%
+  filter(Voorwaarde %in% c("aantal exemplaren dik dood hout per ha")) %>%
+  mutate(Waarde = as.numeric(Waarde)) %>%
+  filter(!is.na(Waarde)) 
+
+for(habt in unique(resultsLSVI_bos_notNA$Habitattype)){ 
+    
+    data_habt <- resultsLSVI_bos_notNA %>%
+    filter(Habitattype == habt)
+  
+      for(vw in unique(data_habt$Voorwaarde)){
+      
+        data_vw <- data_habt %>%
+          filter(Voorwaarde == vw) 
+        
+        result_temp <- habitatGemiddeldeVW(data_vw, stratSBZH = FALSE) %>%
+          mutate(Voorwaarde = vw,
+                 Periode = 2) %>%
+          select(Versie, Periode, Habitattype, Habitatsubtype, Indicator, Voorwaarde, SBZH, nObs, sumWeight = sumWeightsComb, Gemiddelde, Gemiddelde_LLCI, Gemiddelde_ULCI)
+        
+        mean_vw_bos <- bind_rows(mean_vw_bos, result_temp)
+    
+  }
+}
+
+mean_doodhout_bos <- mean_vw_bos %>%
+  filter(SBZH == "Binnen & Buiten") %>%
+  mutate(Gemiddelde_LLCI = pmax(0, Gemiddelde_LLCI)) %>%
+  select(-Versie) %>%
+  unique()
+  
+#write.csv2(mean_doodhout_bos, paste("../Output/", analyseNaamBos,"/DoodHoutVlaanderen_bos_toestand.csv", sep =""), row.names = FALSE)
+```
+
+
+```{r Bos modelTrend , eval= FALSE}
+
+statusHabitatvlek_bos_trend <- read.csv2( paste("../Output/", analyseNaamBos,"/StatusHabitatvlek_bos_trend.csv", sep =""),stringsAsFactors  = FALSE)
+
+statusHabitatvlek_bos_trend  <- statusHabitatvlek_bos_trend %>%
+  mutate(fPeriode = factor(Periode))
+
+statusHabitatvlek_9120_versie3 <- statusHabitatvlek_bos_trend %>%
+  filter(Versie == "Versie 3") %>%
+  filter(Habitattype == "9120") %>%
+  mutate(IDPlots = as.factor(IDPlots))
+
+overzicht <- statusHabitatvlek_bos_trend %>%
+  group_by(Habitattype, Versie, Periode) %>%
+  summarise(AandeelGunstig = sum(Status_habitatvlek)/ n(),
+            nPlots = n_distinct(IDPlots)) %>%
+  ungroup()
+
+Model.AandeelGunstig_9120Versie3_simple <- glm(data = statusHabitatvlek_9120_versie3, 
+                                  Status_habitatvlek ~ fPeriode, 
+                                  family = "binomial")
+
+ModelSummary <- summary(Model.AandeelGunstig_9120Versie3_simple)
+
+
+ p1 <- plogis(ModelSummary$coefficients[1,"Estimate"])
+
+ p2 <- plogis(ModelSummary$coefficients[1,"Estimate"] + ModelSummary$coefficients[2,"Estimate"])
+
+  diff <- p2-p1
+
+ diff.llci <- plogis(ModelSummary$coefficients[1,"Estimate"] + ModelSummary$coefficients[2,"Estimate"] - 1.96*ModelSummary$coefficients[2,"Std. Error"])-p1
+
+ diff.ulci <-plogis(ModelSummary$coefficients[1,"Estimate"] + ModelSummary$coefficients[2,"Estimate"] + 1.96*ModelSummary$coefficients[2,"Std. Error"])-p1
+ 
+ resultSimple <- cbind(p1, p2, diff)
+
+Model.AandeelGunstig_9120Versie3 <- glmer(data = statusHabitatvlek_9120_versie3, 
+                                  AandeelGunstig ~ fPeriode  + (1|IDGroup), 
+                                  family = "gaussian")
+
+ModelSummary <- summary(Model.AandeelGunstig_9120Versie3)
+
+ p1 <- plogis(ModelSummary$coefficients[1,"Estimate"])
+
+ p2 <- plogis(ModelSummary$coefficients[1,"Estimate"] + ModelSummary$coefficients[2,"Estimate"])
+
+  diff <- p2-p1
+
+ diff.llci <- plogis(ModelSummary$coefficients[1,"Estimate"] + ModelSummary$coefficients[2,"Estimate"] - 1.96*ModelSummary$coefficients[2,"Std. Error"])-p1
+
+ diff.ulci <-plogis(ModelSummary$coefficients[1,"Estimate"] + ModelSummary$coefficients[2,"Estimate"] + 1.96*ModelSummary$coefficients[2,"Std. Error"])-p1
+ 
+ resultSimple <- cbind(p1, p2, diff)
+
+
+
+Model.AandeelGunstig_9120Versie3_0 <- lmer(data = statusHabitatvlek_9120_versie3, 
+                                  Status_habitatvlek ~ 0 + fPeriode  + (1|IDGroup), 
+                                  family="binomial",
+                                  weights = PlotWeight)
+
+summary <- summary(Model.AandeelGunstig_9120Versie3)
+
+TrendAandeelGunstig <- plogis(summary$coefficients["(Intercept)", "Estimate"])
+
+confidence_intervals <- confint(model)
+AandeelGunstig_LLCI <- round(plogis(confidence_intervals[var, "2.5 %"])* 100, 2)
+AandeelGunstig_ULCI <- round(plogis(confidence_intervals[var, "97.5 %"])* 100, 2)
+
+      estimates_temp <- data.frame(varName = as.character(var), AandeelGunstig, AandeelGunstig_LLCI, AandeelGunstig_ULCI, stringsAsFactors = FALSE)
+      estimates <- bind_rows(estimates, estimates_temp)
+
+
+test <- geefParameters(Model.AandeelGunstig_9120Versie3, type = "binomial")
+
+summary(Model.AandeelGunstig_9120Versie3_0)
+
+plot(Model.AandeelGunstig_9120Versie3)
+
+
+
+
+```
+
+## Resultaten
+
+De resultaten worden weggeschreven in de folder 'AnalyseBoshabitats_2019-01-15'.

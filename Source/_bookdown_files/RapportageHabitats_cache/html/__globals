@@ -1,0 +1,15 @@
+overzichtVoortgang	overzicht_Heide6510	getVisitedPlotsMHK	dbHeideEn6510_2018	%>%	filter	Visited	VisitedQC	overzicht	group_by	Measured	Status	summarise	n	arrange	kable	T
+dataInlezen	heide6510	c
+missingData	plotMeasure	overzicht_Heide6510	%>%	filter	Measured	missingData	VegspeciesMeasured	VeglayerMeasured	StructureMeasured	select	IDPlots	kable	T
+wrongHabcode	heide6510_habsubt	c	wrongHabCode	plotMeasure	%>%	filter	HabObserved	%in%	select	IDPlots	HabTarget1	HabTarget2	kable	mutate	ifelse	as.character
+MeasuredHab	sampleSizeHeide6510	getSampleSize	heide6510_habsubt	%>%	mutate	floor	nGewenst	select	habsubt	SBZH	nGewenst_4y	nGewenst_6y	Trefkans_verwacht	overzicht_Observed_Year	plotMeasure	format	as.Date	Date	group_by	HabObserved	Year	summarise	n	ungroup	spread	n_Measured_Total	ifelse	`2014`	`2015`	`2016`	left_join	c	arrange	kable	T
+trefkans	overzicht_Heide6510_long	overzicht_Heide6510	%>%	filter	VisitedQC	Visited	gather	HabTarget1	HabTarget2	nHabTarget	HabTarget	is.na	overzicht_Target	group_by	SBZH	summarise	n	sum	Measured	HabObserved	overzicht_Observed	plotMeasure	overzicht_trefkans	full_join	rename	c	select	n_Measured	mutate	ifelse	n_Measured_Total	n_Measured_Target	n_Visited	Trefkans_Target	round	Trefkans_Total	kable	T
+dataVerkenning3	
+steekproefHeide	sampleSizeHeide6510_join	sampleSizeHeide6510	%>%	select	HabObserved	SBZH	nGewenst_6y	Trefkans_verwacht	mutate	ifelse	nbPlotsToDo	overzicht_Observed	ungroup	n_Measured_Total	full_join	c	overzicht_trefkans	Hab	Trefkans_Total	is.na	nOpnamesToDo_6y	Trefkans	substr	pmax	Trefkans_observed	nBezoekenToDo_6y	ceiling	sampleHeide_3y	getSample	Set	sampleHeide_3y_OK	filter	Orthocontr	as.numeric	as.character	IDPlots	sampleHeide_3y_Extra	sampleHeide_6y	sampleHeide_6y_overzicht	group_by	HabTarget1	summarise	n	overzicht_Heide6510_all	getVisitedPlotsMHK	dbHeideEn6510_2018	sampleHeide_bezoeken6y	bind_rows	left_join	Visited	VisitedQC	heide_planning_tabel	sum	max	nb	rename	n_planned	nToSelect
+steekproefHeideTabel	kable	heide_planning_tabel
+steekproefHeideShape	
+steekproefHeide2	
+steekproef6510	sample6510_6y	getSample	maxRank	%>%	group_by	HabTarget1	SBZH	summarise	max	IDPlots	rename	hab6510_planned_ov	overzicht_Heide6510_all	gather	HabTarget2	filter	is.na	HabTarget	substr	left_join	c	mutate	VisitedQC	maxRankingPlanned	%in%	sum	Planned	select	nbPlotsToDo	Hab	nOpnamesToDo_6y	Trefkans	nBezoekenToDo_6y	n_planned
+steekproef6510Tabel	kable	hab6510_planning_tabel
+steekproef6510Shape	
+Nazien	
